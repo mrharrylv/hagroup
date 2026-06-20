@@ -1,0 +1,859 @@
+{
+  "items": [
+    {
+      "key": "websiteDev",
+      "icon": "solar:monitor-linear",
+      "path": "/services/website-development",
+      "title": "Website Development",
+      "description": "High-performance, conversion-focused websites engineered for speed, SEO, and scalability — from landing pages to enterprise web portals."
+    },
+    {
+      "key": "systemDev",
+      "icon": "solar:code-square-linear",
+      "path": "/services/system-development",
+      "title": "System Development",
+      "description": "Robust, enterprise-grade software systems, APIs, and platforms built with modern architectures for reliability and long-term scalability."
+    },
+    {
+      "key": "cloud",
+      "icon": "solar:cloud-linear",
+      "path": "/services/cloud-migration",
+      "title": "Cloud & Migration",
+      "description": "Strategic multi-cloud architecture, migration, and optimization across AWS, Azure, and Google Cloud with zero-trust security principles."
+    },
+    {
+      "key": "devops",
+      "icon": "solar:server-path-linear",
+      "path": "/services/devops",
+      "title": "DevOps & CI/CD",
+      "description": "Automated build, test, and deployment pipelines powered by container orchestration, Infrastructure as Code, and GitOps workflows."
+    },
+    {
+      "key": "itInfra",
+      "icon": "solar:server-minimalistic-linear",
+      "path": "/services/it-infrastructure",
+      "title": "IT Infrastructure",
+      "description": "Proactive 24/7 monitoring, security management, server administration, and infrastructure optimization."
+    },
+    {
+      "key": "fullCycle",
+      "icon": "solar:restart-circle-linear",
+      "path": "/services/full-cycle",
+      "title": "Full-Cycle Development",
+      "description": "End-to-end product delivery — from strategy and design to development, deployment, and continuous improvement."
+    },
+    {
+      "key": "ai",
+      "icon": "solar:magic-stick-3-linear",
+      "path": "/services/ai-integration",
+      "title": "AI Integration",
+      "description": "Production-ready machine learning and AI-driven automation designed to create measurable business impact."
+    },
+    {
+      "key": "consulting",
+      "icon": "solar:users-group-two-rounded-linear",
+      "path": "/services/consulting",
+      "title": "IT Consulting",
+      "description": "Strategic technology advisory covering architecture reviews, digital transformation roadmaps, and engineering optimization."
+    }
+  ],
+  "pages": {
+    "websiteDevelopment": {
+      "icon": "solar:monitor-linear",
+      "title": "Website Development",
+      "subtitle": "Custom-designed, high-performance websites that elevate your brand, engage visitors, and drive conversions. From corporate sites to complex web portals.",
+      "overviewTitle": "Websites That Deliver Results",
+      "overviewText": "We build modern, responsive websites tailored to your brand and business objectives. Every site we deliver is optimized for speed, accessibility, and search engine visibility. Whether you need a corporate landing page, an e-commerce platform, or a content-rich portal, our team handles the full lifecycle — from design through deployment and ongoing support.",
+      "stats": [
+        {
+          "value": "99.9%",
+          "label": "Uptime guarantee"
+        },
+        {
+          "value": "<1s",
+          "label": "Average load time"
+        },
+        {
+          "value": "100+",
+          "label": "Websites delivered"
+        },
+        {
+          "value": "A+",
+          "label": "Lighthouse scores"
+        }
+      ],
+      "featuresTitle": "What We Deliver",
+      "features": [
+        {
+          "icon": "solar:palette-linear",
+          "title": "Custom UI/UX Design",
+          "description": "Pixel-perfect designs crafted to reflect your brand identity, with user research and testing at every step."
+        },
+        {
+          "icon": "solar:smartphone-linear",
+          "title": "Responsive Development",
+          "description": "Flawless experiences across desktop, tablet, and mobile devices using modern CSS and progressive enhancement."
+        },
+        {
+          "icon": "solar:rocket-2-linear",
+          "title": "Performance Optimization",
+          "description": "Code splitting, lazy loading, image optimization, and CDN configuration for lightning-fast page loads."
+        },
+        {
+          "icon": "solar:magnifer-linear",
+          "title": "SEO & Analytics",
+          "description": "Technical SEO foundations, structured data, sitemap generation, and analytics integration from day one."
+        },
+        {
+          "icon": "solar:shield-check-linear",
+          "title": "Accessibility (WCAG)",
+          "description": "WCAG 2.1 AA compliance ensuring your website is usable by everyone, regardless of ability."
+        },
+        {
+          "icon": "solar:refresh-circle-linear",
+          "title": "CMS Integration",
+          "description": "Headless CMS setups or traditional platforms that empower your team to manage content independently."
+        }
+      ],
+      "processTitle": "Our Process",
+      "process": [
+        {
+          "step": "Step 01",
+          "title": "Discovery & Strategy",
+          "description": "Understanding your goals, audience, and competitive landscape to define the project scope."
+        },
+        {
+          "step": "Step 02",
+          "title": "Design & Prototyping",
+          "description": "Wireframes and interactive prototypes reviewed and refined with your feedback."
+        },
+        {
+          "step": "Step 03",
+          "title": "Development",
+          "description": "Clean, maintainable code built with React, Next.js, or your preferred stack."
+        },
+        {
+          "step": "Step 04",
+          "title": "Launch & Support",
+          "description": "Thorough QA, performance testing, deployment, and ongoing maintenance."
+        }
+      ],
+      "techTitle": "Technologies We Use",
+      "technologies": [
+        { "name": "React", "icon": "logos:react" },
+        { "name": "Next.js", "icon": "logos:nextjs-icon" },
+        { "name": "TypeScript", "icon": "logos:typescript-icon" },
+        { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" },
+        { "name": "Vite", "icon": "logos:vitejs" },
+        { "name": "Vercel", "icon": "logos:vercel-icon" },
+        { "name": "Netlify", "icon": "logos:netlify-icon" },
+        { "name": "WordPress", "icon": "logos:wordpress-icon" },
+        { "name": "Sanity", "icon": "logos:sanity" },
+        { "name": "Figma", "icon": "logos:figma" },
+        { "name": "Astro", "icon": "logos:astro-icon" },
+        { "name": "Node.js", "icon": "logos:nodejs-icon" },
+        { "name": "GraphQL", "icon": "logos:graphql" },
+        { "name": "Storybook", "icon": "logos:storybook-icon" }
+      ],
+      "ctaTitle": "Ready to Build Your Website?",
+      "ctaText": "Let's create a website that performs as beautifully as it looks. Get in touch with our team to start your project."
+    },
+    "systemDevelopment": {
+      "icon": "solar:code-square-linear",
+      "title": "System Development",
+      "subtitle": "Enterprise-grade software systems, APIs, and platforms engineered for reliability, scalability, and seamless integrations across your organization.",
+      "overviewTitle": "Robust Systems Built to Scale",
+      "overviewText": "From CRM platforms and ERP systems to custom SaaS products and internal tools, we design and build software that solves complex business problems. Our systems are architected for high availability, data integrity, and smooth integrations with third-party services. We follow domain-driven design principles and build modular, testable codebases that evolve with your business.",
+      "stats": [
+        {
+          "value": "50+",
+          "label": "Systems delivered"
+        },
+        {
+          "value": "99.99%",
+          "label": "System uptime"
+        },
+        {
+          "value": "3x",
+          "label": "Faster time to market"
+        },
+        {
+          "value": "24/7",
+          "label": "Monitoring included"
+        }
+      ],
+      "featuresTitle": "Core Capabilities",
+      "features": [
+        {
+          "icon": "solar:code-square-linear",
+          "title": "Full-Stack Development",
+          "description": "End-to-end system development from frontend interfaces to backend services and databases."
+        },
+        {
+          "icon": "solar:database-linear",
+          "title": "Database Architecture",
+          "description": "Optimized relational and NoSQL database designs with migration strategies and data integrity guarantees."
+        },
+        {
+          "icon": "solar:server-linear",
+          "title": "API Design & Integration",
+          "description": "RESTful and GraphQL APIs designed for performance, security, and developer experience."
+        },
+        {
+          "icon": "solar:lock-linear",
+          "title": "Authentication & Security",
+          "description": "OAuth 2.0, SSO, RBAC, and encryption at rest and in transit to protect your data."
+        },
+        {
+          "icon": "solar:chart-2-linear",
+          "title": "Reporting & Analytics",
+          "description": "Built-in dashboards, data pipelines, and customizable reports for real-time business insights."
+        },
+        {
+          "icon": "solar:widget-linear",
+          "title": "Third-Party Integration",
+          "description": "Seamless connections with payment gateways, ERP systems, CRMs, and external APIs."
+        }
+      ],
+      "processTitle": "Development Lifecycle",
+      "process": [
+        {
+          "step": "Step 01",
+          "title": "Requirements Analysis",
+          "description": "Mapping business processes, user stories, and technical constraints."
+        },
+        {
+          "step": "Step 02",
+          "title": "Architecture Design",
+          "description": "Microservices or monolith? We design the right architecture for your scale."
+        },
+        {
+          "step": "Step 03",
+          "title": "Iterative Development",
+          "description": "Agile sprints with continuous integration, testing, and stakeholder demos."
+        },
+        {
+          "step": "Step 04",
+          "title": "Deployment & Handoff",
+          "description": "Production deployment, documentation, training, and transition support."
+        }
+      ],
+      "techTitle": "Technology Stack",
+      "technologies": [
+        { "name": "Node.js", "icon": "logos:nodejs-icon" },
+        { "name": "Python", "icon": "logos:python" },
+        { "name": "Go", "icon": "logos:go" },
+        { "name": "PostgreSQL", "icon": "logos:postgresql" },
+        { "name": "MongoDB", "icon": "logos:mongodb-icon" },
+        { "name": "Redis", "icon": "logos:redis" },
+        { "name": "GraphQL", "icon": "logos:graphql" },
+        { "name": "Docker", "icon": "logos:docker-icon" },
+        { "name": "Kubernetes", "icon": "logos:kubernetes" },
+        { "name": "Terraform", "icon": "logos:terraform-icon" },
+        { "name": "TypeScript", "icon": "logos:typescript-icon" },
+        { "name": "RabbitMQ", "icon": "logos:rabbitmq-icon" },
+        { "name": "Elasticsearch", "icon": "logos:elasticsearch" },
+        { "name": "Kafka", "icon": "logos:kafka-icon" }
+      ],
+      "ctaTitle": "Need a Custom System?",
+      "ctaText": "Tell us about your business challenges and we'll architect the right solution. From concept to production-ready system."
+    },
+    "cloudMigration": {
+      "icon": "solar:cloud-linear",
+      "title": "Cloud & Migration",
+      "subtitle": "Seamless cloud adoption and migration strategies for AWS, Azure, and Google Cloud — architected for performance, security, and cost optimization.",
+      "overviewTitle": "Your Cloud, Architected Right",
+      "overviewText": "Moving to the cloud is more than a lift-and-shift. We design cloud-native architectures and migration strategies that unlock the full potential of AWS, Azure, or GCP. From initial assessment and workload analysis through execution and optimization, we ensure your migration is smooth, secure, and cost-effective. Our team handles landing zone design, network architecture, security controls, and ongoing cloud cost optimization.",
+      "stats": [
+        {
+          "value": "40%",
+          "label": "Cost savings avg."
+        },
+        {
+          "value": "99.99%",
+          "label": "Uptime achieved"
+        },
+        {
+          "value": "3x",
+          "label": "Performance gains"
+        },
+        {
+          "value": "Zero",
+          "label": "Data loss migrations"
+        }
+      ],
+      "featuresTitle": "Cloud Services",
+      "features": [
+        {
+          "icon": "solar:cloud-linear",
+          "title": "Cloud Strategy & Assessment",
+          "description": "Workload analysis, TCO calculations, and cloud readiness assessments to build a clear migration roadmap."
+        },
+        {
+          "icon": "solar:transfer-horizontal-linear",
+          "title": "Cloud Migration",
+          "description": "Lift-and-shift, re-platforming, or re-architecting — we choose the right approach for each workload."
+        },
+        {
+          "icon": "solar:tuning-2-linear",
+          "title": "Cost Optimization",
+          "description": "Reserved instances, right-sizing, spot instances, and automated cost governance to maximize ROI."
+        },
+        {
+          "icon": "solar:shield-check-linear",
+          "title": "Cloud Security",
+          "description": "Zero-trust architecture, IAM policies, encryption, and compliance frameworks (SOC2, GDPR, HIPAA)."
+        },
+        {
+          "icon": "solar:server-minimalistic-linear",
+          "title": "Multi-Cloud & Hybrid",
+          "description": "Multi-cloud strategies and hybrid architectures that avoid vendor lock-in and maximize flexibility."
+        },
+        {
+          "icon": "solar:wallet-money-linear",
+          "title": "FinOps & Governance",
+          "description": "Cloud financial management with budgets, alerts, tagging strategies, and chargeback models."
+        }
+      ],
+      "processTitle": "Migration Phases",
+      "process": [
+        {
+          "step": "Phase 01",
+          "title": "Assessment",
+          "description": "Inventory your workloads, dependencies, and compliance requirements."
+        },
+        {
+          "step": "Phase 02",
+          "title": "Planning",
+          "description": "Design target architecture, migration waves, and rollback strategies."
+        },
+        {
+          "step": "Phase 03",
+          "title": "Migration",
+          "description": "Execute migration with automated tooling, validation, and cutover coordination."
+        },
+        {
+          "step": "Phase 04",
+          "title": "Optimization",
+          "description": "Post-migration tuning, cost optimization, and ongoing cloud management."
+        }
+      ],
+      "techTitle": "Cloud Platforms & Tools",
+      "technologies": [
+        { "name": "AWS", "icon": "logos:aws" },
+        { "name": "Azure", "icon": "logos:microsoft-azure" },
+        { "name": "Google Cloud", "icon": "logos:google-cloud" },
+        { "name": "Terraform", "icon": "logos:terraform-icon" },
+        { "name": "CloudFormation", "icon": "logos:aws-cloudformation" },
+        { "name": "Kubernetes", "icon": "logos:kubernetes" },
+        { "name": "Docker", "icon": "logos:docker-icon" },
+        { "name": "Datadog", "icon": "logos:datadog" },
+        { "name": "Istio", "icon": "logos:istio" },
+        { "name": "Pulumi", "icon": "logos:pulumi-icon" },
+        { "name": "Cloudflare", "icon": "logos:cloudflare-icon" },
+        { "name": "Ansible", "icon": "logos:ansible" },
+        { "name": "Vault", "icon": "logos:vault-icon" }
+      ],
+      "ctaTitle": "Plan Your Cloud Migration",
+      "ctaText": "Whether you're cloud-first or just getting started, our architects can design the right strategy for your business."
+    },
+    "devops": {
+      "icon": "solar:server-path-linear",
+      "title": "DevOps & Automation",
+      "subtitle": "Accelerate your delivery pipeline with CI/CD automation, Infrastructure as Code, container orchestration, and GitOps best practices.",
+      "overviewTitle": "Ship Faster. Ship Safer.",
+      "overviewText": "Modern software demands rapid, reliable releases. Our DevOps services transform your delivery pipeline with automated CI/CD, containerization, and infrastructure as code. We implement GitOps workflows, set up comprehensive monitoring, and build self-healing infrastructure that scales automatically. The result: faster time-to-market, fewer incidents, and happier engineering teams.",
+      "stats": [
+        {
+          "value": "10x",
+          "label": "Faster deployments"
+        },
+        {
+          "value": "95%",
+          "label": "Automation coverage"
+        },
+        {
+          "value": "Zero",
+          "label": "Downtime releases"
+        },
+        {
+          "value": "50%",
+          "label": "Cost reduction"
+        }
+      ],
+      "featuresTitle": "DevOps Services",
+      "features": [
+        {
+          "icon": "solar:server-path-linear",
+          "title": "CI/CD Pipelines",
+          "description": "Automated build, test, security scanning, and deployment pipelines for every commit."
+        },
+        {
+          "icon": "solar:code-file-linear",
+          "title": "Infrastructure as Code",
+          "description": "Terraform, Pulumi, or CloudFormation to manage infrastructure versioned alongside your application code."
+        },
+        {
+          "icon": "solar:box-linear",
+          "title": "Container Orchestration",
+          "description": "Docker containerization and Kubernetes orchestration for scalable, portable workloads."
+        },
+        {
+          "icon": "solar:monitor-smartphone-linear",
+          "title": "Observability & Monitoring",
+          "description": "Full-stack observability with logs, metrics, traces, and intelligent alerting dashboards."
+        },
+        {
+          "icon": "solar:shield-check-linear",
+          "title": "DevSecOps",
+          "description": "Security integrated into the pipeline — vulnerability scanning, secret management, and compliance checks."
+        },
+        {
+          "icon": "solar:chat-round-dots-linear",
+          "title": "GitOps Workflows",
+          "description": "Git-driven deployments with pull request reviews, automatic rollbacks, and audit trails."
+        }
+      ],
+      "processTitle": "Implementation Approach",
+      "process": [
+        {
+          "step": "Step 01",
+          "title": "Pipeline Assessment",
+          "description": "Evaluate your current CI/CD maturity, bottlenecks, and improvement opportunities."
+        },
+        {
+          "step": "Step 02",
+          "title": "Architecture & Tooling",
+          "description": "Design the target state and select the right tools for your stack and team."
+        },
+        {
+          "step": "Step 03",
+          "title": "Implementation",
+          "description": "Build pipelines, configure infrastructure, and migrate workloads incrementally."
+        },
+        {
+          "step": "Step 04",
+          "title": "Handoff & Training",
+          "description": "Documentation, team training, and runbook creation for autonomous operation."
+        }
+      ],
+      "techTitle": "Tools & Platforms",
+      "technologies": [
+        { "name": "GitHub Actions", "icon": "logos:github-actions" },
+        { "name": "GitLab CI", "icon": "logos:gitlab" },
+        { "name": "Jenkins", "icon": "logos:jenkins" },
+        { "name": "Docker", "icon": "logos:docker-icon" },
+        { "name": "Kubernetes", "icon": "logos:kubernetes" },
+        { "name": "Terraform", "icon": "logos:terraform-icon" },
+        { "name": "Helm", "icon": "logos:helm" },
+        { "name": "ArgoCD", "icon": "logos:argo-icon" },
+        { "name": "Prometheus", "icon": "logos:prometheus" },
+        { "name": "Grafana", "icon": "logos:grafana" },
+        { "name": "Ansible", "icon": "logos:ansible" },
+        { "name": "Vault", "icon": "logos:vault-icon" },
+        { "name": "Trivy", "icon": "simple-icons:trivy" },
+        { "name": "Flux", "icon": "logos:flux" }
+      ],
+      "ctaTitle": "Modernize Your Pipeline",
+      "ctaText": "Let us automate your infrastructure and delivery pipeline. Book a consultation to assess your DevOps maturity."
+    },
+    "itInfrastructure": {
+      "icon": "solar:server-path-linear",
+      "title": "IT Infrastructure Maintenance",
+      "subtitle": "Proactive monitoring, maintenance, and management of your IT environment — ensuring uptime, security, and peak performance around the clock.",
+      "overviewTitle": "Keep Your Infrastructure Running",
+      "overviewText": "Your IT infrastructure is the backbone of your business. Our managed infrastructure services ensure your servers, networks, and cloud environments are monitored 24/7, patched against vulnerabilities, and optimized for peak performance. We provide proactive maintenance that prevents issues before they impact your operations, combined with rapid incident response when things go wrong.",
+      "stats": [
+        {
+          "value": "24/7",
+          "label": "Monitoring coverage"
+        },
+        {
+          "value": "15min",
+          "label": "Incident response"
+        },
+        {
+          "value": "99.99%",
+          "label": "Uptime SLA"
+        },
+        {
+          "value": "60%",
+          "label": "Fewer incidents"
+        }
+      ],
+      "featuresTitle": "Our Services",
+      "features": [
+        {
+          "icon": "solar:monitor-smartphone-linear",
+          "title": "24/7 Monitoring & Alerting",
+          "description": "Real-time infrastructure monitoring with intelligent alerting and automated incident escalation."
+        },
+        {
+          "icon": "solar:shield-check-linear",
+          "title": "Security Patching",
+          "description": "Automated vulnerability scanning and timely patch management across all systems and dependencies."
+        },
+        {
+          "icon": "solar:refresh-circle-linear",
+          "title": "System Updates & Upgrades",
+          "description": "Scheduled OS, middleware, and application updates with rollback plans and zero-downtime strategies."
+        },
+        {
+          "icon": "solar:server-linear",
+          "title": "Server & Network Management",
+          "description": "Configuration management, capacity planning, and performance tuning for on-prem and cloud servers."
+        },
+        {
+          "icon": "solar:chat-round-dots-linear",
+          "title": "Help Desk & Support",
+          "description": "Dedicated support team for incident resolution, change requests, and technical guidance."
+        },
+        {
+          "icon": "solar:document-text-linear",
+          "title": "Documentation & Reporting",
+          "description": "Comprehensive infrastructure documentation, monthly health reports, and capacity forecasts."
+        }
+      ],
+      "processTitle": "How We Work",
+      "process": [
+        {
+          "step": "Step 01",
+          "title": "Infrastructure Audit",
+          "description": "Full assessment of your current environment, identifying risks and improvement opportunities."
+        },
+        {
+          "step": "Step 02",
+          "title": "Onboarding & Setup",
+          "description": "Deploying monitoring agents, configuring alerts, and establishing runbooks."
+        },
+        {
+          "step": "Step 03",
+          "title": "Proactive Management",
+          "description": "Continuous monitoring, automated maintenance, and preventive actions."
+        },
+        {
+          "step": "Step 04",
+          "title": "Reporting & Optimization",
+          "description": "Monthly reviews, cost optimization recommendations, and roadmap updates."
+        }
+      ],
+      "techTitle": "Tools & Platforms",
+      "technologies": [
+        { "name": "Prometheus", "icon": "logos:prometheus" },
+        { "name": "Grafana", "icon": "logos:grafana" },
+        { "name": "Datadog", "icon": "logos:datadog" },
+        { "name": "PagerDuty", "icon": "logos:pagerduty-icon" },
+        { "name": "Ansible", "icon": "logos:ansible" },
+        { "name": "Terraform", "icon": "logos:terraform-icon" },
+        { "name": "Linux", "icon": "logos:linux-tux" },
+        { "name": "Windows Server", "icon": "logos:microsoft-windows-icon" },
+        { "name": "VMware", "icon": "logos:vmware" },
+        { "name": "AWS", "icon": "logos:aws" },
+        { "name": "Zabbix", "icon": "simple-icons:zabbix" },
+        { "name": "Nginx", "icon": "logos:nginx" },
+        { "name": "Cloudflare", "icon": "logos:cloudflare-icon" }
+      ],
+      "ctaTitle": "Need Reliable IT Support?",
+      "ctaText": "Let us handle your infrastructure so you can focus on your business. Talk to our team about managed IT services."
+    },
+    "fullCycle": {
+      "icon": "solar:restart-circle-linear",
+      "title": "Full-Cycle Development",
+      "subtitle": "End-to-end project delivery covering every phase — from initial concept and design through development, deployment, and ongoing optimization.",
+      "overviewTitle": "One Team, Full Lifecycle",
+      "overviewText": "Full-cycle development means you get a single team that owns the entire project from start to finish. We handle discovery workshops, UX/UI design, frontend and backend development, QA testing, deployment, and post-launch support. This approach eliminates handoff friction, reduces communication overhead, and ensures consistent quality throughout your project.",
+      "stats": [
+        {
+          "value": "End-to-end",
+          "label": "Project ownership"
+        },
+        {
+          "value": "40%",
+          "label": "Faster delivery"
+        },
+        {
+          "value": "1 Team",
+          "label": "Single point of contact"
+        },
+        {
+          "value": "∞",
+          "label": "Post-launch support"
+        }
+      ],
+      "featuresTitle": "What's Included",
+      "features": [
+        {
+          "icon": "solar:magnifer-linear",
+          "title": "Discovery & Planning",
+          "description": "Stakeholder workshops, competitive analysis, and detailed project roadmaps before writing a single line of code."
+        },
+        {
+          "icon": "solar:pen-new-square-linear",
+          "title": "UX/UI Design",
+          "description": "User-centered design with wireframes, prototypes, and usability testing to validate every decision."
+        },
+        {
+          "icon": "solar:code-square-linear",
+          "title": "Full-Stack Development",
+          "description": "Frontend, backend, databases, and integrations — all built by a cohesive team using modern frameworks."
+        },
+        {
+          "icon": "solar:rocket-2-linear",
+          "title": "Deployment & DevOps",
+          "description": "CI/CD pipelines, staging environments, and zero-downtime deployments to production."
+        },
+        {
+          "icon": "solar:settings-linear",
+          "title": "Ongoing Maintenance",
+          "description": "Bug fixes, feature updates, performance monitoring, and security patches post-launch."
+        },
+        {
+          "icon": "solar:chart-2-linear",
+          "title": "Growth & Optimization",
+          "description": "Analytics-driven improvements, A/B testing, and scaling strategies as your product grows."
+        }
+      ],
+      "processTitle": "Project Phases",
+      "process": [
+        {
+          "step": "Phase 01",
+          "title": "Discovery",
+          "description": "Business analysis, user research, and project scoping to define a clear roadmap."
+        },
+        {
+          "step": "Phase 02",
+          "title": "Design & Prototype",
+          "description": "Interactive prototypes tested with real users before development begins."
+        },
+        {
+          "step": "Phase 03",
+          "title": "Build & Test",
+          "description": "Agile development with automated testing, code reviews, and biweekly demos."
+        },
+        {
+          "step": "Phase 04",
+          "title": "Launch & Evolve",
+          "description": "Production deployment, monitoring setup, and iterative improvements."
+        }
+      ],
+      "techTitle": "Our Stack",
+      "technologies": [
+        { "name": "React", "icon": "logos:react" },
+        { "name": "Node.js", "icon": "logos:nodejs-icon" },
+        { "name": "TypeScript", "icon": "logos:typescript-icon" },
+        { "name": "Python", "icon": "logos:python" },
+        { "name": "PostgreSQL", "icon": "logos:postgresql" },
+        { "name": "Docker", "icon": "logos:docker-icon" },
+        { "name": "AWS", "icon": "logos:aws" },
+        { "name": "Figma", "icon": "logos:figma" },
+        { "name": "GitHub Actions", "icon": "logos:github-actions" },
+        { "name": "Vercel", "icon": "logos:vercel-icon" },
+        { "name": "Kubernetes", "icon": "logos:kubernetes" },
+        { "name": "Terraform", "icon": "logos:terraform-icon" },
+        { "name": "Next.js", "icon": "logos:nextjs-icon" },
+        { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" }
+      ],
+      "ctaTitle": "Start Your Project",
+      "ctaText": "From idea to production with one dedicated team. Let's discuss your project scope and timeline."
+    },
+    "aiIntegration": {
+      "icon": "solar:magic-stick-3-linear",
+      "title": "AI Integration",
+      "subtitle": "Harness the power of machine learning, natural language processing, and intelligent automation to transform your business processes and decision-making.",
+      "overviewTitle": "AI That Delivers Business Value",
+      "overviewText": "We help organizations integrate AI and machine learning into their existing systems and workflows. From predictive analytics and natural language processing to computer vision and intelligent automation, our team builds production-ready AI solutions that solve real business problems. We focus on practical, measurable outcomes rather than hype — ensuring every AI initiative delivers tangible ROI.",
+      "stats": [
+        {
+          "value": "60%",
+          "label": "Process automation"
+        },
+        {
+          "value": "3x",
+          "label": "Decision speed"
+        },
+        {
+          "value": "85%",
+          "label": "Prediction accuracy"
+        },
+        {
+          "value": "40%",
+          "label": "Cost reduction"
+        }
+      ],
+      "featuresTitle": "AI Capabilities",
+      "features": [
+        {
+          "icon": "solar:magic-stick-3-linear",
+          "title": "Machine Learning Models",
+          "description": "Custom ML models for prediction, classification, recommendation, and anomaly detection use cases."
+        },
+        {
+          "icon": "solar:chat-round-dots-linear",
+          "title": "Natural Language Processing",
+          "description": "Text analysis, sentiment detection, chatbots, and document processing powered by NLP technologies."
+        },
+        {
+          "icon": "solar:eye-linear",
+          "title": "Computer Vision",
+          "description": "Image recognition, object detection, OCR, and visual inspection systems for quality and compliance."
+        },
+        {
+          "icon": "solar:chart-2-linear",
+          "title": "Predictive Analytics",
+          "description": "Data-driven forecasting for demand planning, churn prediction, and business intelligence."
+        },
+        {
+          "icon": "solar:settings-linear",
+          "title": "Intelligent Automation",
+          "description": "AI-powered workflow automation that handles repetitive tasks and augments human decision-making."
+        },
+        {
+          "icon": "solar:document-text-linear",
+          "title": "AI Strategy & Consulting",
+          "description": "Assessment of AI readiness, use case identification, and implementation roadmaps for your organization."
+        }
+      ],
+      "processTitle": "Our AI Approach",
+      "process": [
+        {
+          "step": "Step 01",
+          "title": "Use Case Discovery",
+          "description": "Identify high-impact AI opportunities within your business processes."
+        },
+        {
+          "step": "Step 02",
+          "title": "Data Assessment",
+          "description": "Evaluate data quality, availability, and pipeline requirements."
+        },
+        {
+          "step": "Step 03",
+          "title": "Model Development",
+          "description": "Build, train, and validate models with iterative feedback from stakeholders."
+        },
+        {
+          "step": "Step 04",
+          "title": "Deploy & Monitor",
+          "description": "Production deployment with MLOps, monitoring, and continuous model improvement."
+        }
+      ],
+      "techTitle": "AI Technologies",
+      "technologies": [
+        { "name": "Python", "icon": "logos:python" },
+        { "name": "TensorFlow", "icon": "logos:tensorflow" },
+        { "name": "PyTorch", "icon": "logos:pytorch-icon" },
+        { "name": "OpenAI", "icon": "simple-icons:openai" },
+        { "name": "LangChain", "icon": "simple-icons:langchain" },
+        { "name": "Hugging Face", "icon": "noto:hugging-face" },
+        { "name": "scikit-learn", "icon": "simple-icons:scikitlearn" },
+        { "name": "Apache Spark", "icon": "logos:apache-spark" },
+        { "name": "MLflow", "icon": "simple-icons:mlflow" },
+        { "name": "AWS SageMaker", "icon": "logos:aws" },
+        { "name": "Anthropic", "icon": "simple-icons:anthropic" },
+        { "name": "Pinecone", "icon": "simple-icons:pinecone" },
+        { "name": "FastAPI", "icon": "logos:fastapi-icon" },
+        { "name": "Jupyter", "icon": "logos:jupyter" }
+      ],
+      "ctaTitle": "Explore AI for Your Business",
+      "ctaText": "Not sure where to start with AI? Our team can help identify the highest-impact opportunities for your organization."
+    },
+    "consulting": {
+      "icon": "solar:users-group-two-rounded-linear",
+      "title": "IT Consulting",
+      "subtitle": "Strategic technology guidance to help you make informed decisions, reduce risk, and accelerate your digital transformation journey.",
+      "overviewTitle": "Expert Guidance, Measurable Impact",
+      "overviewText": "Our IT consulting services help organizations navigate technology decisions with confidence. Whether you're planning a cloud migration, modernizing legacy systems, evaluating new tools, or building an engineering team, our consultants bring deep technical expertise and business acumen. We provide actionable recommendations backed by industry best practices and real-world implementation experience.",
+      "stats": [
+        {
+          "value": "200+",
+          "label": "Clients advised"
+        },
+        {
+          "value": "15+",
+          "label": "Years experience"
+        },
+        {
+          "value": "30%",
+          "label": "Cost savings avg."
+        },
+        {
+          "value": "95%",
+          "label": "Client satisfaction"
+        }
+      ],
+      "featuresTitle": "Consulting Services",
+      "features": [
+        {
+          "icon": "solar:document-text-linear",
+          "title": "Technology Audit",
+          "description": "Comprehensive assessment of your current technology stack, architecture, and operational processes."
+        },
+        {
+          "icon": "solar:map-linear",
+          "title": "Digital Transformation Roadmap",
+          "description": "Strategic planning for technology modernization with clear milestones and measurable outcomes."
+        },
+        {
+          "icon": "solar:users-group-two-rounded-linear",
+          "title": "Team & Process Advisory",
+          "description": "Engineering team structure, hiring strategy, agile adoption, and development process optimization."
+        },
+        {
+          "icon": "solar:dollar-minimalistic-linear",
+          "title": "IT Budget Planning",
+          "description": "Technology investment planning, vendor evaluation, and total cost of ownership analysis."
+        },
+        {
+          "icon": "solar:shield-check-linear",
+          "title": "Compliance & Governance",
+          "description": "GDPR, SOC2, HIPAA compliance assessment and implementation guidance."
+        },
+        {
+          "icon": "solar:chart-2-linear",
+          "title": "Industry Benchmarking",
+          "description": "Compare your technology capabilities against industry peers and best-in-class organizations."
+        }
+      ],
+      "processTitle": "Engagement Model",
+      "process": [
+        {
+          "step": "Step 01",
+          "title": "Initial Assessment",
+          "description": "Understanding your current state, challenges, and strategic objectives."
+        },
+        {
+          "step": "Step 02",
+          "title": "Analysis & Findings",
+          "description": "Deep technical analysis with benchmarking against industry standards."
+        },
+        {
+          "step": "Step 03",
+          "title": "Recommendations",
+          "description": "Actionable roadmap with prioritized initiatives and expected outcomes."
+        },
+        {
+          "step": "Step 04",
+          "title": "Implementation Support",
+          "description": "Hands-on guidance during execution to ensure successful adoption."
+        }
+      ],
+      "techTitle": "Areas of Expertise",
+      "technologies": [
+        { "name": "Cloud Architecture", "icon": "logos:aws" },
+        { "name": "DevOps", "icon": "logos:github-actions" },
+        { "name": "Security", "icon": "solar:shield-check-bold" },
+        { "name": "Data Engineering", "icon": "logos:apache-spark" },
+        { "name": "AI/ML", "icon": "simple-icons:openai" },
+        { "name": "Microservices", "icon": "logos:kubernetes" },
+        { "name": "API Strategy", "icon": "logos:graphql" },
+        { "name": "GDPR", "icon": "solar:lock-bold" },
+        { "name": "SOC2", "icon": "solar:verified-check-bold" },
+        { "name": "Agile", "icon": "logos:jira" },
+        { "name": "Cost Optimization", "icon": "solar:wallet-money-bold" },
+        { "name": "Team Building", "icon": "solar:users-group-two-rounded-bold" },
+        { "name": "Architecture Review", "icon": "solar:code-square-bold" }
+      ],
+      "ctaTitle": "Book a Consultation",
+      "ctaText": "Get expert guidance on your technology strategy. Schedule a free consultation with our senior architects."
+    }
+  }
+}

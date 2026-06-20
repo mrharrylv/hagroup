@@ -1,0 +1,32 @@
+[
+  {
+    "key": "discovery",
+    "phase": "Phase 01",
+    "title": "Discovery",
+    "description": "Comprehensive analysis of your business objectives, existing technology stack, workflows, and operational challenges."
+  },
+  {
+    "key": "architecture",
+    "phase": "Phase 02",
+    "title": "Architecture",
+    "description": "Design of secure, scalable, and cost-efficient system architecture tailored to your long-term growth."
+  },
+  {
+    "key": "build",
+    "phase": "Phase 03",
+    "title": "Build",
+    "description": "Agile, iterative development using modern frameworks, best practices, and clean, maintainable code."
+  },
+  {
+    "key": "deploy",
+    "phase": "Phase 04",
+    "title": "Deploy",
+    "description": "Implementation of automated CI/CD pipelines to enable reliable, secure, and zero-downtime releases."
+  },
+  {
+    "key": "maintain",
+    "phase": "Phase 05",
+    "title": "Maintain",
+    "description": "Proactive 24/7 monitoring, security updates, performance optimization, and continuous system improvement."
+  }
+]

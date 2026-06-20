@@ -1,0 +1,19 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Career CV uploads — anyone may create files up to 5MB; no reads/updates/deletes from client
+    match /careers/{fileName} {
+      allow create: if request.resource.size < 5 * 1024 * 1024
+                    && request.resource.contentType.matches('application/(pdf|msword|vnd.openxmlformats-officedocument.wordprocessingml.document)');
+      allow read: if true;
+      allow update, delete: if false;
+    }
+
+    // Default: deny all
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

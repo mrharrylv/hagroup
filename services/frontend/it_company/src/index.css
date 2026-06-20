@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(:is(.dark, .dark *):not(.force-light, .force-light *)));
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* Smooth dark/light mode transition */
+html,
+html *,
+html *::before,
+html *::after {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, fill 0.3s ease;
+}
+
+/* Disable transition during page load to prevent flash */
+html.no-transition,
+html.no-transition *,
+html.no-transition *::before,
+html.no-transition *::after {
+  transition: none !important;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animated gradient text */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #8b5cf6,
+    #a78bfa,
+    #818cf8,
+    #6366f1
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s ease-in-out infinite;
+}
+
+/* Staggered fade/blur entrance */
+@keyframes blur-in {
+  0% {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.animate-blur-in {
+  animation: blur-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Floating badge glow */
+@keyframes float-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.15); transform: translateY(0); }
+  50% { box-shadow: 0 0 30px rgba(99, 102, 241, 0.3); transform: translateY(-2px); }
+}
+
+.animate-float-glow {
+  animation: float-glow 3s ease-in-out infinite;
+}
+
+/* Card-nav style dropdown animation */
+@keyframes dropdown-in {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.92) translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+.animate-dropdown-in {
+  animation: dropdown-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Staggered card slide-in for dropdown items */
+@keyframes card-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-slide-in {
+  animation: card-slide-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}

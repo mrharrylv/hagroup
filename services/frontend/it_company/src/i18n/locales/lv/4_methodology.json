@@ -1,0 +1,32 @@
+[
+  {
+    "key": "discovery",
+    "phase": "01. posms",
+    "title": "Izpēte",
+    "description": "Padziļināta jūsu biznesa mērķu, esošās tehnoloģiju infrastruktūras, darba plūsmu un operacionālo izaicinājumu analīze."
+  },
+  {
+    "key": "architecture",
+    "phase": "02. posms",
+    "title": "Arhitektūra",
+    "description": "Drošas, mērogojamas un izmaksu ziņā efektīvas sistēmas arhitektūras izstrāde, pielāgota ilgtermiņa izaugsmei."
+  },
+  {
+    "key": "build",
+    "phase": "03. posms",
+    "title": "Izstrāde",
+    "description": "Elastīga un iteratīva izstrāde, izmantojot modernus ietvarus, labākās prakses un tīru, uzturamu kodu."
+  },
+  {
+    "key": "deploy",
+    "phase": "04. posms",
+    "title": "Ieviešana",
+    "description": "Automatizētu CI/CD cauruļvadu ieviešana, nodrošinot drošas, uzticamas un bezdīkstāves relīzes."
+  },
+  {
+    "key": "maintain",
+    "phase": "05. posms",
+    "title": "Uzturēšana",
+    "description": "Proaktīva 24/7 uzraudzība, drošības atjauninājumi, veiktspējas optimizācija un nepārtraukta sistēmas pilnveide."
+  }
+]

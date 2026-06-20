@@ -1,0 +1,63 @@
+{
+  "title": "Build the Future With Us",
+  "subtitle": "Join a team of ambitious engineers, architects, and innovators building secure, scalable technology for the next generation of enterprises.",
+  "benefitsTitle": "Why Join Cloudie?",
+  "benefitsSubtitle": "We empower our people with competitive compensation, flexibility, and meaningful work on impactful, modern technology.",
+  "benefits": [
+    {
+      "key": "health",
+      "icon": "solar:heart-pulse-linear",
+      "title": "Health & Wellness",
+      "description": "Comprehensive medical coverage, wellness initiatives, and mental health support to help you thrive."
+    },
+    {
+      "key": "remote",
+      "icon": "solar:home-smile-linear",
+      "title": "Remote-First Culture",
+      "description": "Work from anywhere with flexible hours and outcome-focused collaboration."
+    },
+    {
+      "key": "growth",
+      "icon": "solar:graph-up-linear",
+      "title": "Career Growth",
+      "description": "Learning budgets, conference sponsorships, mentorship, and transparent promotion paths."
+    },
+    {
+      "key": "culture",
+      "icon": "solar:users-group-rounded-linear",
+      "title": "Inclusive Culture",
+      "description": "A supportive, diverse team where ideas are valued and collaboration is encouraged."
+    },
+    {
+      "key": "equipment",
+      "icon": "solar:laptop-minimalistic-linear",
+      "title": "Top-Tier Equipment",
+      "description": "High-performance laptop, premium peripherals, and any tools you need to do your best work."
+    },
+    {
+      "key": "global",
+      "icon": "solar:global-linear",
+      "title": "Global Impact",
+      "description": "Contribute to projects that power fintech, healthcare, and enterprise platforms used worldwide."
+    }
+  ],
+  "positionsTitle": "Open Positions",
+  "positionsSubtitle": "Discover current opportunities. Don’t see the right role? Send your CV anyway — we’re always excited to meet exceptional talent.",
+  "positions": [
+    {
+      "key": "juniorUxUi",
+      "value": "junior-ux-ui-developer",
+      "icon": "solar:palette-linear",
+      "title": "Junior UX/UI Developer",
+      "location": "Remote / Europe",
+      "type": "Full-time",
+      "department": "Design"
+    }
+  ],
+  "form": {
+    "title": "Apply to Join Our Team",
+    "subtitle": "Submit your application and we’ll respond within 5 business days. Every application is reviewed with care.",
+    "locationValue": "Remote, San Francisco, Europe",
+    "responseTimeValue": "Within 5 business days"
+  }
+}

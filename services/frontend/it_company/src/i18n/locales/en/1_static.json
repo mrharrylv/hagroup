@@ -1,0 +1,228 @@
+{
+  "nav": {
+    "services": "Services",
+    "work": "Work",
+    "ourWork": "Our Work",
+    "company": "Company",
+    "contactUs": "Contact Us",
+    "bookConsultation": "Schedule a Consultation",
+    "viewAllServices": "View All Services"
+  },
+  "hero": {
+    "badge": "Modern IT Solutions for Growing Businesses",
+    "titleLine1": "Technology That Powers",
+    "titleLine2": "Small & Medium Businesses.",
+    "description": "Practical cloud, DevOps, and custom software solutions designed to help small and medium-sized businesses scale securely, efficiently, and confidently.",
+    "ctaStart": "Start Your Project",
+    "ctaExplore": "Discover Our Services"
+  },
+  "techStack": {
+    "label": "Built on Trusted, Industry-Leading Technologies",
+    "more": "& more…"
+  },
+  "services": {
+    "title": "Complete Technology Solutions",
+    "subtitle": "Flexible IT services tailored to help small and medium-sized businesses streamline operations, improve security, and grow sustainably.",
+    "learnMore": "Learn More",
+    "backHome": "Back to Home",
+    "ctaTitle": "Need a Solution That Fits Your Business?",
+    "ctaText": "Let's discuss your goals and build a solution tailored to your company's size, budget, and growth plans."
+  },
+  "methodology": {
+    "title": "How We Work"
+  },
+  "work": {
+    "titlePrefix": "Our",
+    "titleAccent": "Projects",
+    "subtitle": "Real-world solutions delivered for ambitious small and medium businesses — explore our portfolio.",
+    "viewAll": "View All Case Studies"
+  },
+  "contact": {
+    "title": "Let's talk about your technology goals.",
+    "subtitle": "Whether you're planning a cloud move, building custom software, or improving your existing systems, we're here to support your growth.",
+    "email": "Email",
+    "phone": "Phone",
+    "hq": "Headquarters",
+    "form": {
+      "fullName": "Full Name",
+      "company": "Company",
+      "workEmail": "Business Email",
+      "projectBudget": "Project Budget",
+      "selectRange": "Select a range",
+      "projectDetails": "Project Overview",
+      "placeholder": {
+        "name": "Jane Doe",
+        "company": "Acme Corporation",
+        "email": "jane@acmecorp.com",
+        "message": "Tell us about your current setup, challenges, and what you'd like to achieve..."
+      },
+      "privacyConsent": "I agree to the <privacy>Privacy Policy</privacy> and consent to being contacted regarding my inquiry.",
+      "submit": "Send Request",
+      "submitting": "Sending…",
+      "successMessage": "Thank you! Your request has been received. We'll get back to you shortly.",
+      "errorMessage": "Something went wrong. Please try again or contact us directly via email.",
+      "rateLimitMessage": "Please wait {{seconds}}s before submitting again."
+    },
+    "orWhatsApp": "or message us directly",
+    "whatsAppCta": "Chat on WhatsApp"
+  },
+  "footer": {
+    "description": "Reliable IT infrastructure, cloud solutions, and custom software built specifically for small and medium-sized businesses.",
+    "services": {
+      "title": "Services",
+      "websiteDevelopment": "Website Development",
+      "systemDevelopment": "Custom System Development",
+      "cloudArchitecture": "Cloud Setup & Migration",
+      "devopsAutomation": "DevOps & Automation",
+      "itInfrastructure": "IT Infrastructure",
+      "fullCycle": "Full-Cycle Development",
+      "aiIntegration": "AI Integration",
+      "itConsulting": "IT Consulting"
+    },
+    "company": {
+      "title": "Company",
+      "aboutUs": "About Us",
+      "careers": "Careers",
+      "contact": "Contact",
+      "companyDetails": "Company Details"
+    },
+    "legal": {
+      "title": "Legal",
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy"
+    },
+    "copyright": "© 2026 Cloudie. All rights reserved.",
+    "status": "All systems operational"
+  },
+  "cookie": {
+    "title": "We Use Cookies",
+    "description": "We use cookies to ensure the best website experience and analyze traffic. Learn more in our <cookie>Cookie Policy</cookie>.",
+    "acceptAll": "Accept All",
+    "necessaryOnly": "Necessary Only",
+    "manageButton": "Manage Preferences",
+    "manageDescription": "You can update your cookie preferences at any time."
+  },
+  "whatsapp": {
+    "tooltip": "Chat with us on WhatsApp",
+    "ariaLabel": "Contact us on WhatsApp",
+    "defaultMessage": "Hi! I'm interested in your services. Can we discuss my business needs?"
+  },
+  "servicePages": {
+    "backToServices": "Back to Services",
+    "getStarted": "Get Started"
+  },
+  "careers": {
+    "backHome": "Back to Home",
+    "badge": "We're Hiring",
+    "applyNow": "Apply Now",
+    "form": {
+      "hrEmail": "HR Email",
+      "location": "Locations",
+      "responseTime": "Response Time",
+      "successMessage": "Thank you! Your application has been submitted. We'll review it and respond within 5 business days.",
+      "errorMessage": "Something went wrong. Please try again or contact us directly via email.",
+      "rateLimitMessage": "Please wait {{seconds}}s before submitting again.",
+      "submitting": "Submitting…",
+      "fields": {
+        "fullName": "Full Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "linkedin": "LinkedIn / Portfolio",
+        "position": "Position of Interest",
+        "selectPosition": "Select a position",
+        "otherPosition": "Other / General Application",
+        "resume": "Resume / CV",
+        "resumeHint": "PDF, DOC, or DOCX — maximum 5 MB",
+        "coverLetter": "Cover Letter / Message",
+        "privacyConsent": "I agree to the <privacy>Privacy Policy</privacy> and consent to having my data processed for recruitment purposes.",
+        "submit": "Submit Application"
+      },
+      "placeholder": {
+        "name": "Jane Doe",
+        "email": "jane@example.com",
+        "phone": "+1 (555) 000-0000",
+        "linkedin": "https://linkedin.com/in/janedoe",
+        "coverLetter": "Tell us about your background, experience, and why you'd like to join Cloudie..."
+      }
+    }
+  },
+  "reviews": {
+    "backHome": "Back to Home",
+    "title": "Client Testimonials",
+    "subtitle": "Feedback from small and medium-sized businesses we've partnered with.",
+    "featured": "Featured Testimonials",
+    "allReviews": "All Testimonials",
+    "ctaTitle": "Ready to Grow Your Business?",
+    "ctaText": "Join other growing companies that trust us with their technology. Let's build something great together.",
+    "ctaButton": "Contact Us"
+  },
+  "projects": {
+    "backHome": "Back to Home",
+    "title": "Our Projects",
+    "subtitle": "Solutions built to support growth, efficiency, and long-term success.",
+    "backToWork": "Back to Work",
+    "keyHighlights": "Key Highlights",
+    "techStack": "Technology Stack",
+    "whatWeDelivered": "What We Delivered",
+    "ctaTitle": "Have a Project in Mind?",
+    "ctaText": "Share your idea with us, and we'll help you turn it into a reliable, scalable solution.",
+    "ctaButton": "Start Your Project",
+    "visitSite": "Visit Website"
+  },
+  "about": {
+    "backHome": "Back to Home",
+    "title": "About Cloudie",
+    "subtitle": "Practical, scalable IT solutions designed specifically for small and medium-sized businesses.",
+    "mission": {
+      "title": "Our Mission",
+      "text": "To help small and medium-sized businesses leverage modern technology in a way that is affordable, secure, and built for sustainable growth."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "text": "To be the trusted technology partner for growing companies — delivering reliable infrastructure and software that evolves with their needs."
+    },
+    "values": {
+      "title": "Our Values",
+      "transparency": {
+        "icon": "solar:shield-check-linear",
+        "title": "Transparency",
+        "text": "Clear communication, honest expectations, and practical solutions."
+      },
+      "excellence": {
+        "icon": "solar:star-linear",
+        "title": "Excellence",
+        "text": "High-quality engineering tailored to real business needs."
+      },
+      "innovation": {
+        "icon": "solar:lightbulb-linear",
+        "title": "Innovation",
+        "text": "Smart use of modern tools to create efficient, future-ready systems."
+      },
+      "partnership": {
+        "icon": "solar:hand-shake-linear",
+        "title": "Partnership",
+        "text": "We grow with our clients and focus on long-term collaboration."
+      }
+    },
+    "ctaTitle": "Ready to Work Together?",
+    "ctaText": "Let's explore how we can support your company's next stage of growth.",
+    "ctaButton": "Get in Touch"
+  },
+  "companyDetails": {
+    "backToAbout": "Back to About",
+    "title": "Company Information",
+    "subtitle": "Official legal and registration details for Cloudie SIA.",
+    "fields": {
+      "companyName": "Company Name",
+      "regNumber": "Registration Number",
+      "vatNumber": "VAT Number",
+      "legalAddress": "Legal Address",
+      "email": "Email",
+      "bankLabel": "Bank"
+    }
+  },
+  "legal": {
+    "backHome": "Back to Home"
+  }
+}

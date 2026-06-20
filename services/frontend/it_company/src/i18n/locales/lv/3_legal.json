@@ -1,0 +1,132 @@
+{
+  "terms": {
+    "title": "Noteikumi un nosacījumi",
+    "lastUpdated": "2026-02-23",
+    "sections": [
+      {
+        "heading": "1. Noteikumu pieņemšana",
+        "content": "Piekļūstot vai izmantojot šo tīmekļa vietni, jūs piekrītat ievērot šos Noteikumus un nosacījumus. Ja nepiekrītat tiem, lūdzu, neizmantojiet šo vietni."
+      },
+      {
+        "heading": "2. Pakalpojuma būtība",
+        "content": "Cloudie sniedz IT infrastruktūras, mākoņarhitektūras, DevOps un programmatūras izstrādes pakalpojumus. Šī vietne ir informatīva un saziņas platforma. Pakalpojumi tiek sniegti “kā ir” un paredzēti likumīgai uzņēmējdarbības un personīgai lietošanai."
+      },
+      {
+        "heading": "3. Saziņas formas un datu iesniegšana",
+        "content": "Iesniedzot saziņas vai karjeras pieteikuma formu, jūsu sniegtā informācija — vārds, e-pasts, uzņēmums, projekta detaļas un citi lauki — tiek apkopota un uzglabāta, lai atbildētu uz jūsu pieprasījumu vai apstrādātu pieteikumu. Iesniegšana nozīmē piekrišanu datu apstrādei saskaņā ar mūsu Privātuma politiku."
+      },
+      {
+        "heading": "4. Pieļaujamā lietošana",
+        "content": "Jūs nedrīkstat ļaunprātīgi izmantot vietni vai pakalpojumus. Tas ietver izmantošanu nelikumīgiem mērķiem, traucēšanu vietnes darbībai vai automatizētu rīku izmantošanu datu iegūšanai bez atļaujas."
+      },
+      {
+        "heading": "5. Intelektuālais īpašums",
+        "content": "Viss vietnes saturs, tostarp teksti, grafikas, logotipi un programmatūra, pieder Cloudie un ir aizsargāts ar intelektuālā īpašuma tiesībām. Neatļauta reproducēšana, izplatīšana vai komerciāla izmantošana ir aizliegta."
+      },
+      {
+        "heading": "6. Atbildības ierobežojums",
+        "content": "Maksimālajā apmērā, ko atļauj likums, Cloudie neatbild par netiešiem, nejaušiem, īpašiem vai izrietošiem zaudējumiem, kas radušies, izmantojot vietni vai pakalpojumus."
+      },
+      {
+        "heading": "7. Pakalpojumu pieejamība",
+        "content": "Mēs cenšamies nodrošināt nepārtrauktu vietnes pieejamību, taču negarantējam nepārtrauktu piekļuvi. Funkcionalitāte un pakalpojumi var tikt mainīti vai pārtraukti bez iepriekšēja brīdinājuma."
+      },
+      {
+        "heading": "8. Piemērojamie tiesību akti",
+        "content": "Šos Noteikumus un nosacījumus regulē Latvijas Republikas tiesību akti."
+      },
+      {
+        "heading": "9. Izmaiņas noteikumos",
+        "content": "Cloudie patur tiesības jebkurā laikā atjaunināt šos noteikumus. Jaunākā versija vienmēr pieejama šajā lapā. Turpinot izmantot vietni, jūs piekrītat atjauninātajiem noteikumiem."
+      },
+      {
+        "heading": "10. Kontakti",
+        "content": "Jautājumu gadījumā par Noteikumiem un nosacījumiem sazinieties ar mums: info@cloudie.lv."
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privātuma politika",
+    "lastUpdated": "2026-02-23",
+    "sections": [
+      {
+        "heading": "1. Datu pārzinis",
+        "content": "Cloudie SIA ir personas datu pārzinis. Jautājumiem par datu apstrādi rakstiet uz info@cloudie.lv."
+      },
+      {
+        "heading": "2. Apkopotā informācija",
+        "content": "Mēs apkopojam informāciju, ko jūs brīvprātīgi sniedzat, aizpildot formas.\n\nSaziņas forma: pilns vārds, uzņēmums, e-pasts, projekta budžets, projekta detaļas, pārlūka valoda un lapas URL.\n\nKarjeras forma: pilns vārds, e-pasts, tālrunis, LinkedIn vai portfolio saite, amats un motivācijas vēstule.\n\nAbas formas reģistrē piekrišanas statusu un iesniegšanas laiku."
+      },
+      {
+        "heading": "3. Datu apstrādes mērķis",
+        "content": "Personas dati tiek apstrādāti, lai:\n\n• Atbildētu uz pieprasījumiem\n• Apstrādātu darba pieteikumus\n• Uzlabotu vietni un pakalpojumus\n• Analizētu lietojumu apkopotā veidā\n\nPersonas dati netiek pārdoti vai izmantoti reklāmas profilēšanai."
+      },
+      {
+        "heading": "4. Tiesiskais pamats",
+        "content": "Datu apstrāde balstās uz:\n\n• Jūsu piekrišanu\n• Cloudie leģitīmajām interesēm\n• Piemērojamo tiesību aktu prasībām"
+      },
+      {
+        "heading": "5. Datu glabāšana un drošība",
+        "content": "Dati tiek droši uzglabāti Google Cloud Firestore vidē ar šifrēšanu pārsūtīšanas un uzglabāšanas laikā. Saziņas dati tiek glabāti tik ilgi, cik nepieciešams. Karjeras pieteikumi — līdz 12 mēnešiem."
+      },
+      {
+        "heading": "6. Sīkdatnes",
+        "content": "Sīkdatnes tiek izmantotas, lai uzlabotu lietošanas pieredzi un analizētu vietnes apmeklējumu. Preferences iespējams pārvaldīt pārlūkprogrammā vai piekrišanas joslā."
+      },
+      {
+        "heading": "7. Trešo pušu pakalpojumi",
+        "content": "Dati var tikt kopīgoti ar Google Firebase / Firestore un analītikas pakalpojumu sniedzējiem ar jūsu piekrišanu."
+      },
+      {
+        "heading": "8. Jūsu tiesības (GDPR)",
+        "content": "Jums ir tiesības piekļūt saviem datiem, pieprasīt labošanu vai dzēšanu, ierobežot apstrādi, atsaukt piekrišanu un pieprasīt datu pārnesamību."
+      },
+      {
+        "heading": "9. Politikas izmaiņas",
+        "content": "Privātuma politika var tikt periodiski atjaunināta. Jaunākā versija vienmēr pieejama šajā lapā."
+      },
+      {
+        "heading": "10. Kontakti",
+        "content": "Jautājumiem par privātumu rakstiet uz info@cloudie.lv."
+      }
+    ]
+  },
+  "cookies": {
+    "title": "Sīkdatņu politika",
+    "lastUpdated": "2026-02-23",
+    "sections": [
+      {
+        "heading": "1. Kas ir sīkdatnes",
+        "content": "Sīkdatnes ir nelieli teksta faili, kas tiek saglabāti jūsu ierīcē, apmeklējot vietni."
+      },
+      {
+        "heading": "2. Kā mēs izmantojam sīkdatnes",
+        "content": "Sīkdatnes palīdz analizēt vietnes lietojumu, atcerēties preferences un uzlabot lietošanas pieredzi."
+      },
+      {
+        "heading": "3. Sīkdatņu veidi",
+        "content": "Obligātās sīkdatnes — nepieciešamas darbībai.\n\nAnalītiskās — anonīmai statistikai ar piekrišanu.\n\nFunkcionālās — personalizētām iespējām."
+      },
+      {
+        "heading": "4. Piekrišana",
+        "content": "Apmeklējot vietni, varat pieņemt visas vai tikai obligātās sīkdatnes."
+      },
+      {
+        "heading": "5. Trešo pušu sīkdatnes",
+        "content": "Dažas sīkdatnes var iestatīt trešās puses (piem., Google Analytics)."
+      },
+      {
+        "heading": "6. Glabāšanas termiņš",
+        "content": "Sīkdatnes var būt sesijas vai pastāvīgās atkarībā no to mērķa."
+      },
+      {
+        "heading": "7. Izmaiņas politikā",
+        "content": "Politika var tikt atjaunināta. Jaunākā versija pieejama šajā lapā."
+      },
+      {
+        "heading": "8. Kontakti",
+        "content": "Jautājumiem par sīkdatnēm: info@cloudie.lv."
+      }
+    ]
+  }
+}

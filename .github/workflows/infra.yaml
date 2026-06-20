@@ -1,0 +1,196 @@
+name: Terraform Infrastructure
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - prod
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: eu-north-1
+  TF_WORKING_DIR: infrastructure/terraform
+
+jobs:
+  validate-environment:
+    runs-on: ubuntu-latest
+    outputs:
+      proceed: ${{ steps.validate.outputs.proceed }}
+    steps:
+      - name: Validate deployment conditions
+        id: validate
+        run: |
+          ENV="${{ github.event.inputs.environment }}"
+          echo "Target environment: $ENV"
+
+          if [ "$ENV" = "prod" ]; then
+            if [[ "${{ github.ref }}" != refs/tags/* ]]; then
+              echo "⚠️ WARNING: PROD deployment requested without a Git tag"
+              echo "This deployment is from ref: ${{ github.ref }}"
+            fi
+          fi
+
+          echo "proceed=true" >> $GITHUB_OUTPUT
+          echo "✅ Environment validation passed for: $ENV"
+
+  plan-apply:
+    needs: validate-environment
+    if: needs.validate-environment.outputs.proceed == 'true'
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Display environment info
+        run: |
+          echo "=============================================="
+          echo "🎯 ENVIRONMENT: ${{ github.event.inputs.environment }}"
+          echo "📍 Git Ref: ${{ github.ref }}"
+          echo "🔖 Git SHA: ${{ github.sha }}"
+          echo "=============================================="
+
+      - name: Configure AWS OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::561341419749:role/github-oidc-hagroup-${{ github.event.inputs.environment }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
+
+      - name: Terraform Init
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: |
+          terraform init \
+            -backend-config="key=${{ github.event.inputs.environment }}/terraform.tfstate"
+
+      - name: Import existing OAC if not in state
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: |
+          ENV="${{ github.event.inputs.environment }}"
+          OAC_NAME="${ENV}-hagroup-oac"
+
+          # Check if already tracked in state
+          if terraform state show aws_cloudfront_origin_access_control.website > /dev/null 2>&1; then
+            echo "OAC already in state, skipping import."
+            exit 0
+          fi
+
+          echo "OAC not in state — looking up '${OAC_NAME}' in AWS..."
+          # Use | [0].Id so the result is a scalar: the ID string, or "None" if not found.
+          OAC_ID=$(aws cloudfront list-origin-access-controls \
+            --query "OriginAccessControlList.Items[?Name=='${OAC_NAME}'] | [0].Id" \
+            --output text)
+
+          echo "AWS lookup result: '${OAC_ID}'"
+
+          if [ -z "$OAC_ID" ] || [ "$OAC_ID" = "None" ]; then
+            echo "OAC '${OAC_NAME}' not found in AWS — Terraform will create it."
+            exit 0
+          fi
+
+          echo "Importing OAC '${OAC_NAME}' (id: ${OAC_ID}) into state..."
+          terraform import \
+            -var-file="environments/${ENV}.tfvars" \
+            aws_cloudfront_origin_access_control.website "$OAC_ID"
+
+      - name: Terraform Plan
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: |
+          terraform plan \
+            -var-file="environments/${{ github.event.inputs.environment }}.tfvars" \
+            -input=false \
+            -out=tfplan
+
+      - name: Terraform Apply
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: |
+          echo "🚀 Applying Terraform changes for ${{ github.event.inputs.environment }}..."
+          terraform apply -input=false -auto-approve tfplan
+
+      - name: Output Infrastructure Info
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: |
+          echo "=============================================="
+          echo "📋 INFRASTRUCTURE OUTPUTS"
+          echo "=============================================="
+          terraform output
+          echo ""
+
+          DOMAIN=$(terraform output -raw domain_name 2>/dev/null || echo "")
+          PHASE=$(terraform output -raw custom_domain_phase 2>/dev/null || echo "")
+          if [ -z "$DOMAIN" ]; then
+            echo "=============================================="
+            echo "ℹ️  No custom domain configured for this environment."
+            echo "    Site URL: $(terraform output -raw website_url)"
+            echo "=============================================="
+            exit 0
+          fi
+
+          CF_DOMAIN=$(terraform output -raw cloudfront_domain_name)
+
+          echo "=============================================="
+          echo "📌 ROLLOUT PHASE: $PHASE"
+          echo "    Domain: $DOMAIN"
+          echo "    CloudFront: $CF_DOMAIN"
+          echo "=============================================="
+          echo ""
+
+          if [ "$PHASE" = "phase_1_cert_only" ]; then
+            echo "Phase 1 complete. Site is live on the default CloudFront URL."
+            echo "Add the CNAME records below at your DNS provider, then re-run"
+            echo "this workflow with enable_custom_domain=true (phase 2)."
+          elif [ "$PHASE" = "phase_2_alias_attached" ]; then
+            echo "Phase 2 complete. Custom domain alias is attached."
+            echo "If DNS records below are already in place, the site is live at"
+            echo "https://$DOMAIN (allow CloudFront ~5–10 min to deploy)."
+          fi
+
+          echo ""
+          echo "=============================================="
+          echo "📌 DNS RECORDS REQUIRED at your DNS provider"
+          echo "=============================================="
+          echo "Trailing dots are shown for clarity; most DNS UIs strip them."
+          echo ""
+
+          # Pretty table from the consolidated dns_records_required output
+          terraform output -json dns_records_required | jq -r '
+            (["#","PURPOSE","TYPE","NAME","VALUE","TTL"] | @tsv),
+            (["-","-------","----","----","-----","---"] | @tsv),
+            (to_entries[] | [(.key+1|tostring), .value.purpose, .value.type, .value.name, .value.value, (.value.ttl|tostring)] | @tsv)
+          ' | column -t -s $'\t'
+
+          echo ""
+          echo "----------------------------------------------"
+          echo "Zone file format (paste into BIND-style zones):"
+          echo "----------------------------------------------"
+          terraform output -json dns_records_required | jq -r '
+            .[] | "\(.name)\t\(.ttl)\tIN\t\(.type)\t\(.value)"
+          '
+
+          echo ""
+          echo "=============================================="
+          echo "✅ Verification (run after DNS propagates, ~5–30 min)"
+          echo "=============================================="
+          echo "  dig +short CNAME $DOMAIN"
+          echo "    expected → $CF_DOMAIN."
+          echo ""
+          echo "  aws acm list-certificates --region us-east-1 \\"
+          echo "    --query \"CertificateSummaryList[?DomainName=='$DOMAIN'].[Status]\" --output text"
+          echo "    expected → ISSUED"
+          echo ""
+          echo "  curl -I https://$DOMAIN"
+          echo "    expected → HTTP/2 200 (after deploy workflow uploads files)"
+          echo "=============================================="

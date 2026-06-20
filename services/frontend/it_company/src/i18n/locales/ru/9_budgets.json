@@ -1,0 +1,6 @@
+[
+  { "value": "under-10k", "label": "До €10k" },
+  { "value": "10k-50k", "label": "€10k – €50k" },
+  { "value": "50k-100k", "label": "€50k – €100k" },
+  { "value": "100k+", "label": "€100k+" }
+]

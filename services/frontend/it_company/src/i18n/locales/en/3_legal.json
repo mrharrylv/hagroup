@@ -1,0 +1,132 @@
+{
+  "terms": {
+    "title": "Terms & Conditions",
+    "lastUpdated": "2026-02-23",
+    "sections": [
+      {
+        "heading": "1. Acceptance of Terms",
+        "content": "By accessing or using this website, you agree to comply with and be bound by these Terms & Conditions. If you do not agree to these terms, please refrain from using the website."
+      },
+      {
+        "heading": "2. Nature of the Service",
+        "content": "Cloudie provides IT infrastructure, cloud architecture, DevOps, and software engineering services. This website is an informational and contact platform. Services are offered \"as is\" and are intended for lawful business and personal use."
+      },
+      {
+        "heading": "3. Contact Forms & Data Submission",
+        "content": "When submitting a contact or career application form, the information you provide—including name, email, company, project details, and other fields—is collected and stored for the purpose of responding to your inquiry or processing your application. Submission constitutes consent to data processing as outlined in our Privacy Policy."
+      },
+      {
+        "heading": "4. Acceptable Use",
+        "content": "You must not misuse the website or services. This includes using the website for unlawful purposes, interfering with its operation, or using automated tools to collect data without permission."
+      },
+      {
+        "heading": "5. Intellectual Property",
+        "content": "All content on this website, including text, graphics, logos, and software, is owned by Cloudie and protected under intellectual property laws. Unauthorized reproduction, distribution, or commercial use is prohibited."
+      },
+      {
+        "heading": "6. Limitation of Liability",
+        "content": "To the maximum extent permitted by law, Cloudie shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the website or services."
+      },
+      {
+        "heading": "7. Service Availability",
+        "content": "We aim to maintain continuous website availability but do not guarantee uninterrupted access. Website features and services may be modified or discontinued at any time without notice."
+      },
+      {
+        "heading": "8. Governing Law",
+        "content": "These Terms & Conditions are governed by the laws of the Republic of Latvia, without regard to its conflict of law provisions."
+      },
+      {
+        "heading": "9. Changes to Terms",
+        "content": "Cloudie reserves the right to update these terms at any time. The latest version is always available on this page. Continued use of the website constitutes acceptance of the updated terms."
+      },
+      {
+        "heading": "10. Contact",
+        "content": "For questions about these Terms & Conditions, please contact us at info@cloudie.lv."
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "2026-02-23",
+    "sections": [
+      {
+        "heading": "1. Data Controller",
+        "content": "Cloudie SIA is the data controller responsible for processing your personal data. For inquiries or requests regarding your data, contact info@cloudie.lv."
+      },
+      {
+        "heading": "2. Information We Collect",
+        "content": "We collect personal information you voluntarily provide through website forms:\n\nContact Form: full name, company name, email address, project budget, project details, browser language, and page URL.\n\nCareer Application Form: full name, email, phone number, LinkedIn or portfolio URL, position applied for, and cover letter.\n\nBoth forms record your consent status and submission timestamp. We do not collect additional data beyond what you provide."
+      },
+      {
+        "heading": "3. Purpose of Data Processing",
+        "content": "We process personal data to:\n\n• Respond to project inquiries and consultation requests\n• Process career applications and contact applicants\n• Improve our website and services\n• Analyze website usage in aggregated form\n\nWe do not sell personal data or use it for advertising profiling."
+      },
+      {
+        "heading": "4. Legal Basis",
+        "content": "Data processing is based on:\n\n• Your explicit consent (via form submission or cookies acceptance)\n• Cloudie's legitimate interests (responding to inquiries, improving services)\n• Compliance with applicable legal obligations"
+      },
+      {
+        "heading": "5. Data Storage & Security",
+        "content": "Personal data is stored securely in Google Cloud Firestore. Industry-standard measures, including encryption in transit and at rest, protect against unauthorized access or disclosure.\n\nContact form data is retained as long as needed to respond. Career applications are stored up to 12 months. You may request deletion at any time."
+      },
+      {
+        "heading": "6. Cookies & Tracking",
+        "content": "Cookies and similar technologies are used to enhance browsing, analyze traffic, and understand visitor sources. You can manage cookie preferences via your browser or our consent banner. See our Cookie Policy for details."
+      },
+      {
+        "heading": "7. Third-Party Services",
+        "content": "We may share data with:\n\n• Google Firebase / Firestore (storage and hosting)\n• Analytics providers (with consent)\n\nThe website may include links to third-party sites. Cloudie is not responsible for their privacy practices. Personal data is not shared with third parties for marketing purposes."
+      },
+      {
+        "heading": "8. Your Rights (GDPR)",
+        "content": "Under GDPR, you can:\n\n• Access your personal data\n• Request correction or deletion\n• Restrict or object to processing\n• Request data portability\n• Withdraw consent at any time\n\nContact info@cloudie.lv to exercise these rights. Requests will be handled within 30 days."
+      },
+      {
+        "heading": "9. Changes to This Policy",
+        "content": "We may update this Privacy Policy periodically. Updates will be posted on this page with a revised date. The latest version is always available here."
+      },
+      {
+        "heading": "10. Contact",
+        "content": "Questions about this Privacy Policy or exercising your data rights? Contact info@cloudie.lv."
+      }
+    ]
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "lastUpdated": "2026-02-23",
+    "sections": [
+      {
+        "heading": "1. What Are Cookies",
+        "content": "Cookies are small text files stored on your device when visiting a website. They help websites function efficiently and provide information to site owners."
+      },
+      {
+        "heading": "2. How We Use Cookies",
+        "content": "We use cookies to understand website interactions, remember preferences (language, theme), and improve your experience. Analytics cookies may collect anonymized usage statistics with your consent."
+      },
+      {
+        "heading": "3. Types of Cookies We Use",
+        "content": "Essential Cookies: Required for website functionality (security, accessibility, consent settings).\n\nAnalytics Cookies: With consent, used to collect anonymous interaction data for statistical purposes.\n\nFunctional Cookies: Enable personalized features, like remembering language or theme selections."
+      },
+      {
+        "heading": "4. Consent and Management",
+        "content": "Upon visiting, you can accept all cookies or only essential ones. Preferences can be changed anytime via browser settings or our cookie management options. Disabling cookies may affect website functionality."
+      },
+      {
+        "heading": "5. Third-Party Cookies",
+        "content": "Some cookies are set by third parties (e.g., Google Analytics) with your consent. These parties handle data per their policies. We do not control third-party cookies and recommend reviewing their policies."
+      },
+      {
+        "heading": "6. Cookie Storage Period",
+        "content": "Cookies may persist for the session only (session cookies) or a set period (persistent cookies). Storage durations depend on type and purpose; consult third-party documentation for details."
+      },
+      {
+        "heading": "7. Changes to This Policy",
+        "content": "This Cookie Policy may be updated periodically. Changes are posted here with a revised date. The latest version is always available on this page."
+      },
+      {
+        "heading": "8. Contact",
+        "content": "For questions about cookies, contact info@cloudie.lv."
+      }
+    ]
+  }
+}

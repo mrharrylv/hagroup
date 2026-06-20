@@ -1,0 +1,132 @@
+name: CloudFront Toggle
+
+# Turn the CloudFront distribution on or off without touching DNS.
+#
+# state=off → the distribution is DISABLED: it stops serving and incurs no
+#             request/data-transfer charges. The distribution, its CloudFront
+#             domain name, aliases and ACM certificate are all PRESERVED, so no
+#             DNS records change.
+# state=on  → the distribution is re-enabled and serves on the exact same URLs.
+#
+# This is the cheap "stop the site" switch — unlike infra-destroy, which deletes
+# the distribution and would force the DNS/CNAME records to be recreated.
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - prod
+      state:
+        description: "Turn CloudFront on or off"
+        required: true
+        default: "off"
+        type: choice
+        options:
+          - "on"
+          - "off"
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: eu-north-1
+  TF_WORKING_DIR: infrastructure/terraform
+
+jobs:
+  toggle:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve desired state
+        id: resolve
+        run: |
+          ENV="${{ github.event.inputs.environment }}"
+          STATE="${{ github.event.inputs.state }}"
+          if [ "$STATE" = "on" ]; then
+            ENABLED=true
+          else
+            ENABLED=false
+          fi
+          echo "enabled=$ENABLED" >> "$GITHUB_OUTPUT"
+          echo "=============================================="
+          echo "🎯 ENVIRONMENT: $ENV"
+          echo "🔁 CloudFront desired state: $STATE (cloudfront_enabled=$ENABLED)"
+          echo "=============================================="
+
+      - name: Configure AWS OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::561341419749:role/github-oidc-hagroup-${{ github.event.inputs.environment }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
+
+      - name: Terraform Init
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: |
+          terraform init \
+            -backend-config="key=${{ github.event.inputs.environment }}/terraform.tfstate"
+
+      - name: Import existing OAC if not in state
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: |
+          ENV="${{ github.event.inputs.environment }}"
+          OAC_NAME="${ENV}-hagroup-oac"
+
+          # Check if already tracked in state
+          if terraform state show aws_cloudfront_origin_access_control.website > /dev/null 2>&1; then
+            echo "OAC already in state, skipping import."
+            exit 0
+          fi
+
+          echo "OAC not in state — looking up '${OAC_NAME}' in AWS..."
+          OAC_ID=$(aws cloudfront list-origin-access-controls \
+            --query "OriginAccessControlList.Items[?Name=='${OAC_NAME}'] | [0].Id" \
+            --output text)
+
+          if [ -z "$OAC_ID" ] || [ "$OAC_ID" = "None" ]; then
+            echo "OAC '${OAC_NAME}' not found in AWS — Terraform will create it."
+            exit 0
+          fi
+
+          echo "Importing OAC '${OAC_NAME}' (id: ${OAC_ID}) into state..."
+          terraform import \
+            -var-file="environments/${ENV}.tfvars" \
+            aws_cloudfront_origin_access_control.website "$OAC_ID"
+
+      - name: Terraform Apply (toggle CloudFront)
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: |
+          terraform apply \
+            -var-file="environments/${{ github.event.inputs.environment }}.tfvars" \
+            -var="cloudfront_enabled=${{ steps.resolve.outputs.enabled }}" \
+            -input=false \
+            -auto-approve
+
+      - name: Result
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: |
+          echo "=============================================="
+          echo "✅ CloudFront is now: ${{ github.event.inputs.state }}"
+          echo "=============================================="
+          echo "Distribution, CloudFront domain, aliases and ACM cert are preserved."
+          echo "No DNS changes required. CloudFront takes ~5–15 min to fully deploy"
+          echo "the new state across edge locations."
+          CF_DOMAIN=$(terraform output -raw cloudfront_domain_name 2>/dev/null || echo "")
+          if [ -n "$CF_DOMAIN" ]; then
+            echo "CloudFront domain: $CF_DOMAIN"
+          fi
+          echo "=============================================="

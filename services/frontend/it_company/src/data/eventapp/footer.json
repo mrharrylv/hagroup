@@ -1,0 +1,354 @@
+{
+  "aboutUs": "About us",
+  "aboutUsContent": "Your ultimate destination for discovering and attending amazing events.",
+  "aboutPage": {
+    "title": "About Us",
+    "intro": "EventApp is an event discovery platform in Latvia that helps you find information about what's happening around you — all in one place. Our goal is to make searching for events fast, simple, and convenient.",
+    "whoWeAre": {
+      "title": "Who We Are",
+      "content": "We are a small team in Latvia building a tool for people who want to easily discover interesting events."
+    },
+    "whatWeDo": {
+      "title": "What We Do",
+      "content": "EventApp aggregates publicly available event information from various sources and presents it in a structured, searchable format.",
+      "subtitle": "The platform allows you to:",
+      "items": [
+        "browse events in one place",
+        "filter by categories and interests",
+        "find the key details about an event",
+        "go directly to the original event or ticketing page"
+      ],
+      "closing": "We don't sell tickets and we don't organise events — we help you find them."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content": "Our mission is to become the most convenient event discovery platform in Latvia — helping people more easily find activities that interest them and bring them together.\nWe believe that access to event information should be simple, free, and open to everyone."
+    },
+    "footer": "All event information displayed on EventApp is sourced from publicly available third-party websites and is provided for informational purposes only."
+  },
+  "helpCenter": "Help center",
+  "helpCenterContent": "Find answers to frequently asked questions and get support for using our platform.",
+  "contact": "Contact us",
+  "contactContent": "Have questions or need assistance? Reach out to our support team.",
+  "contactEmail": "eventapplv@gmail.com",
+  "contactPage": {
+    "title": "Contact Us",
+    "intro": "Have a question, suggestion, or noticed something that doesn't look right? We'd love to hear from you.",
+    "email": {
+      "title": "Email",
+      "content": "For general enquiries, questions, or partnership proposals, send us an email:"
+    },
+    "feedback": {
+      "title": "Feedback",
+      "content": "Want to share your thoughts about the platform, report an issue, or suggest an improvement? Use our feedback form.",
+      "link": "Open feedback form \u2192"
+    },
+    "footer": "We aim to respond to all messages within a few working days. Thank you for helping us improve."
+  },
+  "privacy": "Privacy Policy",
+  "privacyContent": "Your privacy is important to us. This policy explains how we collect, use, and protect your personal information when you use our services.",
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "section1": {
+      "title": "1. Introduction",
+      "content": "This Privacy Policy explains how personal data is processed when using this event aggregation platform (hereinafter – the Service).\nThe Service aggregates publicly available information about events from third-party websites and provides links to the original sources. We do not sell tickets and do not organize events."
+    },
+    "section2": {
+      "title": "2. Data Controller",
+      "content": "The data controller for the processing of personal data is the operator of the Service.\nAt this stage, the Service is developed in a pre-incorporation phase. Full legal details will be added once the legal entity is formally established.\nFor questions or requests related to personal data processing, please contact us using the contact information provided on the Service’s contact page."
+    },
+    "section3": {
+      "title": "3. What Data Is Processed",
+      "subsection1": {
+        "title": "3.1. Publicly Available Event Data",
+        "content": "The Service aggregates publicly available information about events, including:",
+        "items": [
+          "event name and description",
+          "date and time",
+          "venue",
+          "category",
+          "links to the original event or ticketing website"
+        ],
+        "footer": "This information remains the property of the respective sources and is used for informational purposes only."
+      },
+      "subsection2": {
+        "title": "3.2. User Accounts",
+        "content": "If a user creates an account, the following data may be processed:",
+        "items": [
+          "email address",
+          "user-selected name or display name"
+        ],
+        "footer": "Authentication is provided by a third-party service. Passwords are not stored by the Service."
+      },
+      "subsection3": {
+        "title": "3.3. Local / Anonymous Users",
+        "content": "Certain features of the Service can be used without creating an account. In such cases:",
+        "items": [
+          "an email address is not required",
+          "the user may provide any name or identifier",
+          "there is no requirement to provide real-world identity information"
+        ]
+      },
+      "subsection4": {
+        "title": "3.4. Saved Events and Plans",
+        "content": "Users may:",
+        "items": [
+          "mark events",
+          "save selected events",
+          "create plans that combine multiple events"
+        ],
+        "footer": "Plans are private by default and become accessible to others only if the user intentionally shares them using a private link."
+      },
+      "subsection5": {
+        "title": "3.5. Analytics Data",
+        "content": "With the user’s consent, analytics tools are used within the Service to:",
+        "items": [
+          "analyze page visits",
+          "understand general usage trends",
+          "determine an approximate location (for example, country or city) based on IP address"
+        ],
+        "footer": "This data is used exclusively for aggregated statistical purposes and is not used for user profiling or marketing."
+      }
+    },
+    "section4": {
+      "title": "4. Cookies",
+      "content": "The Service uses:",
+      "items": [
+        "essential cookies required for the proper functioning of the Service",
+        "analytics cookies, which are used only with the user’s consent"
+      ],
+      "footer": "Users may change or withdraw their cookie consent at any time.\nAdditional details are available in the Cookie Policy."
+    },
+    "section5": {
+      "title": "5. Purpose of Personal Data Processing",
+      "content": "Personal data is processed in order to:",
+      "items": [
+        "ensure the operation of the Service",
+        "display event-related information",
+        "enable users to save events and create plans",
+        "provide user authentication",
+        "analyze Service usage in aggregated form"
+      ],
+      "footer": "Personal data is not sold and is not used for advertising or marketing profiling."
+    },
+    "section6": {
+      "title": "6. Legal Basis",
+      "content": "Personal data is processed based on:",
+      "items": [
+        "the provision of the Service",
+        "the legitimate interests of the Service operator",
+        "the user’s consent (for example, for analytics cookies)"
+      ]
+    },
+    "section7": {
+      "title": "7. Data Retention Periods",
+      "items": [
+        "Data related to non-logged-in users is retained for up to 30 days",
+        "Account-related data is retained for up to 1 year after user inactivity",
+        "Users may request deletion of their data at any time"
+      ]
+    },
+    "section8": {
+      "title": "8. Third-Party Data Sharing",
+      "content": "Personal data may be shared with:",
+      "items": [
+        "authentication service providers",
+        "analytics service providers (with user consent)",
+        "hosting and infrastructure service providers"
+      ],
+      "footer": "Personal data is not shared with event organizers or ticket sellers, except where the user voluntarily navigates to an external website."
+    },
+    "section9": {
+      "title": "9. User Rights",
+      "content": "Users have the right to:",
+      "items": [
+        "access their personal data",
+        "request correction or deletion of data",
+        "withdraw previously given consent",
+        "object to certain types of data processing"
+      ],
+      "footer": "Requests may be submitted using the contact information provided by the Service."
+    },
+    "section10": {
+      "title": "10. Policy Changes",
+      "content": "This Privacy Policy may be updated from time to time. The current version is always available within the Service."
+    }
+  },
+  "cookies": "Cookie Policy",
+  "cookiesContent": "Learn how we use cookies to improve your experience on our platform.",
+  "terms": "Terms of Service",
+  "termsContent": "By using EventApp, you agree to these terms and conditions. Please read them carefully before using our platform.",
+  "termsPolicy": {
+    "title": "TERMS OF SERVICE",
+    "lastUpdated": "Last updated: [DATE]",
+    "section1": {
+      "title": "1. General Information",
+      "content": "These Terms of Service set out the rules for using this event aggregation platform (hereinafter – the Service).\nBy using the Service, the user confirms that they have read and agree to these terms."
+    },
+    "section2": {
+      "title": "2. Nature of the Service",
+      "content": "The Service:",
+      "items": [
+        "aggregates publicly available information about events from third-party websites",
+        "provides an informational list of events and links to external sources"
+      ],
+      "footer": "The Service does not organize events, does not sell tickets, and is not an event organizer or ticket seller. All event information is provided for informational purposes only."
+    },
+    "section3": {
+      "title": "3. Third-Party Content and Links",
+      "content": "The Service displays information obtained from third-party sources. We are not responsible for:",
+      "items": [
+        "changes to or cancellation of events",
+        "accuracy of information in external sources",
+        "ticket availability, prices, or purchase terms"
+      ],
+      "footer": "When navigating to third-party sites, users are subject to the terms of those sites."
+    },
+    "section4": {
+      "title": "4. User Accounts",
+      "content": "Some features of the Service may only be available to users with an account. The user is responsible for:",
+      "items": [
+        "the security of their access credentials",
+        "activities performed using their account"
+      ]
+    },
+    "section5": {
+      "title": "5. Saved Events and Plans",
+      "content": "Users may:",
+      "items": [
+        "save events",
+        "create plans combining multiple events"
+      ],
+      "footer": "Plans are private by default. If a user chooses to share a plan, it becomes accessible to those who have the link, and the user is responsible for the shared information. Users are advised not to include sensitive information in shared plans."
+    },
+    "section6": {
+      "title": "6. Acceptable Use",
+      "content": "Users are prohibited from:",
+      "items": [
+        "using the Service for unlawful purposes",
+        "interfering or attempting to interfere with the Service's operation",
+        "using automated tools to extract data without permission"
+      ]
+    },
+    "section7": {
+      "title": "7. Service Availability",
+      "content": "We strive to ensure continuous operation of the Service, but do not guarantee that the Service will always be available without interruption. The Service's functionality may be changed or discontinued at any time."
+    },
+    "section8": {
+      "title": "8. Limitation of Liability",
+      "content": "To the extent permitted by applicable law:",
+      "items": [
+        "we are not liable for losses arising from event cancellations, changes, or ticket purchases",
+        "we do not accept responsibility for third-party services or sites"
+      ]
+    },
+    "section9": {
+      "title": "9. Intellectual Property",
+      "content": "The structure, design, and content of the Service (excluding third-party content) are protected by intellectual property rights. Reproducing or distributing Service content without prior permission is not permitted."
+    },
+    "section10": {
+      "title": "10. Changes to Terms",
+      "content": "These Terms of Service may be updated. The current version of the terms is always available in the Service. By continuing to use the Service after changes are published, the user agrees to the updated terms."
+    },
+    "section11": {
+      "title": "11. Contact Information",
+      "content": "For questions about using the Service, please contact us using the information provided on the Service's contact page."
+    }
+  },
+  "cookiePolicy": {
+    "title": "Cookie Policy",
+    "section1": {
+      "title": "1. What Are Cookies",
+      "content": "Cookies are small text files that are stored on a user’s device when visiting a website. They are used to ensure the website functions properly, enhance user experience, and collect statistical information."
+    },
+    "section2": {
+      "title": "2. What Cookies We Use",
+      "content": "The Service uses the following categories of cookies:",
+      "subsection1": {
+        "title": "2.1. Essential Cookies",
+        "content": "These cookies are necessary for the proper functioning of the Service. They enable, for example:",
+        "items": [
+          "session management",
+          "security",
+          "basic Service functionality"
+        ],
+        "footer": "These cookies do not require user consent, as the Service cannot operate correctly without them."
+      },
+      "subsection2": {
+        "title": "2.2. Analytics Cookies",
+        "content": "With the user’s consent, the Service uses analytics cookies to:",
+        "items": [
+          "analyze page visits",
+          "understand general Service usage trends",
+          "improve the functionality of the Service"
+        ],
+        "footer": "Analytics cookies are used exclusively for statistical purposes and are not used for user profiling or marketing."
+      }
+    },
+    "section3": {
+      "title": "3. Third-Party Cookies",
+      "content": "The Service may use third-party cookies, such as cookies provided by analytics service providers (for example, Google Analytics), only with the user’s consent.",
+      "footer": "These third parties may process information in accordance with their own privacy policies."
+    },
+    "section4": {
+      "title": "4. Consent and Withdrawal",
+      "content": "When first visiting the Service, the user is offered the option to:",
+      "items": [
+        "consent to the use of analytics cookies",
+        "decline analytics cookies"
+      ],
+      "footer": "The user may change their choice at any time or withdraw previously given consent using the cookie settings or the relevant link available in the Service."
+    },
+    "section5": {
+      "title": "5. Cookie Storage Period",
+      "content": "Cookies may be stored:",
+      "items": [
+        "only for the duration of the browsing session",
+        "for a specific period, depending on their type and purpose"
+      ],
+      "footer": "Detailed information about individual cookie storage periods is available in the relevant third-party documentation."
+    },
+    "section6": {
+      "title": "6. Changes to the Cookie Policy",
+      "content": "This Cookie Policy may be updated from time to time. The current version is always available within the Service."
+    },
+    "cookieSettings": {
+      "title": "Your Cookie Settings",
+      "essentialLabel": "Essential Cookies",
+      "essentialDescription": "Required for the Service to function properly. Always active.",
+      "analyticsLabel": "Analytics Cookies",
+      "analyticsDescription": "Help us understand how the Service is used and improve its functionality.",
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "noPendingChoice": "You haven't made a choice yet."
+    }
+  },
+  "company": "Company",
+  "about": "About",
+  "explore": "Explore",
+  "support": "Support",
+  "events": "Events",
+  "categories": "Categories",
+  "organizers": "Organizers",
+  "venues": "Venues",
+  "yourAccount": "Your account",
+  "subscriptions": "Subscriptions",
+  "myPlans": "My plans",
+  "forOrganizers": "For organizers",
+  "becomeOrganizer": "Become an organizer",
+  "addYourEvents": "Add your events",
+  "leaveFeedback": "Feedback",
+  "leaveFeedbackContent": "Share your thoughts, report issues, or suggest improvements. We value your feedback!",
+  "yourMessage": "Your message",
+  "reportMessageRequired": "Please enter a message",
+  "reportMessagePlaceholder": "Describe the issue or share your feedback...",
+  "ratingRequired": "Please select a rating",
+  "overallRating": "Overall experience rating",
+  "selectRating": "Select rating",
+  "reportSubmitError": "Failed to submit feedback",
+  "reportSubmitted": "Thank You!",
+  "reportSubmittedMessage": "Your feedback has been submitted successfully. We appreciate your input!",
+  "submitAnother": "Submit another",
+  "submitFeedback": "Submit feedback",
+  "feedbackFooter": "All feedback is anonymous unless you choose to include contact details in your message."
+}

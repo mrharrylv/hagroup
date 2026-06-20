@@ -1,0 +1,8 @@
+[
+  { "name": "AWS", "icon": "logos:aws" },
+  { "name": "Firebase", "icon": "devicon:firebase" },
+  { "name": "Kubernetes", "icon": "logos:kubernetes" },
+  { "name": "Docker", "icon": "logos:docker-icon" },
+  { "name": "Terraform", "icon": "logos:terraform-icon" },
+  { "name": "React", "icon": "logos:react" }
+]

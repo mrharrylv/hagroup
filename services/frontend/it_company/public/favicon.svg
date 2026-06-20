@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="back-cloud" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="40%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#A78BFA"/>
+    </linearGradient>
+    <linearGradient id="front-cloud" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="30%" stop-color="#6366F1"/>
+      <stop offset="60%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#67E8F9"/>
+    </linearGradient>
+  </defs>
+  <!-- Back cloud (purple) -->
+  <path d="M130 400 C60 400 10 355 10 295 C10 235 55 185 110 180 C125 120 180 70 260 70 C345 70 405 140 405 210 C450 210 490 250 490 300 C490 350 450 400 390 400 Z" fill="url(#back-cloud)"/>
+  <!-- Front cloud (blue gradient, overlaps forward) -->
+  <path d="M190 440 C105 440 45 390 45 320 C45 250 100 195 165 190 C180 125 245 65 340 65 C440 65 510 145 510 230 C560 230 610 275 610 335 C610 395 560 440 500 440 Z" transform="translate(-55, 0)" fill="url(#front-cloud)"/>
+</svg>

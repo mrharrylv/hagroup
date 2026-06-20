@@ -1,0 +1,228 @@
+{
+  "nav": {
+    "services": "Pakalpojumi",
+    "work": "Projekti",
+    "ourWork": "Mūsu Darbi",
+    "company": "Uzņēmums",
+    "contactUs": "Sazināties",
+    "bookConsultation": "Pieteikt Konsultāciju",
+    "viewAllServices": "Skatīt Visus Pakalpojumus"
+  },
+  "hero": {
+    "badge": "Mūsdienīgi IT risinājumi augošiem uzņēmumiem",
+    "titleLine1": "Tehnoloģijas, kas attīsta",
+    "titleLine2": "mazos un vidējos uzņēmumus.",
+    "description": "Praktiski mākoņpakalpojumu, DevOps un individuāli programmatūras risinājumi, kas palīdz mazajiem un vidējiem uzņēmumiem augt droši, efektīvi un pārliecinoši.",
+    "ctaStart": "Sākt Projektu",
+    "ctaExplore": "Apskatīt Pakalpojumus"
+  },
+  "techStack": {
+    "label": "Balstīts uz uzticamām nozares tehnoloģijām",
+    "more": "un vēl…"
+  },
+  "services": {
+    "title": "Pilna cikla tehnoloģiju risinājumi",
+    "subtitle": "Elastīgi IT pakalpojumi, kas palīdz mazajiem un vidējiem uzņēmumiem optimizēt procesus, uzlabot drošību un nodrošināt ilgtspējīgu izaugsmi.",
+    "learnMore": "Uzzināt Vairāk",
+    "backHome": "Atpakaļ uz Sākumu",
+    "ctaTitle": "Nepieciešams risinājums tieši jūsu uzņēmumam?",
+    "ctaText": "Apspriedīsim jūsu mērķus un izveidosim risinājumu, kas atbilst jūsu uzņēmuma izmēram, budžetam un attīstības plāniem."
+  },
+  "methodology": {
+    "title": "Kā Mēs Strādājam"
+  },
+  "work": {
+    "titlePrefix": "Mūsu",
+    "titleAccent": "Projekti",
+    "subtitle": "Reāli risinājumi ambicioziem mazajiem un vidējiem uzņēmumiem — iepazīstieties ar mūsu portfolio.",
+    "viewAll": "Skatīt Visus Gadījumu Pētījumus"
+  },
+  "contact": {
+    "title": "Parunāsim par jūsu tehnoloģiju mērķiem.",
+    "subtitle": "Neatkarīgi no tā, vai plānojat pāreju uz mākoni, izstrādāt pielāgotu sistēmu vai uzlabot esošo infrastruktūru — mēs palīdzēsim.",
+    "email": "E-pasts",
+    "phone": "Tālrunis",
+    "hq": "Galvenais birojs",
+    "form": {
+      "fullName": "Vārds, Uzvārds",
+      "company": "Uzņēmums",
+      "workEmail": "Darba E-pasts",
+      "projectBudget": "Projekta Budžets",
+      "selectRange": "Izvēlieties diapazonu",
+      "projectDetails": "Projekta Apraksts",
+      "placeholder": {
+        "name": "Jānis Bērziņš",
+        "company": "Acme SIA",
+        "email": "janis@acme.lv",
+        "message": "Pastāstiet par savu esošo situāciju, izaicinājumiem un mērķiem..."
+      },
+      "privacyConsent": "Es piekrītu <privacy>Privātuma politikai</privacy> un atļauju ar mani sazināties saistībā ar manu pieprasījumu.",
+      "submit": "Nosūtīt Pieprasījumu",
+      "submitting": "Nosūtīšana…",
+      "successMessage": "Paldies! Jūsu pieprasījums ir saņemts. Mēs ar jums sazināsimies tuvākajā laikā.",
+      "errorMessage": "Radās kļūda. Lūdzu, mēģiniet vēlreiz vai sazinieties ar mums tieši pa e-pastu.",
+      "rateLimitMessage": "Lūdzu, uzgaidiet {{seconds}}s pirms atkārtotas iesniegšanas."
+    },
+    "orWhatsApp": "vai rakstiet mums tieši",
+    "whatsAppCta": "Rakstīt WhatsApp"
+  },
+  "footer": {
+    "description": "Uzticama IT infrastruktūra, mākoņrisinājumi un pielāgota programmatūra mazajiem un vidējiem uzņēmumiem.",
+    "services": {
+      "title": "Pakalpojumi",
+      "websiteDevelopment": "Mājaslapu Izstrāde",
+      "systemDevelopment": "Pielāgotu Sistēmu Izstrāde",
+      "cloudArchitecture": "Mākoņrisinājumi un Migrācija",
+      "devopsAutomation": "DevOps un Automatizācija",
+      "itInfrastructure": "IT Infrastruktūra",
+      "fullCycle": "Pilna Cikla Izstrāde",
+      "aiIntegration": "Mākslīgā Intelekta Integrācija",
+      "itConsulting": "IT Konsultācijas"
+    },
+    "company": {
+      "title": "Uzņēmums",
+      "aboutUs": "Par Mums",
+      "careers": "Karjera",
+      "contact": "Kontakti",
+      "companyDetails": "Uzņēmuma Rekvizīti"
+    },
+    "legal": {
+      "title": "Juridiskā Informācija",
+      "terms": "Noteikumi un Nosacījumi",
+      "privacy": "Privātuma Politika",
+      "cookies": "Sīkdatņu Politika"
+    },
+    "copyright": "© 2026 Cloudie. Visas tiesības aizsargātas.",
+    "status": "Visas sistēmas darbojas"
+  },
+  "cookie": {
+    "title": "Mēs izmantojam sīkdatnes",
+    "description": "Mēs izmantojam sīkdatnes, lai nodrošinātu labāko lietošanas pieredzi un analizētu vietnes datplūsmu. Uzziniet vairāk mūsu <cookie>Sīkdatņu politikā</cookie>.",
+    "acceptAll": "Pieņemt Visas",
+    "necessaryOnly": "Tikai Nepieciešamās",
+    "manageButton": "Pārvaldīt Iestatījumus",
+    "manageDescription": "Sīkdatņu iestatījumus varat mainīt jebkurā laikā."
+  },
+  "whatsapp": {
+    "tooltip": "Rakstīt mums WhatsApp",
+    "ariaLabel": "Sazināties ar mums WhatsApp",
+    "defaultMessage": "Sveiki! Mani interesē jūsu pakalpojumi. Vai varam apspriest manas uzņēmuma vajadzības?"
+  },
+  "servicePages": {
+    "backToServices": "Atpakaļ uz Pakalpojumiem",
+    "getStarted": "Sākt"
+  },
+  "careers": {
+    "backHome": "Atpakaļ uz Sākumu",
+    "badge": "Mēs Meklējam",
+    "applyNow": "Pieteikties",
+    "form": {
+      "hrEmail": "HR E-pasts",
+      "location": "Atrašanās vieta",
+      "responseTime": "Atbildes Laiks",
+      "successMessage": "Paldies! Jūsu pieteikums ir iesniegts. Mēs to izskatīsim un atbildēsim 5 darba dienu laikā.",
+      "errorMessage": "Radās kļūda. Lūdzu, mēģiniet vēlreiz vai sazinieties ar mums pa e-pastu.",
+      "rateLimitMessage": "Lūdzu, uzgaidiet {{seconds}}s pirms atkārtotas iesniegšanas.",
+      "submitting": "Iesniegšana…",
+      "fields": {
+        "fullName": "Vārds, Uzvārds",
+        "email": "E-pasta Adrese",
+        "phone": "Tālruņa Numurs",
+        "linkedin": "LinkedIn / Portfolio",
+        "position": "Interesējošais Amats",
+        "selectPosition": "Izvēlieties amatu",
+        "otherPosition": "Cits / Vispārīgs Pieteikums",
+        "resume": "CV",
+        "resumeHint": "PDF, DOC vai DOCX — maksimums 5 MB",
+        "coverLetter": "Motivācijas Vēstule / Ziņa",
+        "privacyConsent": "Es piekrītu <privacy>Privātuma politikai</privacy> un atļauju apstrādāt manus datus atlases nolūkos.",
+        "submit": "Iesniegt Pieteikumu"
+      },
+      "placeholder": {
+        "name": "Jānis Bērziņš",
+        "email": "janis@example.com",
+        "phone": "+371 20000000",
+        "linkedin": "https://linkedin.com/in/janis",
+        "coverLetter": "Pastāstiet par savu pieredzi un kāpēc vēlaties pievienoties Cloudie..."
+      }
+    }
+  },
+  "reviews": {
+    "backHome": "Atpakaļ uz Sākumu",
+    "title": "Klientu Atsauksmes",
+    "subtitle": "Atsauksmes no mazajiem un vidējiem uzņēmumiem, ar kuriem esam sadarbojušies.",
+    "featured": "Izceltās Atsauksmes",
+    "allReviews": "Visas Atsauksmes",
+    "ctaTitle": "Gatavi attīstīt savu uzņēmumu?",
+    "ctaText": "Pievienojieties augošiem uzņēmumiem, kas mums uztic savu tehnoloģiju attīstību.",
+    "ctaButton": "Sazināties"
+  },
+  "projects": {
+    "backHome": "Atpakaļ uz Sākumu",
+    "title": "Mūsu Projekti",
+    "subtitle": "Risinājumi, kas veicina izaugsmi, efektivitāti un ilgtermiņa panākumus.",
+    "backToWork": "Atpakaļ uz Projektiem",
+    "keyHighlights": "Galvenie Ieguvumi",
+    "techStack": "Tehnoloģiju Kopa",
+    "whatWeDelivered": "Ko Mēs Nodrošinājām",
+    "ctaTitle": "Ir ideja projektam?",
+    "ctaText": "Dalieties ar savu ideju, un mēs palīdzēsim to pārvērst uzticamā un mērogojamā risinājumā.",
+    "ctaButton": "Sākt Projektu",
+    "visitSite": "Apmeklēt Vietni"
+  },
+  "about": {
+    "backHome": "Atpakaļ uz Sākumu",
+    "title": "Par Cloudie",
+    "subtitle": "Praktiski un mērogojami IT risinājumi mazajiem un vidējiem uzņēmumiem.",
+    "mission": {
+      "title": "Mūsu Misija",
+      "text": "Palīdzēt mazajiem un vidējiem uzņēmumiem izmantot mūsdienu tehnoloģijas pieejamā, drošā un ilgtspējīgā veidā."
+    },
+    "vision": {
+      "title": "Mūsu Vīzija",
+      "text": "Būt uzticamam tehnoloģiju partnerim augošiem uzņēmumiem, nodrošinot infrastruktūru un programmatūru, kas attīstās kopā ar biznesu."
+    },
+    "values": {
+      "title": "Mūsu Vērtības",
+      "transparency": {
+        "icon": "solar:shield-check-linear",
+        "title": "Caurspīdīgums",
+        "text": "Atklāta komunikācija, godīgi nosacījumi un praktiski risinājumi."
+      },
+      "excellence": {
+        "icon": "solar:star-linear",
+        "title": "Izcilība",
+        "text": "Augstas kvalitātes izstrāde, kas pielāgota reālām biznesa vajadzībām."
+      },
+      "innovation": {
+        "icon": "solar:lightbulb-linear",
+        "title": "Inovācijas",
+        "text": "Mūsdienīgu rīku izmantošana efektīvu un nākotnei gatavu sistēmu izveidei."
+      },
+      "partnership": {
+        "icon": "solar:hand-shake-linear",
+        "title": "Partnerība",
+        "text": "Mēs augam kopā ar saviem klientiem un veidojam ilgtermiņa sadarbību."
+      }
+    },
+    "ctaTitle": "Gatavi sadarboties?",
+    "ctaText": "Apspriedīsim, kā varam atbalstīt jūsu uzņēmuma nākamo izaugsmes posmu.",
+    "ctaButton": "Sazināties"
+  },
+  "companyDetails": {
+    "backToAbout": "Atpakaļ uz Par Mums",
+    "title": "Uzņēmuma Informācija",
+    "subtitle": "Oficiālie juridiskie un reģistrācijas dati par Cloudie SIA.",
+    "fields": {
+      "companyName": "Uzņēmuma Nosaukums",
+      "regNumber": "Reģistrācijas Numurs",
+      "vatNumber": "PVN Numurs",
+      "legalAddress": "Juridiskā Adrese",
+      "email": "E-pasts",
+      "bankLabel": "Banka"
+    }
+  },
+  "legal": {
+    "backHome": "Atpakaļ uz Sākumu"
+  }
+}

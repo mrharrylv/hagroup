@@ -1,0 +1,413 @@
+name: Build & Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - prod
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: eu-north-1
+  NODE_VERSION: "20"
+  FRONTEND_DIR: services/frontend/it_company
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Build
+  # ---------------------------------------------------------------------------
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: ${{ env.FRONTEND_DIR }}/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm ci
+
+      - name: Lint
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm run lint
+
+      - name: Type-check
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npx tsc -b
+
+      - name: Build
+        working-directory: ${{ env.FRONTEND_DIR }}
+        env:
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
+          VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}
+        run: npm run build
+
+      - name: Generate file manifest
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: |
+          # Create a sorted list of all files in dist/ for cleanup step
+          cd dist && find . -type f | sort > ../manifest.txt
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-dist
+          path: |
+            ${{ env.FRONTEND_DIR }}/dist
+            ${{ env.FRONTEND_DIR }}/manifest.txt
+          retention-days: 7
+
+  # ---------------------------------------------------------------------------
+  # Deploy — DEV  (auto on every push to main)
+  # ---------------------------------------------------------------------------
+  deploy-dev:
+    needs: build
+    runs-on: ubuntu-latest
+    if: >-
+      (github.event_name == 'push') ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'dev')
+    environment: dev
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: website-dist
+          path: artifact
+
+      - name: Configure AWS OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::561341419749:role/github-oidc-hagroup-dev
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Get Terraform outputs
+        id: tf
+        run: |
+          BUCKET="dev-hagroup-website"
+          DIST_ID=$(aws cloudfront list-distributions \
+            --query "DistributionList.Items[?Comment=='dev - hagroup website'].Id | [0]" \
+            --output text)
+
+          if [ -z "$DIST_ID" ] || [ "$DIST_ID" = "None" ] || [ "$DIST_ID" = "null" ]; then
+            echo "❌ CloudFront distribution not found. Run the infra workflow first."
+            exit 1
+          fi
+
+          echo "bucket=$BUCKET" >> "$GITHUB_OUTPUT"
+          echo "distribution_id=$DIST_ID" >> "$GITHUB_OUTPUT"
+          echo "📦 S3 Bucket: $BUCKET"
+          echo "🌐 CloudFront: $DIST_ID"
+
+      # -----------------------------------------------------------------------
+      # Zero-Downtime Deploy: additive upload → atomic HTML swap → invalidate → cleanup
+      #
+      # Phase 1: Upload all hashed assets (JS, CSS, images, fonts)
+      #          Old and new coexist — no user impact
+      # Phase 2: Upload index.html last (atomic — references new hashes)
+      # Phase 3: Invalidate CloudFront cache and wait for completion
+      # Phase 4: Remove orphaned files no longer in the new build
+      # -----------------------------------------------------------------------
+
+      - name: "Phase 1: Upload hashed assets (additive, no delete)"
+        run: |
+          BUCKET="${{ steps.tf.outputs.bucket }}"
+          DIST="artifact/dist"
+
+          echo "📤 Uploading hashed assets (JS, CSS, images, SVG, JSON)..."
+
+          # JS — immutable hashed filenames
+          aws s3 sync "$DIST/" "s3://$BUCKET" \
+            --no-guess-mime-type \
+            --exclude "*" \
+            --include "*.js" \
+            --content-type "application/javascript" \
+            --cache-control "public, max-age=31536000, immutable"
+
+          # CSS — immutable hashed filenames
+          aws s3 sync "$DIST/" "s3://$BUCKET" \
+            --exclude "*" \
+            --include "*.css" \
+            --content-type "text/css" \
+            --cache-control "public, max-age=31536000, immutable"
+
+          # SVG
+          aws s3 sync "$DIST/" "s3://$BUCKET" \
+            --exclude "*" \
+            --include "*.svg" \
+            --content-type "image/svg+xml" \
+            --cache-control "public, max-age=31536000, immutable"
+
+          # Images
+          aws s3 sync "$DIST/" "s3://$BUCKET" \
+            --exclude "*" \
+            --include "*.png" --include "*.jpg" --include "*.jpeg" \
+            --include "*.gif" --include "*.webp" --include "*.ico" \
+            --cache-control "public, max-age=31536000, immutable"
+
+          # JSON (e.g. manifest)
+          aws s3 sync "$DIST/" "s3://$BUCKET" \
+            --exclude "*" \
+            --include "*.json" \
+            --content-type "application/json" \
+            --cache-control "public, max-age=3600"
+
+          # Any other files not yet covered (fonts, woff2, etc.)
+          aws s3 sync "$DIST/" "s3://$BUCKET" \
+            --exclude "*.html" \
+            --exclude "*.js" --exclude "*.css" --exclude "*.svg" \
+            --exclude "*.png" --exclude "*.jpg" --exclude "*.jpeg" \
+            --exclude "*.gif" --exclude "*.webp" --exclude "*.ico" \
+            --exclude "*.json"
+
+          echo "✅ Phase 1 complete — all hashed assets uploaded"
+
+      - name: "Phase 2: Upload index.html (atomic swap)"
+        run: |
+          BUCKET="${{ steps.tf.outputs.bucket }}"
+
+          echo "📝 Uploading index.html (atomic swap to new version)..."
+
+          aws s3 cp "artifact/dist/index.html" "s3://$BUCKET/index.html" \
+            --content-type "text/html" \
+            --cache-control "public, max-age=60, s-maxage=300"
+
+          echo "✅ Phase 2 complete — index.html now references new assets"
+
+      - name: "Phase 3: Invalidate CloudFront and wait"
+        run: |
+          DIST_ID="${{ steps.tf.outputs.distribution_id }}"
+
+          echo "🔄 Creating CloudFront invalidation..."
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
+            --distribution-id "$DIST_ID" \
+            --paths "/*" \
+            --query 'Invalidation.Id' \
+            --output text)
+
+          echo "   Invalidation ID: $INVALIDATION_ID"
+          echo "⏳ Waiting for invalidation to complete..."
+
+          aws cloudfront wait invalidation-completed \
+            --distribution-id "$DIST_ID" \
+            --id "$INVALIDATION_ID"
+
+          echo "✅ Phase 3 complete — CloudFront cache invalidated and propagated"
+
+      - name: "Phase 4: Cleanup orphaned files"
+        run: |
+          BUCKET="${{ steps.tf.outputs.bucket }}"
+
+          echo "🧹 Removing files no longer in the build..."
+
+          # List all current S3 objects
+          aws s3api list-objects-v2 --bucket "$BUCKET" --query 'Contents[].Key' --output text \
+            | tr '\t' '\n' | sort > /tmp/s3-files.txt
+
+          # Build manifest of files that should exist
+          sed 's|^\./||' artifact/manifest.txt | sort > /tmp/new-files.txt
+
+          # Find files in S3 that are NOT in the new build
+          ORPHANS=$(comm -23 /tmp/s3-files.txt /tmp/new-files.txt || true)
+
+          if [ -z "$ORPHANS" ]; then
+            echo "   No orphaned files to remove"
+          else
+            ORPHAN_COUNT=$(echo "$ORPHANS" | wc -l | tr -d ' ')
+            echo "   Removing $ORPHAN_COUNT orphaned file(s)..."
+
+            echo "$ORPHANS" | while IFS= read -r key; do
+              [ -n "$key" ] && aws s3api delete-object --bucket "$BUCKET" --key "$key"
+            done
+
+            echo "✅ Phase 4 complete — $ORPHAN_COUNT orphaned file(s) removed"
+          fi
+
+      - name: Deployment summary
+        run: |
+          echo "=============================================="
+          echo "✅ DEV deployment complete (zero-downtime)"
+          echo "   Bucket : ${{ steps.tf.outputs.bucket }}"
+          echo "   CF Dist: ${{ steps.tf.outputs.distribution_id }}"
+          echo "   Commit : ${{ github.sha }}"
+          echo "=============================================="
+
+  # ---------------------------------------------------------------------------
+  # Deploy — PROD  (manual dispatch only)
+  # ---------------------------------------------------------------------------
+  deploy-prod:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'prod'
+    environment: prod
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: website-dist
+          path: artifact
+
+      - name: Configure AWS OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::561341419749:role/github-oidc-hagroup-prod
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Get Terraform outputs
+        id: tf
+        run: |
+          BUCKET="prod-hagroup-website"
+          DIST_ID=$(aws cloudfront list-distributions \
+            --query "DistributionList.Items[?Comment=='prod - hagroup website'].Id | [0]" \
+            --output text)
+
+          if [ -z "$DIST_ID" ] || [ "$DIST_ID" = "None" ] || [ "$DIST_ID" = "null" ]; then
+            echo "❌ CloudFront distribution not found. Run the infra workflow first."
+            exit 1
+          fi
+
+          echo "bucket=$BUCKET" >> "$GITHUB_OUTPUT"
+          echo "distribution_id=$DIST_ID" >> "$GITHUB_OUTPUT"
+          echo "📦 S3 Bucket: $BUCKET"
+          echo "🌐 CloudFront: $DIST_ID"
+
+      # -----------------------------------------------------------------------
+      # Zero-Downtime Deploy: additive upload → atomic HTML swap → invalidate → cleanup
+      # -----------------------------------------------------------------------
+
+      - name: "Phase 1: Upload hashed assets (additive, no delete)"
+        run: |
+          BUCKET="${{ steps.tf.outputs.bucket }}"
+          DIST="artifact/dist"
+
+          echo "📤 Uploading hashed assets (JS, CSS, images, SVG, JSON)..."
+
+          aws s3 sync "$DIST/" "s3://$BUCKET" \
+            --no-guess-mime-type \
+            --exclude "*" \
+            --include "*.js" \
+            --content-type "application/javascript" \
+            --cache-control "public, max-age=31536000, immutable"
+
+          aws s3 sync "$DIST/" "s3://$BUCKET" \
+            --exclude "*" \
+            --include "*.css" \
+            --content-type "text/css" \
+            --cache-control "public, max-age=31536000, immutable"
+
+          aws s3 sync "$DIST/" "s3://$BUCKET" \
+            --exclude "*" \
+            --include "*.svg" \
+            --content-type "image/svg+xml" \
+            --cache-control "public, max-age=31536000, immutable"
+
+          aws s3 sync "$DIST/" "s3://$BUCKET" \
+            --exclude "*" \
+            --include "*.png" --include "*.jpg" --include "*.jpeg" \
+            --include "*.gif" --include "*.webp" --include "*.ico" \
+            --cache-control "public, max-age=31536000, immutable"
+
+          aws s3 sync "$DIST/" "s3://$BUCKET" \
+            --exclude "*" \
+            --include "*.json" \
+            --content-type "application/json" \
+            --cache-control "public, max-age=3600"
+
+          aws s3 sync "$DIST/" "s3://$BUCKET" \
+            --exclude "*.html" \
+            --exclude "*.js" --exclude "*.css" --exclude "*.svg" \
+            --exclude "*.png" --exclude "*.jpg" --exclude "*.jpeg" \
+            --exclude "*.gif" --exclude "*.webp" --exclude "*.ico" \
+            --exclude "*.json"
+
+          echo "✅ Phase 1 complete — all hashed assets uploaded"
+
+      - name: "Phase 2: Upload index.html (atomic swap)"
+        run: |
+          BUCKET="${{ steps.tf.outputs.bucket }}"
+
+          echo "📝 Uploading index.html (atomic swap to new version)..."
+
+          aws s3 cp "artifact/dist/index.html" "s3://$BUCKET/index.html" \
+            --content-type "text/html" \
+            --cache-control "public, max-age=60, s-maxage=300"
+
+          echo "✅ Phase 2 complete — index.html now references new assets"
+
+      - name: "Phase 3: Invalidate CloudFront and wait"
+        run: |
+          DIST_ID="${{ steps.tf.outputs.distribution_id }}"
+
+          echo "🔄 Creating CloudFront invalidation..."
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
+            --distribution-id "$DIST_ID" \
+            --paths "/*" \
+            --query 'Invalidation.Id' \
+            --output text)
+
+          echo "   Invalidation ID: $INVALIDATION_ID"
+          echo "⏳ Waiting for invalidation to complete..."
+
+          aws cloudfront wait invalidation-completed \
+            --distribution-id "$DIST_ID" \
+            --id "$INVALIDATION_ID"
+
+          echo "✅ Phase 3 complete — CloudFront cache invalidated and propagated"
+
+      - name: "Phase 4: Cleanup orphaned files"
+        run: |
+          BUCKET="${{ steps.tf.outputs.bucket }}"
+
+          echo "🧹 Removing files no longer in the build..."
+
+          aws s3api list-objects-v2 --bucket "$BUCKET" --query 'Contents[].Key' --output text \
+            | tr '\t' '\n' | sort > /tmp/s3-files.txt
+
+          sed 's|^\./||' artifact/manifest.txt | sort > /tmp/new-files.txt
+
+          ORPHANS=$(comm -23 /tmp/s3-files.txt /tmp/new-files.txt || true)
+
+          if [ -z "$ORPHANS" ]; then
+            echo "   No orphaned files to remove"
+          else
+            ORPHAN_COUNT=$(echo "$ORPHANS" | wc -l | tr -d ' ')
+            echo "   Removing $ORPHAN_COUNT orphaned file(s)..."
+
+            echo "$ORPHANS" | while IFS= read -r key; do
+              [ -n "$key" ] && aws s3api delete-object --bucket "$BUCKET" --key "$key"
+            done
+
+            echo "✅ Phase 4 complete — $ORPHAN_COUNT orphaned file(s) removed"
+          fi
+
+      - name: Deployment summary
+        run: |
+          echo "=============================================="
+          echo "✅ PROD deployment complete (zero-downtime)"
+          echo "   Bucket : ${{ steps.tf.outputs.bucket }}"
+          echo "   CF Dist: ${{ steps.tf.outputs.distribution_id }}"
+          echo "   Domain : cloudie.eventapp.lv"
+          echo "   Commit : ${{ github.sha }}"
+          echo "=============================================="

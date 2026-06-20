@@ -1,0 +1,39 @@
+[
+  {
+    "id": "event-app",
+    "title": "EventApp.lv",
+    "description": "A comprehensive event discovery and ticketing platform for Latvia — covering concerts, theatre, festivals, and exhibitions. Aggregates events from multiple public sources, enables collaborative planning, and offers personalized subscriptions.",
+    "image": "",
+    "website": "https://eventapp.lv",
+    "slug": "event-app",
+    "tags": [
+      "Events",
+      "Full-Stack",
+      "AI Integration"
+    ],
+    "year": 2026,
+    "featured": true,
+    "client": "EventApp",
+    "role": "Full-Cycle Development",
+    "duration": "6 months",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "OpenAI LLM",
+      "Terraform",
+      "AWS",
+      "Python",
+      "Docker",
+      "GitHub Actions"
+    ],
+    "highlights": [
+      "Engineered advanced event discovery with intelligent filtering across 25+ categories",
+      "Built collaborative event planning with secure shareable links",
+      "Developed an organizer dashboard with real-time analytics and performance insights",
+      "Optimized performance to achieve sub-second page loads using SSR and edge caching"
+    ]
+  }
+]

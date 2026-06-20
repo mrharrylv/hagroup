@@ -1,0 +1,82 @@
+[
+  {
+    "id": "review-1",
+    "name": "Jānis Bērziņš",
+    "title": { "en": "CTO", "lv": "Tehniskais direktors", "ru": "Технический директор" },
+    "company": "EventApp",
+    "description": {
+      "en": "Cloudie delivered our event platform from concept to launch in record time. Their full-cycle approach meant we had a single team handling everything — design, development, infrastructure, and deployment. The result exceeded our expectations.",
+      "lv": "Cloudie realizēja mūsu pasākumu platformu no koncepta līdz palaišanai rekordīsā laikā. Viņu pilna cikla pieeja nozīmēja, ka viena komanda pārvaldīja visu — dizainu, izstrādi, infrastruktūru un izvietošanu. Rezultāts pārsniedza mūsu cerības.",
+      "ru": "Cloudie реализовали нашу платформу мероприятий от концепции до запуска в рекордные сроки. Их подход полного цикла означал, что одна команда отвечала за всё — дизайн, разработку, инфраструктуру и развёртывание. Результат превзошёл наши ожидания."
+    },
+    "rating": 5,
+    "date": "2026-01-15",
+    "image": "",
+    "projectId": "event-app",
+    "featured": true
+  },
+  {
+    "id": "review-2",
+    "name": "Anna Liepiņa",
+    "title": { "en": "Head of Digital", "lv": "Digitālā nodaļas vadītāja", "ru": "Руководитель отдела цифровизации" },
+    "company": "Baltic Logistics Group",
+    "description": {
+      "en": "We migrated our entire infrastructure to AWS with Cloudie's guidance. Zero downtime during the transition, and our operational costs dropped by 35%. Their DevOps expertise is exceptional.",
+      "lv": "Mēs migrējām visu infrastruktūru uz AWS ar Cloudie vadību. Nulles dīkstāve pārejas laikā, un mūsu ekspluatācijas izmaksas samazinājās par 35%. Viņu DevOps kompetence ir izcila.",
+      "ru": "Мы мигрировали всю инфраструктуру на AWS под руководством Cloudie. Нулевой простой при переходе, а операционные расходы снизились на 35%. Их DevOps-экспертиза исключительна."
+    },
+    "rating": 5,
+    "date": "2025-11-20",
+    "image": "",
+    "projectId": "healthcare-ml",
+    "featured": true
+  },
+  {
+    "id": "review-3",
+    "name": "Maksims Petrovs",
+    "title": { "en": "CEO", "lv": "Izpilddirektors", "ru": "Генеральный директор" },
+    "company": "FinTech Solutions SIA",
+    "description": {
+      "en": "The team built a payment processing system that handles thousands of transactions daily without a hitch. Security, compliance, and performance were all top-notch. Highly recommend for any fintech project.",
+      "lv": "Komanda izveidoja maksājumu apstrādes sistēmu, kas apstrādā tūkstošiem darījumu dienā bez traucējumiem. Drošība, atbilstība un veiktspēja bija augstākajā līmenī. Ļoti iesaku jebkuram fintech projektam.",
+      "ru": "Команда создала систему обработки платежей, которая обрабатывает тысячи транзакций ежедневно без сбоев. Безопасность, соответствие требованиям и производительность на высшем уровне. Настоятельно рекомендую для финтех-проектов."
+    },
+    "rating": 5,
+    "date": "2025-09-08",
+    "image": "",
+    "projectId": null,
+    "featured": true
+  },
+  {
+    "id": "review-4",
+    "name": "Kristīne Ozoliņa",
+    "title": { "en": "Product Manager", "lv": "Produktu vadītāja", "ru": "Менеджер продукта" },
+    "company": "MedTech Innovations",
+    "description": {
+      "en": "Cloudie's AI integration work transformed our diagnostic workflows. The ML pipeline they built is HIPAA-compliant and cut our processing time by over 60%. Professional, knowledgeable, and easy to work with.",
+      "lv": "Cloudie MI integrācijas darbs pārveidoja mūsu diagnostikas darbplūsmas. Viņu izveidotais ML cauruļvads ir HIPAA saderīgs un samazināja apstrādes laiku par vairāk nekā 60%. Profesionāli, zinošas un viegli sadarboties.",
+      "ru": "Работа Cloudie по интеграции ИИ трансформировала наши диагностические процессы. ML-пайплайн соответствует HIPAA и сократил время обработки более чем на 60%. Профессионально, компетентно и легко в сотрудничестве."
+    },
+    "rating": 5,
+    "date": "2025-06-12",
+    "image": "",
+    "projectId": "healthcare-ml",
+    "featured": false
+  },
+  {
+    "id": "review-5",
+    "name": "Roberts Kalniņš",
+    "title": { "en": "Founder", "lv": "Dibinātājs", "ru": "Основатель" },
+    "company": "GreenTech Latvia",
+    "description": {
+      "en": "We needed a modern website that reflected our sustainability mission. Cloudie delivered a fast, accessible, beautifully designed site with perfect Lighthouse scores. The ongoing support has been excellent too.",
+      "lv": "Mums bija nepieciešama moderna vietne, kas atspoguļotu mūsu ilgtspējības misiju. Cloudie piegādāja ātru, pieejamu, skaisti dizainētu vietni ar perfektiem Lighthouse rezultātiem. Arī pastāvīgais atbalsts ir bijis izcils.",
+      "ru": "Нам нужен был современный сайт, отражающий нашу миссию устойчивого развития. Cloudie создали быстрый, доступный, красиво оформленный сайт с идеальными оценками Lighthouse. Текущая поддержка тоже на высоте."
+    },
+    "rating": 4,
+    "date": "2025-03-25",
+    "image": "",
+    "projectId": null,
+    "featured": false
+  }
+]

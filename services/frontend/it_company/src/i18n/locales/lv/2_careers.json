@@ -1,0 +1,63 @@
+{
+  "title": "Veido nākotni kopā ar mums",
+  "subtitle": "Pievienojies ambiciozu inženieru, arhitektu un inovatoru komandai, kas izstrādā drošas un mērogojamas tehnoloģijas nākamās paaudzes uzņēmumiem.",
+  "benefitsTitle": "Kāpēc pievienoties Cloudie?",
+  "benefitsSubtitle": "Mēs sniedzam konkurētspējīgu atalgojumu, elastību un iespēju strādāt pie nozīmīgiem, mūsdienīgiem tehnoloģiju projektiem.",
+  "benefits": [
+    {
+      "key": "health",
+      "icon": "solar:heart-pulse-linear",
+      "title": "Veselība un labbūtība",
+      "description": "Plaša medicīniskā apdrošināšana, labbūtības iniciatīvas un mentālās veselības atbalsts, lai tu varētu justies un strādāt vislabāk."
+    },
+    {
+      "key": "remote",
+      "icon": "solar:home-smile-linear",
+      "title": "Attālināta darba kultūra",
+      "description": "Strādā no jebkuras vietas ar elastīgu darba laiku un uz rezultātiem balstītu sadarbību."
+    },
+    {
+      "key": "growth",
+      "icon": "solar:graph-up-linear",
+      "title": "Karjeras izaugsme",
+      "description": "Apmācību budžets, konferenču apmeklējumu atbalsts, mentorings un skaidrs karjeras attīstības ceļš."
+    },
+    {
+      "key": "culture",
+      "icon": "solar:users-group-rounded-linear",
+      "title": "Iekļaujoša kultūra",
+      "description": "Atbalstoša un daudzveidīga komanda, kurā tiek novērtētas idejas un veicināta sadarbība."
+    },
+    {
+      "key": "equipment",
+      "icon": "solar:laptop-minimalistic-linear",
+      "title": "Augstākās klases aprīkojums",
+      "description": "Jaudīgs portatīvais dators, kvalitatīvi piederumi un visi nepieciešamie rīki tavam produktīvam darbam."
+    },
+    {
+      "key": "global",
+      "icon": "solar:global-linear",
+      "title": "Globāla ietekme",
+      "description": "Piedalies projektos, kas nodrošina fintech, veselības aprūpes un uzņēmumu platformas visā pasaulē."
+    }
+  ],
+  "positionsTitle": "Atvērtās vakances",
+  "positionsSubtitle": "Apskati aktuālās iespējas. Neredzi piemērotu amatu? Nosūti savu CV jebkurā gadījumā — mēs vienmēr priecājamies iepazīt talantīgus profesionāļus.",
+  "positions": [
+    {
+      "key": "juniorUxUi",
+      "value": "junior-ux-ui-developer",
+      "icon": "solar:palette-linear",
+      "title": "Jaunākais UX/UI izstrādātājs",
+      "location": "Attālināti / Eiropa",
+      "type": "Pilna slodze",
+      "department": "Dizains"
+    }
+  ],
+  "form": {
+    "title": "Piesakies darbam mūsu komandā",
+    "subtitle": "Iesniedz savu pieteikumu, un mēs atbildēsim 5 darba dienu laikā. Katrs pieteikums tiek rūpīgi izskatīts.",
+    "locationValue": "Attālināti, Sanfrancisko, Eiropa",
+    "responseTimeValue": "5 darba dienu laikā"
+  }
+}

@@ -1,0 +1,859 @@
+{
+  "items": [
+    {
+      "key": "websiteDev",
+      "icon": "solar:monitor-linear",
+      "path": "/services/website-development",
+      "title": "Разработка веб-сайтов",
+      "description": "Высокопроизводительные сайты, ориентированные на конверсию, оптимизированные по скорости, SEO и масштабируемости — от лендингов до корпоративных порталов."
+    },
+    {
+      "key": "systemDev",
+      "icon": "solar:code-square-linear",
+      "path": "/services/system-development",
+      "title": "Разработка систем",
+      "description": "Надёжные программные системы корпоративного уровня, API и платформы на современных архитектурах для долгосрочной масштабируемости."
+    },
+    {
+      "key": "cloud",
+      "icon": "solar:cloud-linear",
+      "path": "/services/cloud-migration",
+      "title": "Облако и миграция",
+      "description": "Стратегическая мультиоблачная архитектура, миграция и оптимизация в AWS, Azure и Google Cloud с принципами zero-trust безопасности."
+    },
+    {
+      "key": "devops",
+      "icon": "solar:server-path-linear",
+      "path": "/services/devops",
+      "title": "DevOps и CI/CD",
+      "description": "Автоматизированные процессы сборки, тестирования и развёртывания с использованием контейнерной оркестрации, Infrastructure as Code и GitOps."
+    },
+    {
+      "key": "itInfra",
+      "icon": "solar:server-minimalistic-linear",
+      "path": "/services/it-infrastructure",
+      "title": "IT-инфраструктура",
+      "description": "Проактивный мониторинг 24/7, управление безопасностью, администрирование серверов и оптимизация инфраструктуры."
+    },
+    {
+      "key": "fullCycle",
+      "icon": "solar:restart-circle-linear",
+      "path": "/services/full-cycle",
+      "title": "Полный цикл разработки",
+      "description": "Комплексная разработка продукта — от стратегии и дизайна до внедрения и постоянного развития."
+    },
+    {
+      "key": "ai",
+      "icon": "solar:magic-stick-3-linear",
+      "path": "/services/ai-integration",
+      "title": "Интеграция ИИ",
+      "description": "Готовые к внедрению решения машинного обучения и автоматизации на базе ИИ с измеримым бизнес-эффектом."
+    },
+    {
+      "key": "consulting",
+      "icon": "solar:users-group-two-rounded-linear",
+      "path": "/services/consulting",
+      "title": "IT-консалтинг",
+      "description": "Стратегические технологические консультации: аудит архитектуры, дорожные карты цифровой трансформации и оптимизация инженерных процессов."
+    }
+  ],
+  "pages": {
+    "websiteDevelopment": {
+      "icon": "solar:monitor-linear",
+      "title": "Создание сайтов",
+      "subtitle": "Индивидуально разработанные, высокопроизводительные сайты, которые усиливают ваш бренд, привлекают посетителей и увеличивают конверсию.",
+      "overviewTitle": "Сайты, приносящие результат",
+      "overviewText": "Мы создаём современные, адаптивные сайты, оптимизированные под ваш бренд и бизнес-цели. Каждый сайт оптимизирован по скорости, доступности и видимости в поисковых системах. Будь то корпоративный сайт, интернет-магазин или контентный портал — наша команда ведёт проект полного цикла.",
+      "stats": [
+        {
+          "value": "99.9%",
+          "label": "Гарантия аптайма"
+        },
+        {
+          "value": "<1s",
+          "label": "Среднее время загрузки"
+        },
+        {
+          "value": "100+",
+          "label": "Сайтов создано"
+        },
+        {
+          "value": "A+",
+          "label": "Оценки Lighthouse"
+        }
+      ],
+      "featuresTitle": "Что мы предлагаем",
+      "features": [
+        {
+          "icon": "solar:palette-linear",
+          "title": "Индивидуальный UI/UX-дизайн",
+          "description": "Дизайн до пикселя, отражающий идентичность вашего бренда, с исследованием пользователей на каждом этапе."
+        },
+        {
+          "icon": "solar:smartphone-linear",
+          "title": "Адаптивная разработка",
+          "description": "Безупречный опыт на всех устройствах с использованием современного CSS и прогрессивного улучшения."
+        },
+        {
+          "icon": "solar:rocket-2-linear",
+          "title": "Оптимизация производительности",
+          "description": "Разделение кода, отложенная загрузка, оптимизация изображений и настройка CDN для молниеносной загрузки."
+        },
+        {
+          "icon": "solar:magnifer-linear",
+          "title": "SEO и аналитика",
+          "description": "Техническое SEO, структурированные данные, карты сайта и интеграция аналитики с первого дня."
+        },
+        {
+          "icon": "solar:shield-check-linear",
+          "title": "Доступность (WCAG)",
+          "description": "Соответствие WCAG 2.1 AA для обеспечения доступности сайта для всех пользователей."
+        },
+        {
+          "icon": "solar:refresh-circle-linear",
+          "title": "Интеграция CMS",
+          "description": "Headless CMS или традиционные платформы для самостоятельного управления контентом."
+        }
+      ],
+      "processTitle": "Наш процесс",
+      "process": [
+        {
+          "step": "Шаг 01",
+          "title": "Исследование и стратегия",
+          "description": "Изучение целей, аудитории и конкурентов для определения объёма проекта."
+        },
+        {
+          "step": "Шаг 02",
+          "title": "Дизайн и прототипирование",
+          "description": "Макеты и интерактивные прототипы с учётом вашей обратной связи."
+        },
+        {
+          "step": "Шаг 03",
+          "title": "Разработка",
+          "description": "Чистый, поддерживаемый код на React, Next.js или вашем стеке."
+        },
+        {
+          "step": "Шаг 04",
+          "title": "Запуск и поддержка",
+          "description": "Тщательное тестирование, оптимизация, развёртывание и постоянное обслуживание."
+        }
+      ],
+      "techTitle": "Используемые технологии",
+      "technologies": [
+        { "name": "React", "icon": "logos:react" },
+        { "name": "Next.js", "icon": "logos:nextjs-icon" },
+        { "name": "TypeScript", "icon": "logos:typescript-icon" },
+        { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" },
+        { "name": "Vite", "icon": "logos:vitejs" },
+        { "name": "Vercel", "icon": "logos:vercel-icon" },
+        { "name": "Netlify", "icon": "logos:netlify-icon" },
+        { "name": "WordPress", "icon": "logos:wordpress-icon" },
+        { "name": "Sanity", "icon": "logos:sanity" },
+        { "name": "Figma", "icon": "logos:figma" },
+        { "name": "Astro", "icon": "logos:astro-icon" },
+        { "name": "Node.js", "icon": "logos:nodejs-icon" },
+        { "name": "GraphQL", "icon": "logos:graphql" },
+        { "name": "Storybook", "icon": "logos:storybook-icon" }
+      ],
+      "ctaTitle": "Готовы создать свой сайт?",
+      "ctaText": "Создадим сайт, который работает так же красиво, как выглядит. Свяжитесь с нашей командой."
+    },
+    "systemDevelopment": {
+      "icon": "solar:code-square-linear",
+      "title": "Разработка систем",
+      "subtitle": "Корпоративные программные системы, API и платформы, спроектированные для надёжности, масштабируемости и бесшовной интеграции.",
+      "overviewTitle": "Надёжные системы для масштабирования",
+      "overviewText": "От CRM-платформ и ERP-систем до SaaS-продуктов и внутренних инструментов — мы проектируем программное обеспечение для решения сложных бизнес-задач. Наши системы рассчитаны на высокую доступность, целостность данных и интеграцию с внешними сервисами.",
+      "stats": [
+        {
+          "value": "50+",
+          "label": "Систем создано"
+        },
+        {
+          "value": "99.99%",
+          "label": "Аптайм систем"
+        },
+        {
+          "value": "3x",
+          "label": "Быстрее вывод на рынок"
+        },
+        {
+          "value": "24/7",
+          "label": "Мониторинг включён"
+        }
+      ],
+      "featuresTitle": "Основные возможности",
+      "features": [
+        {
+          "icon": "solar:code-square-linear",
+          "title": "Full-Stack разработка",
+          "description": "Сквозная разработка от пользовательских интерфейсов до серверных сервисов и баз данных."
+        },
+        {
+          "icon": "solar:database-linear",
+          "title": "Архитектура баз данных",
+          "description": "Оптимизированные реляционные и NoSQL базы данных со стратегиями миграции и гарантиями целостности."
+        },
+        {
+          "icon": "solar:server-linear",
+          "title": "Проектирование API и интеграция",
+          "description": "RESTful и GraphQL API, спроектированные для производительности, безопасности и удобства разработки."
+        },
+        {
+          "icon": "solar:lock-linear",
+          "title": "Аутентификация и безопасность",
+          "description": "OAuth 2.0, SSO, RBAC и шифрование данных в покое и при передаче."
+        },
+        {
+          "icon": "solar:chart-2-linear",
+          "title": "Отчётность и аналитика",
+          "description": "Встроенные дашборды, потоки данных и настраиваемые отчёты для бизнес-аналитики в реальном времени."
+        },
+        {
+          "icon": "solar:widget-linear",
+          "title": "Интеграция с третьими сторонами",
+          "description": "Бесшовное подключение к платёжным шлюзам, ERP, CRM и внешним API."
+        }
+      ],
+      "processTitle": "Жизненный цикл разработки",
+      "process": [
+        {
+          "step": "Шаг 01",
+          "title": "Анализ требований",
+          "description": "Картирование бизнес-процессов, пользовательских историй и технических ограничений."
+        },
+        {
+          "step": "Шаг 02",
+          "title": "Проектирование архитектуры",
+          "description": "Микросервисы или монолит? Мы спроектируем правильную архитектуру для вашего масштаба."
+        },
+        {
+          "step": "Шаг 03",
+          "title": "Итеративная разработка",
+          "description": "Agile-спринты с непрерывной интеграцией, тестированием и демонстрациями."
+        },
+        {
+          "step": "Шаг 04",
+          "title": "Развёртывание и передача",
+          "description": "Развёртывание в продакшн, документация, обучение и поддержка перехода."
+        }
+      ],
+      "techTitle": "Технологический стек",
+      "technologies": [
+        { "name": "Node.js", "icon": "logos:nodejs-icon" },
+        { "name": "Python", "icon": "logos:python" },
+        { "name": "Go", "icon": "logos:go" },
+        { "name": "PostgreSQL", "icon": "logos:postgresql" },
+        { "name": "MongoDB", "icon": "logos:mongodb-icon" },
+        { "name": "Redis", "icon": "logos:redis" },
+        { "name": "GraphQL", "icon": "logos:graphql" },
+        { "name": "Docker", "icon": "logos:docker-icon" },
+        { "name": "Kubernetes", "icon": "logos:kubernetes" },
+        { "name": "Terraform", "icon": "logos:terraform-icon" },
+        { "name": "TypeScript", "icon": "logos:typescript-icon" },
+        { "name": "RabbitMQ", "icon": "logos:rabbitmq-icon" },
+        { "name": "Elasticsearch", "icon": "logos:elasticsearch" },
+        { "name": "Kafka", "icon": "logos:kafka-icon" }
+      ],
+      "ctaTitle": "Нужна индивидуальная система?",
+      "ctaText": "Расскажите о ваших бизнес-задачах, и мы спроектируем правильное решение. От концепции до продакшна."
+    },
+    "cloudMigration": {
+      "icon": "solar:cloud-linear",
+      "title": "Облако и миграция",
+      "subtitle": "Бесшовная миграция и стратегии внедрения облака для AWS, Azure и Google Cloud — спроектированы для производительности, безопасности и оптимизации затрат.",
+      "overviewTitle": "Ваше облако, спроектированное правильно",
+      "overviewText": "Переход в облако — это больше, чем простой перенос. Мы проектируем облачные архитектуры и стратегии миграции, раскрывающие полный потенциал AWS, Azure или GCP. От первоначальной оценки до оптимизации — мы обеспечим плавную, безопасную и экономичную миграцию.",
+      "stats": [
+        {
+          "value": "40%",
+          "label": "Экономия в среднем"
+        },
+        {
+          "value": "99.99%",
+          "label": "Достигнутый аптайм"
+        },
+        {
+          "value": "3x",
+          "label": "Прирост производительности"
+        },
+        {
+          "value": "Zero",
+          "label": "Потерь данных при миграции"
+        }
+      ],
+      "featuresTitle": "Облачные сервисы",
+      "features": [
+        {
+          "icon": "solar:cloud-linear",
+          "title": "Облачная стратегия и оценка",
+          "description": "Анализ нагрузок, расчёт TCO и оценка готовности к облаку для формирования чёткого плана миграции."
+        },
+        {
+          "icon": "solar:transfer-horizontal-linear",
+          "title": "Облачная миграция",
+          "description": "Lift-and-shift, ре-платформинг или ре-архитектура — мы выбираем правильный подход для каждой нагрузки."
+        },
+        {
+          "icon": "solar:tuning-2-linear",
+          "title": "Оптимизация затрат",
+          "description": "Зарезервированные инстансы, оптимизация размеров, spot-инстансы и автоматизированное управление затратами."
+        },
+        {
+          "icon": "solar:shield-check-linear",
+          "title": "Облачная безопасность",
+          "description": "Архитектура нулевого доверия, IAM-политики, шифрование и фреймворки соответствия (SOC2, GDPR, HIPAA)."
+        },
+        {
+          "icon": "solar:server-minimalistic-linear",
+          "title": "Мультиоблако и гибрид",
+          "description": "Мультиоблачные стратегии и гибридные архитектуры, исключающие привязку к вендору."
+        },
+        {
+          "icon": "solar:wallet-money-linear",
+          "title": "FinOps и управление",
+          "description": "Финансовое управление облаком: бюджеты, оповещения, стратегии тегирования и модели возврата затрат."
+        }
+      ],
+      "processTitle": "Фазы миграции",
+      "process": [
+        {
+          "step": "Фаза 01",
+          "title": "Оценка",
+          "description": "Инвентаризация нагрузок, зависимостей и требований соответствия."
+        },
+        {
+          "step": "Фаза 02",
+          "title": "Планирование",
+          "description": "Проектирование целевой архитектуры, волн миграции и стратегий отката."
+        },
+        {
+          "step": "Фаза 03",
+          "title": "Миграция",
+          "description": "Выполнение миграции с автоматизированными инструментами, валидацией и координацией переключения."
+        },
+        {
+          "step": "Фаза 04",
+          "title": "Оптимизация",
+          "description": "Пост-миграционная настройка, оптимизация затрат и непрерывное управление облаком."
+        }
+      ],
+      "techTitle": "Облачные платформы и инструменты",
+      "technologies": [
+        { "name": "AWS", "icon": "logos:aws" },
+        { "name": "Azure", "icon": "logos:microsoft-azure" },
+        { "name": "Google Cloud", "icon": "logos:google-cloud" },
+        { "name": "Terraform", "icon": "logos:terraform-icon" },
+        { "name": "CloudFormation", "icon": "logos:aws-cloudformation" },
+        { "name": "Kubernetes", "icon": "logos:kubernetes" },
+        { "name": "Docker", "icon": "logos:docker-icon" },
+        { "name": "Datadog", "icon": "logos:datadog" },
+        { "name": "Istio", "icon": "logos:istio" },
+        { "name": "Pulumi", "icon": "logos:pulumi-icon" },
+        { "name": "Cloudflare", "icon": "logos:cloudflare-icon" },
+        { "name": "Ansible", "icon": "logos:ansible" },
+        { "name": "Vault", "icon": "logos:vault-icon" }
+      ],
+      "ctaTitle": "Спланируйте миграцию в облако",
+      "ctaText": "Будь вы cloud-first компанией или только начинаете — наши архитекторы спроектируют правильную стратегию."
+    },
+    "devops": {
+      "icon": "solar:server-path-linear",
+      "title": "DevOps и автоматизация",
+      "subtitle": "Ускорьте пайплайн доставки с CI/CD-автоматизацией, Infrastructure as Code, оркестрацией контейнеров и практиками GitOps.",
+      "overviewTitle": "Доставляйте быстрее. Доставляйте безопаснее.",
+      "overviewText": "Современное ПО требует быстрых и надёжных релизов. Наши DevOps-сервисы трансформируют ваш пайплайн доставки с помощью CI/CD, контейнеризации и IaC. Мы внедряем GitOps, настраиваем мониторинг и создаём самовосстанавливающуюся инфраструктуру.",
+      "stats": [
+        {
+          "value": "10x",
+          "label": "Быстрее развёртывания"
+        },
+        {
+          "value": "95%",
+          "label": "Покрытие автоматизации"
+        },
+        {
+          "value": "Zero",
+          "label": "Релизов с простоем"
+        },
+        {
+          "value": "50%",
+          "label": "Сокращение затрат"
+        }
+      ],
+      "featuresTitle": "DevOps-сервисы",
+      "features": [
+        {
+          "icon": "solar:server-path-linear",
+          "title": "CI/CD-пайплайны",
+          "description": "Автоматизированные пайплайны сборки, тестирования, сканирования безопасности и развёртывания для каждого коммита."
+        },
+        {
+          "icon": "solar:code-file-linear",
+          "title": "Infrastructure as Code",
+          "description": "Terraform, Pulumi или CloudFormation для управления инфраструктурой с версионированием наряду с кодом приложения."
+        },
+        {
+          "icon": "solar:box-linear",
+          "title": "Оркестрация контейнеров",
+          "description": "Docker-контейнеризация и оркестрация Kubernetes для масштабируемых, переносимых нагрузок."
+        },
+        {
+          "icon": "solar:monitor-smartphone-linear",
+          "title": "Наблюдаемость и мониторинг",
+          "description": "Полная наблюдаемость стека: логи, метрики, трейсинг и интеллектуальные дашборды оповещений."
+        },
+        {
+          "icon": "solar:shield-check-linear",
+          "title": "DevSecOps",
+          "description": "Безопасность, интегрированная в пайплайн — сканирование уязвимостей, управление секретами и проверки соответствия."
+        },
+        {
+          "icon": "solar:chat-round-dots-linear",
+          "title": "GitOps-воркфлоу",
+          "description": "Git-управляемые развёртывания с ревью pull request'ов, автоматическими откатами и аудит-логами."
+        }
+      ],
+      "processTitle": "Подход к внедрению",
+      "process": [
+        {
+          "step": "Шаг 01",
+          "title": "Оценка пайплайна",
+          "description": "Оценка зрелости текущего CI/CD, узких мест и возможностей для улучшения."
+        },
+        {
+          "step": "Шаг 02",
+          "title": "Архитектура и инструменты",
+          "description": "Проектирование целевого состояния и выбор правильных инструментов для вашего стека."
+        },
+        {
+          "step": "Шаг 03",
+          "title": "Внедрение",
+          "description": "Построение пайплайнов, настройка инфраструктуры и поэтапная миграция нагрузок."
+        },
+        {
+          "step": "Шаг 04",
+          "title": "Передача и обучение",
+          "description": "Документация, обучение команды и создание ранбуков для автономной работы."
+        }
+      ],
+      "techTitle": "Инструменты и платформы",
+      "technologies": [
+        { "name": "GitHub Actions", "icon": "logos:github-actions" },
+        { "name": "GitLab CI", "icon": "logos:gitlab" },
+        { "name": "Jenkins", "icon": "logos:jenkins" },
+        { "name": "Docker", "icon": "logos:docker-icon" },
+        { "name": "Kubernetes", "icon": "logos:kubernetes" },
+        { "name": "Terraform", "icon": "logos:terraform-icon" },
+        { "name": "Helm", "icon": "logos:helm" },
+        { "name": "ArgoCD", "icon": "logos:argo-icon" },
+        { "name": "Prometheus", "icon": "logos:prometheus" },
+        { "name": "Grafana", "icon": "logos:grafana" },
+        { "name": "Ansible", "icon": "logos:ansible" },
+        { "name": "Vault", "icon": "logos:vault-icon" },
+        { "name": "Trivy", "icon": "simple-icons:trivy" },
+        { "name": "Flux", "icon": "logos:flux" }
+      ],
+      "ctaTitle": "Модернизируйте ваш пайплайн",
+      "ctaText": "Позвольте нам автоматизировать вашу инфраструктуру и пайплайн доставки. Запишитесь на консультацию."
+    },
+    "itInfrastructure": {
+      "icon": "solar:server-path-linear",
+      "title": "Обслуживание IT-инфраструктуры",
+      "subtitle": "Проактивный мониторинг, обслуживание и управление вашей IT-средой — обеспечение аптайма, безопасности и пиковой производительности круглосуточно.",
+      "overviewTitle": "Держите инфраструктуру в работе",
+      "overviewText": "Ваша IT-инфраструктура — основа вашего бизнеса. Наши управляемые сервисы обеспечивают мониторинг серверов, сетей и облачных сред 24/7, защиту от уязвимостей и оптимизацию производительности.",
+      "stats": [
+        {
+          "value": "24/7",
+          "label": "Покрытие мониторинга"
+        },
+        {
+          "value": "15min",
+          "label": "Реагирование на инциденты"
+        },
+        {
+          "value": "99.99%",
+          "label": "SLA по аптайму"
+        },
+        {
+          "value": "60%",
+          "label": "Меньше инцидентов"
+        }
+      ],
+      "featuresTitle": "Наши сервисы",
+      "features": [
+        {
+          "icon": "solar:monitor-smartphone-linear",
+          "title": "Мониторинг и оповещения 24/7",
+          "description": "Мониторинг инфраструктуры в реальном времени с интеллектуальными оповещениями и автоматической эскалацией инцидентов."
+        },
+        {
+          "icon": "solar:shield-check-linear",
+          "title": "Патчи безопасности",
+          "description": "Автоматическое сканирование уязвимостей и своевременное управление патчами во всех системах."
+        },
+        {
+          "icon": "solar:refresh-circle-linear",
+          "title": "Обновления систем",
+          "description": "Плановые обновления ОС, middleware и приложений с планами отката и стратегиями нулевого простоя."
+        },
+        {
+          "icon": "solar:server-linear",
+          "title": "Управление серверами и сетью",
+          "description": "Управление конфигурацией, планирование ёмкости и настройка производительности серверов."
+        },
+        {
+          "icon": "solar:chat-round-dots-linear",
+          "title": "Служба поддержки",
+          "description": "Выделенная команда поддержки для решения инцидентов, запросов на изменения и технического консультирования."
+        },
+        {
+          "icon": "solar:document-text-linear",
+          "title": "Документация и отчётность",
+          "description": "Полная документация инфраструктуры, ежемесячные отчёты о состоянии и прогнозы ёмкости."
+        }
+      ],
+      "processTitle": "Как мы работаем",
+      "process": [
+        {
+          "step": "Шаг 01",
+          "title": "Аудит инфраструктуры",
+          "description": "Полная оценка текущей среды, выявление рисков и возможностей для улучшения."
+        },
+        {
+          "step": "Шаг 02",
+          "title": "Подключение и настройка",
+          "description": "Развёртывание агентов мониторинга, настройка оповещений и создание ранбуков."
+        },
+        {
+          "step": "Шаг 03",
+          "title": "Проактивное управление",
+          "description": "Непрерывный мониторинг, автоматизированное обслуживание и превентивные действия."
+        },
+        {
+          "step": "Шаг 04",
+          "title": "Отчётность и оптимизация",
+          "description": "Ежемесячные обзоры, рекомендации по оптимизации затрат и обновления дорожной карты."
+        }
+      ],
+      "techTitle": "Инструменты и платформы",
+      "technologies": [
+        { "name": "Prometheus", "icon": "logos:prometheus" },
+        { "name": "Grafana", "icon": "logos:grafana" },
+        { "name": "Datadog", "icon": "logos:datadog" },
+        { "name": "PagerDuty", "icon": "logos:pagerduty-icon" },
+        { "name": "Ansible", "icon": "logos:ansible" },
+        { "name": "Terraform", "icon": "logos:terraform-icon" },
+        { "name": "Linux", "icon": "logos:linux-tux" },
+        { "name": "Windows Server", "icon": "logos:microsoft-windows-icon" },
+        { "name": "VMware", "icon": "logos:vmware" },
+        { "name": "AWS", "icon": "logos:aws" },
+        { "name": "Zabbix", "icon": "simple-icons:zabbix" },
+        { "name": "Nginx", "icon": "logos:nginx" },
+        { "name": "Cloudflare", "icon": "logos:cloudflare-icon" }
+      ],
+      "ctaTitle": "Нужна надёжная IT-поддержка?",
+      "ctaText": "Доверьте нам инфраструктуру, чтобы вы могли сосредоточиться на бизнесе. Обсудите управляемые IT-сервисы с нашей командой."
+    },
+    "fullCycle": {
+      "icon": "solar:restart-circle-linear",
+      "title": "Полный цикл разработки",
+      "subtitle": "Сквозная реализация проекта на всех этапах — от концепции и дизайна через разработку, развёртывание и непрерывную оптимизацию.",
+      "overviewTitle": "Одна команда, полный жизненный цикл",
+      "overviewText": "Полный цикл разработки — это одна команда, которая ведёт проект от начала до конца. Мы проводим дискавери-воркшопы, UX/UI-дизайн, фронтенд и бэкенд разработку, QA-тестирование, развёртывание и пост-релизную поддержку.",
+      "stats": [
+        {
+          "value": "End-to-end",
+          "label": "Владение проектом"
+        },
+        {
+          "value": "40%",
+          "label": "Быстрее доставка"
+        },
+        {
+          "value": "1 Team",
+          "label": "Единая точка контакта"
+        },
+        {
+          "value": "∞",
+          "label": "Пост-релизная поддержка"
+        }
+      ],
+      "featuresTitle": "Что включено",
+      "features": [
+        {
+          "icon": "solar:magnifer-linear",
+          "title": "Исследование и планирование",
+          "description": "Воркшопы со стейкхолдерами, конкурентный анализ и детальные дорожные карты проекта до написания первой строки кода."
+        },
+        {
+          "icon": "solar:pen-new-square-linear",
+          "title": "UX/UI-дизайн",
+          "description": "Пользователецентричный дизайн с вайрфреймами, прототипами и юзабилити-тестированием."
+        },
+        {
+          "icon": "solar:code-square-linear",
+          "title": "Full-Stack разработка",
+          "description": "Фронтенд, бэкенд, базы данных и интеграции — всё создаётся единой слаженной командой на современных фреймворках."
+        },
+        {
+          "icon": "solar:rocket-2-linear",
+          "title": "Развёртывание и DevOps",
+          "description": "CI/CD-пайплайны, staging-среды и развёртывание в продакшн без простоя."
+        },
+        {
+          "icon": "solar:settings-linear",
+          "title": "Постоянное обслуживание",
+          "description": "Исправление багов, обновления функционала, мониторинг производительности и патчи безопасности после запуска."
+        },
+        {
+          "icon": "solar:chart-2-linear",
+          "title": "Рост и оптимизация",
+          "description": "Улучшения на основе аналитики, A/B-тестирование и стратегии масштабирования по мере роста продукта."
+        }
+      ],
+      "processTitle": "Фазы проекта",
+      "process": [
+        {
+          "step": "Фаза 01",
+          "title": "Исследование",
+          "description": "Бизнес-анализ, исследование пользователей и определение объёма проекта."
+        },
+        {
+          "step": "Фаза 02",
+          "title": "Дизайн и прототип",
+          "description": "Интерактивные прототипы, протестированные с реальными пользователями до начала разработки."
+        },
+        {
+          "step": "Фаза 03",
+          "title": "Разработка и тестирование",
+          "description": "Agile-разработка с автоматизированным тестированием, код-ревью и демонстрациями каждые две недели."
+        },
+        {
+          "step": "Фаза 04",
+          "title": "Запуск и развитие",
+          "description": "Развёртывание в продакшн, настройка мониторинга и итеративные улучшения."
+        }
+      ],
+      "techTitle": "Наш стек",
+      "technologies": [
+        { "name": "React", "icon": "logos:react" },
+        { "name": "Node.js", "icon": "logos:nodejs-icon" },
+        { "name": "TypeScript", "icon": "logos:typescript-icon" },
+        { "name": "Python", "icon": "logos:python" },
+        { "name": "PostgreSQL", "icon": "logos:postgresql" },
+        { "name": "Docker", "icon": "logos:docker-icon" },
+        { "name": "AWS", "icon": "logos:aws" },
+        { "name": "Figma", "icon": "logos:figma" },
+        { "name": "GitHub Actions", "icon": "logos:github-actions" },
+        { "name": "Vercel", "icon": "logos:vercel-icon" },
+        { "name": "Kubernetes", "icon": "logos:kubernetes" },
+        { "name": "Terraform", "icon": "logos:terraform-icon" },
+        { "name": "Next.js", "icon": "logos:nextjs-icon" },
+        { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" }
+      ],
+      "ctaTitle": "Начните свой проект",
+      "ctaText": "От идеи до продакшна с одной выделенной командой. Обсудим объём и сроки вашего проекта."
+    },
+    "aiIntegration": {
+      "icon": "solar:magic-stick-3-linear",
+      "title": "Интеграция ИИ",
+      "subtitle": "Используйте мощь машинного обучения, обработки естественного языка и интеллектуальной автоматизации для трансформации бизнес-процессов и принятия решений.",
+      "overviewTitle": "ИИ, приносящий бизнес-ценность",
+      "overviewText": "Мы помогаем организациям интегрировать ИИ и машинное обучение в существующие системы и процессы. От предиктивной аналитики и NLP до компьютерного зрения и интеллектуальной автоматизации — наша команда создаёт production-ready ИИ-решения для реальных бизнес-задач.",
+      "stats": [
+        {
+          "value": "60%",
+          "label": "Автоматизация процессов"
+        },
+        {
+          "value": "3x",
+          "label": "Скорость принятия решений"
+        },
+        {
+          "value": "85%",
+          "label": "Точность прогнозов"
+        },
+        {
+          "value": "40%",
+          "label": "Сокращение затрат"
+        }
+      ],
+      "featuresTitle": "Возможности ИИ",
+      "features": [
+        {
+          "icon": "solar:magic-stick-3-linear",
+          "title": "Модели машинного обучения",
+          "description": "Индивидуальные ML-модели для прогнозирования, классификации, рекомендаций и обнаружения аномалий."
+        },
+        {
+          "icon": "solar:chat-round-dots-linear",
+          "title": "Обработка естественного языка",
+          "description": "Анализ текста, определение тональности, чат-боты и обработка документов на базе NLP-технологий."
+        },
+        {
+          "icon": "solar:eye-linear",
+          "title": "Компьютерное зрение",
+          "description": "Распознавание изображений, детекция объектов, OCR и системы визуального контроля качества."
+        },
+        {
+          "icon": "solar:chart-2-linear",
+          "title": "Предиктивная аналитика",
+          "description": "Прогнозирование на основе данных для планирования спроса, предсказания оттока и бизнес-аналитики."
+        },
+        {
+          "icon": "solar:settings-linear",
+          "title": "Интеллектуальная автоматизация",
+          "description": "Автоматизация рабочих процессов на базе ИИ для обработки рутинных задач и поддержки принятия решений."
+        },
+        {
+          "icon": "solar:document-text-linear",
+          "title": "Стратегия и консалтинг ИИ",
+          "description": "Оценка готовности к ИИ, выявление use-кейсов и составление дорожных карт внедрения."
+        }
+      ],
+      "processTitle": "Наш подход к ИИ",
+      "process": [
+        {
+          "step": "Шаг 01",
+          "title": "Поиск use-кейсов",
+          "description": "Выявление высокоэффективных возможностей ИИ в ваших бизнес-процессах."
+        },
+        {
+          "step": "Шаг 02",
+          "title": "Оценка данных",
+          "description": "Оценка качества данных, доступности и требований к пайплайнам."
+        },
+        {
+          "step": "Шаг 03",
+          "title": "Разработка моделей",
+          "description": "Создание, обучение и валидация моделей с итеративной обратной связью от стейкхолдеров."
+        },
+        {
+          "step": "Шаг 04",
+          "title": "Развёртывание и мониторинг",
+          "description": "Развёртывание в продакшн с MLOps, мониторингом и непрерывным улучшением моделей."
+        }
+      ],
+      "techTitle": "Технологии ИИ",
+      "technologies": [
+        { "name": "Python", "icon": "logos:python" },
+        { "name": "TensorFlow", "icon": "logos:tensorflow" },
+        { "name": "PyTorch", "icon": "logos:pytorch-icon" },
+        { "name": "OpenAI", "icon": "simple-icons:openai" },
+        { "name": "LangChain", "icon": "simple-icons:langchain" },
+        { "name": "Hugging Face", "icon": "noto:hugging-face" },
+        { "name": "scikit-learn", "icon": "simple-icons:scikitlearn" },
+        { "name": "Apache Spark", "icon": "logos:apache-spark" },
+        { "name": "MLflow", "icon": "simple-icons:mlflow" },
+        { "name": "AWS SageMaker", "icon": "logos:aws" },
+        { "name": "Anthropic", "icon": "simple-icons:anthropic" },
+        { "name": "Pinecone", "icon": "simple-icons:pinecone" },
+        { "name": "FastAPI", "icon": "logos:fastapi-icon" },
+        { "name": "Jupyter", "icon": "logos:jupyter" }
+      ],
+      "ctaTitle": "Исследуйте ИИ для вашего бизнеса",
+      "ctaText": "Не знаете, с чего начать с ИИ? Наша команда поможет определить наиболее эффективные возможности для вашей организации."
+    },
+    "consulting": {
+      "icon": "solar:users-group-two-rounded-linear",
+      "title": "IT-консалтинг",
+      "subtitle": "Стратегическое технологическое консультирование для принятия обоснованных решений, снижения рисков и ускорения цифровой трансформации.",
+      "overviewTitle": "Экспертное руководство, измеримый результат",
+      "overviewText": "Наши IT-консалтинговые услуги помогают организациям уверенно принимать технологические решения. Будь то облачная миграция, модернизация legacy-систем или построение инженерной команды — наши консультанты обеспечат глубокую техническую экспертизу и бизнес-понимание.",
+      "stats": [
+        {
+          "value": "200+",
+          "label": "Клиентов проконсультировано"
+        },
+        {
+          "value": "15+",
+          "label": "Лет опыта"
+        },
+        {
+          "value": "30%",
+          "label": "Экономия в среднем"
+        },
+        {
+          "value": "95%",
+          "label": "Удовлетворённость клиентов"
+        }
+      ],
+      "featuresTitle": "Консалтинговые услуги",
+      "features": [
+        {
+          "icon": "solar:document-text-linear",
+          "title": "Технологический аудит",
+          "description": "Комплексная оценка текущего технологического стека, архитектуры и операционных процессов."
+        },
+        {
+          "icon": "solar:map-linear",
+          "title": "Дорожная карта цифровой трансформации",
+          "description": "Стратегическое планирование модернизации технологий с чёткими вехами и измеримыми результатами."
+        },
+        {
+          "icon": "solar:users-group-two-rounded-linear",
+          "title": "Консультирование по команде и процессам",
+          "description": "Структура инженерной команды, стратегия найма, внедрение Agile и оптимизация процессов разработки."
+        },
+        {
+          "icon": "solar:dollar-minimalistic-linear",
+          "title": "Планирование IT-бюджета",
+          "description": "Планирование инвестиций в технологии, оценка вендоров и анализ совокупной стоимости владения."
+        },
+        {
+          "icon": "solar:shield-check-linear",
+          "title": "Соответствие и управление",
+          "description": "Оценка соответствия GDPR, SOC2, HIPAA и руководство по внедрению."
+        },
+        {
+          "icon": "solar:chart-2-linear",
+          "title": "Отраслевой бенчмаркинг",
+          "description": "Сравните свои технологические возможности с отраслевыми аналогами и лидерами рынка."
+        }
+      ],
+      "processTitle": "Модель взаимодействия",
+      "process": [
+        {
+          "step": "Шаг 01",
+          "title": "Первичная оценка",
+          "description": "Понимание текущего состояния, вызовов и стратегических целей."
+        },
+        {
+          "step": "Шаг 02",
+          "title": "Анализ и выводы",
+          "description": "Глубокий технический анализ с бенчмаркингом по отраслевым стандартам."
+        },
+        {
+          "step": "Шаг 03",
+          "title": "Рекомендации",
+          "description": "Практическая дорожная карта с приоритизированными инициативами и ожидаемыми результатами."
+        },
+        {
+          "step": "Шаг 04",
+          "title": "Поддержка внедрения",
+          "description": "Практическое руководство в ходе внедрения для обеспечения успешного результата."
+        }
+      ],
+      "techTitle": "Области экспертизы",
+      "technologies": [
+        { "name": "Облачная архитектура", "icon": "logos:aws" },
+        { "name": "DevOps", "icon": "logos:github-actions" },
+        { "name": "Безопасность", "icon": "solar:shield-check-bold" },
+        { "name": "Инженерия данных", "icon": "logos:apache-spark" },
+        { "name": "ИИ/ML", "icon": "simple-icons:openai" },
+        { "name": "Микросервисы", "icon": "logos:kubernetes" },
+        { "name": "API-стратегия", "icon": "logos:graphql" },
+        { "name": "GDPR", "icon": "solar:lock-bold" },
+        { "name": "SOC2", "icon": "solar:verified-check-bold" },
+        { "name": "Agile", "icon": "logos:jira" },
+        { "name": "Оптимизация затрат", "icon": "solar:wallet-money-bold" },
+        { "name": "Построение команд", "icon": "solar:users-group-two-rounded-bold" },
+        { "name": "Аудит архитектуры", "icon": "solar:code-square-bold" }
+      ],
+      "ctaTitle": "Запишитесь на консультацию",
+      "ctaText": "Получите экспертное руководство по технологической стратегии. Запишитесь на бесплатную консультацию с нашими старшими архитекторами."
+    }
+  }
+}

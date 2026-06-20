@@ -1,0 +1,46 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Cookie consent — anyone may create or update a record; no reads/deletes
+    match /consents/{consentId} {
+      allow create, update: if true;
+      allow read, delete: if false;
+    }
+
+    // Contact form submissions — anyone may create (rate-limited); no reads/updates/deletes
+    match /contacts/{contactId} {
+      allow create: if request.resource.data.keys().hasAll(['fullName', 'workEmail', 'projectDetails', 'privacyConsent', 'createdAt'])
+                    && request.resource.data.fullName is string
+                    && request.resource.data.fullName.size() > 0
+                    && request.resource.data.fullName.size() <= 200
+                    && request.resource.data.workEmail is string
+                    && request.resource.data.workEmail.size() > 0
+                    && request.resource.data.workEmail.size() <= 200
+                    && request.resource.data.projectDetails is string
+                    && request.resource.data.projectDetails.size() > 0
+                    && request.resource.data.projectDetails.size() <= 5000
+                    && request.resource.data.privacyConsent == true;
+      allow read, update, delete: if false;
+    }
+
+    // Career applications — anyone may create (rate-limited); no reads/updates/deletes
+    match /career_applications/{applicationId} {
+      allow create: if request.resource.data.keys().hasAll(['fullName', 'email', 'privacyConsent', 'createdAt'])
+                    && request.resource.data.fullName is string
+                    && request.resource.data.fullName.size() > 0
+                    && request.resource.data.fullName.size() <= 200
+                    && request.resource.data.email is string
+                    && request.resource.data.email.size() > 0
+                    && request.resource.data.email.size() <= 200
+                    && request.resource.data.privacyConsent == true;
+      allow read, update, delete: if false;
+    }
+
+    // Default: deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

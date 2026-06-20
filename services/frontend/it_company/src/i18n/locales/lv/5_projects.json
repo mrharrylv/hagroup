@@ -1,0 +1,66 @@
+[
+  {
+    "id": "event-app",
+    "title": "EventApp.lv",
+    "description": "Pasākumu atklāšanas un biļešu platforma Latvijai — koncerti, teātris, festivāli un izstādes ar kopīgu plānošanu, kategoriju abonēšanu un reāllaika biļešu iegādi.",
+    "image": "",
+    "website": "https://eventapp.lv",
+    "slug": "event-app",
+    "tags": [
+      "Pasākumi",
+      "Biļetes",
+      "Pilna steka"
+    ],
+    "year": 2026,
+    "featured": true,
+    "client": "EventApp",
+    "role": "Pilna cikla izstrāde",
+    "duration": "6 mēneši",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Stripe",
+      "Vercel"
+    ],
+    "highlights": [
+      "Izveidota pasākumu atklāšana ar viedo filtrēšanu vairāk nekā 25 kategorijās",
+      "Ieviesta kopīga pasākumu plānošana ar kopīgojamām saitēm",
+      "Integrēta Stripe biļešu iegāde ar vairāku valūtu atbalstu",
+      "Izstrādāts organizatoru panelis ar reāllaika analītiku",
+      "Sasniegta zem-sekundes lapas ielāde ar SSR un edge kešošanu"
+    ]
+  },
+  {
+    "id": "healthcare-ml",
+    "title": "Veselības aprūpes ML cauruļvads",
+    "description": "Izstrādāts drošs, HIPAA saderīgs ML cauruļvads pacientu datu analīzei, paātrinot diagnostikas darbplūsmas par vairāk nekā 60%.",
+    "image": "",
+    "website": "https://example.com",
+    "slug": "healthcare-ml",
+    "tags": [
+      "Veselības aprūpe",
+      "MI/ML",
+      "Python"
+    ],
+    "year": 2024,
+    "featured": true,
+    "client": "Konfidenciāli",
+    "role": "ML inženierija",
+    "duration": "4 mēneši",
+    "technologies": [
+      "Python",
+      "TensorFlow",
+      "AWS SageMaker",
+      "FastAPI",
+      "Docker"
+    ],
+    "highlights": [
+      "Diagnostikas darbplūsmas paātrinātas par vairāk nekā 60%",
+      "HIPAA saderīga datu cauruļvada arhitektūra",
+      "Reāllaika modeļa secinājumi ar latentumu zem 200 ms"
+    ]
+  }
+]

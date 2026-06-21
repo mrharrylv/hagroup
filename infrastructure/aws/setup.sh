@@ -176,7 +176,7 @@ EOF
       "Sid": "TerraformStateObjects",
       "Effect": "Allow",
       "Action": ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"],
-      "Resource": "arn:aws:s3:::${STATE_BUCKET}/${env}/*"
+      "Resource": "arn:aws:s3:::${STATE_BUCKET}/hagroup/${env}/*"
     },
     {
       "Sid": "TerraformS3Website",
@@ -248,9 +248,13 @@ EOF
       "Effect": "Allow",
       "Action": [
         "secretsmanager:CreateSecret",
-        "secretsmanager:PutSecretValue",
         "secretsmanager:DescribeSecret",
-        "secretsmanager:TagResource"
+        "secretsmanager:GetResourcePolicy",
+        "secretsmanager:UpdateSecret",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:TagResource",
+        "secretsmanager:UntagResource",
+        "secretsmanager:PutSecretValue"
       ],
       "Resource": "arn:aws:secretsmanager:${REGION}:${ACCOUNT_ID}:secret:${env}-hagroup-gmail-*"
     }

@@ -88,7 +88,7 @@ the required GitHub secrets, and how an AWS backend reads them.
 
 1. Go to **Actions** → **Sync Secrets to AWS** → **Run workflow**
 2. Select environment
-3. Writes the `<env>-hagroup-gmail` secret (idempotent — re-run to rotate)
+3. Writes the value of the Terraform-provisioned `<env>-hagroup-gmail` secret (re-run to rotate)
 
 ---
 
@@ -190,12 +190,12 @@ terraform output cloudfront_distribution_id
 cd infrastructure/terraform
 
 # DEV
-terraform init -backend-config="key=dev/terraform.tfstate"
+terraform init -backend-config="key=hagroup/dev/terraform.tfstate"
 terraform plan -var-file="environments/dev.tfvars"
 terraform apply -var-file="environments/dev.tfvars"
 
 # PROD
-terraform init -backend-config="key=prod/terraform.tfstate"
+terraform init -backend-config="key=hagroup/prod/terraform.tfstate"
 terraform plan -var-file="environments/prod.tfvars"
 terraform apply -var-file="environments/prod.tfvars"
 ```

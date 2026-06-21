@@ -11,7 +11,7 @@
   "hero": {
     "badge": "Mūsdienīgi IT risinājumi augošiem uzņēmumiem",
     "titleLine1": "Tehnoloģijas, kas attīsta",
-    "titleLine2": "mazos un vidējos uzņēmumus.",
+    "titleLine2": "uzņēmumus.",
     "description": "Praktiski mākoņpakalpojumu, DevOps un individuāli programmatūras risinājumi, kas palīdz mazajiem un vidējiem uzņēmumiem augt droši, efektīvi un pārliecinoši.",
     "ctaStart": "Sākt Projektu",
     "ctaExplore": "Apskatīt Pakalpojumus"
@@ -67,7 +67,7 @@
     "whatsAppCta": "Rakstīt WhatsApp"
   },
   "footer": {
-    "description": "Uzticama IT infrastruktūra, mākoņrisinājumi un pielāgota programmatūra mazajiem un vidējiem uzņēmumiem.",
+    "description": "Praktiski mākoņpakalpojumu, DevOps un individuāli programmatūras risinājumi, kas palīdz mazajiem un vidējiem uzņēmumiem augt droši, efektīvi un pārliecinoši.",
     "services": {
       "title": "Pakalpojumi",
       "websiteDevelopment": "Mājaslapu Izstrāde",

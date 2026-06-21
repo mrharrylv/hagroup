@@ -67,7 +67,7 @@ aws iam get-role --role-name github-oidc-hagroup-prod --query 'Role.Arn' --outpu
 cd infrastructure/terraform
 
 # Initialize with dev state key
-terraform init -backend-config="key=dev/terraform.tfstate"
+terraform init -backend-config="key=hagroup/dev/terraform.tfstate"
 
 # Preview changes
 terraform plan -var-file="environments/dev.tfvars"
@@ -100,7 +100,7 @@ Dev site will be at: `https://<random>.cloudfront.net`
 cd infrastructure/terraform
 
 # Re-init with prod state key (separate state file)
-terraform init -reconfigure -backend-config="key=prod/terraform.tfstate"
+terraform init -reconfigure -backend-config="key=hagroup/prod/terraform.tfstate"
 
 # Preview
 terraform plan -var-file="environments/prod.tfvars"
@@ -220,11 +220,11 @@ The deploy workflow uses a **4-phase additive strategy**:
 ```bash
 # Destroy dev
 cd infrastructure/terraform
-terraform init -reconfigure -backend-config="key=dev/terraform.tfstate"
+terraform init -reconfigure -backend-config="key=hagroup/dev/terraform.tfstate"
 terraform destroy -var-file="environments/dev.tfvars"
 
 # Destroy prod
-terraform init -reconfigure -backend-config="key=prod/terraform.tfstate"
+terraform init -reconfigure -backend-config="key=hagroup/prod/terraform.tfstate"
 terraform destroy -var-file="environments/prod.tfvars"
 
 # Delete state bucket (optional, requires removing objects first)

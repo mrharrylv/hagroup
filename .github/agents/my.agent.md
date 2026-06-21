@@ -138,11 +138,11 @@ manual dispatch → same build → s3 sync (dev or prod) → CF invalidation
 cd infrastructure/terraform
 
 # Dev
-terraform init -backend-config="key=dev/terraform.tfstate"
+terraform init -backend-config="key=hagroup/dev/terraform.tfstate"
 terraform apply -var-file="environments/dev.tfvars"
 
 # Prod (separate state)
-terraform init -reconfigure -backend-config="key=prod/terraform.tfstate"
+terraform init -reconfigure -backend-config="key=hagroup/prod/terraform.tfstate"
 terraform apply -var-file="environments/prod.tfvars"
 ```
 

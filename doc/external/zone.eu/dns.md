@@ -26,7 +26,7 @@ When Terraform provisions the prod environment, ACM creates a certificate for `c
 
 ```bash
 cd infrastructure/terraform
-terraform init -reconfigure -backend-config="key=prod/terraform.tfstate"
+terraform init -reconfigure -backend-config="key=hagroup/prod/terraform.tfstate"
 terraform output acm_dns_validation_records
 ```
 

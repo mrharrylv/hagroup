@@ -7,8 +7,8 @@ terraform {
     }
   }
   # Backend configuration is partial - state key is set dynamically via -backend-config
-  # Example: terraform init -backend-config="key=dev/terraform.tfstate"
-  # or: terraform init -backend-config="key=prod/terraform.tfstate"
+  # Example: terraform init -backend-config="key=hagroup/dev/terraform.tfstate"
+  # or: terraform init -backend-config="key=hagroup/prod/terraform.tfstate"
   backend "s3" {
     bucket  = "ha-terraform-state-561341419749"
     region  = "eu-north-1"

@@ -117,3 +117,17 @@ output "dns_records_required" {
     ]
   ) : []
 }
+
+# =============================================================================
+# Secrets Manager Outputs
+# =============================================================================
+
+output "gmail_secret_arn" {
+  description = "ARN of the Gmail credentials secret (value injected by the secrets-sync workflow)"
+  value       = aws_secretsmanager_secret.gmail.arn
+}
+
+output "gmail_secret_name" {
+  description = "Name of the Gmail credentials secret in AWS Secrets Manager"
+  value       = aws_secretsmanager_secret.gmail.name
+}

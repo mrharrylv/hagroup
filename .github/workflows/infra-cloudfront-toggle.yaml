@@ -78,7 +78,7 @@ jobs:
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: |
           terraform init \
-            -backend-config="key=${{ github.event.inputs.environment }}/terraform.tfstate"
+            -backend-config="key=hagroup/${{ github.event.inputs.environment }}/terraform.tfstate"
 
       - name: Import existing OAC if not in state
         working-directory: ${{ env.TF_WORKING_DIR }}

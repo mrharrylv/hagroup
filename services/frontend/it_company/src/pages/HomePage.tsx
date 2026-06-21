@@ -5,7 +5,7 @@ import Methodology from '../components/sections/Methodology';
 import Work from '../components/sections/Work';
 import Reviews from '../components/sections/Reviews';
 import Contact from '../components/sections/Contact';
-import Threads from '../components/ui/Threads';
+import Aurora from '../components/ui/Aurora';
 
 export default function HomePage() {
   return (
@@ -17,12 +17,13 @@ export default function HomePage() {
         <hr className="border-zinc-200 dark:border-zinc-800/60" />
       </div>
       <Methodology />
-      {/* Decorative Threads divider */}
+      {/* Decorative Aurora divider */}
       <div className="relative h-48 sm:h-64 md:h-80 overflow-hidden">
-        <Threads
-          color={[0.39, 0.4, 0.95]}
-          amplitude={2.1}
-          distance={0.35}
+        <Aurora
+          colorStops={['#6366f1', '#8b5cf6', '#a78bfa']}
+          amplitude={1.0}
+          blend={0.5}
+          speed={1.0}
         />
       </div>
       <Work />

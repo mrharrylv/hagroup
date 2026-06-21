@@ -11,7 +11,7 @@
   "hero": {
     "badge": "Modern IT Solutions for Growing Businesses",
     "titleLine1": "Technology That Powers",
-    "titleLine2": "Small & Medium Businesses.",
+    "titleLine2": "Businesses.",
     "description": "Practical cloud, DevOps, and custom software solutions designed to help small and medium-sized businesses scale securely, efficiently, and confidently.",
     "ctaStart": "Start Your Project",
     "ctaExplore": "Discover Our Services"
@@ -67,7 +67,7 @@
     "whatsAppCta": "Chat on WhatsApp"
   },
   "footer": {
-    "description": "Reliable IT infrastructure, cloud solutions, and custom software built specifically for small and medium-sized businesses.",
+    "description": "Practical cloud, DevOps, and custom software solutions designed to help small and medium-sized businesses scale securely, efficiently, and confidently.",
     "services": {
       "title": "Services",
       "websiteDevelopment": "Website Development",

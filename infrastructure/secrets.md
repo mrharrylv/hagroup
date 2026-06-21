@@ -56,8 +56,10 @@ Settings → Secrets and variables → Actions → New repository secret.
 3. The workflow validates the secrets exist, assumes the AWS OIDC role, and
    writes them as a single JSON secret `<env>-hagroup-gmail`.
 
-The job is **idempotent**: first run creates the secret, later runs add a new
-version. Re-run it whenever you rotate the Gmail App Password.
+> **Prerequisite:** the **Terraform Infrastructure** workflow must have run for
+> this environment first — Terraform provisions the empty secret container
+> ([`terraform/secrets.tf`](terraform/secrets.tf)). This job only writes/rotates
+> its **value**, so re-run it whenever you rotate the Gmail App Password.
 
 Verify (with AWS CLI):
 
@@ -112,10 +114,12 @@ Cache the result for the lifetime of the process; don't fetch it per request.
 
 ## IAM — where the write permission lives
 
-The OIDC role's permission to write this secret is defined alongside the role in
-[`infrastructure/aws/setup.sh`](aws/setup.sh) (the `AppSecretsSync` statement).
-After editing that script you must re-run it once with admin AWS credentials for
-the change to take effect:
+The secret **container** is defined as code in
+[`infrastructure/terraform/secrets.tf`](terraform/secrets.tf) and created by the
+Terraform Infrastructure workflow. The OIDC role's permission to manage and write
+it is defined alongside the role in [`infrastructure/aws/setup.sh`](aws/setup.sh)
+(the `AppSecretsSync` statement). After editing that script you must re-run it once
+with admin AWS credentials for the change to take effect:
 
 ```bash
 cd infrastructure/aws && ./setup.sh

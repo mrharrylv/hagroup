@@ -27,6 +27,9 @@ export default function HomePage() {
           speed={1.0}
         />
       </div>
+      <div className="max-w-5xl mx-auto px-8">
+        <hr className="border-zinc-200 dark:border-zinc-800/60" />
+      </div>
       <Work />
       <Reviews />
       <div className="max-w-5xl mx-auto px-8">

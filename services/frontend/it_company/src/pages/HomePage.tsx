@@ -17,8 +17,9 @@ export default function HomePage() {
         <hr className="border-zinc-200 dark:border-zinc-800/60" />
       </div>
       <Methodology />
-      {/* Decorative Aurora divider */}
-      <div className="relative h-48 sm:h-64 md:h-80 overflow-hidden">
+      {/* Decorative Aurora glow — radiates up & down and bleeds behind the
+          neighbouring sections from the background instead of sitting in a gap */}
+      <div className="relative h-64 sm:h-80 md:h-96 -my-16 sm:-my-20 md:-my-24 -z-10 pointer-events-none opacity-60">
         <Aurora
           colorStops={['#6366f1', '#8b5cf6', '#a78bfa']}
           amplitude={1.0}

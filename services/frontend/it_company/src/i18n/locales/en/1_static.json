@@ -92,7 +92,7 @@
       "privacy": "Privacy Policy",
       "cookies": "Cookie Policy"
     },
-    "copyright": "© 2026 Cloudie. All rights reserved.",
+    "copyright": "© 2026 HAGroup. All rights reserved.",
     "status": "All systems operational"
   },
   "cookie": {
@@ -143,7 +143,7 @@
         "email": "jane@example.com",
         "phone": "+1 (555) 000-0000",
         "linkedin": "https://linkedin.com/in/janedoe",
-        "coverLetter": "Tell us about your background, experience, and why you'd like to join Cloudie..."
+        "coverLetter": "Tell us about your background, experience, and why you'd like to join HAGroup..."
       }
     }
   },
@@ -172,7 +172,7 @@
   },
   "about": {
     "backHome": "Back to Home",
-    "title": "About Cloudie",
+    "title": "About HAGroup",
     "subtitle": "Practical, scalable IT solutions designed specifically for small and medium-sized businesses.",
     "mission": {
       "title": "Our Mission",
@@ -212,7 +212,7 @@
   "companyDetails": {
     "backToAbout": "Back to About",
     "title": "Company Information",
-    "subtitle": "Official legal and registration details for Cloudie SIA.",
+    "subtitle": "Official legal and registration details for HAGroup SIA.",
     "fields": {
       "companyName": "Company Name",
       "regNumber": "Registration Number",

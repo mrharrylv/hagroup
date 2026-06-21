@@ -95,7 +95,10 @@ void main() {
 
   float height = snoise(vec2(uv.x * 2.0 + uTime * 0.1, uTime * 0.25)) * 0.5 * uAmplitude;
   height = exp(height);
-  height = (uv.y * 2.0 - height + 0.2);
+  // Symmetric vertical falloff: brightest along the centre line and fading
+  // both upward and downward, so the glow radiates up and down (not just down).
+  float vCenter = (1.0 - abs(uv.y - 0.5) * 2.0) * 2.0;
+  height = (vCenter - height + 0.2);
   float intensity = 0.6 * height;
 
   float midPoint = 0.20;

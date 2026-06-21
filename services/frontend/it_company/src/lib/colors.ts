@@ -1,5 +1,5 @@
 /**
- * Cloudie Design Tokens — Color Reference
+ * HAGroup Design Tokens — Color Reference
  *
  * This file documents all colors used across the website.
  * Colors are applied via Tailwind CSS utility classes.

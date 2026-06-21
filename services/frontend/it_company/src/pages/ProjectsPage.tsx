@@ -64,7 +64,7 @@ export default function ProjectsPage() {
             const accentBg = ACCENT_BG[idx % ACCENT_BG.length];
 
             const card = (
-              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-900 transition-all duration-500 group-hover:border-zinc-300 dark:group-hover:border-zinc-700 sm:group-hover:shadow-2xl sm:group-hover:shadow-zinc-300/25 dark:sm:group-hover:shadow-black/40 sm:group-hover:-translate-y-1">
+              <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-900 transition-all duration-500 group-hover:border-zinc-300 dark:group-hover:border-zinc-700 sm:group-hover:shadow-2xl sm:group-hover:shadow-zinc-300/25 dark:sm:group-hover:shadow-black/40">
                 {/* Top visual panel */}
                 <div className="relative aspect-[16/10] sm:aspect-[3/1] overflow-hidden">
                   {project.image ? (

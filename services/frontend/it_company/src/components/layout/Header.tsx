@@ -191,7 +191,7 @@ export default function Header() {
           </button>
 
           <Link
-            to="/#contact"
+            to="/contact"
             className="hidden md:flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 transition-colors shadow-sm"
           >
             {t('nav.bookConsultation')}
@@ -281,7 +281,7 @@ export default function Header() {
 
             {/* CTA — mobile */}
             <Link
-              to="/#contact"
+              to="/contact"
               className="flex items-center justify-center gap-2 mt-3 px-4 py-3 text-sm font-medium rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 transition-colors shadow-sm"
             >
               {t('nav.bookConsultation')}

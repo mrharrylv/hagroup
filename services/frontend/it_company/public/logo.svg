@@ -16,6 +16,6 @@
   <path d="M20 52 C10 52 4 46 4 38 C4 30 10 24 18 23 C20 16 28 10 38 10 C48 10 56 18 56 26 C62 26 68 31 68 38 C68 45 62 52 54 52 Z" fill="url(#back-cloud)"/>
   <!-- Front cloud (blue gradient, overlaps forward and right) -->
   <path d="M30 58 C18 58 10 51 10 42 C10 33 17 27 26 26 C28 18 37 11 48 11 C61 11 70 21 70 32 C77 32 84 37 84 44 C84 51 77 58 68 58 Z" fill="url(#front-cloud)"/>
-  <!-- "Cloudie" text in deep navy -->
-  <text x="98" y="46" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="34" font-weight="600" fill="#1E1B6E" letter-spacing="-0.02em">Cloudie</text>
+  <!-- "HAGroup" text in deep navy -->
+  <text x="98" y="46" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="34" font-weight="600" fill="#1E1B6E" letter-spacing="-0.02em">HAGroup</text>
 </svg>

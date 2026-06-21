@@ -14,8 +14,7 @@ export default function Work() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-6">
           <div>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 dark:text-white mb-3">
-              {t('work.titlePrefix')}{' '}
-              <span className="text-indigo-600 dark:text-indigo-400">{t('work.titleAccent')}</span>
+              {t('work.titlePrefix')} {t('work.titleAccent')}
             </h2>
             <p className="text-base text-zinc-500 dark:text-zinc-400 max-w-lg">
               {t('work.subtitle')}

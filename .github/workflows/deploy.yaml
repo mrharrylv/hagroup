@@ -30,6 +30,14 @@ jobs:
   # ---------------------------------------------------------------------------
   build:
     runs-on: ubuntu-latest
+    # Run under the `prod` Environment so this job can read the VITE_FIREBASE_*
+    # secrets stored there (a job without `environment:` can read repository-
+    # level secrets only). Firebase web config is public client config and is
+    # identical across envs (one Firebase project), so the single shared build
+    # artifact is correct for both dev and prod deploys.
+    # Caveat: do NOT add required-reviewer protection to `prod`, or every push
+    # would gate this build and block the automatic dev deploy.
+    environment: prod
     steps:
       - name: Checkout
         uses: actions/checkout@v4

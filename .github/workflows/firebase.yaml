@@ -68,6 +68,29 @@ jobs:
     # touching services/firebase/** would gate this deploy.
     environment: prod
     steps:
+      # Fail fast with a clear message if the GCP OIDC secrets are absent — the
+      # auth action otherwise fails with a cryptic "must specify exactly one of
+      # workload_identity_provider or credentials_json" when the value is empty.
+      - name: Verify GCP OIDC secrets are configured
+        env:
+          GCP_WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+        run: |
+          set -euo pipefail
+          missing=()
+          if [ -z "${GCP_WORKLOAD_IDENTITY_PROVIDER:-}" ]; then missing+=("GCP_WORKLOAD_IDENTITY_PROVIDER"); fi
+          if [ -z "${GCP_SERVICE_ACCOUNT:-}" ]; then missing+=("GCP_SERVICE_ACCOUNT"); fi
+          if [ "${#missing[@]}" -gt 0 ]; then
+            echo "::error::Missing GitHub secret(s): ${missing[*]}"
+            echo "Add them to the 'prod' environment (Settings -> Environments -> prod -> Secrets)"
+            echo "or repo-level (Settings -> Secrets and variables -> Actions):"
+            echo "  GCP_WORKLOAD_IDENTITY_PROVIDER = projects/162623097205/locations/global/workloadIdentityPools/<pool>/providers/<provider>"
+            echo "  GCP_SERVICE_ACCOUNT            = <name>@hagroup-47ebc.iam.gserviceaccount.com"
+            echo "These need a one-time GCP setup (Blaze + WIF pool/provider + deployer SA) — see the workflow header."
+            exit 1
+          fi
+          echo "GCP OIDC secrets are present."
+
       - name: Checkout
         uses: actions/checkout@v4
 

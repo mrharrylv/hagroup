@@ -5,9 +5,9 @@
     "title": { "en": "CTO", "lv": "Tehniskais direktors", "ru": "Технический директор" },
     "company": "EventApp",
     "description": {
-      "en": "HAGroup delivered our event platform from concept to launch in record time. Their full-cycle approach meant we had a single team handling everything — design, development, infrastructure, and deployment. The result exceeded our expectations.",
-      "lv": "HAGroup realizēja mūsu pasākumu platformu no koncepta līdz palaišanai rekordīsā laikā. Viņu pilna cikla pieeja nozīmēja, ka viena komanda pārvaldīja visu — dizainu, izstrādi, infrastruktūru un izvietošanu. Rezultāts pārsniedza mūsu cerības.",
-      "ru": "HAGroup реализовали нашу платформу мероприятий от концепции до запуска в рекордные сроки. Их подход полного цикла означал, что одна команда отвечала за всё — дизайн, разработку, инфраструктуру и развёртывание. Результат превзошёл наши ожидания."
+      "en": "HA Group delivered our event platform from concept to launch in record time. Their full-cycle approach meant we had a single team handling everything — design, development, infrastructure, and deployment. The result exceeded our expectations.",
+      "lv": "HA Group realizēja mūsu pasākumu platformu no koncepta līdz palaišanai rekordīsā laikā. Viņu pilna cikla pieeja nozīmēja, ka viena komanda pārvaldīja visu — dizainu, izstrādi, infrastruktūru un izvietošanu. Rezultāts pārsniedza mūsu cerības.",
+      "ru": "HA Group реализовали нашу платформу мероприятий от концепции до запуска в рекордные сроки. Их подход полного цикла означал, что одна команда отвечала за всё — дизайн, разработку, инфраструктуру и развёртывание. Результат превзошёл наши ожидания."
     },
     "rating": 5,
     "date": "2026-01-15",
@@ -21,9 +21,9 @@
     "title": { "en": "Head of Digital", "lv": "Digitālā nodaļas vadītāja", "ru": "Руководитель отдела цифровизации" },
     "company": "Baltic Logistics Group",
     "description": {
-      "en": "We migrated our entire infrastructure to AWS with HAGroup's guidance. Zero downtime during the transition, and our operational costs dropped by 35%. Their DevOps expertise is exceptional.",
-      "lv": "Mēs migrējām visu infrastruktūru uz AWS ar HAGroup vadību. Nulles dīkstāve pārejas laikā, un mūsu ekspluatācijas izmaksas samazinājās par 35%. Viņu DevOps kompetence ir izcila.",
-      "ru": "Мы мигрировали всю инфраструктуру на AWS под руководством HAGroup. Нулевой простой при переходе, а операционные расходы снизились на 35%. Их DevOps-экспертиза исключительна."
+      "en": "We migrated our entire infrastructure to AWS with HA Group's guidance. Zero downtime during the transition, and our operational costs dropped by 35%. Their DevOps expertise is exceptional.",
+      "lv": "Mēs migrējām visu infrastruktūru uz AWS ar HA Group vadību. Nulles dīkstāve pārejas laikā, un mūsu ekspluatācijas izmaksas samazinājās par 35%. Viņu DevOps kompetence ir izcila.",
+      "ru": "Мы мигрировали всю инфраструктуру на AWS под руководством HA Group. Нулевой простой при переходе, а операционные расходы снизились на 35%. Их DevOps-экспертиза исключительна."
     },
     "rating": 5,
     "date": "2025-11-20",
@@ -53,9 +53,9 @@
     "title": { "en": "Product Manager", "lv": "Produktu vadītāja", "ru": "Менеджер продукта" },
     "company": "MedTech Innovations",
     "description": {
-      "en": "HAGroup's AI integration work transformed our diagnostic workflows. The ML pipeline they built is HIPAA-compliant and cut our processing time by over 60%. Professional, knowledgeable, and easy to work with.",
-      "lv": "HAGroup MI integrācijas darbs pārveidoja mūsu diagnostikas darbplūsmas. Viņu izveidotais ML cauruļvads ir HIPAA saderīgs un samazināja apstrādes laiku par vairāk nekā 60%. Profesionāli, zinošas un viegli sadarboties.",
-      "ru": "Работа HAGroup по интеграции ИИ трансформировала наши диагностические процессы. ML-пайплайн соответствует HIPAA и сократил время обработки более чем на 60%. Профессионально, компетентно и легко в сотрудничестве."
+      "en": "HA Group's AI integration work transformed our diagnostic workflows. The ML pipeline they built is HIPAA-compliant and cut our processing time by over 60%. Professional, knowledgeable, and easy to work with.",
+      "lv": "HA Group MI integrācijas darbs pārveidoja mūsu diagnostikas darbplūsmas. Viņu izveidotais ML cauruļvads ir HIPAA saderīgs un samazināja apstrādes laiku par vairāk nekā 60%. Profesionāli, zinošas un viegli sadarboties.",
+      "ru": "Работа HA Group по интеграции ИИ трансформировала наши диагностические процессы. ML-пайплайн соответствует HIPAA и сократил время обработки более чем на 60%. Профессионально, компетентно и легко в сотрудничестве."
     },
     "rating": 5,
     "date": "2025-06-12",
@@ -69,9 +69,9 @@
     "title": { "en": "Founder", "lv": "Dibinātājs", "ru": "Основатель" },
     "company": "GreenTech Latvia",
     "description": {
-      "en": "We needed a modern website that reflected our sustainability mission. HAGroup delivered a fast, accessible, beautifully designed site with perfect Lighthouse scores. The ongoing support has been excellent too.",
-      "lv": "Mums bija nepieciešama moderna vietne, kas atspoguļotu mūsu ilgtspējības misiju. HAGroup piegādāja ātru, pieejamu, skaisti dizainētu vietni ar perfektiem Lighthouse rezultātiem. Arī pastāvīgais atbalsts ir bijis izcils.",
-      "ru": "Нам нужен был современный сайт, отражающий нашу миссию устойчивого развития. HAGroup создали быстрый, доступный, красиво оформленный сайт с идеальными оценками Lighthouse. Текущая поддержка тоже на высоте."
+      "en": "We needed a modern website that reflected our sustainability mission. HA Group delivered a fast, accessible, beautifully designed site with perfect Lighthouse scores. The ongoing support has been excellent too.",
+      "lv": "Mums bija nepieciešama moderna vietne, kas atspoguļotu mūsu ilgtspējības misiju. HA Group piegādāja ātru, pieejamu, skaisti dizainētu vietni ar perfektiem Lighthouse rezultātiem. Arī pastāvīgais atbalsts ir bijis izcils.",
+      "ru": "Нам нужен был современный сайт, отражающий нашу миссию устойчивого развития. HA Group создали быстрый, доступный, красиво оформленный сайт с идеальными оценками Lighthouse. Текущая поддержка тоже на высоте."
     },
     "rating": 4,
     "date": "2025-03-25",

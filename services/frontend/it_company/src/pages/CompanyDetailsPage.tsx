@@ -32,7 +32,7 @@ export default function CompanyDetailsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-1">{t('companyDetails.fields.companyName')}</p>
-            <p className="text-sm text-zinc-900 dark:text-white">HAGroup SIA</p>
+            <p className="text-sm text-zinc-900 dark:text-white">HA Group SIA</p>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-1">{t('companyDetails.fields.regNumber')}</p>

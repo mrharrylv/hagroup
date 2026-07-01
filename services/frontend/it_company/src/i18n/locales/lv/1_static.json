@@ -92,7 +92,7 @@
       "privacy": "Privātuma Politika",
       "cookies": "Sīkdatņu Politika"
     },
-    "copyright": "© 2026 HAGroup. Visas tiesības aizsargātas.",
+    "copyright": "© 2026 HA Group. Visas tiesības aizsargātas.",
     "status": "Visas sistēmas darbojas"
   },
   "cookie": {
@@ -143,7 +143,7 @@
         "email": "janis@example.com",
         "phone": "+371 20000000",
         "linkedin": "https://linkedin.com/in/janis",
-        "coverLetter": "Pastāstiet par savu pieredzi un kāpēc vēlaties pievienoties HAGroup..."
+        "coverLetter": "Pastāstiet par savu pieredzi un kāpēc vēlaties pievienoties HA Group..."
       }
     }
   },
@@ -172,7 +172,7 @@
   },
   "about": {
     "backHome": "Atpakaļ uz Sākumu",
-    "title": "Par HAGroup",
+    "title": "Par HA Group",
     "subtitle": "Praktiski un mērogojami IT risinājumi mazajiem un vidējiem uzņēmumiem.",
     "mission": {
       "title": "Mūsu Misija",
@@ -212,7 +212,7 @@
   "companyDetails": {
     "backToAbout": "Atpakaļ uz Par Mums",
     "title": "Uzņēmuma Informācija",
-    "subtitle": "Oficiālie juridiskie un reģistrācijas dati par HAGroup SIA.",
+    "subtitle": "Oficiālie juridiskie un reģistrācijas dati par HA Group SIA.",
     "fields": {
       "companyName": "Uzņēmuma Nosaukums",
       "regNumber": "Reģistrācijas Numurs",

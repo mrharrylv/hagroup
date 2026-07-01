@@ -39,7 +39,7 @@ export default function Logo({ className = '' }: { className?: string }) {
         fill="currentColor"
         letterSpacing="-0.02em"
       >
-        HAGroup
+        HA Group
       </text>
     </svg>
   );

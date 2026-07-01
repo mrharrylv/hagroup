@@ -1,0 +1,129 @@
+name: Deploy Firebase (Functions, Firestore & Storage)
+
+# Deploys the Firebase backend for the HA Group website:
+#   • Cloud Functions   — contact + career-application email notifications
+#   • Firestore rules   — create-only access for consents/contacts/career_applications
+#   • Firestore indexes
+#   • Storage rules     — careers/ upload constraints
+#
+# It also syncs the Gmail credentials from GitHub Actions secrets into Google
+# Secret Manager (where the functions read them at runtime via `defineSecret`),
+# so the deployed code always uses the values stored in the GitHub `prod`
+# environment — never a value typed on someone's laptop.
+#
+#   GitHub secret ──(GCP OIDC / Workload Identity Federation)──► Secret Manager ──► Cloud Functions
+#
+# ── Required GitHub secrets (repository- or `prod` environment-level) ─────────
+#   GCP_WORKLOAD_IDENTITY_PROVIDER  full provider resource name, e.g.
+#       projects/162623097205/locations/global/workloadIdentityPools/github/providers/github
+#   GCP_SERVICE_ACCOUNT             deployer service-account email, e.g.
+#       firebase-deployer@hagroup-47ebc.iam.gserviceaccount.com
+#   GMAIL_ADDRESS                   Gmail address (sender + recipient)
+#   GMAIL_APP_PASSWORD              16-char Gmail App Password
+#
+# ── One-time GCP setup (performed by a human, outside CI) ─────────────────────
+#   1. Upgrade the Firebase project to the Blaze plan (Cloud Functions needs it).
+#   2. Create a Workload Identity Pool + provider that trusts this GitHub repo
+#      (attribute condition on `assertion.repository == 'mrharrylv/hagroup'`).
+#   3. Create the deployer service account and grant it, at minimum:
+#        roles/firebase.admin           roles/cloudfunctions.admin
+#        roles/run.admin                roles/iam.serviceAccountUser
+#        roles/secretmanager.admin      roles/artifactregistry.admin
+#        roles/cloudbuild.builds.editor
+#   4. Bind the pool's principalSet to that SA (roles/iam.workloadIdentityUser).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "services/firebase/functions/**"
+      - "services/firebase/firestore.rules"
+      - "services/firebase/firestore.indexes.json"
+      - "services/firebase/storage.rules"
+      - "services/firebase/firebase.json"
+      - ".github/workflows/firebase.yaml"
+  workflow_dispatch:
+
+permissions:
+  id-token: write # required for GCP Workload Identity Federation
+  contents: read
+
+concurrency:
+  group: firebase-deploy
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: "20"
+  FIREBASE_PROJECT: hagroup-47ebc
+  FIREBASE_DIR: services/firebase
+  FUNCTIONS_DIR: services/firebase/functions
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # Run under the `prod` environment so the job can read the Gmail + GCP OIDC
+    # secrets stored there. There is a single Firebase project (shared by dev and
+    # prod), so this deploy is environment-agnostic.
+    # Caveat: do NOT add required-reviewer protection to `prod`, or every push
+    # touching services/firebase/** would gate this deploy.
+    environment: prod
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: ${{ env.FUNCTIONS_DIR }}/package-lock.json
+
+      - name: Install function dependencies
+        working-directory: ${{ env.FUNCTIONS_DIR }}
+        run: npm ci
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: Authenticate to Google Cloud (Workload Identity Federation)
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+      - name: Sync Gmail credentials into Google Secret Manager
+        working-directory: ${{ env.FIREBASE_DIR }}
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [ -z "${GMAIL_ADDRESS:-}" ] || [ -z "${GMAIL_APP_PASSWORD:-}" ]; then
+            echo "::error::Missing GMAIL_ADDRESS or GMAIL_APP_PASSWORD (add them to the 'prod' environment secrets)."
+            exit 1
+          fi
+          # `--data-file=-` reads the value from stdin, so the secret never lands
+          # on the command line, in the process list, or in the workflow logs.
+          # Each call creates a new Secret Manager version that the functions bind
+          # to during the deploy step below.
+          printf '%s' "$GMAIL_ADDRESS"      | firebase functions:secrets:set GMAIL_ADDRESS      --data-file=- --project "$FIREBASE_PROJECT"
+          printf '%s' "$GMAIL_APP_PASSWORD" | firebase functions:secrets:set GMAIL_APP_PASSWORD --data-file=- --project "$FIREBASE_PROJECT"
+
+      - name: Deploy functions, Firestore rules/indexes & Storage rules
+        working-directory: ${{ env.FIREBASE_DIR }}
+        run: |
+          # `predeploy` in firebase.json runs `npm run build` (tsc) for functions.
+          firebase deploy \
+            --only functions,firestore:rules,firestore:indexes,storage \
+            --project "$FIREBASE_PROJECT" \
+            --non-interactive \
+            --force
+
+      - name: Summary
+        run: |
+          echo "=============================================="
+          echo "Firebase deploy complete"
+          echo "  Project  : ${FIREBASE_PROJECT}"
+          echo "  Deployed : functions, firestore:rules, firestore:indexes, storage"
+          echo "  Secrets  : GMAIL_ADDRESS, GMAIL_APP_PASSWORD (Google Secret Manager)"
+          echo "=============================================="

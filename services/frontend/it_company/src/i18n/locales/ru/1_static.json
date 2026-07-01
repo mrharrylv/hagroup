@@ -92,7 +92,7 @@
       "privacy": "Политика конфиденциальности",
       "cookies": "Политика использования файлов cookie"
     },
-    "copyright": "© 2026 HAGroup. Все права защищены.",
+    "copyright": "© 2026 HA Group. Все права защищены.",
     "status": "Все системы работают"
   },
   "cookie": {
@@ -143,7 +143,7 @@
         "email": "janis@example.com",
         "phone": "+371 20000000",
         "linkedin": "https://linkedin.com/in/janis",
-        "coverLetter": "Расскажите о своем опыте и почему вы хотите присоединиться к HAGroup..."
+        "coverLetter": "Расскажите о своем опыте и почему вы хотите присоединиться к HA Group..."
       }
     }
   },
@@ -172,7 +172,7 @@
   },
   "about": {
     "backHome": "Назад на главную",
-    "title": "О HAGroup",
+    "title": "О HA Group",
     "subtitle": "Практичные и масштабируемые IT-решения для малого и среднего бизнеса.",
     "mission": {
       "title": "Наша миссия",
@@ -212,7 +212,7 @@
   "companyDetails": {
     "backToAbout": "Назад к разделу О нас",
     "title": "Информация о компании",
-    "subtitle": "Официальные юридические и регистрационные данные HAGroup SIA.",
+    "subtitle": "Официальные юридические и регистрационные данные HA Group SIA.",
     "fields": {
       "companyName": "Название компании",
       "regNumber": "Регистрационный номер",

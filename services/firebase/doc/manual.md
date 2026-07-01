@@ -1,7 +1,7 @@
 # HAGroup Firebase — Setup Manual (from scratch)
 
 A precise, copy‑paste runbook for standing up the HAGroup Firebase backend on a
-**brand‑new** Firebase/GCP project and wiring the website to it.
+**brand‑new** Firebase/GCP project.
 
 Follow the steps **in order**. Anything in `<ANGLE_BRACKETS>` is a placeholder you
 replace with a real value produced by an earlier step.
@@ -176,6 +176,11 @@ firebase projects:list        # → HAGroup project is listed
 
 ## 8. Create the Gmail App Password and set function secrets
 
+> **Managed manually — there is no CI/CD pipeline for these secrets.** You set them
+> once (and again only to rotate) directly against the Firebase project with the
+> Firebase CLI. The values live **only** in Google Secret Manager — never in Git,
+> never in GitHub Actions.
+
 The functions send mail through Gmail via an **App Password** (not your login password).
 
 1. Enable 2‑Step Verification: https://myaccount.google.com/signinoptions/two-step-verification
@@ -238,32 +243,7 @@ Expected (regions shown should be **europe-north1**):
 
 ---
 
-## 11. Wire the frontend to the new project
-
-The website build reads the 7 `VITE_FIREBASE_*` values from **GitHub Actions secrets**
-(injected in `.github/workflows/deploy.yaml`).
-
-Add them under **GitHub → repo Settings → Secrets and variables → Actions → New repository secret**
-(or per‑environment), using the values from Step 6:
-
-```
-VITE_FIREBASE_API_KEY
-VITE_FIREBASE_AUTH_DOMAIN
-VITE_FIREBASE_PROJECT_ID
-VITE_FIREBASE_STORAGE_BUCKET
-VITE_FIREBASE_MESSAGING_SENDER_ID
-VITE_FIREBASE_APP_ID
-VITE_FIREBASE_MEASUREMENT_ID
-```
-
-For local development, also create `.secrets/.env.firebase` (gitignored) with the same
-keys so `npm run dev` in `services/frontend/it_company` can reach Firestore.
-
-Then redeploy the site (push to `main`, or run the **Build & Deploy Website** workflow).
-
----
-
-## 12. Smoke test
+## 11. Smoke test
 
 1. Open the deployed site, submit the **Contact** form.
    → email arrives with subject `🟢 New contact: <name>`.
@@ -315,10 +295,9 @@ stale `us-central1` region in its sample output — the live region is `europe-n
 | Secret | Stored in | Used by |
 | --- | --- | --- |
 | `GMAIL_ADDRESS`, `GMAIL_APP_PASSWORD` | Google Secret Manager (via `firebase functions:secrets:set`) | Cloud Functions at runtime |
-| `VITE_FIREBASE_*` (×7) | GitHub Actions secrets | website build in `deploy.yaml` |
 
-> The same `GMAIL_*` names may also exist as GitHub/AWS secrets for the separate
-> AWS `secrets-sync` path — that is unrelated to running these functions.
+> Set **manually** in Step 8 (`firebase functions:secrets:set`) and read at runtime
+> from Google Secret Manager.
 
 ### One‑shot checklist
 
@@ -332,5 +311,4 @@ stale `us-central1` region in its sample output — the live region is `europe-n
 - [ ] `npm install && npm run build` in `functions/`
 - [ ] `firebase deploy --only firestore:rules,firestore:indexes,storage`
 - [ ] `firebase deploy --only functions`
-- [ ] Add 7 `VITE_FIREBASE_*` GitHub secrets → redeploy site
 - [ ] Smoke‑test both forms → emails received

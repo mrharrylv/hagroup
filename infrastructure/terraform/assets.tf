@@ -8,10 +8,13 @@
 #
 # This bucket is never written to by that pipeline, so anything uploaded here is
 # permanent. It is served through the SAME CloudFront distribution under the
-# /assets/* path (see the ordered_cache_behavior + second origin in main.tf).
+# /brand/* path (see the ordered_cache_behavior + second origin in main.tf).
 #
-# Upload target (objects live under the assets/ key prefix):
-#   aws s3 cp logo.png s3://<prefix>-hagroup-assets/assets/logo.png ...
+# NOTE: the path is /brand/* — NOT /assets/*, which is Vite's default build
+# output dir (dist/assets/*.js|css) served from the website bucket.
+#
+# Upload target (objects live under the brand/ key prefix):
+#   aws s3 cp logo.png s3://<prefix>-hagroup-assets/brand/logo.png ...
 # =============================================================================
 
 locals {

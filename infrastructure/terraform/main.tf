@@ -225,9 +225,10 @@ resource "aws_cloudfront_distribution" "website" {
   }
 
   # Brand assets (logo, favicon) — served from the dedicated assets bucket so
-  # they persist across website deploys. See assets.tf.
+  # they persist across website deploys. Uses the /brand/* path (NOT /assets/*,
+  # which is Vite's build-output dir for the app's own JS/CSS). See assets.tf.
   ordered_cache_behavior {
-    path_pattern           = "/assets/*"
+    path_pattern           = "/brand/*"
     allowed_methods        = ["GET", "HEAD", "OPTIONS"]
     cached_methods         = ["GET", "HEAD"]
     target_origin_id       = "S3-${local.assets_bucket_name}"

@@ -78,18 +78,6 @@ See [`doc/deployment.md`](../doc/deployment.md) for the step-by-step procedure a
 3. Type `DESTROY` to confirm
 4. Runs: `terraform init` → `terraform destroy`
 
-### Sync Secrets to AWS
-
-**Workflow:** `.github/workflows/secrets-sync.yaml`
-
-Pushes server-side secrets (Gmail credentials) from GitHub Actions secrets into
-AWS Secrets Manager over OIDC. See [`secrets.md`](secrets.md) for the full flow,
-the required GitHub secrets, and how an AWS backend reads them.
-
-1. Go to **Actions** → **Sync Secrets to AWS** → **Run workflow**
-2. Select environment
-3. Writes the value of the Terraform-provisioned `<env>-hagroup-gmail` secret (re-run to rotate)
-
 ---
 
 ## Terraform Structure

@@ -17,6 +17,11 @@ output "s3_bucket_regional_domain" {
   value       = aws_s3_bucket.website.bucket_regional_domain_name
 }
 
+output "assets_s3_bucket_name" {
+  description = "S3 bucket for permanent brand assets — upload logo/favicon here under the assets/ key prefix (served at /assets/* via CloudFront)"
+  value       = aws_s3_bucket.assets.id
+}
+
 # =============================================================================
 # CloudFront Outputs
 # =============================================================================

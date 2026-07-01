@@ -179,12 +179,14 @@ EOF
       "Resource": "arn:aws:s3:::${STATE_BUCKET}/hagroup/${env}/*"
     },
     {
-      "Sid": "TerraformS3Website",
+      "Sid": "TerraformS3Buckets",
       "Effect": "Allow",
       "Action": "s3:*",
       "Resource": [
         "arn:aws:s3:::${env}-hagroup-website",
-        "arn:aws:s3:::${env}-hagroup-website/*"
+        "arn:aws:s3:::${env}-hagroup-website/*",
+        "arn:aws:s3:::${env}-hagroup-assets",
+        "arn:aws:s3:::${env}-hagroup-assets/*"
       ]
     },
     {

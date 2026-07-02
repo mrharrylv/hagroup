@@ -32,7 +32,7 @@ export default function Layout() {
 
       <Header />
 
-      <main className="flex-grow pt-20 sm:pt-24 pb-16 sm:pb-20">
+      <main className="flex-grow pt-28 sm:pt-32 pb-16 sm:pb-20">
         <PageTransition>
           <Outlet />
         </PageTransition>

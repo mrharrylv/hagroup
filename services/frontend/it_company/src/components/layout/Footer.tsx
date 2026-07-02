@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 lg:col-span-2">
             <Link to="/" className="inline-flex items-center gap-2 mb-4 text-zinc-900 dark:text-white">
-              <Logo className="h-16" />
+              <Logo className="h-24" />
             </Link>
             <p className="text-sm text-zinc-500 dark:text-zinc-400 max-w-xs mb-6">
               {t('footer.description')}

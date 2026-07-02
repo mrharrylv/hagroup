@@ -70,16 +70,16 @@ export default function Header() {
     {/* Blur overlay when services dropdown is open */}
     {servicesOpen && (
       <div
-        className="fixed inset-0 top-16 bg-black/10 dark:bg-black/30 backdrop-blur-sm z-40 transition-opacity"
+        className="fixed inset-0 top-24 bg-black/10 dark:bg-black/30 backdrop-blur-sm z-40 transition-opacity"
         onClick={() => setServicesOpen(false)}
       />
     )}
     <header className="fixed top-0 w-full z-50 transition-colors duration-300">
-      <div className="absolute inset-x-0 top-0 h-16 backdrop-blur-md bg-zinc-50/80 dark:bg-zinc-950/80 border-b border-zinc-200 dark:border-zinc-800/80" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div className="absolute inset-x-0 top-0 h-24 backdrop-blur-md bg-zinc-50/80 dark:bg-zinc-950/80 border-b border-zinc-200 dark:border-zinc-800/80" />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 h-24 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" onClick={handleLogoClick} className="flex items-center gap-2 text-zinc-900 dark:text-white">
-          <Logo className="h-12 sm:h-14" />
+          <Logo className="h-[72px] sm:h-[84px]" />
         </Link>
 
         {/* Desktop Nav */}
@@ -210,7 +210,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50/95 dark:bg-zinc-950/95 backdrop-blur-lg max-h-[calc(100vh-4rem)] overflow-y-auto">
+        <div className="md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50/95 dark:bg-zinc-950/95 backdrop-blur-lg max-h-[calc(100vh-6rem)] overflow-y-auto">
           <nav className="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-1">
             {/* Services accordion */}
             <button

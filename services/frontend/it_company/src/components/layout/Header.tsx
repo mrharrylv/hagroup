@@ -79,7 +79,7 @@ export default function Header() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 h-24 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" onClick={handleLogoClick} className="flex items-center gap-2 text-zinc-900 dark:text-white">
-          <Logo className="h-[72px] sm:h-[84px]" />
+          <Logo className="h-9 sm:h-[42px]" />
         </Link>
 
         {/* Desktop Nav */}

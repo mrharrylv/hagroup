@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 .env*
 *.local
+
+# Brand images live in S3 (see infrastructure/terraform/assets.tf), sources in
+# resources/hagroup/logo. Never commit copies; dev proxies /brand (vite.config.ts).
+public/brand/

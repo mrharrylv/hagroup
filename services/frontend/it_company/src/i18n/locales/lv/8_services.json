@@ -64,24 +64,6 @@
       "subtitle": "Individuāli veidotas, augstas veiktspējas mājas lapas, kas paceļ jūsu zīmolu, piesaista apmeklētājus un veicina konversijas.",
       "overviewTitle": "Mājas lapas, kas sniedz rezultātus",
       "overviewText": "Mēs veidojam modernas, atsaucīgas mājas lapas, kas pielāgotas jūsu zīmolam un biznesa mērķiem. Katra lapa tiek optimizēta ātrumam, pieejamībai un meklētājprogrammu redzamībai. Neatkarīgi no tā, vai jums nepieciešama uzņēmuma galvenā lapa, e-komercijas platforma vai satura portāls — mūsu komanda pārvalda pilnu dzīves ciklu.",
-      "stats": [
-        {
-          "value": "99.9%",
-          "label": "Darbspējas garantija"
-        },
-        {
-          "value": "<1s",
-          "label": "Vid. ielādes laiks"
-        },
-        {
-          "value": "100+",
-          "label": "Piegādātas lapas"
-        },
-        {
-          "value": "A+",
-          "label": "Lighthouse vērtējumi"
-        }
-      ],
       "featuresTitle": "Ko mēs piedāvājam",
       "features": [
         {
@@ -145,15 +127,9 @@
         { "name": "TypeScript", "icon": "logos:typescript-icon" },
         { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" },
         { "name": "Vite", "icon": "logos:vitejs" },
-        { "name": "Vercel", "icon": "logos:vercel-icon" },
-        { "name": "Netlify", "icon": "logos:netlify-icon" },
-        { "name": "WordPress", "icon": "logos:wordpress-icon" },
-        { "name": "Sanity", "icon": "logos:sanity" },
         { "name": "Figma", "icon": "logos:figma" },
-        { "name": "Astro", "icon": "logos:astro-icon" },
         { "name": "Node.js", "icon": "logos:nodejs-icon" },
-        { "name": "GraphQL", "icon": "logos:graphql" },
-        { "name": "Storybook", "icon": "logos:storybook-icon" }
+        { "name": "GraphQL", "icon": "logos:graphql" }
       ],
       "ctaTitle": "Gatavi veidot savu mājas lapu?",
       "ctaText": "Izveidosim mājas lapu, kas darbojas tikpat labi, cik izskatās. Sazinieties ar mūsu komandu."
@@ -164,24 +140,6 @@
       "subtitle": "Uzņēmumu līmeņa programmatūras sistēmas, API un platformas, kas projektētas uzticamībai, mērogojamībai un vienmērīgai integrācijai.",
       "overviewTitle": "Robustas sistēmas mērogojamībai",
       "overviewText": "No CRM platformām un ERP sistēmām līdz pielāgotiem SaaS produktiem un iekšējiem rīkiem — mēs projektējam un veidojam programmatūru, kas risina sarežģītas biznesa problēmas. Mūsu sistēmas ir arhitektētas augstai pieejamībai, datu integritātei un vienmērīgai integrācijai ar trešo pušu pakalpojumiem.",
-      "stats": [
-        {
-          "value": "50+",
-          "label": "Piegādātas sistēmas"
-        },
-        {
-          "value": "99.99%",
-          "label": "Sistēmas darbspēja"
-        },
-        {
-          "value": "3x",
-          "label": "Ātrāka piegāde"
-        },
-        {
-          "value": "24/7",
-          "label": "Uzraudzība iekļauta"
-        }
-      ],
       "featuresTitle": "Pamata spējas",
       "features": [
         {
@@ -242,7 +200,6 @@
       "technologies": [
         { "name": "Node.js", "icon": "logos:nodejs-icon" },
         { "name": "Python", "icon": "logos:python" },
-        { "name": "Go", "icon": "logos:go" },
         { "name": "PostgreSQL", "icon": "logos:postgresql" },
         { "name": "MongoDB", "icon": "logos:mongodb-icon" },
         { "name": "Redis", "icon": "logos:redis" },
@@ -252,8 +209,7 @@
         { "name": "Terraform", "icon": "logos:terraform-icon" },
         { "name": "TypeScript", "icon": "logos:typescript-icon" },
         { "name": "RabbitMQ", "icon": "logos:rabbitmq-icon" },
-        { "name": "Elasticsearch", "icon": "logos:elasticsearch" },
-        { "name": "Kafka", "icon": "logos:kafka-icon" }
+        { "name": "Elasticsearch", "icon": "logos:elasticsearch" }
       ],
       "ctaTitle": "Nepieciešama pielāgota sistēma?",
       "ctaText": "Pastāstiet par savām biznesa problēmām, un mēs projektēsim pareizo risinājumu."
@@ -264,24 +220,6 @@
       "subtitle": "Vienmērīga mākoņa pieņemšana un migrācijas stratēģijas AWS, Azure un Google Cloud — projektētas veiktspējai, drošībai un izmaksu optimizācijai.",
       "overviewTitle": "Jūsu mākonis, pareizi projektēts",
       "overviewText": "Pāreja uz mākoni ir vairāk nekā vienkārša pārvietošana. Mēs projektējam mākoņa natīvas arhitektūras un migrācijas stratēģijas, kas atver AWS, Azure vai GCP pilno potenciālu. No sākotnējā novērtējuma un darba slodžu analīzes līdz izpildei un optimizācijai.",
-      "stats": [
-        {
-          "value": "40%",
-          "label": "Vid. izmaksu ietaupījums"
-        },
-        {
-          "value": "99.99%",
-          "label": "Sasniegta darbspēja"
-        },
-        {
-          "value": "3x",
-          "label": "Veiktspējas pieaugums"
-        },
-        {
-          "value": "Zero",
-          "label": "Datu zuduma migrācijas"
-        }
-      ],
       "featuresTitle": "Mākoņpakalpojumi",
       "features": [
         {
@@ -347,8 +285,6 @@
         { "name": "CloudFormation", "icon": "logos:aws-cloudformation" },
         { "name": "Kubernetes", "icon": "logos:kubernetes" },
         { "name": "Docker", "icon": "logos:docker-icon" },
-        { "name": "Datadog", "icon": "logos:datadog" },
-        { "name": "Istio", "icon": "logos:istio" },
         { "name": "Pulumi", "icon": "logos:pulumi-icon" },
         { "name": "Cloudflare", "icon": "logos:cloudflare-icon" },
         { "name": "Ansible", "icon": "logos:ansible" },
@@ -363,24 +299,6 @@
       "subtitle": "Paātriniet savu piegādes cauruļvadu ar CI/CD automatizāciju, infrastruktūru kā kodu, konteineru orķestrēšanu un GitOps labākajām praksēm.",
       "overviewTitle": "Piegādājiet ātrāk. Piegādājiet drošāk.",
       "overviewText": "Moderna programmatūra prasa ātrus, uzticamus relīzus. Mūsu DevOps pakalpojumi pārveido jūsu piegādes cauruļvadu ar automatizētu CI/CD, konteinerizāciju un infrastruktūru kā kodu. Mēs ieviešam GitOps darbplūsmas, iestatām visaptverošu uzraudzību un veidojam pašdziedējošu infrastruktūru.",
-      "stats": [
-        {
-          "value": "10x",
-          "label": "Ātrākas izvietošanas"
-        },
-        {
-          "value": "95%",
-          "label": "Automatizācijas pārklājums"
-        },
-        {
-          "value": "Zero",
-          "label": "Dīkstāves relīzes"
-        },
-        {
-          "value": "50%",
-          "label": "Izmaksu samazinājums"
-        }
-      ],
       "featuresTitle": "DevOps pakalpojumi",
       "features": [
         {
@@ -446,13 +364,10 @@
         { "name": "Kubernetes", "icon": "logos:kubernetes" },
         { "name": "Terraform", "icon": "logos:terraform-icon" },
         { "name": "Helm", "icon": "logos:helm" },
-        { "name": "ArgoCD", "icon": "logos:argo-icon" },
         { "name": "Prometheus", "icon": "logos:prometheus" },
         { "name": "Grafana", "icon": "logos:grafana" },
         { "name": "Ansible", "icon": "logos:ansible" },
-        { "name": "Vault", "icon": "logos:vault-icon" },
-        { "name": "Trivy", "icon": "simple-icons:trivy" },
-        { "name": "Flux", "icon": "logos:flux" }
+        { "name": "Vault", "icon": "logos:vault-icon" }
       ],
       "ctaTitle": "Modernizējiet savu cauruļvadu",
       "ctaText": "Ļaujiet mums automatizēt jūsu infrastruktūru un piegādes cauruļvadu. Rezervējiet konsultāciju."
@@ -463,24 +378,6 @@
       "subtitle": "Proaktīva uzraudzība, apkope un pārvaldība jūsu IT videi — nodrošinot darbspēju, drošību un maksimālu veiktspēju visu diennakti.",
       "overviewTitle": "Uzturiet infrastruktūru darbībā",
       "overviewText": "Jūsu IT infrastruktūra ir jūsu biznesa pamats. Mūsu pārvaldītie infrastruktūras pakalpojumi nodrošina, ka jūsu serveri, tīkli un mākoņvides tiek uzraudzītas 24/7, aizsargātas pret ievainojamībām un optimizētas maksimālai veiktspējai.",
-      "stats": [
-        {
-          "value": "24/7",
-          "label": "Uzraudzības pārklājums"
-        },
-        {
-          "value": "15min",
-          "label": "Incidentu reaģēšana"
-        },
-        {
-          "value": "99.99%",
-          "label": "Darbspējas SLA"
-        },
-        {
-          "value": "60%",
-          "label": "Mazāk incidentu"
-        }
-      ],
       "featuresTitle": "Mūsu pakalpojumi",
       "features": [
         {
@@ -541,15 +438,12 @@
       "technologies": [
         { "name": "Prometheus", "icon": "logos:prometheus" },
         { "name": "Grafana", "icon": "logos:grafana" },
-        { "name": "Datadog", "icon": "logos:datadog" },
-        { "name": "PagerDuty", "icon": "logos:pagerduty-icon" },
         { "name": "Ansible", "icon": "logos:ansible" },
         { "name": "Terraform", "icon": "logos:terraform-icon" },
         { "name": "Linux", "icon": "logos:linux-tux" },
         { "name": "Windows Server", "icon": "logos:microsoft-windows-icon" },
         { "name": "VMware", "icon": "logos:vmware" },
         { "name": "AWS", "icon": "logos:aws" },
-        { "name": "Zabbix", "icon": "simple-icons:zabbix" },
         { "name": "Nginx", "icon": "logos:nginx" },
         { "name": "Cloudflare", "icon": "logos:cloudflare-icon" }
       ],
@@ -562,24 +456,6 @@
       "subtitle": "Projekta piegāde no sākuma līdz beigām, aptverot visas fāzes — no koncepcijas un dizaina līdz izstrādei, izvietošanai un pastāvīgai optimizācijai.",
       "overviewTitle": "Viena komanda, pilns dzīves cikls",
       "overviewText": "Pilna cikla izstrāde nozīmē, ka jūs saņemat vienu komandu, kas pārvalda visu projektu no sākuma līdz beigām. Mēs veicam izpētes darbnīcas, UX/UI dizainu, frontend un backend izstrādi, QA testēšanu, izvietošanu un pēcpalaišanas atbalstu.",
-      "stats": [
-        {
-          "value": "End-to-end",
-          "label": "Projekta īpašumtiesības"
-        },
-        {
-          "value": "40%",
-          "label": "Ātrāka piegāde"
-        },
-        {
-          "value": "1 Team",
-          "label": "Viens kontaktpunkts"
-        },
-        {
-          "value": "∞",
-          "label": "Pēcpalaišanas atbalsts"
-        }
-      ],
       "featuresTitle": "Kas ir iekļauts",
       "features": [
         {
@@ -647,7 +523,6 @@
         { "name": "AWS", "icon": "logos:aws" },
         { "name": "Figma", "icon": "logos:figma" },
         { "name": "GitHub Actions", "icon": "logos:github-actions" },
-        { "name": "Vercel", "icon": "logos:vercel-icon" },
         { "name": "Kubernetes", "icon": "logos:kubernetes" },
         { "name": "Terraform", "icon": "logos:terraform-icon" },
         { "name": "Next.js", "icon": "logos:nextjs-icon" },
@@ -662,24 +537,6 @@
       "subtitle": "Izmantojiet mašīnmācīšanās, dabiskās valodas apstrādes un inteliģentās automatizācijas spēku, lai pārveidotu savus biznesa procesus.",
       "overviewTitle": "MI, kas sniedz biznesa vērtību",
       "overviewText": "Mēs palīdzam organizācijām integrēt MI un mašīnmācīšanos esošajās sistēmās un darbplūsmās. No prognozējošās analītikas un dabiskās valodas apstrādes līdz datorredzei un inteliģentai automatizācijai — mūsu komanda veido produkcijā gatavas MI risinājumus.",
-      "stats": [
-        {
-          "value": "60%",
-          "label": "Procesu automatizācija"
-        },
-        {
-          "value": "3x",
-          "label": "Lēmumu ātrums"
-        },
-        {
-          "value": "85%",
-          "label": "Prognožu precizitāte"
-        },
-        {
-          "value": "40%",
-          "label": "Izmaksu samazinājums"
-        }
-      ],
       "featuresTitle": "MI spējas",
       "features": [
         {
@@ -742,15 +599,8 @@
         { "name": "TensorFlow", "icon": "logos:tensorflow" },
         { "name": "PyTorch", "icon": "logos:pytorch-icon" },
         { "name": "OpenAI", "icon": "simple-icons:openai" },
-        { "name": "LangChain", "icon": "simple-icons:langchain" },
         { "name": "Hugging Face", "icon": "noto:hugging-face" },
-        { "name": "scikit-learn", "icon": "simple-icons:scikitlearn" },
-        { "name": "Apache Spark", "icon": "logos:apache-spark" },
-        { "name": "MLflow", "icon": "simple-icons:mlflow" },
-        { "name": "AWS SageMaker", "icon": "logos:aws" },
         { "name": "Anthropic", "icon": "simple-icons:anthropic" },
-        { "name": "Pinecone", "icon": "simple-icons:pinecone" },
-        { "name": "FastAPI", "icon": "logos:fastapi-icon" },
         { "name": "Jupyter", "icon": "logos:jupyter" }
       ],
       "ctaTitle": "Izpētiet MI savam biznesam",
@@ -762,24 +612,6 @@
       "subtitle": "Stratēģiska tehnoloģiju vadība, lai palīdzētu jums pieņemt informētus lēmumus, samazināt riskus un paātrināt digitālo transformāciju.",
       "overviewTitle": "Ekspertu vadība, izmērāms ietekme",
       "overviewText": "Mūsu IT konsultāciju pakalpojumi palīdz organizācijām orientēties tehnoloģiju lēmumos ar pārliecību. Neatkarīgi no tā, vai plānojat mākoņa migrāciju, modernizējat mantotās sistēmas vai veidojat inženieru komandu — mūsu konsultanti sniedz dziļu tehnisko ekspertīzi un biznesa izpratni.",
-      "stats": [
-        {
-          "value": "200+",
-          "label": "Konsultēti klienti"
-        },
-        {
-          "value": "15+",
-          "label": "Gadu pieredze"
-        },
-        {
-          "value": "30%",
-          "label": "Vid. izmaksu ietaupījums"
-        },
-        {
-          "value": "95%",
-          "label": "Klientu apmierinātība"
-        }
-      ],
       "featuresTitle": "Konsultāciju pakalpojumi",
       "features": [
         {
@@ -846,7 +678,6 @@
         { "name": "Mikropakalpojumi", "icon": "logos:kubernetes" },
         { "name": "API stratēģija", "icon": "logos:graphql" },
         { "name": "GDPR", "icon": "solar:lock-bold" },
-        { "name": "SOC2", "icon": "solar:verified-check-bold" },
         { "name": "Agile", "icon": "logos:jira" },
         { "name": "Izmaksu optimizācija", "icon": "solar:wallet-money-bold" },
         { "name": "Komandu veidošana", "icon": "solar:users-group-two-rounded-bold" },

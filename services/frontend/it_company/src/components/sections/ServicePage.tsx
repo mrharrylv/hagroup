@@ -15,7 +15,6 @@ interface ServicePageData {
   subtitle: string;
   overviewTitle: string;
   overviewText: string;
-  stats: { value: string; label: string }[];
   featuresTitle: string;
   features: { icon: string; title: string; description: string }[];
   processTitle: string;
@@ -68,29 +67,14 @@ export default function ServicePage({ serviceKey, ctaSection = true }: ServicePa
 
       {/* Overview Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white mb-6">
-              {page.overviewTitle}
-            </h2>
-            <div className="prose prose-zinc dark:prose-invert max-w-none">
-              <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                {page.overviewText}
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {page.stats.map(
-              (stat: { value: string; label: string }, i: number) => (
-                <div
-                  key={i}
-                  className="group p-6 rounded-2xl bg-white dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:border-indigo-500/50 dark:hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/5 hover:scale-[1.03]"
-                >
-                  <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-1">{stat.value}</div>
-                  <div className="text-sm text-zinc-500 dark:text-zinc-400">{stat.label}</div>
-                </div>
-              )
-            )}
+        <div className="max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white mb-6">
+            {page.overviewTitle}
+          </h2>
+          <div className="prose prose-zinc dark:prose-invert max-w-none">
+            <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              {page.overviewText}
+            </p>
           </div>
         </div>
       </section>

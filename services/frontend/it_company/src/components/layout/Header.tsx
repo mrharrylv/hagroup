@@ -70,16 +70,16 @@ export default function Header() {
     {/* Blur overlay when services dropdown is open */}
     {servicesOpen && (
       <div
-        className="fixed inset-0 top-24 bg-black/10 dark:bg-black/30 backdrop-blur-sm z-40 transition-opacity"
+        className="fixed inset-0 top-16 bg-black/10 dark:bg-black/30 backdrop-blur-sm z-40 transition-opacity"
         onClick={() => setServicesOpen(false)}
       />
     )}
     <header className="fixed top-0 w-full z-50 transition-colors duration-300">
-      <div className="absolute inset-x-0 top-0 h-24 backdrop-blur-md bg-zinc-50/80 dark:bg-zinc-950/80 border-b border-zinc-200 dark:border-zinc-800/80" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 h-24 flex items-center justify-between">
+      <div className="absolute inset-x-0 top-0 h-16 backdrop-blur-md bg-zinc-50/85 dark:bg-zinc-950/80 border-b border-zinc-200 dark:border-zinc-800/80 shadow-[0_1px_2px_0_rgba(0,0,0,0.03)]" />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" onClick={handleLogoClick} className="flex items-center gap-2 text-zinc-900 dark:text-white">
-          <Logo className="h-9 sm:h-[42px]" />
+          <Logo className="h-7 sm:h-8" />
         </Link>
 
         {/* Desktop Nav */}
@@ -144,6 +144,13 @@ export default function Header() {
             className="text-sm font-medium text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
           >
             {t('nav.ourWork')}
+          </Link>
+
+          <Link
+            to="/about"
+            className="text-sm font-medium text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+          >
+            {t('nav.company')}
           </Link>
         </nav>
 
@@ -210,7 +217,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50/95 dark:bg-zinc-950/95 backdrop-blur-lg max-h-[calc(100vh-6rem)] overflow-y-auto">
+        <div className="md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50/95 dark:bg-zinc-950/95 backdrop-blur-lg max-h-[calc(100vh-4rem)] overflow-y-auto">
           <nav className="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-1">
             {/* Services accordion */}
             <button

@@ -64,24 +64,6 @@
       "subtitle": "Индивидуально разработанные, высокопроизводительные сайты, которые усиливают ваш бренд, привлекают посетителей и увеличивают конверсию.",
       "overviewTitle": "Сайты, приносящие результат",
       "overviewText": "Мы создаём современные, адаптивные сайты, оптимизированные под ваш бренд и бизнес-цели. Каждый сайт оптимизирован по скорости, доступности и видимости в поисковых системах. Будь то корпоративный сайт, интернет-магазин или контентный портал — наша команда ведёт проект полного цикла.",
-      "stats": [
-        {
-          "value": "99.9%",
-          "label": "Гарантия аптайма"
-        },
-        {
-          "value": "<1s",
-          "label": "Среднее время загрузки"
-        },
-        {
-          "value": "100+",
-          "label": "Сайтов создано"
-        },
-        {
-          "value": "A+",
-          "label": "Оценки Lighthouse"
-        }
-      ],
       "featuresTitle": "Что мы предлагаем",
       "features": [
         {
@@ -145,15 +127,9 @@
         { "name": "TypeScript", "icon": "logos:typescript-icon" },
         { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" },
         { "name": "Vite", "icon": "logos:vitejs" },
-        { "name": "Vercel", "icon": "logos:vercel-icon" },
-        { "name": "Netlify", "icon": "logos:netlify-icon" },
-        { "name": "WordPress", "icon": "logos:wordpress-icon" },
-        { "name": "Sanity", "icon": "logos:sanity" },
         { "name": "Figma", "icon": "logos:figma" },
-        { "name": "Astro", "icon": "logos:astro-icon" },
         { "name": "Node.js", "icon": "logos:nodejs-icon" },
-        { "name": "GraphQL", "icon": "logos:graphql" },
-        { "name": "Storybook", "icon": "logos:storybook-icon" }
+        { "name": "GraphQL", "icon": "logos:graphql" }
       ],
       "ctaTitle": "Готовы создать свой сайт?",
       "ctaText": "Создадим сайт, который работает так же красиво, как выглядит. Свяжитесь с нашей командой."
@@ -164,24 +140,6 @@
       "subtitle": "Корпоративные программные системы, API и платформы, спроектированные для надёжности, масштабируемости и бесшовной интеграции.",
       "overviewTitle": "Надёжные системы для масштабирования",
       "overviewText": "От CRM-платформ и ERP-систем до SaaS-продуктов и внутренних инструментов — мы проектируем программное обеспечение для решения сложных бизнес-задач. Наши системы рассчитаны на высокую доступность, целостность данных и интеграцию с внешними сервисами.",
-      "stats": [
-        {
-          "value": "50+",
-          "label": "Систем создано"
-        },
-        {
-          "value": "99.99%",
-          "label": "Аптайм систем"
-        },
-        {
-          "value": "3x",
-          "label": "Быстрее вывод на рынок"
-        },
-        {
-          "value": "24/7",
-          "label": "Мониторинг включён"
-        }
-      ],
       "featuresTitle": "Основные возможности",
       "features": [
         {
@@ -242,7 +200,6 @@
       "technologies": [
         { "name": "Node.js", "icon": "logos:nodejs-icon" },
         { "name": "Python", "icon": "logos:python" },
-        { "name": "Go", "icon": "logos:go" },
         { "name": "PostgreSQL", "icon": "logos:postgresql" },
         { "name": "MongoDB", "icon": "logos:mongodb-icon" },
         { "name": "Redis", "icon": "logos:redis" },
@@ -252,8 +209,7 @@
         { "name": "Terraform", "icon": "logos:terraform-icon" },
         { "name": "TypeScript", "icon": "logos:typescript-icon" },
         { "name": "RabbitMQ", "icon": "logos:rabbitmq-icon" },
-        { "name": "Elasticsearch", "icon": "logos:elasticsearch" },
-        { "name": "Kafka", "icon": "logos:kafka-icon" }
+        { "name": "Elasticsearch", "icon": "logos:elasticsearch" }
       ],
       "ctaTitle": "Нужна индивидуальная система?",
       "ctaText": "Расскажите о ваших бизнес-задачах, и мы спроектируем правильное решение. От концепции до продакшна."
@@ -264,24 +220,6 @@
       "subtitle": "Бесшовная миграция и стратегии внедрения облака для AWS, Azure и Google Cloud — спроектированы для производительности, безопасности и оптимизации затрат.",
       "overviewTitle": "Ваше облако, спроектированное правильно",
       "overviewText": "Переход в облако — это больше, чем простой перенос. Мы проектируем облачные архитектуры и стратегии миграции, раскрывающие полный потенциал AWS, Azure или GCP. От первоначальной оценки до оптимизации — мы обеспечим плавную, безопасную и экономичную миграцию.",
-      "stats": [
-        {
-          "value": "40%",
-          "label": "Экономия в среднем"
-        },
-        {
-          "value": "99.99%",
-          "label": "Достигнутый аптайм"
-        },
-        {
-          "value": "3x",
-          "label": "Прирост производительности"
-        },
-        {
-          "value": "Zero",
-          "label": "Потерь данных при миграции"
-        }
-      ],
       "featuresTitle": "Облачные сервисы",
       "features": [
         {
@@ -347,8 +285,6 @@
         { "name": "CloudFormation", "icon": "logos:aws-cloudformation" },
         { "name": "Kubernetes", "icon": "logos:kubernetes" },
         { "name": "Docker", "icon": "logos:docker-icon" },
-        { "name": "Datadog", "icon": "logos:datadog" },
-        { "name": "Istio", "icon": "logos:istio" },
         { "name": "Pulumi", "icon": "logos:pulumi-icon" },
         { "name": "Cloudflare", "icon": "logos:cloudflare-icon" },
         { "name": "Ansible", "icon": "logos:ansible" },
@@ -363,24 +299,6 @@
       "subtitle": "Ускорьте пайплайн доставки с CI/CD-автоматизацией, Infrastructure as Code, оркестрацией контейнеров и практиками GitOps.",
       "overviewTitle": "Доставляйте быстрее. Доставляйте безопаснее.",
       "overviewText": "Современное ПО требует быстрых и надёжных релизов. Наши DevOps-сервисы трансформируют ваш пайплайн доставки с помощью CI/CD, контейнеризации и IaC. Мы внедряем GitOps, настраиваем мониторинг и создаём самовосстанавливающуюся инфраструктуру.",
-      "stats": [
-        {
-          "value": "10x",
-          "label": "Быстрее развёртывания"
-        },
-        {
-          "value": "95%",
-          "label": "Покрытие автоматизации"
-        },
-        {
-          "value": "Zero",
-          "label": "Релизов с простоем"
-        },
-        {
-          "value": "50%",
-          "label": "Сокращение затрат"
-        }
-      ],
       "featuresTitle": "DevOps-сервисы",
       "features": [
         {
@@ -446,13 +364,10 @@
         { "name": "Kubernetes", "icon": "logos:kubernetes" },
         { "name": "Terraform", "icon": "logos:terraform-icon" },
         { "name": "Helm", "icon": "logos:helm" },
-        { "name": "ArgoCD", "icon": "logos:argo-icon" },
         { "name": "Prometheus", "icon": "logos:prometheus" },
         { "name": "Grafana", "icon": "logos:grafana" },
         { "name": "Ansible", "icon": "logos:ansible" },
-        { "name": "Vault", "icon": "logos:vault-icon" },
-        { "name": "Trivy", "icon": "simple-icons:trivy" },
-        { "name": "Flux", "icon": "logos:flux" }
+        { "name": "Vault", "icon": "logos:vault-icon" }
       ],
       "ctaTitle": "Модернизируйте ваш пайплайн",
       "ctaText": "Позвольте нам автоматизировать вашу инфраструктуру и пайплайн доставки. Запишитесь на консультацию."
@@ -463,24 +378,6 @@
       "subtitle": "Проактивный мониторинг, обслуживание и управление вашей IT-средой — обеспечение аптайма, безопасности и пиковой производительности круглосуточно.",
       "overviewTitle": "Держите инфраструктуру в работе",
       "overviewText": "Ваша IT-инфраструктура — основа вашего бизнеса. Наши управляемые сервисы обеспечивают мониторинг серверов, сетей и облачных сред 24/7, защиту от уязвимостей и оптимизацию производительности.",
-      "stats": [
-        {
-          "value": "24/7",
-          "label": "Покрытие мониторинга"
-        },
-        {
-          "value": "15min",
-          "label": "Реагирование на инциденты"
-        },
-        {
-          "value": "99.99%",
-          "label": "SLA по аптайму"
-        },
-        {
-          "value": "60%",
-          "label": "Меньше инцидентов"
-        }
-      ],
       "featuresTitle": "Наши сервисы",
       "features": [
         {
@@ -541,15 +438,12 @@
       "technologies": [
         { "name": "Prometheus", "icon": "logos:prometheus" },
         { "name": "Grafana", "icon": "logos:grafana" },
-        { "name": "Datadog", "icon": "logos:datadog" },
-        { "name": "PagerDuty", "icon": "logos:pagerduty-icon" },
         { "name": "Ansible", "icon": "logos:ansible" },
         { "name": "Terraform", "icon": "logos:terraform-icon" },
         { "name": "Linux", "icon": "logos:linux-tux" },
         { "name": "Windows Server", "icon": "logos:microsoft-windows-icon" },
         { "name": "VMware", "icon": "logos:vmware" },
         { "name": "AWS", "icon": "logos:aws" },
-        { "name": "Zabbix", "icon": "simple-icons:zabbix" },
         { "name": "Nginx", "icon": "logos:nginx" },
         { "name": "Cloudflare", "icon": "logos:cloudflare-icon" }
       ],
@@ -562,24 +456,6 @@
       "subtitle": "Сквозная реализация проекта на всех этапах — от концепции и дизайна через разработку, развёртывание и непрерывную оптимизацию.",
       "overviewTitle": "Одна команда, полный жизненный цикл",
       "overviewText": "Полный цикл разработки — это одна команда, которая ведёт проект от начала до конца. Мы проводим дискавери-воркшопы, UX/UI-дизайн, фронтенд и бэкенд разработку, QA-тестирование, развёртывание и пост-релизную поддержку.",
-      "stats": [
-        {
-          "value": "End-to-end",
-          "label": "Владение проектом"
-        },
-        {
-          "value": "40%",
-          "label": "Быстрее доставка"
-        },
-        {
-          "value": "1 Team",
-          "label": "Единая точка контакта"
-        },
-        {
-          "value": "∞",
-          "label": "Пост-релизная поддержка"
-        }
-      ],
       "featuresTitle": "Что включено",
       "features": [
         {
@@ -647,7 +523,6 @@
         { "name": "AWS", "icon": "logos:aws" },
         { "name": "Figma", "icon": "logos:figma" },
         { "name": "GitHub Actions", "icon": "logos:github-actions" },
-        { "name": "Vercel", "icon": "logos:vercel-icon" },
         { "name": "Kubernetes", "icon": "logos:kubernetes" },
         { "name": "Terraform", "icon": "logos:terraform-icon" },
         { "name": "Next.js", "icon": "logos:nextjs-icon" },
@@ -662,24 +537,6 @@
       "subtitle": "Используйте мощь машинного обучения, обработки естественного языка и интеллектуальной автоматизации для трансформации бизнес-процессов и принятия решений.",
       "overviewTitle": "ИИ, приносящий бизнес-ценность",
       "overviewText": "Мы помогаем организациям интегрировать ИИ и машинное обучение в существующие системы и процессы. От предиктивной аналитики и NLP до компьютерного зрения и интеллектуальной автоматизации — наша команда создаёт production-ready ИИ-решения для реальных бизнес-задач.",
-      "stats": [
-        {
-          "value": "60%",
-          "label": "Автоматизация процессов"
-        },
-        {
-          "value": "3x",
-          "label": "Скорость принятия решений"
-        },
-        {
-          "value": "85%",
-          "label": "Точность прогнозов"
-        },
-        {
-          "value": "40%",
-          "label": "Сокращение затрат"
-        }
-      ],
       "featuresTitle": "Возможности ИИ",
       "features": [
         {
@@ -742,15 +599,8 @@
         { "name": "TensorFlow", "icon": "logos:tensorflow" },
         { "name": "PyTorch", "icon": "logos:pytorch-icon" },
         { "name": "OpenAI", "icon": "simple-icons:openai" },
-        { "name": "LangChain", "icon": "simple-icons:langchain" },
         { "name": "Hugging Face", "icon": "noto:hugging-face" },
-        { "name": "scikit-learn", "icon": "simple-icons:scikitlearn" },
-        { "name": "Apache Spark", "icon": "logos:apache-spark" },
-        { "name": "MLflow", "icon": "simple-icons:mlflow" },
-        { "name": "AWS SageMaker", "icon": "logos:aws" },
         { "name": "Anthropic", "icon": "simple-icons:anthropic" },
-        { "name": "Pinecone", "icon": "simple-icons:pinecone" },
-        { "name": "FastAPI", "icon": "logos:fastapi-icon" },
         { "name": "Jupyter", "icon": "logos:jupyter" }
       ],
       "ctaTitle": "Исследуйте ИИ для вашего бизнеса",
@@ -762,24 +612,6 @@
       "subtitle": "Стратегическое технологическое консультирование для принятия обоснованных решений, снижения рисков и ускорения цифровой трансформации.",
       "overviewTitle": "Экспертное руководство, измеримый результат",
       "overviewText": "Наши IT-консалтинговые услуги помогают организациям уверенно принимать технологические решения. Будь то облачная миграция, модернизация legacy-систем или построение инженерной команды — наши консультанты обеспечат глубокую техническую экспертизу и бизнес-понимание.",
-      "stats": [
-        {
-          "value": "200+",
-          "label": "Клиентов проконсультировано"
-        },
-        {
-          "value": "15+",
-          "label": "Лет опыта"
-        },
-        {
-          "value": "30%",
-          "label": "Экономия в среднем"
-        },
-        {
-          "value": "95%",
-          "label": "Удовлетворённость клиентов"
-        }
-      ],
       "featuresTitle": "Консалтинговые услуги",
       "features": [
         {
@@ -846,7 +678,6 @@
         { "name": "Микросервисы", "icon": "logos:kubernetes" },
         { "name": "API-стратегия", "icon": "logos:graphql" },
         { "name": "GDPR", "icon": "solar:lock-bold" },
-        { "name": "SOC2", "icon": "solar:verified-check-bold" },
         { "name": "Agile", "icon": "logos:jira" },
         { "name": "Оптимизация затрат", "icon": "solar:wallet-money-bold" },
         { "name": "Построение команд", "icon": "solar:users-group-two-rounded-bold" },

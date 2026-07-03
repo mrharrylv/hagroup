@@ -164,7 +164,7 @@ All routes are handled client-side by React Router. CloudFront returns `index.ht
 
 | Trigger | Target | Notes |
 |---------|--------|-------|
-| Push to `main` (paths: `services/frontend/it_company/**`) | dev | Automatic |
+| Push to `main` (paths: `services/frontend/it_company/**`) | prod | Automatic |
 | Manual dispatch | dev or prod | `workflow_dispatch` with environment selector |
 
 ### Zero-Downtime Deployment

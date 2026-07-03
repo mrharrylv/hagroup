@@ -36,7 +36,7 @@ jobs:
     # identical across envs (one Firebase project), so the single shared build
     # artifact is correct for both dev and prod deploys.
     # Caveat: do NOT add required-reviewer protection to `prod`, or every push
-    # would gate this build and block the automatic dev deploy.
+    # would gate this build and block the automatic prod deploy.
     environment: prod
     steps:
       - name: Checkout
@@ -89,14 +89,12 @@ jobs:
           retention-days: 7
 
   # ---------------------------------------------------------------------------
-  # Deploy — DEV  (auto on every push to main)
+  # Deploy — DEV  (manual dispatch only)
   # ---------------------------------------------------------------------------
   deploy-dev:
     needs: build
     runs-on: ubuntu-latest
-    if: >-
-      (github.event_name == 'push') ||
-      (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'dev')
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'dev'
     environment: dev
     steps:
       - name: Download build artifact
@@ -263,12 +261,14 @@ jobs:
           echo "=============================================="
 
   # ---------------------------------------------------------------------------
-  # Deploy — PROD  (manual dispatch only)
+  # Deploy — PROD  (auto on every push to main, or manual dispatch)
   # ---------------------------------------------------------------------------
   deploy-prod:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'prod'
+    if: >-
+      (github.event_name == 'push') ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'prod')
     environment: prod
     steps:
       - name: Download build artifact
@@ -416,6 +416,6 @@ jobs:
           echo "✅ PROD deployment complete (zero-downtime)"
           echo "   Bucket : ${{ steps.tf.outputs.bucket }}"
           echo "   CF Dist: ${{ steps.tf.outputs.distribution_id }}"
-          echo "   Domain : cloudie.eventapp.lv"
+          echo "   Domain : www.hagroup.lv"
           echo "   Commit : ${{ github.sha }}"
           echo "=============================================="

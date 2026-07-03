@@ -182,8 +182,8 @@ aws cloudfront create-invalidation \
 
 ### Ongoing deploys (automated)
 
-Push to `main` → GitHub Actions auto-deploys to **dev**.
-Manual dispatch → Select **prod** to deploy to production.
+Push to `main` → GitHub Actions auto-deploys to **prod**.
+Manual dispatch → Select **dev** (or prod) to deploy on demand.
 
 Workflow: `.github/workflows/deploy.yaml`
 

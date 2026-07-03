@@ -120,12 +120,12 @@ website/
 
 | Environment | Domain                  | Deploy Trigger              |
 | ----------- | ----------------------- | --------------------------- |
-| **dev**     | CloudFront default URL  | Auto on push to `main`      |
-| **prod**    | `cloudie.eventapp.lv`   | Manual workflow dispatch     |
+| **dev**     | CloudFront default URL  | Manual workflow dispatch    |
+| **prod**    | `www.hagroup.lv`        | Auto on push to `main`      |
 
 ### CI/CD Pipeline (`.github/workflows/deploy.yaml`)
 ```
-push to main → npm ci → lint → tsc → vite build → s3 sync (dev) → CF invalidation
+push to main → npm ci → lint → tsc → vite build → s3 sync (prod) → CF invalidation
 manual dispatch → same build → s3 sync (dev or prod) → CF invalidation
 ```
 

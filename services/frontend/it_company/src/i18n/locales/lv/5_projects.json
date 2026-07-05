@@ -35,5 +35,35 @@
       "Izstrādāts organizatoru panelis ar reāllaika analītiku un veiktspējas ieskatiem",
       "Sasniegta zem-sekundes lapas ielāde ar SSR un edge kešošanu"
     ]
+  },
+  {
+    "id": "balticgp",
+    "title": "BalticGP",
+    "description": "Motociklu šosejas sacensību kalendārs Baltijai un Eiropai. Ātri atrodi oficiālas sacensības, treniņus un trases dienas vienuviet.",
+    "image": "",
+    "website": "/balticgp",
+    "slug": "balticgp",
+    "tags": [
+      "Autosports",
+      "Kalendārs",
+      "Kopiena"
+    ],
+    "year": 2026,
+    "featured": true,
+    "client": "BalticGP",
+    "role": "Produkta izstrāde",
+    "duration": "MVP",
+    "technologies": [
+      "iOS",
+      "Android",
+      "Pārbaudīti notikumi",
+      "Iesniedzēju process"
+    ],
+    "highlights": [
+      "Vienots oficiālo sacensību un treniņu kalendārs no vairākiem organizatoriem",
+      "Ātri filtri trasēm, valstīm, notikumu tipiem un čempionātiem",
+      "Pārskatāms iesniegto notikumu apstiprināšanas process pirms publicēšanas",
+      "Uzticamas notikumu lapas ar avota saitēm un atjaunināšanas laiku"
+    ]
   }
 ]

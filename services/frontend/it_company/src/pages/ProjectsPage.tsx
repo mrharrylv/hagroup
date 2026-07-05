@@ -62,6 +62,7 @@ export default function ProjectsPage() {
           {projects.map((project, idx) => {
             const accent = ACCENT_COLORS[idx % ACCENT_COLORS.length];
             const accentBg = ACCENT_BG[idx % ACCENT_BG.length];
+            const isInternalLink = Boolean(project.website?.startsWith('/'));
 
             const card = (
               <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-900 transition-all duration-500 group-hover:border-zinc-300 dark:group-hover:border-zinc-700 sm:group-hover:shadow-2xl sm:group-hover:shadow-zinc-300/25 dark:sm:group-hover:shadow-black/40">
@@ -197,6 +198,15 @@ export default function ProjectsPage() {
             );
 
             return project.website ? (
+              isInternalLink ? (
+                <Link
+                  key={project.id}
+                  to={project.website}
+                  className="group block"
+                >
+                  {card}
+                </Link>
+              ) : (
               <a
                 key={project.id}
                 href={project.website}
@@ -206,6 +216,7 @@ export default function ProjectsPage() {
               >
                 {card}
               </a>
+              )
             ) : (
               <div key={project.id} className="group block">
                 {card}

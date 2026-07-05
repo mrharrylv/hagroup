@@ -20,6 +20,7 @@ import TermsPage from './pages/legal/TermsPage';
 import PrivacyPage from './pages/legal/PrivacyPage';
 import CookiePolicyPage from './pages/legal/CookiePolicyPage';
 import ProjectPage from './pages/projects/ProjectPage';
+import BalticGPPage from './pages/projects/BalticGPPage';
 
 export default function App() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
           <Route path="/reviews" element={<ReviewsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/:slug" element={<ProjectPage />} />
+          <Route path="/balticgp" element={<BalticGPPage />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutPage />} />

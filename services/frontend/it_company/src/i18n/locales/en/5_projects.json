@@ -35,5 +35,35 @@
       "Developed an organizer dashboard with real-time analytics and performance insights",
       "Optimized performance to achieve sub-second page loads using SSR and edge caching"
     ]
+  },
+  {
+    "id": "balticgp",
+    "title": "BalticGP",
+    "description": "A motorcycle road racing calendar for the Baltics and Europe. It helps riders and fans quickly find official races, trainings, and track days in one reliable place.",
+    "image": "",
+    "website": "/balticgp",
+    "slug": "balticgp",
+    "tags": [
+      "Motorsport",
+      "Calendar",
+      "Community"
+    ],
+    "year": 2026,
+    "featured": true,
+    "client": "BalticGP",
+    "role": "Product Development",
+    "duration": "MVP",
+    "technologies": [
+      "iOS",
+      "Android",
+      "Verified Events",
+      "Contributor Workflow"
+    ],
+    "highlights": [
+      "Unified official race and training schedules across multiple organizers",
+      "Fast filters for tracks, countries, event types, and championships",
+      "Transparent review flow for contributed events before publication",
+      "Reliable event pages with source links and last-updated timestamps"
+    ]
   }
 ]

@@ -1,6 +1,6 @@
 {
-  "title": "Veido nākotni kopā ar mums",
-  "subtitle": "Pievienojies ambiciozu inženieru, arhitektu un inovatoru komandai, kas izstrādā drošas un mērogojamas tehnoloģijas nākamās paaudzes uzņēmumiem.",
+  "title": "Veidojiet nākotni kopā ar mums",
+  "subtitle": "Pievienojieties ambiciozu inženieru, arhitektu un inovatoru komandai, kas izstrādā drošas un mērogojamas tehnoloģijas augošiem uzņēmumiem.",
   "benefitsTitle": "Kāpēc pievienoties HA Group?",
   "benefitsSubtitle": "Mēs sniedzam konkurētspējīgu atalgojumu, elastību un iespēju strādāt pie nozīmīgiem, mūsdienīgiem tehnoloģiju projektiem.",
   "benefits": [
@@ -8,13 +8,13 @@
       "key": "health",
       "icon": "solar:heart-pulse-linear",
       "title": "Veselība un labbūtība",
-      "description": "Plaša medicīniskā apdrošināšana, labbūtības iniciatīvas un mentālās veselības atbalsts, lai tu varētu justies un strādāt vislabāk."
+      "description": "Plaša veselības apdrošināšana, labbūtības iniciatīvas un emocionālās veselības atbalsts, lai jūs varētu justies un strādāt pēc iespējas labāk."
     },
     {
       "key": "remote",
       "icon": "solar:home-smile-linear",
       "title": "Attālināta darba kultūra",
-      "description": "Strādā no jebkuras vietas ar elastīgu darba laiku un uz rezultātiem balstītu sadarbību."
+      "description": "Strādājiet no jebkuras vietas ar elastīgu darba laiku un uz rezultātiem vērstu sadarbību."
     },
     {
       "key": "growth",
@@ -32,17 +32,17 @@
       "key": "equipment",
       "icon": "solar:laptop-minimalistic-linear",
       "title": "Augstākās klases aprīkojums",
-      "description": "Jaudīgs portatīvais dators, kvalitatīvi piederumi un visi nepieciešamie rīki tavam produktīvam darbam."
+      "description": "Jaudīgs portatīvais dators, kvalitatīvi piederumi un visi produktīvam darbam nepieciešamie rīki."
     },
     {
       "key": "global",
       "icon": "solar:global-linear",
       "title": "Globāla ietekme",
-      "description": "Piedalies projektos, kas nodrošina fintech, veselības aprūpes un uzņēmumu platformas visā pasaulē."
+      "description": "Piedalieties finanšu tehnoloģiju, veselības aprūpes un uzņēmumu platformu projektos, ko izmanto visā pasaulē."
     }
   ],
   "positionsTitle": "Atvērtās vakances",
-  "positionsSubtitle": "Apskati aktuālās iespējas. Neredzi piemērotu amatu? Nosūti savu CV jebkurā gadījumā — mēs vienmēr priecājamies iepazīt talantīgus profesionāļus.",
+  "positionsSubtitle": "Apskatiet aktuālās iespējas. Neredzat piemērotu amatu? Tik un tā nosūtiet savu CV — mēs vienmēr priecājamies iepazīt talantīgus profesionāļus.",
   "positions": [
     {
       "key": "juniorUxUi",
@@ -55,9 +55,9 @@
     }
   ],
   "form": {
-    "title": "Piesakies darbam mūsu komandā",
-    "subtitle": "Iesniedz savu pieteikumu, un mēs atbildēsim 5 darba dienu laikā. Katrs pieteikums tiek rūpīgi izskatīts.",
-    "locationValue": "Attālināti, Sanfrancisko, Eiropa",
+    "title": "Piesakieties darbam mūsu komandā",
+    "subtitle": "Iesniedziet pieteikumu, un mēs atbildēsim 5 darba dienu laikā. Katrs pieteikums tiek rūpīgi izskatīts.",
+    "locationValue": "Attālināti / Eiropa",
     "responseTimeValue": "5 darba dienu laikā"
   }
 }

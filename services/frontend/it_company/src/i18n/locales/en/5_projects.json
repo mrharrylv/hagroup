@@ -2,7 +2,7 @@
   {
     "id": "event-app",
     "title": "EventApp.lv",
-    "description": "A comprehensive event discovery and ticketing platform for Latvia — covering concerts, theatre, festivals, and exhibitions. Aggregates events from multiple public sources, enables collaborative planning, and offers personalized subscriptions.",
+    "description": "An event discovery platform for Latvia covering concerts, theatre, festivals, and exhibitions. It aggregates events from public sources, links to official organizers and ticket sellers, supports collaborative planning, and offers personalized subscriptions.",
     "image": "",
     "website": "https://eventapp.lv",
     "slug": "event-app",

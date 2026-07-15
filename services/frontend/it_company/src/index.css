@@ -24,6 +24,11 @@ html.no-transition *::after {
 
 body {
   font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+section {
+  scroll-margin-top: 6.5rem;
 }
 
 select {
@@ -122,4 +127,85 @@ select {
 
 .animate-card-slide-in {
   animation: card-slide-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Route entrance — intentionally short enough to keep navigation immediate. */
+@keyframes page-enter {
+  0% {
+    opacity: 0;
+    filter: blur(7px);
+    transform: translateY(14px) scale(0.995);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+.page-transition {
+  animation: page-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: 50% 0;
+}
+
+/* One-time section reveals driven by IntersectionObserver. */
+.scroll-reveal {
+  --reveal-delay: 0ms;
+  opacity: 0;
+  filter: blur(8px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay),
+    filter 0.65s ease-out var(--reveal-delay);
+  will-change: opacity, transform, filter;
+}
+
+.scroll-reveal--rise {
+  transform: translateY(34px);
+}
+
+.scroll-reveal--fade {
+  transform: translateY(12px);
+}
+
+.scroll-reveal--slide-left {
+  transform: translateX(-34px);
+}
+
+.scroll-reveal--slide-right {
+  transform: translateX(34px);
+}
+
+.scroll-reveal--scale {
+  transform: translateY(16px) scale(0.98);
+}
+
+.scroll-reveal[data-visible='true'] {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1);
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .scroll-reveal,
+  .scroll-reveal[data-visible='true'] {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
 }

@@ -2,14 +2,14 @@
   {
     "id": "event-app",
     "title": "EventApp.lv",
-    "description": "Pasākumu atklāšanas un biļešu platforma Latvijai — koncerti, teātris, festivāli un izstādes ar kopīgu plānošanu, kategoriju abonēšanu un reāllaika biļešu iegādi.",
+    "description": "Pasākumu meklēšanas platforma Latvijai, kas aptver koncertus, teātri, festivālus un izstādes. Tā apkopo pasākumus no publiskiem avotiem, novirza uz oficiālajiem organizatoriem un biļešu tirgotājiem, kā arī piedāvā kopīgu plānošanu un personalizētus abonementus.",
     "image": "",
     "website": "https://eventapp.lv",
     "slug": "event-app",
     "tags": [
       "Pasākumi",
-      "Biļetes",
-      "Pilna steka"
+      "Pilna cikla izstrāde",
+      "MI integrācija"
     ],
     "year": 2026,
     "featured": true,
@@ -30,10 +30,10 @@
       "GitHub Actions"
     ],
     "highlights": [
-      "Izveidota pasākumu atklāšana ar viedo filtrēšanu vairāk nekā 25 kategorijās",
+      "Izveidota pasākumu meklēšana ar viedo filtrēšanu vairāk nekā 25 kategorijās",
       "Ieviesta kopīga pasākumu plānošana ar kopīgojamām saitēm",
-      "Izstrādāts organizatoru panelis ar reāllaika analītiku un veiktspējas ieskatiem",
-      "Sasniegta zem-sekundes lapas ielāde ar SSR un edge kešošanu"
+      "Izstrādāts organizatoru panelis ar reāllaika analītiku un darbības rādītājiem",
+      "Ar SSR un perifēro kešatmiņu panākta lapu ielāde nepilnā sekundē"
     ]
   },
   {
@@ -44,7 +44,7 @@
     "website": "/balticgp",
     "slug": "balticgp",
     "tags": [
-      "Autosports",
+      "Motosports",
       "Kalendārs",
       "Kopiena"
     ],
@@ -57,7 +57,7 @@
       "iOS",
       "Android",
       "Pārbaudīti notikumi",
-      "Iesniedzēju process"
+      "Satura iesniegšanas process"
     ],
     "highlights": [
       "Vienots oficiālo sacensību un treniņu kalendārs no vairākiem organizatoriem",

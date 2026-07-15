@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import social from '../../data/social.json';
 import Logo from '../ui/Logo';
 
 export default function Footer() {
@@ -18,21 +17,6 @@ export default function Footer() {
             <p className="text-sm text-zinc-500 dark:text-zinc-400 max-w-xs mb-6">
               {t('footer.description')}
             </p>
-            {/* Social */}
-            <div className="flex items-center gap-3">
-              {social.links.map(({ icon, url, label }) => (
-                <a
-                  key={label}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="w-9 h-9 rounded-lg border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-200 dark:hover:border-indigo-800/50 transition-colors"
-                >
-                  <iconify-icon icon={icon} width="18" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Services */}

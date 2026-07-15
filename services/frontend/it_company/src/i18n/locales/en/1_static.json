@@ -6,7 +6,10 @@
     "company": "Company",
     "contactUs": "Contact Us",
     "bookConsultation": "Schedule a Consultation",
-    "viewAllServices": "View All Services"
+    "viewAllServices": "View All Services",
+    "toggleTheme": "Toggle color theme",
+    "toggleMenu": "Toggle navigation menu",
+    "scrollToTop": "Scroll to top"
   },
   "hero": {
     "badge": "Modern IT Solutions for Growing Businesses",
@@ -35,7 +38,7 @@
     "titlePrefix": "Our",
     "titleAccent": "Projects",
     "subtitle": "Real-world solutions delivered for ambitious small and medium businesses — explore our portfolio.",
-    "viewAll": "View All Case Studies"
+    "viewAll": "View All Projects"
   },
   "contact": {
     "title": "Let's talk about your technology goals.",
@@ -56,12 +59,12 @@
         "email": "jane@acmecorp.com",
         "message": "Tell us about your current setup, challenges, and what you'd like to achieve..."
       },
-      "privacyConsent": "I agree to the <privacy>Privacy Policy</privacy> and consent to being contacted regarding my inquiry.",
+      "privacyConsent": "I have read the <privacy>Privacy Policy</privacy> and understand that my data will be used to respond to this inquiry.",
       "submit": "Send Request",
       "submitting": "Sending…",
       "successMessage": "Thank you! Your request has been received. We'll get back to you shortly.",
       "errorMessage": "Something went wrong. Please try again or contact us directly via email.",
-      "rateLimitMessage": "Please wait {{seconds}}s before submitting again."
+      "rateLimitMessage": "Please wait {{seconds}} seconds before submitting again."
     },
     "orWhatsApp": "or message us directly",
     "whatsAppCta": "Chat on WhatsApp"
@@ -96,12 +99,11 @@
     "status": "All systems operational"
   },
   "cookie": {
-    "title": "We Use Cookies",
-    "description": "We use cookies to ensure the best website experience and analyze traffic. Learn more in our <cookie>Cookie Policy</cookie>.",
-    "acceptAll": "Accept All",
-    "necessaryOnly": "Necessary Only",
-    "manageButton": "Manage Preferences",
-    "manageDescription": "You can update your cookie preferences at any time."
+    "title": "Essential Site Storage",
+    "description": "We use only necessary browser storage to remember your language and theme, acknowledge this notice, and prevent rapid repeat form submissions. We do not use analytics, advertising, or tracking cookies. Learn more in our <cookie>Cookie Policy</cookie>.",
+    "acknowledge": "Understood",
+    "manageButton": "Review Storage Notice",
+    "manageDescription": "You can review this notice and clear stored preferences in your browser at any time."
   },
   "whatsapp": {
     "tooltip": "Chat with us on WhatsApp",
@@ -122,7 +124,7 @@
       "responseTime": "Response Time",
       "successMessage": "Thank you! Your application has been submitted. We'll review it and respond within 5 business days.",
       "errorMessage": "Something went wrong. Please try again or contact us directly via email.",
-      "rateLimitMessage": "Please wait {{seconds}}s before submitting again.",
+      "rateLimitMessage": "Please wait {{seconds}} seconds before submitting again.",
       "submitting": "Submitting…",
       "fields": {
         "fullName": "Full Name",
@@ -135,7 +137,7 @@
         "resume": "Resume / CV",
         "resumeHint": "PDF, DOC, or DOCX — maximum 5 MB",
         "coverLetter": "Cover Letter / Message",
-        "privacyConsent": "I agree to the <privacy>Privacy Policy</privacy> and consent to having my data processed for recruitment purposes.",
+        "privacyConsent": "I have read the <privacy>Privacy Policy</privacy> and understand that my data will be processed for recruitment purposes.",
         "submit": "Submit Application"
       },
       "placeholder": {
@@ -212,17 +214,53 @@
   "companyDetails": {
     "backToAbout": "Back to About",
     "title": "Company Information",
-    "subtitle": "Official legal and registration details for HA Group SIA.",
+    "subtitle": "Contact and legal information for SIA HA Group.",
     "fields": {
       "companyName": "Company Name",
       "regNumber": "Registration Number",
-      "vatNumber": "VAT Number",
-      "legalAddress": "Legal Address",
+      "regNumberValue": "40203724866",
+      "vatNumber": "VAT Payer",
+      "vatNumberValue": "LV40203724866",
       "email": "Email",
+      "emailValue": "info@hagroup.lv",
       "bankLabel": "Bank"
     }
   },
   "legal": {
-    "backHome": "Back to Home"
+    "backHome": "Back to Home",
+    "lastUpdated": "Last updated"
+  },
+  "balticGP": {
+    "badge": "Motorcycle Road Racing Calendar",
+    "description": "A fast, reliable calendar app that helps riders and fans find official motorcycle road racing events across the Baltics and Europe.",
+    "problemTitle": "What It Solves",
+    "problemText": "Event information is often scattered across social media posts, PDFs, and separate organizer websites. BalticGP brings trusted event details together so people can plan with confidence.",
+    "problemPoints": [
+      "One calendar instead of fragmented sources",
+      "Clear event visibility for riders and spectators",
+      "Reliable updates when dates or times change"
+    ],
+    "audienceTitle": "Who It Is For",
+    "audiencePoints": [
+      "Road racing riders looking for upcoming events and registration links",
+      "Fans and spectators who want to know what is happening and where",
+      "Organizers who want neutral, trusted event visibility",
+      "Contributors who help keep the calendar current and accurate"
+    ],
+    "featuresTitle": "What Users Can Do",
+    "features": [
+      "Browse upcoming races, training sessions, and track days in one place",
+      "Filter by track, organizer, country, and event type",
+      "Open the official source for every listed event",
+      "Save favorites on the device and plan the season faster",
+      "See when event details were last updated"
+    ],
+    "trustTitle": "Quality and Trust",
+    "trustPoints": [
+      "Contributors can submit events and track their approval status",
+      "Moderators review and approve submissions before publication",
+      "Organizer administrators can manage their own events",
+      "Moderation decisions are logged for transparency"
+    ]
   }
 }

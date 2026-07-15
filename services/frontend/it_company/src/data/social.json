@@ -1,22 +1,8 @@
 {
   "whatsapp": {
-    "number": "37120000000",
-    "url": "https://wa.me/37120000000"
+    "number": "37126259293",
+    "url": "https://wa.me/37126259293"
   },
-  "links": [
-    {
-      "platform": "linkedin",
-      "icon": "mdi:linkedin",
-      "url": "https://linkedin.com/company/cloudie",
-      "label": "LinkedIn"
-    },
-    {
-      "platform": "instagram",
-      "icon": "mdi:instagram",
-      "url": "https://instagram.com/cloudie.dev",
-      "label": "Instagram"
-    }
-  ],
-  "email": "hello@cloudie.eventapp.lv",
-  "phone": "+371 20 000 000"
+  "email": "info@hagroup.lv",
+  "phone": "+37126259293"
 }

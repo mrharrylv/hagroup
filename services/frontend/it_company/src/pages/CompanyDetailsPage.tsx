@@ -32,23 +32,21 @@ export default function CompanyDetailsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-1">{t('companyDetails.fields.companyName')}</p>
-            <p className="text-sm text-zinc-900 dark:text-white">HA Group SIA</p>
+            <p className="text-sm text-zinc-900 dark:text-white">SIA HA Group</p>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-1">{t('companyDetails.fields.regNumber')}</p>
-            <p className="text-sm text-zinc-900 dark:text-white">40203XXXXXX</p>
+            <p className="text-sm text-zinc-900 dark:text-white">{t('companyDetails.fields.regNumberValue')}</p>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-1">{t('companyDetails.fields.vatNumber')}</p>
-            <p className="text-sm text-zinc-900 dark:text-white">LV40203XXXXXX</p>
+            <p className="text-sm text-zinc-900 dark:text-white">{t('companyDetails.fields.vatNumberValue')}</p>
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-1">{t('companyDetails.fields.legalAddress')}</p>
-            <p className="text-sm text-zinc-900 dark:text-white">Rīga, Latvia</p>
-          </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-1">{t('companyDetails.fields.bankLabel')}</p>
-            <p className="text-sm text-zinc-900 dark:text-white">—</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-1">{t('companyDetails.fields.email')}</p>
+            <a className="text-sm text-indigo-600 dark:text-indigo-400 hover:underline" href={`mailto:${t('companyDetails.fields.emailValue')}`}>
+              {t('companyDetails.fields.emailValue')}
+            </a>
           </div>
         </div>
       </div>

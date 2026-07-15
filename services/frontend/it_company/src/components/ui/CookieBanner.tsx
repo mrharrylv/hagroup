@@ -1,58 +1,50 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
-import { db } from '../../lib/firebase';
 
-/** Persist a unique-ish visitor ID so repeated visits stay linked. */
-function getVisitorId(): string {
-  const KEY = 'cloudie-visitor-id';
-  let id = localStorage.getItem(KEY);
-  if (!id) {
-    id = crypto.randomUUID();
-    localStorage.setItem(KEY, id);
-  }
-  return id;
-}
+const NOTICE_KEY = 'cloudie-cookies';
+const LEGACY_VISITOR_KEY = 'cloudie-visitor-id';
 
-/** Fire-and-forget write to Firestore `consents` collection.
- *  Uses the visitor ID as the document ID so re-submissions update
- *  the existing record instead of creating duplicates.
- */
-async function recordConsent(choice: 'all' | 'necessary') {
+function hasAcknowledgedNotice(): boolean {
   try {
-    const visitorId = getVisitorId();
-    await setDoc(doc(db, 'consents', visitorId), {
-      visitorId,
-      choice,
-      userAgent: navigator.userAgent,
-      language: navigator.language,
-      url: window.location.href,
-      updatedAt: serverTimestamp(),
-    });
-  } catch (err) {
-    // Non-critical — don't break the UI if Firestore is unreachable
-    console.warn('[CookieBanner] Failed to record consent:', err);
+    return Boolean(localStorage.getItem(NOTICE_KEY));
+  } catch {
+    return false;
   }
 }
 
 export default function CookieBanner() {
   const { t } = useTranslation();
-  const [visible, setVisible] = useState(() => !localStorage.getItem('cloudie-cookies'));
+  const [visible, setVisible] = useState(() => !hasAcknowledgedNotice());
 
   const reopen = useCallback(() => {
-    localStorage.removeItem('cloudie-cookies');
+    try {
+      localStorage.removeItem(NOTICE_KEY);
+    } catch {
+      // The notice can still be shown for the current page view.
+    }
     setVisible(true);
   }, []);
 
   useEffect(() => {
+    // Remove the identifier created by the previous consent implementation.
+    // Necessary storage does not require a persistent visitor identifier.
+    try {
+      localStorage.removeItem(LEGACY_VISITOR_KEY);
+    } catch {
+      // Ignore unavailable browser storage.
+    }
+
     window.addEventListener('cloudie-reopen-cookies', reopen);
     return () => window.removeEventListener('cloudie-reopen-cookies', reopen);
   }, [reopen]);
 
-  const accept = (choice: 'all' | 'necessary') => {
-    localStorage.setItem('cloudie-cookies', choice);
+  const acknowledge = () => {
+    try {
+      localStorage.setItem(NOTICE_KEY, 'acknowledged');
+    } catch {
+      // Keep dismissal limited to the current page view if storage is blocked.
+    }
     setVisible(false);
-    recordConsent(choice);
   };
 
   if (!visible) return null;
@@ -77,18 +69,12 @@ export default function CookieBanner() {
         </div>
         <iconify-icon icon="solar:cookie-linear" width="24" className="text-indigo-500 flex-shrink-0 mt-1" />
       </div>
-      <div className="flex items-center gap-2 mt-2">
+      <div className="flex items-center mt-2">
         <button
-          onClick={() => accept('all')}
-          className="flex-1 px-4 py-2 text-xs font-medium rounded-lg text-white bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100 transition-colors"
+          onClick={acknowledge}
+          className="w-full px-4 py-2 text-xs font-medium rounded-lg text-white bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100 transition-colors"
         >
-          {t('cookie.acceptAll')}
-        </button>
-        <button
-          onClick={() => accept('necessary')}
-          className="flex-1 px-4 py-2 text-xs font-medium rounded-lg text-zinc-700 bg-zinc-100 hover:bg-zinc-200 dark:text-zinc-300 dark:bg-zinc-800 dark:hover:bg-zinc-700 transition-colors"
-        >
-          {t('cookie.necessaryOnly')}
+          {t('cookie.acknowledge')}
         </button>
       </div>
     </div>

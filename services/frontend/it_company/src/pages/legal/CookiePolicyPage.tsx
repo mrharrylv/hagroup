@@ -4,7 +4,7 @@ import { useEffect, useCallback } from 'react';
 import { useLegalData } from '../../lib/content';
 
 export default function CookiePolicyPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const legalData = useLegalData();
   const page = legalData.cookies;
 
@@ -31,7 +31,7 @@ export default function CookiePolicyPage() {
         {page.title}
       </h1>
       <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-12">
-        Last updated: {new Date(page.lastUpdated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        {t('legal.lastUpdated')}: {new Date(`${page.lastUpdated}T00:00:00`).toLocaleDateString(i18n.resolvedLanguage || i18n.language, { year: 'numeric', month: 'long', day: 'numeric' })}
       </p>
 
       <div className="prose prose-zinc dark:prose-invert max-w-none space-y-8">

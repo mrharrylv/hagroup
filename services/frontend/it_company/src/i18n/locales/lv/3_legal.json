@@ -1,131 +1,155 @@
 {
   "terms": {
     "title": "Noteikumi un nosacījumi",
-    "lastUpdated": "2026-02-23",
+    "lastUpdated": "2026-07-15",
     "sections": [
       {
-        "heading": "1. Noteikumu pieņemšana",
-        "content": "Piekļūstot vai izmantojot šo tīmekļa vietni, jūs piekrītat ievērot šos Noteikumus un nosacījumus. Ja nepiekrītat tiem, lūdzu, neizmantojiet šo vietni."
+        "heading": "1. Pakalpojuma sniedzējs",
+        "content": "SIA HA Group\nReģistrācijas numurs: 40203724866\nPVN maksātājs: LV40203724866\nE-pasts: info@hagroup.lv\n\nSIA HA Group uztur šo tīmekļvietni (\"HA Group\", \"mēs\", \"mums\")."
       },
       {
-        "heading": "2. Pakalpojuma būtība",
-        "content": "HA Group sniedz IT infrastruktūras, mākoņarhitektūras, DevOps un programmatūras izstrādes pakalpojumus. Šī vietne ir informatīva un saziņas platforma. Pakalpojumi tiek sniegti “kā ir” un paredzēti likumīgai uzņēmējdarbības un personīgai lietošanai."
+        "heading": "2. Piemērošanas joma un noteikumu pieņemšana",
+        "content": "Šie Noteikumi un nosacījumi regulē piekļuvi hagroup.lv, kā arī tīmekļvietnes satura un formu izmantošanu. Izmantojot tīmekļvietni, jūs piekrītat šiem noteikumiem. Ja tiem nepiekrītat, lūdzu, pārtrauciet tīmekļvietnes lietošanu."
       },
       {
-        "heading": "3. Saziņas formas un datu iesniegšana",
-        "content": "Iesniedzot saziņas vai karjeras pieteikuma formu, jūsu sniegtā informācija — vārds, e-pasts, uzņēmums, projekta detaļas un citi lauki — tiek apkopota un uzglabāta, lai atbildētu uz jūsu pieprasījumu vai apstrādātu pieteikumu. Iesniegšana nozīmē piekrišanu datu apstrādei saskaņā ar mūsu Privātuma politiku."
+        "heading": "3. Informatīva tīmekļvietne — līgums tiešsaistē netiek noslēgts",
+        "content": "Tīmekļvietnē ir sniegta vispārīga informācija par mūsu IT, mākoņrisinājumu, DevOps, konsultāciju un programmatūras izstrādes pakalpojumiem. Tā nav interneta veikals vai juridiski saistošs piedāvājums. Formas iesniegšana, budžeta diapazona izvēle vai iesniegšanas apstiprinājuma saņemšana nav pasūtījums, nerada pakalpojumu līgumu, negarantē atbildi un neuzliek nevienai pusei pienākumu turpināt sadarbību. Katram projektam nepieciešams atsevišķs rakstisks piedāvājums vai līgums, kurā noteikts darba apjoms, cena, termiņi, atbildība un citi nosacījumi."
       },
       {
         "heading": "4. Pieļaujamā lietošana",
-        "content": "Jūs nedrīkstat ļaunprātīgi izmantot vietni vai pakalpojumus. Tas ietver izmantošanu nelikumīgiem mērķiem, traucēšanu vietnes darbībai vai automatizētu rīku izmantošanu datu iegūšanai bez atļaujas."
+        "content": "Tīmekļvietni drīkst izmantot tikai likumīgi. Aizliegts traucēt tās drošību vai darbību, ievietot kaitīgu kodu, mēģināt iegūt neatļautu piekļuvi, iesniegt nelikumīgu vai maldinošu saturu, uzdoties par citu personu vai izmantot automatizētus datu ieguves rīkus veidā, kas traucē tīmekļvietnes darbību vai pārkāpj citu personu tiesības."
       },
       {
-        "heading": "5. Intelektuālais īpašums",
-        "content": "Viss vietnes saturs, tostarp teksti, grafikas, logotipi un programmatūra, pieder HA Group un ir aizsargāts ar intelektuālā īpašuma tiesībām. Neatļauta reproducēšana, izplatīšana vai komerciāla izmantošana ir aizliegta."
+        "heading": "5. Formas un saziņa",
+        "content": "Jūs esat atbildīgs par to, lai saziņas vai darba pieteikuma formā norādītā informācija būtu precīza un jums būtu tiesības to sniegt. Formās saņemtos datus apstrādājam saskaņā ar Privātuma politiku. Privātuma izvēles rūtiņa apliecina, ka esat iepazinies ar politiku; tā nav vispārēja piekrišana jebkādai datu apstrādei. Brīvā teksta laukos neiekļaujiet konfidenciālus, īpašu kategoriju vai citus nevajadzīgus personas datus."
       },
       {
-        "heading": "6. Atbildības ierobežojums",
-        "content": "Maksimālajā apmērā, ko atļauj likums, HA Group neatbild par netiešiem, nejaušiem, īpašiem vai izrietošiem zaudējumiem, kas radušies, izmantojot vietni vai pakalpojumus."
+        "heading": "6. Intelektuālais īpašums",
+        "content": "Ja nav norādīts citādi, tīmekļvietnes dizains, oriģinālteksti, grafiskie materiāli, kods un HA Group zīmola elementi pieder HA Group vai tiek izmantoti saskaņā ar licenci un ir aizsargāti ar piemērojamiem intelektuālā īpašuma tiesību aktiem. Saturu drīkst apskatīt un saprātīgā apjomā kopēt personīgai vai iekšējai uzņēmuma lietošanai, lai izvērtētu mūsu pakalpojumus, taču bez iepriekšējas rakstiskas atļaujas to nedrīkst pavairot, pārveidot, izplatīt, pārdot vai komerciāli izmantot. Trešo personu nosaukumi, preču zīmes un materiāli pieder to attiecīgajiem īpašniekiem."
       },
       {
-        "heading": "7. Pakalpojumu pieejamība",
-        "content": "Mēs cenšamies nodrošināt nepārtrauktu vietnes pieejamību, taču negarantējam nepārtrauktu piekļuvi. Funkcionalitāte un pakalpojumi var tikt mainīti vai pārtraukti bez iepriekšēja brīdinājuma."
+        "heading": "7. Ārējās saites",
+        "content": "Tīmekļvietnē var būt saites uz trešo personu tīmekļvietnēm vai pakalpojumiem. Tās ir norādītas ērtībai un nenozīmē mūsu apstiprinājumu. Mēs nekontrolējam trešo personu saturu, pieejamību, drošību vai privātuma praksi; to izmantošanai piemērojami attiecīgo pakalpojumu noteikumi un politikas."
       },
       {
-        "heading": "8. Piemērojamie tiesību akti",
-        "content": "Šos Noteikumus un nosacījumus regulē Latvijas Republikas tiesību akti."
+        "heading": "8. Informācijas precizitāte un pieejamība",
+        "content": "Mēs saprātīgi rūpējamies, lai tīmekļvietnes informācija būtu noderīga un aktuāla, tomēr vispārīgie pakalpojumu apraksti, projektu piemēri, termiņi, budžeta diapazoni un rezultāti ir ilustratīvi un nav garantija vai solījums sasniegt identisku rezultātu. Tīmekļvietne reizēm var nebūt pieejama, tajā var būt kļūdas, un tās saturs vai funkcijas var tikt mainītas, apturētas vai pārtrauktas."
       },
       {
-        "heading": "9. Izmaiņas noteikumos",
-        "content": "HA Group patur tiesības jebkurā laikā atjaunināt šos noteikumus. Jaunākā versija vienmēr pieejama šajā lapā. Turpinot izmantot vietni, jūs piekrītat atjauninātajiem noteikumiem."
+        "heading": "9. Atbildība par tīmekļvietnes lietošanu",
+        "content": "Maksimālajā piemērojamo tiesību aktu atļautajā apmērā HA Group neatbild par netiešiem vai izrietošiem zaudējumiem, kas radušies tikai tādēļ, ka šī informatīvā tīmekļvietne izmantota, nav bijusi pieejama vai uz tās informāciju ir paļāvies lietotājs. Nekas šajos noteikumos neizslēdz un neierobežo atbildību, ko saskaņā ar imperatīvajām tiesību normām izslēgt vai ierobežot nedrīkst, tostarp atbildību par krāpšanu vai tīšu pārkāpumu un obligātās patērētāju tiesības. Atbildību par maksas pakalpojumiem nosaka attiecīgais pakalpojumu līgums."
       },
       {
-        "heading": "10. Kontakti",
-        "content": "Jautājumu gadījumā par Noteikumiem un nosacījumiem sazinieties ar mums: info@cloudie.lv."
+        "heading": "10. Privātums un pārlūka krātuve",
+        "content": "Privātuma politikā ir paskaidrots, kā mēs apstrādājam personas datus, savukārt Sīkdatņu politikā — kādu nepieciešamo pārlūka krātuvi izmanto šī tīmekļvietne. Šajās politikās sniegtā informācija ir piemērojama tīmekļvietnes lietošanai."
+      },
+      {
+        "heading": "11. Piemērojamie tiesību akti un strīdi",
+        "content": "Šiem noteikumiem piemērojami Latvijas Republikas tiesību akti. Aicinām vispirms rakstīt uz info@hagroup.lv, lai mēģinātu atrisināt radušos jautājumu. Strīdus izskata tiesa, kurai piekritība noteikta saskaņā ar piemērojamiem tiesību aktiem. Ja esat patērētājs Eiropas Ekonomikas zonā, šie noteikumi neierobežo obligāto aizsardzību vai jurisdikcijas tiesības, ko piešķir jūsu dzīvesvietas valsts tiesību akti."
+      },
+      {
+        "heading": "12. Noteikumu izmaiņas",
+        "content": "Mēs varam atjaunināt šos noteikumus juridisku, tehnisku vai uzņēmējdarbības izmaiņu dēļ. Jaunā redakcija ir piemērojama no šajā lapā norādītā datuma un ar atpakaļejošu spēku nemaina noslēgtu rakstisku pakalpojumu līgumu. Par būtiskām izmaiņām, ja tas ir saprātīgi, informēsim tīmekļvietnē."
+      },
+      {
+        "heading": "13. Kontakti",
+        "content": "Jautājumus par Noteikumiem un nosacījumiem var sūtīt SIA HA Group uz info@hagroup.lv."
       }
     ]
   },
   "privacy": {
     "title": "Privātuma politika",
-    "lastUpdated": "2026-02-23",
+    "lastUpdated": "2026-07-15",
     "sections": [
       {
         "heading": "1. Datu pārzinis",
-        "content": "HA Group SIA ir personas datu pārzinis. Jautājumiem par datu apstrādi rakstiet uz info@cloudie.lv."
+        "content": "SIA HA Group\nReģistrācijas numurs: 40203724866\nPVN maksātājs: LV40203724866\nE-pasts: info@hagroup.lv\n\nSIA HA Group ir šajā tīmekļvietnē apstrādāto personas datu pārzinis."
       },
       {
-        "heading": "2. Apkopotā informācija",
-        "content": "Mēs apkopojam informāciju, ko jūs brīvprātīgi sniedzat, aizpildot formas.\n\nSaziņas forma: pilns vārds, uzņēmums, e-pasts, projekta budžets, projekta detaļas, pārlūka valoda un lapas URL.\n\nKarjeras forma: pilns vārds, e-pasts, tālrunis, LinkedIn vai portfolio saite, amats un motivācijas vēstule.\n\nAbas formas reģistrē piekrišanas statusu un iesniegšanas laiku."
+        "heading": "2. Piemērošanas joma un datu avoti",
+        "content": "Šī politika attiecas uz personas datiem, ko apstrādājam saistībā ar hagroup.lv. Datus saņemam tieši no jums, kad iesniedzat formu vai sazināties ar mums, kā arī ierobežotā apjomā tehniskos datus, kad jūsu pārlūks pieslēdzas tīmekļvietnei un to izmanto. Ja sniedzat citas personas datus, jums jābūt tiesīgam to darīt un jānodrošina šai personai iespēja iepazīties ar šo politiku."
       },
       {
-        "heading": "3. Datu apstrādes mērķis",
-        "content": "Personas dati tiek apstrādāti, lai:\n\n• Atbildētu uz pieprasījumiem\n• Apstrādātu darba pieteikumus\n• Uzlabotu vietni un pakalpojumus\n• Analizētu lietojumu apkopotā veidā\n\nPersonas dati netiek pārdoti vai izmantoti reklāmas profilēšanai."
+        "heading": "3. Apstrādātie dati",
+        "content": "Projektu un saziņas pieprasījumi: vārds un uzvārds, uzņēmums (nav obligāts), darba e-pasts, izvēlētais projekta budžets (nav obligāts), projekta apraksts, apliecinājums par iepazīšanos ar Privātuma politiku, pārlūka valoda, lapas URL, iesniegšanas laiks un formas režīma tehniskās pazīmes.\n\nDarba pieteikumi: vārds un uzvārds, e-pasts, tālrunis (nav obligāts), LinkedIn vai portfolio saite (nav obligāta), amats (nav obligāts), motivācijas vēstule (nav obligāta), apliecinājums par iepazīšanos ar Privātuma politiku, pārlūka valoda, lapas URL un iesniegšanas laiks.\n\nTehniskie dati: tīmekļvietnes mitināšanas un drošības pakalpojumu sniedzēji var apstrādāt IP adresi, pārlūka vai ierīces informāciju, pieprasījuma laiku, pieprasīto lapu un līdzīgus savienojuma žurnālu datus. Jūsu pārlūkā tiek saglabātas arī Sīkdatņu politikā norādītās nepieciešamās iestatījumu un formu aizsardzības vērtības."
       },
       {
-        "heading": "4. Tiesiskais pamats",
-        "content": "Datu apstrāde balstās uz:\n\n• Jūsu piekrišanu\n• HA Group leģitīmajām interesēm\n• Piemērojamo tiesību aktu prasībām"
+        "heading": "4. Mērķi un tiesiskie pamati",
+        "content": "Datus apstrādājam šādiem mērķiem saskaņā ar VDAR 6. pantu:\n\n• Lai atbildētu uz projektu pieprasījumiem, sagatavotu piedāvājumus un pēc jūsu lūguma veiktu darbības pirms iespējama līguma — VDAR 6. panta 1. punkta b) apakšpunkts; ja tas nav piemērojams — mūsu leģitīmā interese pārvaldīt uzņēmuma saziņu saskaņā ar f) apakšpunktu.\n• Lai izvērtētu pieteikumus un vadītu personāla atlasi — darbības pirms iespējamu darba tiesisko attiecību nodibināšanas saskaņā ar b) apakšpunktu un mūsu leģitīmā interese atlasīt kandidātus un aizstāvēt tiesiskas prasības saskaņā ar f) apakšpunktu.\n• Lai nodrošinātu un aizsargātu tīmekļvietni, novērstu ātru atkārtotu formu iesniegšanu, diagnosticētu kļūdas un uzturētu pakalpojuma integritāti — mūsu leģitīmās intereses saskaņā ar f) apakšpunktu.\n• Lai glabātu vai izpaustu informāciju, ja to prasa tiesību akti — c) apakšpunkts, kā arī lai celtu, īstenotu vai aizstāvētu tiesiskas prasības — f) apakšpunkts.\n\nPrivātuma izvēles rūtiņa apliecina, ka esat iepazinies ar šo politiku; mēs to neuzskatām par vispārēju piekrišanu. Ja atsevišķam neobligātam mērķim lūgsim piekrišanu, tiks piemērots VDAR 6. panta 1. punkta a) apakšpunkts, un piekrišanu varēsiet jebkurā laikā atsaukt, neietekmējot iepriekš veiktās apstrādes likumību."
       },
       {
-        "heading": "5. Datu glabāšana un drošība",
-        "content": "Dati tiek droši uzglabāti Google Cloud Firestore vidē ar šifrēšanu pārsūtīšanas un uzglabāšanas laikā. Saziņas dati tiek glabāti tik ilgi, cik nepieciešams. Karjeras pieteikumi — līdz 12 mēnešiem."
+        "heading": "5. Obligātā un neobligātā informācija",
+        "content": "Lauki, kas atzīmēti kā obligāti, ir vajadzīgi, lai identificētu jūsu pieprasījumu, atbildētu un saprastu jautājuma būtību. Bez tiem formu nevaram apstrādāt. Pārējie lauki nav obligāti. Lūdzu, neiesniedziet īpašu kategoriju datus (piemēram, veselības, biometriskos, politiskos, reliģiskos vai arodbiedrību datus) vai citu informāciju, kas nav vajadzīga jūsu pieprasījumam vai pieteikumam."
       },
       {
-        "heading": "6. Sīkdatnes",
-        "content": "Sīkdatnes tiek izmantotas, lai uzlabotu lietošanas pieredzi un analizētu vietnes apmeklējumu. Preferences iespējams pārvaldīt pārlūkprogrammā vai piekrišanas joslā."
+        "heading": "6. Datu saņēmēji un pakalpojumu sniedzēji",
+        "content": "Datiem piekļūst tikai pilnvaroti HA Group darbinieki un sadarbības personas, kam tie vajadzīgi attiecīgajam mērķim. Formu iesniegumu saņemšanai un glabāšanai izmantojam Google Firebase / Cloud Firestore, bet tīmekļvietnes mitināšanai un piegādei — Amazon Web Services, tostarp S3 un CloudFront. Šie pakalpojumu sniedzēji apstrādā datus mūsu uzdevumā, ievērojot līgumiskas un drošības prasības. Ja tas ir nepieciešams un likumīgi, datus var izpaust profesionāliem konsultantiem, tiesām, regulatoriem, tiesībaizsardzības iestādēm vai citām valsts iestādēm. Mēs nepārdodam personas datus un nenododam tos reklāmdevējiem."
       },
       {
-        "heading": "7. Trešo pušu pakalpojumi",
-        "content": "Dati var tikt kopīgoti ar Google Firebase / Firestore un analītikas pakalpojumu sniedzējiem ar jūsu piekrišanu."
+        "heading": "7. Datu nosūtīšana ārpus EEZ",
+        "content": "Daži pakalpojumu sniedzēji var apstrādāt datus ārpus Latvijas vai Eiropas Ekonomikas zonas. Ja personas datus nosūta uz valsti, kurai nav piemērojams Eiropas Komisijas lēmums par aizsardzības līmeņa pietiekamību, izmantojam VDAR V nodaļā paredzētos aizsardzības pasākumus, piemēram, Eiropas Komisijas līguma standartklauzulas, un vajadzības gadījumā papildu pasākumus. Informāciju par attiecīgajiem aizsardzības pasākumiem varat pieprasīt, sazinoties ar mums."
       },
       {
-        "heading": "8. Jūsu tiesības (GDPR)",
-        "content": "Jums ir tiesības piekļūt saviem datiem, pieprasīt labošanu vai dzēšanu, ierobežot apstrādi, atsaukt piekrišanu un pieprasīt datu pārnesamību."
+        "heading": "8. Glabāšanas termiņi",
+        "content": "Personas datus glabājam tikai tik ilgi, cik tas vajadzīgs norādītajam mērķim:\n\n• Projektu un saziņas pieprasījumus — parasti līdz 24 mēnešiem pēc pēdējās saturiskās saziņas.\n• Darba pieteikumus — parasti līdz 12 mēnešiem pēc iesniegšanas. Ilgākai glabāšanai kandidātu datubāzē nepieciešams atsevišķs tiesiskais pamats, piemēram, jūsu konkrēta piekrišana.\n• Mitināšanas un drošības žurnālus, ja tādi tiek veidoti, — laikposmā, kas saprātīgi vajadzīgs drošībai, problēmu novēršanai un pakalpojumu sniedzēja darbībai.\n• Pārlūkā saglabātās vērtības — Sīkdatņu politikā norādītajos termiņos.\n\nDatus var glabāt ilgāk, ja to prasa tiesību akti vai tas ir saprātīgi nepieciešams, lai celtu, īstenotu vai aizstāvētu tiesiskas prasības. Pēc attiecīgā termiņa beigām datus dzēš vai anonimizē."
       },
       {
-        "heading": "9. Politikas izmaiņas",
-        "content": "Privātuma politika var tikt periodiski atjaunināta. Jaunākā versija vienmēr pieejama šajā lapā."
+        "heading": "9. Drošība",
+        "content": "Mēs piemērojam atbilstošus tehniskus un organizatoriskus pasākumus personas datu aizsardzībai, tostarp piekļuves kontroli, šifrētus savienojumus, pakalpojumu sniedzēju drošības kontroles un piekļuves ierobežošanu atbilstoši mērķim. Nevienai datu pārraidei internetā vai glabāšanas sistēmai nav iespējams garantēt pilnīgu drošību."
       },
       {
-        "heading": "10. Kontakti",
-        "content": "Jautājumiem par privātumu rakstiet uz info@cloudie.lv."
+        "heading": "10. Jūsu tiesības saskaņā ar VDAR",
+        "content": "Ievērojot VDAR noteikumus un izņēmumus, jums ir tiesības pieprasīt piekļuvi saviem datiem un to kopiju, datu labošanu, dzēšanu, apstrādes ierobežošanu un datu pārnesamību. Jūs varat iebilst pret apstrādi, kuras pamatā ir leģitīmās intereses, tostarp norādot savu konkrēto situāciju. Ja apstrādes pamatā ir piekrišana, to varat jebkurā laikā atsaukt, neietekmējot apstrādi, kas veikta pirms atsaukšanas. Jums ir arī tiesības iesniegt sūdzību uzraudzības iestādē."
+      },
+      {
+        "heading": "11. Tiesību izmantošana un sūdzības",
+        "content": "Pieprasījumus sūtiet uz info@hagroup.lv. Mēs varam lūgt informāciju, kas saprātīgi nepieciešama jūsu identitātes pārbaudei. Atbildēsim bez nepamatotas kavēšanās un parasti viena mēneša laikā; sarežģītu vai daudzu pieprasījumu gadījumā VDAR ļauj termiņu pagarināt vēl par diviem mēnešiem, par ko jūs informēsim.\n\nLatvijas uzraudzības iestāde ir Datu valsts inspekcija, Elijas iela 17, Rīga, LV-1050; e-pasts pasts@dvi.gov.lv; tīmekļvietne www.dvi.gov.lv. Varat sūdzēties arī tās ES vai EEZ valsts uzraudzības iestādē, kurā dzīvojat, strādājat vai, jūsuprāt, ir noticis pārkāpums."
+      },
+      {
+        "heading": "12. Automatizēti lēmumi un bērni",
+        "content": "Mēs neizmantojam tīmekļvietnes datus tikai automatizētu lēmumu pieņemšanai, kas rada tiesiskas vai līdzīgi būtiskas sekas, un neveicam reklāmas profilēšanu. Tīmekļvietne un tās formas ir paredzētas uzņēmumu kontaktpersonām un darba pretendentiem, nevis bērniem."
+      },
+      {
+        "heading": "13. Politikas izmaiņas",
+        "content": "Mēs varam atjaunināt šo politiku, ja mainās datu apstrāde vai juridiskie pienākumi. Aktuālā redakcija un tās spēkā stāšanās datums būs publicēti šajā lapā. Ja izmaiņas būtiski ietekmēs jau saņemtu datu izmantošanu, sniegsim papildu paziņojumu vai saņemsim piekrišanu, ja to prasīs tiesību akti."
       }
     ]
   },
   "cookies": {
     "title": "Sīkdatņu politika",
-    "lastUpdated": "2026-02-23",
+    "lastUpdated": "2026-07-15",
     "sections": [
       {
-        "heading": "1. Kas ir sīkdatnes",
-        "content": "Sīkdatnes ir nelieli teksta faili, kas tiek saglabāti jūsu ierīcē, apmeklējot vietni."
+        "heading": "1. Piemērošanas joma",
+        "content": "Tīmekļvietnes operators:\nSIA HA Group\nReģistrācijas numurs: 40203724866\nPVN maksātājs: LV40203724866\nE-pasts: info@hagroup.lv\n\nŠajā politikā paskaidrots, kādas sīkdatnes un līdzīgas pārlūka krātuves tehnoloģijas izmanto hagroup.lv. Pašreizējā tīmekļvietne reklāmas vai analītikas sīkdatņu vietā izmanto pirmās puses lokālo krātuvi. Lokālajā krātuvē pārlūkā tiek saglabātas nelielas vērtības, ko tāpat kā sīkdatnes var dzēst pārlūka iestatījumos."
       },
       {
-        "heading": "2. Kā mēs izmantojam sīkdatnes",
-        "content": "Sīkdatnes palīdz analizēt vietnes lietojumu, atcerēties preferences un uzlabot lietošanas pieredzi."
+        "heading": "2. Izmantotās krātuves vērtības",
+        "content": "Tīmekļvietne pašlaik saglabā tikai šādas pirmās puses vērtības:\n\n• cloudie-lang — atceras jūsu izvēlēto valodu.\n• cloudie-theme — atceras jūsu izvēlēto gaišo vai tumšo krāsu režīmu.\n• cloudie-cookies — atceras, ka esat apstiprinājis šī paziņojuma izlasīšanu, lai tas netiktu rādīts katrā apmeklējumā.\n• rate_limit_contact un rate_limit_career — saglabā veiksmīgas formas iesniegšanas laiku, lai novērstu ātru atkārtotu iesniegšanu.\n\nŠīs vērtības neveido starpvietņu reklāmas profilu un netiek izmantotas, lai izsekotu jūs citās tīmekļvietnēs."
       },
       {
-        "heading": "3. Sīkdatņu veidi",
-        "content": "Obligātās sīkdatnes — nepieciešamas darbībai.\n\nAnalītiskās — anonīmai statistikai ar piekrišanu.\n\nFunkcionālās — personalizētām iespējām."
+        "heading": "3. Kāpēc piekrišana netiek prasīta",
+        "content": "Norādītās vērtības izmantojam, lai nodrošinātu jūsu skaidri pieprasītus iestatījumus, atcerētos šo paziņojumu vai aizsargātu formas un tīmekļvietnes darbību. Saskaņā ar Informācijas sabiedrības pakalpojumu likuma 7¹ panta otro daļu lietotāja pieprasīta pakalpojuma sniegšanai nepieciešamai krātuvei piekrišana nav vajadzīga, taču par to joprojām jāsniedz skaidra informācija. Tādēļ paziņojumā ir iepazīšanās apstiprinājuma poga, nevis maldinoša izvēle pieņemt vai noraidīt."
       },
       {
-        "heading": "4. Piekrišana",
-        "content": "Apmeklējot vietni, varat pieņemt visas vai tikai obligātās sīkdatnes."
+        "heading": "4. Netiek izmantota analītikas vai reklāmas krātuve",
+        "content": "Pašlaik neizmantojam analītikas, reklāmas, sociālo tīklu, profilēšanas vai citas neobligātas izsekošanas sīkdatnes vai pārlūka krātuvi. Ja tas mainīsies, atjaunināsim šo politiku un pirms neobligātas krātuves izvietošanas vai nolasīšanas lūgsim jūsu iepriekšēju, brīvi sniegtu piekrišanu. Atteikties vai vēlāk atsaukt piekrišanu būs tikpat viegli kā to sniegt, un tas neietekmēs nepieciešamās tīmekļvietnes funkcijas."
       },
       {
-        "heading": "5. Trešo pušu sīkdatnes",
-        "content": "Dažas sīkdatnes var iestatīt trešās puses (piem., Google Analytics)."
+        "heading": "5. Glabāšanas termiņi",
+        "content": "cloudie-lang, cloudie-theme un cloudie-cookies tiek glabātas, līdz maināt attiecīgo iestatījumu vai pārlūkā dzēšat tīmekļvietnes saglabātos datus. Formu aizsardzības laika atzīmes var palikt lokālajā krātuvē līdz to dzēšanai, taču pēc 60 sekundēm tīmekļvietne katru attiecīgo atzīmi vairs neizmanto, lai bloķētu nākamo iesniegumu."
       },
       {
-        "heading": "6. Glabāšanas termiņš",
-        "content": "Sīkdatnes var būt sesijas vai pastāvīgās atkarībā no to mērķa."
+        "heading": "6. Pārlūka krātuves pārvaldība",
+        "content": "Tīmekļvietnes sīkdatnes un lokālo krātuvi varat apskatīt vai dzēst pārlūka privātuma vai vietnes datu iestatījumos. Dzēšot cloudie-lang vai cloudie-theme, tiek atiestatīts attiecīgais iestatījums; dzēšot cloudie-cookies, paziņojums tiks parādīts atkārtoti. Pilnīga lokālās krātuves bloķēšana var traucēt iestatījumu un formu aizsardzības paredzēto darbību. Zemāk esošā poga atkārtoti atver paziņojumu, bet pati par sevi nedzēš citas saglabātās vērtības."
       },
       {
-        "heading": "7. Izmaiņas politikā",
-        "content": "Politika var tikt atjaunināta. Jaunākā versija pieejama šajā lapā."
+        "heading": "7. Pakalpojumu sniedzēji un citi dati",
+        "content": "Tīmekļvietne apzināti neizvieto trešo personu sīkdatnes. Ielādējot lapu vai iesniedzot formu, mūsu mitināšanas un formu pakalpojumu sniedzēji var apstrādāt savienojuma vai formas datus, kā aprakstīts Privātuma politikā; šī servera puses apstrāde nav pārlūka krātuves vērtības, kas uzskaitītas iepriekš. Uz ārējām saitēm attiecas attiecīgo tīmekļvietņu sīkdatņu un privātuma politikas."
       },
       {
-        "heading": "8. Kontakti",
-        "content": "Jautājumiem par sīkdatnēm: info@cloudie.lv."
+        "heading": "8. Izmaiņas un kontakti",
+        "content": "Mēs varam atjaunināt šo politiku, ja mainās krātuves izmantošana vai juridiskie pienākumi. Jaunākā redakcija un datums būs publicēti šeit. Jautājumus var sūtīt SIA HA Group uz info@hagroup.lv."
       }
     ]
   }

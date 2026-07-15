@@ -2,19 +2,22 @@
   "nav": {
     "services": "Pakalpojumi",
     "work": "Projekti",
-    "ourWork": "Mūsu Darbi",
+    "ourWork": "Mūsu darbi",
     "company": "Uzņēmums",
     "contactUs": "Sazināties",
-    "bookConsultation": "Pieteikt Konsultāciju",
-    "viewAllServices": "Skatīt Visus Pakalpojumus"
+    "bookConsultation": "Pieteikt konsultāciju",
+    "viewAllServices": "Skatīt visus pakalpojumus",
+    "toggleTheme": "Mainīt krāsu režīmu",
+    "toggleMenu": "Atvērt vai aizvērt navigācijas izvēlni",
+    "scrollToTop": "Ritināt uz lapas sākumu"
   },
   "hero": {
     "badge": "Mūsdienīgi IT risinājumi augošiem uzņēmumiem",
     "titleLine1": "Tehnoloģijas, kas attīsta",
     "titleLine2": "uzņēmumus.",
-    "description": "Praktiski mākoņpakalpojumu, DevOps un individuāli programmatūras risinājumi, kas palīdz mazajiem un vidējiem uzņēmumiem augt droši, efektīvi un pārliecinoši.",
-    "ctaStart": "Sākt Projektu",
-    "ctaExplore": "Apskatīt Pakalpojumus"
+    "description": "Praktiski mākoņrisinājumi, DevOps un pielāgota programmatūra, kas palīdz mazajiem un vidējiem uzņēmumiem augt droši, efektīvi un pārliecinoši.",
+    "ctaStart": "Sākt projektu",
+    "ctaExplore": "Apskatīt pakalpojumus"
   },
   "techStack": {
     "label": "Balstīts uz uzticamām nozares tehnoloģijām",
@@ -23,120 +26,119 @@
   "services": {
     "title": "Pilna cikla tehnoloģiju risinājumi",
     "subtitle": "Elastīgi IT pakalpojumi, kas palīdz mazajiem un vidējiem uzņēmumiem optimizēt procesus, uzlabot drošību un nodrošināt ilgtspējīgu izaugsmi.",
-    "learnMore": "Uzzināt Vairāk",
-    "backHome": "Atpakaļ uz Sākumu",
+    "learnMore": "Uzzināt vairāk",
+    "backHome": "Atpakaļ uz sākumu",
     "ctaTitle": "Nepieciešams risinājums tieši jūsu uzņēmumam?",
     "ctaText": "Apspriedīsim jūsu mērķus un izveidosim risinājumu, kas atbilst jūsu uzņēmuma izmēram, budžetam un attīstības plāniem."
   },
   "methodology": {
-    "title": "Kā Mēs Strādājam"
+    "title": "Kā mēs strādājam"
   },
   "work": {
     "titlePrefix": "Mūsu",
-    "titleAccent": "Projekti",
-    "subtitle": "Reāli risinājumi ambicioziem mazajiem un vidējiem uzņēmumiem — iepazīstieties ar mūsu portfolio.",
-    "viewAll": "Skatīt Visus Gadījumu Pētījumus"
+    "titleAccent": "projekti",
+    "subtitle": "Praktiski risinājumi ambicioziem mazajiem un vidējiem uzņēmumiem — iepazīstieties ar mūsu portfolio.",
+    "viewAll": "Skatīt visus projektus"
   },
   "contact": {
     "title": "Parunāsim par jūsu tehnoloģiju mērķiem.",
-    "subtitle": "Neatkarīgi no tā, vai plānojat pāreju uz mākoni, izstrādāt pielāgotu sistēmu vai uzlabot esošo infrastruktūru — mēs palīdzēsim.",
+    "subtitle": "Neatkarīgi no tā, vai plānojat pāreju uz mākoni, pielāgotas sistēmas izstrādi vai esošās infrastruktūras uzlabošanu, mēs palīdzēsim.",
     "email": "E-pasts",
     "phone": "Tālrunis",
     "hq": "Galvenais birojs",
     "form": {
-      "fullName": "Vārds, Uzvārds",
+      "fullName": "Vārds, uzvārds",
       "company": "Uzņēmums",
-      "workEmail": "Darba E-pasts",
-      "projectBudget": "Projekta Budžets",
+      "workEmail": "Darba e-pasts",
+      "projectBudget": "Projekta budžets",
       "selectRange": "Izvēlieties diapazonu",
-      "projectDetails": "Projekta Apraksts",
+      "projectDetails": "Projekta apraksts",
       "placeholder": {
         "name": "Jānis Bērziņš",
         "company": "Acme SIA",
         "email": "janis@acme.lv",
         "message": "Pastāstiet par savu esošo situāciju, izaicinājumiem un mērķiem..."
       },
-      "privacyConsent": "Es piekrītu <privacy>Privātuma politikai</privacy> un atļauju ar mani sazināties saistībā ar manu pieprasījumu.",
-      "submit": "Nosūtīt Pieprasījumu",
+      "privacyConsent": "Esmu iepazinies ar <privacy>Privātuma politiku</privacy> un saprotu, ka mani dati tiks izmantoti, lai atbildētu uz šo pieprasījumu.",
+      "submit": "Nosūtīt pieprasījumu",
       "submitting": "Nosūtīšana…",
       "successMessage": "Paldies! Jūsu pieprasījums ir saņemts. Mēs ar jums sazināsimies tuvākajā laikā.",
       "errorMessage": "Radās kļūda. Lūdzu, mēģiniet vēlreiz vai sazinieties ar mums tieši pa e-pastu.",
-      "rateLimitMessage": "Lūdzu, uzgaidiet {{seconds}}s pirms atkārtotas iesniegšanas."
+      "rateLimitMessage": "Lūdzu, uzgaidiet {{seconds}} s pirms atkārtotas iesniegšanas."
     },
     "orWhatsApp": "vai rakstiet mums tieši",
     "whatsAppCta": "Rakstīt WhatsApp"
   },
   "footer": {
-    "description": "Praktiski mākoņpakalpojumu, DevOps un individuāli programmatūras risinājumi, kas palīdz mazajiem un vidējiem uzņēmumiem augt droši, efektīvi un pārliecinoši.",
+    "description": "Praktiski mākoņrisinājumi, DevOps un pielāgota programmatūra, kas palīdz mazajiem un vidējiem uzņēmumiem augt droši, efektīvi un pārliecinoši.",
     "services": {
       "title": "Pakalpojumi",
-      "websiteDevelopment": "Mājaslapu Izstrāde",
-      "systemDevelopment": "Pielāgotu Sistēmu Izstrāde",
-      "cloudArchitecture": "Mākoņrisinājumi un Migrācija",
-      "devopsAutomation": "DevOps un Automatizācija",
-      "itInfrastructure": "IT Infrastruktūra",
-      "fullCycle": "Pilna Cikla Izstrāde",
-      "aiIntegration": "Mākslīgā Intelekta Integrācija",
-      "itConsulting": "IT Konsultācijas"
+      "websiteDevelopment": "Mājaslapu izstrāde",
+      "systemDevelopment": "Pielāgotu sistēmu izstrāde",
+      "cloudArchitecture": "Mākoņrisinājumi un migrācija",
+      "devopsAutomation": "DevOps un automatizācija",
+      "itInfrastructure": "IT infrastruktūra",
+      "fullCycle": "Pilna cikla izstrāde",
+      "aiIntegration": "Mākslīgā intelekta integrācija",
+      "itConsulting": "IT konsultācijas"
     },
     "company": {
       "title": "Uzņēmums",
-      "aboutUs": "Par Mums",
+      "aboutUs": "Par mums",
       "careers": "Karjera",
       "contact": "Kontakti",
-      "companyDetails": "Uzņēmuma Rekvizīti"
+      "companyDetails": "Uzņēmuma rekvizīti"
     },
     "legal": {
-      "title": "Juridiskā Informācija",
-      "terms": "Noteikumi un Nosacījumi",
-      "privacy": "Privātuma Politika",
-      "cookies": "Sīkdatņu Politika"
+      "title": "Juridiskā informācija",
+      "terms": "Noteikumi un nosacījumi",
+      "privacy": "Privātuma politika",
+      "cookies": "Sīkdatņu politika"
     },
     "copyright": "© 2026 HA Group. Visas tiesības aizsargātas.",
     "status": "Visas sistēmas darbojas"
   },
   "cookie": {
-    "title": "Mēs izmantojam sīkdatnes",
-    "description": "Mēs izmantojam sīkdatnes, lai nodrošinātu labāko lietošanas pieredzi un analizētu vietnes datplūsmu. Uzziniet vairāk mūsu <cookie>Sīkdatņu politikā</cookie>.",
-    "acceptAll": "Pieņemt Visas",
-    "necessaryOnly": "Tikai Nepieciešamās",
-    "manageButton": "Pārvaldīt Iestatījumus",
-    "manageDescription": "Sīkdatņu iestatījumus varat mainīt jebkurā laikā."
+    "title": "Nepieciešamā vietnes krātuve",
+    "description": "Mēs izmantojam tikai nepieciešamo pārlūka krātuvi, lai atcerētos valodu un krāsu režīmu, jūsu iepazīšanos ar šo paziņojumu un novērstu ātru atkārtotu formu iesniegšanu. Mēs neizmantojam analītikas, reklāmas vai izsekošanas sīkdatnes. Plašāka informācija ir mūsu <cookie>Sīkdatņu politikā</cookie>.",
+    "acknowledge": "Sapratu",
+    "manageButton": "Atkārtoti skatīt paziņojumu",
+    "manageDescription": "Paziņojumu varat skatīt atkārtoti, bet saglabātos iestatījumus jebkurā laikā varat dzēst pārlūkā."
   },
   "whatsapp": {
     "tooltip": "Rakstīt mums WhatsApp",
     "ariaLabel": "Sazināties ar mums WhatsApp",
-    "defaultMessage": "Sveiki! Mani interesē jūsu pakalpojumi. Vai varam apspriest manas uzņēmuma vajadzības?"
+    "defaultMessage": "Sveiki! Mani interesē jūsu pakalpojumi. Vai varam apspriest mana uzņēmuma vajadzības?"
   },
   "servicePages": {
-    "backToServices": "Atpakaļ uz Pakalpojumiem",
+    "backToServices": "Atpakaļ uz pakalpojumiem",
     "getStarted": "Sākt"
   },
   "careers": {
-    "backHome": "Atpakaļ uz Sākumu",
-    "badge": "Mēs Meklējam",
+    "backHome": "Atpakaļ uz sākumu",
+    "badge": "Mēs meklējam",
     "applyNow": "Pieteikties",
     "form": {
-      "hrEmail": "HR E-pasts",
+      "hrEmail": "Personāla atlases e-pasts",
       "location": "Atrašanās vieta",
-      "responseTime": "Atbildes Laiks",
+      "responseTime": "Atbildes laiks",
       "successMessage": "Paldies! Jūsu pieteikums ir iesniegts. Mēs to izskatīsim un atbildēsim 5 darba dienu laikā.",
       "errorMessage": "Radās kļūda. Lūdzu, mēģiniet vēlreiz vai sazinieties ar mums pa e-pastu.",
-      "rateLimitMessage": "Lūdzu, uzgaidiet {{seconds}}s pirms atkārtotas iesniegšanas.",
+      "rateLimitMessage": "Lūdzu, uzgaidiet {{seconds}} s pirms atkārtotas iesniegšanas.",
       "submitting": "Iesniegšana…",
       "fields": {
-        "fullName": "Vārds, Uzvārds",
-        "email": "E-pasta Adrese",
-        "phone": "Tālruņa Numurs",
+        "fullName": "Vārds, uzvārds",
+        "email": "E-pasta adrese",
+        "phone": "Tālruņa numurs",
         "linkedin": "LinkedIn / Portfolio",
-        "position": "Interesējošais Amats",
+        "position": "Interesējošais amats",
         "selectPosition": "Izvēlieties amatu",
-        "otherPosition": "Cits / Vispārīgs Pieteikums",
+        "otherPosition": "Cits / vispārīgs pieteikums",
         "resume": "CV",
         "resumeHint": "PDF, DOC vai DOCX — maksimums 5 MB",
-        "coverLetter": "Motivācijas Vēstule / Ziņa",
-        "privacyConsent": "Es piekrītu <privacy>Privātuma politikai</privacy> un atļauju apstrādāt manus datus atlases nolūkos.",
-        "submit": "Iesniegt Pieteikumu"
+        "coverLetter": "Motivācijas vēstule / ziņa",
+        "privacyConsent": "Esmu iepazinies ar <privacy>Privātuma politiku</privacy> un saprotu, ka mani dati tiks apstrādāti personāla atlases nolūkos.",
+        "submit": "Iesniegt pieteikumu"
       },
       "placeholder": {
         "name": "Jānis Bērziņš",
@@ -148,45 +150,45 @@
     }
   },
   "reviews": {
-    "backHome": "Atpakaļ uz Sākumu",
-    "title": "Klientu Atsauksmes",
+    "backHome": "Atpakaļ uz sākumu",
+    "title": "Klientu atsauksmes",
     "subtitle": "Atsauksmes no mazajiem un vidējiem uzņēmumiem, ar kuriem esam sadarbojušies.",
-    "featured": "Izceltās Atsauksmes",
-    "allReviews": "Visas Atsauksmes",
+    "featured": "Izceltās atsauksmes",
+    "allReviews": "Visas atsauksmes",
     "ctaTitle": "Gatavi attīstīt savu uzņēmumu?",
     "ctaText": "Pievienojieties augošiem uzņēmumiem, kas mums uztic savu tehnoloģiju attīstību.",
     "ctaButton": "Sazināties"
   },
   "projects": {
-    "backHome": "Atpakaļ uz Sākumu",
-    "title": "Mūsu Projekti",
+    "backHome": "Atpakaļ uz sākumu",
+    "title": "Mūsu projekti",
     "subtitle": "Risinājumi, kas veicina izaugsmi, efektivitāti un ilgtermiņa panākumus.",
-    "backToWork": "Atpakaļ uz Projektiem",
-    "keyHighlights": "Galvenie Ieguvumi",
-    "techStack": "Tehnoloģiju Kopa",
-    "whatWeDelivered": "Ko Mēs Nodrošinājām",
+    "backToWork": "Atpakaļ uz projektiem",
+    "keyHighlights": "Galvenie ieguvumi",
+    "techStack": "Tehnoloģiju kopa",
+    "whatWeDelivered": "Ko mēs nodrošinājām",
     "ctaTitle": "Ir ideja projektam?",
     "ctaText": "Dalieties ar savu ideju, un mēs palīdzēsim to pārvērst uzticamā un mērogojamā risinājumā.",
-    "ctaButton": "Sākt Projektu",
-    "visitSite": "Apmeklēt Vietni"
+    "ctaButton": "Sākt projektu",
+    "visitSite": "Apmeklēt vietni"
   },
   "about": {
-    "backHome": "Atpakaļ uz Sākumu",
+    "backHome": "Atpakaļ uz sākumu",
     "title": "Par HA Group",
     "subtitle": "Praktiski un mērogojami IT risinājumi mazajiem un vidējiem uzņēmumiem.",
     "mission": {
-      "title": "Mūsu Misija",
+      "title": "Mūsu misija",
       "text": "Palīdzēt mazajiem un vidējiem uzņēmumiem izmantot mūsdienu tehnoloģijas pieejamā, drošā un ilgtspējīgā veidā."
     },
     "vision": {
-      "title": "Mūsu Vīzija",
+      "title": "Mūsu vīzija",
       "text": "Būt uzticamam tehnoloģiju partnerim augošiem uzņēmumiem, nodrošinot infrastruktūru un programmatūru, kas attīstās kopā ar biznesu."
     },
     "values": {
-      "title": "Mūsu Vērtības",
+      "title": "Mūsu vērtības",
       "transparency": {
         "icon": "solar:shield-check-linear",
-        "title": "Caurspīdīgums",
+        "title": "Pārredzamība",
         "text": "Atklāta komunikācija, godīgi nosacījumi un praktiski risinājumi."
       },
       "excellence": {
@@ -210,19 +212,55 @@
     "ctaButton": "Sazināties"
   },
   "companyDetails": {
-    "backToAbout": "Atpakaļ uz Par Mums",
-    "title": "Uzņēmuma Informācija",
-    "subtitle": "Oficiālie juridiskie un reģistrācijas dati par HA Group SIA.",
+    "backToAbout": "Atpakaļ uz sadaļu “Par mums”",
+    "title": "Uzņēmuma informācija",
+    "subtitle": "SIA HA Group juridiskā un kontaktinformācija.",
     "fields": {
-      "companyName": "Uzņēmuma Nosaukums",
-      "regNumber": "Reģistrācijas Numurs",
-      "vatNumber": "PVN Numurs",
-      "legalAddress": "Juridiskā Adrese",
+      "companyName": "Uzņēmuma nosaukums",
+      "regNumber": "Reģistrācijas numurs",
+      "regNumberValue": "40203724866",
+      "vatNumber": "PVN maksātājs",
+      "vatNumberValue": "LV40203724866",
       "email": "E-pasts",
+      "emailValue": "info@hagroup.lv",
       "bankLabel": "Banka"
     }
   },
   "legal": {
-    "backHome": "Atpakaļ uz Sākumu"
+    "backHome": "Atpakaļ uz sākumu",
+    "lastUpdated": "Pēdējo reizi atjaunināts"
+  },
+  "balticGP": {
+    "badge": "Motociklu šosejas sacensību kalendārs",
+    "description": "Ātra un uzticama kalendāra lietotne, kas palīdz braucējiem un līdzjutējiem atrast oficiālus motociklu šosejas sacensību pasākumus Baltijā un Eiropā.",
+    "problemTitle": "Kādu problēmu tas risina",
+    "problemText": "Informācija par pasākumiem bieži ir izkaisīta sociālo tīklu ierakstos, PDF failos un dažādu organizatoru vietnēs. BalticGP apkopo uzticamu informāciju vienuviet, lai sezonu varētu plānot pārliecinoši.",
+    "problemPoints": [
+      "Viens kalendārs sadrumstalotu avotu vietā",
+      "Skaidri pārskatāmi pasākumi braucējiem un skatītājiem",
+      "Uzticami atjauninājumi, ja mainās datums vai laiks"
+    ],
+    "audienceTitle": "Kam tas paredzēts",
+    "audiencePoints": [
+      "Šosejas sacīkšu braucējiem, kuri meklē gaidāmos pasākumus un reģistrācijas saites",
+      "Līdzjutējiem un skatītājiem, kuri vēlas zināt, kas un kur notiek",
+      "Organizatoriem, kuri vēlas neitrālu un uzticamu pasākumu publicitāti",
+      "Satura veidotājiem, kuri palīdz uzturēt kalendāru aktuālu un precīzu"
+    ],
+    "featuresTitle": "Ko lietotāji var darīt",
+    "features": [
+      "Vienuviet apskatīt gaidāmās sacensības, treniņus un trases dienas",
+      "Filtrēt pēc trases, organizatora, valsts un pasākuma veida",
+      "Atvērt katra pasākuma oficiālo informācijas avotu",
+      "Saglabāt izlasi ierīcē un ātrāk plānot sezonu",
+      "Redzēt, kad pasākuma informācija pēdējo reizi atjaunināta"
+    ],
+    "trustTitle": "Kvalitāte un uzticamība",
+    "trustPoints": [
+      "Satura veidotāji var iesniegt pasākumus un sekot to apstiprināšanas statusam",
+      "Moderatori pārbauda un apstiprina iesniegumus pirms publicēšanas",
+      "Organizatoru administratori var pārvaldīt savus pasākumus",
+      "Moderācijas lēmumi tiek reģistrēti pārskatāmības nodrošināšanai"
+    ]
   }
 }

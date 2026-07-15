@@ -78,12 +78,12 @@ export default function Header() {
       <div className="absolute inset-x-0 top-0 h-16 backdrop-blur-md bg-zinc-50/85 dark:bg-zinc-950/80 border-b border-zinc-200 dark:border-zinc-800/80 shadow-[0_1px_2px_0_rgba(0,0,0,0.03)]" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" onClick={handleLogoClick} className="flex items-center gap-2 text-zinc-900 dark:text-white">
-          <Logo className="h-7 sm:h-8" />
+        <Link to="/" onClick={handleLogoClick} className="relative z-10 flex shrink-0 items-center gap-2 text-zinc-900 dark:text-white">
+          <Logo className="h-10 sm:h-11" />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex flex-1 items-center justify-center gap-8">
+        <nav className="absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-4 md:flex lg:gap-8">
           {/* Services Dropdown */}
           <div className="relative" ref={servicesRef}>
             <button
@@ -155,7 +155,7 @@ export default function Header() {
         </nav>
 
         {/* Actions */}
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="relative z-10 ml-auto flex items-center gap-2 lg:gap-4">
           {/* Language Switcher — desktop */}
           <div className="relative hidden md:block" ref={langRef}>
             <button
@@ -188,7 +188,7 @@ export default function Header() {
           <button
             onClick={toggleTheme}
             className="flex items-center justify-center h-9 w-9 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors rounded-lg hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50"
-            aria-label="Toggle Theme"
+            aria-label={t('nav.toggleTheme')}
           >
             {theme === 'dark' ? (
               <iconify-icon icon="solar:sun-linear" width="20" />
@@ -199,7 +199,7 @@ export default function Header() {
 
           <Link
             to="/contact"
-            className="hidden md:flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 transition-colors shadow-sm"
+            className="hidden lg:flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 transition-colors shadow-sm"
           >
             {t('nav.bookConsultation')}
           </Link>
@@ -208,7 +208,7 @@ export default function Header() {
           <button
             onClick={() => setMobileOpen((prev) => !prev)}
             className="md:hidden p-2 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors rounded-lg hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50"
-            aria-label="Toggle menu"
+            aria-label={t('nav.toggleMenu')}
           >
             <iconify-icon icon={mobileOpen ? 'solar:close-circle-linear' : 'solar:hamburger-menu-linear'} width="24" />
           </button>

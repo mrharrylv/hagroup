@@ -37,6 +37,40 @@ export default function Antigravity() {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const drawScene = () => {
+      const { w, h } = sizeRef.current;
+      const particles = particlesRef.current;
+      ctx.clearRect(0, 0, w, h);
+
+      for (const particle of particles) {
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${COLORS[particle.colorIdx]}, ${particle.opacity})`;
+        ctx.fill();
+      }
+
+      const connectionDist = 150;
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const a = particles[i];
+          const b = particles[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance >= connectionDist) continue;
+
+          const alpha = 0.12 * (1 - distance / connectionDist);
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = `rgba(99, 102, 241, ${alpha})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    };
 
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
@@ -47,10 +81,15 @@ export default function Antigravity() {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       sizeRef.current = { w, h };
       createParticles(w, h);
+      if (reducedMotion) drawScene();
     };
 
     resize();
     window.addEventListener('resize', resize);
+
+    if (reducedMotion) {
+      return () => window.removeEventListener('resize', resize);
+    }
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
@@ -64,11 +103,9 @@ export default function Antigravity() {
 
     const animate = () => {
       const { w, h } = sizeRef.current;
-      ctx.clearRect(0, 0, w, h);
 
       const mouse = mouseRef.current;
       const repelRadius = 200;
-      const connectionDist = 150;
       const particles = particlesRef.current;
 
       for (const p of particles) {
@@ -100,32 +137,9 @@ export default function Antigravity() {
         if (p.y < -20) p.y = h + 20;
         if (p.y > h + 20) p.y = -20;
 
-        // Draw particle
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${COLORS[p.colorIdx]}, ${p.opacity})`;
-        ctx.fill();
       }
 
-      // Draw connection lines between nearby particles
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const a = particles[i];
-          const b = particles[j];
-          const cdx = a.x - b.x;
-          const cdy = a.y - b.y;
-          const cdist = Math.sqrt(cdx * cdx + cdy * cdy);
-          if (cdist < connectionDist) {
-            const alpha = 0.12 * (1 - cdist / connectionDist);
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(99, 102, 241, ${alpha})`;
-            ctx.lineWidth = 0.8;
-            ctx.stroke();
-          }
-        }
-      }
+      drawScene();
 
       animRef.current = requestAnimationFrame(animate);
     };

@@ -6,12 +6,12 @@ import ProjectCTA from '../../components/sections/ProjectCTA';
 
 /* ── EventApp-specific demo data ── */
 const MOCK_EVENTS = [
-  { title: 'DONS | TUVUMS', date: '15. Aug, 20:00', city: 'Rīga', price: '€45', tags: ['Mūzika', 'Pārim'], color: 'from-purple-500 to-indigo-600' },
-  { title: 'Nurme Springs 2026', date: '25. Apr, 16:00', city: 'Rīga', price: '€55', tags: ['Festivāls', 'Dzērieni'], color: 'from-amber-500 to-orange-600' },
-  { title: 'OZOLS — Cieņa un Mīlestība', date: '5. Dec, 20:00', city: 'Rīga', price: '€29', tags: ['Mūzika'], color: 'from-rose-500 to-pink-600' },
-  { title: 'Latvija — Norvēģija', date: '6. May, 19:30', city: 'Rīga', price: '€3.50', tags: ['Sports', 'Ģimene'], color: 'from-emerald-500 to-teal-600' },
-  { title: 'Chris Noah Siguldā', date: '6. Jun, 20:00', city: 'Sigulda', price: '€30', tags: ['Mūzika', 'Dabā'], color: 'from-sky-500 to-blue-600' },
-  { title: 'ĀrprāTS S11 E8', date: '8. May, 19:30', city: 'Rīga', price: '€10', tags: ['Komēdija', 'Teātris'], color: 'from-violet-500 to-fuchsia-600' },
+  { title: 'DONS | TUVUMS', date: '15. aug., 20:00', city: 'Rīga', price: '€45', tags: ['Mūzika', 'Pārim'], color: 'from-purple-500 to-indigo-600' },
+  { title: 'Nurme Springs 2026', date: '25. apr., 16:00', city: 'Rīga', price: '€55', tags: ['Festivāls', 'Dzērieni'], color: 'from-amber-500 to-orange-600' },
+  { title: 'OZOLS — Cieņa un Mīlestība', date: '5. dec., 20:00', city: 'Rīga', price: '€29', tags: ['Mūzika'], color: 'from-rose-500 to-pink-600' },
+  { title: 'Latvija — Norvēģija', date: '6. maijs, 19:30', city: 'Rīga', price: '€3.50', tags: ['Sports', 'Ģimene'], color: 'from-emerald-500 to-teal-600' },
+  { title: 'Chris Noah Siguldā', date: '6. jūn., 20:00', city: 'Sigulda', price: '€30', tags: ['Mūzika', 'Brīvā dabā'], color: 'from-sky-500 to-blue-600' },
+  { title: 'ĀrprāTS S11 E8', date: '8. maijs, 19:30', city: 'Rīga', price: '€10', tags: ['Komēdija', 'Teātris'], color: 'from-violet-500 to-fuchsia-600' },
 ];
 
 const CATEGORIES = ['Mūzika', 'Sports', 'Teātris', 'Festivāls', 'Komēdija', 'Izklaide', 'Ģimene', 'Dabā', 'Dzērieni', 'Kultūra', 'Kino', 'Deja'];
@@ -51,7 +51,7 @@ function EventAppMockup() {
           </div>
           <div className="hidden md:flex items-center gap-4 text-xs text-zinc-500 dark:text-zinc-400">
             <span>Visi pasākumi</span>
-            <span>Mani Plāni</span>
+            <span>Mani plāni</span>
             <div className="w-6 h-6 rounded-full bg-zinc-200 dark:bg-zinc-800" />
           </div>
         </div>
@@ -90,7 +90,7 @@ function EventAppMockup() {
           <div className="relative z-10">
             <span className="text-[10px] uppercase tracking-widest text-indigo-200 font-semibold">Izceltie pasākumi</span>
             <h3 className="text-xl md:text-2xl font-bold text-white mt-1">Pasākumi Latvijā</h3>
-            <p className="text-sm text-indigo-100 mt-1">Koncerti, Teātris, Festivāli, Izstādes Rīgā</p>
+            <p className="text-sm text-indigo-100 mt-1">Koncerti, teātris, festivāli un izstādes Rīgā</p>
           </div>
         </div>
 

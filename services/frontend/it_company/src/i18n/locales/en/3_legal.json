@@ -1,131 +1,155 @@
 {
   "terms": {
     "title": "Terms & Conditions",
-    "lastUpdated": "2026-02-23",
+    "lastUpdated": "2026-07-15",
     "sections": [
       {
-        "heading": "1. Acceptance of Terms",
-        "content": "By accessing or using this website, you agree to comply with and be bound by these Terms & Conditions. If you do not agree to these terms, please refrain from using the website."
+        "heading": "1. Service Provider",
+        "content": "SIA HA Group\nRegistration number: 40203724866\nVAT payer: LV40203724866\nEmail: info@hagroup.lv\n\nSIA HA Group operates this website (\"HA Group\", \"we\", \"us\")."
       },
       {
-        "heading": "2. Nature of the Service",
-        "content": "HA Group provides IT infrastructure, cloud architecture, DevOps, and software engineering services. This website is an informational and contact platform. Services are offered \"as is\" and are intended for lawful business and personal use."
+        "heading": "2. Scope and Acceptance",
+        "content": "These Terms & Conditions govern access to and use of hagroup.lv and its content and forms. By using the website, you agree to these terms. If you do not agree, please stop using the website."
       },
       {
-        "heading": "3. Contact Forms & Data Submission",
-        "content": "When submitting a contact or career application form, the information you provide—including name, email, company, project details, and other fields—is collected and stored for the purpose of responding to your inquiry or processing your application. Submission constitutes consent to data processing as outlined in our Privacy Policy."
+        "heading": "3. Informational Website — No Online Contract",
+        "content": "The website provides general information about our IT, cloud, DevOps, consulting, and software engineering services. It is not an online shop or a binding offer. Submitting a form, selecting a budget range, or receiving an acknowledgement does not place an order, create a service contract, guarantee a response, or oblige either party to proceed. Any project is subject to a separate written proposal or agreement covering scope, price, timing, responsibilities, and other applicable terms."
       },
       {
         "heading": "4. Acceptable Use",
-        "content": "You must not misuse the website or services. This includes using the website for unlawful purposes, interfering with its operation, or using automated tools to collect data without permission."
+        "content": "You may use the website only lawfully. You must not interfere with its security or operation, introduce malicious code, attempt unauthorized access, submit unlawful or misleading content, impersonate another person, or use automated tools to extract data in a way that disrupts the website or infringes rights."
       },
       {
-        "heading": "5. Intellectual Property",
-        "content": "All content on this website, including text, graphics, logos, and software, is owned by HA Group and protected under intellectual property laws. Unauthorized reproduction, distribution, or commercial use is prohibited."
+        "heading": "5. Forms and Communications",
+        "content": "You are responsible for ensuring that information submitted through contact or career forms is accurate and that you are entitled to provide it. We process form data as described in our Privacy Policy. The privacy checkbox confirms that you have read that policy; it is not blanket consent to every type of processing. Please do not include confidential, special-category, or unnecessary personal data in free-text fields."
       },
       {
-        "heading": "6. Limitation of Liability",
-        "content": "To the maximum extent permitted by law, HA Group shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the website or services."
+        "heading": "6. Intellectual Property",
+        "content": "Unless stated otherwise, the website design, original text, graphics, code, and HA Group branding are owned by or licensed to HA Group and are protected by applicable intellectual property laws. You may view and make a reasonable personal or internal-business copy for evaluating our services, but may not reproduce, modify, distribute, sell, or commercially exploit the content without prior written permission. Third-party names, trademarks, and materials remain the property of their respective owners."
       },
       {
-        "heading": "7. Service Availability",
-        "content": "We aim to maintain continuous website availability but do not guarantee uninterrupted access. Website features and services may be modified or discontinued at any time without notice."
+        "heading": "7. External Links",
+        "content": "The website may link to third-party websites or services. Links are provided for convenience and do not imply endorsement. We do not control third-party content, availability, security, or privacy practices; your use of those services is governed by their own terms and policies."
       },
       {
-        "heading": "8. Governing Law",
-        "content": "These Terms & Conditions are governed by the laws of the Republic of Latvia, without regard to its conflict of law provisions."
+        "heading": "8. Accuracy and Availability",
+        "content": "We take reasonable care to keep website information useful and current, but general service descriptions, case studies, timelines, budget ranges, and results are illustrative and are not warranties or promises of identical outcomes. The website may occasionally be unavailable, contain errors, or be changed, suspended, or discontinued."
       },
       {
-        "heading": "9. Changes to Terms",
-        "content": "HA Group reserves the right to update these terms at any time. The latest version is always available on this page. Continued use of the website constitutes acceptance of the updated terms."
+        "heading": "9. Liability for Website Use",
+        "content": "To the maximum extent permitted by applicable law, HA Group is not liable for indirect or consequential loss arising solely from use of, inability to use, or reliance on this informational website. Nothing in these terms excludes or limits liability that cannot lawfully be excluded or limited, including liability arising from fraud, wilful misconduct, or any mandatory consumer protection rule. Liability relating to paid services is governed by the applicable service agreement."
       },
       {
-        "heading": "10. Contact",
-        "content": "For questions about these Terms & Conditions, please contact us at info@cloudie.lv."
+        "heading": "10. Privacy and Browser Storage",
+        "content": "Our Privacy Policy explains how we process personal data, and our Cookie Policy explains the necessary browser storage used by this website. Those policies form part of the information governing your use of the website."
+      },
+      {
+        "heading": "11. Applicable Law and Disputes",
+        "content": "These terms are governed by the laws of the Republic of Latvia. We encourage you to contact us first at info@hagroup.lv so that we can try to resolve any concern. Disputes are subject to the competent courts determined under applicable law. If you are a consumer in the European Economic Area, nothing in these terms deprives you of mandatory protections or jurisdiction rights available under the law of your country of residence."
+      },
+      {
+        "heading": "12. Changes to These Terms",
+        "content": "We may update these terms to reflect legal, technical, or business changes. The revised version applies from the date shown on this page and does not retroactively change an existing signed service agreement. Material changes will be communicated on the website where reasonably appropriate."
+      },
+      {
+        "heading": "13. Contact",
+        "content": "Questions about these Terms & Conditions may be sent to SIA HA Group at info@hagroup.lv."
       }
     ]
   },
   "privacy": {
     "title": "Privacy Policy",
-    "lastUpdated": "2026-02-23",
+    "lastUpdated": "2026-07-15",
     "sections": [
       {
         "heading": "1. Data Controller",
-        "content": "HA Group SIA is the data controller responsible for processing your personal data. For inquiries or requests regarding your data, contact info@cloudie.lv."
+        "content": "SIA HA Group\nRegistration number: 40203724866\nVAT payer: LV40203724866\nEmail: info@hagroup.lv\n\nSIA HA Group is the controller of personal data processed through this website."
       },
       {
-        "heading": "2. Information We Collect",
-        "content": "We collect personal information you voluntarily provide through website forms:\n\nContact Form: full name, company name, email address, project budget, project details, browser language, and page URL.\n\nCareer Application Form: full name, email, phone number, LinkedIn or portfolio URL, position applied for, and cover letter.\n\nBoth forms record your consent status and submission timestamp. We do not collect additional data beyond what you provide."
+        "heading": "2. Scope and Sources",
+        "content": "This policy applies to personal data processed through hagroup.lv. We receive data directly from you when you submit a form or communicate with us, and limited technical data when your browser connects to and uses the website. If you provide another person's data, you must be entitled to do so and should make this policy available to that person."
       },
       {
-        "heading": "3. Purpose of Data Processing",
-        "content": "We process personal data to:\n\n• Respond to project inquiries and consultation requests\n• Process career applications and contact applicants\n• Improve our website and services\n• Analyze website usage in aggregated form\n\nWe do not sell personal data or use it for advertising profiling."
+        "heading": "3. Data We Process",
+        "content": "Project and contact inquiries: full name, company (optional), work email, selected project budget (optional), project details, privacy-policy acknowledgement, browser language, page URL, submission time, and form-mode indicators.\n\nCareer applications: full name, email, phone (optional), LinkedIn or portfolio URL (optional), position (optional), cover letter (optional), privacy-policy acknowledgement, browser language, page URL, and submission time.\n\nTechnical data: website hosting and security providers may process IP address, browser/device information, request time, requested page, and similar connection-log data. Your browser also stores the necessary preference and form-protection values listed in our Cookie Policy."
       },
       {
-        "heading": "4. Legal Basis",
-        "content": "Data processing is based on:\n\n• Your explicit consent (via form submission or cookies acceptance)\n• HA Group's legitimate interests (responding to inquiries, improving services)\n• Compliance with applicable legal obligations"
+        "heading": "4. Purposes and Legal Bases",
+        "content": "We process data for the following purposes under Article 6 GDPR:\n\n• To answer project inquiries, prepare proposals, and take steps requested before a possible contract — Article 6(1)(b), or our legitimate interest in managing business communications where that basis does not apply — Article 6(1)(f).\n• To assess applications and manage recruitment — steps before a possible employment relationship under Article 6(1)(b) and our legitimate interest in selecting candidates and defending legal claims under Article 6(1)(f).\n• To deliver and secure the website, prevent rapid repeat submissions, diagnose faults, and maintain service integrity — our legitimate interests under Article 6(1)(f).\n• To keep records or disclose information where required by law — Article 6(1)(c), and to establish, exercise, or defend legal claims — Article 6(1)(f).\n\nThe privacy checkbox confirms that you have read this policy. We do not treat it as blanket consent. If we ask for consent for a separate optional purpose, Article 6(1)(a) applies and you may withdraw that consent at any time without affecting earlier lawful processing."
       },
       {
-        "heading": "5. Data Storage & Security",
-        "content": "Personal data is stored securely in Google Cloud Firestore. Industry-standard measures, including encryption in transit and at rest, protect against unauthorized access or disclosure.\n\nContact form data is retained as long as needed to respond. Career applications are stored up to 12 months. You may request deletion at any time."
+        "heading": "5. Required and Optional Information",
+        "content": "Fields marked as required are needed to identify your request, reply to you, and understand the matter. If you do not provide them, we cannot process the form. Other fields are optional. Please do not submit special-category data (for example, health, biometric, political, religious, or trade-union information) or other information that is not necessary for your inquiry or application."
       },
       {
-        "heading": "6. Cookies & Tracking",
-        "content": "Cookies and similar technologies are used to enhance browsing, analyze traffic, and understand visitor sources. You can manage cookie preferences via your browser or our consent banner. See our Cookie Policy for details."
+        "heading": "6. Recipients and Service Providers",
+        "content": "Access is limited to authorized HA Group personnel who need the data for the relevant purpose. We use Google Firebase / Cloud Firestore to receive and store form submissions, and Amazon Web Services (including S3 and CloudFront) to host and deliver the website. These providers process data on our behalf under contractual and security obligations. Data may also be disclosed to professional advisers, courts, regulators, law-enforcement bodies, or other authorities where necessary and lawful. We do not sell personal data or share it with advertisers."
       },
       {
-        "heading": "7. Third-Party Services",
-        "content": "We may share data with:\n\n• Google Firebase / Firestore (storage and hosting)\n• Analytics providers (with consent)\n\nThe website may include links to third-party sites. HA Group is not responsible for their privacy practices. Personal data is not shared with third parties for marketing purposes."
+        "heading": "7. International Transfers",
+        "content": "Some service providers may process data outside Latvia or the European Economic Area. Where personal data is transferred to a country without an applicable European Commission adequacy decision, we rely on safeguards permitted by Chapter V GDPR, such as the European Commission's Standard Contractual Clauses, together with supplementary measures where required. You may contact us for information about the relevant safeguards."
       },
       {
-        "heading": "8. Your Rights (GDPR)",
-        "content": "Under GDPR, you can:\n\n• Access your personal data\n• Request correction or deletion\n• Restrict or object to processing\n• Request data portability\n• Withdraw consent at any time\n\nContact info@cloudie.lv to exercise these rights. Requests will be handled within 30 days."
+        "heading": "8. Retention",
+        "content": "We keep personal data only for as long as needed for the stated purpose:\n\n• Project and contact inquiries: normally up to 24 months after the last substantive communication.\n• Career applications: normally up to 12 months after submission. Longer talent-pool retention requires a separate legal basis, such as your specific consent.\n• Hosting and security logs, if generated: for the period reasonably necessary for security, troubleshooting, and provider operations.\n• Browser-stored values: for the periods described in our Cookie Policy.\n\nData may be kept longer where required by law or reasonably necessary to establish, exercise, or defend legal claims. It is then deleted or anonymized when the applicable period ends."
       },
       {
-        "heading": "9. Changes to This Policy",
-        "content": "We may update this Privacy Policy periodically. Updates will be posted on this page with a revised date. The latest version is always available here."
+        "heading": "9. Security",
+        "content": "We apply appropriate technical and organisational measures designed to protect personal data, including access controls, encrypted connections, service-provider security controls, and limiting access by purpose. No internet transmission or storage system can be guaranteed completely secure."
       },
       {
-        "heading": "10. Contact",
-        "content": "Questions about this Privacy Policy or exercising your data rights? Contact info@cloudie.lv."
+        "heading": "10. Your GDPR Rights",
+        "content": "Subject to the conditions and exceptions in the GDPR, you may request access to and a copy of your data, correction, deletion, restriction of processing, and data portability. You may object to processing based on legitimate interests, including by explaining your particular situation. Where processing is based on consent, you may withdraw it at any time without affecting processing carried out before withdrawal. You also have the right to lodge a complaint with a supervisory authority."
+      },
+      {
+        "heading": "11. Exercising Rights and Complaints",
+        "content": "Send requests to info@hagroup.lv. We may ask for information reasonably necessary to verify your identity. We will respond without undue delay and normally within one month; the GDPR permits an extension of up to two further months for complex or numerous requests, in which case we will inform you.\n\nIn Latvia, the supervisory authority is Datu valsts inspekcija, Elijas iela 17, Riga, LV-1050, Latvia; email pasts@dvi.gov.lv; website www.dvi.gov.lv. You may also complain to the supervisory authority in the EU/EEA country where you live, work, or believe an infringement occurred."
+      },
+      {
+        "heading": "12. Automated Decisions and Children",
+        "content": "We do not use website data for solely automated decisions that produce legal or similarly significant effects, and we do not carry out advertising profiling. The website and its forms are intended for business contacts and job applicants, not for children."
+      },
+      {
+        "heading": "13. Policy Changes",
+        "content": "We may update this policy to reflect changes in our processing or legal obligations. The current version and its effective date will be published on this page. Where a change materially affects how we use existing data, we will provide additional notice or obtain consent if required by law."
       }
     ]
   },
   "cookies": {
     "title": "Cookie Policy",
-    "lastUpdated": "2026-02-23",
+    "lastUpdated": "2026-07-15",
     "sections": [
       {
-        "heading": "1. What Are Cookies",
-        "content": "Cookies are small text files stored on your device when visiting a website. They help websites function efficiently and provide information to site owners."
+        "heading": "1. Scope",
+        "content": "Website operator:\nSIA HA Group\nRegistration number: 40203724866\nVAT payer: LV40203724866\nEmail: info@hagroup.lv\n\nThis policy explains cookies and similar browser-storage technologies used on hagroup.lv. The current website uses first-party local storage rather than advertising or analytics cookies. Local storage keeps small values in your browser and, like cookies, can be removed through your browser settings."
       },
       {
-        "heading": "2. How We Use Cookies",
-        "content": "We use cookies to understand website interactions, remember preferences (language, theme), and improve your experience. Analytics cookies may collect anonymized usage statistics with your consent."
+        "heading": "2. Storage We Use",
+        "content": "The website currently stores only the following first-party values:\n\n• cloudie-lang — remembers the language you select.\n• cloudie-theme — remembers the light or dark color theme you select.\n• cloudie-cookies — remembers that you acknowledged this storage notice so it is not shown on every visit.\n• rate_limit_contact and rate_limit_career — store the time of a successful form submission to prevent rapid repeat submissions.\n\nThese values do not create a cross-site advertising profile and are not used to track you across other websites."
       },
       {
-        "heading": "3. Types of Cookies We Use",
-        "content": "Essential Cookies: Required for website functionality (security, accessibility, consent settings).\n\nAnalytics Cookies: With consent, used to collect anonymous interaction data for statistical purposes.\n\nFunctional Cookies: Enable personalized features, like remembering language or theme selections."
+        "heading": "3. Why Consent Is Not Requested",
+        "content": "The listed values are used to provide settings you explicitly request, remember this notice, or protect forms and website operation. Under Section 7¹(2) of Latvia's Information Society Services Law, storage that is necessary to provide a service requested by the user does not require consent, although clear information must still be provided. The notice therefore has an acknowledgement button rather than misleading accept/reject choices."
       },
       {
-        "heading": "4. Consent and Management",
-        "content": "Upon visiting, you can accept all cookies or only essential ones. Preferences can be changed anytime via browser settings or our cookie management options. Disabling cookies may affect website functionality."
+        "heading": "4. No Analytics or Advertising Storage",
+        "content": "We currently do not use analytics, advertising, social-media, profiling, or other optional tracking cookies or browser storage. If that changes, we will update this policy and request your prior, freely given consent before any optional storage is placed or read. Refusing or later withdrawing such consent will be as easy as giving it and will not affect necessary website functions."
       },
       {
-        "heading": "5. Third-Party Cookies",
-        "content": "Some cookies are set by third parties (e.g., Google Analytics) with your consent. These parties handle data per their policies. We do not control third-party cookies and recommend reviewing their policies."
+        "heading": "5. Storage Periods",
+        "content": "cloudie-lang, cloudie-theme, and cloudie-cookies remain until you change the relevant setting or clear the website's stored data in your browser. The form-protection timestamps may remain in local storage until cleared, but the website stops using each timestamp to block another submission after 60 seconds."
       },
       {
-        "heading": "6. Cookie Storage Period",
-        "content": "Cookies may persist for the session only (session cookies) or a set period (persistent cookies). Storage durations depend on type and purpose; consult third-party documentation for details."
+        "heading": "6. Managing Browser Storage",
+        "content": "You can inspect or delete the website's cookies and local storage through your browser's privacy or site-data settings. Deleting cloudie-lang or cloudie-theme resets the related preference; deleting cloudie-cookies makes the storage notice appear again. Blocking all local storage may prevent preferences and form protection from working as intended. The button below reopens the notice but does not itself delete other stored values."
       },
       {
-        "heading": "7. Changes to This Policy",
-        "content": "This Cookie Policy may be updated periodically. Changes are posted here with a revised date. The latest version is always available on this page."
+        "heading": "7. Service Providers and Other Data",
+        "content": "The site does not intentionally place third-party cookies. When you load pages or submit a form, our hosting and form service providers may process connection or form data as described in the Privacy Policy; that server-side processing is separate from the browser-storage values listed above. Links to external websites are governed by those websites' own cookie and privacy policies."
       },
       {
-        "heading": "8. Contact",
-        "content": "For questions about cookies, contact info@cloudie.lv."
+        "heading": "8. Changes and Contact",
+        "content": "We may update this policy if our storage practices or legal obligations change. The latest version and date will be published here. Questions may be sent to SIA HA Group at info@hagroup.lv."
       }
     ]
   }

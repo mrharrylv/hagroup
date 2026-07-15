@@ -1,6 +1,6 @@
 {
   "title": "Build the Future With Us",
-  "subtitle": "Join a team of ambitious engineers, architects, and innovators building secure, scalable technology for the next generation of enterprises.",
+  "subtitle": "Join a team of ambitious engineers, architects, and innovators building secure, scalable technology for growing businesses.",
   "benefitsTitle": "Why Join HA Group?",
   "benefitsSubtitle": "We empower our people with competitive compensation, flexibility, and meaningful work on impactful, modern technology.",
   "benefits": [
@@ -57,7 +57,7 @@
   "form": {
     "title": "Apply to Join Our Team",
     "subtitle": "Submit your application and we’ll respond within 5 business days. Every application is reviewed with care.",
-    "locationValue": "Remote, San Francisco, Europe",
+    "locationValue": "Remote / Europe",
     "responseTimeValue": "Within 5 business days"
   }
 }

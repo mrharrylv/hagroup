@@ -1,20 +1,52 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { addDoc, collection, serverTimestamp, Timestamp } from 'firebase/firestore';
+import { db } from '../../lib/firebase';
 
 const NOTICE_KEY = 'cloudie-cookies';
 const LEGACY_VISITOR_KEY = 'cloudie-visitor-id';
+const NOTICE_VERSION = '2026-07-15';
+const NOTICE_RETENTION_MS = 365 * 24 * 60 * 60 * 1000;
+
+type RecordStatus = 'idle' | 'saving' | 'error';
+
+interface StoredAcknowledgement {
+  choice: 'necessary';
+  noticeVersion: string;
+  recordId: string;
+  acknowledgedAt: string;
+  expiresAt: string;
+}
 
 function hasAcknowledgedNotice(): boolean {
   try {
-    return Boolean(localStorage.getItem(NOTICE_KEY));
+    const raw = localStorage.getItem(NOTICE_KEY);
+    if (!raw) return false;
+
+    const stored = JSON.parse(raw) as StoredAcknowledgement;
+    const isCurrent =
+      stored.choice === 'necessary' &&
+      stored.noticeVersion === NOTICE_VERSION &&
+      typeof stored.recordId === 'string' &&
+      stored.recordId.length > 0 &&
+      new Date(stored.expiresAt).getTime() > Date.now();
+
+    if (!isCurrent) localStorage.removeItem(NOTICE_KEY);
+    return isCurrent;
   } catch {
+    try {
+      localStorage.removeItem(NOTICE_KEY);
+    } catch {
+      // Ignore unavailable browser storage.
+    }
     return false;
   }
 }
 
 export default function CookieBanner() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [visible, setVisible] = useState(() => !hasAcknowledgedNotice());
+  const [recordStatus, setRecordStatus] = useState<RecordStatus>('idle');
 
   const reopen = useCallback(() => {
     try {
@@ -22,6 +54,7 @@ export default function CookieBanner() {
     } catch {
       // The notice can still be shown for the current page view.
     }
+    setRecordStatus('idle');
     setVisible(true);
   }, []);
 
@@ -38,13 +71,42 @@ export default function CookieBanner() {
     return () => window.removeEventListener('cloudie-reopen-cookies', reopen);
   }, [reopen]);
 
-  const acknowledge = () => {
+  const acknowledge = async () => {
+    if (recordStatus === 'saving') return;
+
+    setRecordStatus('saving');
+    const acknowledgedAt = new Date();
+    const expiresAt = new Date(acknowledgedAt.getTime() + NOTICE_RETENTION_MS);
+
     try {
-      localStorage.setItem(NOTICE_KEY, 'acknowledged');
-    } catch {
-      // Keep dismissal limited to the current page view if storage is blocked.
+      const record = await addDoc(collection(db, 'consents'), {
+        recordType: 'necessary_storage_notice',
+        choice: 'necessary',
+        noticeVersion: NOTICE_VERSION,
+        language: i18n.resolvedLanguage || i18n.language || 'en',
+        createdAt: serverTimestamp(),
+        expiresAt: Timestamp.fromDate(expiresAt),
+      });
+
+      try {
+        const stored: StoredAcknowledgement = {
+          choice: 'necessary',
+          noticeVersion: NOTICE_VERSION,
+          recordId: record.id,
+          acknowledgedAt: acknowledgedAt.toISOString(),
+          expiresAt: expiresAt.toISOString(),
+        };
+        localStorage.setItem(NOTICE_KEY, JSON.stringify(stored));
+      } catch {
+        // The server record exists; the notice may reappear if browser storage is blocked.
+      }
+
+      setRecordStatus('idle');
+      setVisible(false);
+    } catch (error) {
+      console.error('[CookieBanner] Failed to record storage notice acknowledgement:', error);
+      setRecordStatus('error');
     }
-    setVisible(false);
   };
 
   if (!visible) return null;
@@ -72,11 +134,17 @@ export default function CookieBanner() {
       <div className="flex items-center mt-2">
         <button
           onClick={acknowledge}
-          className="w-full px-4 py-2 text-xs font-medium rounded-lg text-white bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100 transition-colors"
+          disabled={recordStatus === 'saving'}
+          className="w-full px-4 py-2 text-xs font-medium rounded-lg text-white bg-zinc-900 hover:bg-zinc-800 disabled:cursor-wait disabled:opacity-60 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100 transition-colors"
         >
-          {t('cookie.acknowledge')}
+          {recordStatus === 'saving' ? t('cookie.recording') : t('cookie.acknowledge')}
         </button>
       </div>
+      {recordStatus === 'error' && (
+        <p className="text-xs text-red-600 dark:text-red-400" role="alert">
+          {t('cookie.recordError')}
+        </p>
+      )}
     </div>
   );
 }

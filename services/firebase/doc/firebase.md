@@ -22,33 +22,34 @@ Components import `db` and use the modular Firestore SDK (`addDoc`, `collection`
 
 ---
 
-## 1. Cookie Consent (`consents` collection)
+## 1. Necessary-Storage Notice Acknowledgement (`consents` collection)
 
 **Component:** `src/components/ui/CookieBanner.tsx`
 
 ### Flow
 
-1. On first visit the banner is shown (localStorage key `cloudie-cookies` is absent).
-2. User clicks **Accept All** or **Necessary Only**.
-3. The choice is saved to `localStorage` so the banner won't reappear.
-4. A **fire-and-forget** `addDoc` writes a document to the `consents` collection.
+1. On first visit, or after the current record expires, the notice is shown.
+2. The user clicks **Understood**. This acknowledges information about necessary storage; it is not consent to optional cookies.
+3. An awaited `addDoc` writes a privacy-minimized record to the `consents` collection.
+4. After the write succeeds, `cloudie-cookies` stores the choice, policy version, timestamps, and Firestore document ID so the notice does not reappear for up to 12 months.
 
 ### Firestore document shape
 
-| Field        | Type               | Description                                      |
-| ------------ | ------------------ | ------------------------------------------------ |
-| `visitorId`  | `string`           | `crypto.randomUUID()`, persisted in localStorage |
-| `choice`     | `'all' \| 'necessary'` | Which button was clicked                     |
-| `userAgent`  | `string`           | `navigator.userAgent`                            |
-| `language`   | `string`           | `navigator.language`                             |
-| `url`        | `string`           | Page URL at the time of consent                  |
-| `createdAt`  | `Timestamp`        | `serverTimestamp()`                              |
+| Field           | Type          | Description                                      |
+| --------------- | ------------- | ------------------------------------------------ |
+| `recordType`    | `string`      | Always `necessary_storage_notice`                |
+| `choice`        | `string`      | Always `necessary`                               |
+| `noticeVersion` | `string`      | Version of the notice that was acknowledged      |
+| `language`      | `string`      | Active interface language                        |
+| `createdAt`     | `Timestamp`   | Firestore server timestamp                       |
+| `expiresAt`     | `Timestamp`   | Maximum 12-month retention; Firestore TTL field  |
 
 ### Design decisions
 
-- **Write-only:** The app never reads back consents; they exist purely for GDPR audit trail.
-- **Fire-and-forget:** The `addDoc` call is wrapped in `try/catch` with a `console.warn`. If Firestore is unreachable the user experience is unaffected.
-- **Visitor ID:** A random UUID stored in `cloudie-visitor-id` localStorage key links multiple consent events from the same browser without requiring authentication.
+- **Write-only:** The app never reads acknowledgement records from Firestore.
+- **Verified write:** The notice closes only after Firestore confirms the record. A localized retry message is shown if the write fails.
+- **Data minimization:** No name, email, user agent, page URL, or persistent visitor identifier is written. The legacy `cloudie-visitor-id` value is removed if present.
+- **Retention:** `expiresAt` is configured as a Firestore TTL field in `firestore.indexes.json` and is limited to no more than 366 days by security rules.
 
 ---
 
@@ -82,7 +83,7 @@ Components import `db` and use the modular Firestore SDK (`addDoc`, `collection`
 ### Design decisions
 
 - **Same pattern as consents** — write-only, no client reads.
-- **Awaited write:** Unlike consent (fire-and-forget), the contact form awaits the write so it can show success/error feedback to the user.
+- **Awaited write:** The contact form awaits the write so it can show success or error feedback to the user.
 - **Client-side validation:** Required fields are enforced via `required` HTML attributes and the `isValid` computed boolean.
 - **No reads:** Submissions are consumed via the Firebase console or a future back-office tool.
 
@@ -99,7 +100,13 @@ service cloud.firestore {
   match /databases/{database}/documents {
 
     match /consents/{consentId} {
-      allow create: if true;
+      allow create: if request.resource.data.keys().hasOnly([
+                      'recordType', 'choice', 'noticeVersion',
+                      'language', 'createdAt', 'expiresAt'
+                    ])
+                    && request.resource.data.recordType == 'necessary_storage_notice'
+                    && request.resource.data.choice == 'necessary'
+                    && request.resource.data.createdAt == request.time;
       allow read, update, delete: if false;
     }
 
@@ -115,7 +122,7 @@ service cloud.firestore {
 }
 ```
 
-Both collections are **create-only** from the client. No reads, updates, or deletes are permitted. A default deny-all rule catches everything else.
+All public collections are **create-only** from the client and validate their allowed fields. No reads, updates, or deletes are permitted. A default deny-all rule catches everything else.
 
 ---
 
@@ -169,4 +176,3 @@ firebase functions:log --project cloudie-7b8b4
 ```bash
 firebase deploy --only firestore:rules --project cloudie-7b8b4
 ```
-

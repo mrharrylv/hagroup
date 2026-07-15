@@ -100,8 +100,10 @@
   },
   "cookie": {
     "title": "Essential Site Storage",
-    "description": "We use only necessary browser storage to remember your language and theme, acknowledge this notice, and prevent rapid repeat form submissions. We do not use analytics, advertising, or tracking cookies. Learn more in our <cookie>Cookie Policy</cookie>.",
+    "description": "We use only necessary browser storage to remember your language and theme, acknowledge this notice, and prevent rapid repeat form submissions. When you select Understood, we save a limited acknowledgement record in Firebase for up to 12 months. We do not use analytics, advertising, or tracking cookies. Learn more in our <cookie>Cookie Policy</cookie>.",
     "acknowledge": "Understood",
+    "recording": "Saving…",
+    "recordError": "We could not save your acknowledgement. Please try again.",
     "manageButton": "Review Storage Notice",
     "manageDescription": "You can review this notice and clear stored preferences in your browser at any time."
   },

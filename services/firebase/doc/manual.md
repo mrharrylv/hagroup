@@ -24,7 +24,7 @@ Storage
 
 | Service | Used for | Notes |
 | --- | --- | --- |
-| Firestore (Native) | Form submissions + cookie consent | create‑only from client |
+| Firestore (Native) | Form submissions + necessary-storage notice acknowledgements | create-only from client |
 | Cloud Storage | Career CV uploads | `careers/` path, 5 MB cap |
 | Cloud Functions (Gen 2) | Email notifications | region `europe-north1`, **Blaze plan required** |
 | Firebase Web App | Frontend SDK config | provides the 7 `VITE_FIREBASE_*` values |

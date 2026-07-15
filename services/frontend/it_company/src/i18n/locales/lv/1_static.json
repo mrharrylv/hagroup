@@ -100,8 +100,10 @@
   },
   "cookie": {
     "title": "Nepieciešamā vietnes krātuve",
-    "description": "Mēs izmantojam tikai nepieciešamo pārlūka krātuvi, lai atcerētos valodu un krāsu režīmu, jūsu iepazīšanos ar šo paziņojumu un novērstu ātru atkārtotu formu iesniegšanu. Mēs neizmantojam analītikas, reklāmas vai izsekošanas sīkdatnes. Plašāka informācija ir mūsu <cookie>Sīkdatņu politikā</cookie>.",
+    "description": "Mēs izmantojam tikai nepieciešamo pārlūka krātuvi, lai atcerētos valodu un krāsu režīmu, jūsu iepazīšanos ar šo paziņojumu un novērstu ātru atkārtotu formu iesniegšanu. Nospiežot “Sapratu”, mēs Firebase līdz 12 mēnešiem saglabājam ierobežotu apliecinājuma ierakstu. Mēs neizmantojam analītikas, reklāmas vai izsekošanas sīkdatnes. Plašāka informācija ir mūsu <cookie>Sīkdatņu politikā</cookie>.",
     "acknowledge": "Sapratu",
+    "recording": "Saglabā…",
+    "recordError": "Neizdevās saglabāt apliecinājumu. Lūdzu, mēģiniet vēlreiz.",
     "manageButton": "Atkārtoti skatīt paziņojumu",
     "manageDescription": "Paziņojumu varat skatīt atkārtoti, bet saglabātos iestatījumus jebkurā laikā varat dzēst pārlūkā."
   },

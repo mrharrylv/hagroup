@@ -15,7 +15,7 @@
 | Routing | react-router-dom v7 |
 | i18n | i18next (EN / LV / RU) |
 | Icons | Iconify — Solar icon set |
-| Analytics | Firebase (cookie consent → Firestore) |
+| Storage acknowledgement | Firebase (necessary-storage notice → Firestore) |
 | Backend | Firebase Firestore + Storage (career applications, CV uploads) |
 | Hosting | AWS S3 + CloudFront |
 
@@ -316,7 +316,7 @@ src/
 │   │   └── CareerContact.tsx  # Careers application section
 │   └── ui/
 │       ├── Antigravity.tsx    # Canvas particle animation (Hero bg)
-│       ├── CookieBanner.tsx   # GDPR cookie consent → Firestore
+│       ├── CookieBanner.tsx   # Necessary-storage notice acknowledgement → Firestore
 │       ├── HorizontalCards.tsx # Shared 3D carousel (Work + Reviews)
 │       ├── Logo.tsx           # Brand logo SVG
 │       ├── ScrollToTop.tsx    # Auto-scroll on route change

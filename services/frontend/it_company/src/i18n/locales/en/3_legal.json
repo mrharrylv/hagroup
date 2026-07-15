@@ -71,11 +71,11 @@
       },
       {
         "heading": "3. Data We Process",
-        "content": "Project and contact inquiries: full name, company (optional), work email, selected project budget (optional), project details, privacy-policy acknowledgement, browser language, page URL, submission time, and form-mode indicators.\n\nCareer applications: full name, email, phone (optional), LinkedIn or portfolio URL (optional), position (optional), cover letter (optional), privacy-policy acknowledgement, browser language, page URL, and submission time.\n\nTechnical data: website hosting and security providers may process IP address, browser/device information, request time, requested page, and similar connection-log data. Your browser also stores the necessary preference and form-protection values listed in our Cookie Policy."
+        "content": "Project and contact inquiries: full name, company (optional), work email, selected project budget (optional), project details, privacy-policy acknowledgement, browser language, page URL, submission time, and form-mode indicators.\n\nCareer applications: full name, email, phone (optional), LinkedIn or portfolio URL (optional), position (optional), cover letter (optional), privacy-policy acknowledgement, browser language, page URL, and submission time.\n\nStorage-notice acknowledgements: a necessary-storage choice, notice version, interface language, server creation and expiry times, and a random Firestore document ID saved locally as a receipt. We do not attach a name, email address, user agent, page URL, or persistent visitor identifier to this record.\n\nTechnical data: website hosting and security providers may process IP address, browser/device information, request time, requested page, and similar connection-log data. Your browser also stores the necessary preference and form-protection values listed in our Cookie Policy."
       },
       {
         "heading": "4. Purposes and Legal Bases",
-        "content": "We process data for the following purposes under Article 6 GDPR:\n\n• To answer project inquiries, prepare proposals, and take steps requested before a possible contract — Article 6(1)(b), or our legitimate interest in managing business communications where that basis does not apply — Article 6(1)(f).\n• To assess applications and manage recruitment — steps before a possible employment relationship under Article 6(1)(b) and our legitimate interest in selecting candidates and defending legal claims under Article 6(1)(f).\n• To deliver and secure the website, prevent rapid repeat submissions, diagnose faults, and maintain service integrity — our legitimate interests under Article 6(1)(f).\n• To keep records or disclose information where required by law — Article 6(1)(c), and to establish, exercise, or defend legal claims — Article 6(1)(f).\n\nThe privacy checkbox confirms that you have read this policy. We do not treat it as blanket consent. If we ask for consent for a separate optional purpose, Article 6(1)(a) applies and you may withdraw that consent at any time without affecting earlier lawful processing."
+        "content": "We process data for the following purposes under Article 6 GDPR:\n\n• To answer project inquiries, prepare proposals, and take steps requested before a possible contract — Article 6(1)(b), or our legitimate interest in managing business communications where that basis does not apply — Article 6(1)(f).\n• To assess applications and manage recruitment — steps before a possible employment relationship under Article 6(1)(b) and our legitimate interest in selecting candidates and defending legal claims under Article 6(1)(f).\n• To deliver and secure the website, prevent rapid repeat submissions, diagnose faults, and maintain service integrity — our legitimate interests under Article 6(1)(f).\n• To keep a limited record that the necessary-storage notice was acknowledged, so we can demonstrate transparent notice delivery without tracking visitors — our legitimate interest under Article 6(1)(f). This acknowledgement is not consent under Article 6(1)(a).\n• To keep records or disclose information where required by law — Article 6(1)(c), and to establish, exercise, or defend legal claims — Article 6(1)(f).\n\nThe privacy checkbox confirms that you have read this policy. We do not treat it as blanket consent. If we ask for consent for a separate optional purpose, Article 6(1)(a) applies and you may withdraw that consent at any time without affecting earlier lawful processing."
       },
       {
         "heading": "5. Required and Optional Information",
@@ -83,7 +83,7 @@
       },
       {
         "heading": "6. Recipients and Service Providers",
-        "content": "Access is limited to authorized HA Group personnel who need the data for the relevant purpose. We use Google Firebase / Cloud Firestore to receive and store form submissions, and Amazon Web Services (including S3 and CloudFront) to host and deliver the website. These providers process data on our behalf under contractual and security obligations. Data may also be disclosed to professional advisers, courts, regulators, law-enforcement bodies, or other authorities where necessary and lawful. We do not sell personal data or share it with advertisers."
+        "content": "Access is limited to authorized HA Group personnel who need the data for the relevant purpose. We use Google Firebase / Cloud Firestore to receive and store form submissions and limited storage-notice acknowledgement records, and Amazon Web Services (including S3 and CloudFront) to host and deliver the website. These providers process data on our behalf under contractual and security obligations. Data may also be disclosed to professional advisers, courts, regulators, law-enforcement bodies, or other authorities where necessary and lawful. We do not sell personal data or share it with advertisers."
       },
       {
         "heading": "7. International Transfers",
@@ -91,7 +91,7 @@
       },
       {
         "heading": "8. Retention",
-        "content": "We keep personal data only for as long as needed for the stated purpose:\n\n• Project and contact inquiries: normally up to 24 months after the last substantive communication.\n• Career applications: normally up to 12 months after submission. Longer talent-pool retention requires a separate legal basis, such as your specific consent.\n• Hosting and security logs, if generated: for the period reasonably necessary for security, troubleshooting, and provider operations.\n• Browser-stored values: for the periods described in our Cookie Policy.\n\nData may be kept longer where required by law or reasonably necessary to establish, exercise, or defend legal claims. It is then deleted or anonymized when the applicable period ends."
+        "content": "We keep personal data only for as long as needed for the stated purpose:\n\n• Project and contact inquiries: normally up to 24 months after the last substantive communication.\n• Career applications: normally up to 12 months after submission. Longer talent-pool retention requires a separate legal basis, such as your specific consent.\n• Storage-notice acknowledgement records: up to 12 months, after which the Firestore TTL expiry field makes them eligible for automatic deletion.\n• Hosting and security logs, if generated: for the period reasonably necessary for security, troubleshooting, and provider operations.\n• Browser-stored values: for the periods described in our Cookie Policy.\n\nData may be kept longer where required by law or reasonably necessary to establish, exercise, or defend legal claims. It is then deleted or anonymized when the applicable period ends."
       },
       {
         "heading": "9. Security",
@@ -125,11 +125,11 @@
       },
       {
         "heading": "2. Storage We Use",
-        "content": "The website currently stores only the following first-party values:\n\n• cloudie-lang — remembers the language you select.\n• cloudie-theme — remembers the light or dark color theme you select.\n• cloudie-cookies — remembers that you acknowledged this storage notice so it is not shown on every visit.\n• rate_limit_contact and rate_limit_career — store the time of a successful form submission to prevent rapid repeat submissions.\n\nThese values do not create a cross-site advertising profile and are not used to track you across other websites."
+        "content": "The website currently stores only the following first-party values:\n\n• cloudie-lang — remembers the language you select.\n• cloudie-theme — remembers the light or dark color theme you select.\n• cloudie-cookies — stores the necessary-only acknowledgement, notice version, acknowledgement and expiry times, and the random Firestore record ID for up to 12 months so the notice is not shown on every visit.\n• rate_limit_contact and rate_limit_career — store the time of a successful form submission to prevent rapid repeat submissions.\n\nThese values do not create a cross-site advertising profile and are not used to track you across other websites."
       },
       {
         "heading": "3. Why Consent Is Not Requested",
-        "content": "The listed values are used to provide settings you explicitly request, remember this notice, or protect forms and website operation. Under Section 7¹(2) of Latvia's Information Society Services Law, storage that is necessary to provide a service requested by the user does not require consent, although clear information must still be provided. The notice therefore has an acknowledgement button rather than misleading accept/reject choices."
+        "content": "The listed values are used to provide settings you explicitly request, remember this notice, or protect forms and website operation. Under Section 7¹(2) of Latvia's Information Society Services Law, storage that is necessary to provide a service requested by the user does not require consent, although clear information must still be provided. The notice therefore has an acknowledgement button rather than misleading accept/reject choices. Selecting Understood records acknowledgement of the notice; it does not grant consent to analytics, advertising, or tracking."
       },
       {
         "heading": "4. No Analytics or Advertising Storage",
@@ -137,7 +137,7 @@
       },
       {
         "heading": "5. Storage Periods",
-        "content": "cloudie-lang, cloudie-theme, and cloudie-cookies remain until you change the relevant setting or clear the website's stored data in your browser. The form-protection timestamps may remain in local storage until cleared, but the website stops using each timestamp to block another submission after 60 seconds."
+        "content": "cloudie-lang and cloudie-theme remain until you change the relevant setting or clear the website's stored data in your browser. cloudie-cookies and the related Firebase acknowledgement record expire after no more than 12 months. The form-protection timestamps may remain in local storage until cleared, but the website stops using each timestamp to block another submission after 60 seconds."
       },
       {
         "heading": "6. Managing Browser Storage",
@@ -145,7 +145,7 @@
       },
       {
         "heading": "7. Service Providers and Other Data",
-        "content": "The site does not intentionally place third-party cookies. When you load pages or submit a form, our hosting and form service providers may process connection or form data as described in the Privacy Policy; that server-side processing is separate from the browser-storage values listed above. Links to external websites are governed by those websites' own cookie and privacy policies."
+        "content": "The site does not intentionally place third-party cookies. When you select Understood, Google Firebase / Cloud Firestore receives a record containing only the record type, necessary-only choice, notice version, interface language, server creation time, and expiry time. The Firestore document ID is stored locally as a receipt. The record does not include your name, email address, user agent, page URL, or a persistent visitor identifier. Firebase and our hosting providers may still process ordinary connection data as described in the Privacy Policy. Links to external websites are governed by those websites' own cookie and privacy policies."
       },
       {
         "heading": "8. Changes and Contact",

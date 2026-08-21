@@ -176,7 +176,10 @@ EOF
       "Sid": "TerraformStateObjects",
       "Effect": "Allow",
       "Action": ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"],
-      "Resource": "arn:aws:s3:::${STATE_BUCKET}/hagroup/${env}/*"
+      "Resource": [
+        "arn:aws:s3:::${STATE_BUCKET}/hagroup/${env}/*",
+        "arn:aws:s3:::${STATE_BUCKET}/hagroup/iepako/${env}/*"
+      ]
     },
     {
       "Sid": "TerraformS3Buckets",
@@ -186,7 +189,9 @@ EOF
         "arn:aws:s3:::${env}-hagroup-website",
         "arn:aws:s3:::${env}-hagroup-website/*",
         "arn:aws:s3:::${env}-hagroup-assets",
-        "arn:aws:s3:::${env}-hagroup-assets/*"
+        "arn:aws:s3:::${env}-hagroup-assets/*",
+        "arn:aws:s3:::${env}-hagroup-iepako-website",
+        "arn:aws:s3:::${env}-hagroup-iepako-website/*"
       ]
     },
     {
@@ -215,7 +220,13 @@ EOF
         "cloudfront:GetOriginAccessControl",
         "cloudfront:UpdateOriginAccessControl",
         "cloudfront:ListDistributions",
-        "cloudfront:ListOriginAccessControls"
+        "cloudfront:ListOriginAccessControls",
+        "cloudfront:CreateResponseHeadersPolicy",
+        "cloudfront:DeleteResponseHeadersPolicy",
+        "cloudfront:GetResponseHeadersPolicy",
+        "cloudfront:GetResponseHeadersPolicyConfig",
+        "cloudfront:UpdateResponseHeadersPolicy",
+        "cloudfront:ListResponseHeadersPolicies"
       ],
       "Resource": "*"
     },
@@ -229,7 +240,9 @@ EOF
         "acm:ListCertificates",
         "acm:GetCertificate",
         "acm:ListTagsForCertificate",
-        "acm:AddTagsToCertificate"
+        "acm:AddTagsToCertificate",
+        "acm:RemoveTagsFromCertificate",
+        "acm:UpdateCertificateOptions"
       ],
       "Resource": "*"
     },

@@ -62,7 +62,15 @@ export default function ProjectsPage() {
           {projects.map((project, idx) => {
             const accent = ACCENT_COLORS[idx % ACCENT_COLORS.length];
             const accentBg = ACCENT_BG[idx % ACCENT_BG.length];
-            const isInternalLink = Boolean(project.website?.startsWith('/'));
+            const cardHref = project.caseStudyPath || project.website;
+            const isInternalLink = Boolean(cardHref?.startsWith('/'));
+            const isConfidentialInfrastructure = project.slug === 'confidential-infrastructure-modernization';
+            const isConfidentialEvent = project.slug === 'confidential-event-intelligence-platform';
+            const visualGradient = isConfidentialInfrastructure
+              ? 'from-slate-950 via-indigo-950 to-zinc-950'
+              : isConfidentialEvent
+                ? 'from-slate-950 via-cyan-950 to-zinc-950'
+                : GRADIENTS[idx % GRADIENTS.length];
 
             const card = (
               <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-900 transition-all duration-500 group-hover:border-zinc-300 dark:group-hover:border-zinc-700 sm:group-hover:shadow-2xl sm:group-hover:shadow-zinc-300/25 dark:sm:group-hover:shadow-black/40">
@@ -75,7 +83,7 @@ export default function ProjectsPage() {
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   ) : (
-                    <div className={`absolute inset-0 bg-gradient-to-br ${GRADIENTS[idx % GRADIENTS.length]} transition-transform duration-700 group-hover:scale-105`}>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${visualGradient} transition-transform duration-700 group-hover:scale-105`}>
                       {/* Decorative elements */}
                       <div className="absolute inset-0 overflow-hidden">
                         <div className="absolute -top-20 -right-20 w-72 h-72 bg-white/[0.07] rounded-full blur-2xl" />
@@ -88,6 +96,45 @@ export default function ProjectsPage() {
                           }}
                         />
                       </div>
+                      {isConfidentialEvent && (
+                        <div className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+                          <div className="flex items-center gap-3 rounded-2xl border border-cyan-200/15 bg-black/25 px-4 py-4 backdrop-blur-sm sm:gap-5 sm:px-7">
+                            {[
+                              { label: '20+', icon: 'solar:global-bold' },
+                              { label: 'PY', icon: 'solar:code-square-bold' },
+                              { label: 'AI', icon: 'solar:stars-bold' },
+                            ].map((stage, stageIndex) => (
+                              <div key={stage.label} className="flex items-center gap-3 sm:gap-5">
+                                <div className="flex h-11 w-11 flex-col items-center justify-center rounded-xl border border-cyan-200/20 bg-cyan-300/10 text-cyan-100 sm:h-14 sm:w-14">
+                                  <iconify-icon icon={stage.icon} width="19" />
+                                  <span className="mt-0.5 text-[9px] font-bold tracking-wider">{stage.label}</span>
+                                </div>
+                                {stageIndex < 2 && <iconify-icon icon="solar:arrow-right-linear" width="16" className="text-cyan-100/35" />}
+                              </div>
+                            ))}
+                            <div className="ml-1 hidden h-12 w-px bg-white/10 sm:block" />
+                            <div className="hidden text-cyan-100 sm:block">
+                              <iconify-icon icon="solar:users-group-rounded-bold" width="30" />
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      {isConfidentialInfrastructure && (
+                        <div className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+                          <div className="flex items-center gap-4 rounded-2xl border border-white/15 bg-black/20 px-5 py-4 backdrop-blur-sm sm:px-7">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-indigo-300/25 bg-indigo-400/10 text-indigo-200">
+                              <iconify-icon icon="solar:shield-keyhole-bold" width="28" />
+                            </div>
+                            <div className="space-y-2">
+                              <div className="h-2.5 w-28 rounded-full bg-white/30 sm:w-40" />
+                              <div className="h-2.5 w-20 rounded-full bg-white/15 sm:w-28" />
+                              <span className="block text-[10px] font-semibold uppercase tracking-[0.24em] text-indigo-200/80">
+                                {t('projects.ndaProtected')}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
@@ -129,10 +176,12 @@ export default function ProjectsPage() {
                       {project.role}
                     </span>
                     <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
-                      <span className="text-[11px] sm:text-xs text-zinc-400 dark:text-zinc-500 flex items-center gap-1">
-                        <iconify-icon icon="solar:calendar-linear" width="12" />
-                        {project.year}
-                      </span>
+                      {project.year && (
+                        <span className="text-[11px] sm:text-xs text-zinc-400 dark:text-zinc-500 flex items-center gap-1">
+                          <iconify-icon icon="solar:calendar-linear" width="12" />
+                          {project.year}
+                        </span>
+                      )}
                       <span className="text-[11px] sm:text-xs text-zinc-400 dark:text-zinc-500 flex items-center gap-1">
                         <iconify-icon icon="solar:clock-circle-linear" width="12" />
                         {project.duration}
@@ -186,10 +235,10 @@ export default function ProjectsPage() {
                         </span>
                       )}
                     </div>
-                    {project.website && (
+                    {cardHref && (
                       <span className={`inline-flex items-center gap-1.5 text-xs font-medium ${accent} shrink-0 transition-all sm:group-hover:gap-2.5`}>
-                        {t('projects.visitSite')}
-                        <iconify-icon icon="solar:arrow-right-up-linear" width="14" />
+                        {project.caseStudyPath ? t('projects.viewProject') : t('projects.visitSite')}
+                        <iconify-icon icon={isInternalLink ? 'solar:arrow-right-linear' : 'solar:arrow-right-up-linear'} width="14" />
                       </span>
                     )}
                   </div>
@@ -197,11 +246,11 @@ export default function ProjectsPage() {
               </div>
             );
 
-            return project.website ? (
+            return cardHref ? (
               isInternalLink ? (
                 <Link
                   key={project.id}
-                  to={project.website}
+                  to={cardHref}
                   className="group block"
                 >
                   {card}
@@ -209,7 +258,7 @@ export default function ProjectsPage() {
               ) : (
               <a
                 key={project.id}
-                href={project.website}
+                href={cardHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block"

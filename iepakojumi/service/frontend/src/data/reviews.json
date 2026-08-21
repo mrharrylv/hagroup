@@ -1,0 +1,49 @@
+{
+  "reviews": [
+    {
+      "id": "custom-film-review",
+      "author": "IEPAKO",
+      "role": {
+        "lv": "Produktu apskats",
+        "en": "Product review",
+        "ru": "Обзор продукта"
+      },
+      "quote": {
+        "lv": "Pielāgota industriālā plēve ir labākā izvēle, ja regulāri mainās produkta izmērs, vajadzīga apdruka vai jāpielāgo materiāla izturība konkrētai ražošanas līnijai.",
+        "en": "Custom industrial film is the strongest choice when product dimensions change regularly, printing is required, or material strength must match a specific production line.",
+        "ru": "Плёнка на заказ подходит лучше всего, когда размеры продукции меняются, нужна печать или прочность материала должна соответствовать конкретной производственной линии."
+      },
+      "published": true
+    },
+    {
+      "id": "food-film-review",
+      "author": "IEPAKO",
+      "role": {
+        "lv": "Produktu apskats",
+        "en": "Product review",
+        "ru": "Обзор продукта"
+      },
+      "quote": {
+        "lv": "44 cm × 300 m pārtikas plēve ir praktisks ikdienas formāts profesionālām virtuvēm: pietiekams platums lielākiem traukiem un retāka ruļļa nomaiņa.",
+        "en": "The 44 cm × 300 m food wrap is a practical everyday format for professional kitchens, combining useful width for larger containers with fewer roll changes.",
+        "ru": "Пищевая плёнка 44 см × 300 м — практичный формат для профессиональных кухонь: удобная ширина для крупных ёмкостей и более редкая замена рулона."
+      },
+      "published": true
+    },
+    {
+      "id": "pof-review",
+      "author": "IEPAKO",
+      "role": {
+        "lv": "Produktu apskats",
+        "en": "Product review",
+        "ru": "Обзор продукта"
+      },
+      "quote": {
+        "lv": "POF termosarukuma plēvi iesakām vienmērīgam, caurspīdīgam iepakojumam, ja ražošanā jau tiek izmantota atbilstoša termiskā iekārta.",
+        "en": "We recommend POF shrink film for a consistent, transparent finish where suitable heat-shrink equipment is already part of the packing line.",
+        "ru": "Термоусадочную плёнку POF рекомендуем для ровной прозрачной упаковки, если линия уже оснащена подходящим термоусадочным оборудованием."
+      },
+      "published": true
+    }
+  ]
+}

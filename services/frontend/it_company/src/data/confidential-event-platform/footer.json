@@ -1,16 +1,16 @@
 {
-  "aboutUs": "About us",
+  "aboutUs": "About the platform",
   "aboutUsContent": "Your ultimate destination for discovering and attending amazing events.",
   "aboutPage": {
     "title": "About Us",
-    "intro": "EventApp is an event discovery platform in Latvia that helps you find information about what's happening around you — all in one place. Our goal is to make searching for events fast, simple, and convenient.",
+    "intro": "This confidential product is an event discovery platform that helps people find information about what's happening around them in one place. Its goal is to make searching for events fast, simple, and convenient.",
     "whoWeAre": {
       "title": "Who We Are",
       "content": "We are a small team in Latvia building a tool for people who want to easily discover interesting events."
     },
     "whatWeDo": {
       "title": "What We Do",
-      "content": "EventApp aggregates publicly available event information from various sources and presents it in a structured, searchable format.",
+      "content": "The platform aggregates publicly available event information from various sources and presents it in a structured, searchable format.",
       "subtitle": "The platform allows you to:",
       "items": [
         "browse events in one place",
@@ -24,13 +24,13 @@
       "title": "Our Mission",
       "content": "Our mission is to become the most convenient event discovery platform in Latvia — helping people more easily find activities that interest them and bring them together.\nWe believe that access to event information should be simple, free, and open to everyone."
     },
-    "footer": "All event information displayed on EventApp is sourced from publicly available third-party websites and is provided for informational purposes only."
+    "footer": "All event information displayed on the platform is sourced from publicly available third-party websites and is provided for informational purposes only."
   },
   "helpCenter": "Help center",
   "helpCenterContent": "Find answers to frequently asked questions and get support for using our platform.",
   "contact": "Contact us",
   "contactContent": "Have questions or need assistance? Reach out to our support team.",
-  "contactEmail": "eventapplv@gmail.com",
+  "contactEmail": "info@hagroup.lv",
   "contactPage": {
     "title": "Contact Us",
     "intro": "Have a question, suggestion, or noticed something that doesn't look right? We'd love to hear from you.",
@@ -177,7 +177,7 @@
   "cookies": "Cookie Policy",
   "cookiesContent": "Learn how we use cookies to improve your experience on our platform.",
   "terms": "Terms of Service",
-  "termsContent": "By using EventApp, you agree to these terms and conditions. Please read them carefully before using our platform.",
+  "termsContent": "By using the platform, you agree to these terms and conditions. Please read them carefully before continuing.",
   "termsPolicy": {
     "title": "TERMS OF SERVICE",
     "lastUpdated": "Last updated: [DATE]",

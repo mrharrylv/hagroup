@@ -52,9 +52,10 @@ export interface Project {
   description: string;
   image: string;
   website: string;
+  caseStudyPath?: string;
   slug: string;
   tags: string[];
-  year: number;
+  year?: number;
   featured: boolean;
   client: string;
   role: string;

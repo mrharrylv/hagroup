@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 82" role="img" aria-labelledby="title description">
+  <title id="title">IEPAKO</title>
+  <desc id="description">IEPAKO packaging materials logo</desc>
+  <g fill="none" stroke="#fffef9" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+    <path d="M9 24 38 8l29 16-29 16Z" fill="#315e53"/>
+    <path d="m9 24 29 16v32L9 56Z" fill="#173f36"/>
+    <path d="m38 40 29-16v32L38 72Z" fill="#285f52"/>
+    <path d="M26 16 55 32"/>
+    <path d="m19 35 19 11 19-11"/>
+  </g>
+  <path d="m31 12 8-4 9 5-9 5Z" fill="#f3ad45"/>
+  <text x="89" y="48" fill="#fffef9" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="5">IEPAKO</text>
+  <text x="91" y="67" fill="#a9c6bc" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="700" letter-spacing="2.5">PACKAGING MATERIALS</text>
+</svg>

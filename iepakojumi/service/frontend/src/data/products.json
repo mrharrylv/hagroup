@@ -1,0 +1,104 @@
+{
+  "products": [
+    {
+      "id": "custom-industrial-film",
+      "visual": "sheet",
+      "sourceUrl": "https://www.plasteda.lt/lv/pleve",
+      "name": {
+        "lv": "Industriālā plēve pēc pasūtījuma",
+        "en": "Custom industrial film",
+        "ru": "Промышленная плёнка на заказ"
+      },
+      "description": {
+        "lv": "Polietilēna un polipropilēna plēve precīzi jūsu produkta, ražošanas un loģistikas vajadzībām.",
+        "en": "Polyethylene and polypropylene film tailored to your product, production and logistics needs.",
+        "ru": "Полиэтиленовая и полипропиленовая плёнка под задачи вашей продукции, производства и логистики."
+      },
+      "features": {
+        "lv": ["LDPE, HDPE, MDPE, CPP vai pārstrādāts materiāls", "Plēve, puscaurule vai caurule ruļļos", "Termosarūkoša, perforēta, ar UV filtru vai apdruku"],
+        "en": ["LDPE, HDPE, MDPE, CPP or recycled material", "Sheet, centre-fold or tubular film on rolls", "Shrink, perforated, UV-filtered or printed options"],
+        "ru": ["LDPE, HDPE, MDPE, CPP или вторичное сырьё", "Полотно, полурукав или рукав в рулонах", "Термоусадка, перфорация, УФ-фильтр или печать"]
+      }
+    },
+    {
+      "id": "food-film-44-300",
+      "visual": "roll",
+      "sourceUrl": "https://moget.lv/partikas-pleves-c/200/1/c",
+      "name": {
+        "lv": "Pārtikas plēve 44 cm × 300 m",
+        "en": "Food wrap 44 cm × 300 m",
+        "ru": "Пищевая плёнка 44 см × 300 м"
+      },
+      "description": {
+        "lv": "Profesionāla izmēra caurspīdīga plēve ikdienas darbam virtuvēs, ražotnēs un ēdināšanā.",
+        "en": "Professional-format clear wrap for daily use in kitchens, production and catering.",
+        "ru": "Прозрачная плёнка профессионального формата для кухонь, производства и кейтеринга."
+      },
+      "features": {
+        "lv": ["Platums 44 cm", "Ruļļa garums 300 m", "Piemērota profesionālai lietošanai"],
+        "en": ["44 cm width", "300 m roll", "Suitable for professional use"],
+        "ru": ["Ширина 44 см", "Рулон 300 м", "Для профессионального применения"]
+      }
+    },
+    {
+      "id": "ldpe-food-film-45-270",
+      "visual": "food",
+      "sourceUrl": "https://moget.lv/partikas-pleves-c/200/1/c",
+      "name": {
+        "lv": "LDPE pārtikas plēve 45 cm × 270 m",
+        "en": "LDPE food wrap 45 cm × 270 m",
+        "ru": "Пищевая плёнка LDPE 45 см × 270 м"
+      },
+      "description": {
+        "lv": "Elastīga LDPE plēve produktu pārklāšanai, uzglabāšanai un drošai pārvietošanai.",
+        "en": "Flexible LDPE wrap for covering, storing and safely transporting food products.",
+        "ru": "Эластичная плёнка LDPE для накрытия, хранения и безопасной транспортировки продуктов."
+      },
+      "features": {
+        "lv": ["Platums 45 cm", "Ruļļa garums 270 m", "Neto svars aptuveni 1,031 kg"],
+        "en": ["45 cm width", "270 m roll", "Approx. 1.031 kg net weight"],
+        "ru": ["Ширина 45 см", "Рулон 270 м", "Масса нетто около 1,031 кг"]
+      }
+    },
+    {
+      "id": "food-film-30-270",
+      "visual": "compact",
+      "sourceUrl": "https://moget.lv/partikas-pleves-c/200/1/c",
+      "name": {
+        "lv": "Pārtikas plēve 30 cm × 270 m",
+        "en": "Food wrap 30 cm × 270 m",
+        "ru": "Пищевая плёнка 30 см × 270 м"
+      },
+      "description": {
+        "lv": "Kompakts profesionālais rullis mazākiem traukiem, sagatavēm un pārtikas produktiem.",
+        "en": "A compact professional roll for smaller containers, preparations and food products.",
+        "ru": "Компактный профессиональный рулон для небольших ёмкостей, заготовок и продуктов."
+      },
+      "features": {
+        "lv": ["Platums 30 cm", "Ruļļa garums 270 m", "Biezums 8 mikroni; svars aptuveni 0,65 kg"],
+        "en": ["30 cm width", "270 m roll", "8 micron thickness; approx. 0.65 kg"],
+        "ru": ["Ширина 30 см", "Рулон 270 м", "Толщина 8 микрон; масса около 0,65 кг"]
+      }
+    },
+    {
+      "id": "pof-shrink-film",
+      "visual": "shrink",
+      "sourceUrl": "https://moget.lv/iepakojums/pleves/termosarukuma-pleves/pof-pleve-15-mikr-350/350-mm-1250-m-caurspidiga-pleves-neto-svars-12-08-kg/9536/1/p",
+      "name": {
+        "lv": "POF termosarukuma plēve",
+        "en": "POF shrink film",
+        "ru": "Термоусадочная плёнка POF"
+      },
+      "description": {
+        "lv": "Caurspīdīga plēve pārtikas un nepārtikas preču iepakošanai termiskajās iekārtās.",
+        "en": "Clear film for packaging food and non-food goods in heat-shrink equipment.",
+        "ru": "Прозрачная плёнка для упаковки пищевых и непищевых товаров в термоусадочном оборудовании."
+      },
+      "features": {
+        "lv": ["Biezums 15 mikroni", "Puscaurule 350/350 mm", "Ruļļa garums 1250 m"],
+        "en": ["15 micron thickness", "350/350 mm centre-fold", "1,250 m roll"],
+        "ru": ["Толщина 15 микрон", "Полурукав 350/350 мм", "Рулон 1250 м"]
+      }
+    }
+  ]
+}

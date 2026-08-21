@@ -1,39 +1,43 @@
 [
   {
-    "id": "event-app",
-    "title": "EventApp.lv",
-    "description": "An event discovery platform for Latvia covering concerts, theatre, festivals, and exhibitions. It aggregates events from public sources, links to official organizers and ticket sellers, supports collaborative planning, and offers personalized subscriptions.",
+    "id": "confidential-event-intelligence-platform",
+    "title": "Event Intelligence Platform (NDA)",
+    "description": "A confidential event discovery and collaborative planning platform that transforms fragmented public information from 20+ ticketing, venue, cultural, and municipal sources into structured, searchable events. Python ingestion and AI-assisted extraction handle inconsistent websites, while LLM workflows categorize, enrich, and validate content before it reaches web and mobile experiences.",
     "image": "",
-    "website": "https://eventapp.lv",
-    "slug": "event-app",
+    "website": "",
+    "caseStudyPath": "/projects/confidential-event-intelligence-platform",
+    "slug": "confidential-event-intelligence-platform",
     "tags": [
-      "Events",
-      "Full-Stack",
-      "AI Integration"
+      "AI & Data",
+      "Event Technology",
+      "Product Engineering"
     ],
     "year": 2026,
     "featured": true,
-    "client": "EventApp",
-    "role": "Full-Cycle Development",
+    "client": "Confidential Event Technology Company",
+    "role": "Lead Full-Stack, AI & Platform Engineering",
     "duration": "6 months",
     "technologies": [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "Tailwind CSS",
+      "Python",
+      "Crawl4AI",
       "OpenAI LLM",
+      "React",
+      "Node.js",
+      "Flask",
+      "PostgreSQL",
+      "Redis",
       "Terraform",
       "AWS",
-      "Python",
       "Docker",
-      "GitHub Actions"
+      "Flutter"
     ],
     "highlights": [
-      "Engineered advanced event discovery with intelligent filtering across 25+ categories",
-      "Built collaborative event planning with secure shareable links",
-      "Developed an organizer dashboard with real-time analytics and performance insights",
-      "Optimized performance to achieve sub-second page loads using SSR and edge caching"
+      "Built a modular Python ingestion platform for 20+ ticketing, cultural, venue, cinema, and municipality sources, combining source-specific parsers with repeatable scheduling and regression fixtures",
+      "Implemented AI-assisted web extraction with Crawl4AI for dynamic and inconsistent pages, normalizing events, occurrences, venues, images, and pricing into one reliable data model",
+      "Created OpenAI-powered categorization across 30+ categories, multilingual search keywords in Latvian, English, and Russian, plus a separate validation workflow for content quality and price extraction",
+      "Designed multi-person planning with shareable sessions, quick-share flows, collaborative filters, synchronized likes and votes, participant visibility, and a promoted final event",
+      "Delivered public discovery across search, filters, maps, venues, organizers, and series, alongside dedicated administration, vendor, and native mobile experiences",
+      "Engineered the supporting platform with a React client, Node.js BFF and Redis cache, Flask API, PostgreSQL, Dockerized services, Terraform-managed AWS infrastructure, backups, and archival workflows"
     ]
   },
   {
@@ -64,6 +68,76 @@
       "Fast filters for tracks, countries, event types, and championships",
       "Transparent review flow for contributed events before publication",
       "Reliable event pages with source links and last-updated timestamps"
+    ]
+  },
+  {
+    "id": "rokber",
+    "title": "Rokber.lv",
+    "description": "A modern service website for a Latvian earthworks and construction logistics company. It presents earthworks, bulk-material delivery, and machinery rental through clear service journeys designed to turn local search traffic into qualified enquiries.",
+    "image": "https://d31mal6w80veq7.cloudfront.net/images/hero/2.png",
+    "website": "https://www.rokber.lv",
+    "caseStudyPath": "/projects/rokber",
+    "slug": "rokber",
+    "tags": [
+      "Construction",
+      "Business Website",
+      "Cloud Delivery"
+    ],
+    "year": 2026,
+    "featured": true,
+    "client": "Rokber",
+    "role": "Website Development & Cloud Delivery",
+    "duration": "Production launch",
+    "technologies": [
+      "React",
+      "Vite",
+      "i18next",
+      "AWS CloudFront",
+      "Amazon S3",
+      "Technical SEO"
+    ],
+    "highlights": [
+      "Created focused service journeys for earthworks, bulk-material delivery, and machinery rental",
+      "Built dedicated search-friendly pages with canonical metadata, Open Graph tags, and structured business data",
+      "Presented the equipment fleet and service coverage with clear contact and quote pathways",
+      "Delivered fast, reliable static hosting through Amazon S3, CloudFront, and a dedicated image CDN"
+    ]
+  },
+  {
+    "id": "confidential-infrastructure-modernization",
+    "title": "Global Infrastructure Modernization (NDA)",
+    "description": "Led a four-month infrastructure modernization program for a large global enterprise under NDA. Designed a reusable Terraform IaC platform and Azure DevOps delivery model, automated multi-environment rollouts in the United States, coordinated data migration and production switchovers, strengthened security and secret management, and then extended the same operating model across Europe.",
+    "image": "",
+    "website": "",
+    "caseStudyPath": "/projects/confidential-infrastructure-modernization",
+    "slug": "confidential-infrastructure-modernization",
+    "tags": [
+      "Enterprise",
+      "Azure",
+      "DevOps Architecture"
+    ],
+    "featured": true,
+    "client": "Confidential Global Enterprise",
+    "role": "Lead DevOps Architect & Consultant",
+    "duration": "4 months",
+    "technologies": [
+      "Terraform",
+      "Infrastructure as Code",
+      "Microsoft Azure",
+      "Azure DevOps",
+      ".NET",
+      "Azure Key Vault",
+      "Hub-and-Spoke Networking",
+      "CI/CD",
+      "Jira"
+    ],
+    "highlights": [
+      "Defined the target architecture and reusable Terraform modules for repeatable, fully automated provisioning across multiple environments",
+      "Built Azure DevOps pipelines with reusable templates, isolated state, validation stages, approvals, and controlled promotion between environments",
+      "Led the United States rollout through migration rehearsals, data validation, coordinated production switchover, and post-cutover verification",
+      "Improved the security posture with hub-and-spoke topology, network segmentation, least-privilege access, Key Vault integration, and secret rotation practices",
+      "Extended the IaC and automation model to the European platform and directed its controlled infrastructure and application switchover",
+      "Led delivery governance through Jira planning, risk and decision tracking, architecture reviews, client demos, runbooks, and knowledge transfer—earning positive stakeholder feedback throughout the engagement"
     ]
   }
 ]

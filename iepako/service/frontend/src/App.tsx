@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, Navigate, Route, Routes } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ContactForm from './components/ContactForm';
 import CookieBanner from './components/CookieBanner';
 import ProductVisual from './components/ProductVisual';
+import Seo from './components/Seo';
 import { localized, localizedList, localizedString, partners, products, reviews } from './lib/content';
 import { supportedLanguages, type Language } from './i18n';
 
@@ -369,29 +370,16 @@ function LegalPage({ type }: { type: 'privacy' | 'cookies' }) {
 }
 
 function PageFrame() {
-  const { t, i18n } = useTranslation();
-
-  useEffect(() => {
-    const updateDocument = () => {
-      document.documentElement.lang = (i18n.resolvedLanguage || i18n.language || 'lv').slice(0, 2);
-      document.title = t('meta.title');
-      document.querySelector('meta[name="description"]')?.setAttribute('content', t('meta.description'));
-    };
-
-    updateDocument();
-    i18n.on('languageChanged', updateDocument);
-    return () => i18n.off('languageChanged', updateDocument);
-  }, [i18n, t]);
-
   return (
     <div className="app-shell">
+      <Seo />
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/privacy" element={<LegalPage type="privacy" />} />
         <Route path="/cookies" element={<LegalPage type="cookies" />} />
         <Route path="/company" element={<CompanyPage />} />
-        <Route path="*" element={<HomePage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />
       <CookieBanner />

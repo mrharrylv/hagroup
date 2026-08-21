@@ -5,7 +5,7 @@ interface RokberPreviewProps {
 export default function RokberPreview({ image }: RokberPreviewProps) {
   return (
     <div className="absolute inset-0 overflow-hidden bg-zinc-950" aria-hidden="true">
-      <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <img src={image} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/55" />
 
       <div className="absolute inset-x-0 top-0 bg-zinc-950/95 text-white shadow-lg">

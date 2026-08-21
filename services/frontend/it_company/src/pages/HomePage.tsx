@@ -1,12 +1,14 @@
+import { lazy, Suspense } from 'react';
 import Hero from '../components/sections/Hero';
 import TechStack from '../components/sections/TechStack';
 import Services from '../components/sections/Services';
 import Methodology from '../components/sections/Methodology';
 import Work from '../components/sections/Work';
 import Reviews from '../components/sections/Reviews';
-import Contact from '../components/sections/Contact';
 import ScrollReveal from '../components/ui/ScrollReveal';
 import SectionTransition from '../components/ui/SectionTransition';
+
+const Contact = lazy(() => import('../components/sections/Contact'));
 
 export default function HomePage() {
   return (
@@ -39,7 +41,9 @@ export default function HomePage() {
         </div>
       </ScrollReveal>
       <ScrollReveal variant="rise">
-        <Contact />
+        <Suspense fallback={<div className="min-h-96" aria-hidden="true" />}>
+          <Contact />
+        </Suspense>
       </ScrollReveal>
     </>
   );

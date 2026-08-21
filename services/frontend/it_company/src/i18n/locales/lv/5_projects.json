@@ -106,6 +106,43 @@
     ]
   },
   {
+    "id": "iepako",
+    "title": "IEPAKO — iepakojuma materiālu vietne",
+    "description": "Atsevišķa B2B vietne pielāgojamiem iepakojuma materiāliem Latvijā. Tā trīs valodās iepazīstina ar industriālo, pārtikas, termosarukuma un stretch plēvju, kā arī plastmasas maisu pasūtījumu iespējām un novirza kvalificētus pieprasījumus uz drošu saziņas formu.",
+    "image": "/projects/iepako-logo.svg",
+    "website": "https://iepako.hagroup.lv",
+    "caseStudyPath": "/projects/iepako",
+    "slug": "iepako",
+    "tags": [
+      "B2B vietne",
+      "Iepakojums",
+      "Mākoņizvietošana"
+    ],
+    "year": 2026,
+    "featured": true,
+    "client": "IEPAKO / SIA HA Group",
+    "role": "Zīmola vietne, infrastruktūra un piegāde",
+    "duration": "Produkcijas palaišana",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "i18next",
+      "Firebase",
+      "AWS CloudFront",
+      "Amazon S3",
+      "Terraform",
+      "GitHub Actions",
+      "Tehniskais SEO"
+    ],
+    "highlights": [
+      "Izveidots atsevišķs IEPAKO zīmols un responsīva B2B vietne latviešu, angļu un krievu valodā",
+      "Produkti strukturēti kā pasūtāmas materiālu un izmēru grupas ar skaidriem tehniskajiem diapazoniem",
+      "Ieviesta droša Firebase saziņas forma un atsevišķas Firestore kolekcijas pieprasījumiem un krātuves apliecinājumiem",
+      "Izveidota izolēta Dev un Prod AWS infrastruktūra ar S3, CloudFront, ACM, Terraform un izmaksu uzskaites tagiem",
+      "Pievienoti unikāli meklētāju metadati, kanoniskās saites, strukturētie dati, sitemap un robots vadība"
+    ]
+  },
+  {
     "id": "confidential-infrastructure-modernization",
     "title": "Globālās infrastruktūras modernizācija (NDA)",
     "description": "Četru mēnešu garumā vadīta liela starptautiska uzņēmuma infrastruktūras modernizācijas programma, ievērojot NDA. Izstrādāta atkārtoti izmantojama Terraform IaC platforma un Azure DevOps piegādes modelis, automatizēta vairāku ASV vižu ieviešana, koordinēta datu migrācija un produkcijas pārslēgšana, uzlabota drošība un noslēpumu pārvaldība, pēc tam tāds pats darbības modelis ieviests Eiropā.",

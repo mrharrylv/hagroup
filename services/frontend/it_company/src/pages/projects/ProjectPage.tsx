@@ -398,8 +398,12 @@ export default function ProjectPage() {
               ) : (
                 <img
                   src={project.image}
-                  alt={`${project.title} website`}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                  alt={project.title}
+                  loading="lazy"
+                  decoding="async"
+                  className={`h-full w-full transition-transform duration-700 group-hover:scale-[1.02] ${
+                    project.slug === 'iepako' ? 'bg-[#eef4f1] object-contain p-12 sm:p-24' : 'object-cover'
+                  }`}
                 />
               )}
             </div>

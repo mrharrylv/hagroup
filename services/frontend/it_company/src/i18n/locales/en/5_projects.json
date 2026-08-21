@@ -106,6 +106,43 @@
     ]
   },
   {
+    "id": "iepako",
+    "title": "IEPAKO packaging materials website",
+    "description": "A dedicated B2B website for configurable packaging materials in Latvia. The multilingual experience presents industrial, food, shrink and pallet stretch film together with custom plastic bags, guiding qualified buyers to a secure quotation form.",
+    "image": "/projects/iepako-logo.svg",
+    "website": "https://iepako.hagroup.lv",
+    "caseStudyPath": "/projects/iepako",
+    "slug": "iepako",
+    "tags": [
+      "B2B Website",
+      "Packaging",
+      "Cloud Delivery"
+    ],
+    "year": 2026,
+    "featured": true,
+    "client": "IEPAKO / SIA HA Group",
+    "role": "Brand Website, Infrastructure & Delivery",
+    "duration": "Production launch",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "i18next",
+      "Firebase",
+      "AWS CloudFront",
+      "Amazon S3",
+      "Terraform",
+      "GitHub Actions",
+      "Technical SEO"
+    ],
+    "highlights": [
+      "Created a distinct IEPAKO brand and responsive B2B website in Latvian, English and Russian",
+      "Structured products as configurable material and size families with clear technical ranges",
+      "Implemented a secure Firebase enquiry form with separate Firestore collections for enquiries and storage acknowledgements",
+      "Built isolated Dev and Prod AWS delivery with S3, CloudFront, ACM, Terraform and cost-allocation tags",
+      "Added unique search metadata, canonical URLs, structured data, sitemap discovery and robots controls"
+    ]
+  },
+  {
     "id": "confidential-infrastructure-modernization",
     "title": "Global Infrastructure Modernization (NDA)",
     "description": "Led a four-month infrastructure modernization program for a large global enterprise under NDA. Designed a reusable Terraform IaC platform and Azure DevOps delivery model, automated multi-environment rollouts in the United States, coordinated data migration and production switchovers, strengthened security and secret management, and then extended the same operating model across Europe.",

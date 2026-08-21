@@ -37,7 +37,15 @@ export default function Work() {
               {project.slug === 'rokber' && project.image ? (
                 <RokberPreview image={project.image} />
               ) : project.image ? (
-                <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  decoding="async"
+                  className={`absolute inset-0 h-full w-full ${
+                    project.slug === 'iepako' ? 'bg-[#eef4f1] object-contain p-12' : 'object-cover'
+                  }`}
+                />
               ) : null}
               {/* Icon watermark */}
               <div className="absolute top-6 right-6 opacity-10">
@@ -58,8 +66,19 @@ export default function Work() {
                 <p className="text-sm sm:text-base text-white/70 leading-relaxed line-clamp-2">
                   {project.description}
                 </p>
-                {(project.appStoreUrl || project.playStoreUrl || project.slug === 'rokber') && (
+                {(project.caseStudyPath || project.appStoreUrl || project.playStoreUrl || project.website) && (
                   <div className="mt-4 flex flex-wrap gap-2">
+                    {project.caseStudyPath && (
+                      <Link
+                        to={project.caseStudyPath}
+                        onPointerDown={(event) => event.stopPropagation()}
+                        onClick={(event) => event.stopPropagation()}
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/15 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-md transition-colors hover:bg-white/25"
+                      >
+                        {t('projects.viewProject')}
+                        <iconify-icon icon="solar:arrow-right-linear" width="13" />
+                      </Link>
+                    )}
                     {project.appStoreUrl && (
                       <a
                         href={project.appStoreUrl}
@@ -96,6 +115,19 @@ export default function Work() {
                         className="inline-flex items-center gap-1.5 rounded-lg border border-yellow-300/50 bg-yellow-400 px-3 py-1.5 text-xs font-bold text-zinc-950 transition-colors hover:bg-yellow-300"
                       >
                         rokber.lv
+                        <iconify-icon icon="solar:arrow-right-up-linear" width="13" />
+                      </a>
+                    )}
+                    {project.slug === 'iepako' && project.website && (
+                      <a
+                        href={project.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onPointerDown={(event) => event.stopPropagation()}
+                        onClick={(event) => event.stopPropagation()}
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-200/50 bg-emerald-300 px-3 py-1.5 text-xs font-bold text-emerald-950 transition-colors hover:bg-emerald-200"
+                      >
+                        iepako.hagroup.lv
                         <iconify-icon icon="solar:arrow-right-up-linear" width="13" />
                       </a>
                     )}

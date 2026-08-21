@@ -60,7 +60,7 @@ export default function ReviewsPage() {
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-semibold text-sm shrink-0 overflow-hidden">
                     {review.image ? (
-                      <img src={review.image} alt={review.name} className="w-full h-full object-cover" />
+                      <img src={review.image} alt={review.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                     ) : (
                       review.name
                         .split(' ')
@@ -109,7 +109,7 @@ export default function ReviewsPage() {
                 <div className="flex items-center gap-4 md:w-64 shrink-0">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-semibold text-xs shrink-0 overflow-hidden">
                     {review.image ? (
-                      <img src={review.image} alt={review.name} className="w-full h-full object-cover" />
+                      <img src={review.image} alt={review.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                     ) : (
                       review.name
                         .split(' ')

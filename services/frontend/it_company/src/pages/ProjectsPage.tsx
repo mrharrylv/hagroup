@@ -84,7 +84,11 @@ export default function ProjectsPage() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
+                      className={`absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-105 ${
+                        project.slug === 'iepako' ? 'bg-[#eef4f1] object-contain p-10 sm:p-16' : 'object-cover'
+                      }`}
                     />
                   ) : (
                     <div className={`absolute inset-0 bg-gradient-to-br ${visualGradient} transition-transform duration-700 group-hover:scale-105`}>

@@ -3,7 +3,7 @@ region          = "eu-north-1"
 resource_prefix = "prod-hagroup-iepako"
 
 domain_name          = "iepako.hagroup.lv"
-enable_custom_domain = false
+enable_custom_domain = true
 
 cloudfront_price_class = "PriceClass_100"
 

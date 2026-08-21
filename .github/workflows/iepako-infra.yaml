@@ -59,6 +59,31 @@ jobs:
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: terraform validate
 
+      - name: Import existing OAC after an interrupted apply
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        env:
+          TARGET_ENVIRONMENT: ${{ inputs.environment }}
+        run: |
+          if terraform state show aws_cloudfront_origin_access_control.website > /dev/null 2>&1; then
+            echo "IEPAKO origin access control is already tracked in Terraform state."
+            exit 0
+          fi
+
+          OAC_NAME="${TARGET_ENVIRONMENT}-hagroup-iepako-oac"
+          OAC_ID=$(aws cloudfront list-origin-access-controls \
+            --query "OriginAccessControlList.Items[?Name=='${OAC_NAME}'] | [0].Id" \
+            --output text)
+
+          if [ -z "$OAC_ID" ] || [ "$OAC_ID" = "None" ] || [ "$OAC_ID" = "null" ]; then
+            echo "No existing IEPAKO origin access control found; Terraform will create it."
+            exit 0
+          fi
+
+          echo "Importing existing IEPAKO origin access control '${OAC_NAME}' (${OAC_ID})."
+          terraform import \
+            -var-file="environments/${TARGET_ENVIRONMENT}.tfvars" \
+            aws_cloudfront_origin_access_control.website "$OAC_ID"
+
       - name: Plan
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: >-

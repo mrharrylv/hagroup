@@ -1,39 +1,43 @@
 [
   {
-    "id": "event-app",
-    "title": "EventApp.lv",
-    "description": "Pasākumu meklēšanas platforma Latvijai, kas aptver koncertus, teātri, festivālus un izstādes. Tā apkopo pasākumus no publiskiem avotiem, novirza uz oficiālajiem organizatoriem un biļešu tirgotājiem, kā arī piedāvā kopīgu plānošanu un personalizētus abonementus.",
+    "id": "confidential-event-intelligence-platform",
+    "title": "Pasākumu informācijas platforma (NDA)",
+    "description": "Konfidenciāla pasākumu atklāšanas un kopīgas plānošanas platforma, kas sadrumstalotu publisko informāciju no vairāk nekā 20 biļešu tirgotāju, norises vietu, kultūras iestāžu un pašvaldību avotiem pārvērš strukturētos, meklējamos pasākumos. Python datu ieguve un ar MI atbalstīta informācijas izvilkšana apstrādā nevienmērīgas vietnes, savukārt LLM procesi saturu kategorizē, bagātina un pārbauda pirms tas nonāk tīmekļa un mobilajās lietotnēs.",
     "image": "",
-    "website": "https://eventapp.lv",
-    "slug": "event-app",
+    "website": "",
+    "caseStudyPath": "/projects/confidential-event-intelligence-platform",
+    "slug": "confidential-event-intelligence-platform",
     "tags": [
-      "Pasākumi",
-      "Pilna cikla izstrāde",
-      "MI integrācija"
+      "MI un dati",
+      "Pasākumu tehnoloģijas",
+      "Produkta izstrāde"
     ],
     "year": 2026,
     "featured": true,
-    "client": "EventApp",
-    "role": "Pilna cikla izstrāde",
+    "client": "Konfidenciāls pasākumu tehnoloģiju uzņēmums",
+    "role": "Vadošais pilna cikla, MI un platformas inženieris",
     "duration": "6 mēneši",
     "technologies": [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "Tailwind CSS",
+      "Python",
+      "Crawl4AI",
       "OpenAI LLM",
+      "React",
+      "Node.js",
+      "Flask",
+      "PostgreSQL",
+      "Redis",
       "Terraform",
       "AWS",
-      "Python",
       "Docker",
-      "GitHub Actions"
+      "Flutter"
     ],
     "highlights": [
-      "Izveidota pasākumu meklēšana ar viedo filtrēšanu vairāk nekā 25 kategorijās",
-      "Ieviesta kopīga pasākumu plānošana ar kopīgojamām saitēm",
-      "Izstrādāts organizatoru panelis ar reāllaika analītiku un darbības rādītājiem",
-      "Ar SSR un perifēro kešatmiņu panākta lapu ielāde nepilnā sekundē"
+      "Izveidota modulāra Python datu ieguves platforma vairāk nekā 20 biļešu, kultūras, norises vietu, kino un pašvaldību avotiem, apvienojot avotiem pielāgotus parserus, atkārtojamu plānošanu un regresijas testu paraugus",
+      "Ieviesta ar MI atbalstīta tīmekļa datu izvilkšana ar Crawl4AI dinamiskām un nevienmērīgām lapām, apvienojot pasākumus, norises reizes, vietas, attēlus un cenas vienotā datu modelī",
+      "Izveidota OpenAI kategorizēšana vairāk nekā 30 kategorijās, meklēšanas atslēgvārdi latviešu, angļu un krievu valodā, kā arī atsevišķs satura kvalitātes un cenu pārbaudes process",
+      "Izstrādāta vairāku cilvēku plānošana ar kopīgojamām sesijām, ātro kopīgošanu, kopīgiem filtriem, sinhronizētām atzīmēm un balsojumiem, dalībnieku pārskatāmību un gala pasākuma izvēli",
+      "Nodrošināta publiska meklēšana, filtri, kartes, norises vietas, organizatori un pasākumu sērijas, kā arī atsevišķas administrēšanas, partneru un mobilās lietotnes",
+      "Izveidota platformas arhitektūra ar React klientu, Node.js BFF un Redis kešatmiņu, Flask API, PostgreSQL, Docker servisiem, Terraform pārvaldītu AWS infrastruktūru, rezerves kopijām un arhivēšanu"
     ]
   },
   {
@@ -42,6 +46,8 @@
     "description": "Motociklu šosejas sacensību kalendārs Baltijai un Eiropai. Ātri atrodi oficiālas sacensības, treniņus un trases dienas vienuviet.",
     "image": "",
     "website": "/balticgp",
+    "appStoreUrl": "https://apps.apple.com/lv/app/balticgp/id6789483809",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=lv.hagroup.motososejaskalendars",
     "slug": "balticgp",
     "tags": [
       "Motosports",
@@ -64,6 +70,76 @@
       "Ātri filtri trasēm, valstīm, notikumu tipiem un čempionātiem",
       "Pārskatāms iesniegto notikumu apstiprināšanas process pirms publicēšanas",
       "Uzticamas notikumu lapas ar avota saitēm un atjaunināšanas laiku"
+    ]
+  },
+  {
+    "id": "rokber",
+    "title": "Rokber.lv",
+    "description": "Mūsdienīga pakalpojumu vietne Latvijas zemes darbu un būvniecības loģistikas uzņēmumam. Tā skaidri iepazīstina ar zemes darbiem, beramo materiālu piegādi un tehnikas nomu, palīdzot vietējās meklēšanas apmeklētājus pārvērst kvalitatīvos pieprasījumos.",
+    "image": "https://www.rokber.lv/images/hero/2.png",
+    "website": "https://www.rokber.lv",
+    "caseStudyPath": "/projects/rokber",
+    "slug": "rokber",
+    "tags": [
+      "Būvniecība",
+      "Uzņēmuma vietne",
+      "Mākoņizvietošana"
+    ],
+    "year": 2026,
+    "featured": true,
+    "client": "Rokber",
+    "role": "Vietnes izstrāde un mākoņizvietošana",
+    "duration": "Produkcijas palaišana",
+    "technologies": [
+      "React",
+      "Vite",
+      "i18next",
+      "AWS CloudFront",
+      "Amazon S3",
+      "Tehniskais SEO"
+    ],
+    "highlights": [
+      "Izveidoti skaidri pakalpojumu ceļi zemes darbiem, beramo materiālu piegādei un tehnikas nomai",
+      "Izstrādātas meklētājiem pielāgotas lapas ar kanoniskajiem metadatiem, Open Graph un strukturētiem uzņēmuma datiem",
+      "Pārskatāmi parādīts tehnikas parks un apkalpošanas teritorija ar skaidriem saziņas un tāmes pieprasījuma ceļiem",
+      "Nodrošināta ātra un uzticama statiskā izvietošana ar Amazon S3, CloudFront un atsevišķu attēlu CDN"
+    ]
+  },
+  {
+    "id": "confidential-infrastructure-modernization",
+    "title": "Globālās infrastruktūras modernizācija (NDA)",
+    "description": "Četru mēnešu garumā vadīta liela starptautiska uzņēmuma infrastruktūras modernizācijas programma, ievērojot NDA. Izstrādāta atkārtoti izmantojama Terraform IaC platforma un Azure DevOps piegādes modelis, automatizēta vairāku ASV vižu ieviešana, koordinēta datu migrācija un produkcijas pārslēgšana, uzlabota drošība un noslēpumu pārvaldība, pēc tam tāds pats darbības modelis ieviests Eiropā.",
+    "image": "",
+    "website": "",
+    "caseStudyPath": "/projects/confidential-infrastructure-modernization",
+    "slug": "confidential-infrastructure-modernization",
+    "tags": [
+      "Liels uzņēmums",
+      "Azure",
+      "DevOps arhitektūra"
+    ],
+    "featured": true,
+    "client": "Konfidenciāls starptautisks uzņēmums",
+    "role": "Vadošais DevOps arhitekts un konsultants",
+    "duration": "4 mēneši",
+    "technologies": [
+      "Terraform",
+      "Infrastructure as Code",
+      "Microsoft Azure",
+      "Azure DevOps",
+      ".NET",
+      "Azure Key Vault",
+      "Centrmezgla un atzaru tīkls",
+      "CI/CD",
+      "Jira"
+    ],
+    "highlights": [
+      "Definēta mērķa arhitektūra un atkārtoti izmantojami Terraform moduļi pilnībā automatizētai un vienveidīgai vairāku vižu izveidei",
+      "Izveidoti Azure DevOps piegādes konveijeri ar koplietojamām veidnēm, izolētiem stāvokļa failiem, validācijas posmiem, apstiprinājumiem un kontrolētu virzību starp vidēm",
+      "Vadīta ieviešana ASV, ietverot migrācijas izmēģinājumus, datu validāciju, koordinētu produkcijas pārslēgšanu un pārbaudes pēc pārslēgšanas",
+      "Uzlabota drošība ar centrmezgla un atzaru topoloģiju, tīkla segmentāciju, mazāko privilēģiju principu, Key Vault integrāciju un noslēpumu rotācijas praksi",
+      "IaC un automatizācijas modelis paplašināts uz Eiropas platformu, vadot kontrolētu infrastruktūras un lietojumprogrammu pārslēgšanu",
+      "Vadīta piegādes pārvaldība ar Jira plānošanu, risku un lēmumu uzskaiti, arhitektūras pārskatiem, klienta demonstrācijām, instrukcijām un zināšanu nodošanu, visā projektā saņemot pozitīvas ieinteresēto pušu atsauksmes"
     ]
   }
 ]

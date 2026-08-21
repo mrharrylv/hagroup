@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useProjectsData } from '../../lib/content';
 import HorizontalCards from '../ui/HorizontalCards';
+import RokberPreview from '../projects/RokberPreview';
 
 export default function Work() {
   const { t } = useTranslation();
@@ -33,9 +34,11 @@ export default function Work() {
           keyExtractor={(project) => project.id}
           renderCard={(project) => (
             <>
-              {project.image && (
+              {project.slug === 'rokber' && project.image ? (
+                <RokberPreview image={project.image} />
+              ) : project.image ? (
                 <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />
-              )}
+              ) : null}
               {/* Icon watermark */}
               <div className="absolute top-6 right-6 opacity-10">
                 <iconify-icon icon="solar:code-square-linear" width="80" style={{ color: 'white' }} />
@@ -55,6 +58,49 @@ export default function Work() {
                 <p className="text-sm sm:text-base text-white/70 leading-relaxed line-clamp-2">
                   {project.description}
                 </p>
+                {(project.appStoreUrl || project.playStoreUrl || project.slug === 'rokber') && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.appStoreUrl && (
+                      <a
+                        href={project.appStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onPointerDown={(event) => event.stopPropagation()}
+                        onClick={(event) => event.stopPropagation()}
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/15 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-md transition-colors hover:bg-white/25"
+                      >
+                        <iconify-icon icon="fa6-brands:apple" width="13" />
+                        App Store
+                      </a>
+                    )}
+                    {project.playStoreUrl && (
+                      <a
+                        href={project.playStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onPointerDown={(event) => event.stopPropagation()}
+                        onClick={(event) => event.stopPropagation()}
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/15 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-md transition-colors hover:bg-white/25"
+                      >
+                        <iconify-icon icon="solar:smartphone-bold" width="13" />
+                        Google Play
+                      </a>
+                    )}
+                    {project.slug === 'rokber' && project.website && (
+                      <a
+                        href={project.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onPointerDown={(event) => event.stopPropagation()}
+                        onClick={(event) => event.stopPropagation()}
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-yellow-300/50 bg-yellow-400 px-3 py-1.5 text-xs font-bold text-zinc-950 transition-colors hover:bg-yellow-300"
+                      >
+                        rokber.lv
+                        <iconify-icon icon="solar:arrow-right-up-linear" width="13" />
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </>
           )}

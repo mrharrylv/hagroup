@@ -1,9 +1,9 @@
 [
   {
     "id": "review-1",
-    "name": "Jānis Bērziņš",
-    "title": { "en": "CTO", "lv": "Tehniskais direktors", "ru": "Технический директор" },
-    "company": "EventApp",
+    "name": "Confidential client",
+    "title": { "en": "Product leadership", "lv": "Produkta vadība", "ru": "Руководство продукта" },
+    "company": "NDA-protected client",
     "description": {
       "en": "HA Group delivered our event platform from concept to launch in record time. Their full-cycle approach meant we had a single team handling everything — design, development, infrastructure, and deployment. The result exceeded our expectations.",
       "lv": "HA Group realizēja mūsu pasākumu platformu no koncepta līdz palaišanai rekordīsā laikā. Viņu pilna cikla pieeja nozīmēja, ka viena komanda pārvaldīja visu — dizainu, izstrādi, infrastruktūru un izvietošanu. Rezultāts pārsniedza mūsu cerības.",
@@ -12,7 +12,7 @@
     "rating": 5,
     "date": "2026-01-15",
     "image": "",
-    "projectId": "event-app",
+    "projectId": "confidential-event-intelligence-platform",
     "featured": true
   },
   {

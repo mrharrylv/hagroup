@@ -1,0 +1,129 @@
+{
+  "products": [
+    {
+      "id": "custom-packaging-film",
+      "visual": "sheet",
+      "sourceUrl": "https://www.plasteda.lt/lv/pleve",
+      "name": {
+        "lv": "Polietilēna un polipropilēna plēve pēc pasūtījuma",
+        "en": "Custom polyethylene and polypropylene film",
+        "ru": "Полиэтиленовая и полипропиленовая плёнка на заказ"
+      },
+      "description": {
+        "lv": "Plēve, ko pielāgojam jūsu produktam, iepakošanas līnijai, uzglabāšanai un transportēšanai.",
+        "en": "Film configured for your product, packaging line, storage and transport requirements.",
+        "ru": "Плёнка с параметрами под вашу продукцию, упаковочную линию, хранение и транспортировку."
+      },
+      "orderRange": {
+        "lv": "Platums, biezums, ruļļa garums un krāsa — pēc tehniskās specifikācijas",
+        "en": "Width, thickness, roll length and colour — made to specification",
+        "ru": "Ширина, толщина, длина рулона и цвет — по техническому заданию"
+      },
+      "features": {
+        "lv": ["LDPE, HDPE, MDPE, CPP vai pārstrādāts materiāls", "Plakana plēve, puscaurule vai caurule ruļļos", "Termosarūkoša, perforēta, ar UV filtru vai apdruku"],
+        "en": ["LDPE, HDPE, MDPE, CPP or recycled material", "Flat, centre-fold or tubular film on rolls", "Shrink, perforated, UV-filtered or printed options"],
+        "ru": ["LDPE, HDPE, MDPE, CPP или вторичное сырьё", "Полотно, полурукав или рукав в рулонах", "Термоусадка, перфорация, УФ-фильтр или печать"]
+      }
+    },
+    {
+      "id": "custom-plastic-bags",
+      "visual": "bag",
+      "sourceUrl": "https://www.plasteda.lt/lv/maisi-home",
+      "name": {
+        "lv": "Plastmasas iepakojuma maisi pēc pasūtījuma",
+        "en": "Custom plastic packaging bags",
+        "ru": "Пластиковые упаковочные пакеты на заказ"
+      },
+      "description": {
+        "lv": "Maisi ražošanai, tirdzniecībai un preču komplektēšanai ar vajadzīgo formu un aizdari.",
+        "en": "Bags for manufacturing, retail and order fulfilment in the required format and closure.",
+        "ru": "Пакеты для производства, торговли и комплектации товаров в нужном формате и с нужным типом закрытия."
+      },
+      "orderRange": {
+        "lv": "Platums, augstums, sānu ieloce, biezums, apdruka un daudzums — pēc pasūtījuma",
+        "en": "Width, height, gusset, thickness, print and quantity — made to order",
+        "ru": "Ширина, высота, фальц, толщина, печать и количество — под заказ"
+      },
+      "features": {
+        "lv": ["Standarta, ar ieloci, pārloku vai Euro caurumu", "Ar rokturi, T-krekla formā, perforētā rullī vai ar aizdari", "LDPE, MDPE, HDPE, CPP vai pārstrādāts materiāls"],
+        "en": ["Standard, gusseted, flap-seal or Euro hang-hole formats", "Die-cut handle, T-shirt, perforated-roll or reclosable options", "LDPE, MDPE, HDPE, CPP or recycled material"],
+        "ru": ["Стандартные, с фальцем, клапаном или отверстием Euro", "С ручкой, майка, в перфорированном рулоне или с застёжкой", "LDPE, MDPE, HDPE, CPP или вторичное сырьё"]
+      }
+    },
+    {
+      "id": "professional-food-wrap",
+      "visual": "food",
+      "sourceUrl": "https://moget.lv/partikas-pleves-c/200/1/c",
+      "name": {
+        "lv": "Profesionālā pārtikas plēve",
+        "en": "Professional food wrap",
+        "ru": "Профессиональная пищевая плёнка"
+      },
+      "description": {
+        "lv": "Caurspīdīga pārtikas plēve profesionālām virtuvēm, ražotnēm, veikaliem un ēdināšanai.",
+        "en": "Clear food wrap for professional kitchens, production facilities, retail and catering.",
+        "ru": "Прозрачная пищевая плёнка для профессиональных кухонь, производства, торговли и кейтеринга."
+      },
+      "orderRange": {
+        "lv": "Noliktavas formāti: platums 29–45 cm · ruļļa garums 20–300 m",
+        "en": "Stock formats: 29–45 cm wide · 20–300 m roll length",
+        "ru": "Складские форматы: ширина 29–45 см · длина рулона 20–300 м"
+      },
+      "features": {
+        "lv": ["Kompakti un profesionāla garuma ruļļi", "Pieejami 8–9 mikronu un LDPE varianti", "Piemērotību saskarei ar pārtiku apstiprinām izvēlētajam produktam"],
+        "en": ["Compact and professional-length rolls", "8–9 micron and LDPE options available", "Food-contact suitability is confirmed for the selected product"],
+        "ru": ["Компактные и профессиональные рулоны", "Доступны варианты 8–9 микрон и LDPE", "Допуск к контакту с пищевыми продуктами подтверждаем для выбранной позиции"]
+      }
+    },
+    {
+      "id": "pof-shrink-film",
+      "visual": "shrink",
+      "sourceUrl": "https://moget.lv/pleves-c/termosarukuma-pleves-c/218/1/c",
+      "name": {
+        "lv": "POF termosarukuma plēve",
+        "en": "POF shrink film",
+        "ru": "Термоусадочная плёнка POF"
+      },
+      "description": {
+        "lv": "Caurspīdīga puscaurules plēve vienmērīgam iepakojumam termiskajās iekārtās.",
+        "en": "Clear centre-fold film for a consistent finish in heat-shrink equipment.",
+        "ru": "Прозрачная плёнка-полурукав для ровной упаковки на термоусадочном оборудовании."
+      },
+      "orderRange": {
+        "lv": "12–25 mikroni · 250/250–650/650 mm · ruļļi 750–1500 m",
+        "en": "12–25 micron · 250/250–650/650 mm · 750–1,500 m rolls",
+        "ru": "12–25 микрон · 250/250–650/650 мм · рулоны 750–1500 м"
+      },
+      "features": {
+        "lv": ["Caurspīdīga POF puscaurule", "Formātu pieskaņojam iekārtai un iepakojamajai precei", "Precīzu pieejamību un izvēlētā materiāla pielietojumu apstiprinām piedāvājumā"],
+        "en": ["Clear POF centre-fold film", "Format selected for the equipment and packed product", "Exact availability and intended use of the selected grade are confirmed in the offer"],
+        "ru": ["Прозрачный полурукав POF", "Формат подбираем под оборудование и упаковываемый товар", "Точное наличие и назначение выбранного материала подтверждаем в предложении"]
+      }
+    },
+    {
+      "id": "lldpe-pallet-stretch-film",
+      "visual": "compact",
+      "sourceUrl": "https://moget.lv/pleves-c/213/1/c",
+      "name": {
+        "lv": "LLDPE palešu stretch plēve",
+        "en": "LLDPE pallet stretch film",
+        "ru": "Стретч-плёнка LLDPE для паллет"
+      },
+      "description": {
+        "lv": "Elastīga plēve palešu, kastu un sūtījumu stabilizēšanai uzglabāšanas un transportēšanas laikā.",
+        "en": "Elastic film for stabilising pallets, cartons and shipments during storage and transport.",
+        "ru": "Эластичная плёнка для фиксации паллет, коробок и грузов при хранении и транспортировке."
+      },
+      "orderRange": {
+        "lv": "Rokas ruļļi: platums 10–50 cm · garums 120–300 m · biezums 15–23 mikroni",
+        "en": "Hand rolls: 10–50 cm wide · 120–300 m long · 15–23 micron",
+        "ru": "Ручные рулоны: ширина 10–50 см · длина 120–300 м · толщина 15–23 микрона"
+      },
+      "features": {
+        "lv": ["Caurspīdīgi un melni varianti", "Rokas ruļļi dažādiem apjomiem un kravas veidiem", "Mašīnu plēvi un citas specifikācijas piemeklējam pēc pieprasījuma"],
+        "en": ["Clear and black options", "Hand rolls for different volumes and load types", "Machine stretch film and other specifications sourced on request"],
+        "ru": ["Прозрачные и чёрные варианты", "Ручные рулоны для разных объёмов и типов груза", "Машинную плёнку и другие спецификации подбираем по запросу"]
+      }
+    }
+  ]
+}

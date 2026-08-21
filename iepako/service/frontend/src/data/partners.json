@@ -1,0 +1,36 @@
+{
+  "partners": [
+    {
+      "id": "plasteda",
+      "name": "PLASTEDA",
+      "website": "https://www.plasteda.lt/lv/pleve",
+      "category": {
+        "lv": "Ražotājs",
+        "en": "Manufacturer",
+        "ru": "Производитель"
+      },
+      "description": {
+        "lv": "Polietilēna un polipropilēna plēves rūpnieciskiem iepakošanas risinājumiem.",
+        "en": "Polyethylene and polypropylene film for industrial packaging solutions.",
+        "ru": "Полиэтиленовые и полипропиленовые плёнки для промышленной упаковки."
+      },
+      "published": true
+    },
+    {
+      "id": "moget",
+      "name": "MOGET.LV",
+      "website": "https://moget.lv/partikas-pleves-c/200/1/c",
+      "category": {
+        "lv": "Sortimenta piegādātājs",
+        "en": "Range supplier",
+        "ru": "Поставщик ассортимента"
+      },
+      "description": {
+        "lv": "Pārtikas, profesionālās un termosarukuma plēves dažādiem darba apjomiem.",
+        "en": "Food, professional and shrink films for a range of operating volumes.",
+        "ru": "Пищевые, профессиональные и термоусадочные плёнки для разных объёмов работ."
+      },
+      "published": true
+    }
+  ]
+}

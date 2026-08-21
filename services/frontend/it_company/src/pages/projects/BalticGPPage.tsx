@@ -10,6 +10,9 @@ const AUDIENCE_ICONS = [
   'solar:pen-bold',
 ];
 
+const APP_STORE_URL = 'https://apps.apple.com/lv/app/balticgp/id6789483809';
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=lv.hagroup.motososejaskalendars';
+
 export default function BalticGPPage() {
   const { t } = useTranslation();
   const problemPoints = t('balticGP.problemPoints', { returnObjects: true }) as string[];
@@ -43,6 +46,28 @@ export default function BalticGPPage() {
         <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed">
           {t('balticGP.description')}
         </p>
+        <div className="mt-7 flex flex-wrap gap-3">
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl bg-zinc-950 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
+          >
+            <iconify-icon icon="fa6-brands:apple" width="17" />
+            App Store
+            <iconify-icon icon="solar:arrow-right-up-linear" width="14" />
+          </a>
+          <a
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-4 py-2.5 text-sm font-semibold text-zinc-900 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800"
+          >
+            <iconify-icon icon="solar:smartphone-bold" width="17" />
+            Google Play
+            <iconify-icon icon="solar:arrow-right-up-linear" width="14" />
+          </a>
+        </div>
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-16">

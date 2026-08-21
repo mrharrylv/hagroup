@@ -53,6 +53,101 @@ service cloud.firestore {
       allow read, update, delete: if false;
     }
 
+    // IEPAKO subdomain contact submissions use an isolated collection.
+    match /iepako_contacts/{contactId} {
+      allow create: if request.resource.data.keys().hasAll([
+                      'fullName',
+                      'company',
+                      'email',
+                      'phone',
+                      'productId',
+                      'quantity',
+                      'message',
+                      'privacyConsent',
+                      'language',
+                      'url',
+                      'source',
+                      'createdAt'
+                    ])
+                    && request.resource.data.keys().hasOnly([
+                      'fullName',
+                      'company',
+                      'email',
+                      'phone',
+                      'productId',
+                      'quantity',
+                      'message',
+                      'privacyConsent',
+                      'language',
+                      'url',
+                      'source',
+                      'createdAt'
+                    ])
+                    && request.resource.data.fullName is string
+                    && request.resource.data.fullName.size() > 1
+                    && request.resource.data.fullName.size() <= 200
+                    && request.resource.data.company is string
+                    && request.resource.data.company.size() <= 200
+                    && request.resource.data.email is string
+                    && request.resource.data.email.size() > 3
+                    && request.resource.data.email.size() <= 200
+                    && request.resource.data.phone is string
+                    && request.resource.data.phone.size() <= 50
+                    && request.resource.data.productId is string
+                    && request.resource.data.productId.size() > 0
+                    && request.resource.data.productId.size() <= 100
+                    && request.resource.data.quantity is string
+                    && request.resource.data.quantity.size() <= 200
+                    && request.resource.data.message is string
+                    && request.resource.data.message.size() > 4
+                    && request.resource.data.message.size() <= 5000
+                    && request.resource.data.privacyConsent == true
+                    && request.resource.data.language is string
+                    && request.resource.data.language.size() > 0
+                    && request.resource.data.language.size() <= 16
+                    && request.resource.data.url is string
+                    && request.resource.data.url.size() <= 1000
+                    && request.resource.data.source == 'iepako.hagroup.lv'
+                    && request.resource.data.createdAt is timestamp
+                    && request.resource.data.createdAt == request.time;
+      allow read, update, delete: if false;
+    }
+
+    // Necessary-storage acknowledgements for the IEPAKO subdomain are
+    // deliberately kept apart from the main HA Group website records.
+    match /iepako_consents/{consentId} {
+      allow create: if request.resource.data.keys().hasAll([
+                      'recordType',
+                      'choice',
+                      'noticeVersion',
+                      'language',
+                      'createdAt',
+                      'expiresAt'
+                    ])
+                    && request.resource.data.keys().hasOnly([
+                      'recordType',
+                      'choice',
+                      'noticeVersion',
+                      'language',
+                      'createdAt',
+                      'expiresAt'
+                    ])
+                    && request.resource.data.recordType == 'necessary_storage_notice'
+                    && request.resource.data.choice == 'necessary'
+                    && request.resource.data.noticeVersion is string
+                    && request.resource.data.noticeVersion.size() > 0
+                    && request.resource.data.noticeVersion.size() <= 32
+                    && request.resource.data.language is string
+                    && request.resource.data.language.size() > 0
+                    && request.resource.data.language.size() <= 16
+                    && request.resource.data.createdAt is timestamp
+                    && request.resource.data.createdAt == request.time
+                    && request.resource.data.expiresAt is timestamp
+                    && request.resource.data.expiresAt > request.time
+                    && request.resource.data.expiresAt <= request.time + duration.value(366, 'd');
+      allow read, update, delete: if false;
+    }
+
     // Career applications — anyone may create (rate-limited); no reads/updates/deletes
     match /career_applications/{applicationId} {
       allow create: if request.resource.data.keys().hasAll(['fullName', 'email', 'privacyConsent', 'createdAt'])

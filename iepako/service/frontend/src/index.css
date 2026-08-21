@@ -537,6 +537,32 @@ textarea:focus-visible {
   line-height: 1.65;
 }
 
+.product-range {
+  min-height: 78px;
+  display: grid;
+  align-content: center;
+  gap: 6px;
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--accent);
+  background: #edf4f1;
+}
+
+.product-range span {
+  color: #6d837c;
+  font-size: 9px;
+  font-weight: 820;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.product-range strong {
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 720;
+  line-height: 1.45;
+}
+
 .product-content ul {
   min-height: 85px;
   display: grid;
@@ -1302,6 +1328,7 @@ textarea:focus-visible {
   }
 
   .product-content > p:not(.product-index),
+  .product-range,
   .product-content ul {
     min-height: 0;
   }

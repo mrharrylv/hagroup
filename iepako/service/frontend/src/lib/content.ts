@@ -8,10 +8,11 @@ export type LocalizedList = Record<Language, string[]>;
 
 export interface Product {
   id: string;
-  visual: 'sheet' | 'roll' | 'food' | 'compact' | 'shrink';
+  visual: 'sheet' | 'roll' | 'food' | 'compact' | 'shrink' | 'bag';
   sourceUrl?: string;
   name: LocalizedText;
   description: LocalizedText;
+  orderRange: LocalizedText;
   features: LocalizedList;
 }
 

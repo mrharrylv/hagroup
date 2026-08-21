@@ -200,6 +200,10 @@ function HomePage() {
                   <p className="product-index">{String(index + 1).padStart(2, '0')}</p>
                   <h3>{localized(product.name, language)}</h3>
                   <p>{localized(product.description, language)}</p>
+                  <div className="product-range">
+                    <span>{t('products.orderRange')}</span>
+                    <strong>{localized(product.orderRange, language)}</strong>
+                  </div>
                   <ul>
                     {localizedList(product.features, language).map((feature) => (
                       <li key={feature}><span>✓</span>{feature}</li>

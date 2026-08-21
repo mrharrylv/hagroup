@@ -33,8 +33,9 @@
   },
   "products": {
     "eyebrow": "Produktu klāsts",
-    "title": "Plēves dažādiem iepakošanas uzdevumiem",
-    "intro": "Zemāk redzams sākuma sortiments. Ja vajadzīgā specifikācija nav norādīta, nosūtiet mums izmērus un pielietojumu.",
+    "title": "Iepakojuma risinājumi pielāgojamos izmēros",
+    "intro": "Katrs produkts ir pasūtāmu specifikāciju grupa, nevis viens fiksēts izmērs. Piedāvājumā precizēsim materiālu, platumu, biezumu, ruļļa garumu un apjomu.",
+    "orderRange": "Pieejamais diapazons",
     "request": "Jautāt par produktu",
     "noPrice": "Cena pēc pieprasījuma"
   },

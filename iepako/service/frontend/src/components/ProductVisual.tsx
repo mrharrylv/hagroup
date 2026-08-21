@@ -1,5 +1,5 @@
 interface ProductVisualProps {
-  variant: 'sheet' | 'roll' | 'food' | 'compact' | 'shrink';
+  variant: 'sheet' | 'roll' | 'food' | 'compact' | 'shrink' | 'bag';
 }
 
 export default function ProductVisual({ variant }: ProductVisualProps) {
@@ -11,6 +11,22 @@ export default function ProductVisual({ variant }: ProductVisualProps) {
         <path d="M145 255 250 230h67l-70 29H145Z" fill="#fff" opacity=".8" />
         <circle cx="395" cy="102" r="40" fill="#f5b95f" />
         <path d="M215 76h178" stroke="#fff" strokeWidth="8" opacity=".7" />
+      </svg>
+    );
+  }
+
+  if (variant === 'bag') {
+    return (
+      <svg viewBox="0 0 520 320" aria-hidden="true" className="product-illustration">
+        <ellipse cx="260" cy="260" rx="152" ry="23" fill="#0d342c" opacity=".12" />
+        <path d="M133 71h190l28 180H105Z" fill="#d8e9e3" stroke="#285f52" strokeWidth="3" />
+        <path d="M151 94h154" stroke="#fff" strokeLinecap="round" strokeWidth="8" opacity=".78" />
+        <path d="M156 71c3 27 24 43 43 43s39-16 43-43" fill="none" stroke="#285f52" strokeWidth="3" />
+        <path d="M235 102h143l28 149H259Z" fill="#eef6f3" stroke="#285f52" strokeWidth="3" />
+        <path d="M251 123h115" stroke="#f2a849" strokeLinecap="round" strokeWidth="7" />
+        <path d="M286 102c2 22 18 35 34 35s32-13 34-35" fill="none" stroke="#285f52" strokeWidth="3" />
+        <path d="M273 216h106" stroke="#c1d9d1" strokeLinecap="round" strokeWidth="8" />
+        <circle cx="399" cy="82" r="34" fill="#f5b95f" />
       </svg>
     );
   }

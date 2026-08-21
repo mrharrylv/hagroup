@@ -33,8 +33,9 @@
   },
   "products": {
     "eyebrow": "Product range",
-    "title": "Film for different packaging tasks",
-    "intro": "This is our initial selection. If your specification is not shown, send us the dimensions and intended use.",
+    "title": "Packaging solutions in configurable sizes",
+    "intro": "Each product is a configurable product family, not one fixed size. We confirm the material, width, thickness, roll length and volume in the quotation.",
+    "orderRange": "Available range",
     "request": "Enquire about this product",
     "noPrice": "Price on request"
   },

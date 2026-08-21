@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useProjectsData } from '../lib/content';
 import ProjectCTA from '../components/sections/ProjectCTA';
+import RokberPreview from '../components/projects/RokberPreview';
 
 const GRADIENTS = [
   'from-indigo-500 via-indigo-700 to-violet-900',
@@ -64,6 +65,7 @@ export default function ProjectsPage() {
             const accentBg = ACCENT_BG[idx % ACCENT_BG.length];
             const cardHref = project.caseStudyPath || project.website;
             const isInternalLink = Boolean(cardHref?.startsWith('/'));
+            const hasStoreLinks = Boolean(project.appStoreUrl || project.playStoreUrl);
             const isConfidentialInfrastructure = project.slug === 'confidential-infrastructure-modernization';
             const isConfidentialEvent = project.slug === 'confidential-event-intelligence-platform';
             const visualGradient = isConfidentialInfrastructure
@@ -76,7 +78,9 @@ export default function ProjectsPage() {
               <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-900 transition-all duration-500 group-hover:border-zinc-300 dark:group-hover:border-zinc-700 sm:group-hover:shadow-2xl sm:group-hover:shadow-zinc-300/25 dark:sm:group-hover:shadow-black/40">
                 {/* Top visual panel */}
                 <div className="relative aspect-[16/10] sm:aspect-[3/1] overflow-hidden">
-                  {project.image ? (
+                  {project.slug === 'rokber' && project.image ? (
+                    <RokberPreview image={project.image} />
+                  ) : project.image ? (
                     <img
                       src={project.image}
                       alt={project.title}
@@ -235,7 +239,41 @@ export default function ProjectsPage() {
                         </span>
                       )}
                     </div>
-                    {cardHref && (
+                    {hasStoreLinks ? (
+                      <div className="flex flex-wrap items-center justify-end gap-2">
+                        {isInternalLink && cardHref && (
+                          <Link
+                            to={cardHref}
+                            className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-semibold ${accentBg}`}
+                          >
+                            {t('projects.viewProject')}
+                            <iconify-icon icon="solar:arrow-right-linear" width="13" />
+                          </Link>
+                        )}
+                        {project.appStoreUrl && (
+                          <a
+                            href={project.appStoreUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 rounded-lg border border-zinc-300 bg-zinc-950 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-zinc-800 dark:border-zinc-700"
+                          >
+                            <iconify-icon icon="fa6-brands:apple" width="13" />
+                            App Store
+                          </a>
+                        )}
+                        {project.playStoreUrl && (
+                          <a
+                            href={project.playStoreUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 rounded-lg border border-zinc-300 bg-white px-3 py-1.5 text-xs font-semibold text-zinc-900 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700"
+                          >
+                            <iconify-icon icon="solar:smartphone-bold" width="13" />
+                            Google Play
+                          </a>
+                        )}
+                      </div>
+                    ) : cardHref && (
                       <span className={`inline-flex items-center gap-1.5 text-xs font-medium ${accent} shrink-0 transition-all sm:group-hover:gap-2.5`}>
                         {project.caseStudyPath ? t('projects.viewProject') : t('projects.visitSite')}
                         <iconify-icon icon={isInternalLink ? 'solar:arrow-right-linear' : 'solar:arrow-right-up-linear'} width="14" />
@@ -246,7 +284,11 @@ export default function ProjectsPage() {
               </div>
             );
 
-            return cardHref ? (
+            return hasStoreLinks ? (
+              <div key={project.id} className="group block">
+                {card}
+              </div>
+            ) : cardHref ? (
               isInternalLink ? (
                 <Link
                   key={project.id}

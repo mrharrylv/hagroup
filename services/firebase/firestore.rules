@@ -53,8 +53,8 @@ service cloud.firestore {
       allow read, update, delete: if false;
     }
 
-    // Iepakojumi subdomain contact submissions use an isolated collection.
-    match /iepakojumi_contacts/{contactId} {
+    // IEPAKO subdomain contact submissions use an isolated collection.
+    match /iepako_contacts/{contactId} {
       allow create: if request.resource.data.keys().hasAll([
                       'fullName',
                       'company',
@@ -107,15 +107,15 @@ service cloud.firestore {
                     && request.resource.data.language.size() <= 16
                     && request.resource.data.url is string
                     && request.resource.data.url.size() <= 1000
-                    && request.resource.data.source == 'iepakojumi.hagroup.lv'
+                    && request.resource.data.source == 'iepako.hagroup.lv'
                     && request.resource.data.createdAt is timestamp
                     && request.resource.data.createdAt == request.time;
       allow read, update, delete: if false;
     }
 
-    // Necessary-storage acknowledgements for the Iepakojumi subdomain are
+    // Necessary-storage acknowledgements for the IEPAKO subdomain are
     // deliberately kept apart from the main HA Group website records.
-    match /iepakojumi_consents/{consentId} {
+    match /iepako_consents/{consentId} {
       allow create: if request.resource.data.keys().hasAll([
                       'recordType',
                       'choice',

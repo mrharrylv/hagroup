@@ -1,0 +1,65 @@
+{
+  "reviews": [
+    {
+      "id": "plasteda-custom-shrink-film",
+      "author": {
+        "lv": "Uzņēmuma pārstāvis",
+        "en": "Company representative",
+        "ru": "Представитель компании"
+      },
+      "company": "PLASTEDA",
+      "role": {
+        "lv": "Pielāgots termosarukuma plēves risinājums",
+        "en": "Custom shrink-film solution",
+        "ru": "Индивидуальное решение с термоусадочной плёнкой"
+      },
+      "quote": {
+        "lv": "IEPAKO nodrošināja profesionālu, mūsu vajadzībām pielāgotu termosarukuma plēves risinājumu. Sadarbība bija labi vadīta, komunikācija — skaidra, un pasūtījums tika piegādāts solītajā termiņā.",
+        "en": "IEPAKO delivered a professional custom shrink-film solution tailored to our requirements. The project was well managed, communication was clear, and the order arrived within the agreed timeline.",
+        "ru": "IEPAKO предложила профессиональное решение с термоусадочной плёнкой, адаптированное под наши требования. Проект был хорошо организован, коммуникация была понятной, а заказ доставили в согласованный срок."
+      },
+      "rating": 5,
+      "published": true
+    },
+    {
+      "id": "anonymous-shrink-film-delivery",
+      "author": {
+        "lv": "Anonīms klients",
+        "en": "Anonymous customer",
+        "ru": "Анонимный клиент"
+      },
+      "role": {
+        "lv": "Termosarukuma plēves piegāde",
+        "en": "Shrink-film delivery",
+        "ru": "Поставка термоусадочной плёнки"
+      },
+      "quote": {
+        "lv": "Termosarukuma plēves kvalitāte ir stabila, un piegāde bija ātra un precīza. Komanda savlaicīgi informēja par pasūtījuma gaitu un palīdzēja izvēlēties mūsu iepakošanas procesam piemērotāko materiālu.",
+        "en": "The shrink-film quality is consistent, and delivery was fast and accurate. The team kept us informed throughout the order and helped select the most suitable material for our packaging process.",
+        "ru": "Качество термоусадочной плёнки стабильное, а доставка была быстрой и точной. Команда своевременно информировала о ходе заказа и помогла выбрать материал для нашего упаковочного процесса."
+      },
+      "rating": 5,
+      "published": true
+    },
+    {
+      "id": "anonymous-customer-service",
+      "author": {
+        "lv": "Anonīms klients",
+        "en": "Anonymous customer",
+        "ru": "Анонимный клиент"
+      },
+      "role": {
+        "lv": "Klientu apkalpošana",
+        "en": "Customer service",
+        "ru": "Обслуживание клиентов"
+      },
+      "quote": {
+        "lv": "Ļoti atsaucīga klientu apkalpošana un profesionāla pieeja. Saņēmām skaidru konsultāciju par termo plēves parametriem, ātras atbildes un risinājumu, kas labi darbojas mūsu iepakošanas līnijā.",
+        "en": "Responsive customer service and a highly professional approach. We received clear guidance on shrink-film specifications, quick answers, and a solution that performs well on our packaging line.",
+        "ru": "Очень отзывчивый сервис и профессиональный подход. Мы получили понятную консультацию по параметрам термоусадочной плёнки, быстрые ответы и решение, которое хорошо работает на нашей упаковочной линии."
+      },
+      "rating": 5,
+      "published": true
+    }
+  ]
+}

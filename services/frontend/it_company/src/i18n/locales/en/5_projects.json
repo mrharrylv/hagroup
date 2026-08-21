@@ -46,6 +46,8 @@
     "description": "A motorcycle road racing calendar for the Baltics and Europe. It helps riders and fans quickly find official races, trainings, and track days in one reliable place.",
     "image": "",
     "website": "/balticgp",
+    "appStoreUrl": "https://apps.apple.com/lv/app/balticgp/id6789483809",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=lv.hagroup.motososejaskalendars",
     "slug": "balticgp",
     "tags": [
       "Motorsport",
@@ -74,7 +76,7 @@
     "id": "rokber",
     "title": "Rokber.lv",
     "description": "A modern service website for a Latvian earthworks and construction logistics company. It presents earthworks, bulk-material delivery, and machinery rental through clear service journeys designed to turn local search traffic into qualified enquiries.",
-    "image": "https://d31mal6w80veq7.cloudfront.net/images/hero/2.png",
+    "image": "https://www.rokber.lv/images/hero/2.png",
     "website": "https://www.rokber.lv",
     "caseStudyPath": "/projects/rokber",
     "slug": "rokber",

@@ -52,6 +52,8 @@ export interface Project {
   description: string;
   image: string;
   website: string;
+  appStoreUrl?: string;
+  playStoreUrl?: string;
   caseStudyPath?: string;
   slug: string;
   tags: string[];

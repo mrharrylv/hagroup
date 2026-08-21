@@ -3,6 +3,7 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useProjectsData, type Project } from '../../lib/content';
 import ProjectCTA from '../../components/sections/ProjectCTA';
+import RokberPreview from '../../components/projects/RokberPreview';
 
 /* ── Gradient initials helper ── */
 function getInitials(title: string): string {
@@ -308,8 +309,9 @@ export default function ProjectPage() {
 
   if (!project) return <Navigate to="/projects" replace />;
 
-  const domain = project.website
-    ? new URL(project.website).hostname.replace(/^www\./, '')
+  const externalWebsite = project.website.startsWith('http') ? project.website : null;
+  const domain = externalWebsite
+    ? new URL(externalWebsite).hostname.replace(/^www\./, '')
     : null;
 
   return (
@@ -365,7 +367,7 @@ export default function ProjectPage() {
           </div>
           {domain && (
             <a
-              href={project.website}
+              href={externalWebsite ?? undefined}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
@@ -384,16 +386,23 @@ export default function ProjectPage() {
       {project.image && project.slug !== 'confidential-event-intelligence-platform' && (
         <section className="max-w-7xl mx-auto px-6 pb-16">
           <a
-            href={project.website}
+            href={externalWebsite ?? undefined}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={domain ? `${project.title} — ${domain}` : project.title}
             className="group block overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-2xl"
           >
-            <img
-              src={project.image}
-              alt={`${project.title} website`}
-              className="aspect-[16/9] w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-            />
+            <div className="relative aspect-[16/9] overflow-hidden">
+              {project.slug === 'rokber' ? (
+                <RokberPreview image={project.image} />
+              ) : (
+                <img
+                  src={project.image}
+                  alt={`${project.title} website`}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                />
+              )}
+            </div>
           </a>
         </section>
       )}

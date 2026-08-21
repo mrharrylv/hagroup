@@ -46,6 +46,8 @@
     "description": "Motociklu šosejas sacensību kalendārs Baltijai un Eiropai. Ātri atrodi oficiālas sacensības, treniņus un trases dienas vienuviet.",
     "image": "",
     "website": "/balticgp",
+    "appStoreUrl": "https://apps.apple.com/lv/app/balticgp/id6789483809",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=lv.hagroup.motososejaskalendars",
     "slug": "balticgp",
     "tags": [
       "Motosports",
@@ -74,7 +76,7 @@
     "id": "rokber",
     "title": "Rokber.lv",
     "description": "Mūsdienīga pakalpojumu vietne Latvijas zemes darbu un būvniecības loģistikas uzņēmumam. Tā skaidri iepazīstina ar zemes darbiem, beramo materiālu piegādi un tehnikas nomu, palīdzot vietējās meklēšanas apmeklētājus pārvērst kvalitatīvos pieprasījumos.",
-    "image": "https://d31mal6w80veq7.cloudfront.net/images/hero/2.png",
+    "image": "https://www.rokber.lv/images/hero/2.png",
     "website": "https://www.rokber.lv",
     "caseStudyPath": "/projects/rokber",
     "slug": "rokber",

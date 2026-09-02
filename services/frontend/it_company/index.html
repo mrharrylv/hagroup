@@ -1,7 +1,39 @@
 <!doctype html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <!--
+      Resolve the theme and the language before the first paint.
+
+      `class="dark"` used to be hardcoded here while ThemeProvider applied the
+      real theme in a useEffect — i.e. after React mounted, after first paint.
+      Every light-mode visitor got a full-screen black flash on every cold load.
+      Likewise `lang="en"` was never updated when the visitor switched language,
+      so Latvian and Russian content was announced by an English speech
+      synthesiser (WCAG 3.1.1).
+
+      This runs before the body exists, so there is nothing to flash. It is
+      inline on purpose: an external file would be a second round-trip, and the
+      flash is exactly as long as that trip.
+    -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('cloudie-theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.classList.add(t);
+
+          var l = localStorage.getItem('cloudie-lang');
+          if (l === 'en' || l === 'lv' || l === 'ru') document.documentElement.lang = l;
+        } catch (e) {
+          // Storage blocked (private mode, or site data disabled). The default
+          // stylesheet is the light one, which is the safer thing to flash.
+          document.documentElement.classList.add('light');
+        }
+      })();
+    </script>
     <link rel="icon" href="/brand/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32x32.png" />

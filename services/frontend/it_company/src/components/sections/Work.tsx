@@ -31,6 +31,7 @@ export default function Work() {
 
         <HorizontalCards
           items={featured}
+          ariaLabel={`${t('work.titlePrefix')} ${t('work.titleAccent')}`}
           keyExtractor={(project) => project.id}
           renderCard={(project) => (
             <>

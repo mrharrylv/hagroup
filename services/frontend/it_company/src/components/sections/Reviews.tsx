@@ -34,6 +34,7 @@ export default function Reviews() {
 
       <HorizontalCards
         items={featured}
+        ariaLabel={t('reviews.allReviews')}
         keyExtractor={(review) => review.id}
         renderCard={(review) => (
           <>

@@ -198,7 +198,7 @@ export default function Contact() {
                 checked={form.privacyConsent}
                 onChange={(e) => handleChange('privacyConsent', e.target.checked)}
               />
-              <div className="w-4 h-4 rounded-[4px] border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 peer-checked:bg-indigo-600 peer-checked:border-indigo-600 transition-colors flex items-center justify-center">
+              <div className="w-4 h-4 rounded-[4px] border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 peer-checked:bg-indigo-600 peer-checked:border-indigo-600 peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-indigo-500 transition-colors flex items-center justify-center">
                 <iconify-icon
                   icon="solar:check-read-linear"
                   className={`text-white transition-opacity ${form.privacyConsent ? 'opacity-100' : 'opacity-0'}`}

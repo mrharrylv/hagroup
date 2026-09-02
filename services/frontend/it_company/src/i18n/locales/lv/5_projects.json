@@ -2,7 +2,7 @@
   {
     "id": "confidential-event-intelligence-platform",
     "title": "Pasākumu informācijas platforma (NDA)",
-    "description": "Konfidenciāla pasākumu meklēšanas un kopīgas plānošanas platforma, kas sadrumstalotu publisko informāciju no vairāk nekā 20 biļešu tirgotāju, norises vietu, kultūras iestāžu un pašvaldību avotiem apvieno strukturētā un viegli pārmeklējamā pasākumu datu kopā. Python datu ieguves rīki un ar MI atbalstīta informācijas izvilkšana apstrādā atšķirīgi veidotas vietnes, savukārt LLM procesi saturu kategorizē, papildina un pārbauda, pirms tas nonāk tīmekļa un mobilajās lietotnēs.",
+    "description": "Konfidenciāla pasākumu meklēšanas un kopīgas plānošanas platforma, kas sadrumstalotu publisko informāciju no vairāk nekā 20 biļešu tirgotāju, norises vietu, kultūras iestāžu un pašvaldību avotiem apvieno strukturētā un viegli pārmeklējamā pasākumu datu kopā. Python datu ieguves rīki un ar MI atbalstīta informācijas izgūšana apstrādā atšķirīgi veidotas vietnes, savukārt LLM procesi saturu kategorizē, papildina un pārbauda, pirms tas nonāk tīmekļa un mobilajās lietotnēs.",
     "image": "",
     "website": "",
     "caseStudyPath": "/projects/confidential-event-intelligence-platform",
@@ -32,10 +32,10 @@
       "Flutter"
     ],
     "highlights": [
-      "Izveidota modulāra Python datu ieguves platforma vairāk nekā 20 biļešu, kultūras iestāžu, norises vietu, kino un pašvaldību avotiem, apvienojot katram avotam pielāgotus parsētājus, regulāru palaišanu un regresijas testu datu kopas",
-      "Ieviesta ar MI un Crawl4AI atbalstīta datu ieguve no dinamiskām un atšķirīgi veidotām tīmekļa lapām, apvienojot pasākumus, to norises laikus, vietas, attēlus un cenas vienotā datu modelī",
-      "Izveidota OpenAI kategorizēšana vairāk nekā 30 kategorijās, meklēšanas atslēgvārdi latviešu, angļu un krievu valodā, kā arī atsevišķs satura kvalitātes un cenu pārbaudes process",
-      "Izstrādāta kopīga plānošana vairākiem dalībniekiem ar kopīgojamām sesijām un saitēm, kopīgiem filtriem, sinhronizētām atzīmēm un balsojumiem, dalībnieku sarakstu un gala pasākuma izvēli",
+      "Izveidota modulāra Python datu ieguves platforma vairāk nekā 20 biļešu tirgotāju, kultūras iestāžu, norises vietu, kino un pašvaldību avotiem, apvienojot katram avotam pielāgotus parsētājus, regulāru palaišanu un regresijas testu datu kopas",
+      "Ieviesta ar MI un Crawl4AI atbalstīta datu ieguve no dinamiskām un atšķirīgi veidotām tīmekļa lapām, normalizējot pasākumus, to norises laikus, vietas, attēlus un cenas vienotā un uzticamā datu modelī",
+      "Izveidota uz OpenAI balstīta kategorizēšana vairāk nekā 30 kategorijās, meklēšanas atslēgvārdi latviešu, angļu un krievu valodā, kā arī atsevišķs satura kvalitātes un cenu izgūšanas pārbaudes process",
+      "Izstrādāta plānošana vairākiem dalībniekiem ar kopīgojamām sesijām un saitēm, koplietotiem filtriem, sinhronizētām atzīmēm un balsojumiem, dalībnieku sarakstu un gala pasākuma izvēli",
       "Nodrošināta publiski pieejama pasākumu meklēšana, filtri, kartes, norises vietu, organizatoru un pasākumu sēriju skati, atsevišķas saskarnes administratoriem un partneriem, kā arī mobilā lietotne",
       "Izveidota platformas arhitektūra ar React klientu, Node.js BFF un Redis kešatmiņu, Flask API, PostgreSQL, konteinerizētiem Docker pakalpojumiem, Terraform pārvaldītu AWS infrastruktūru, rezerves kopijām un arhivēšanu"
     ]
@@ -62,14 +62,14 @@
     "technologies": [
       "iOS",
       "Android",
-      "Pārbaudīti notikumi",
+      "Pārbaudīti pasākumi",
       "Satura iesniegšanas process"
     ],
     "highlights": [
       "Vienots oficiālo sacensību un treniņu kalendārs no vairākiem organizatoriem",
-      "Ātri filtri trasēm, valstīm, notikumu tipiem un čempionātiem",
-      "Pārskatāms iesniegto notikumu apstiprināšanas process pirms publicēšanas",
-      "Uzticamas notikumu lapas ar avota saitēm un atjaunināšanas laiku"
+      "Ātri filtri pēc trasēm, valstīm, pasākumu veidiem un čempionātiem",
+      "Pārredzams iesniegto pasākumu apstiprināšanas process pirms publicēšanas",
+      "Uzticamas pasākumu lapas ar saitēm uz avotiem un pēdējās atjaunināšanas laiku"
     ]
   },
   {
@@ -102,7 +102,7 @@
       "Izveidota skaidra lietotāja virzība zemes darbu, beramo materiālu piegādes un tehnikas nomas pakalpojumiem",
       "Izstrādātas meklētājprogrammām pielāgotas lapas ar kanoniskajiem metadatiem, Open Graph tagiem un strukturētiem uzņēmuma datiem",
       "Pārskatāmi parādīts tehnikas parks un apkalpošanas teritorija, piedāvājot skaidras iespējas sazināties un pieprasīt tāmi",
-      "Nodrošināta ātra un uzticama statiskā izvietošana ar Amazon S3, CloudFront un atsevišķu attēlu CDN"
+      "Nodrošināta ātra un uzticama statiskās vietnes mitināšana ar Amazon S3, CloudFront un atsevišķu attēlu CDN"
     ]
   },
   {
@@ -136,8 +136,8 @@
     ],
     "highlights": [
       "Izveidots atsevišķs IEPAKO zīmols un responsīva B2B vietne latviešu, angļu un krievu valodā",
-      "Produkti strukturēti kā pasūtāmas materiālu un izmēru grupas ar skaidriem tehniskajiem diapazoniem",
-      "Ieviesta droša saziņas forma ar Firebase un atsevišķas Firestore kolekcijas pieprasījumiem un paziņojuma apliecinājumiem",
+      "Produkti strukturēti kā pielāgojamas materiālu un izmēru grupas ar skaidriem tehniskajiem diapazoniem",
+      "Ieviesta droša Firebase pieprasījumu forma ar atsevišķām Firestore kolekcijām pieprasījumiem un datu glabāšanas apliecinājumiem",
       "Izveidota izolēta Dev un Prod AWS infrastruktūra ar S3, CloudFront, ACM, Terraform un izmaksu uzskaites tagiem",
       "Pievienoti unikāli meklētājprogrammu metadati, kanoniskās saites, strukturētie dati, vietnes karte un robots.txt norādes"
     ]
@@ -145,7 +145,7 @@
   {
     "id": "confidential-infrastructure-modernization",
     "title": "Globālās infrastruktūras modernizācija (NDA)",
-    "description": "Četru mēnešu laikā vadīta liela starptautiska uzņēmuma infrastruktūras modernizācijas programma, ievērojot NDA. Izstrādāta atkārtoti izmantojama Terraform IaC platforma un Azure DevOps ieviešanas modelis, automatizēta vairāku vižu izvietošana ASV, koordinēta datu migrācija un produkcijas vides pārslēgšana, uzlabota drošība un slepeno vērtību pārvaldība, bet pēc tam tāds pats darbības modelis ieviests Eiropā.",
+    "description": "Četru mēnešu laikā vadīta liela starptautiska uzņēmuma infrastruktūras modernizācijas programma, ievērojot NDA. Izstrādāta atkārtoti izmantojama Terraform IaC platforma un Azure DevOps ieviešanas modelis, automatizēta vairāku vižu izvietošana ASV, koordinēta datu migrācija un produkcijas vides pārslēgšana, uzlabota drošība un slepeno vērtību pārvaldība, un pēc tam tas pats darbības modelis ieviests arī Eiropā.",
     "image": "",
     "website": "",
     "caseStudyPath": "/projects/confidential-infrastructure-modernization",
@@ -172,10 +172,10 @@
     ],
     "highlights": [
       "Definēta mērķa arhitektūra un atkārtoti izmantojami Terraform moduļi pilnībā automatizētai un vienveidīgai vairāku vižu izveidei",
-      "Izveidoti Azure DevOps piegādes konveijeri ar koplietojamām veidnēm, izolētiem stāvokļa failiem, validācijas posmiem, apstiprinājumiem un kontrolētu virzību starp vidēm",
+      "Izveidoti Azure DevOps piegādes konveijeri ar atkārtoti izmantojamām veidnēm, izolētiem stāvokļa failiem, validācijas posmiem, apstiprinājumiem un kontrolētu virzību starp vidēm",
       "Vadīta ieviešana ASV, ietverot testa migrācijas, datu pārbaudi, koordinētu produkcijas vides pārslēgšanu un pārbaudes pēc tās",
       "Uzlabota drošība ar centrmezgla un atzaru topoloģiju, tīkla segmentāciju, mazāko privilēģiju principu, Key Vault integrāciju un slepeno vērtību regulāras maiņas praksi",
-      "IaC un automatizācijas modelis paplašināts uz Eiropas platformu, vadot kontrolētu infrastruktūras un lietojumprogrammu pārslēgšanu",
+      "IaC un automatizācijas modelis attiecināts arī uz Eiropas platformu, un vadīta kontrolēta infrastruktūras un lietojumprogrammu pārslēgšana",
       "Vadīta projekta īstenošana ar Jira plānošanu, risku un lēmumu uzskaiti, arhitektūras pārskatiem, klienta demonstrācijām, darbības instrukcijām un zināšanu nodošanu, visā projektā saņemot pozitīvas iesaistīto pušu atsauksmes"
     ]
   }

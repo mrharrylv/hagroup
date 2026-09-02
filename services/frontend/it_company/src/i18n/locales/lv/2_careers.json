@@ -2,18 +2,18 @@
   "title": "Veidojiet nākotni kopā ar mums",
   "subtitle": "Pievienojieties ambiciozu inženieru, arhitektu un inovatoru komandai, kas izstrādā drošas un mērogojamas tehnoloģijas augošiem uzņēmumiem.",
   "benefitsTitle": "Kāpēc pievienoties HA Group?",
-  "benefitsSubtitle": "Mēs sniedzam konkurētspējīgu atalgojumu, elastību un iespēju strādāt pie nozīmīgiem, mūsdienīgiem tehnoloģiju projektiem.",
+  "benefitsSubtitle": "Mēs piedāvājam konkurētspējīgu atalgojumu, elastību un iespēju strādāt pie nozīmīgiem, mūsdienīgiem tehnoloģiju projektiem.",
   "benefits": [
     {
       "key": "health",
       "icon": "solar:heart-pulse-linear",
       "title": "Veselība un labbūtība",
-      "description": "Plaša veselības apdrošināšana, labbūtības iniciatīvas un atbalsts emocionālajai veselībai, lai jūs varētu justies un strādāt pēc iespējas labāk."
+      "description": "Plaša veselības apdrošināšana, labbūtības iniciatīvas un garīgās veselības atbalsts, lai jūs varētu justies un strādāt pēc iespējas labāk."
     },
     {
       "key": "remote",
       "icon": "solar:home-smile-linear",
-      "title": "Attālināta darba kultūra",
+      "title": "Attālinātā darba kultūra",
       "description": "Strādājiet no jebkuras vietas ar elastīgu darba laiku un uz rezultātiem vērstu sadarbību."
     },
     {

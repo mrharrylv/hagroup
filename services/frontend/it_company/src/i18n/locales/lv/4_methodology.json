@@ -3,13 +3,13 @@
     "key": "discovery",
     "phase": "01. posms",
     "title": "Izpēte",
-    "description": "Padziļināta jūsu uzņēmējdarbības mērķu, esošās tehnoloģiju vides, darba plūsmu un ikdienas darbības problēmu analīze."
+    "description": "Visaptveroša jūsu uzņēmējdarbības mērķu, esošās tehnoloģiju vides, darba plūsmu un darbības problēmu analīze."
   },
   {
     "key": "architecture",
     "phase": "02. posms",
     "title": "Arhitektūra",
-    "description": "Drošas, mērogojamas un izmaksu ziņā efektīvas sistēmas arhitektūras izstrāde, pielāgota ilgtermiņa izaugsmei."
+    "description": "Drošas, mērogojamas un izmaksu ziņā efektīvas sistēmas arhitektūras izstrāde, kas pielāgota jūsu ilgtermiņa izaugsmei."
   },
   {
     "key": "build",
@@ -21,7 +21,7 @@
     "key": "deploy",
     "phase": "04. posms",
     "title": "Ieviešana",
-    "description": "Automatizētu CI/CD piegādes procesu ieviešana drošiem un uzticamiem laidieniem bez darbības pārtraukuma."
+    "description": "Automatizētu CI/CD piegādes procesu ieviešana, lai nodrošinātu uzticamus un drošus laidienus bez darbības pārtraukuma."
   },
   {
     "key": "maintain",

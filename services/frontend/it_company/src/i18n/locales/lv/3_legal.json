@@ -13,7 +13,7 @@
       },
       {
         "heading": "3. Informatīva tīmekļvietne — līgums tiešsaistē netiek noslēgts",
-        "content": "Tīmekļvietnē ir sniegta vispārīga informācija par mūsu IT, mākoņrisinājumu, DevOps, konsultāciju un programmatūras izstrādes pakalpojumiem. Tā nav interneta veikals vai juridiski saistošs piedāvājums. Formas iesniegšana, budžeta diapazona izvēle vai iesniegšanas apstiprinājuma saņemšana nav pasūtījums, nerada pakalpojumu līgumu, negarantē atbildi un neuzliek nevienai pusei pienākumu turpināt sadarbību. Katram projektam nepieciešams atsevišķs rakstisks piedāvājums vai līgums, kurā noteikts darba apjoms, cena, termiņi, atbildība un citi nosacījumi."
+        "content": "Tīmekļvietnē ir sniegta vispārīga informācija par mūsu IT, mākoņrisinājumu, DevOps, konsultāciju un programmatūras izstrādes pakalpojumiem. Tā nav ne interneta veikals, ne juridiski saistošs piedāvājums. Formas iesniegšana, budžeta diapazona izvēle vai iesniegšanas apstiprinājuma saņemšana nav pasūtījums, nerada pakalpojumu līgumu, negarantē atbildi un neuzliek nevienai pusei pienākumu turpināt sadarbību. Katram projektam nepieciešams atsevišķs rakstisks piedāvājums vai līgums, kurā noteikts darba apjoms, cena, termiņi, atbildība un citi nosacījumi."
       },
       {
         "heading": "4. Pieļaujamā lietošana",
@@ -37,7 +37,7 @@
       },
       {
         "heading": "9. Atbildība par tīmekļvietnes lietošanu",
-        "content": "Ciktāl to pieļauj piemērojamie tiesību akti, HA Group neatbild par netiešiem vai izrietošiem zaudējumiem, kas radušies tikai šīs informatīvās tīmekļvietnes lietošanas, nepieejamības vai paļaušanās uz tajā sniegto informāciju dēļ. Nekas šajos noteikumos neizslēdz un neierobežo atbildību, ko saskaņā ar imperatīvajām tiesību normām izslēgt vai ierobežot nedrīkst, tostarp atbildību par krāpšanu, tīšu pārkāpumu vai obligāto patērētāju tiesību aizsardzības noteikumu pārkāpumu. Atbildību par maksas pakalpojumiem nosaka attiecīgais pakalpojumu līgums."
+        "content": "Ciktāl to pieļauj piemērojamie tiesību akti, HA Group neatbild par netiešiem vai izrietošiem zaudējumiem, kas radušies tikai šīs informatīvās tīmekļvietnes lietošanas, nespējas to lietot vai paļaušanās uz tajā sniegto informāciju dēļ. Nekas šajos noteikumos neizslēdz un neierobežo atbildību, ko saskaņā ar imperatīvajām tiesību normām izslēgt vai ierobežot nedrīkst, tostarp atbildību par krāpšanu, tīšu pārkāpumu vai obligāto patērētāju tiesību aizsardzības noteikumu pārkāpumu. Atbildību par maksas pakalpojumiem nosaka attiecīgais pakalpojumu līgums."
       },
       {
         "heading": "10. Privātums un pārlūka krātuve",
@@ -83,7 +83,7 @@
       },
       {
         "heading": "6. Datu saņēmēji un pakalpojumu sniedzēji",
-        "content": "Datiem piekļūst tikai pilnvaroti HA Group darbinieki un sadarbības personas, kam tie vajadzīgi attiecīgajam mērķim. Formu iesniegumu un ierobežoto krātuves paziņojuma apliecinājumu saņemšanai un glabāšanai izmantojam Google Firebase / Cloud Firestore, bet tīmekļvietnes mitināšanai un piegādei — Amazon Web Services, tostarp S3 un CloudFront. Šie pakalpojumu sniedzēji apstrādā datus mūsu uzdevumā, ievērojot līgumiskas un drošības prasības. Ja tas ir nepieciešams un likumīgi, datus var izpaust profesionāliem konsultantiem, tiesām, regulatoriem, tiesībaizsardzības iestādēm vai citām valsts iestādēm. Mēs nepārdodam personas datus un nenododam tos reklāmdevējiem."
+        "content": "Datiem piekļūst tikai pilnvaroti HA Group darbinieki, kam tie vajadzīgi attiecīgajam mērķim. Formu iesniegumu un ierobežoto krātuves paziņojuma apliecinājumu saņemšanai un glabāšanai izmantojam Google Firebase / Cloud Firestore, bet tīmekļvietnes mitināšanai un piegādei — Amazon Web Services, tostarp S3 un CloudFront. Šie pakalpojumu sniedzēji apstrādā datus mūsu uzdevumā, ievērojot līgumiskas un drošības prasības. Ja tas ir nepieciešams un likumīgi, datus var izpaust profesionāliem konsultantiem, tiesām, regulatoriem, tiesībaizsardzības iestādēm vai citām valsts iestādēm. Mēs nepārdodam personas datus un nenododam tos reklāmdevējiem."
       },
       {
         "heading": "7. Datu nosūtīšana ārpus EEZ",
@@ -91,7 +91,7 @@
       },
       {
         "heading": "8. Glabāšanas termiņi",
-        "content": "Personas datus glabājam tikai tik ilgi, cik tas vajadzīgs norādītajam mērķim:\n\n• Projektu un saziņas pieprasījumus — parasti līdz 24 mēnešiem pēc pēdējās saturiskās saziņas.\n• Darba pieteikumus — parasti līdz 12 mēnešiem pēc iesniegšanas. Ilgākai glabāšanai kandidātu datubāzē nepieciešams atsevišķs tiesiskais pamats, piemēram, jūsu konkrēta piekrišana.\n• Krātuves paziņojuma apliecinājuma ierakstus — līdz 12 mēnešiem; pēc tam Firestore TTL dzēšanas termiņa lauks nodrošina to automātiskas dzēšanas iespēju.\n• Mitināšanas un drošības žurnālus, ja tādi tiek veidoti, — laikposmā, kas saprātīgi vajadzīgs drošībai, problēmu novēršanai un pakalpojumu sniedzēja darbībai.\n• Pārlūkā saglabātās vērtības — Sīkdatņu politikā norādītajos termiņos.\n\nDatus var glabāt ilgāk, ja to prasa tiesību akti vai tas ir saprātīgi nepieciešams, lai celtu, īstenotu vai aizstāvētu tiesiskas prasības. Pēc attiecīgā termiņa beigām datus dzēš vai anonimizē."
+        "content": "Personas datus glabājam tikai tik ilgi, cik tas vajadzīgs norādītajam mērķim:\n\n• Projektu un saziņas pieprasījumus — parasti līdz 24 mēnešiem pēc pēdējās saturiskās saziņas.\n• Darba pieteikumus — parasti līdz 12 mēnešiem pēc iesniegšanas. Ilgākai glabāšanai kandidātu datubāzē nepieciešams atsevišķs tiesiskais pamats, piemēram, jūsu konkrētā piekrišana.\n• Krātuves paziņojuma apliecinājuma ierakstus — līdz 12 mēnešiem; pēc tam Firestore TTL dzēšanas termiņa lauks ļauj tos automātiski dzēst.\n• Mitināšanas un drošības žurnālus, ja tādi tiek veidoti, — laikposmā, kas saprātīgi vajadzīgs drošībai, problēmu novēršanai un pakalpojumu sniedzēja darbībai.\n• Pārlūkā saglabātās vērtības — Sīkdatņu politikā norādītajos termiņos.\n\nDatus var glabāt ilgāk, ja to prasa tiesību akti vai tas ir saprātīgi nepieciešams, lai celtu, īstenotu vai aizstāvētu tiesiskas prasības. Pēc attiecīgā termiņa beigām datus dzēš vai anonimizē."
       },
       {
         "heading": "9. Drošība",
@@ -103,7 +103,7 @@
       },
       {
         "heading": "11. Tiesību izmantošana un sūdzības",
-        "content": "Pieprasījumus sūtiet uz info@hagroup.lv. Mēs varam lūgt informāciju, kas saprātīgi nepieciešama jūsu identitātes pārbaudei. Atbildēsim bez nepamatotas kavēšanās un parasti viena mēneša laikā; sarežģītu vai daudzu pieprasījumu gadījumā VDAR ļauj termiņu pagarināt vēl par diviem mēnešiem, par ko jūs informēsim.\n\nLatvijas uzraudzības iestāde ir Datu valsts inspekcija, Elijas iela 17, Rīga, LV-1050; e-pasts pasts@dvi.gov.lv; tīmekļvietne www.dvi.gov.lv. Varat sūdzēties arī tās ES vai EEZ valsts uzraudzības iestādē, kurā dzīvojat, strādājat vai, jūsuprāt, ir noticis pārkāpums."
+        "content": "Pieprasījumus sūtiet uz info@hagroup.lv. Mēs varam lūgt informāciju, kas saprātīgi nepieciešama jūsu identitātes pārbaudei. Atbildēsim bez nepamatotas kavēšanās un parasti viena mēneša laikā; sarežģītu vai daudzu pieprasījumu gadījumā VDAR ļauj termiņu pagarināt vēl par ne vairāk kā diviem mēnešiem, par ko jūs informēsim.\n\nLatvijas uzraudzības iestāde ir Datu valsts inspekcija, Elijas iela 17, Rīga, LV-1050; e-pasts pasts@dvi.gov.lv; tīmekļvietne www.dvi.gov.lv. Varat sūdzēties arī tās ES vai EEZ valsts uzraudzības iestādē, kurā dzīvojat, strādājat vai, jūsuprāt, ir noticis pārkāpums."
       },
       {
         "heading": "12. Automatizēti lēmumi un bērni",
@@ -111,7 +111,7 @@
       },
       {
         "heading": "13. Politikas izmaiņas",
-        "content": "Mēs varam atjaunināt šo politiku, ja mainās datu apstrāde vai juridiskie pienākumi. Aktuālā redakcija un tās spēkā stāšanās datums būs publicēti šajā lapā. Ja izmaiņas būtiski ietekmēs jau saņemtu datu izmantošanu, sniegsim papildu paziņojumu vai saņemsim piekrišanu, ja to prasīs tiesību akti."
+        "content": "Mēs varam atjaunināt šo politiku, ja mainās datu apstrāde vai juridiskie pienākumi. Aktuālā redakcija un tās spēkā stāšanās datums būs publicēti šajā lapā. Ja izmaiņas būtiski ietekmēs jau saņemto datu izmantošanu, sniegsim papildu paziņojumu vai saņemsim piekrišanu, ja to prasīs tiesību akti."
       }
     ]
   },
@@ -121,7 +121,7 @@
     "sections": [
       {
         "heading": "1. Piemērošanas joma",
-        "content": "Tīmekļvietnes operators:\nSIA HA Group\nReģistrācijas numurs: 40203724866\nPVN maksātājs: LV40203724866\nE-pasts: info@hagroup.lv\n\nŠajā politikā paskaidrots, kādas sīkdatnes un līdzīgas pārlūka krātuves tehnoloģijas izmanto hagroup.lv. Pašreizējā tīmekļvietne reklāmas vai analītikas sīkdatņu vietā izmanto pirmās puses lokālo krātuvi. Lokālajā krātuvē pārlūkā tiek saglabātas nelielas vērtības, ko tāpat kā sīkdatnes var dzēst pārlūka iestatījumos."
+        "content": "Tīmekļvietnes operators:\nSIA HA Group\nReģistrācijas numurs: 40203724866\nPVN maksātājs: LV40203724866\nE-pasts: info@hagroup.lv\n\nŠajā politikā paskaidrots, kādas sīkdatnes un līdzīgas pārlūka krātuves tehnoloģijas izmanto hagroup.lv. Šobrīd tīmekļvietne reklāmas vai analītikas sīkdatņu vietā izmanto pirmās puses lokālo krātuvi. Lokālā krātuve jūsu pārlūkā saglabā nelielas vērtības, kuras tāpat kā sīkdatnes var dzēst pārlūka iestatījumos."
       },
       {
         "heading": "2. Izmantotās krātuves vērtības",
@@ -129,7 +129,7 @@
       },
       {
         "heading": "3. Kāpēc piekrišana netiek prasīta",
-        "content": "Norādītās vērtības izmantojam, lai nodrošinātu jūsu skaidri pieprasītus iestatījumus, atcerētos šo paziņojumu vai aizsargātu formas un tīmekļvietnes darbību. Saskaņā ar Informācijas sabiedrības pakalpojumu likuma 7¹ panta otro daļu lietotāja pieprasīta pakalpojuma sniegšanai nepieciešamai krātuvei piekrišana nav vajadzīga, taču par to joprojām jāsniedz skaidra informācija. Tādēļ paziņojumā ir iepazīšanās apstiprinājuma poga, nevis maldinoša izvēle pieņemt vai noraidīt. Nospiežot “Sapratu”, tiek reģistrēta iepazīšanās ar paziņojumu; tā nav piekrišana analītikai, reklāmai vai izsekošanai."
+        "content": "Norādītās vērtības izmantojam, lai nodrošinātu jūsu skaidri pieprasītos iestatījumus, atcerētos šo paziņojumu vai aizsargātu formas un tīmekļvietnes darbību. Saskaņā ar Informācijas sabiedrības pakalpojumu likuma 7¹ panta otro daļu lietotāja pieprasīta pakalpojuma sniegšanai nepieciešamai krātuvei piekrišana nav vajadzīga, taču par to joprojām jāsniedz skaidra informācija. Tādēļ paziņojumā ir iepazīšanās apstiprinājuma poga, nevis maldinoša izvēle pieņemt vai noraidīt. Nospiežot “Sapratu”, tiek reģistrēta iepazīšanās ar paziņojumu; tā nav piekrišana analītikai, reklāmai vai izsekošanai."
       },
       {
         "heading": "4. Netiek izmantota analītikas vai reklāmas krātuve",
@@ -141,11 +141,11 @@
       },
       {
         "heading": "6. Pārlūka krātuves pārvaldība",
-        "content": "Tīmekļvietnes sīkdatnes un lokālo krātuvi varat apskatīt vai dzēst pārlūka privātuma vai vietnes datu iestatījumos. Dzēšot cloudie-lang vai cloudie-theme, tiek atiestatīts attiecīgais iestatījums; dzēšot cloudie-cookies, paziņojums tiks parādīts atkārtoti. Pilnīga lokālās krātuves bloķēšana var traucēt iestatījumu un formu aizsardzības paredzēto darbību. Zemāk esošā poga atkārtoti atver paziņojumu, bet pati par sevi nedzēš citas saglabātās vērtības."
+        "content": "Tīmekļvietnes sīkdatnes un lokālo krātuvi varat apskatīt vai dzēst pārlūka privātuma vai vietnes datu iestatījumos. Dzēšot cloudie-lang vai cloudie-theme, tiek atiestatīts attiecīgais iestatījums; dzēšot cloudie-cookies, paziņojums tiks parādīts atkārtoti. Ja pilnībā bloķējat lokālo krātuvi, iestatījumi un formu aizsardzība var nedarboties, kā paredzēts. Zemāk esošā poga atkārtoti atver paziņojumu, bet pati par sevi nedzēš citas saglabātās vērtības."
       },
       {
         "heading": "7. Pakalpojumu sniedzēji un citi dati",
-        "content": "Tīmekļvietne apzināti neizvieto trešo personu sīkdatnes. Nospiežot “Sapratu”, Google Firebase / Cloud Firestore saņem ierakstu, kurā ir tikai ieraksta veids, izvēle izmantot nepieciešamo krātuvi, paziņojuma versija, saskarnes valoda, servera izveides laiks un dzēšanas termiņa laiks. Firestore dokumenta identifikators tiek saglabāts pārlūkā kā apliecinājuma atsauce. Ierakstā nav jūsu vārda, e-pasta adreses, pārlūka identifikācijas virknes, lapas URL vai pastāvīga apmeklētāja identifikatora. Firebase un mūsu mitināšanas pakalpojumu sniedzēji joprojām var apstrādāt parastos savienojuma datus, kā aprakstīts Privātuma politikā. Ārējo tīmekļvietņu lietošanu regulē to sīkdatņu un privātuma politikas."
+        "content": "Tīmekļvietne apzināti neizvieto trešo personu sīkdatnes. Kad nospiežat “Sapratu”, Google Firebase / Cloud Firestore saņem ierakstu, kurā ir tikai ieraksta veids, izvēle izmantot nepieciešamo krātuvi, paziņojuma versija, saskarnes valoda, servera izveides laiks un dzēšanas termiņa laiks. Firestore dokumenta identifikators tiek saglabāts pārlūkā kā apliecinājuma atsauce. Ierakstā nav jūsu vārda, e-pasta adreses, pārlūka identifikācijas virknes, lapas URL vai pastāvīga apmeklētāja identifikatora. Firebase un mūsu mitināšanas pakalpojumu sniedzēji joprojām var apstrādāt parastos savienojuma datus, kā aprakstīts Privātuma politikā. Ārējo tīmekļvietņu lietošanu regulē to sīkdatņu un privātuma politikas."
       },
       {
         "heading": "8. Izmaiņas un kontakti",

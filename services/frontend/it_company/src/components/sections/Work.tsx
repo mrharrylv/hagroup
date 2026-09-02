@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { useProjectsData } from '../../lib/content';
+import { projectImageClass, useProjectsData } from '../../lib/content';
 import HorizontalCards from '../ui/HorizontalCards';
 import RokberPreview from '../projects/RokberPreview';
 
@@ -43,7 +43,7 @@ export default function Work() {
                   loading="lazy"
                   decoding="async"
                   className={`absolute inset-0 h-full w-full ${
-                    project.slug === 'iepako' ? 'bg-[#eef4f1] object-contain p-12' : 'object-cover'
+                    projectImageClass(project.slug, 'p-12')
                   }`}
                 />
               ) : null}
@@ -128,6 +128,19 @@ export default function Work() {
                         className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-200/50 bg-emerald-300 px-3 py-1.5 text-xs font-bold text-emerald-950 transition-colors hover:bg-emerald-200"
                       >
                         iepako.hagroup.lv
+                        <iconify-icon icon="solar:arrow-right-up-linear" width="13" />
+                      </a>
+                    )}
+                    {project.slug === 'harent' && project.website && (
+                      <a
+                        href={project.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onPointerDown={(event) => event.stopPropagation()}
+                        onClick={(event) => event.stopPropagation()}
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-amber-200/50 bg-amber-400 px-3 py-1.5 text-xs font-bold text-amber-950 transition-colors hover:bg-amber-300"
+                      >
+                        harent.lv
                         <iconify-icon icon="solar:arrow-right-up-linear" width="13" />
                       </a>
                     )}

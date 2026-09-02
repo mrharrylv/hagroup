@@ -66,6 +66,23 @@ export interface Project {
   highlights: string[];
 }
 
+/**
+ * Projects whose `image` is a wordmark rather than a screenshot.
+ *
+ * A screenshot fills its frame (`object-cover`); a logo has to sit inside one,
+ * padded and on a tinted panel, or it is cropped into abstract art at the
+ * listing's 3:1 aspect ratio. This lived as `slug === 'iepako'` copied into
+ * three components, so adding a second logo meant finding all three.
+ */
+const WORDMARK_SLUGS = new Set(['iepako', 'harent']);
+
+/** Tailwind classes for a project's hero image. `padding` varies by surface. */
+export function projectImageClass(slug: string, padding: string): string {
+  return WORDMARK_SLUGS.has(slug)
+    ? `bg-[#eef4f1] object-contain ${padding}`
+    : 'object-cover';
+}
+
 /* ── helpers ── */
 function useLang(): Lang {
   const { i18n } = useTranslation();

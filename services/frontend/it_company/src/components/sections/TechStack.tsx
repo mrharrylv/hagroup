@@ -14,13 +14,13 @@ export default function TechStack() {
           {techStack.map(({ name, icon }) => (
             <div
               key={name}
-              className="flex items-center gap-1.5 sm:gap-2 transition-all duration-300 cursor-default text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-white hover:scale-110 dark:hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]"
+              className="flex items-center gap-1.5 sm:gap-2 transition-all duration-300 cursor-default text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:scale-110 dark:hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]"
             >
               <iconify-icon icon={icon} width="24" className="sm:[--icon-size:28px] transition-all duration-300" />
               <span className="text-base sm:text-xl font-semibold tracking-tighter">{name}</span>
             </div>
           ))}
-          <span className="text-base sm:text-xl font-semibold tracking-tighter text-zinc-400 dark:text-zinc-500">
+          <span className="text-base sm:text-xl font-semibold tracking-tighter text-zinc-500 dark:text-zinc-400">
             {t('techStack.more')}
           </span>
         </div>

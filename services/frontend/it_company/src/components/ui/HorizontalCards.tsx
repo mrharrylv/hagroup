@@ -15,6 +15,11 @@ export interface HorizontalCardsProps<T> {
   keyExtractor: (item: T, index: number) => string;
   renderCard: (item: T, index: number, gradient: string) => ReactNode;
   autoPlayInterval?: number;
+  /**
+   * Names this carousel for assistive tech. Two are mounted on the home page,
+   * so "carousel" alone does not say which one has focus.
+   */
+  ariaLabel?: string;
 }
 
 /** Direction of the last navigation: 1 = forward, -1 = backward */
@@ -25,11 +30,14 @@ export default function HorizontalCards<T>({
   keyExtractor,
   renderCard,
   autoPlayInterval = 5000,
+  ariaLabel,
 }: HorizontalCardsProps<T>) {
   const count = items.length;
   const [active, setActive] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [swapDir, setSwapDir] = useState<SwapDir>(0);
+  /** Autoplay stops while the carousel is hovered or holds keyboard focus. */
+  const [isPaused, setPaused] = useState(false);
   const dragStart = useRef(0);
   const dragOffset = useRef(0);
   const didDrag = useRef(false);
@@ -47,22 +55,47 @@ export default function HorizontalCards<T>({
   const prev = useCallback(() => goTo(active - 1, -1), [active, goTo]);
   const next = useCallback(() => goTo(active + 1, 1), [active, goTo]);
 
-  /* auto-play */
+  /*
+   * Auto-play, pausing while the visitor is reading.
+   *
+   * WCAG 2.2.2 (Pause, Stop, Hide) is a Level A requirement for anything that
+   * moves on its own for more than five seconds, and there are two of these
+   * mounted on the home page at once. Hovering or tab-focusing a carousel now
+   * stops it — you can no longer have a card slide out from under the link you
+   * were about to click.
+   *
+   * `prefers-reduced-motion` stops it outright. The stylesheet already removed
+   * the transition, which only made the change instant; the movement itself is
+   * what that setting is asking us not to do.
+   */
   useEffect(() => {
-    if (autoPlayInterval <= 0) return;
+    if (autoPlayInterval <= 0 || isPaused) return;
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
+
     const id = setInterval(next, autoPlayInterval);
     return () => clearInterval(id);
-  }, [next, autoPlayInterval]);
+  }, [next, autoPlayInterval, isPaused]);
 
-  /* keyboard */
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') prev();
-      if (e.key === 'ArrowRight') next();
-    };
-    window.addEventListener('keydown', handler);
-    return () => window.removeEventListener('keydown', handler);
-  }, [prev, next]);
+  /*
+   * Arrow keys, scoped to this carousel.
+   *
+   * The listener used to be on `window`, so one arrow press advanced BOTH
+   * carousels on the home page, and arrow-key page scrolling was hijacked
+   * site-wide — including while a form field had focus.
+   */
+  const handleKeyDown = useCallback(
+    (event: React.KeyboardEvent) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        prev();
+      }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        next();
+      }
+    },
+    [prev, next],
+  );
 
   /* pointer drag / swipe */
   const handlePointerDown = (e: React.PointerEvent) => {
@@ -128,9 +161,24 @@ export default function HorizontalCards<T>({
   return (
     <>
       {/* 3D Carousel */}
+      {/*
+        `tabIndex`/`role`/`aria-label` make this a real, reachable control so
+        the arrow keys have somewhere to be scoped to — they were bound to
+        `window`, which meant one press moved both home-page carousels and
+        stole arrow-key scrolling from the whole document.
+      */}
       <div
-        className="relative select-none"
+        className="relative select-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-500"
         style={{ perspective: '1200px' }}
+        role="group"
+        aria-roledescription="carousel"
+        aria-label={ariaLabel}
+        tabIndex={0}
+        onKeyDown={handleKeyDown}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onFocus={() => setPaused(true)}
+        onBlur={() => setPaused(false)}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -154,6 +202,21 @@ export default function HorizontalCards<T>({
                   transition: CARD_TRANSITION,
                 }}
                 onClick={() => handleCardClick(idx)}
+                /*
+                 * Only the front card is reachable. The others sit behind it at
+                 * 55% and 35% brightness, but their links — case study, App
+                 * Store, Google Play, the project website — stayed in the tab
+                 * order and the accessibility tree. Tabbing through the home
+                 * page walked into four hidden cards' worth of controls that a
+                 * sighted keyboard user could barely see and a screen-reader
+                 * user had no context for.
+                 *
+                 * `inert` removes the subtree from focus, hit-testing and the
+                 * a11y tree in one attribute, and it is what `aria-hidden`
+                 * alone cannot do.
+                 */
+                inert={idx !== active}
+                aria-hidden={idx !== active}
               >
                 <div className={`relative w-full h-full rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br shadow-xl ${GRADIENTS[idx % GRADIENTS.length]}`}>
                   {renderCard(item, idx, GRADIENTS[idx % GRADIENTS.length])}

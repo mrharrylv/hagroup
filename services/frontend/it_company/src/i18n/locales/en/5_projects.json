@@ -143,6 +143,47 @@
     ]
   },
   {
+    "id": "harent",
+    "title": "HARent car rental website",
+    "description": "A car rental website for Rīga, built so the price is answered before the visitor has to ask. The fleet is filterable by make, model, year, fuel, engine and transmission, each car quotes a total for 3 days, a week and a month, and booking requests reach the office by email within seconds.",
+    "image": "/projects/harent-logo.svg",
+    "website": "https://harent.lv",
+    "caseStudyPath": "/projects/harent",
+    "slug": "harent",
+    "tags": [
+      "Car Rental",
+      "Booking Platform",
+      "Cloud Delivery"
+    ],
+    "year": 2026,
+    "featured": true,
+    "client": "HARent / SIA HA Group",
+    "role": "Product Website, Infrastructure & Delivery",
+    "duration": "Production launch",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "i18next",
+      "Firebase",
+      "Cloud Functions",
+      "AWS CloudFront",
+      "Amazon S3",
+      "Terraform",
+      "GitHub Actions",
+      "Vitest"
+    ],
+    "highlights": [
+      "Built a Latvian-first rental website in Latvian, English and Russian, with a locale test that fails the build if the three drift apart",
+      "Designed transparent pricing that quotes a total per rental period and derives the daily rate, so a longer rental can never cost more",
+      "Implemented fleet filtering by make, model, year, fuel, engine size and transmission, with options derived from the fleet so no filter returns an empty list",
+      "Delivered a booking form validated at the boundary, rate limited, and forwarded to the office by a Cloud Function",
+      "Kept the site free of third-party requests before consent by self-hosting the fonts and bundling the icons",
+      "Built isolated Dev and Prod AWS delivery with S3, CloudFront, ACM, Terraform and GitHub OIDC"
+    ]
+  },
+  {
     "id": "confidential-infrastructure-modernization",
     "title": "Global Infrastructure Modernization (NDA)",
     "description": "Led a four-month infrastructure modernization program for a large global enterprise under NDA. Designed a reusable Terraform IaC platform and Azure DevOps delivery model, automated multi-environment rollouts in the United States, coordinated data migration and production switchovers, strengthened security and secret management, and then extended the same operating model across Europe.",

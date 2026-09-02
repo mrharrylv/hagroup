@@ -128,7 +128,8 @@ export default function CareerContact() {
           {cooldown > 0 && status !== 'error' && (
             <div className="flex items-center gap-3 p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-amber-700 dark:text-amber-300 text-sm">
               <iconify-icon icon="solar:clock-circle-linear" width="20" className="flex-shrink-0" />
-              {t('careers.form.rateLimitMessage', { seconds: cooldown })}
+              {/* `count` is what i18next selects the plural form from. */}
+              {t('careers.form.rateLimitMessage', { count: cooldown })}
             </div>
           )}
 

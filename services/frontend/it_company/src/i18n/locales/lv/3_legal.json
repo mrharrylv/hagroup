@@ -5,7 +5,7 @@
     "sections": [
       {
         "heading": "1. Pakalpojuma sniedzējs",
-        "content": "SIA HA Group\nReģistrācijas numurs: 40203724866\nPVN maksātājs: LV40203724866\nE-pasts: info@hagroup.lv\n\nSIA HA Group uztur šo tīmekļvietni (\"HA Group\", \"mēs\", \"mums\")."
+        "content": "SIA HA Group\nReģistrācijas numurs: 40203724866\nPVN maksātājs: LV40203724866\nE-pasts: info@hagroup.lv\nJuridiskā adrese: Valdeķu iela 1, Rīga, LV-1058, Latvija\n\nSIA HA Group uztur šo tīmekļvietni (“HA Group”, “mēs”, “mūs”)."
       },
       {
         "heading": "2. Piemērošanas joma un noteikumu pieņemšana",
@@ -63,7 +63,7 @@
     "sections": [
       {
         "heading": "1. Datu pārzinis",
-        "content": "SIA HA Group\nReģistrācijas numurs: 40203724866\nPVN maksātājs: LV40203724866\nE-pasts: info@hagroup.lv\n\nSIA HA Group ir šajā tīmekļvietnē apstrādāto personas datu pārzinis."
+        "content": "SIA HA Group\nReģistrācijas numurs: 40203724866\nPVN maksātājs: LV40203724866\nE-pasts: info@hagroup.lv\nJuridiskā adrese: Valdeķu iela 1, Rīga, LV-1058, Latvija\n\nSIA HA Group ir šajā tīmekļvietnē apstrādāto personas datu pārzinis."
       },
       {
         "heading": "2. Piemērošanas joma un datu avoti",
@@ -83,7 +83,7 @@
       },
       {
         "heading": "6. Datu saņēmēji un pakalpojumu sniedzēji",
-        "content": "Datiem piekļūst tikai pilnvaroti HA Group darbinieki un sadarbības personas, kam tie vajadzīgi attiecīgajam mērķim. Formu iesniegumu un ierobežoto krātuves paziņojuma apliecinājumu saņemšanai un glabāšanai izmantojam Google Firebase / Cloud Firestore, bet tīmekļvietnes mitināšanai un piegādei — Amazon Web Services, tostarp S3 un CloudFront. Šie pakalpojumu sniedzēji apstrādā datus mūsu uzdevumā, ievērojot līgumiskas un drošības prasības. Ja tas ir nepieciešams un likumīgi, datus var izpaust profesionāliem konsultantiem, tiesām, regulatoriem, tiesībaizsardzības iestādēm vai citām valsts iestādēm. Mēs nepārdodam personas datus un nenododam tos reklāmdevējiem."
+        "content": "Piekļuve ir tikai tiem HA Group darbiniekiem, kuriem dati nepieciešami attiecīgajam nolūkam. Mūsu uzdevumā, ievērojot līgumsaistības un drošības prasības, datus apstrādā šādi apstrādātāji:\n\n• Google Firebase / Cloud Firestore — saņem un glabā formu iesniegumus un paziņojuma apliecinājumus.\n• Google Cloud Functions (europe-north1) — izpilda kodu, kas no iesnieguma izveido paziņojumu.\n• Google Cloud Secret Manager — glabā piekļuves datus, ko izmanto šis kods.\n• Gmail (Google) — piegādā katru iesniegumu uz mūsu pastkasti kā e-pastu. Jūsu ziņa un kontaktinformācija tiek pārsūtīta caur Google e-pasta infrastruktūru.\n• Amazon Web Services (S3 un CloudFront) — mitina un piegādā tīmekļvietni.\n• Google Fonts un Iconify CDN — piegādā šajā lapā izmantotos fontus un ikonas. Pārlūkprogramma šos failus pieprasa tieši, tāpēc lapas ielādes brīdī jūsu IP adrese un pārlūka dati nonāk šajos pakalpojumos.\n\nDatus varam izpaust arī profesionāliem konsultantiem, tiesām, uzraudzības iestādēm, tiesībaizsardzības iestādēm vai citām iestādēm, ja tas ir nepieciešams un likumīgs. Mēs nepārdodam personas datus un nenododam tos reklāmdevējiem."
       },
       {
         "heading": "7. Datu nosūtīšana ārpus EEZ",
@@ -121,7 +121,7 @@
     "sections": [
       {
         "heading": "1. Piemērošanas joma",
-        "content": "Tīmekļvietnes operators:\nSIA HA Group\nReģistrācijas numurs: 40203724866\nPVN maksātājs: LV40203724866\nE-pasts: info@hagroup.lv\n\nŠajā politikā paskaidrots, kādas sīkdatnes un līdzīgas pārlūka krātuves tehnoloģijas izmanto hagroup.lv. Pašreizējā tīmekļvietne reklāmas vai analītikas sīkdatņu vietā izmanto pirmās puses lokālo krātuvi. Lokālajā krātuvē pārlūkā tiek saglabātas nelielas vērtības, ko tāpat kā sīkdatnes var dzēst pārlūka iestatījumos."
+        "content": "Tīmekļvietnes operators:\nSIA HA Group\nReģistrācijas numurs: 40203724866\nPVN maksātājs: LV40203724866\nE-pasts: info@hagroup.lv\nJuridiskā adrese: Valdeķu iela 1, Rīga, LV-1058, Latvija\n\nŠajā politikā paskaidrots, kādas sīkdatnes un līdzīgas pārlūka krātuves tehnoloģijas izmanto hagroup.lv. Pašreizējā tīmekļvietne reklāmas vai analītikas sīkdatņu vietā izmanto pirmās puses lokālo krātuvi. Lokālajā krātuvē pārlūkā tiek saglabātas nelielas vērtības, ko tāpat kā sīkdatnes var dzēst pārlūka iestatījumos."
       },
       {
         "heading": "2. Izmantotās krātuves vērtības",

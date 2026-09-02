@@ -34,7 +34,15 @@ export default function Header() {
 
   const switchLanguage = (code: string) => {
     i18n.changeLanguage(code);
-    localStorage.setItem('cloudie-lang', code);
+    try {
+      localStorage.setItem('cloudie-lang', code);
+    } catch {
+      // Storage blocked (private mode) — the choice just is not remembered.
+    }
+    // Without this the document stays `lang="en"` whatever the visitor picked,
+    // so a screen reader announces Latvian and Russian through an English
+    // speech synthesiser. WCAG 3.1.1 / 3.1.2.
+    document.documentElement.lang = code;
     setLangOpen(false);
   };
 

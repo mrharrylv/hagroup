@@ -26,7 +26,7 @@
       "icon": "solar:server-path-linear",
       "path": "/services/devops",
       "title": "DevOps un CI/CD",
-      "description": "Automatizēti kompilēšanas, testēšanas un izvietošanas procesi ar konteineru orķestrāciju, infrastruktūru kā kodu un GitOps pieeju."
+      "description": "Automatizēti kompilēšanas, testēšanas un izvietošanas procesi ar konteineru orķestrēšanu, infrastruktūru kā kodu un GitOps pieeju."
     },
     {
       "key": "itInfra",
@@ -193,7 +193,7 @@
         {
           "step": "4. solis",
           "title": "Izvietošana un nodošana",
-          "description": "Izvietošana ražošanas vidē, dokumentācija, apmācība un pārejas atbalsts."
+          "description": "Izvietošana produkcijas vidē, dokumentācija, apmācība un pārejas atbalsts."
         }
       ],
       "techTitle": "Tehnoloģiju kopa",
@@ -230,7 +230,7 @@
         {
           "icon": "solar:transfer-horizontal-linear",
           "title": "Mākoņa migrācija",
-          "description": "Pārvietošana, pārplatformēšana vai pārarhitektēšana — mēs izvēlamies pareizo pieeju katrai darba slodzei."
+          "description": "Pārcelšana, platformas maiņa vai arhitektūras pārveide — mēs izvēlamies pareizo pieeju katrai darba slodzei."
         },
         {
           "icon": "solar:tuning-2-linear",
@@ -324,12 +324,12 @@
         {
           "icon": "solar:shield-check-linear",
           "title": "DevSecOps",
-          "description": "Piegādes procesā integrēta drošība — ievainojamību skenēšana, slepeno datu pārvaldība un atbilstības pārbaudes."
+          "description": "Piegādes procesā integrēta drošība — ievainojamību skenēšana, slepeno vērtību pārvaldība un atbilstības pārbaudes."
         },
         {
           "icon": "solar:chat-round-dots-linear",
           "title": "GitOps darbplūsmas",
-          "description": "Ar Git pārvaldīta izvietošana, izmaiņu pieprasījumu pārskatīšana, automātiska atrite un audita žurnāli."
+          "description": "Ar Git pārvaldīta izvietošana, izmaiņu pieprasījumu pārskatīšana, automātiska atcelšana un audita žurnāli."
         }
       ],
       "processTitle": "Ieviešanas pieeja",
@@ -393,7 +393,7 @@
         {
           "icon": "solar:refresh-circle-linear",
           "title": "Sistēmas atjauninājumi",
-          "description": "Plānoti operētājsistēmu, starpprogrammatūras un lietotņu atjauninājumi ar atrites plāniem un stratēģijām darbībai bez pārtraukuma."
+          "description": "Plānoti operētājsistēmu, starpprogrammatūras un lietotņu atjauninājumi ar atcelšanas plāniem un stratēģijām darbībai bez pārtraukuma."
         },
         {
           "icon": "solar:server-linear",
@@ -509,7 +509,7 @@
         {
           "step": "4. posms",
           "title": "Palaišana un attīstība",
-          "description": "Izvietošana ražošanas vidē, uzraudzības iestatīšana un pakāpeniski uzlabojumi."
+          "description": "Izvietošana produkcijas vidē, uzraudzības iestatīšana un pakāpeniski uzlabojumi."
         }
       ],
       "techTitle": "Mūsu tehnoloģiju kopa",
@@ -557,11 +557,11 @@
         {
           "icon": "solar:chart-2-linear",
           "title": "Prognozējošā analītika",
-          "description": "Uz datiem balstīta prognozēšana pieprasījuma plānošanai, klientu aizplūšanas paredzēšanai un biznesa analītikai."
+          "description": "Uz datiem balstīta prognozēšana pieprasījuma plānošanai, klientu atbiruma prognozēšanai un biznesa analītikai."
         },
         {
           "icon": "solar:settings-linear",
-          "title": "Inteliģentā automatizācija",
+          "title": "Viedā automatizācija",
           "description": "MI nodrošināta darbplūsmu automatizācija, kas veic atkārtotus uzdevumus un palīdz cilvēkiem pieņemt lēmumus."
         },
         {
@@ -590,7 +590,7 @@
         {
           "step": "4. solis",
           "title": "Izvietošana un uzraudzība",
-          "description": "Izvietošana ražošanas vidē ar MLOps, uzraudzību un nepārtrauktu modeļu uzlabošanu."
+          "description": "Izvietošana produkcijas vidē ar MLOps, uzraudzību un nepārtrauktu modeļu uzlabošanu."
         }
       ],
       "techTitle": "MI tehnoloģijas",
@@ -632,7 +632,7 @@
         {
           "icon": "solar:dollar-minimalistic-linear",
           "title": "IT budžeta plānošana",
-          "description": "Tehnoloģiju investīciju plānošana, piegādātāju izvērtēšana un kopējo īpašuma izmaksu analīze."
+          "description": "Tehnoloģiju investīciju plānošana, piegādātāju izvērtēšana un kopējo īpašumtiesību izmaksu analīze."
         },
         {
           "icon": "solar:shield-check-linear",

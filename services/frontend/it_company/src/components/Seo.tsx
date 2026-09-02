@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useCareersData, useProjectsData, useServicesData, type Lang } from '../lib/content';
+import { buildSubOrganizations } from '../config/group';
 
 const SITE_URL = 'https://www.hagroup.lv';
 const ORGANIZATION_ID = `${SITE_URL}/#organization`;
@@ -235,6 +236,12 @@ export default function Seo() {
         telephone: '+37126259293',
         availableLanguage: ['English', 'Latvian', 'Russian'],
       },
+      // Ties the brand family together for a search engine. Each spoke site
+      // declares the matching `parentOrganization` pointing back at this @id,
+      // so the relationship is asserted from both ends. This is the documented
+      // way to associate a corporate family — and, unlike hidden links, it does
+      // not risk a manual action across every property at once.
+      subOrganization: buildSubOrganizations(),
     };
 
     const webPage = {

@@ -99,6 +99,14 @@ function Footer() {
             <Link to="/company">{t('footer.companyDetails')} <ArrowIcon /></Link>
             <Link to="/privacy">{t('footer.privacy')} <ArrowIcon /></Link>
             <Link to="/cookies">{t('footer.cookies')} <ArrowIcon /></Link>
+            {/*
+              A real link to the parent company. The JSON-LD already declares
+              parentOrganization; a visible link is what actually passes trust,
+              and it is the honest version of "link the group sites together".
+            */}
+            <a href="https://www.hagroup.lv" target="_blank" rel="noopener">
+              {t('footer.parent')} <ArrowIcon />
+            </a>
           </div>
         </div>
       </div>

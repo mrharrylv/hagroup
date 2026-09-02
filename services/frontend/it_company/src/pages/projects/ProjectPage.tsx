@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useProjectsData, type Project } from '../../lib/content';
+import { projectImageClass, useProjectsData, type Project } from '../../lib/content';
 import ProjectCTA from '../../components/sections/ProjectCTA';
 import RokberPreview from '../../components/projects/RokberPreview';
 
@@ -402,7 +402,7 @@ export default function ProjectPage() {
                   loading="lazy"
                   decoding="async"
                   className={`h-full w-full transition-transform duration-700 group-hover:scale-[1.02] ${
-                    project.slug === 'iepako' ? 'bg-[#eef4f1] object-contain p-12 sm:p-24' : 'object-cover'
+                    projectImageClass(project.slug, 'p-12 sm:p-24')
                   }`}
                 />
               )}

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" role="img" aria-labelledby="harent-title harent-desc">
+  <title id="harent-title">HARent</title>
+  <desc id="harent-desc">HARent car rental logo</desc>
+  <!--
+    A standalone copy of the HARent wordmark for the HA Group projects listing.
+    The site's own Logo.tsx paints from `var(--color-brand-*)` and `currentColor`,
+    neither of which resolves inside an <img src>, so the values are literal here:
+    brand-500 #f98212 and brand-600 #ea6708, with zinc-900 #18181b for the word.
+  -->
+  <defs>
+    <linearGradient id="harent-mark" gradientUnits="userSpaceOnUse" x1="2" y1="4" x2="58" y2="60">
+      <stop offset="0%" stop-color="#f98212"/>
+      <stop offset="100%" stop-color="#ea6708"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="2" y="4" width="56" height="56" rx="16" fill="url(#harent-mark)"/>
+
+  <path
+    d="M14.5 38.5C12.6 38.5 11 36.9 11 35L11 32.2C11 30.6 12.1 29.2 13.7 28.8L20 27.2L25.2 22C26.3 20.9 27.8 20.3 29.4 20.3L37.4 20.3C39 20.3 40.6 21 41.7 22.2L45.6 26.4L50.6 27.8C52.4 28.3 53.6 29.9 53.6 31.8L53.6 35C53.6 36.9 52 38.5 50.1 38.5Z"
+    fill="#ffffff"/>
+  <path d="M27.5 22.8H30.5V27H23.9Z" fill="url(#harent-mark)"/>
+  <path d="M32.5 22.8H37.2L41.5 27H32.5Z" fill="url(#harent-mark)"/>
+
+  <circle cx="20.5" cy="39" r="5" fill="#ffffff"/>
+  <circle cx="20.5" cy="39" r="2" fill="url(#harent-mark)"/>
+  <circle cx="43.5" cy="39" r="5" fill="#ffffff"/>
+  <circle cx="43.5" cy="39" r="2" fill="url(#harent-mark)"/>
+
+  <text x="74" y="44.5" font-family="Sora, Inter, Arial, Helvetica, sans-serif" font-size="40" letter-spacing="-0.8" fill="#18181b">
+    <tspan font-weight="700">HA</tspan><tspan font-weight="500">Rent</tspan>
+  </text>
+</svg>

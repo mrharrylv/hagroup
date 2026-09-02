@@ -42,6 +42,15 @@ export default function CompanyDetailsPage() {
             <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-1">{t('companyDetails.fields.vatNumber')}</p>
             <p className="text-sm text-zinc-900 dark:text-white">{t('companyDetails.fields.vatNumberValue')}</p>
           </div>
+          {/*
+            The registered office. GDPR Art. 13(1)(a) and the Information
+            Society Services Law both want a geographic address alongside the
+            name, registration number and VAT number — the site had none.
+          */}
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-1">{t('companyDetails.fields.address')}</p>
+            <p className="text-sm text-zinc-900 dark:text-white">{t('companyDetails.fields.addressValue')}</p>
+          </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-1">{t('companyDetails.fields.email')}</p>
             <a className="text-sm text-indigo-600 dark:text-indigo-400 hover:underline" href={`mailto:${t('companyDetails.fields.emailValue')}`}>

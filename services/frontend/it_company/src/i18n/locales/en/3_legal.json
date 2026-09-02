@@ -5,7 +5,7 @@
     "sections": [
       {
         "heading": "1. Service Provider",
-        "content": "SIA HA Group\nRegistration number: 40203724866\nVAT payer: LV40203724866\nEmail: info@hagroup.lv\n\nSIA HA Group operates this website (\"HA Group\", \"we\", \"us\")."
+        "content": "SIA HA Group\nRegistration number: 40203724866\nVAT payer: LV40203724866\nEmail: info@hagroup.lv\nRegistered office: Valdeķu iela 1, Rīga, LV-1058, Latvia\n\nSIA HA Group operates this website (\"HA Group\", \"we\", \"us\")."
       },
       {
         "heading": "2. Scope and Acceptance",
@@ -63,7 +63,7 @@
     "sections": [
       {
         "heading": "1. Data Controller",
-        "content": "SIA HA Group\nRegistration number: 40203724866\nVAT payer: LV40203724866\nEmail: info@hagroup.lv\n\nSIA HA Group is the controller of personal data processed through this website."
+        "content": "SIA HA Group\nRegistration number: 40203724866\nVAT payer: LV40203724866\nEmail: info@hagroup.lv\nRegistered office: Valdeķu iela 1, Rīga, LV-1058, Latvia\n\nSIA HA Group is the controller of personal data processed through this website."
       },
       {
         "heading": "2. Scope and Sources",
@@ -83,7 +83,7 @@
       },
       {
         "heading": "6. Recipients and Service Providers",
-        "content": "Access is limited to authorized HA Group personnel who need the data for the relevant purpose. We use Google Firebase / Cloud Firestore to receive and store form submissions and limited storage-notice acknowledgement records, and Amazon Web Services (including S3 and CloudFront) to host and deliver the website. These providers process data on our behalf under contractual and security obligations. Data may also be disclosed to professional advisers, courts, regulators, law-enforcement bodies, or other authorities where necessary and lawful. We do not sell personal data or share it with advertisers."
+        "content": "Access is limited to authorised HA Group personnel who need the data for the relevant purpose. We use the following processors on our behalf, under contractual and security obligations:\n\n• Google Firebase / Cloud Firestore — receives and stores form submissions and storage-notice acknowledgements.\n• Google Cloud Functions (europe-north1) — runs the code that turns a submission into a notification message.\n• Google Cloud Secret Manager — holds the credentials that code uses.\n• Gmail (Google) — delivers each submission to our own mailbox as an email. Your message and contact details travel through Google's mail infrastructure.\n• Amazon Web Services (S3 and CloudFront) — hosts and delivers the website.\n• Google Fonts and the Iconify CDN — serve the fonts and icons this page uses. Your browser requests these files directly, so your IP address and browser details reach those services when a page loads.\n\nData may also be disclosed to professional advisers, courts, regulators, law-enforcement bodies or other authorities where necessary and lawful. We do not sell personal data or share it with advertisers."
       },
       {
         "heading": "7. International Transfers",
@@ -121,7 +121,7 @@
     "sections": [
       {
         "heading": "1. Scope",
-        "content": "Website operator:\nSIA HA Group\nRegistration number: 40203724866\nVAT payer: LV40203724866\nEmail: info@hagroup.lv\n\nThis policy explains cookies and similar browser-storage technologies used on hagroup.lv. The current website uses first-party local storage rather than advertising or analytics cookies. Local storage keeps small values in your browser and, like cookies, can be removed through your browser settings."
+        "content": "Website operator:\nSIA HA Group\nRegistration number: 40203724866\nVAT payer: LV40203724866\nEmail: info@hagroup.lv\nRegistered office: Valdeķu iela 1, Rīga, LV-1058, Latvia\n\nThis policy explains cookies and similar browser-storage technologies used on hagroup.lv. The current website uses first-party local storage rather than advertising or analytics cookies. Local storage keeps small values in your browser and, like cookies, can be removed through your browser settings."
       },
       {
         "heading": "2. Storage We Use",

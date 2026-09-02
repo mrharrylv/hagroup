@@ -64,7 +64,9 @@
       "submitting": "Sending…",
       "successMessage": "Thank you! Your request has been received. We'll get back to you shortly.",
       "errorMessage": "Something went wrong. Please try again or contact us directly via email.",
-      "rateLimitMessage": "Please wait {{seconds}} seconds before submitting again."
+      "rateLimitMessage": "Please wait {{count}} seconds before submitting again.",
+      "rateLimitMessage_one": "Please wait {{count}} second before submitting again.",
+      "rateLimitMessage_other": "Please wait {{count}} seconds before submitting again."
     },
     "orWhatsApp": "or message us directly",
     "whatsAppCta": "Chat on WhatsApp"
@@ -94,6 +96,14 @@
       "terms": "Terms & Conditions",
       "privacy": "Privacy Policy",
       "cookies": "Cookie Policy"
+    },
+    "group": {
+      "title": "HA Group brands",
+      "brands": {
+        "harent": "— car rental in Rīga",
+        "iepako": "— packaging materials",
+        "alwaysup": "— websites for small businesses"
+      }
     },
     "copyright": "© 2026 HA Group. All rights reserved.",
     "status": "All systems operational"
@@ -126,7 +136,9 @@
       "responseTime": "Response Time",
       "successMessage": "Thank you! Your application has been submitted. We'll review it and respond within 5 business days.",
       "errorMessage": "Something went wrong. Please try again or contact us directly via email.",
-      "rateLimitMessage": "Please wait {{seconds}} seconds before submitting again.",
+      "rateLimitMessage": "Please wait {{count}} seconds before submitting again.",
+      "rateLimitMessage_one": "Please wait {{count}} second before submitting again.",
+      "rateLimitMessage_other": "Please wait {{count}} seconds before submitting again.",
       "submitting": "Submitting…",
       "fields": {
         "fullName": "Full Name",
@@ -260,9 +272,10 @@
       "regNumberValue": "40203724866",
       "vatNumber": "VAT Payer",
       "vatNumberValue": "LV40203724866",
+      "address": "Registered Office",
+      "addressValue": "Valdeķu iela 1, Rīga, LV-1058, Latvia",
       "email": "Email",
-      "emailValue": "info@hagroup.lv",
-      "bankLabel": "Bank"
+      "emailValue": "info@hagroup.lv"
     }
   },
   "legal": {

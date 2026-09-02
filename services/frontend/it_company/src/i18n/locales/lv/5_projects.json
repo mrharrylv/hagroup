@@ -186,7 +186,7 @@
   {
     "id": "confidential-infrastructure-modernization",
     "title": "Globālās infrastruktūras modernizācija (NDA)",
-    "description": "Četru mēnešu laikā vadīta liela starptautiska uzņēmuma infrastruktūras modernizācijas programma, ievērojot NDA. Izstrādāta atkārtoti izmantojama Terraform IaC platforma un Azure DevOps ieviešanas modelis, automatizēta vairāku vižu izvietošana ASV, koordinēta datu migrācija un produkcijas vides pārslēgšana, uzlabota drošība un slepeno vērtību pārvaldība, bet pēc tam tāds pats darbības modelis ieviests Eiropā.",
+    "description": "Četru mēnešu laikā vadīta liela starptautiska uzņēmuma infrastruktūras modernizācijas programma, ievērojot NDA. Izstrādāta atkārtoti izmantojama Terraform IaC platforma un Azure DevOps ieviešanas modelis, automatizēta izvietošana vairākās vidēs ASV, koordinēta datu migrācija un produkcijas vides pārslēgšana, uzlabota drošība un slepeno vērtību pārvaldība, bet pēc tam tāds pats darbības modelis ieviests Eiropā.",
     "image": "",
     "website": "",
     "caseStudyPath": "/projects/confidential-infrastructure-modernization",
@@ -212,7 +212,7 @@
       "Jira"
     ],
     "highlights": [
-      "Definēta mērķa arhitektūra un atkārtoti izmantojami Terraform moduļi pilnībā automatizētai un vienveidīgai vairāku vižu izveidei",
+      "Definēta mērķa arhitektūra un atkārtoti izmantojami Terraform moduļi pilnībā automatizētai un vienveidīgai izveidei vairākās vidēs",
       "Izveidoti Azure DevOps piegādes konveijeri ar koplietojamām veidnēm, izolētiem stāvokļa failiem, validācijas posmiem, apstiprinājumiem un kontrolētu virzību starp vidēm",
       "Vadīta ieviešana ASV, ietverot testa migrācijas, datu pārbaudi, koordinētu produkcijas vides pārslēgšanu un pārbaudes pēc tās",
       "Uzlabota drošība ar centrmezgla un atzaru topoloģiju, tīkla segmentāciju, mazāko privilēģiju principu, Key Vault integrāciju un slepeno vērtību regulāras maiņas praksi",

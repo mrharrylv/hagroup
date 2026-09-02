@@ -55,16 +55,19 @@
       "projectDetails": "Projekta apraksts",
       "placeholder": {
         "name": "Jānis Bērziņš",
-        "company": "Acme SIA",
+        "company": "SIA Acme",
         "email": "janis@acme.lv",
         "message": "Pastāstiet par savu esošo situāciju, izaicinājumiem un mērķiem..."
       },
-      "privacyConsent": "Esmu iepazinies ar <privacy>Privātuma politiku</privacy> un saprotu, ka mani dati tiks izmantoti, lai atbildētu uz šo pieprasījumu.",
+      "privacyConsent": "Piekrītu <privacy>Privātuma politikai</privacy> un saprotu, ka mani dati tiks izmantoti, lai atbildētu uz šo pieprasījumu.",
       "submit": "Nosūtīt pieprasījumu",
       "submitting": "Nosūtīšana…",
       "successMessage": "Paldies! Jūsu pieprasījums ir saņemts. Mēs ar jums sazināsimies tuvākajā laikā.",
       "errorMessage": "Radās kļūda. Lūdzu, mēģiniet vēlreiz vai sazinieties ar mums tieši pa e-pastu.",
-      "rateLimitMessage": "Lūdzu, nogaidiet {{seconds}} sekundes pirms atkārtotas iesniegšanas."
+      "rateLimitMessage": "Lūdzu, nogaidiet {{count}} sekundes pirms atkārtotas iesniegšanas.",
+      "rateLimitMessage_zero": "Lūdzu, nogaidiet {{count}} sekunžu pirms atkārtotas iesniegšanas.",
+      "rateLimitMessage_one": "Lūdzu, nogaidiet {{count}} sekundi pirms atkārtotas iesniegšanas.",
+      "rateLimitMessage_other": "Lūdzu, nogaidiet {{count}} sekundes pirms atkārtotas iesniegšanas."
     },
     "orWhatsApp": "vai rakstiet mums tieši",
     "whatsAppCta": "Rakstīt WhatsApp"
@@ -108,12 +111,12 @@
   },
   "cookie": {
     "title": "Nepieciešamā vietnes krātuve",
-    "description": "Mēs izmantojam tikai nepieciešamo pārlūka krātuvi, lai saglabātu jūsu valodas un krāsu režīma izvēli, atcerētos, ka esat iepazinies ar šo paziņojumu, un novērstu pārāk biežu formu iesniegšanu. Kad nospiežat “Sapratu”, Firebase datubāzē līdz 12 mēnešiem saglabājam ierobežotu apliecinājuma ierakstu. Mēs neizmantojam analītikas, reklāmas vai izsekošanas sīkdatnes. Plašāka informācija pieejama mūsu <cookie>Sīkdatņu politikā</cookie>.",
+    "description": "Mēs izmantojam tikai nepieciešamo pārlūka krātuvi, lai saglabātu jūsu valodas un krāsu režīma izvēli, atcerētos, ka šis paziņojums jums jau ir parādīts, un novērstu pārāk biežu formu iesniegšanu. Kad nospiežat “Sapratu”, Firebase datubāzē līdz 12 mēnešiem saglabājam ierobežotu apliecinājuma ierakstu. Mēs neizmantojam analītikas, reklāmas vai izsekošanas sīkdatnes. Plašāka informācija pieejama mūsu <cookie>Sīkdatņu politikā</cookie>.",
     "acknowledge": "Sapratu",
     "recording": "Saglabāšana…",
     "recordError": "Neizdevās saglabāt apliecinājumu. Lūdzu, mēģiniet vēlreiz.",
     "manageButton": "Atkārtoti skatīt paziņojumu",
-    "manageDescription": "Šo paziņojumu varat atvērt atkārtoti, bet saglabātos iestatījumus jebkurā laikā varat dzēst pārlūkā."
+    "manageDescription": "Šo paziņojumu varat atvērt atkārtoti, un saglabātos iestatījumus jebkurā laikā varat dzēst pārlūkā."
   },
   "whatsapp": {
     "tooltip": "Rakstīt mums WhatsApp",
@@ -134,7 +137,10 @@
       "responseTime": "Atbildes laiks",
       "successMessage": "Paldies! Jūsu pieteikums ir iesniegts. Mēs to izskatīsim un atbildēsim 5 darba dienu laikā.",
       "errorMessage": "Radās kļūda. Lūdzu, mēģiniet vēlreiz vai sazinieties ar mums pa e-pastu.",
-      "rateLimitMessage": "Lūdzu, nogaidiet {{seconds}} sekundes pirms atkārtotas iesniegšanas.",
+      "rateLimitMessage": "Lūdzu, nogaidiet {{count}} sekundes pirms atkārtotas iesniegšanas.",
+      "rateLimitMessage_zero": "Lūdzu, nogaidiet {{count}} sekunžu pirms atkārtotas iesniegšanas.",
+      "rateLimitMessage_one": "Lūdzu, nogaidiet {{count}} sekundi pirms atkārtotas iesniegšanas.",
+      "rateLimitMessage_other": "Lūdzu, nogaidiet {{count}} sekundes pirms atkārtotas iesniegšanas.",
       "submitting": "Notiek iesniegšana…",
       "fields": {
         "fullName": "Vārds, uzvārds",
@@ -147,7 +153,7 @@
         "resume": "CV",
         "resumeHint": "PDF, DOC vai DOCX — maksimums 5 MB",
         "coverLetter": "Motivācijas vēstule / ziņa",
-        "privacyConsent": "Esmu iepazinies ar <privacy>Privātuma politiku</privacy> un saprotu, ka mani dati tiks apstrādāti personāla atlases nolūkos.",
+        "privacyConsent": "Piekrītu <privacy>Privātuma politikai</privacy> un saprotu, ka mani dati tiks apstrādāti personāla atlases nolūkos.",
         "submit": "Iesniegt pieteikumu"
       },
       "placeholder": {

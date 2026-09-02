@@ -15,7 +15,7 @@
     "badge": "Mūsdienīgi IT risinājumi augošiem uzņēmumiem",
     "titleLine1": "Tehnoloģijas, kas veicina",
     "titleLine2": "uzņēmumu izaugsmi.",
-    "description": "Praktiski mākoņrisinājumi, DevOps un pielāgota programmatūra, kas palīdz mazajiem un vidējiem uzņēmumiem augt droši, efektīvi un pārliecinoši.",
+    "description": "Praktiski mākoņrisinājumi, DevOps un pielāgota programmatūra, kas palīdz jūsu uzņēmumam attīstīties droši, efektīvi un pārliecinoši.",
     "ctaStart": "Sākt projektu",
     "ctaExplore": "Apskatīt pakalpojumus"
   },
@@ -70,7 +70,7 @@
     "whatsAppCta": "Rakstīt WhatsApp"
   },
   "footer": {
-    "description": "Praktiski mākoņrisinājumi, DevOps un pielāgota programmatūra, kas palīdz mazajiem un vidējiem uzņēmumiem augt droši, efektīvi un pārliecinoši.",
+    "description": "Praktiski mākoņrisinājumi, DevOps un pielāgota programmatūra, kas palīdz jūsu uzņēmumam attīstīties droši, efektīvi un pārliecinoši.",
     "services": {
       "title": "Pakalpojumi",
       "websiteDevelopment": "Mājaslapu izstrāde",
@@ -79,7 +79,7 @@
       "devopsAutomation": "DevOps un automatizācija",
       "itInfrastructure": "IT infrastruktūra",
       "fullCycle": "Pilna cikla izstrāde",
-      "aiIntegration": "Mākslīgā intelekta integrācija",
+      "aiIntegration": "MI integrācija",
       "itConsulting": "IT konsultācijas"
     },
     "company": {

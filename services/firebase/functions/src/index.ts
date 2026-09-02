@@ -64,7 +64,7 @@ export const onContactCreated = onDocumentCreated(
 
     try {
       const info = await getTransporter().sendMail({
-        from: `Cloudie Website <${GMAIL_ADDRESS.value()}>`,
+        from: `HA Group Website <${GMAIL_ADDRESS.value()}>`,
         to: GMAIL_ADDRESS.value(),
         subject: `🟢 New contact: ${fullName}`,
         html,
@@ -112,7 +112,7 @@ export const onCareerApplicationCreated = onDocumentCreated(
 
     try {
       const info = await getTransporter().sendMail({
-        from: `Cloudie Website <${GMAIL_ADDRESS.value()}>`,
+        from: `HA Group Website <${GMAIL_ADDRESS.value()}>`,
         to: GMAIL_ADDRESS.value(),
         subject: `🟣 New application: ${fullName}${position ? ` — ${position}` : ''}`,
         html,

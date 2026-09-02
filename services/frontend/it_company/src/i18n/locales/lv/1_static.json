@@ -274,9 +274,10 @@
       "regNumberValue": "40203724866",
       "vatNumber": "PVN maksātājs",
       "vatNumberValue": "LV40203724866",
+      "address": "Juridiskā adrese",
+      "addressValue": "Valdeķu iela 1, Rīga, LV-1058, Latvija",
       "email": "E-pasts",
-      "emailValue": "info@hagroup.lv",
-      "bankLabel": "Banka"
+      "emailValue": "info@hagroup.lv"
     }
   },
   "legal": {

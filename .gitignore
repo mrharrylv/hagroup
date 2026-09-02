@@ -34,3 +34,7 @@ Thumbs.db
 # Claude Code scratch space and its git worktrees. Never commit these — a
 # worktree committed as a gitlink points at a directory that will not exist.
 .claude/
+
+# node_modules anywhere, including the nested workloads.
+node_modules/
+**/node_modules

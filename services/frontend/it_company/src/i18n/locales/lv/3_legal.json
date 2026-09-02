@@ -21,7 +21,7 @@
       },
       {
         "heading": "5. Formas un saziņa",
-        "content": "Jūs esat atbildīgs par to, lai saziņas vai darba pieteikuma formā norādītā informācija būtu precīza un jums būtu tiesības to sniegt. Formās saņemtos datus apstrādājam saskaņā ar Privātuma politiku. Privātuma izvēles rūtiņa apliecina, ka esat iepazinies ar politiku; tā nav vispārēja piekrišana jebkādai datu apstrādei. Brīvā teksta laukos neiekļaujiet konfidenciālus, īpašu kategoriju vai citus nevajadzīgus personas datus."
+        "content": "Jūsu pienākums ir nodrošināt, lai saziņas vai darba pieteikuma formā norādītā informācija būtu precīza un jums būtu tiesības to sniegt. Formās saņemtos datus apstrādājam saskaņā ar Privātuma politiku. Privātuma izvēles rūtiņa apliecina, ka esat iepazinies ar politiku; tā nav vispārēja piekrišana jebkādai datu apstrādei. Brīvā teksta laukos neiekļaujiet konfidenciālus personas datus, īpašu kategoriju personas datus vai citu pieprasījumam nevajadzīgu personisko informāciju."
       },
       {
         "heading": "6. Intelektuālais īpašums",
@@ -33,11 +33,11 @@
       },
       {
         "heading": "8. Informācijas precizitāte un pieejamība",
-        "content": "Mēs saprātīgi rūpējamies, lai tīmekļvietnes informācija būtu noderīga un aktuāla, tomēr vispārīgie pakalpojumu apraksti, projektu piemēri, termiņi, budžeta diapazoni un rezultāti ir ilustratīvi un nav garantija vai solījums sasniegt identisku rezultātu. Tīmekļvietne reizēm var nebūt pieejama, tajā var būt kļūdas, un tās saturs vai funkcijas var tikt mainītas, apturētas vai pārtrauktas."
+        "content": "Mēs veicam saprātīgus pasākumus, lai tīmekļvietnes informācija būtu noderīga un aktuāla, tomēr vispārīgie pakalpojumu apraksti, projektu piemēri, termiņi, budžeta diapazoni un rezultāti ir ilustratīvi un negarantē identisku rezultātu. Tīmekļvietne reizēm var nebūt pieejama, tajā var būt kļūdas, un tās saturs vai funkcijas var tikt mainītas, apturētas vai pārtrauktas."
       },
       {
         "heading": "9. Atbildība par tīmekļvietnes lietošanu",
-        "content": "Maksimālajā piemērojamo tiesību aktu atļautajā apmērā HA Group neatbild par netiešiem vai izrietošiem zaudējumiem, kas radušies tikai tādēļ, ka šī informatīvā tīmekļvietne izmantota, nav bijusi pieejama vai uz tās informāciju ir paļāvies lietotājs. Nekas šajos noteikumos neizslēdz un neierobežo atbildību, ko saskaņā ar imperatīvajām tiesību normām izslēgt vai ierobežot nedrīkst, tostarp atbildību par krāpšanu vai tīšu pārkāpumu un obligātās patērētāju tiesības. Atbildību par maksas pakalpojumiem nosaka attiecīgais pakalpojumu līgums."
+        "content": "Ciktāl to pieļauj piemērojamie tiesību akti, HA Group neatbild par netiešiem vai izrietošiem zaudējumiem, kas radušies tikai šīs informatīvās tīmekļvietnes lietošanas, nepieejamības vai paļaušanās uz tajā sniegto informāciju dēļ. Nekas šajos noteikumos neizslēdz un neierobežo atbildību, ko saskaņā ar imperatīvajām tiesību normām izslēgt vai ierobežot nedrīkst, tostarp atbildību par krāpšanu, tīšu pārkāpumu vai obligāto patērētāju tiesību aizsardzības noteikumu pārkāpumu. Atbildību par maksas pakalpojumiem nosaka attiecīgais pakalpojumu līgums."
       },
       {
         "heading": "10. Privātums un pārlūka krātuve",
@@ -79,7 +79,7 @@
       },
       {
         "heading": "5. Obligātā un neobligātā informācija",
-        "content": "Lauki, kas atzīmēti kā obligāti, ir vajadzīgi, lai identificētu jūsu pieprasījumu, atbildētu un saprastu jautājuma būtību. Bez tiem formu nevaram apstrādāt. Pārējie lauki nav obligāti. Lūdzu, neiesniedziet īpašu kategoriju datus (piemēram, veselības, biometriskos, politiskos, reliģiskos vai arodbiedrību datus) vai citu informāciju, kas nav vajadzīga jūsu pieprasījumam vai pieteikumam."
+        "content": "Lauki, kas atzīmēti kā obligāti, ir vajadzīgi, lai identificētu jūsu pieprasījumu, atbildētu uz to un saprastu jautājuma būtību. Bez tiem formu nevaram apstrādāt. Pārējie lauki nav obligāti. Lūdzu, neiesniedziet īpašu kategoriju personas datus (piemēram, veselības, biometriskos, politiskos, reliģiskos vai ar dalību arodbiedrībā saistītus datus) vai citu informāciju, kas nav vajadzīga jūsu pieprasījumam vai pieteikumam."
       },
       {
         "heading": "6. Datu saņēmēji un pakalpojumu sniedzēji",
@@ -95,7 +95,7 @@
       },
       {
         "heading": "9. Drošība",
-        "content": "Mēs piemērojam atbilstošus tehniskus un organizatoriskus pasākumus personas datu aizsardzībai, tostarp piekļuves kontroli, šifrētus savienojumus, pakalpojumu sniedzēju drošības kontroles un piekļuves ierobežošanu atbilstoši mērķim. Nevienai datu pārraidei internetā vai glabāšanas sistēmai nav iespējams garantēt pilnīgu drošību."
+        "content": "Mēs piemērojam atbilstošus tehniskus un organizatoriskus pasākumus personas datu aizsardzībai, tostarp piekļuves kontroli, šifrētus savienojumus, pakalpojumu sniedzēju ieviestos drošības pasākumus un piekļuves ierobežošanu atbilstoši apstrādes mērķim. Nevienai datu pārraidei internetā vai glabāšanas sistēmai nav iespējams garantēt pilnīgu drošību."
       },
       {
         "heading": "10. Jūsu tiesības saskaņā ar VDAR",
@@ -107,7 +107,7 @@
       },
       {
         "heading": "12. Automatizēti lēmumi un bērni",
-        "content": "Mēs neizmantojam tīmekļvietnes datus tikai automatizētu lēmumu pieņemšanai, kas rada tiesiskas vai līdzīgi būtiskas sekas, un neveicam reklāmas profilēšanu. Tīmekļvietne un tās formas ir paredzētas uzņēmumu kontaktpersonām un darba pretendentiem, nevis bērniem."
+        "content": "Mēs neizmantojam tīmekļvietnes datus tādu lēmumu pieņemšanai, kuru pamatā ir vienīgi automatizēta apstrāde un kuri rada tiesiskas vai līdzīgi būtiskas sekas, kā arī neveicam reklāmas profilēšanu. Tīmekļvietne un tās formas ir paredzētas uzņēmumu kontaktpersonām un darba pretendentiem, nevis bērniem."
       },
       {
         "heading": "13. Politikas izmaiņas",
@@ -145,7 +145,7 @@
       },
       {
         "heading": "7. Pakalpojumu sniedzēji un citi dati",
-        "content": "Tīmekļvietne apzināti neizvieto trešo personu sīkdatnes. Nospiežot “Sapratu”, Google Firebase / Cloud Firestore saņem ierakstu, kurā ir tikai ieraksta veids, izvēle izmantot nepieciešamo krātuvi, paziņojuma versija, saskarnes valoda, servera izveides laiks un dzēšanas termiņa laiks. Firestore dokumenta identifikators tiek saglabāts pārlūkā kā apliecinājuma atsauce. Ierakstā nav jūsu vārda, e-pasta adreses, pārlūka identifikācijas virknes, lapas URL vai pastāvīga apmeklētāja identifikatora. Firebase un mūsu mitināšanas pakalpojumu sniedzēji joprojām var apstrādāt parastos savienojuma datus, kā aprakstīts Privātuma politikā. Uz ārējām saitēm attiecas attiecīgo tīmekļvietņu sīkdatņu un privātuma politikas."
+        "content": "Tīmekļvietne apzināti neizvieto trešo personu sīkdatnes. Nospiežot “Sapratu”, Google Firebase / Cloud Firestore saņem ierakstu, kurā ir tikai ieraksta veids, izvēle izmantot nepieciešamo krātuvi, paziņojuma versija, saskarnes valoda, servera izveides laiks un dzēšanas termiņa laiks. Firestore dokumenta identifikators tiek saglabāts pārlūkā kā apliecinājuma atsauce. Ierakstā nav jūsu vārda, e-pasta adreses, pārlūka identifikācijas virknes, lapas URL vai pastāvīga apmeklētāja identifikatora. Firebase un mūsu mitināšanas pakalpojumu sniedzēji joprojām var apstrādāt parastos savienojuma datus, kā aprakstīts Privātuma politikā. Ārējo tīmekļvietņu lietošanu regulē to sīkdatņu un privātuma politikas."
       },
       {
         "heading": "8. Izmaiņas un kontakti",

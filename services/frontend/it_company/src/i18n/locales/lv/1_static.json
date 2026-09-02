@@ -2,7 +2,7 @@
   "nav": {
     "services": "Pakalpojumi",
     "work": "Projekti",
-    "ourWork": "Mūsu darbi",
+    "ourWork": "Mūsu projekti",
     "company": "Uzņēmums",
     "contactUs": "Sazināties",
     "bookConsultation": "Pieteikt konsultāciju",
@@ -13,14 +13,14 @@
   },
   "hero": {
     "badge": "Mūsdienīgi IT risinājumi augošiem uzņēmumiem",
-    "titleLine1": "Tehnoloģijas, kas attīsta",
-    "titleLine2": "uzņēmumus.",
+    "titleLine1": "Tehnoloģijas, kas veicina",
+    "titleLine2": "uzņēmumu izaugsmi.",
     "description": "Praktiski mākoņrisinājumi, DevOps un pielāgota programmatūra, kas palīdz mazajiem un vidējiem uzņēmumiem augt droši, efektīvi un pārliecinoši.",
     "ctaStart": "Sākt projektu",
     "ctaExplore": "Apskatīt pakalpojumus"
   },
   "techStack": {
-    "label": "Balstīts uz uzticamām nozares tehnoloģijām",
+    "label": "Izmantojam uzticamas, nozarē atzītas tehnoloģijas",
     "more": "un vēl…"
   },
   "services": {
@@ -29,7 +29,7 @@
     "learnMore": "Uzzināt vairāk",
     "backHome": "Atpakaļ uz sākumu",
     "ctaTitle": "Nepieciešams risinājums tieši jūsu uzņēmumam?",
-    "ctaText": "Apspriedīsim jūsu mērķus un izveidosim risinājumu, kas atbilst jūsu uzņēmuma izmēram, budžetam un attīstības plāniem."
+    "ctaText": "Apspriedīsim jūsu mērķus un izveidosim risinājumu, kas atbilst jūsu uzņēmuma darbības apjomam, budžetam un attīstības plāniem."
   },
   "methodology": {
     "title": "Kā mēs strādājam"
@@ -37,11 +37,11 @@
   "work": {
     "titlePrefix": "Mūsu",
     "titleAccent": "projekti",
-    "subtitle": "Praktiski risinājumi ambicioziem mazajiem un vidējiem uzņēmumiem — iepazīstieties ar mūsu portfolio.",
+    "subtitle": "Praktiski risinājumi ambicioziem mazajiem un vidējiem uzņēmumiem — iepazīstieties ar mūsu projektu klāstu.",
     "viewAll": "Skatīt visus projektus"
   },
   "contact": {
-    "title": "Parunāsim par jūsu tehnoloģiju mērķiem.",
+    "title": "Pārrunāsim jūsu tehnoloģiju mērķus.",
     "subtitle": "Neatkarīgi no tā, vai plānojat pāreju uz mākoni, pielāgotas sistēmas izstrādi vai esošās infrastruktūras uzlabošanu, mēs palīdzēsim.",
     "email": "E-pasts",
     "phone": "Tālrunis",
@@ -51,7 +51,7 @@
       "company": "Uzņēmums",
       "workEmail": "Darba e-pasts",
       "projectBudget": "Projekta budžets",
-      "selectRange": "Izvēlieties diapazonu",
+      "selectRange": "Izvēlieties budžeta diapazonu",
       "projectDetails": "Projekta apraksts",
       "placeholder": {
         "name": "Jānis Bērziņš",
@@ -64,7 +64,7 @@
       "submitting": "Nosūtīšana…",
       "successMessage": "Paldies! Jūsu pieprasījums ir saņemts. Mēs ar jums sazināsimies tuvākajā laikā.",
       "errorMessage": "Radās kļūda. Lūdzu, mēģiniet vēlreiz vai sazinieties ar mums tieši pa e-pastu.",
-      "rateLimitMessage": "Lūdzu, uzgaidiet {{seconds}} s pirms atkārtotas iesniegšanas."
+      "rateLimitMessage": "Lūdzu, nogaidiet {{seconds}} sekundes pirms atkārtotas iesniegšanas."
     },
     "orWhatsApp": "vai rakstiet mums tieši",
     "whatsAppCta": "Rakstīt WhatsApp"
@@ -100,12 +100,12 @@
   },
   "cookie": {
     "title": "Nepieciešamā vietnes krātuve",
-    "description": "Mēs izmantojam tikai nepieciešamo pārlūka krātuvi, lai atcerētos valodu un krāsu režīmu, jūsu iepazīšanos ar šo paziņojumu un novērstu ātru atkārtotu formu iesniegšanu. Nospiežot “Sapratu”, mēs Firebase līdz 12 mēnešiem saglabājam ierobežotu apliecinājuma ierakstu. Mēs neizmantojam analītikas, reklāmas vai izsekošanas sīkdatnes. Plašāka informācija ir mūsu <cookie>Sīkdatņu politikā</cookie>.",
+    "description": "Mēs izmantojam tikai nepieciešamo pārlūka krātuvi, lai saglabātu jūsu valodas un krāsu režīma izvēli, atcerētos, ka esat iepazinies ar šo paziņojumu, un novērstu pārāk biežu formu iesniegšanu. Kad nospiežat “Sapratu”, Firebase datubāzē līdz 12 mēnešiem saglabājam ierobežotu apliecinājuma ierakstu. Mēs neizmantojam analītikas, reklāmas vai izsekošanas sīkdatnes. Plašāka informācija pieejama mūsu <cookie>Sīkdatņu politikā</cookie>.",
     "acknowledge": "Sapratu",
-    "recording": "Saglabā…",
+    "recording": "Saglabāšana…",
     "recordError": "Neizdevās saglabāt apliecinājumu. Lūdzu, mēģiniet vēlreiz.",
     "manageButton": "Atkārtoti skatīt paziņojumu",
-    "manageDescription": "Paziņojumu varat skatīt atkārtoti, bet saglabātos iestatījumus jebkurā laikā varat dzēst pārlūkā."
+    "manageDescription": "Šo paziņojumu varat atvērt atkārtoti, bet saglabātos iestatījumus jebkurā laikā varat dzēst pārlūkā."
   },
   "whatsapp": {
     "tooltip": "Rakstīt mums WhatsApp",
@@ -118,7 +118,7 @@
   },
   "careers": {
     "backHome": "Atpakaļ uz sākumu",
-    "badge": "Mēs meklējam",
+    "badge": "Meklējam kolēģus",
     "applyNow": "Pieteikties",
     "form": {
       "hrEmail": "Personāla atlases e-pasts",
@@ -126,16 +126,16 @@
       "responseTime": "Atbildes laiks",
       "successMessage": "Paldies! Jūsu pieteikums ir iesniegts. Mēs to izskatīsim un atbildēsim 5 darba dienu laikā.",
       "errorMessage": "Radās kļūda. Lūdzu, mēģiniet vēlreiz vai sazinieties ar mums pa e-pastu.",
-      "rateLimitMessage": "Lūdzu, uzgaidiet {{seconds}} s pirms atkārtotas iesniegšanas.",
-      "submitting": "Iesniegšana…",
+      "rateLimitMessage": "Lūdzu, nogaidiet {{seconds}} sekundes pirms atkārtotas iesniegšanas.",
+      "submitting": "Notiek iesniegšana…",
       "fields": {
         "fullName": "Vārds, uzvārds",
         "email": "E-pasta adrese",
         "phone": "Tālruņa numurs",
-        "linkedin": "LinkedIn / Portfolio",
+        "linkedin": "LinkedIn / portfolio",
         "position": "Interesējošais amats",
         "selectPosition": "Izvēlieties amatu",
-        "otherPosition": "Cits / vispārīgs pieteikums",
+        "otherPosition": "Cits amats / vispārīgs pieteikums",
         "resume": "CV",
         "resumeHint": "PDF, DOC vai DOCX — maksimums 5 MB",
         "coverLetter": "Motivācijas vēstule / ziņa",
@@ -177,16 +177,16 @@
     "ndaProtected": "Ar NDA aizsargāts projekts",
     "confidentialEventVisual": {
       "title": "No sadrumstalotiem avotiem līdz kopīgam lēmumam",
-      "subtitle": "Konfidencialitāti saglabājošs ieskats izveidotajā datu, MI, meklēšanas un sadarbības arhitektūrā, neatklājot klienta identitāti.",
+      "subtitle": "Ieskats izveidotajā datu, MI, meklēšanas un sadarbības arhitektūrā, saglabājot klienta konfidencialitāti.",
       "sourceLabel": "Integrētā avotu ekosistēma",
       "ticketing": "Biļešu un kino platformas",
       "venues": "Norises vietas un kultūras iestādes",
       "municipalities": "Pašvaldību pasākumu kalendāri",
-      "pipelineLabel": "Viedais pasākumu datu process",
+      "pipelineLabel": "Viedā pasākumu datu plūsma",
       "ingestionTitle": "Python datu ieguve",
-      "ingestionText": "Avotu adapteri un plānoti parseri apvieno vairāk nekā 20 publiskus avotus.",
+      "ingestionText": "Avotu adapteri un pēc grafika darbināti parsētāji normalizē datus no vairāk nekā 20 publiskiem avotiem.",
       "aiTitle": "MI datu izvilkšana",
-      "aiText": "Crawl4AI un LLM procesi strukturē dinamiskas un nevienmērīgas lapas.",
+      "aiText": "Crawl4AI un LLM procesi strukturē datus no dinamiskām un atšķirīgi veidotām lapām.",
       "discoveryTitle": "Kategorizēšana un meklēšana",
       "discoveryText": "Kategorijas, daudzvalodu atslēgvārdi, pārbaude, meklēšana un kartes.",
       "collaborationTitle": "Plānošana vairākiem dalībniekiem",
@@ -198,16 +198,16 @@
     "confidentialVisual": {
       "title": "Automatizēts vairāku reģionu piegādes modelis",
       "subtitle": "Atkārtoti izmantojama infrastruktūras platforma kontrolētai ieviešanai, migrācijai un pārslēgšanai ASV un Eiropas vidēs.",
-      "controlPlane": "Atkārtoti izmantojami moduļi, kontrolēti piegādes konveijeri, izolēti stāvokļa faili, validācija un pārvaldīta virzība starp vidēm",
+      "controlPlane": "Atkārtoti izmantojami moduļi, kontrolēti piegādes procesi, izolēti stāvokļa faili, pārbaudes un pārvaldīta virzība starp vidēm",
       "usRegion": "Ieviešana Amerikas Savienotajās Valstīs",
       "euRegion": "Ieviešana Eiropā",
       "regionalDelivery": "Azure centrmezgla un atzaru vides",
       "hub": "Centrmezgla tīkls",
-      "securityTitle": "Drošība un noslēpumi",
-      "securityText": "Mazāko privilēģiju princips, tīkla segmentācija, Key Vault integrācija un pārvaldīta noslēpumu rotācija.",
-      "migrationTitle": "Migrācija un pārslēgšana",
-      "migrationText": "Izmēģinājumi, datu validācija, koordinētas pārslēgšanas un pārbaudes pēc pārslēgšanas.",
-      "governanceTitle": "Piegādes pārvaldība",
+      "securityTitle": "Drošība un slepenās vērtības",
+      "securityText": "Mazāko privilēģiju princips, tīkla segmentācija, Key Vault integrācija un pārvaldīta slepeno vērtību maiņa.",
+      "migrationTitle": "Migrācija un pāreja",
+      "migrationText": "Testa migrācijas, datu pārbaude, koordinēta pāreja un pārbaudes pēc tās.",
+      "governanceTitle": "Projekta īstenošanas pārvaldība",
       "governanceText": "Jira plānošana, risku un lēmumu uzskaite, klienta demonstrācijas, dokumentācija un zināšanu nodošana."
     }
   },
@@ -228,7 +228,7 @@
       "transparency": {
         "icon": "solar:shield-check-linear",
         "title": "Pārredzamība",
-        "text": "Atklāta komunikācija, godīgi nosacījumi un praktiski risinājumi."
+        "text": "Atklāta saziņa, reālistiskas gaidas un praktiski risinājumi."
       },
       "excellence": {
         "icon": "solar:star-linear",
@@ -238,7 +238,7 @@
       "innovation": {
         "icon": "solar:lightbulb-linear",
         "title": "Inovācijas",
-        "text": "Mūsdienīgu rīku izmantošana efektīvu un nākotnei gatavu sistēmu izveidei."
+        "text": "Pārdomāta mūsdienīgu rīku izmantošana efektīvu un ilgtspējīgi attīstāmu sistēmu izveidei."
       },
       "partnership": {
         "icon": "solar:hand-shake-linear",
@@ -284,7 +284,7 @@
       "Šosejas sacīkšu braucējiem, kuri meklē gaidāmos pasākumus un reģistrācijas saites",
       "Līdzjutējiem un skatītājiem, kuri vēlas zināt, kas un kur notiek",
       "Organizatoriem, kuri vēlas neitrālu un uzticamu pasākumu publicitāti",
-      "Satura veidotājiem, kuri palīdz uzturēt kalendāru aktuālu un precīzu"
+      "Satura iesniedzējiem, kuri palīdz uzturēt kalendāru aktuālu un precīzu"
     ],
     "featuresTitle": "Ko lietotāji var darīt",
     "features": [
@@ -296,7 +296,7 @@
     ],
     "trustTitle": "Kvalitāte un uzticamība",
     "trustPoints": [
-      "Satura veidotāji var iesniegt pasākumus un sekot to apstiprināšanas statusam",
+      "Satura iesniedzēji var pievienot pasākumus un sekot to apstiprināšanas statusam",
       "Moderatori pārbauda un apstiprina iesniegumus pirms publicēšanas",
       "Organizatoru administratori var pārvaldīt savus pasākumus",
       "Moderācijas lēmumi tiek reģistrēti pārskatāmības nodrošināšanai"

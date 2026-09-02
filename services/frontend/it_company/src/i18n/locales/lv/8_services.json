@@ -63,17 +63,17 @@
       "title": "Mājaslapu izstrāde",
       "subtitle": "Individuāli veidotas, augstas veiktspējas mājaslapas, kas stiprina jūsu zīmolu, piesaista apmeklētājus un veicina konversijas — no uzņēmumu vietnēm līdz sarežģītiem tīmekļa portāliem.",
       "overviewTitle": "Mājaslapas, kas sniedz rezultātus",
-      "overviewText": "Mēs veidojam modernas un responsīvas mājaslapas, kas pielāgotas jūsu zīmolam un uzņēmējdarbības mērķiem. Katra vietne tiek optimizēta ātrdarbībai, pieejamībai un redzamībai meklētājprogrammās. Neatkarīgi no tā, vai jums nepieciešama uzņēmuma mērķlapa, e-komercijas platforma vai satura portāls, mūsu komanda nodrošina visu dzīves ciklu — no dizaina līdz izvietošanai un turpmākam atbalstam.",
+      "overviewText": "Mēs veidojam modernas un responsīvas mājaslapas, kas pielāgotas jūsu zīmolam un uzņēmējdarbības mērķiem. Katra vietne tiek optimizēta ātrdarbībai, pieejamībai un redzamībai meklētājprogrammās. Neatkarīgi no tā, vai jums nepieciešama uzņēmuma mājaslapa, e-komercijas platforma vai ar saturu bagāts portāls, mūsu komanda īsteno visu projektu — no dizaina līdz izvietošanai un turpmākam atbalstam.",
       "featuresTitle": "Ko mēs piedāvājam",
       "features": [
         {
           "icon": "solar:palette-linear",
           "title": "Individuāls UI/UX dizains",
-          "description": "Līdz pikselim precīzs dizains, kas atspoguļo jūsu zīmola identitāti un katrā posmā balstās uz lietotāju izpēti un testēšanu."
+          "description": "Rūpīgi izstrādāts dizains, kas atspoguļo jūsu zīmola identitāti un katrā posmā balstās uz lietotāju izpēti un testēšanu."
         },
         {
           "icon": "solar:smartphone-linear",
-          "title": "Atsaucīga izstrāde",
+          "title": "Responsīva izstrāde",
           "description": "Nevainojama lietošanas pieredze datoros, planšetēs un mobilajās ierīcēs, izmantojot modernu CSS un pakāpenisku uzlabošanu."
         },
         {
@@ -89,35 +89,35 @@
         {
           "icon": "solar:shield-check-linear",
           "title": "Pieejamība (WCAG)",
-          "description": "Atbilstība WCAG 2.1 AA prasībām, lai vietni varētu lietot ikviens neatkarīgi no spējām."
+          "description": "Atbilstība WCAG 2.1 AA prasībām, lai vietni ērti varētu lietot cilvēki ar dažādām vajadzībām un iespējām."
         },
         {
           "icon": "solar:refresh-circle-linear",
           "title": "CMS integrācija",
-          "description": "Bezgalvas (headless) CMS vai tradicionālas platformas, kas ļauj jūsu komandai patstāvīgi pārvaldīt saturu."
+          "description": "No lietotāja saskarnes nodalīta (headless) CMS vai tradicionāla platforma, kas ļauj jūsu komandai patstāvīgi pārvaldīt saturu."
         }
       ],
       "processTitle": "Mūsu process",
       "process": [
         {
-          "step": "Solis 01",
+          "step": "1. solis",
           "title": "Izpēte un stratēģija",
           "description": "Jūsu mērķu, auditorijas un konkurentu izpēte projekta apjoma noteikšanai."
         },
         {
-          "step": "Solis 02",
+          "step": "2. solis",
           "title": "Dizains un prototipēšana",
           "description": "Maketi un interaktīvi prototipi, kas tiek pārskatīti un pilnveidoti, ņemot vērā jūsu atsauksmes."
         },
         {
-          "step": "Solis 03",
+          "step": "3. solis",
           "title": "Izstrāde",
-          "description": "Tīrs, uzturams kods, būvēts ar React, Next.js vai jūsu izvēlēto steku."
+          "description": "Tīrs, viegli uzturams kods, kas izstrādāts ar React, Next.js vai jūsu izvēlēto tehnoloģiju kopumu."
         },
         {
-          "step": "Solis 04",
+          "step": "4. solis",
           "title": "Palaišana un atbalsts",
-          "description": "Rūpīga QA, veiktspējas testēšana, izvietošana un pastāvīga apkope."
+          "description": "Rūpīga kvalitātes un veiktspējas pārbaude, izvietošana un turpmāka uzturēšana."
         }
       ],
       "techTitle": "Tehnoloģijas",
@@ -137,15 +137,15 @@
     "systemDevelopment": {
       "icon": "solar:code-square-linear",
       "title": "Sistēmu izstrāde",
-      "subtitle": "Uzņēmumu līmeņa programmatūras sistēmas, API un platformas, kas projektētas uzticamībai, mērogojamībai un vienmērīgai integrācijai.",
+      "subtitle": "Uzņēmumu līmeņa programmatūras sistēmas, API un platformas, kas izstrādātas uzticamai darbībai, mērogojamībai un vienkāršai integrācijai.",
       "overviewTitle": "Uzticamas un mērogojamas sistēmas",
       "overviewText": "No CRM platformām un ERP sistēmām līdz pielāgotiem SaaS produktiem un iekšējiem rīkiem — mēs projektējam un izstrādājam programmatūru sarežģītu uzņēmējdarbības problēmu risināšanai. Sistēmas tiek veidotas augstai pieejamībai, datu integritātei un netraucētai integrācijai ar trešo pušu pakalpojumiem. Mēs izmantojam domēnorientētas projektēšanas principus un veidojam modulāru, testējamu kodu, kas attīstās kopā ar jūsu uzņēmumu.",
       "featuresTitle": "Galvenās kompetences",
       "features": [
         {
           "icon": "solar:code-square-linear",
-          "title": "Full-Stack izstrāde",
-          "description": "Pilna cikla sistēmu izstrāde no saskarnēm līdz servera pakalpojumiem un datubāzēm."
+          "title": "Full-stack izstrāde",
+          "description": "Pilna cikla sistēmu izstrāde no lietotāja saskarnēm līdz serverpuses pakalpojumiem un datubāzēm."
         },
         {
           "icon": "solar:database-linear",
@@ -155,7 +155,7 @@
         {
           "icon": "solar:server-linear",
           "title": "API dizains un integrācija",
-          "description": "RESTful un GraphQL API, kas projektēti veiktspējai, drošībai un izstrādātāju pieredzei."
+          "description": "RESTful un GraphQL API, kas izstrādāti veiktspējai, drošībai un ērtai lietošanai izstrādes procesā."
         },
         {
           "icon": "solar:lock-linear",
@@ -165,7 +165,7 @@
         {
           "icon": "solar:chart-2-linear",
           "title": "Atskaites un analītika",
-          "description": "Iebūvēti informācijas paneļi, datu plūsmas un pielāgojami pārskati, kas sniedz uzņēmējdarbības ieskatus reāllaikā."
+          "description": "Iebūvēti informācijas paneļi, datu apstrādes plūsmas un pielāgojami pārskati aktuālai uzņēmējdarbības analīzei."
         },
         {
           "icon": "solar:widget-linear",
@@ -176,27 +176,27 @@
       "processTitle": "Izstrādes dzīves cikls",
       "process": [
         {
-          "step": "Solis 01",
+          "step": "1. solis",
           "title": "Prasību analīze",
-          "description": "Biznesa procesu, lietotāju stāstu un tehnisko ierobežojumu kartēšana."
+          "description": "Uzņēmuma darbības procesu, lietotājstāstu un tehnisko ierobežojumu apzināšana."
         },
         {
-          "step": "Solis 02",
+          "step": "2. solis",
           "title": "Arhitektūras dizains",
-          "description": "Mikropakalpojumi vai monolīts? Mēs projektējam pareizo arhitektūru jūsu mērogam."
+          "description": "Mikropakalpojumi vai monolīts? Izstrādājam jūsu sistēmas mērogam un vajadzībām piemērotu arhitektūru."
         },
         {
-          "step": "Solis 03",
+          "step": "3. solis",
           "title": "Iteratīva izstrāde",
           "description": "Agile sprinti ar nepārtrauktu integrāciju, testēšanu un regulārām demonstrācijām iesaistītajām pusēm."
         },
         {
-          "step": "Solis 04",
+          "step": "4. solis",
           "title": "Izvietošana un nodošana",
           "description": "Izvietošana ražošanas vidē, dokumentācija, apmācība un pārejas atbalsts."
         }
       ],
-      "techTitle": "Tehnoloģiju steks",
+      "techTitle": "Tehnoloģiju kopa",
       "technologies": [
         { "name": "Node.js", "icon": "logos:nodejs-icon" },
         { "name": "Python", "icon": "logos:python" },
@@ -216,10 +216,10 @@
     },
     "cloudMigration": {
       "icon": "solar:cloud-linear",
-      "title": "Mākoņi un migrācija",
+      "title": "Mākonis un migrācija",
       "subtitle": "Pārdomāta mākoņrisinājumu ieviešana un migrācija uz AWS, Azure vai Google Cloud, optimizējot veiktspēju, drošību un izmaksas.",
       "overviewTitle": "Pareizi izstrādāta mākoņarhitektūra",
-      "overviewText": "Pāreja uz mākoni ir kas vairāk par vienkāršu sistēmu pārvietošanu. Mēs izstrādājam mākoņvidēm paredzētu arhitektūru un migrācijas stratēģijas, kas ļauj pilnvērtīgi izmantot AWS, Azure vai GCP. No sākotnējā novērtējuma un darba slodžu analīzes līdz migrācijai un optimizācijai mēs rūpējamies, lai pāreja būtu droša, vienmērīga un izmaksu ziņā efektīva. Mūsu komanda projektē pamatvidi, tīkla arhitektūru un drošības kontroles, kā arī pastāvīgi optimizē mākoņa izmaksas.",
+      "overviewText": "Pāreja uz mākoni ir kas vairāk par vienkāršu sistēmu pārvietošanu. Mēs izstrādājam mākoņvidēm paredzētu arhitektūru un migrācijas stratēģijas, kas ļauj pilnvērtīgi izmantot AWS, Azure vai GCP. No sākotnējā novērtējuma un darba slodžu analīzes līdz migrācijai un optimizācijai rūpējamies, lai pāreja būtu droša, vienmērīga un izmaksu ziņā efektīva. Mūsu komanda projektē mākoņa pamatvidi (landing zone), tīkla arhitektūru un drošības risinājumus, kā arī pastāvīgi optimizē mākoņa izmaksas.",
       "featuresTitle": "Mākoņpakalpojumi",
       "features": [
         {
@@ -235,16 +235,16 @@
         {
           "icon": "solar:tuning-2-linear",
           "title": "Izmaksu optimizācija",
-          "description": "Rezervētās un spot instances, resursu izmēra optimizācija un automatizēta izmaksu pārvaldība, lai palielinātu ieguldījumu atdevi."
+          "description": "Rezervētie un Spot tipa resursi, atbilstoša resursu apjoma izvēle un automatizēta izmaksu pārvaldība, lai palielinātu ieguldījumu atdevi."
         },
         {
           "icon": "solar:shield-check-linear",
           "title": "Mākoņa drošība",
-          "description": "Nulles uzticēšanās arhitektūra, IAM politikas, šifrēšana un atbilstības ietvari, tostarp SOC 2, VDAR un HIPAA."
+          "description": "Nulles uzticēšanās arhitektūra, IAM politikas, šifrēšana, kā arī atbilstības standarti un ietvari, tostarp SOC 2, VDAR un HIPAA."
         },
         {
           "icon": "solar:server-minimalistic-linear",
-          "title": "Daudzmākoņi un hibrīds",
+          "title": "Daudzmākoņu un hibrīdrisinājumi",
           "description": "Daudzmākoņu stratēģijas un hibrīda arhitektūra, kas samazina atkarību no viena piegādātāja un palielina elastību."
         },
         {
@@ -253,25 +253,25 @@
           "description": "Mākoņa finanšu pārvaldība ar budžetiem, brīdinājumiem, marķēšanas stratēģijām un izmaksu sadales modeļiem."
         }
       ],
-      "processTitle": "Migrācijas fāzes",
+      "processTitle": "Migrācijas posmi",
       "process": [
         {
-          "step": "Fāze 01",
+          "step": "1. posms",
           "title": "Novērtējums",
           "description": "Darba slodžu, atkarību un atbilstības prasību inventarizācija."
         },
         {
-          "step": "Fāze 02",
+          "step": "2. posms",
           "title": "Plānošana",
           "description": "Mērķa arhitektūras, migrācijas viļņu un atcelšanas stratēģiju projektēšana."
         },
         {
-          "step": "Fāze 03",
+          "step": "3. posms",
           "title": "Migrācija",
           "description": "Migrācijas izpilde ar automatizētiem rīkiem, validāciju un pārejas koordinēšanu."
         },
         {
-          "step": "Fāze 04",
+          "step": "4. posms",
           "title": "Optimizācija",
           "description": "Sistēmu pielāgošana pēc migrācijas, izmaksu optimizācija un pastāvīga mākoņvides pārvaldība."
         }
@@ -296,9 +296,9 @@
     "devops": {
       "icon": "solar:server-path-linear",
       "title": "DevOps un automatizācija",
-      "subtitle": "Paātriniet programmatūras piegādi ar CI/CD automatizāciju, infrastruktūru kā kodu, konteineru orķestrēšanu un GitOps labo praksi.",
-      "overviewTitle": "Piegādājiet ātrāk. Piegādājiet drošāk.",
-      "overviewText": "Mūsdienīgai programmatūrai nepieciešami ātri un uzticami laidieni. Mūsu DevOps pakalpojumi uzlabo programmatūras piegādi ar automatizētu CI/CD, konteinerizāciju un infrastruktūru kā kodu. Mēs ieviešam GitOps darbplūsmas, izveidojam visaptverošu uzraudzību un veidojam pašatjaunojošu infrastruktūru, kas automātiski mērogojas. Rezultāts ir ātrāka nonākšana tirgū, mazāk incidentu un efektīvāks izstrādes komandas darbs.",
+      "subtitle": "Paātriniet programmatūras piegādi ar CI/CD automatizāciju, infrastruktūru kā kodu, konteineru orķestrēšanu un GitOps labāko praksi.",
+      "overviewTitle": "Ieviesiet izmaiņas ātrāk un drošāk",
+      "overviewText": "Mūsdienīgai programmatūrai nepieciešami ātri un uzticami laidieni. Mūsu DevOps pakalpojumi uzlabo programmatūras piegādi ar automatizētu CI/CD, konteinerizāciju un infrastruktūru kā kodu. Mēs ieviešam GitOps darbplūsmas, izveidojam visaptverošu uzraudzību un veidojam pašatjaunojošu infrastruktūru, kas automātiski mērogojas. Tādējādi risinājumi ātrāk nonāk tirgū, samazinās incidentu skaits un izstrādes komanda var strādāt efektīvāk.",
       "featuresTitle": "DevOps pakalpojumi",
       "features": [
         {
@@ -319,7 +319,7 @@
         {
           "icon": "solar:monitor-smartphone-linear",
           "title": "Novērojamība un uzraudzība",
-          "description": "Pilna tehnoloģiju steka pārraudzība ar žurnāliem, metriku, trasējumiem un viediem brīdinājumu paneļiem."
+          "description": "Visas tehnoloģiju vides pārraudzība ar žurnāliem, metriku, trasējumiem, viediem brīdinājumiem un informācijas paneļiem."
         },
         {
           "icon": "solar:shield-check-linear",
@@ -329,28 +329,28 @@
         {
           "icon": "solar:chat-round-dots-linear",
           "title": "GitOps darbplūsmas",
-          "description": "Git pārvaldīta izvietošana ar izmaiņu pieprasījumu pārskatīšanu, automātisku atriti un audita pierakstiem."
+          "description": "Ar Git pārvaldīta izvietošana, izmaiņu pieprasījumu pārskatīšana, automātiska atrite un audita žurnāli."
         }
       ],
       "processTitle": "Ieviešanas pieeja",
       "process": [
         {
-          "step": "Solis 01",
+          "step": "1. solis",
           "title": "Piegādes procesa novērtējums",
-          "description": "Jūsu pašreizējā CI/CD brieduma, šaurās vietas un uzlabojumu iespēju novērtēšana."
+          "description": "Jūsu pašreizējo CI/CD procesu brieduma, vājo vietu un uzlabojumu iespēju novērtēšana."
         },
         {
-          "step": "Solis 02",
+          "step": "2. solis",
           "title": "Arhitektūra un rīki",
-          "description": "Mērķa stāvokļa projektēšana un pareizo rīku izvēle jūsu stekam."
+          "description": "Mērķa arhitektūras projektēšana un piemērotāko rīku izvēle jūsu tehnoloģiju videi un komandai."
         },
         {
-          "step": "Solis 03",
+          "step": "3. solis",
           "title": "Ieviešana",
           "description": "Piegādes konveijeru izveide, infrastruktūras konfigurēšana un darba slodžu pakāpeniska migrācija."
         },
         {
-          "step": "Solis 04",
+          "step": "4. solis",
           "title": "Nodošana un apmācība",
           "description": "Dokumentācija, komandas apmācība un darbības instrukcijas patstāvīgai sistēmu pārvaldībai."
         }
@@ -376,24 +376,24 @@
       "icon": "solar:server-path-linear",
       "title": "IT infrastruktūras uzturēšana",
       "subtitle": "Proaktīva IT vides uzraudzība, uzturēšana un pārvaldība, kas visu diennakti nodrošina pieejamību, drošību un optimālu veiktspēju.",
-      "overviewTitle": "Uzturiet infrastruktūru darbībā",
+      "overviewTitle": "Stabila jūsu infrastruktūras darbība",
       "overviewText": "IT infrastruktūra ir jūsu uzņēmuma darbības pamats. Mūsu pārvaldītie infrastruktūras pakalpojumi nodrošina serveru, tīklu un mākoņvides uzraudzību visu diennakti, savlaicīgus drošības labojumus un optimālu veiktspēju. Proaktīva uzturēšana palīdz novērst problēmas pirms tās ietekmē darbu, bet incidentu gadījumā nodrošinām ātru reaģēšanu.",
       "featuresTitle": "Mūsu pakalpojumi",
       "features": [
         {
           "icon": "solar:monitor-smartphone-linear",
           "title": "24/7 uzraudzība un brīdinājumi",
-          "description": "Reāllaika infrastruktūras uzraudzība ar inteliģentu brīdināšanu un automatizētu incidentu eskalāciju."
+          "description": "Infrastruktūras uzraudzība reāllaikā ar viediem brīdinājumiem un automatizētu incidentu eskalāciju."
         },
         {
           "icon": "solar:shield-check-linear",
           "title": "Drošības labojumi",
-          "description": "Automatizēta ievainojamību skenēšana un savlaicīga ielāpu pārvaldība visās sistēmās."
+          "description": "Automatizēta ievainojamību skenēšana un savlaicīga ielāpu pārvaldība visās sistēmās un to atkarībās."
         },
         {
           "icon": "solar:refresh-circle-linear",
           "title": "Sistēmas atjauninājumi",
-          "description": "Plānoti operētājsistēmu, starpprogrammatūras un lietotņu atjauninājumi ar atrites plāniem un bezdīkstāves stratēģijām."
+          "description": "Plānoti operētājsistēmu, starpprogrammatūras un lietotņu atjauninājumi ar atrites plāniem un stratēģijām darbībai bez pārtraukuma."
         },
         {
           "icon": "solar:server-linear",
@@ -414,24 +414,24 @@
       "processTitle": "Kā mēs strādājam",
       "process": [
         {
-          "step": "Solis 01",
+          "step": "1. solis",
           "title": "Infrastruktūras audits",
-          "description": "Pilna jūsu pašreizējās vides novērtēšana, risku un uzlabojumu iespēju identificēšana."
+          "description": "Visaptverošs jūsu pašreizējās vides novērtējums, identificējot riskus un uzlabojumu iespējas."
         },
         {
-          "step": "Solis 02",
+          "step": "2. solis",
           "title": "Pārņemšana un iestatīšana",
           "description": "Uzraudzības aģentu izvietošana, brīdinājumu konfigurēšana un darbības instrukciju sagatavošana."
         },
         {
-          "step": "Solis 03",
+          "step": "3. solis",
           "title": "Proaktīva pārvaldība",
           "description": "Nepārtraukta uzraudzība, automatizēta apkope un preventīvas darbības."
         },
         {
-          "step": "Solis 04",
+          "step": "4. solis",
           "title": "Atskaites un optimizācija",
-          "description": "Ikmēneša pārskati, izmaksu optimizācijas ieteikumi un ceļa kartes atjauninājumi."
+          "description": "Ikmēneša pārskati, izmaksu optimizācijas ieteikumi un attīstības ceļveža atjauninājumi."
         }
       ],
       "techTitle": "Rīki un platformas",
@@ -453,7 +453,7 @@
     "fullCycle": {
       "icon": "solar:restart-circle-linear",
       "title": "Pilna cikla izstrāde",
-      "subtitle": "Projekta piegāde no sākuma līdz beigām, aptverot visas fāzes — no koncepcijas un dizaina līdz izstrādei, izvietošanai un pastāvīgai optimizācijai.",
+      "subtitle": "Projekta īstenošana no sākuma līdz beigām, aptverot visus posmus — no koncepcijas un dizaina līdz izstrādei, izvietošanai un pastāvīgai pilnveidei.",
       "overviewTitle": "Viena komanda, pilns dzīves cikls",
       "overviewText": "Pilna cikla izstrāde nozīmē, ka viena komanda uzņemas atbildību par visu projektu no sākuma līdz beigām. Mēs nodrošinām prasību izpēti, UX/UI dizainu, klienta un servera puses izstrādi, kvalitātes pārbaudi, izvietošanu un atbalstu pēc palaišanas. Šāda pieeja samazina informācijas zudumu starp posmiem, vienkāršo saziņu un nodrošina vienmērīgu kvalitāti visa projekta gaitā.",
       "featuresTitle": "Kas ir iekļauts",
@@ -470,7 +470,7 @@
         },
         {
           "icon": "solar:code-square-linear",
-          "title": "Full-Stack izstrāde",
+          "title": "Full-stack izstrāde",
           "description": "Klienta un servera puse, datubāzes un integrācijas — visu veido viena saliedēta komanda, izmantojot mūsdienīgus ietvarus."
         },
         {
@@ -489,30 +489,30 @@
           "description": "Uz analītiku balstīti uzlabojumi, A/B testēšana un mērogošanas stratēģijas."
         }
       ],
-      "processTitle": "Projekta fāzes",
+      "processTitle": "Projekta posmi",
       "process": [
         {
-          "step": "Fāze 01",
+          "step": "1. posms",
           "title": "Izpēte",
           "description": "Biznesa analīze, lietotāju izpēte un projekta apjoma noteikšana."
         },
         {
-          "step": "Fāze 02",
+          "step": "2. posms",
           "title": "Dizains un prototips",
           "description": "Interaktīvi prototipi, kas testēti ar reāliem lietotājiem pirms izstrādes sākuma."
         },
         {
-          "step": "Fāze 03",
+          "step": "3. posms",
           "title": "Izstrāde un testēšana",
-          "description": "Agile izstrāde ar automatizētu testēšanu, koda pārskatiem un divnedēļu demonstrācijām."
+          "description": "Agile izstrāde ar automatizētu testēšanu, koda pārbaudēm un demonstrācijām ik pēc divām nedēļām."
         },
         {
-          "step": "Fāze 04",
+          "step": "4. posms",
           "title": "Palaišana un attīstība",
           "description": "Izvietošana ražošanas vidē, uzraudzības iestatīšana un pakāpeniski uzlabojumi."
         }
       ],
-      "techTitle": "Mūsu steks",
+      "techTitle": "Mūsu tehnoloģiju kopa",
       "technologies": [
         { "name": "React", "icon": "logos:react" },
         { "name": "Node.js", "icon": "logos:nodejs-icon" },
@@ -534,8 +534,8 @@
     "aiIntegration": {
       "icon": "solar:magic-stick-3-linear",
       "title": "MI integrācija",
-      "subtitle": "Izmantojiet mašīnmācīšanās, dabiskās valodas apstrādes un inteliģentās automatizācijas spēku, lai pārveidotu savus biznesa procesus.",
-      "overviewTitle": "MI, kas sniedz biznesa vērtību",
+      "subtitle": "Izmantojiet mašīnmācīšanos, dabiskās valodas apstrādi un viedo automatizāciju, lai pilnveidotu uzņēmuma procesus un lēmumu pieņemšanu.",
+      "overviewTitle": "MI, kas rada vērtību uzņēmumam",
       "overviewText": "Mēs palīdzam organizācijām integrēt MI un mašīnmācīšanos esošajās sistēmās un darbplūsmās. No prognozējošās analītikas un dabiskās valodas apstrādes līdz datorredzei un viedai automatizācijai — mūsu komanda veido ieviešanai gatavus MI risinājumus reālām uzņēmējdarbības problēmām. Mēs koncentrējamies uz praktiskiem un izmērāmiem rezultātiem, lai katra MI iniciatīva sniegtu taustāmu ieguldījumu atdevi.",
       "featuresTitle": "MI iespējas",
       "features": [
@@ -552,7 +552,7 @@
         {
           "icon": "solar:eye-linear",
           "title": "Datorredze",
-          "description": "Attēlu atpazīšana, objektu noteikšana, OCR un vizuālās inspekcijas sistēmas."
+          "description": "Attēlu atpazīšana, objektu noteikšana, OCR un vizuālās pārbaudes sistēmas kvalitātes un atbilstības kontrolei."
         },
         {
           "icon": "solar:chart-2-linear",
@@ -573,22 +573,22 @@
       "processTitle": "Mūsu MI pieeja",
       "process": [
         {
-          "step": "Solis 01",
+          "step": "1. solis",
           "title": "Lietojuma scenāriju izpēte",
           "description": "MI iespēju ar lielāko potenciālo ietekmi noteikšana jūsu uzņēmuma procesos."
         },
         {
-          "step": "Solis 02",
+          "step": "2. solis",
           "title": "Datu novērtējums",
-          "description": "Datu kvalitātes, pieejamības un datu plūsmu prasību novērtēšana."
+          "description": "Datu kvalitātes, pieejamības un datu apstrādes procesu prasību novērtēšana."
         },
         {
-          "step": "Solis 03",
+          "step": "3. solis",
           "title": "Modeļu izstrāde",
           "description": "Modeļu izstrāde, apmācīšana un validēšana, regulāri iesaistot projekta dalībniekus."
         },
         {
-          "step": "Solis 04",
+          "step": "4. solis",
           "title": "Izvietošana un uzraudzība",
           "description": "Izvietošana ražošanas vidē ar MLOps, uzraudzību un nepārtrauktu modeļu uzlabošanu."
         }
@@ -603,7 +603,7 @@
         { "name": "Anthropic", "icon": "simple-icons:anthropic" },
         { "name": "Jupyter", "icon": "logos:jupyter" }
       ],
-      "ctaTitle": "Izpētiet MI savam biznesam",
+      "ctaTitle": "Izpētiet MI iespējas savam uzņēmumam",
       "ctaText": "Nezināt, ar ko sākt MI ieviešanu? Mūsu komanda palīdzēs noteikt iespējas, kas jūsu organizācijai var sniegt vislielāko ieguvumu."
     },
     "consulting": {
@@ -611,17 +611,17 @@
       "title": "IT konsultācijas",
       "subtitle": "Stratēģiskas tehnoloģiju konsultācijas, kas palīdz pieņemt pamatotus lēmumus, samazināt riskus un paātrināt digitālo transformāciju.",
       "overviewTitle": "Ekspertu konsultācijas, izmērāms rezultāts",
-      "overviewText": "Mūsu IT konsultācijas palīdz organizācijām pārliecinoši pieņemt tehnoloģiju lēmumus. Neatkarīgi no tā, vai plānojat mākoņa migrāciju, modernizējat novecojušas sistēmas, izvērtējat jaunus rīkus vai veidojat inženieru komandu, mūsu konsultanti apvieno padziļinātas tehniskās zināšanas ar izpratni par uzņēmējdarbību. Mēs sniedzam īstenojamus ieteikumus, kas balstīti nozares labajā praksē un reālā ieviešanas pieredzē.",
+      "overviewText": "Mūsu IT konsultācijas palīdz organizācijām pārliecinoši pieņemt tehnoloģiju lēmumus. Neatkarīgi no tā, vai plānojat mākoņa migrāciju, modernizējat novecojušas sistēmas, izvērtējat jaunus rīkus vai veidojat inženieru komandu, mūsu konsultanti apvieno padziļinātas tehniskās zināšanas ar izpratni par uzņēmējdarbību. Mēs sniedzam praktiski īstenojamus ieteikumus, kas balstīti nozares labajā praksē un reālā ieviešanas pieredzē.",
       "featuresTitle": "Konsultāciju pakalpojumi",
       "features": [
         {
           "icon": "solar:document-text-linear",
           "title": "Tehnoloģiju audits",
-          "description": "Visaptveroša jūsu pašreizējā tehnoloģiju steka, arhitektūras un operacionālo procesu novērtēšana."
+          "description": "Visaptverošs jūsu pašreizējās tehnoloģiju vides, arhitektūras un darbības procesu novērtējums."
         },
         {
           "icon": "solar:map-linear",
-          "title": "Digitālās transformācijas ceļa karte",
+          "title": "Digitālās transformācijas ceļvedis",
           "description": "Stratēģiskā plānošana tehnoloģiju modernizācijai ar skaidriem atskaites punktiem."
         },
         {
@@ -632,12 +632,12 @@
         {
           "icon": "solar:dollar-minimalistic-linear",
           "title": "IT budžeta plānošana",
-          "description": "Tehnoloģiju investīciju plānošana, piegādātāju izvērtēšana un kopējo īpašumtiesību izmaksu analīze."
+          "description": "Tehnoloģiju investīciju plānošana, piegādātāju izvērtēšana un kopējo īpašuma izmaksu analīze."
         },
         {
           "icon": "solar:shield-check-linear",
           "title": "Atbilstība un pārvaldība",
-          "description": "GDPR, SOC2, HIPAA atbilstības novērtējums un ieviešanas vadlīnijas."
+          "description": "VDAR (GDPR), SOC 2 un HIPAA atbilstības novērtējums un ieviešanas vadlīnijas."
         },
         {
           "icon": "solar:chart-2-linear",
@@ -648,24 +648,24 @@
       "processTitle": "Sadarbības modelis",
       "process": [
         {
-          "step": "Solis 01",
+          "step": "1. solis",
           "title": "Sākotnējais novērtējums",
           "description": "Jūsu pašreizējā stāvokļa, izaicinājumu un stratēģisko mērķu izpratne."
         },
         {
-          "step": "Solis 02",
+          "step": "2. solis",
           "title": "Analīze un secinājumi",
-          "description": "Dziļa tehniskā analīze ar salīdzināšanu pret nozares standartiem."
+          "description": "Padziļināta tehniskā analīze un salīdzinājums ar nozares standartiem."
         },
         {
-          "step": "Solis 03",
-          "title": "Rekomendācijas",
+          "step": "3. solis",
+          "title": "Ieteikumi",
           "description": "Īstenojams ceļvedis ar prioritārām iniciatīvām un sagaidāmajiem rezultātiem."
         },
         {
-          "step": "Solis 04",
+          "step": "4. solis",
           "title": "Ieviešanas atbalsts",
-          "description": "Praktiska vadība izpildes laikā veiksmīgas ieviešanas nodrošināšanai."
+          "description": "Praktisks atbalsts ieviešanas laikā, lai nodrošinātu veiksmīgu rezultātu."
         }
       ],
       "techTitle": "Ekspertīzes jomas",
@@ -677,13 +677,13 @@
         { "name": "MI/ML", "icon": "simple-icons:openai" },
         { "name": "Mikropakalpojumi", "icon": "logos:kubernetes" },
         { "name": "API stratēģija", "icon": "logos:graphql" },
-        { "name": "GDPR", "icon": "solar:lock-bold" },
+        { "name": "VDAR (GDPR)", "icon": "solar:lock-bold" },
         { "name": "Agile", "icon": "logos:jira" },
         { "name": "Izmaksu optimizācija", "icon": "solar:wallet-money-bold" },
         { "name": "Komandu veidošana", "icon": "solar:users-group-two-rounded-bold" },
         { "name": "Arhitektūras pārskats", "icon": "solar:code-square-bold" }
       ],
-      "ctaTitle": "Rezervējiet konsultāciju",
+      "ctaTitle": "Piesakiet konsultāciju",
       "ctaText": "Saņemiet ekspertu konsultāciju par savu tehnoloģiju stratēģiju. Piesakieties bezmaksas sarunai ar mūsu vadošajiem arhitektiem."
     }
   }

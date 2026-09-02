@@ -15,11 +15,11 @@ const homeSeo: Record<Lang, { title: string; description: string }> = {
   },
   lv: {
     title: 'HA Group | IT uzņēmums: programmatūra, mākonis un DevOps',
-    description: 'Latvijas IT uzņēmums pielāgotas programmatūras, vietņu, mākoņrisinājumu, DevOps automatizācijas, MI integrācijas un tehnoloģiju konsultāciju izstrādei.',
+    description: 'Latvijas IT uzņēmums, kas izstrādā pielāgotu programmatūru un vietnes, veido mākoņrisinājumus, automatizē DevOps, integrē MI un sniedz tehnoloģiju konsultācijas.',
   },
   ru: {
     title: 'HA Group | Разработка ПО, облака и DevOps',
-    description: 'Латвийская IT-компания: разработка программного обеспечения и сайтов, облачная архитектура, DevOps, интеграция ИИ и технологический консалтинг.',
+    description: 'Латвийская IT-компания: разрабатываем программное обеспечение и сайты, проектируем облачную архитектуру, автоматизируем DevOps, интегрируем ИИ и консультируем по технологиям.',
   },
 };
 
@@ -40,7 +40,7 @@ const pageSeo: Record<Lang, Record<string, { title: string; description: string 
     '/company-details': { title: 'SIA HA Group rekvizīti', description: 'SIA HA Group oficiālie reģistrācijas, PVN un saziņas rekvizīti.' },
     '/legal/terms': { title: 'Lietošanas noteikumi | HA Group', description: 'HA Group tīmekļvietnes lietošanas un saziņas noteikumi.' },
     '/legal/privacy': { title: 'Privātuma politika | HA Group', description: 'Kā SIA HA Group apstrādā tīmekļvietnē un saziņas formās iesniegtos personas datus.' },
-    '/legal/cookies': { title: 'Sīkdatņu politika | HA Group', description: 'Informācija par HA Group tīmekļvietnes izmantoto nepieciešamo pārlūka krātuvi.' },
+    '/legal/cookies': { title: 'Sīkdatņu politika | HA Group', description: 'Informācija par nepieciešamo pārlūka krātuvi, ko izmanto HA Group tīmekļvietne.' },
   },
   ru: {
     '/reviews': { title: 'Отзывы клиентов | HA Group', description: 'Отзывы клиентов о проектах HA Group в области разработки ПО, облаков, DevOps и IT-консалтинга.' },
@@ -49,7 +49,7 @@ const pageSeo: Record<Lang, Record<string, { title: string; description: string 
     '/company-details': { title: 'Реквизиты SIA HA Group', description: 'Официальные регистрационные данные, номер НДС и контакты SIA HA Group.' },
     '/legal/terms': { title: 'Условия использования | HA Group', description: 'Условия использования сайта HA Group и обращения в SIA HA Group.' },
     '/legal/privacy': { title: 'Политика конфиденциальности | HA Group', description: 'Как SIA HA Group обрабатывает персональные данные, отправленные через сайт и контактные формы.' },
-    '/legal/cookies': { title: 'Политика cookie | HA Group', description: 'Информация о необходимом хранилище браузера на сайте HA Group.' },
+    '/legal/cookies': { title: 'Политика использования cookie | HA Group', description: 'Информация о необходимом хранилище браузера, которое использует сайт HA Group.' },
   },
 };
 
@@ -63,6 +63,24 @@ const projectLabel: Record<Lang, string> = {
   en: 'project',
   lv: 'projekts',
   ru: 'проект',
+};
+
+const balticGPTitle: Record<Lang, string> = {
+  en: 'BalticGP motorcycle racing calendar',
+  lv: 'BalticGP motošosejas sacensību kalendārs',
+  ru: 'Календарь шоссейных мотогонок BalticGP',
+};
+
+const careersLabel: Record<Lang, string> = {
+  en: 'Careers at HA Group',
+  lv: 'Karjera HA Group',
+  ru: 'Вакансии HA Group',
+};
+
+const breadcrumbLabel: Record<Lang, Record<string, string>> = {
+  en: { services: 'Services', projects: 'Projects', legal: 'Legal' },
+  lv: { services: 'Pakalpojumi', projects: 'Projekti', legal: 'Juridiskā informācija' },
+  ru: { services: 'Услуги', projects: 'Проекты', legal: 'Юридическая информация' },
 };
 
 function ensureMeta(attribute: 'name' | 'property', key: string, content: string) {
@@ -168,10 +186,10 @@ export default function Seo() {
         keywords: project.tags.join(', '),
       };
     } else if (normalizedPath === '/balticgp') {
-      seo = { title: 'BalticGP motorcycle racing calendar | HA Group', description: t('balticGP.description') };
+      seo = { title: `${balticGPTitle[language]} | HA Group`, description: t('balticGP.description') };
       pageType = 'Article';
     } else if (normalizedPath === '/careers') {
-      seo = { title: `${careers.title} | HA Group careers`, description: careers.subtitle };
+      seo = { title: `${careers.title} | ${careersLabel[language]}`, description: careers.subtitle };
     } else if (pageSeo[language][normalizedPath]) {
       seo = pageSeo[language][normalizedPath];
     }
@@ -238,7 +256,9 @@ export default function Seo() {
         ...breadcrumbSegments.map((segment, index) => ({
           '@type': 'ListItem',
           position: index + 2,
-          name: index === breadcrumbSegments.length - 1 ? seo.title.split(' | ')[0] : segment.replace(/-/g, ' '),
+          name: index === breadcrumbSegments.length - 1
+            ? seo.title.split(' | ')[0]
+            : (breadcrumbLabel[language][segment] ?? segment.replace(/-/g, ' ')),
           item: `${SITE_URL}/${breadcrumbSegments.slice(0, index + 1).join('/')}`,
         })),
       ],

@@ -8,7 +8,7 @@
       "key": "health",
       "icon": "solar:heart-pulse-linear",
       "title": "Veselība un labbūtība",
-      "description": "Plaša veselības apdrošināšana, labbūtības iniciatīvas un emocionālās veselības atbalsts, lai jūs varētu justies un strādāt pēc iespējas labāk."
+      "description": "Plaša veselības apdrošināšana, labbūtības iniciatīvas un atbalsts emocionālajai veselībai, lai jūs varētu justies un strādāt pēc iespējas labāk."
     },
     {
       "key": "remote",
@@ -20,7 +20,7 @@
       "key": "growth",
       "icon": "solar:graph-up-linear",
       "title": "Karjeras izaugsme",
-      "description": "Apmācību budžets, konferenču apmeklējumu atbalsts, mentorings un skaidrs karjeras attīstības ceļš."
+      "description": "Mācību budžets, konferenču apmeklējumu atbalsts, mentorings un skaidras karjeras izaugsmes iespējas."
     },
     {
       "key": "culture",

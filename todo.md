@@ -7,17 +7,28 @@ Agent mode instructions:
 - Move confirmed [x] TO TEST items to COMPLETED
 
 # TODO:
-<!--Firebase Storage: Cannot be enabled via CLI. Must click "Get Started" in Firebase Console first. Steps below.-->
-[] Firebase Storage: enable in console (https://console.firebase.google.com/project/cloudie-7b8b4/storage) for career CV uploads
-    Steps:
-    1. Go to https://console.firebase.google.com/project/cloudie-7b8b4/storage
-    2. Click "Get Started" → choose "Start in production mode" → pick region (eur3 for EU) → Done I want o use FREE 
-    but get error 
-    An unknown error occurred. Please refresh the page and try again. 
+<!--Firebase Storage: diagnosed 2026-09-02. Not a billing problem — see below.-->
+[] Firebase Storage: create the default bucket for career CV uploads
+    Diagnosed against the live project rather than guessed:
+      - billing IS enabled on cloudie-7b8b4 (Blaze) — `billingEnabled: true`
+      - `firebasestorage.googleapis.com` IS enabled
+      - there are ZERO buckets; only the gcf-v2-* buckets Cloud Functions makes
+    So the console's "An unknown error occurred" was not the Blaze gate the docs
+    point at. The bucket simply does not exist, and the CLI can create it.
 
-    3. Run: `cd services/firebase && firebase deploy --only storage --project cloudie-7b8b4`
-    4. Storage rules (storage.rules) are already written — allows career CV uploads (PDF/DOCX, <5MB)
-    5. Code already links storage file to career_applications Firestore doc (CareerContact.tsx uploads CV, stores downloadURL)
+    A bucket's location is permanent, so pick deliberately. Firestore on this
+    project is in europe-north2 and the functions run in europe-north1; either
+    is defensible, and europe-north1 is cheaper and sits next to the function
+    that reads the uploads.
+
+        gcloud storage buckets create gs://cloudie-7b8b4.firebasestorage.app \
+          --project cloudie-7b8b4 --location=europe-north1
+        firebase deploy --only storage --project cloudie-7b8b4
+
+    storage.rules is already written and now denies client reads — an uploaded
+    CV was world-readable to anyone with the path. The owner's notification
+    email still works: getDownloadURL mints a token honoured independently of
+    the rules.
 
 # TO TEST: 
 [] Reviews data disabled: emptied reviews.json to [] (backup in reviews.backup.json), added Review type + assertion in Reviews.tsx and ReviewsPage.tsx — homepage Reviews section hidden, /reviews page shows empty

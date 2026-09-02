@@ -43,9 +43,21 @@
     "eyebrow": "Sadarbības process",
     "title": "No vajadzības līdz piegādei",
     "steps": [
-      { "number": "01", "title": "Pastāstiet par pielietojumu", "text": "Norādiet produktu, izmēru, materiālu, patēriņu un vēlamo piegādes laiku." },
-      { "number": "02", "title": "Precizējam specifikāciju", "text": "Pārbaudām piemērotāko variantu un, ja vajadzīgs, uzdodam tehniskus precizējošus jautājumus." },
-      { "number": "03", "title": "Sagatavojam piedāvājumu", "text": "Saņemat konkrētu piedāvājumu ar pieejamību, apjomu un piegādes nosacījumiem." }
+      {
+        "number": "01",
+        "title": "Pastāstiet par pielietojumu",
+        "text": "Norādiet produktu, izmēru, materiālu, patēriņu un vēlamo piegādes laiku."
+      },
+      {
+        "number": "02",
+        "title": "Precizējam specifikāciju",
+        "text": "Pārbaudām piemērotāko variantu un, ja vajadzīgs, uzdodam tehniskus precizējošus jautājumus."
+      },
+      {
+        "number": "03",
+        "title": "Sagatavojam piedāvājumu",
+        "text": "Saņemat konkrētu piedāvājumu ar pieejamību, apjomu un piegādes nosacījumiem."
+      }
     ]
   },
   "partners": {
@@ -101,7 +113,8 @@
     "privacy": "Privātuma politika",
     "cookies": "Sīkdatņu politika",
     "cookieSettings": "Sīkdatņu iestatījumi",
-    "rights": "© 2026 SIA HA Group. Visas tiesības aizsargātas."
+    "rights": "© 2026 SIA HA Group. Visas tiesības aizsargātas.",
+    "parent": "HA Group"
   },
   "cookieBanner": {
     "title": "Nepieciešamā pārlūka krātuve",
@@ -117,23 +130,56 @@
       "title": "Privātuma politika",
       "intro": "Šajā politikā paskaidrots, kā SIA HA Group apstrādā personas datus iepako.hagroup.lv saziņas formā.",
       "sections": [
-        { "title": "1. Datu pārzinis", "content": "SIA HA Group, reģistrācijas numurs 40203724866, PVN numurs LV40203724866. Jautājumiem par personas datiem: info@hagroup.lv." },
-        { "title": "2. Kādus datus apstrādājam", "content": "Saziņas formā apstrādājam vārdu un uzvārdu, uzņēmumu (ja norādīts), e-pastu, tālruni (ja norādīts), izvēlēto produktu, plānoto apjomu, pieprasījuma tekstu, privātuma apliecinājumu, saskarnes valodu, lapas adresi un iesniegšanas laiku. Atsevišķā ierakstā glabājam tikai informāciju par iepazīšanos ar nepieciešamās krātuves paziņojumu." },
-        { "title": "3. Mērķis un tiesiskais pamats", "content": "Datus izmantojam, lai izvērtētu pieprasījumu, sagatavotu piedāvājumu un sazinātos par iespējamu darījumu. Tiesiskais pamats ir darbības pirms līguma noslēgšanas pēc jūsu pieprasījuma un mūsu leģitīmā interese pārvaldīt uzņēmuma saziņu. Privātuma apliecinājums apstiprina, ka informācija ir izlasīta; tas neaizstāj piemērojamo tiesisko pamatu." },
-        { "title": "4. Glabāšana un saņēmēji", "content": "Iesniegumi tiek glabāti Google Firebase / Cloud Firestore atsevišķā iepako_contacts kolekcijā un ir pieejami tikai pilnvarotām HA Group personām. Tīmekļvietni mitina Amazon Web Services S3 un CloudFront. Datus glabājam tik ilgi, cik nepieciešams pieprasījuma apstrādei, sadarbībai un pamatotu juridisku prasību aizsardzībai, pēc tam tos dzēšam vai anonimizējam." },
-        { "title": "5. Datu nodošana", "content": "Pakalpojumu sniedzēji var apstrādāt datus mūsu uzdevumā saskaņā ar līgumiskām un drošības prasībām. Ja dati tiek apstrādāti ārpus Eiropas Ekonomikas zonas, izmantojam piemērojamos aizsardzības mehānismus. Mēs nepārdodam personas datus un nenododam tos reklāmdevējiem." },
-        { "title": "6. Jūsu tiesības", "content": "Jums ir tiesības lūgt piekļuvi saviem datiem, to labošanu, dzēšanu vai apstrādes ierobežošanu, kā arī iebilst pret apstrādi, ja to paredz piemērojamie tiesību akti. Jums ir tiesības iesniegt sūdzību Datu valsts inspekcijā. Pieprasījumus sūtiet uz info@hagroup.lv." }
+        {
+          "title": "1. Datu pārzinis",
+          "content": "SIA HA Group, reģistrācijas numurs 40203724866, PVN numurs LV40203724866. Jautājumiem par personas datiem: info@hagroup.lv."
+        },
+        {
+          "title": "2. Kādus datus apstrādājam",
+          "content": "Saziņas formā apstrādājam vārdu un uzvārdu, uzņēmumu (ja norādīts), e-pastu, tālruni (ja norādīts), izvēlēto produktu, plānoto apjomu, pieprasījuma tekstu, privātuma apliecinājumu, saskarnes valodu, lapas adresi un iesniegšanas laiku. Atsevišķā ierakstā glabājam tikai informāciju par iepazīšanos ar nepieciešamās krātuves paziņojumu."
+        },
+        {
+          "title": "3. Mērķis un tiesiskais pamats",
+          "content": "Datus izmantojam, lai izvērtētu pieprasījumu, sagatavotu piedāvājumu un sazinātos par iespējamu darījumu. Tiesiskais pamats ir darbības pirms līguma noslēgšanas pēc jūsu pieprasījuma un mūsu leģitīmā interese pārvaldīt uzņēmuma saziņu. Privātuma apliecinājums apstiprina, ka informācija ir izlasīta; tas neaizstāj piemērojamo tiesisko pamatu."
+        },
+        {
+          "title": "4. Glabāšana un saņēmēji",
+          "content": "Iesniegumi tiek glabāti Google Firebase / Cloud Firestore atsevišķā iepako_contacts kolekcijā un ir pieejami tikai pilnvarotām HA Group personām. Tīmekļvietni mitina Amazon Web Services S3 un CloudFront. Datus glabājam tik ilgi, cik nepieciešams pieprasījuma apstrādei, sadarbībai un pamatotu juridisku prasību aizsardzībai, pēc tam tos dzēšam vai anonimizējam."
+        },
+        {
+          "title": "5. Datu nodošana",
+          "content": "Pakalpojumu sniedzēji var apstrādāt datus mūsu uzdevumā saskaņā ar līgumiskām un drošības prasībām. Ja dati tiek apstrādāti ārpus Eiropas Ekonomikas zonas, izmantojam piemērojamos aizsardzības mehānismus. Mēs nepārdodam personas datus un nenododam tos reklāmdevējiem."
+        },
+        {
+          "title": "6. Jūsu tiesības",
+          "content": "Jums ir tiesības lūgt piekļuvi saviem datiem, to labošanu, dzēšanu vai apstrādes ierobežošanu, kā arī iebilst pret apstrādi, ja to paredz piemērojamie tiesību akti. Jums ir tiesības iesniegt sūdzību Datu valsts inspekcijā. Pieprasījumus sūtiet uz info@hagroup.lv."
+        }
       ]
     },
     "cookies": {
       "title": "Sīkdatņu un pārlūka krātuves politika",
       "intro": "iepako.hagroup.lv pašlaik neizmanto reklāmas vai analītikas sīkdatnes.",
       "sections": [
-        { "title": "1. Ko izmantojam", "content": "Tīmekļvietne izmanto pirmās puses lokālo krātuvi, lai atcerētos izvēlēto valodu, iepazīšanos ar šo paziņojumu un īslaicīgu formas iesniegšanas aizsardzību. Šīs vērtības nodrošina lietotāja pieprasīto funkcionalitāti." },
-        { "title": "2. Firestore paziņojuma ieraksts", "content": "Nospiežot “Sapratu”, atsevišķā iepako_consents Firestore kolekcijā saglabājam paziņojuma versiju, izvēli izmantot tikai nepieciešamo krātuvi, saskarnes valodu, servera izveides laiku un dzēšanas termiņu. Ieraksts nesatur vārdu, e-pastu, lapas adresi vai pastāvīgu apmeklētāja identifikatoru." },
-        { "title": "3. Glabāšanas ilgums", "content": "Valodas izvēle paliek pārlūkā līdz tās maiņai vai pārlūka datu dzēšanai. Paziņojuma apliecinājums pārlūkā un Firestore tiek paredzēts līdz 12 mēnešiem. Formas aizsardzības laika atzīme ir īslaicīga." },
-        { "title": "4. Izvēles pārvaldīšana", "content": "Pārlūka iestatījumos varat dzēst lokālo krātuvi. Izmantojot kājenē esošo saiti “Sīkdatņu iestatījumi”, paziņojumu var atvērt atkārtoti. Ja nepieciešamā krātuve ir bloķēta, valodas izvēle un atsevišķas formas funkcijas var netikt saglabātas." },
-        { "title": "5. Izmaiņas", "content": "Ja ieviesīsim analītiku, reklāmu vai citas izvēles tehnoloģijas, pirms to aktivizēšanas atjaunināsim šo politiku un prasīsim atbilstošu izvēli. Jautājumus sūtiet uz info@hagroup.lv." }
+        {
+          "title": "1. Ko izmantojam",
+          "content": "Tīmekļvietne izmanto pirmās puses lokālo krātuvi, lai atcerētos izvēlēto valodu, iepazīšanos ar šo paziņojumu un īslaicīgu formas iesniegšanas aizsardzību. Šīs vērtības nodrošina lietotāja pieprasīto funkcionalitāti."
+        },
+        {
+          "title": "2. Firestore paziņojuma ieraksts",
+          "content": "Nospiežot “Sapratu”, atsevišķā iepako_consents Firestore kolekcijā saglabājam paziņojuma versiju, izvēli izmantot tikai nepieciešamo krātuvi, saskarnes valodu, servera izveides laiku un dzēšanas termiņu. Ieraksts nesatur vārdu, e-pastu, lapas adresi vai pastāvīgu apmeklētāja identifikatoru."
+        },
+        {
+          "title": "3. Glabāšanas ilgums",
+          "content": "Valodas izvēle paliek pārlūkā līdz tās maiņai vai pārlūka datu dzēšanai. Paziņojuma apliecinājums pārlūkā un Firestore tiek paredzēts līdz 12 mēnešiem. Formas aizsardzības laika atzīme ir īslaicīga."
+        },
+        {
+          "title": "4. Izvēles pārvaldīšana",
+          "content": "Pārlūka iestatījumos varat dzēst lokālo krātuvi. Izmantojot kājenē esošo saiti “Sīkdatņu iestatījumi”, paziņojumu var atvērt atkārtoti. Ja nepieciešamā krātuve ir bloķēta, valodas izvēle un atsevišķas formas funkcijas var netikt saglabātas."
+        },
+        {
+          "title": "5. Izmaiņas",
+          "content": "Ja ieviesīsim analītiku, reklāmu vai citas izvēles tehnoloģijas, pirms to aktivizēšanas atjaunināsim šo politiku un prasīsim atbilstošu izvēli. Jautājumus sūtiet uz info@hagroup.lv."
+        }
       ]
     }
   }

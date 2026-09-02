@@ -95,6 +95,14 @@
       "privacy": "Privātuma politika",
       "cookies": "Sīkdatņu politika"
     },
+    "group": {
+      "title": "HA Group zīmoli",
+      "brands": {
+        "harent": "— auto noma Rīgā",
+        "iepako": "— iepakojuma materiāli",
+        "alwaysup": "— mājaslapas maziem uzņēmumiem"
+      }
+    },
     "copyright": "© 2026 HA Group. Visas tiesības aizsargātas.",
     "status": "Visas sistēmas darbojas"
   },

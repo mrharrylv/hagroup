@@ -95,6 +95,14 @@
       "privacy": "Privacy Policy",
       "cookies": "Cookie Policy"
     },
+    "group": {
+      "title": "HA Group brands",
+      "brands": {
+        "harent": "— car rental in Rīga",
+        "iepako": "— packaging materials",
+        "alwaysup": "— websites for small businesses"
+      }
+    },
     "copyright": "© 2026 HA Group. All rights reserved.",
     "status": "All systems operational"
   },

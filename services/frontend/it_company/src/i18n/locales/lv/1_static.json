@@ -20,7 +20,7 @@
     "ctaExplore": "Apskatīt pakalpojumus"
   },
   "techStack": {
-    "label": "Izmantojam uzticamas, nozarē atzītas tehnoloģijas",
+    "label": "Izmantojam uzticamas, nozarē vadošas tehnoloģijas",
     "more": "un vēl…"
   },
   "services": {
@@ -42,7 +42,7 @@
   },
   "contact": {
     "title": "Pārrunāsim jūsu tehnoloģiju mērķus.",
-    "subtitle": "Neatkarīgi no tā, vai plānojat pāreju uz mākoni, pielāgotas sistēmas izstrādi vai esošās infrastruktūras uzlabošanu, mēs palīdzēsim.",
+    "subtitle": "Neatkarīgi no tā, vai plānojat pāreju uz mākoni, pielāgotas programmatūras izstrādi vai esošo sistēmu uzlabošanu, mēs palīdzēsim jūsu izaugsmē.",
     "email": "E-pasts",
     "phone": "Tālrunis",
     "hq": "Galvenais birojs",
@@ -78,11 +78,11 @@
       "title": "Pakalpojumi",
       "websiteDevelopment": "Mājaslapu izstrāde",
       "systemDevelopment": "Pielāgotu sistēmu izstrāde",
-      "cloudArchitecture": "Mākoņrisinājumi un migrācija",
+      "cloudArchitecture": "Mākoņvides ieviešana un migrācija",
       "devopsAutomation": "DevOps un automatizācija",
       "itInfrastructure": "IT infrastruktūra",
       "fullCycle": "Pilna cikla izstrāde",
-      "aiIntegration": "Mākslīgā intelekta integrācija",
+      "aiIntegration": "MI integrācija",
       "itConsulting": "IT konsultācijas"
     },
     "company": {
@@ -113,14 +113,14 @@
     "title": "Nepieciešamā vietnes krātuve",
     "description": "Mēs izmantojam tikai nepieciešamo pārlūka krātuvi, lai saglabātu jūsu valodas un krāsu režīma izvēli, atcerētos, ka šis paziņojums jums jau ir parādīts, un novērstu pārāk biežu formu iesniegšanu. Kad nospiežat “Sapratu”, Firebase datubāzē līdz 12 mēnešiem saglabājam ierobežotu apliecinājuma ierakstu. Mēs neizmantojam analītikas, reklāmas vai izsekošanas sīkdatnes. Plašāka informācija pieejama mūsu <cookie>Sīkdatņu politikā</cookie>.",
     "acknowledge": "Sapratu",
-    "recording": "Saglabāšana…",
+    "recording": "Notiek saglabāšana…",
     "recordError": "Neizdevās saglabāt apliecinājumu. Lūdzu, mēģiniet vēlreiz.",
     "manageButton": "Atkārtoti skatīt paziņojumu",
     "manageDescription": "Šo paziņojumu varat atvērt atkārtoti, un saglabātos iestatījumus jebkurā laikā varat dzēst pārlūkā."
   },
   "whatsapp": {
-    "tooltip": "Rakstīt mums WhatsApp",
-    "ariaLabel": "Sazināties ar mums WhatsApp",
+    "tooltip": "Rakstīt mums WhatsApp lietotnē",
+    "ariaLabel": "Sazināties ar mums WhatsApp lietotnē",
     "defaultMessage": "Sveiki! Mani interesē jūsu pakalpojumi. Vai varam apspriest mana uzņēmuma vajadzības?"
   },
   "servicePages": {
@@ -147,7 +147,7 @@
         "email": "E-pasta adrese",
         "phone": "Tālruņa numurs",
         "linkedin": "LinkedIn / portfolio",
-        "position": "Interesējošais amats",
+        "position": "Vēlamais amats",
         "selectPosition": "Izvēlieties amatu",
         "otherPosition": "Cits amats / vispārīgs pieteikums",
         "resume": "CV",
@@ -161,7 +161,7 @@
         "email": "janis@example.com",
         "phone": "+371 20000000",
         "linkedin": "https://linkedin.com/in/janis",
-        "coverLetter": "Pastāstiet par savu pieredzi un kāpēc vēlaties pievienoties HA Group..."
+        "coverLetter": "Pastāstiet par sevi, savu pieredzi un to, kāpēc vēlaties pievienoties HA Group..."
       }
     }
   },
@@ -172,7 +172,7 @@
     "featured": "Izceltās atsauksmes",
     "allReviews": "Visas atsauksmes",
     "ctaTitle": "Gatavi attīstīt savu uzņēmumu?",
-    "ctaText": "Pievienojieties augošiem uzņēmumiem, kas mums uztic savu tehnoloģiju attīstību.",
+    "ctaText": "Pievienojieties augošiem uzņēmumiem, kas mums uztic savu tehnoloģiju attīstību. Izveidosim kopā kaut ko lielisku.",
     "ctaButton": "Sazināties"
   },
   "projects": {
@@ -180,8 +180,8 @@
     "title": "Mūsu projekti",
     "subtitle": "Risinājumi, kas veicina izaugsmi, efektivitāti un ilgtermiņa panākumus.",
     "backToWork": "Atpakaļ uz projektiem",
-    "keyHighlights": "Galvenie ieguvumi",
-    "techStack": "Tehnoloģiju kopa",
+    "keyHighlights": "Galvenie akcenti",
+    "techStack": "Tehnoloģiju kopums",
     "whatWeDelivered": "Ko mēs nodrošinājām",
     "ctaTitle": "Ir ideja projektam?",
     "ctaText": "Dalieties ar savu ideju, un mēs palīdzēsim to pārvērst uzticamā un mērogojamā risinājumā.",
@@ -199,7 +199,7 @@
       "pipelineLabel": "Viedā pasākumu datu plūsma",
       "ingestionTitle": "Python datu ieguve",
       "ingestionText": "Avotu adapteri un pēc grafika darbināti parsētāji normalizē datus no vairāk nekā 20 publiskiem avotiem.",
-      "aiTitle": "MI datu izvilkšana",
+      "aiTitle": "Datu izgūšana ar MI",
       "aiText": "Crawl4AI un LLM procesi strukturē datus no dinamiskām un atšķirīgi veidotām lapām.",
       "discoveryTitle": "Kategorizēšana un meklēšana",
       "discoveryText": "Kategorijas, daudzvalodu atslēgvārdi, pārbaude, meklēšana un kartes.",
@@ -213,7 +213,7 @@
       "title": "Automatizēts vairāku reģionu piegādes modelis",
       "subtitle": "Atkārtoti izmantojama infrastruktūras platforma kontrolētai ieviešanai, migrācijai un pārslēgšanai ASV un Eiropas vidēs.",
       "controlPlane": "Atkārtoti izmantojami moduļi, kontrolēti piegādes procesi, izolēti stāvokļa faili, pārbaudes un pārvaldīta virzība starp vidēm",
-      "usRegion": "Ieviešana Amerikas Savienotajās Valstīs",
+      "usRegion": "Ieviešana ASV",
       "euRegion": "Ieviešana Eiropā",
       "regionalDelivery": "Azure centrmezgla un atzaru vides",
       "hub": "Centrmezgla tīkls",
@@ -231,11 +231,11 @@
     "subtitle": "Praktiski un mērogojami IT risinājumi mazajiem un vidējiem uzņēmumiem.",
     "mission": {
       "title": "Mūsu misija",
-      "text": "Palīdzēt mazajiem un vidējiem uzņēmumiem izmantot mūsdienu tehnoloģijas pieejamā, drošā un ilgtspējīgā veidā."
+      "text": "Palīdzēt mazajiem un vidējiem uzņēmumiem izmantot mūsdienu tehnoloģijas pieejamā un drošā veidā, kas veicina ilgtspējīgu izaugsmi."
     },
     "vision": {
       "title": "Mūsu vīzija",
-      "text": "Būt uzticamam tehnoloģiju partnerim augošiem uzņēmumiem, nodrošinot infrastruktūru un programmatūru, kas attīstās kopā ar biznesu."
+      "text": "Būt uzticamam tehnoloģiju partnerim augošiem uzņēmumiem, nodrošinot stabilu infrastruktūru un programmatūru, kas attīstās līdzi to vajadzībām."
     },
     "values": {
       "title": "Mūsu vērtības",
@@ -252,7 +252,7 @@
       "innovation": {
         "icon": "solar:lightbulb-linear",
         "title": "Inovācijas",
-        "text": "Pārdomāta mūsdienīgu rīku izmantošana efektīvu un ilgtspējīgi attīstāmu sistēmu izveidei."
+        "text": "Pārdomāta mūsdienīgu rīku izmantošana efektīvu un nākotnei gatavu sistēmu izveidei."
       },
       "partnership": {
         "icon": "solar:hand-shake-linear",
@@ -291,12 +291,12 @@
     "problemText": "Informācija par pasākumiem bieži ir izkaisīta sociālo tīklu ierakstos, PDF failos un dažādu organizatoru vietnēs. BalticGP apkopo uzticamu informāciju vienuviet, lai sezonu varētu plānot pārliecinoši.",
     "problemPoints": [
       "Viens kalendārs sadrumstalotu avotu vietā",
-      "Skaidri pārskatāmi pasākumi braucējiem un skatītājiem",
+      "Skaidra pasākumu informācija braucējiem un skatītājiem",
       "Uzticami atjauninājumi, ja mainās datums vai laiks"
     ],
     "audienceTitle": "Kam tas paredzēts",
     "audiencePoints": [
-      "Šosejas sacīkšu braucējiem, kuri meklē gaidāmos pasākumus un reģistrācijas saites",
+      "Šosejas sacensību braucējiem, kuri meklē gaidāmos pasākumus un reģistrācijas saites",
       "Līdzjutējiem un skatītājiem, kuri vēlas zināt, kas un kur notiek",
       "Organizatoriem, kuri vēlas neitrālu un uzticamu pasākumu publicitāti",
       "Satura iesniedzējiem, kuri palīdz uzturēt kalendāru aktuālu un precīzu"
@@ -312,9 +312,9 @@
     "trustTitle": "Kvalitāte un uzticamība",
     "trustPoints": [
       "Satura iesniedzēji var pievienot pasākumus un sekot to apstiprināšanas statusam",
-      "Moderatori pārbauda un apstiprina iesniegumus pirms publicēšanas",
+      "Moderatori pārbauda un apstiprina iesniegtos pasākumus pirms publicēšanas",
       "Organizatoru administratori var pārvaldīt savus pasākumus",
-      "Moderācijas lēmumi tiek reģistrēti pārskatāmības nodrošināšanai"
+      "Moderācijas lēmumi tiek reģistrēti pārredzamības nodrošināšanai"
     ]
   }
 }

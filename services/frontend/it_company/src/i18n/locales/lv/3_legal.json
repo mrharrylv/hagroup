@@ -13,7 +13,7 @@
       },
       {
         "heading": "3. Informatīva tīmekļvietne — līgums tiešsaistē netiek noslēgts",
-        "content": "Tīmekļvietnē ir sniegta vispārīga informācija par mūsu IT, mākoņrisinājumu, DevOps, konsultāciju un programmatūras izstrādes pakalpojumiem. Tā nav interneta veikals vai juridiski saistošs piedāvājums. Formas iesniegšana, budžeta diapazona izvēle vai iesniegšanas apstiprinājuma saņemšana nav pasūtījums, nerada pakalpojumu līgumu, negarantē atbildi un neuzliek nevienai pusei pienākumu turpināt sadarbību. Katram projektam nepieciešams atsevišķs rakstisks piedāvājums vai līgums, kurā noteikts darba apjoms, cena, termiņi, atbildība un citi nosacījumi."
+        "content": "Tīmekļvietnē ir sniegta vispārīga informācija par mūsu IT, mākoņrisinājumu, DevOps, konsultāciju un programmatūras izstrādes pakalpojumiem. Tā nav ne interneta veikals, ne juridiski saistošs piedāvājums. Formas iesniegšana, budžeta diapazona izvēle vai iesniegšanas apstiprinājuma saņemšana nav pasūtījums, nerada pakalpojumu līgumu, negarantē atbildi un neuzliek nevienai pusei pienākumu turpināt sadarbību. Katram projektam nepieciešams atsevišķs rakstisks piedāvājums vai līgums, kurā noteikts darba apjoms, cena, termiņi, atbildība un citi nosacījumi."
       },
       {
         "heading": "4. Pieļaujamā lietošana",
@@ -32,12 +32,12 @@
         "content": "Tīmekļvietnē var būt saites uz trešo personu tīmekļvietnēm vai pakalpojumiem. Tās ir norādītas ērtībai un nenozīmē mūsu apstiprinājumu. Mēs nekontrolējam trešo personu saturu, pieejamību, drošību vai privātuma praksi; to izmantošanai piemērojami attiecīgo pakalpojumu noteikumi un politikas."
       },
       {
-        "heading": "8. Informācijas precizitāte un pieejamība",
+        "heading": "8. Informācijas precizitāte un tīmekļvietnes pieejamība",
         "content": "Mēs veicam saprātīgus pasākumus, lai tīmekļvietnes informācija būtu noderīga un aktuāla, tomēr vispārīgie pakalpojumu apraksti, projektu piemēri, termiņi, budžeta diapazoni un rezultāti ir ilustratīvi un negarantē identisku rezultātu. Tīmekļvietne reizēm var nebūt pieejama, tajā var būt kļūdas, un tās saturs vai funkcijas var tikt mainītas, apturētas vai pārtrauktas."
       },
       {
         "heading": "9. Atbildība par tīmekļvietnes lietošanu",
-        "content": "Ciktāl to pieļauj piemērojamie tiesību akti, HA Group neatbild par netiešiem vai izrietošiem zaudējumiem, kas radušies tikai šīs informatīvās tīmekļvietnes lietošanas, nepieejamības vai paļaušanās uz tajā sniegto informāciju dēļ. Nekas šajos noteikumos neizslēdz un neierobežo atbildību, ko saskaņā ar imperatīvajām tiesību normām izslēgt vai ierobežot nedrīkst, tostarp atbildību par krāpšanu, tīšu pārkāpumu vai obligāto patērētāju tiesību aizsardzības noteikumu pārkāpumu. Atbildību par maksas pakalpojumiem nosaka attiecīgais pakalpojumu līgums."
+        "content": "Ciktāl to pieļauj piemērojamie tiesību akti, HA Group neatbild par netiešiem vai izrietošiem zaudējumiem, kas radušies tikai šīs informatīvās tīmekļvietnes lietošanas, nespējas to lietot vai paļaušanās uz tajā sniegto informāciju dēļ. Nekas šajos noteikumos neizslēdz un neierobežo atbildību, ko saskaņā ar imperatīvajām tiesību normām izslēgt vai ierobežot nedrīkst, tostarp atbildību par krāpšanu, tīšu pārkāpumu vai obligāto patērētāju tiesību aizsardzības noteikumu pārkāpumu. Atbildību par maksas pakalpojumiem nosaka attiecīgais pakalpojumu līgums."
       },
       {
         "heading": "10. Privātums un pārlūka krātuve",
@@ -91,7 +91,7 @@
       },
       {
         "heading": "8. Glabāšanas termiņi",
-        "content": "Personas datus glabājam tikai tik ilgi, cik tas vajadzīgs norādītajam mērķim:\n\n• Projektu un saziņas pieprasījumus — parasti līdz 24 mēnešiem pēc pēdējās saturiskās saziņas.\n• Darba pieteikumus — parasti līdz 12 mēnešiem pēc iesniegšanas. Ilgākai glabāšanai kandidātu datubāzē nepieciešams atsevišķs tiesiskais pamats, piemēram, jūsu konkrēta piekrišana.\n• Krātuves paziņojuma apliecinājuma ierakstus — līdz 12 mēnešiem; pēc tam Firestore TTL dzēšanas termiņa lauks nodrošina to automātiskas dzēšanas iespēju.\n• Mitināšanas un drošības žurnālus, ja tādi tiek veidoti, — laikposmā, kas saprātīgi vajadzīgs drošībai, problēmu novēršanai un pakalpojumu sniedzēja darbībai.\n• Pārlūkā saglabātās vērtības — Sīkdatņu politikā norādītajos termiņos.\n\nDatus var glabāt ilgāk, ja to prasa tiesību akti vai tas ir saprātīgi nepieciešams, lai celtu, īstenotu vai aizstāvētu tiesiskas prasības. Pēc attiecīgā termiņa beigām datus dzēš vai anonimizē."
+        "content": "Personas datus glabājam tikai tik ilgi, cik tas vajadzīgs norādītajam mērķim:\n\n• Projektu un saziņas pieprasījumus — parasti līdz 24 mēnešiem pēc pēdējās saturiskās saziņas.\n• Darba pieteikumus — parasti līdz 12 mēnešiem pēc iesniegšanas. Ilgākai glabāšanai kandidātu datubāzē nepieciešams atsevišķs tiesiskais pamats, piemēram, jūsu konkrētā piekrišana.\n• Krātuves paziņojuma apliecinājuma ierakstus — līdz 12 mēnešiem; pēc tam Firestore TTL dzēšanas termiņa lauks ļauj tos automātiski dzēst.\n• Mitināšanas un drošības žurnālus, ja tādi tiek veidoti, — laikposmā, kas saprātīgi vajadzīgs drošībai, problēmu novēršanai un pakalpojumu sniedzēja darbībai.\n• Pārlūkā saglabātās vērtības — Sīkdatņu politikā norādītajos termiņos.\n\nDatus var glabāt ilgāk, ja to prasa tiesību akti vai tas ir saprātīgi nepieciešams, lai celtu, īstenotu vai aizstāvētu tiesiskas prasības. Pēc attiecīgā termiņa beigām datus dzēš vai anonimizē."
       },
       {
         "heading": "9. Drošība",
@@ -103,7 +103,7 @@
       },
       {
         "heading": "11. Tiesību izmantošana un sūdzības",
-        "content": "Pieprasījumus sūtiet uz info@hagroup.lv. Mēs varam lūgt informāciju, kas saprātīgi nepieciešama jūsu identitātes pārbaudei. Atbildēsim bez nepamatotas kavēšanās un parasti viena mēneša laikā; sarežģītu vai daudzu pieprasījumu gadījumā VDAR ļauj termiņu pagarināt vēl par diviem mēnešiem, par ko jūs informēsim.\n\nLatvijas uzraudzības iestāde ir Datu valsts inspekcija, Elijas iela 17, Rīga, LV-1050; e-pasts pasts@dvi.gov.lv; tīmekļvietne www.dvi.gov.lv. Varat sūdzēties arī tās ES vai EEZ valsts uzraudzības iestādē, kurā dzīvojat, strādājat vai, jūsuprāt, ir noticis pārkāpums."
+        "content": "Pieprasījumus sūtiet uz info@hagroup.lv. Mēs varam lūgt informāciju, kas saprātīgi nepieciešama jūsu identitātes pārbaudei. Atbildēsim bez nepamatotas kavēšanās un parasti viena mēneša laikā; sarežģītu vai daudzu pieprasījumu gadījumā VDAR ļauj termiņu pagarināt vēl par ne vairāk kā diviem mēnešiem, par ko jūs informēsim.\n\nLatvijas uzraudzības iestāde ir Datu valsts inspekcija, Elijas iela 17, Rīga, LV-1050; e-pasts pasts@dvi.gov.lv; tīmekļvietne www.dvi.gov.lv. Varat sūdzēties arī tās ES vai EEZ valsts uzraudzības iestādē, kurā dzīvojat, strādājat vai, jūsuprāt, ir noticis pārkāpums."
       },
       {
         "heading": "12. Automatizēti lēmumi un bērni",
@@ -111,7 +111,7 @@
       },
       {
         "heading": "13. Politikas izmaiņas",
-        "content": "Mēs varam atjaunināt šo politiku, ja mainās datu apstrāde vai juridiskie pienākumi. Aktuālā redakcija un tās spēkā stāšanās datums būs publicēti šajā lapā. Ja izmaiņas būtiski ietekmēs jau saņemtu datu izmantošanu, sniegsim papildu paziņojumu vai saņemsim piekrišanu, ja to prasīs tiesību akti."
+        "content": "Mēs varam atjaunināt šo politiku, ja mainās datu apstrāde vai juridiskie pienākumi. Aktuālā redakcija un tās spēkā stāšanās datums būs publicēti šajā lapā. Ja izmaiņas būtiski ietekmēs jau saņemto datu izmantošanu, sniegsim papildu paziņojumu vai saņemsim piekrišanu, ja to prasīs tiesību akti."
       }
     ]
   },
@@ -129,7 +129,7 @@
       },
       {
         "heading": "3. Kāpēc piekrišana netiek prasīta",
-        "content": "Norādītās vērtības izmantojam, lai nodrošinātu jūsu skaidri pieprasītus iestatījumus, atcerētos šo paziņojumu vai aizsargātu formas un tīmekļvietnes darbību. Saskaņā ar Informācijas sabiedrības pakalpojumu likuma 7¹ panta otro daļu lietotāja pieprasīta pakalpojuma sniegšanai nepieciešamai krātuvei piekrišana nav vajadzīga, taču par to joprojām jāsniedz skaidra informācija. Tādēļ paziņojumā ir iepazīšanās apstiprinājuma poga, nevis maldinoša izvēle pieņemt vai noraidīt. Nospiežot “Sapratu”, tiek reģistrēta iepazīšanās ar paziņojumu; tā nav piekrišana analītikai, reklāmai vai izsekošanai."
+        "content": "Norādītās vērtības izmantojam, lai nodrošinātu jūsu skaidri pieprasītos iestatījumus, atcerētos šo paziņojumu vai aizsargātu formas un tīmekļvietnes darbību. Saskaņā ar Informācijas sabiedrības pakalpojumu likuma 7¹ panta otro daļu lietotāja pieprasīta pakalpojuma sniegšanai nepieciešamai krātuvei piekrišana nav vajadzīga, taču par to joprojām jāsniedz skaidra informācija. Tādēļ paziņojumā ir iepazīšanās apstiprinājuma poga, nevis maldinoša izvēle pieņemt vai noraidīt. Nospiežot “Sapratu”, tiek reģistrēta iepazīšanās ar paziņojumu; tā nav piekrišana analītikai, reklāmai vai izsekošanai."
       },
       {
         "heading": "4. Netiek izmantota analītikas vai reklāmas krātuve",
@@ -141,11 +141,11 @@
       },
       {
         "heading": "6. Pārlūka krātuves pārvaldība",
-        "content": "Tīmekļvietnes sīkdatnes un lokālo krātuvi varat apskatīt vai dzēst pārlūka privātuma vai vietnes datu iestatījumos. Dzēšot cloudie-lang vai cloudie-theme, tiek atiestatīts attiecīgais iestatījums; dzēšot cloudie-cookies, paziņojums tiks parādīts atkārtoti. Pilnīga lokālās krātuves bloķēšana var traucēt iestatījumu un formu aizsardzības paredzēto darbību. Zemāk esošā poga atkārtoti atver paziņojumu, bet pati par sevi nedzēš citas saglabātās vērtības."
+        "content": "Tīmekļvietnes sīkdatnes un lokālo krātuvi varat apskatīt vai dzēst pārlūka privātuma vai vietnes datu iestatījumos. Dzēšot cloudie-lang vai cloudie-theme, tiek atiestatīts attiecīgais iestatījums; dzēšot cloudie-cookies, paziņojums tiks parādīts atkārtoti. Ja pilnībā bloķējat lokālo krātuvi, iestatījumi un formu aizsardzība var nedarboties, kā paredzēts. Zemāk esošā poga atkārtoti atver paziņojumu, bet pati par sevi nedzēš citas saglabātās vērtības."
       },
       {
         "heading": "7. Pakalpojumu sniedzēji un citi dati",
-        "content": "Tīmekļvietne apzināti neizvieto trešo personu sīkdatnes. Nospiežot “Sapratu”, Google Firebase / Cloud Firestore saņem ierakstu, kurā ir tikai ieraksta veids, izvēle izmantot nepieciešamo krātuvi, paziņojuma versija, saskarnes valoda, servera izveides laiks un dzēšanas termiņa laiks. Firestore dokumenta identifikators tiek saglabāts pārlūkā kā apliecinājuma atsauce. Ierakstā nav jūsu vārda, e-pasta adreses, pārlūka identifikācijas virknes, lapas URL vai pastāvīga apmeklētāja identifikatora. Firebase un mūsu mitināšanas pakalpojumu sniedzēji joprojām var apstrādāt parastos savienojuma datus, kā aprakstīts Privātuma politikā. Ārējo tīmekļvietņu lietošanu regulē to sīkdatņu un privātuma politikas."
+        "content": "Tīmekļvietne apzināti neizvieto trešo personu sīkdatnes. Kad nospiežat “Sapratu”, Google Firebase / Cloud Firestore saņem ierakstu, kurā ir tikai ieraksta veids, izvēle izmantot nepieciešamo krātuvi, paziņojuma versija, saskarnes valoda, servera izveides laiks un dzēšanas termiņa laiks. Firestore dokumenta identifikators tiek saglabāts pārlūkā kā apliecinājuma atsauce. Ierakstā nav jūsu vārda, e-pasta adreses, pārlūka identifikācijas virknes, lapas URL vai pastāvīga apmeklētāja identifikatora. Firebase un mūsu mitināšanas pakalpojumu sniedzēji joprojām var apstrādāt parastos savienojuma datus, kā aprakstīts Privātuma politikā. Ārējo tīmekļvietņu lietošanu regulē to sīkdatņu un privātuma politikas."
       },
       {
         "heading": "8. Izmaiņas un kontakti",

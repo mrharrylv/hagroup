@@ -18,7 +18,7 @@
       "key": "cloud",
       "icon": "solar:cloud-linear",
       "path": "/services/cloud-migration",
-      "title": "Mākoņpakalpojumi un migrācija",
+      "title": "Mākonis un migrācija",
       "description": "Stratēģiska daudzmākoņu arhitektūra, migrācija un optimizācija AWS, Azure un Google Cloud vidē, ievērojot nulles uzticēšanās drošības principus."
     },
     {
@@ -216,7 +216,7 @@
     },
     "cloudMigration": {
       "icon": "solar:cloud-linear",
-      "title": "Mākoņpakalpojumi un migrācija",
+      "title": "Mākonis un migrācija",
       "subtitle": "Pārdomāta mākoņrisinājumu ieviešana un migrācija uz AWS, Azure vai Google Cloud, optimizējot veiktspēju, drošību un izmaksas.",
       "overviewTitle": "Pareizi izstrādāta mākoņarhitektūra",
       "overviewText": "Pāreja uz mākoni ir kas vairāk par vienkāršu sistēmu pārvietošanu. Mēs izstrādājam mākoņvidēm paredzētu arhitektūru un migrācijas stratēģijas, kas ļauj pilnvērtīgi izmantot AWS, Azure vai GCP. No sākotnējā novērtējuma un darba slodžu analīzes līdz migrācijai un optimizācijai rūpējamies, lai pāreja būtu droša, vienmērīga un izmaksu ziņā efektīva. Mūsu komanda projektē mākoņa pamatvidi (landing zone), tīkla arhitektūru un drošības risinājumus, kā arī pastāvīgi optimizē mākoņa izmaksas.",
@@ -225,7 +225,7 @@
         {
           "icon": "solar:cloud-linear",
           "title": "Mākoņa stratēģija un novērtējums",
-          "description": "Darba slodžu analīze, kopējo izmaksu (TCO) aprēķini un mākoņa gatavības novērtējums skaidra migrācijas ceļveža izveidei."
+          "description": "Darba slodžu analīze, kopējo īpašumtiesību izmaksu (TCO) aprēķini un mākoņa gatavības novērtējums skaidra migrācijas ceļveža izveidei."
         },
         {
           "icon": "solar:transfer-horizontal-linear",
@@ -304,7 +304,7 @@
         {
           "icon": "solar:server-path-linear",
           "title": "CI/CD konveijeri",
-          "description": "Automatizēta kompilēšana, testēšana, drošības pārbaudes un izvietošana katrai koda izmaiņai."
+          "description": "Automatizēta būvēšana, testēšana, drošības pārbaudes un izvietošana katrai koda izmaiņai."
         },
         {
           "icon": "solar:code-file-linear",
@@ -426,7 +426,7 @@
         {
           "step": "3. solis",
           "title": "Proaktīva pārvaldība",
-          "description": "Nepārtraukta uzraudzība, automatizēta apkope un preventīvas darbības."
+          "description": "Nepārtraukta uzraudzība, automatizēta uzturēšana un preventīvas darbības."
         },
         {
           "step": "4. solis",
@@ -512,7 +512,7 @@
           "description": "Izvietošana ražošanas vidē, uzraudzības iestatīšana un pakāpeniski uzlabojumi."
         }
       ],
-      "techTitle": "Mūsu tehnoloģiju kopa",
+      "techTitle": "Mūsu tehnoloģiju kopums",
       "technologies": [
         { "name": "React", "icon": "logos:react" },
         { "name": "Node.js", "icon": "logos:nodejs-icon" },

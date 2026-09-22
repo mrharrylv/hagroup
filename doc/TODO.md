@@ -1,3 +1,42 @@
+# NEEDS THE OWNER:
+
+## Kopā (`kopa/`) — nothing is deployed yet
+
+The demo builds, tests and runs locally. Three things need a human, and none of
+them is something an agent can do on its own.
+
+- **Authorise the AWS spend.** `KOPA - Terraform Infrastructure` (dev) creates a
+  private S3 bucket, a CloudFront distribution on `PriceClass_100` and an ACM
+  certificate request. Cents per month while idle, all tagged
+  `CostCenter = kopa` so they filter out of Cost Explorer on their own. Nothing
+  in `kopa/` exists in AWS until that workflow is run by hand.
+- **Add two DNS records for `kopa.hagroup.lv`.** The `hagroup.lv` zone is at the
+  registrar, not in Route 53, so both records are a manual action:
+  the ACM validation CNAME and the site CNAME to the CloudFront hostname. Both
+  values come out of the infrastructure run's `dns_records_required` output.
+  Until the validation record resolves, the certificate stays
+  `PENDING_VALIDATION` and the custom domain cannot be attached — the site is
+  reachable on the CloudFront hostname in the meantime.
+- **Then flip the domain on.** Set `enable_custom_domain = true` in
+  `kopa/infrastructure/terraform/environments/dev.tfvars` and re-run the
+  infrastructure workflow. Doing it before the records resolve fails the apply.
+
+Deliberately absent, and each one is a separate piece of work rather than a
+tweak: backend, database, authentication, payments, email, analytics, consent
+banner. There is nothing to consent to while every byte of data is invented.
+
+## This repo has two backlogs and an uncatalogued history
+
+`doc/TODO.md` (this file) and `todo.md` both exist and both describe work. They
+have to be merged by hand — by someone who knows which is current — not folded
+together by a tool. Until that happens, queue-driven work in this repo is
+guessing which file is live.
+
+Related: `doc/FEATURES.md` now catalogues Kopā only. The `hagroup.lv` site and
+IEPAKO still owe their rows, and those must be seeded by reading the code —
+their `todo.md` done lists are byte-for-byte duplicates of another repo's, so
+converting them wholesale would record capabilities that may not exist here.
+
 # Later:
 
 

@@ -39,6 +39,7 @@ export default function MapPage() {
   const [map, setMap] = useState<LeafletMap | null>(null);
   const [zoom, setZoom] = useState(7);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [containerReady, setContainerReady] = useState(false);
   const [joining, setJoining] = useState(false);
 
   const latviaBounds = useMemo(() => toBoundsLiteral(LATVIA_BOUNDS), []);
@@ -147,11 +148,26 @@ export default function MapPage() {
    * Leaflet only listens for window resizes, so a container that changes size
    * on its own — the sidebar opening, a devtools viewport change — leaves the
    * canvas painted at the old size until something else nudges it.
+   *
+   * It also answers a worse question: has the container got a size at all yet?
+   * On a cold load over the network the stylesheet can land after the map
+   * mounts, so Leaflet measures 0×0, fits the country into zero pixels, clamps
+   * to maxZoom and offsets the pane by half the container. The page renders as
+   * a single tile floating in an empty canvas with every pin off-screen. The
+   * framing below waits for a real measurement rather than trusting the first.
    */
   useEffect(() => {
     if (map === null) return;
-    const observer = new ResizeObserver(() => map.invalidateSize());
-    observer.observe(map.getContainer());
+    const element = map.getContainer();
+
+    const measure = () => {
+      if (element.clientWidth > 0 && element.clientHeight > 0) setContainerReady(true);
+      map.invalidateSize();
+    };
+
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(element);
     return () => observer.disconnect();
   }, [map]);
 
@@ -176,7 +192,7 @@ export default function MapPage() {
    */
   const focusedRef = useRef(false);
   useEffect(() => {
-    if (map === null || focusedRef.current) return;
+    if (map === null || !containerReady || focusedRef.current) return;
     focusedRef.current = true;
     map.invalidateSize();
     if (selectedSlug !== null) return;
@@ -190,7 +206,7 @@ export default function MapPage() {
     const region = filters.regions.length === 1 ? regionById(filters.regions[0]) : undefined;
     if (region === undefined) map.fitBounds(latviaBounds, FIT_OPTIONS);
     else frameRegion(region, false);
-  }, [map, filters.cityId, filters.regions, selectedSlug, latviaBounds, frameRegion]);
+  }, [map, containerReady, filters.cityId, filters.regions, selectedSlug, latviaBounds, frameRegion]);
 
   const focusRegion = useCallback(
     (region: Region | null) => {

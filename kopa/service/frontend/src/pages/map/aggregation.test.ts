@@ -50,3 +50,40 @@ describe('the map zoom bridge', () => {
     expect(SOURCE).not.toMatch(/\bzoom\s*<\s*\d/);
   });
 });
+
+/**
+ * A cold load over the network can paint the map container before its
+ * stylesheet arrives, so Leaflet measures it as 0x0. `fitBounds` against zero
+ * pixels clamps to maxZoom and offsets the map pane by half the container: the
+ * deployed page rendered as a single tile floating in an empty canvas with all
+ * thirty pins off-screen, while every overlay control said "30 on the map".
+ * It only reproduced over CloudFront — locally the CSS was always already there.
+ *
+ * The framing effect must therefore wait for a real measurement instead of
+ * trusting the first one, and must stay retryable until it gets one.
+ */
+describe('the map framing effect', () => {
+  const SOURCE = Object.values(
+    import.meta.glob('../MapPage.tsx', { query: '?raw', import: 'default', eager: true }),
+  )[0] as string;
+
+  it('only claims a container once it has been measured non-zero', () => {
+    expect(SOURCE).toContain('element.clientWidth > 0 && element.clientHeight > 0');
+    expect(SOURCE).toContain('setContainerReady(true)');
+  });
+
+  it('refuses to frame the map before that measurement', () => {
+    expect(SOURCE).toContain('if (map === null || !containerReady || focusedRef.current) return;');
+  });
+
+  it('re-runs when the measurement arrives, rather than latching on first paint', () => {
+    const effect = SOURCE.slice(SOURCE.indexOf('const focusedRef'));
+    const deps = effect.slice(effect.indexOf('}, ['), effect.indexOf(');', effect.indexOf('}, [')));
+    expect(deps).toContain('containerReady');
+  });
+
+  it('keeps observing the container so a later resize still invalidates', () => {
+    expect(SOURCE).toContain('new ResizeObserver(measure)');
+    expect(SOURCE).toContain('observer.disconnect()');
+  });
+});

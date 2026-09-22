@@ -6,7 +6,9 @@ A concept demo of a Latvian group-buying / bulk-procurement marketplace: buyers 
 an area pool demand for pellets, diesel, fertiliser, timber, restaurant supplies
 and household bulk goods, and the unit price drops as commitments accumulate.
 
-- development: `https://kopa.hagroup.lv`
+- development: `https://d3r9yaiqt5lkqj.cloudfront.net` — live now
+- planned: `https://kopa.hagroup.lv` — waiting on two CNAMEs at the registrar,
+  see `doc/TODO.md`
 
 There is no production environment. This is a demo built to be shown to partners
 and investors, not a product.
@@ -87,7 +89,14 @@ Two workflows, in this order, both from the Actions tab:
    invalidates CloudFront.
 
 Until DNS is attached the site is served on the CloudFront hostname that step 1
-prints as `website_url`.
+prints as `website_url` — today, `https://d3r9yaiqt5lkqj.cloudfront.net`.
+
+Both workflows import an orphaned origin access control and response headers
+policy by name before planning. That is not defensive padding: an apply that
+dies before it can write state leaves those two behind, Terraform has no record
+of them, and the next run collides on the name. It happened on the first apply,
+which was denied `s3:PutObject` on the state bucket after creating three
+resources.
 
 ### Attaching `kopa.hagroup.lv`
 

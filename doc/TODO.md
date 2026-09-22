@@ -1,57 +1,35 @@
 # NEEDS THE OWNER:
 
-## Kopā (`kopa/`) — nothing is deployed yet
+## Kopā (`kopa/`) — live on CloudFront, waiting on DNS
 
-The demo builds, tests and runs locally. Three things need a human, and none of
-them is something an agent can do on its own.
+The demo is deployed and reachable. What is left is the custom domain, and that
+is two records in a zone no agent can reach.
 
-- **Widen the OIDC role, then re-run the infrastructure workflow.** This is now
-  the blocker, and it is an IAM change, so it is yours. The first apply
-  (run 35746128080, 2026-09-22) was refused `s3:PutObject` on
-  `hagroup/kopa/dev/terraform.tfstate` and `s3:CreateBucket` on
-  `dev-hagroup-kopa-website`: `infrastructure/aws/setup.sh` enumerates every
-  workload's state prefix and bucket by name, and Kopā was in neither list.
-  Both lists now include it, but the policy in AWS does not change until the
-  script is re-run:
-
-      ./infrastructure/aws/setup.sh            # updates github-oidc-hagroup-dev
-
-  Then re-run `KOPA - Terraform Infrastructure` (dev). It creates a private S3
-  bucket, a CloudFront distribution on `PriceClass_100` and an ACM certificate.
-  Cents per month while idle, all tagged `CostCenter = kopa` so they filter out
-  of Cost Explorer on their own.
-
-- **Three orphaned resources are already in AWS**, created by that failed apply
-  before it was denied. Terraform has no record of them, because the run could
-  not write state. None of them costs anything:
-
-  | Resource | Id | Note |
-  | --- | --- | --- |
-  | CloudFront origin access control | `E20EPWOSY8FJGT` | `dev-hagroup-kopa-oac` |
-  | CloudFront response headers policy | `57583a2f-2c7d-41e6-b979-e5aed4886257` | `dev-hagroup-kopa-security-headers` |
-  | ACM certificate | `…c37c5240-0897-4947-ab0f-ae1be46f4fd2` | `kopa.hagroup.lv`, `PENDING_VALIDATION` |
-
-  The infrastructure workflow now imports the first two by name before planning,
-  so the next apply adopts them rather than colliding. The certificate is
-  adopted the same way Terraform always handles it: a second one would be
-  created and the first left to expire unused, which is untidy but harmless.
+- ~~Widen the OIDC role and apply the infrastructure.~~ **Done 2026-09-22.**
+  `infrastructure/aws/setup.sh` enumerates every workload's state prefix and
+  bucket by name, and Kopā was in neither list, so the first apply was refused
+  `s3:PutObject` on the state file and `s3:CreateBucket`. Both lists now include
+  it, the script has been re-run, and the dev stack is up: bucket
+  `dev-hagroup-kopa-website`, CloudFront `d3r9yaiqt5lkqj.cloudfront.net`.
+  The three resources the failed apply orphaned were adopted by the workflow's
+  import steps rather than duplicated.
 
 - **Add two DNS records for `kopa.hagroup.lv`.** The `hagroup.lv` zone is at the
-  registrar, not in Route 53, so both records are a manual action. The first one
-  is already known — it belongs to the certificate that exists now, and adding
-  it starts validation immediately, before any of the above:
+  registrar, not in Route 53, so both are a manual action:
 
-  | Type | Name | Value |
-  | --- | --- | --- |
-  | CNAME | `_9b04744eb092f2e36e46ac83da9f65e0.kopa` | `_f9f433cb1295d8b5e5c25ab469aeddee.wzccmgtwzk.acm-validations.aws.` |
+  | # | Purpose | Type | Name | Value |
+  | --- | --- | --- | --- | --- |
+  | 1 | ACM validation | CNAME | `_9b04744eb092f2e36e46ac83da9f65e0.kopa` | `_f9f433cb1295d8b5e5c25ab469aeddee.wzccmgtwzk.acm-validations.aws.` |
+  | 2 | Site alias | CNAME | `kopa` | `d3r9yaiqt5lkqj.cloudfront.net.` |
 
-  The second is the site alias, `kopa` → the CloudFront hostname, which does not
-  exist until the distribution does. Until the validation record resolves, the
-  certificate stays `PENDING_VALIDATION` and the custom domain cannot be
-  attached — the site is reachable on the CloudFront hostname in the meantime.
-- **Then flip the domain on.** Set `enable_custom_domain = true` in
+  Both values are final — the certificate and the distribution both exist now.
+  Until record 1 resolves the certificate stays `PENDING_VALIDATION` and the
+  custom domain cannot be attached. The site is live on
+  `https://d3r9yaiqt5lkqj.cloudfront.net` in the meantime.
+- **Then flip the domain on.** Once both records resolve, set
+  `enable_custom_domain = true` in
   `kopa/infrastructure/terraform/environments/dev.tfvars` and re-run the
-  infrastructure workflow. Doing it before the records resolve fails the apply.
+  infrastructure workflow. Doing it before they resolve fails the apply.
 
 Deliberately absent, and each one is a separate piece of work rather than a
 tweak: backend, database, authentication, payments, email, analytics, consent

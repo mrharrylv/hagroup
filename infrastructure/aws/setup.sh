@@ -178,7 +178,8 @@ EOF
       "Action": ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"],
       "Resource": [
         "arn:aws:s3:::${STATE_BUCKET}/hagroup/${env}/*",
-        "arn:aws:s3:::${STATE_BUCKET}/hagroup/iepako/${env}/*"
+        "arn:aws:s3:::${STATE_BUCKET}/hagroup/iepako/${env}/*",
+        "arn:aws:s3:::${STATE_BUCKET}/hagroup/kopa/${env}/*"
       ]
     },
     {
@@ -191,7 +192,9 @@ EOF
         "arn:aws:s3:::${env}-hagroup-assets",
         "arn:aws:s3:::${env}-hagroup-assets/*",
         "arn:aws:s3:::${env}-hagroup-iepako-website",
-        "arn:aws:s3:::${env}-hagroup-iepako-website/*"
+        "arn:aws:s3:::${env}-hagroup-iepako-website/*",
+        "arn:aws:s3:::${env}-hagroup-kopa-website",
+        "arn:aws:s3:::${env}-hagroup-kopa-website/*"
       ]
     },
     {

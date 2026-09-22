@@ -60,8 +60,12 @@ jobs:
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: terraform validate
 
-      # An apply interrupted after the OAC is created but before state is
-      # written leaves an orphan that the next apply collides with by name.
+      # An apply that dies before it can write state leaves orphans behind:
+      # the resources exist in AWS, Terraform has no record of them, and the
+      # next apply collides with them by name. Both CloudFront resources this
+      # stack creates are name-unique, so both are imported if already present.
+      # This happened for real on the first Kopā apply, which was denied
+      # s3:PutObject on the state bucket after creating three resources.
       - name: Import existing OAC after an interrupted apply
         working-directory: ${{ env.TF_WORKING_DIR }}
         env:
@@ -86,6 +90,31 @@ jobs:
           terraform import \
             -var-file="environments/${TARGET_ENVIRONMENT}.tfvars" \
             aws_cloudfront_origin_access_control.website "$OAC_ID"
+
+      - name: Import existing response headers policy after an interrupted apply
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        env:
+          TARGET_ENVIRONMENT: ${{ inputs.environment }}
+        run: |
+          if terraform state show aws_cloudfront_response_headers_policy.security > /dev/null 2>&1; then
+            echo "Kopā response headers policy is already tracked in Terraform state."
+            exit 0
+          fi
+
+          POLICY_NAME="${TARGET_ENVIRONMENT}-hagroup-kopa-security-headers"
+          POLICY_ID=$(aws cloudfront list-response-headers-policies \
+            --query "ResponseHeadersPolicyList.Items[?ResponseHeadersPolicy.ResponseHeadersPolicyConfig.Name=='${POLICY_NAME}'] | [0].ResponseHeadersPolicy.Id" \
+            --output text)
+
+          if [ -z "$POLICY_ID" ] || [ "$POLICY_ID" = "None" ] || [ "$POLICY_ID" = "null" ]; then
+            echo "No existing Kopā response headers policy found; Terraform will create it."
+            exit 0
+          fi
+
+          echo "Importing existing Kopā response headers policy '${POLICY_NAME}' (${POLICY_ID})."
+          terraform import \
+            -var-file="environments/${TARGET_ENVIRONMENT}.tfvars" \
+            aws_cloudfront_response_headers_policy.security "$POLICY_ID"
 
       - name: Plan
         working-directory: ${{ env.TF_WORKING_DIR }}

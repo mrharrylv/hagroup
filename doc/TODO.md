@@ -5,18 +5,50 @@
 The demo builds, tests and runs locally. Three things need a human, and none of
 them is something an agent can do on its own.
 
-- **Authorise the AWS spend.** `KOPA - Terraform Infrastructure` (dev) creates a
-  private S3 bucket, a CloudFront distribution on `PriceClass_100` and an ACM
-  certificate request. Cents per month while idle, all tagged
-  `CostCenter = kopa` so they filter out of Cost Explorer on their own. Nothing
-  in `kopa/` exists in AWS until that workflow is run by hand.
+- **Widen the OIDC role, then re-run the infrastructure workflow.** This is now
+  the blocker, and it is an IAM change, so it is yours. The first apply
+  (run 35746128080, 2026-09-22) was refused `s3:PutObject` on
+  `hagroup/kopa/dev/terraform.tfstate` and `s3:CreateBucket` on
+  `dev-hagroup-kopa-website`: `infrastructure/aws/setup.sh` enumerates every
+  workload's state prefix and bucket by name, and Kopā was in neither list.
+  Both lists now include it, but the policy in AWS does not change until the
+  script is re-run:
+
+      ./infrastructure/aws/setup.sh            # updates github-oidc-hagroup-dev
+
+  Then re-run `KOPA - Terraform Infrastructure` (dev). It creates a private S3
+  bucket, a CloudFront distribution on `PriceClass_100` and an ACM certificate.
+  Cents per month while idle, all tagged `CostCenter = kopa` so they filter out
+  of Cost Explorer on their own.
+
+- **Three orphaned resources are already in AWS**, created by that failed apply
+  before it was denied. Terraform has no record of them, because the run could
+  not write state. None of them costs anything:
+
+  | Resource | Id | Note |
+  | --- | --- | --- |
+  | CloudFront origin access control | `E20EPWOSY8FJGT` | `dev-hagroup-kopa-oac` |
+  | CloudFront response headers policy | `57583a2f-2c7d-41e6-b979-e5aed4886257` | `dev-hagroup-kopa-security-headers` |
+  | ACM certificate | `…c37c5240-0897-4947-ab0f-ae1be46f4fd2` | `kopa.hagroup.lv`, `PENDING_VALIDATION` |
+
+  The infrastructure workflow now imports the first two by name before planning,
+  so the next apply adopts them rather than colliding. The certificate is
+  adopted the same way Terraform always handles it: a second one would be
+  created and the first left to expire unused, which is untidy but harmless.
+
 - **Add two DNS records for `kopa.hagroup.lv`.** The `hagroup.lv` zone is at the
-  registrar, not in Route 53, so both records are a manual action:
-  the ACM validation CNAME and the site CNAME to the CloudFront hostname. Both
-  values come out of the infrastructure run's `dns_records_required` output.
-  Until the validation record resolves, the certificate stays
-  `PENDING_VALIDATION` and the custom domain cannot be attached — the site is
-  reachable on the CloudFront hostname in the meantime.
+  registrar, not in Route 53, so both records are a manual action. The first one
+  is already known — it belongs to the certificate that exists now, and adding
+  it starts validation immediately, before any of the above:
+
+  | Type | Name | Value |
+  | --- | --- | --- |
+  | CNAME | `_9b04744eb092f2e36e46ac83da9f65e0.kopa` | `_f9f433cb1295d8b5e5c25ab469aeddee.wzccmgtwzk.acm-validations.aws.` |
+
+  The second is the site alias, `kopa` → the CloudFront hostname, which does not
+  exist until the distribution does. Until the validation record resolves, the
+  certificate stays `PENDING_VALIDATION` and the custom domain cannot be
+  attached — the site is reachable on the CloudFront hostname in the meantime.
 - **Then flip the domain on.** Set `enable_custom_domain = true` in
   `kopa/infrastructure/terraform/environments/dev.tfvars` and re-run the
   infrastructure workflow. Doing it before the records resolve fails the apply.

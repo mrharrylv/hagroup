@@ -1,0 +1,149 @@
+name: KOPA - Build & Deploy Frontend
+
+# Dev is the only environment Kopā has. A push to main that touches the demo
+# ships it; the dispatch is there for a redeploy without a commit.
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - kopa/service/frontend/**
+      - .github/workflows/kopa-deploy.yaml
+  # Dev is the only environment, so the dispatch takes no input: a redeploy of
+  # whatever is on main.
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: eu-north-1
+  NODE_VERSION: "20"
+  FRONTEND_DIR: kopa/service/frontend
+  TARGET_ENV: dev
+
+jobs:
+  build:
+    name: Build frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: ${{ env.FRONTEND_DIR }}/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm ci
+
+      - name: Lint
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm run lint
+
+      - name: Test
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm run test
+
+      # The demo has no backend and no secrets; the build takes no inputs.
+      - name: Production build
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm run build
+
+      - name: Upload immutable build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kopa-frontend-dist
+          path: ${{ env.FRONTEND_DIR }}/dist
+          retention-days: 7
+
+  deploy:
+    name: Deploy dev
+    needs: build
+    runs-on: ubuntu-latest
+    environment: dev
+    concurrency:
+      group: kopa-frontend-dev
+      cancel-in-progress: false
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: kopa-frontend-dist
+          path: artifact/dist
+
+      - name: Configure AWS OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::561341419749:role/github-oidc-hagroup-${{ env.TARGET_ENV }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Resolve CloudFront distribution
+        id: cloudfront
+        run: |
+          DISTRIBUTION_ID=$(aws cloudfront list-distributions \
+            --query "DistributionList.Items[?Comment=='${TARGET_ENV} - hagroup kopa website'].Id | [0]" \
+            --output text)
+
+          if [ -z "$DISTRIBUTION_ID" ] || [ "$DISTRIBUTION_ID" = "None" ] || [ "$DISTRIBUTION_ID" = "null" ]; then
+            echo "Kopā CloudFront distribution not found. Run the KOPA infrastructure workflow first."
+            exit 1
+          fi
+
+          echo "distribution_id=$DISTRIBUTION_ID" >> "$GITHUB_OUTPUT"
+
+      - name: Upload versioned assets
+        env:
+          BUCKET: ${{ env.TARGET_ENV }}-hagroup-kopa-website
+        run: |
+          aws s3 sync artifact/dist/ "s3://$BUCKET" \
+            --exclude "index.html" \
+            --cache-control "public, max-age=31536000, immutable"
+
+      # index.html is the only mutable object: it names the hashed bundles.
+      - name: Publish HTML entry point
+        env:
+          BUCKET: ${{ env.TARGET_ENV }}-hagroup-kopa-website
+        run: |
+          aws s3 cp artifact/dist/index.html "s3://$BUCKET/index.html" \
+            --content-type "text/html" \
+            --cache-control "public, max-age=60, s-maxage=300"
+
+      - name: Invalidate CloudFront
+        env:
+          DISTRIBUTION_ID: ${{ steps.cloudfront.outputs.distribution_id }}
+        run: |
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
+            --distribution-id "$DISTRIBUTION_ID" \
+            --paths "/*" \
+            --query "Invalidation.Id" \
+            --output text)
+
+          aws cloudfront wait invalidation-completed \
+            --distribution-id "$DISTRIBUTION_ID" \
+            --id "$INVALIDATION_ID"
+
+      # Only after the invalidation completes, so no viewer is served an
+      # index.html pointing at a bundle that has just been deleted.
+      - name: Remove superseded assets
+        env:
+          BUCKET: ${{ env.TARGET_ENV }}-hagroup-kopa-website
+        run: |
+          aws s3 sync artifact/dist/ "s3://$BUCKET" \
+            --delete \
+            --exclude "index.html" \
+            --cache-control "public, max-age=31536000, immutable"
+
+      - name: Deployment summary
+        run: |
+          echo "Environment: ${TARGET_ENV}"
+          echo "Bucket: ${TARGET_ENV}-hagroup-kopa-website"
+          echo "CloudFront: ${{ steps.cloudfront.outputs.distribution_id }}"
+          echo "URL once DNS is attached: https://kopa.hagroup.lv"

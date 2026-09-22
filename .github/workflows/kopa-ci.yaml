@@ -1,0 +1,84 @@
+name: KOPA - CI
+
+# Every branch except main, and every pull request that touches Kopā. The
+# deploy workflow runs the same gate again before it ships anything, so a green
+# run here is a fast signal rather than the only one.
+on:
+  push:
+    branches-ignore:
+      - main
+    paths:
+      - kopa/service/frontend/**
+      - .github/workflows/kopa-ci.yaml
+  pull_request:
+    paths:
+      - kopa/service/frontend/**
+      - .github/workflows/kopa-ci.yaml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kopa-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "20"
+  FRONTEND_DIR: kopa/service/frontend
+
+jobs:
+  verify:
+    name: Lint, test and build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: ${{ env.FRONTEND_DIR }}/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm ci
+
+      - name: Lint
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm run lint
+
+      - name: Test
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm run test
+
+      - name: Build
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm run build
+
+  terraform:
+    name: Terraform format and validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
+
+      - name: Check formatting
+        working-directory: kopa/infrastructure/terraform
+        run: terraform fmt -check -recursive
+
+      # No backend: validation needs no AWS credentials and no state.
+      - name: Validate
+        working-directory: kopa/infrastructure/terraform
+        run: |
+          terraform init -backend=false -input=false
+          terraform validate

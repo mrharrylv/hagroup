@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { AGGREGATE_BELOW_ZOOM, shouldAggregate } from './aggregation';
+import { AGGREGATE_BELOW_ZOOM, MAX_ZOOM, MIN_ZOOM, fitLooksMeasured, shouldAggregate } from './aggregation';
 
 describe('shouldAggregate', () => {
   it('bubbles up the regions when the country is in view and nothing is typed', () => {
@@ -67,23 +67,90 @@ describe('the map framing effect', () => {
     import.meta.glob('../MapPage.tsx', { query: '?raw', import: 'default', eager: true }),
   )[0] as string;
 
-  it('only claims a container once it has been measured non-zero', () => {
-    expect(SOURCE).toContain('element.clientWidth > 0 && element.clientHeight > 0');
-    expect(SOURCE).toContain('setContainerReady(true)');
+  // These three replaced an earlier set that pinned a `containerReady` boolean
+  // and a `clientWidth > 0` check. That shape passed its own tests and still
+  // shipped the bug below: a non-zero clientWidth is not the same as Leaflet
+  // having measured it, the boolean latched on the first paint, and the framing
+  // never ran again. The measurement is now a size, not a flag, so a later
+  // measurement is a new value and re-runs the effect.
+  it('records the measured size rather than a one-way ready flag', () => {
+    expect(SOURCE).toContain('setContainerSize(');
+    expect(SOURCE, 'a boolean cannot carry a second, better measurement').not.toContain(
+      'setContainerReady',
+    );
   });
 
-  it('refuses to frame the map before that measurement', () => {
-    expect(SOURCE).toContain('if (map === null || !containerReady || focusedRef.current) return;');
+  it('refuses to frame the map before any measurement', () => {
+    expect(SOURCE).toContain('if (map === null || containerSize === null || focusedRef.current) return;');
   });
 
-  it('re-runs when the measurement arrives, rather than latching on first paint', () => {
+  it('re-runs on every new measurement, rather than latching on first paint', () => {
     const effect = SOURCE.slice(SOURCE.indexOf('const focusedRef'));
     const deps = effect.slice(effect.indexOf('}, ['), effect.indexOf(');', effect.indexOf('}, [')));
-    expect(deps).toContain('containerReady');
+    expect(deps).toContain('containerSize');
+  });
+
+  it('only stops retrying once the fit itself looks trustworthy', () => {
+    expect(SOURCE).toContain('focusedRef.current = fitLooksMeasured(map.getZoom())');
   });
 
   it('keeps observing the container so a later resize still invalidates', () => {
     expect(SOURCE).toContain('new ResizeObserver(measure)');
     expect(SOURCE).toContain('observer.disconnect()');
+  });
+});
+
+/**
+ * The bug this guards against shipped, and only showed on a cold load over the
+ * CDN: /map opened at zoom 14 over a field near Ogre with all thirty pins
+ * thousands of pixels off-screen. The centre was right and the zoom was
+ * absurd, which is the signature of `fitBounds` measuring a container that was
+ * not laid out yet — it fits the country into zero pixels and clamps to
+ * maxZoom. The framing effect had a one-shot guard, so it never retried.
+ */
+describe('fitLooksMeasured', () => {
+  it('rejects a fit that clamped to maxZoom', () => {
+    expect(fitLooksMeasured(MAX_ZOOM)).toBe(false);
+  });
+
+  it('accepts the zoom a real container produces for the whole country', () => {
+    // Latvia lands around 7 on a desktop and 6 on a phone.
+    expect(fitLooksMeasured(MIN_ZOOM)).toBe(true);
+    expect(fitLooksMeasured(7)).toBe(true);
+    expect(fitLooksMeasured(MAX_ZOOM - 1)).toBe(true);
+  });
+
+  it('rejects anything past the ceiling too, rather than only the ceiling itself', () => {
+    expect(fitLooksMeasured(MAX_ZOOM + 1)).toBe(false);
+  });
+});
+
+describe('the zoom ceiling', () => {
+  it('leaves room for the aggregation threshold and the pin zoom', () => {
+    expect(MIN_ZOOM).toBeLessThan(AGGREGATE_BELOW_ZOOM);
+    expect(AGGREGATE_BELOW_ZOOM).toBeLessThan(MAX_ZOOM);
+  });
+
+  it('is the value the map is actually constructed with', () => {
+    const SOURCE = Object.values(
+      import.meta.glob('../MapPage.tsx', { query: '?raw', import: 'default', eager: true }),
+    )[0] as string;
+
+    expect(SOURCE).toContain('minZoom={MIN_ZOOM}');
+    expect(SOURCE).toContain('maxZoom={MAX_ZOOM}');
+    expect(SOURCE, 'a literal here drifts from the constant the check uses').not.toMatch(
+      /(?:min|max)Zoom=\{\d+\}/,
+    );
+  });
+
+  it('retries the framing until the fit is trustworthy', () => {
+    const SOURCE = Object.values(
+      import.meta.glob('../MapPage.tsx', { query: '?raw', import: 'default', eager: true }),
+    )[0] as string;
+
+    // The one-shot guard is what made the bad fit permanent.
+    expect(SOURCE).toContain('focusedRef.current = fitLooksMeasured(map.getZoom())');
+    // And the effect has to re-run when the container reports a new size.
+    expect(SOURCE).toContain('containerSize');
   });
 });

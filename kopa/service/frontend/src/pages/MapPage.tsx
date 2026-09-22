@@ -15,7 +15,13 @@ import { MapOverlayBar } from './map/MapOverlayBar';
 import { MapSidePanel } from './map/MapSidePanel';
 import { RegionBar, ZoomControls } from './map/MapControls';
 import { RegionBubbles } from './map/RegionBubbles';
-import { AGGREGATE_BELOW_ZOOM, shouldAggregate } from './map/aggregation';
+import {
+  AGGREGATE_BELOW_ZOOM,
+  MAX_ZOOM,
+  MIN_ZOOM,
+  fitLooksMeasured,
+  shouldAggregate,
+} from './map/aggregation';
 import { useMapFilters } from './map/useMapFilters';
 import type { LatLngTuple, Map as LeafletMap } from 'leaflet';
 import type { Campaign, CategoryId, Region, RegionId } from '../domain/types';
@@ -23,6 +29,8 @@ import { TILE_ATTRIBUTION, TILE_MAX_ZOOM, TILE_URL } from '../data/tiles';
 
 /** Zoom a fly-to-a-pin lands on, so the pin is never hidden inside a bubble. */
 const PIN_ZOOM = 9;
+/** A ?city= link lands close enough to read street names. */
+const CITY_ZOOM = 10;
 
 /** Tailwind's `lg`: below this the side panel is a bottom sheet, not a rail. */
 const SHEET_BREAKPOINT_PX = 1024;
@@ -39,7 +47,7 @@ export default function MapPage() {
   const [map, setMap] = useState<LeafletMap | null>(null);
   const [zoom, setZoom] = useState(7);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [containerReady, setContainerReady] = useState(false);
+  const [containerSize, setContainerSize] = useState<{ w: number; h: number } | null>(null);
   const [joining, setJoining] = useState(false);
 
   const latviaBounds = useMemo(() => toBoundsLiteral(LATVIA_BOUNDS), []);
@@ -161,8 +169,11 @@ export default function MapPage() {
     const element = map.getContainer();
 
     const measure = () => {
-      if (element.clientWidth > 0 && element.clientHeight > 0) setContainerReady(true);
       map.invalidateSize();
+      const w = element.clientWidth;
+      const h = element.clientHeight;
+      if (w <= 0 || h <= 0) return;
+      setContainerSize((current) => (current?.w === w && current?.h === h ? current : { w, h }));
     };
 
     measure();
@@ -192,21 +203,29 @@ export default function MapPage() {
    */
   const focusedRef = useRef(false);
   useEffect(() => {
-    if (map === null || !containerReady || focusedRef.current) return;
-    focusedRef.current = true;
+    if (map === null || containerSize === null || focusedRef.current) return;
     map.invalidateSize();
-    if (selectedSlug !== null) return;
+
+    if (selectedSlug !== null) {
+      focusedRef.current = true;
+      return;
+    }
 
     const city = filters.cityId === null ? undefined : cityById(filters.cityId);
     if (city !== undefined) {
-      map.setView([city.lat, city.lng], 10);
+      map.setView([city.lat, city.lng], CITY_ZOOM);
+      focusedRef.current = true;
       return;
     }
 
     const region = filters.regions.length === 1 ? regionById(filters.regions[0]) : undefined;
     if (region === undefined) map.fitBounds(latviaBounds, FIT_OPTIONS);
     else frameRegion(region, false);
-  }, [map, containerReady, filters.cityId, filters.regions, selectedSlug, latviaBounds, frameRegion]);
+
+    // Only stop retrying once the fit produced a zoom a real container could
+    // have asked for. See fitLooksMeasured.
+    focusedRef.current = fitLooksMeasured(map.getZoom());
+  }, [map, containerSize, filters.cityId, filters.regions, selectedSlug, latviaBounds, frameRegion]);
 
   const focusRegion = useCallback(
     (region: Region | null) => {
@@ -240,8 +259,8 @@ export default function MapPage() {
       <MapContainer
         bounds={latviaBounds}
         boundsOptions={FIT_OPTIONS}
-        minZoom={6}
-        maxZoom={14}
+        minZoom={MIN_ZOOM}
+        maxZoom={MAX_ZOOM}
         zoomControl={false}
         scrollWheelZoom
         className="h-full w-full"

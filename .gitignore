@@ -5,6 +5,7 @@ iepako/service/frontend/node_modules/
 # Build output
 services/frontend/it_company/dist/
 iepako/service/frontend/dist/
+kopa/service/frontend/dist/
 
 # Terraform
 **/.terraform/
@@ -12,6 +13,7 @@ iepako/service/frontend/dist/
 *.tfstate.backup
 .terraform.lock.hcl
 !iepako/infrastructure/terraform/.terraform.lock.hcl
+!kopa/infrastructure/terraform/.terraform.lock.hcl
 
 # Secrets
 .secrets/

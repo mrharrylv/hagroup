@@ -1,0 +1,108 @@
+name: KOPA - Terraform Infrastructure
+
+# Manual only, and dev only. Kopā is a concept demo; it has no production
+# stack, and nothing here runs on a push.
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: kopa-infra-${{ inputs.environment }}
+  cancel-in-progress: false
+
+env:
+  AWS_REGION: eu-north-1
+  TF_WORKING_DIR: kopa/infrastructure/terraform
+
+jobs:
+  plan-apply:
+    name: Plan and apply ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::561341419749:role/github-oidc-hagroup-${{ inputs.environment }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
+
+      - name: Check formatting
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: terraform fmt -check -recursive
+
+      - name: Initialize isolated state
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: >-
+          terraform init
+          -backend-config="key=hagroup/kopa/${{ inputs.environment }}/terraform.tfstate"
+
+      - name: Validate
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: terraform validate
+
+      # An apply interrupted after the OAC is created but before state is
+      # written leaves an orphan that the next apply collides with by name.
+      - name: Import existing OAC after an interrupted apply
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        env:
+          TARGET_ENVIRONMENT: ${{ inputs.environment }}
+        run: |
+          if terraform state show aws_cloudfront_origin_access_control.website > /dev/null 2>&1; then
+            echo "Kopā origin access control is already tracked in Terraform state."
+            exit 0
+          fi
+
+          OAC_NAME="${TARGET_ENVIRONMENT}-hagroup-kopa-oac"
+          OAC_ID=$(aws cloudfront list-origin-access-controls \
+            --query "OriginAccessControlList.Items[?Name=='${OAC_NAME}'] | [0].Id" \
+            --output text)
+
+          if [ -z "$OAC_ID" ] || [ "$OAC_ID" = "None" ] || [ "$OAC_ID" = "null" ]; then
+            echo "No existing Kopā origin access control found; Terraform will create it."
+            exit 0
+          fi
+
+          echo "Importing existing Kopā origin access control '${OAC_NAME}' (${OAC_ID})."
+          terraform import \
+            -var-file="environments/${TARGET_ENVIRONMENT}.tfvars" \
+            aws_cloudfront_origin_access_control.website "$OAC_ID"
+
+      - name: Plan
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: >-
+          terraform plan
+          -var-file="environments/${{ inputs.environment }}.tfvars"
+          -input=false
+          -out=tfplan
+
+      - name: Apply
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: terraform apply -input=false -auto-approve tfplan
+
+      - name: Show endpoints and required DNS records
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: |
+          terraform output website_url
+          terraform output custom_domain_phase
+          terraform output dns_records_required
+          terraform output cost_allocation_tags

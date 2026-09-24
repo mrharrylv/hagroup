@@ -1,7 +1,7 @@
 {
   "_comment": "Search and share copy per route: the <title>, meta description and og tags. Paths are unprefixed; /lv and /ru pages use the same keys in their own file. Project pages use the project title plus projectTitleSuffix and the project description. Keep the three files key-identical.",
   "siteName": "HA Group",
-  "ogImageAlt": "Логотип HA Group в виде облака с надписью DevOps, облака и разработка ПО, Рига, Латвия",
+  "ogImageAlt": "Логотип HA Group в виде облака и надпись «DevOps, облака и разработка ПО», Рига, Латвия",
   "projectTitleSuffix": "Кейс | HA Group",
   "breadcrumbs": {
     "home": "HA Group",
@@ -12,47 +12,47 @@
   "pages": {
     "/": {
       "title": "DevOps, облачные решения и разработка ПО в Латвии | HA Group",
-      "description": "HA Group, IT-компания в Риге: разрабатываем ПО и сайты, внедряем CI/CD и Kubernetes, выполняем миграцию в облако AWS, Azure или Google Cloud."
+      "description": "HA Group, IT-компания из Риги, разрабатывает ПО и сайты, внедряет CI/CD и Kubernetes и переносит системы в облако AWS, Azure или Google Cloud."
     },
     "/services": {
       "title": "IT-услуги для бизнеса в Латвии | HA Group",
-      "description": "Восемь IT-услуг для малого и среднего бизнеса: сайты, разработка ПО, миграция в облако, DevOps, IT-инфраструктура, интеграция ИИ и IT-консалтинг."
+      "description": "Восемь IT-услуг для малого и среднего бизнеса, включая сайты, разработку ПО, миграцию в облако, DevOps, IT-инфраструктуру, интеграцию ИИ и IT-консалтинг."
     },
     "/services/website-development": {
       "title": "Разработка сайтов в Риге | HA Group",
-      "description": "Быстрые и доступные сайты на React, Next.js и TypeScript: UI/UX-дизайн, техническое SEO, WCAG 2.1 AA, интеграция CMS и дальнейшая поддержка."
+      "description": "Быстрые сайты на React, Next.js и TypeScript: индивидуальный UI/UX-дизайн, техническое SEO, доступность по WCAG 2.1 AA, интеграция CMS и поддержка."
     },
     "/services/system-development": {
-      "title": "Разработка программного обеспечения на заказ | HA Group",
-      "description": "Бизнес-системы, API и внутренние инструменты на Node.js, Python и PostgreSQL: безопасная авторизация, интеграция с CRM и платежами, документация."
+      "title": "Разработка программного обеспечения на заказ в Латвии | HA Group",
+      "description": "Бизнес-системы, API и внутренние инструменты на Node.js, Python и PostgreSQL: безопасная аутентификация, интеграция с CRM и платежами, документация."
     },
     "/services/cloud-migration": {
-      "title": "Миграция в облако и облачные решения в Латвии | HA Group",
-      "description": "Переход в AWS, Azure или Google Cloud по плану: оценка нагрузок, landing zone, автоматизация на Terraform, согласованное переключение и контроль затрат."
+      "title": "Миграция в облако и консалтинг по AWS в Латвии | HA Group",
+      "description": "Переход в AWS, Azure или Google Cloud по плану: оценка рабочих нагрузок, landing zone, автоматизация на Terraform, скоординированное переключение и FinOps."
     },
     "/services/devops": {
-      "title": "DevOps-услуги в Риге и Латвии | HA Group",
-      "description": "Внедрение CI/CD, инфраструктура как код на Terraform, Docker и Kubernetes, GitOps и мониторинг Prometheus, с документацией и обучением вашей команды."
+      "title": "DevOps-консалтинг и внедрение CI/CD в Латвии | HA Group",
+      "description": "Внедрение CI/CD, инфраструктура как код на Terraform, Docker и Kubernetes, GitOps и мониторинг на Prometheus, с документацией и обучением вашей команды."
     },
     "/services/it-infrastructure": {
-      "title": "Обслуживание IT-инфраструктуры в Риге | HA Group",
+      "title": "Обслуживание и поддержка IT-инфраструктуры в Риге | HA Group",
       "description": "Мониторинг 24/7, установка обновлений безопасности, администрирование Linux и Windows Server, служба поддержки и ежемесячные отчёты о состоянии систем."
     },
     "/services/full-cycle": {
-      "title": "Разработка ПО полного цикла | HA Group",
-      "description": "Одна команда от исследования и UX/UI-дизайна до разработки на React и Node.js, CI/CD, запуска и поддержки, с демонстрацией результата каждые две недели."
+      "title": "Разработка ПО полного цикла: от идеи до запуска | HA Group",
+      "description": "Одна команда ведёт проект от исследования и UX/UI-дизайна до разработки на React и Node.js, CI/CD, запуска и поддержки, с демонстрацией каждые две недели."
     },
     "/services/ai-integration": {
       "title": "Интеграция ИИ для бизнеса в Латвии | HA Group",
-      "description": "Машинное обучение, чат-боты, обработка документов и компьютерное зрение в ваших системах на Python, PyTorch и моделях OpenAI или Anthropic."
+      "description": "Встраиваем в ваши системы машинное обучение, чат-ботов, обработку документов и компьютерное зрение на Python и PyTorch, с моделями OpenAI и Anthropic."
     },
     "/services/consulting": {
       "title": "IT-консалтинг в Латвии: аудит и стратегия | HA Group",
-      "description": "Технологический аудит, обзор архитектуры, план цифровой трансформации, планирование IT-бюджета и рекомендации по GDPR с поддержкой при внедрении."
+      "description": "Технологический аудит, ревью архитектуры, дорожная карта цифровой трансформации, IT-бюджет и выбор поставщиков, рекомендации по GDPR и поддержка внедрения."
     },
     "/projects": {
       "title": "Наши проекты и кейсы | HA Group",
-      "description": "Кейсы HA Group: многоязычные сайты на AWS, модернизация инфраструктуры на Terraform и Azure DevOps, платформа данных с ИИ и приложение BalticGP."
+      "description": "Кейсы HA Group: многоязычные сайты на AWS, модернизация инфраструктуры на Terraform и Azure DevOps, ИИ-платформа данных о мероприятиях и приложение BalticGP."
     },
     "/balticgp": {
       "title": "BalticGP: календарь шоссейных мотогонок | HA Group",
@@ -64,19 +64,19 @@
     },
     "/reviews": {
       "title": "Отзывы клиентов | HA Group",
-      "description": "Отзывы клиентов о HA Group, IT-компании в Риге, которая разрабатывает ПО, сайты, облачные и DevOps-решения для малого и среднего бизнеса."
+      "description": "Отзывы клиентов о работе HA Group, IT-компании из Риги, которая разрабатывает ПО и сайты, облачные и DevOps-решения для малого и среднего бизнеса."
     },
     "/contact": {
       "title": "Контакты: обсудите ваш IT-проект | HA Group",
-      "description": "Расскажите о проекте сайта, ПО, облака или DevOps и о бюджете. Заполните форму или напишите в WhatsApp, чтобы связаться с командой HA Group в Риге."
+      "description": "Расскажите о своём проекте (сайт, ПО, облако или DevOps) и бюджете. Заполните форму или напишите в WhatsApp команде HA Group в Риге."
     },
     "/about": {
       "title": "О нас: IT-компания из Риги, Латвия | HA Group",
-      "description": "SIA HA Group: IT-компания в Риге, которая помогает малому и среднему бизнесу с разработкой ПО и сайтов, облаками, DevOps и IT-инфраструктурой."
+      "description": "SIA HA Group: IT-компания в Риге, которая помогает малому и среднему бизнесу с разработкой ПО и сайтов, облачными решениями, DevOps и IT-инфраструктурой."
     },
     "/company-details": {
       "title": "Реквизиты: регистрационный номер и НДС | HA Group",
-      "description": "Реквизиты SIA HA Group: рег. номер 40203724866, номер НДС LV40203724866, юридический адрес Valdeķu iela 1, Rīga, LV-1058, e-mail info@hagroup.lv."
+      "description": "Реквизиты SIA HA Group: рег. номер 40203724866, номер плательщика НДС LV40203724866, юридический адрес Valdeķu iela 1, Rīga, LV-1058, e-mail info@hagroup.lv."
     },
     "/legal/terms": {
       "title": "Условия использования | HA Group",
@@ -84,11 +84,11 @@
     },
     "/legal/privacy": {
       "title": "Политика конфиденциальности | HA Group",
-      "description": "Как SIA HA Group обрабатывает персональные данные из форм на сайте, сколько их хранит и как воспользоваться своими правами по GDPR."
+      "description": "Как SIA HA Group обрабатывает персональные данные, отправленные через формы на сайте, как долго их хранит и как воспользоваться правами по GDPR."
     },
     "/legal/cookies": {
-      "title": "Политика использования cookie | HA Group",
-      "description": "Сайт HA Group использует только необходимое хранилище браузера для языка, темы и защиты форм, без аналитических, рекламных и отслеживающих cookie."
+      "title": "Политика использования файлов cookie | HA Group",
+      "description": "Сайт HA Group хранит в браузере только необходимое: выбранный язык, тему и данные для защиты форм, без аналитических, рекламных и отслеживающих cookie."
     },
     "/404": {
       "title": "Страница не найдена | HA Group",

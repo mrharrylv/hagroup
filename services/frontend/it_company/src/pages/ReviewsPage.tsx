@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useReviewsData } from '../lib/content';
+import { formatCalendarDate } from '../lib/dates';
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -83,10 +84,7 @@ export default function ReviewsPage() {
                 </p>
 
                 <p className="text-xs text-zinc-400 dark:text-zinc-500 mt-6">
-                  {new Date(review.date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                  })}
+                  {formatCalendarDate(review.date, 'en-US', { year: 'numeric', month: 'long' })}
                 </p>
               </div>
             ))}
@@ -130,10 +128,7 @@ export default function ReviewsPage() {
                     "{review.description}"
                   </p>
                   <p className="text-xs text-zinc-400 dark:text-zinc-500 mt-3">
-                    {new Date(review.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                    })}
+                    {formatCalendarDate(review.date, 'en-US', { year: 'numeric', month: 'long' })}
                   </p>
                 </div>
               </div>

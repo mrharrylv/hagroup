@@ -2,6 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useServicesData } from '../../lib/content';
+import type { ServicePageCopy } from '../../lib/contentTypes';
+import { faqEntries } from '../../lib/faq';
 import ProjectCTA from './ProjectCTA';
 
 interface ServicePageProps {
@@ -9,33 +11,20 @@ interface ServicePageProps {
   ctaSection?: boolean;
 }
 
-interface ServicePageData {
-  icon: string;
-  title: string;
-  subtitle: string;
-  overviewTitle: string;
-  overviewText: string;
-  featuresTitle: string;
-  features: { icon: string; title: string; description: string }[];
-  processTitle: string;
-  process: { step: string; title: string; description: string }[];
-  techTitle: string;
-  technologies: { name: string; icon: string }[];
-  ctaTitle: string;
-  ctaText: string;
-}
-
 export default function ServicePage({ serviceKey, ctaSection = true }: ServicePageProps) {
   const { t } = useTranslation();
   const servicesData = useServicesData();
 
-  const page = (servicesData.pages as Record<string, ServicePageData>)[serviceKey];
+  const page = (servicesData.pages as Record<string, ServicePageCopy>)[serviceKey];
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   if (!page) return null;
+
+  // The same entries the FAQPage markup is built from (src/seo/jsonLd.ts).
+  const faq = faqEntries(page);
 
   return (
     <>
@@ -141,6 +130,23 @@ export default function ServicePage({ serviceKey, ctaSection = true }: ServicePa
           ))}
         </div>
       </section>
+
+      {/* FAQ: optional per page; marked up as FAQPage from the same entries */}
+      {faq.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white mb-8">
+            {t('servicePages.faqTitle')}
+          </h2>
+          <dl className="max-w-3xl divide-y divide-zinc-200 dark:divide-zinc-800 border-y border-zinc-200 dark:border-zinc-800">
+            {faq.map((entry) => (
+              <div key={entry.question} className="py-6">
+                <dt className="text-base font-semibold text-zinc-900 dark:text-white">{entry.question}</dt>
+                <dd className="mt-2 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{entry.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
 
       {/* CTA */}
       {ctaSection && <ProjectCTA showContactButton={false} />}

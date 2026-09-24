@@ -5,33 +5,57 @@
     <!--
       Resolve the theme and the language before the first paint.
 
-      `class="dark"` used to be hardcoded here while ThemeProvider applied the
-      real theme in a useEffect — i.e. after React mounted, after first paint.
-      Every light-mode visitor got a full-screen black flash on every cold load.
-      Likewise `lang="en"` was never updated when the visitor switched language,
-      so Latvian and Russian content was announced by an English speech
-      synthesiser (WCAG 3.1.1).
+      Theme: `class="dark"` used to be hardcoded here while ThemeProvider
+      applied the real theme after React mounted, so every light-mode visitor
+      got a black flash on every cold load. This runs before the body exists,
+      so there is nothing to flash, and ThemeProvider only reads the class.
 
-      This runs before the body exists, so there is nothing to flash. It is
-      inline on purpose: an external file would be a second round-trip, and the
-      flash is exactly as long as that trip.
+      Language: it is part of the URL (/lv/..., /ru/..., English at the root).
+      A visitor who picked Latvian or Russian before, and now opens an
+      unprefixed URL, is moved to the same page in their language with
+      history.replaceState before the app boots. Crawlers have no storage and
+      get the URL's own content, the same as every first-time visitor. #root
+      is hidden while the app replaces the English markup, at most 3 s.
+      <html lang> follows the final URL (WCAG 3.1.1).
+
+      Inline on purpose: an external file would be a second round-trip, and
+      the flash is exactly as long as that trip.
     -->
+    <style>
+      html.reroute-hide #root { visibility: hidden; }
+    </style>
     <script>
       (function () {
+        var root = document.documentElement;
         try {
           var t = localStorage.getItem('cloudie-theme');
           if (t !== 'light' && t !== 'dark') {
             t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
           }
-          document.documentElement.classList.add(t);
-
-          var l = localStorage.getItem('cloudie-lang');
-          if (l === 'en' || l === 'lv' || l === 'ru') document.documentElement.lang = l;
+          root.classList.add(t);
         } catch (e) {
           // Storage blocked (private mode, or site data disabled). The default
           // stylesheet is the light one, which is the safer thing to flash.
-          document.documentElement.classList.add('light');
+          root.classList.add('light');
         }
+
+        var match = /^\/(lv|ru)(?=\/|$)/.exec(location.pathname);
+        var lang = match ? match[1] : 'en';
+        if (!match) {
+          try {
+            var saved = localStorage.getItem('cloudie-lang');
+            if (saved === 'lv' || saved === 'ru') {
+              var rest = location.pathname === '/' ? '' : location.pathname;
+              history.replaceState(history.state, '', '/' + saved + rest + location.search + location.hash);
+              lang = saved;
+              root.classList.add('reroute-hide');
+              setTimeout(function () { root.classList.remove('reroute-hide'); }, 3000);
+            }
+          } catch (e) {
+            // Storage blocked: stay on the URL as opened.
+          }
+        }
+        root.lang = lang;
       })();
     </script>
     <!--
@@ -48,53 +72,15 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#09090b" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="description" content="Latvian IT company delivering custom software, websites, cloud architecture, DevOps automation, AI integration and practical technology consulting." />
-    <link rel="canonical" href="https://www.hagroup.lv/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="HA Group" />
-    <meta property="og:locale" content="en_GB" />
-    <meta property="og:title" content="HA Group | Custom Software, Cloud & DevOps" />
-    <meta property="og:description" content="Latvian IT company delivering custom software, websites, cloud architecture, DevOps automation, AI integration and practical technology consulting." />
-    <meta property="og:url" content="https://www.hagroup.lv/" />
-    <meta property="og:image" content="https://www.hagroup.lv/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="HA Group: DevOps, cloud and custom software from Rīga, Latvia" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="HA Group | Custom Software, Cloud & DevOps" />
-    <meta name="twitter:description" content="Custom software, cloud architecture, DevOps, AI integration and IT consulting from Latvia." />
-    <meta name="twitter:image" content="https://www.hagroup.lv/og-image.png" />
-    <title>HA Group | Custom Software, Cloud &amp; DevOps</title>
-    <script type="application/ld+json" data-seo="structured-data">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "@id": "https://www.hagroup.lv/#organization",
-            "name": "HA Group",
-            "legalName": "SIA HA Group",
-            "url": "https://www.hagroup.lv",
-            "logo": "https://www.hagroup.lv/logo-512.png",
-            "image": "https://www.hagroup.lv/og-image.png",
-            "email": "info@hagroup.lv",
-            "telephone": "+37126259293",
-            "vatID": "LV40203724866",
-            "taxID": "40203724866"
-          },
-          {
-            "@type": "WebSite",
-            "@id": "https://www.hagroup.lv/#website",
-            "url": "https://www.hagroup.lv/",
-            "name": "HA Group",
-            "publisher": { "@id": "https://www.hagroup.lv/#organization" },
-            "inLanguage": ["en", "lv", "ru"]
-          }
-        ]
-      }
-    </script>
+    <!--
+      Everything between the seo-head markers is replaced per page at build
+      time by scripts/prerender.mjs (title, description, robots, canonical,
+      hreflang, Open Graph, Twitter and JSON-LD; see src/seo/). In the browser
+      the Seo component updates the same data-seo tags in place.
+    -->
+    <!--seo-head-->
+    <title data-seo="title">HA Group</title>
+    <!--/seo-head-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />

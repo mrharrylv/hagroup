@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 import { useBudgetsData } from '../../lib/content';
@@ -26,7 +27,13 @@ const INITIAL_FORM: ContactForm = {
   privacyConsent: false,
 };
 
-export default function Contact() {
+interface ContactProps {
+  /** h1 when the section is the page (/contact), h2 when it is part of one (home). */
+  headingLevel?: 'h1' | 'h2';
+}
+
+export default function Contact({ headingLevel = 'h2' }: ContactProps) {
+  const Heading = headingLevel;
   const { t } = useTranslation();
   const budgets = useBudgetsData();
   const [form, setForm] = useState<ContactForm>(INITIAL_FORM);
@@ -74,9 +81,9 @@ export default function Contact() {
           className="bg-white dark:bg-zinc-900/30 rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 md:p-12 border border-zinc-200 dark:border-zinc-800 shadow-sm"
         >
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 dark:text-white mb-4">
+          <Heading className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 dark:text-white mb-4">
             {t('contact.title')}
-          </h2>
+          </Heading>
           <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-md mx-auto">
             {t('contact.subtitle')}
           </p>
@@ -211,7 +218,7 @@ export default function Contact() {
                 i18nKey="contact.form.privacyConsent"
                 components={{
                   privacy: (
-                    <a href="/legal/privacy" className="text-indigo-600 dark:text-indigo-400 hover:underline" />
+                    <Link to="/legal/privacy" className="text-indigo-600 dark:text-indigo-400 hover:underline" />
                   ),
                 }}
               />

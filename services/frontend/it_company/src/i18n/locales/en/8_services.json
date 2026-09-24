@@ -11,14 +11,14 @@
       "key": "systemDev",
       "icon": "solar:code-square-linear",
       "path": "/services/system-development",
-      "title": "System Development",
+      "title": "Custom Software Development",
       "description": "Robust, enterprise-grade software systems, APIs, and platforms built with modern architectures for reliability and long-term scalability."
     },
     {
       "key": "cloud",
       "icon": "solar:cloud-linear",
       "path": "/services/cloud-migration",
-      "title": "Cloud & Migration",
+      "title": "Cloud Migration",
       "description": "Strategic multi-cloud architecture, migration, and optimization across AWS, Azure, and Google Cloud with zero-trust security principles."
     },
     {
@@ -132,11 +132,38 @@
         { "name": "GraphQL", "icon": "logos:graphql" }
       ],
       "ctaTitle": "Ready to Build Your Website?",
-      "ctaText": "Let's create a website that performs as beautifully as it looks. Get in touch with our team to start your project."
+      "ctaText": "Let's create a website that performs as beautifully as it looks. Get in touch with our team to start your project.",
+      "faqTitle": "Website Development FAQ",
+      "faq": [
+        {
+          "question": "What is included in a website project?",
+          "answer": "Custom UI/UX design, responsive development, performance optimization, technical SEO with structured data and a sitemap, WCAG 2.1 AA accessibility and CMS integration. The project ends with QA, performance testing and deployment, followed by ongoing maintenance."
+        },
+        {
+          "question": "Which technologies do you build websites with?",
+          "answer": "Usually React, Next.js, TypeScript, Tailwind CSS and Vite, with Node.js or GraphQL when a site needs a backend. We can also build in your preferred stack."
+        },
+        {
+          "question": "Will we be able to edit the content ourselves?",
+          "answer": "Yes. We set up a headless CMS or a traditional platform so your team can manage content independently."
+        },
+        {
+          "question": "Can you build a website in Latvian, English and Russian?",
+          "answer": "Yes. The IEPAKO and HARent websites in our projects were both built in Latvian, English and Russian and are delivered through Amazon S3 and CloudFront."
+        },
+        {
+          "question": "How does a project start and what does it cost?",
+          "answer": "Send the contact form with a short project overview and, if you like, a budget range from under €10,000 to €100,000 or more. Scope, price and timing are then agreed in a written proposal before any work starts."
+        },
+        {
+          "question": "Where is HA Group based?",
+          "answer": "HA Group (SIA HA Group) is registered in Riga, Latvia. We work with clients in English, Latvian and Russian."
+        }
+      ]
     },
     "systemDevelopment": {
       "icon": "solar:code-square-linear",
-      "title": "System Development",
+      "title": "Custom Software Development",
       "subtitle": "Enterprise-grade software systems, APIs, and platforms engineered for reliability, scalability, and seamless integrations across your organization.",
       "overviewTitle": "Robust Systems Built to Scale",
       "overviewText": "From CRM platforms and ERP systems to custom SaaS products and internal tools, we design and build software that solves complex business problems. Our systems are architected for high availability, data integrity, and smooth integrations with third-party services. We follow domain-driven design principles and build modular, testable codebases that evolve with your business.",
@@ -212,11 +239,38 @@
         { "name": "Elasticsearch", "icon": "logos:elasticsearch" }
       ],
       "ctaTitle": "Need a Custom System?",
-      "ctaText": "Tell us about your business challenges and we'll architect the right solution. From concept to production-ready system."
+      "ctaText": "Tell us about your business challenges and we'll architect the right solution. From concept to production-ready system.",
+      "faqTitle": "Custom Software Development FAQ",
+      "faq": [
+        {
+          "question": "What kind of software do you build?",
+          "answer": "CRM platforms, ERP systems, custom SaaS products, internal tools and APIs, designed for high availability, data integrity and integration with third-party services."
+        },
+        {
+          "question": "Which technologies do you use?",
+          "answer": "Typically Node.js, Python and TypeScript with PostgreSQL, MongoDB or Redis, GraphQL or REST APIs, and Docker, Kubernetes and Terraform for deployment. RabbitMQ and Elasticsearch cover messaging and search where a system needs them."
+        },
+        {
+          "question": "Can the new system connect to the tools we already use?",
+          "answer": "Yes. We integrate payment gateways, ERP systems, CRMs and external APIs, with OAuth 2.0, SSO and role-based access control protecting your data."
+        },
+        {
+          "question": "How does a development project run?",
+          "answer": "Requirements analysis and architecture design come first, followed by agile sprints with continuous integration, testing and demos for your stakeholders. It ends with production deployment, documentation, training and transition support."
+        },
+        {
+          "question": "Do you build microservices or a monolith?",
+          "answer": "Whichever fits your scale. We decide in the architecture design step and follow domain-driven design so the codebase stays modular and testable."
+        },
+        {
+          "question": "How is a project priced?",
+          "answer": "Scope, price and timing are agreed in a written proposal before any work starts. The contact form lets you indicate a budget range, from under €10,000 to €100,000 or more."
+        }
+      ]
     },
     "cloudMigration": {
       "icon": "solar:cloud-linear",
-      "title": "Cloud & Migration",
+      "title": "Cloud Migration & Architecture",
       "subtitle": "Seamless cloud adoption and migration strategies for AWS, Azure, and Google Cloud — architected for performance, security, and cost optimization.",
       "overviewTitle": "Your Cloud, Architected Right",
       "overviewText": "Moving to the cloud is more than a lift-and-shift. We design cloud-native architectures and migration strategies that unlock the full potential of AWS, Azure, or GCP. From initial assessment and workload analysis through execution and optimization, we ensure your migration is smooth, secure, and cost-effective. Our team handles landing zone design, network architecture, security controls, and ongoing cloud cost optimization.",
@@ -291,11 +345,38 @@
         { "name": "Vault", "icon": "logos:vault-icon" }
       ],
       "ctaTitle": "Plan Your Cloud Migration",
-      "ctaText": "Whether you're cloud-first or just getting started, our architects can design the right strategy for your business."
+      "ctaText": "Whether you're cloud-first or just getting started, our architects can design the right strategy for your business.",
+      "faqTitle": "Cloud Migration FAQ",
+      "faq": [
+        {
+          "question": "Which cloud providers do you work with?",
+          "answer": "AWS, Microsoft Azure and Google Cloud, including multi-cloud and hybrid setups. We automate the infrastructure with Terraform, CloudFormation or Pulumi."
+        },
+        {
+          "question": "How does a cloud migration run?",
+          "answer": "In four phases: an assessment of workloads, dependencies and compliance needs; planning of the target architecture, migration waves and rollback; the migration itself with automated tooling, validation and cutover coordination; and optimization afterwards."
+        },
+        {
+          "question": "Do you simply lift and shift our servers?",
+          "answer": "Only where that makes sense. For each workload we choose between lift-and-shift, re-platforming and re-architecting."
+        },
+        {
+          "question": "How do you keep cloud costs under control?",
+          "answer": "With right-sizing, reserved and spot instances, and FinOps practices such as budgets, alerts, tagging and chargeback models."
+        },
+        {
+          "question": "How do you handle security and compliance?",
+          "answer": "We apply zero-trust architecture, IAM policies and encryption, and align the setup with GDPR, SOC 2 or HIPAA requirements when they apply to you."
+        },
+        {
+          "question": "Have you run migrations like this before?",
+          "answer": "Yes. In a four-month program for a large global enterprise, under NDA, we built reusable Terraform modules and Azure DevOps pipelines and coordinated production switchovers in the United States and Europe."
+        }
+      ]
     },
     "devops": {
       "icon": "solar:server-path-linear",
-      "title": "DevOps & Automation",
+      "title": "DevOps Consulting & Automation",
       "subtitle": "Accelerate your delivery pipeline with CI/CD automation, Infrastructure as Code, container orchestration, and GitOps best practices.",
       "overviewTitle": "Ship Faster. Ship Safer.",
       "overviewText": "Modern software demands rapid, reliable releases. Our DevOps services transform your delivery pipeline with automated CI/CD, containerization, and infrastructure as code. We implement GitOps workflows, set up comprehensive monitoring, and build self-healing infrastructure that scales automatically. The result: faster time-to-market, fewer incidents, and happier engineering teams.",
@@ -370,7 +451,34 @@
         { "name": "Vault", "icon": "logos:vault-icon" }
       ],
       "ctaTitle": "Modernize Your Pipeline",
-      "ctaText": "Let us automate your infrastructure and delivery pipeline. Book a consultation to assess your DevOps maturity."
+      "ctaText": "Let us automate your infrastructure and delivery pipeline. Book a consultation to assess your DevOps maturity.",
+      "faqTitle": "DevOps Consulting FAQ",
+      "faq": [
+        {
+          "question": "What does a DevOps engagement include?",
+          "answer": "CI/CD pipelines with automated build, test, security scanning and deployment, infrastructure as code, Docker and Kubernetes, observability, DevSecOps and GitOps workflows."
+        },
+        {
+          "question": "Which CI/CD and infrastructure tools do you use?",
+          "answer": "GitHub Actions, GitLab CI, Jenkins and Azure DevOps for pipelines; Terraform, Pulumi or CloudFormation for infrastructure; Helm and Kubernetes for deployments; Prometheus and Grafana for monitoring; Ansible and Vault for configuration and secrets."
+        },
+        {
+          "question": "Do we have to replace the tools we use today?",
+          "answer": "No. We first assess your CI/CD maturity and bottlenecks, then design the target state and choose tools that fit your stack and your team."
+        },
+        {
+          "question": "How does the work run?",
+          "answer": "A pipeline assessment and the architecture and tooling choice come first, then implementation, where we build pipelines, configure infrastructure and move workloads over incrementally. It ends with documentation, team training and runbooks so your team can run everything on its own."
+        },
+        {
+          "question": "What DevOps work have you delivered?",
+          "answer": "For a large global enterprise, under NDA, we designed a reusable Terraform platform and Azure DevOps pipelines with approvals and controlled promotion between environments, and rolled it out in the United States and Europe over four months."
+        },
+        {
+          "question": "Where is HA Group based and which languages do you work in?",
+          "answer": "HA Group (SIA HA Group) is registered in Riga, Latvia, and works in English, Latvian and Russian."
+        }
+      ]
     },
     "itInfrastructure": {
       "icon": "solar:server-path-linear",
@@ -448,11 +556,38 @@
         { "name": "Cloudflare", "icon": "logos:cloudflare-icon" }
       ],
       "ctaTitle": "Need Reliable IT Support?",
-      "ctaText": "Let us handle your infrastructure so you can focus on your business. Talk to our team about managed IT services."
+      "ctaText": "Let us handle your infrastructure so you can focus on your business. Talk to our team about managed IT services.",
+      "faqTitle": "IT Infrastructure Maintenance FAQ",
+      "faq": [
+        {
+          "question": "What does infrastructure maintenance cover?",
+          "answer": "24/7 monitoring and alerting, security patching, scheduled OS and application updates, server and network management, help desk support, and documentation with monthly health reports."
+        },
+        {
+          "question": "Do you manage on-premises servers or only the cloud?",
+          "answer": "Both. We manage on-premises and cloud servers running Linux or Windows Server, including VMware environments and AWS."
+        },
+        {
+          "question": "How does onboarding work?",
+          "answer": "We start with an audit of your environment to find risks and improvements. Then we deploy monitoring agents, configure alerts and write runbooks before moving to proactive management."
+        },
+        {
+          "question": "What reporting do we get?",
+          "answer": "Monthly reviews with health reports, capacity forecasts, cost optimization recommendations and roadmap updates."
+        },
+        {
+          "question": "Which monitoring and automation tools do you use?",
+          "answer": "Prometheus and Grafana for monitoring, Ansible and Terraform for automation, and Nginx and Cloudflare for web traffic."
+        },
+        {
+          "question": "Where is HA Group based?",
+          "answer": "HA Group (SIA HA Group) is registered in Riga, Latvia, and supports clients in English, Latvian and Russian."
+        }
+      ]
     },
     "fullCycle": {
       "icon": "solar:restart-circle-linear",
-      "title": "Full-Cycle Development",
+      "title": "Full-Cycle Software Development",
       "subtitle": "End-to-end project delivery covering every phase — from initial concept and design through development, deployment, and ongoing optimization.",
       "overviewTitle": "One Team, Full Lifecycle",
       "overviewText": "Full-cycle development means you get a single team that owns the entire project from start to finish. We handle discovery workshops, UX/UI design, frontend and backend development, QA testing, deployment, and post-launch support. This approach eliminates handoff friction, reduces communication overhead, and ensures consistent quality throughout your project.",
@@ -529,7 +664,34 @@
         { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" }
       ],
       "ctaTitle": "Start Your Project",
-      "ctaText": "From idea to production with one dedicated team. Let's discuss your project scope and timeline."
+      "ctaText": "From idea to production with one dedicated team. Let's discuss your project scope and timeline.",
+      "faqTitle": "Full-Cycle Development FAQ",
+      "faq": [
+        {
+          "question": "What does full-cycle development mean?",
+          "answer": "One team owns your project from start to finish: discovery workshops, UX/UI design, frontend and backend development, QA, deployment and support after launch. That removes handoff friction and keeps communication simple."
+        },
+        {
+          "question": "How will we see progress?",
+          "answer": "Development runs in agile iterations with automated testing, code reviews and a demo every two weeks."
+        },
+        {
+          "question": "Which technologies make up the stack?",
+          "answer": "React, Next.js, TypeScript and Tailwind CSS on the frontend, Node.js, Python and PostgreSQL on the backend, and Docker, Kubernetes, Terraform, GitHub Actions and AWS for delivery. Designs are made in Figma."
+        },
+        {
+          "question": "Is the design tested before development starts?",
+          "answer": "Yes. Interactive prototypes are tested with real users before development begins."
+        },
+        {
+          "question": "What happens after launch?",
+          "answer": "We keep maintaining the product with bug fixes, feature updates, performance monitoring and security patches. As it grows, we improve it with analytics, A/B testing and scaling."
+        },
+        {
+          "question": "How is a project priced?",
+          "answer": "Scope, price and timing are agreed in a written proposal before any work starts. The contact form lets you indicate a budget range, from under €10,000 to €100,000 or more."
+        }
+      ]
     },
     "aiIntegration": {
       "icon": "solar:magic-stick-3-linear",
@@ -604,7 +766,34 @@
         { "name": "Jupyter", "icon": "logos:jupyter" }
       ],
       "ctaTitle": "Explore AI for Your Business",
-      "ctaText": "Not sure where to start with AI? Our team can help identify the highest-impact opportunities for your organization."
+      "ctaText": "Not sure where to start with AI? Our team can help identify the highest-impact opportunities for your organization.",
+      "faqTitle": "AI Integration FAQ",
+      "faq": [
+        {
+          "question": "Which AI solutions do you build?",
+          "answer": "Machine learning models for prediction, classification, recommendations and anomaly detection, NLP for text analysis, chatbots and document processing, computer vision including OCR, predictive analytics, and AI-powered workflow automation."
+        },
+        {
+          "question": "Can AI be added to the systems we already run?",
+          "answer": "Yes. We integrate AI and machine learning into your existing systems and workflows."
+        },
+        {
+          "question": "Where do we start?",
+          "answer": "With use case discovery to find the highest-impact opportunities in your processes. Next we assess your data quality, availability and pipeline requirements."
+        },
+        {
+          "question": "Which models and tools do you use?",
+          "answer": "Python with TensorFlow, PyTorch, Hugging Face and Jupyter, and large language models from OpenAI and Anthropic."
+        },
+        {
+          "question": "What happens once a model is live?",
+          "answer": "We deploy it with MLOps and monitoring and keep improving the model over time."
+        },
+        {
+          "question": "Do you have AI project experience?",
+          "answer": "Yes. For a confidential event platform we built LLM and Crawl4AI workflows that extract, categorize and validate events from more than 20 public sources."
+        }
+      ]
     },
     "consulting": {
       "icon": "solar:users-group-two-rounded-linear",
@@ -684,7 +873,34 @@
         { "name": "Architecture Review", "icon": "solar:code-square-bold" }
       ],
       "ctaTitle": "Book a Consultation",
-      "ctaText": "Get expert guidance on your technology strategy. Schedule a free consultation with our senior architects."
+      "ctaText": "Get expert guidance on your technology strategy. Schedule a free consultation with our senior architects.",
+      "faqTitle": "IT Consulting FAQ",
+      "faq": [
+        {
+          "question": "What does IT consulting cover?",
+          "answer": "Technology audits, digital transformation roadmaps, team and process advisory, IT budget planning with vendor evaluation, compliance and governance guidance, and industry benchmarking."
+        },
+        {
+          "question": "How does a consulting engagement run?",
+          "answer": "An initial assessment of your current state and goals, a deep technical analysis with benchmarking, and a prioritized roadmap of recommendations. After that we give hands-on support while you implement."
+        },
+        {
+          "question": "Which areas do you advise on?",
+          "answer": "Cloud architecture, DevOps, security, data engineering, AI and machine learning, microservices, API strategy, GDPR, agile delivery, cost optimization, team building and architecture reviews."
+        },
+        {
+          "question": "Do you help with implementation or only advise?",
+          "answer": "Both. Implementation support is part of the engagement, and the same team also delivers software, cloud and DevOps projects."
+        },
+        {
+          "question": "Can you help with GDPR compliance?",
+          "answer": "Yes. We assess compliance with GDPR, SOC 2 and HIPAA requirements and give implementation guidance."
+        },
+        {
+          "question": "Where is HA Group based?",
+          "answer": "HA Group (SIA HA Group) is registered in Riga, Latvia, and consults in English, Latvian and Russian."
+        }
+      ]
     }
   }
 }

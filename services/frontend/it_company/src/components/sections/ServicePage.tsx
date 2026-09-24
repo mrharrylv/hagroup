@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useServicesData } from '../../lib/content';
 import ProjectCTA from './ProjectCTA';
+import ServiceFaq, { type FaqItem } from './ServiceFaq';
 
 interface ServicePageProps {
   serviceKey: string;
@@ -23,6 +24,8 @@ interface ServicePageData {
   technologies: { name: string; icon: string }[];
   ctaTitle: string;
   ctaText: string;
+  faqTitle?: string;
+  faq?: FaqItem[];
 }
 
 export default function ServicePage({ serviceKey, ctaSection = true }: ServicePageProps) {
@@ -141,6 +144,9 @@ export default function ServicePage({ serviceKey, ctaSection = true }: ServicePa
           ))}
         </div>
       </section>
+
+      {/* FAQ: always expanded, before the call to action */}
+      <ServiceFaq title={page.faqTitle} items={page.faq} />
 
       {/* CTA */}
       {ctaSection && <ProjectCTA showContactButton={false} />}

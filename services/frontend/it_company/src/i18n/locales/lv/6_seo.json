@@ -1,8 +1,8 @@
 {
   "_comment": "Search and share copy per route: the <title>, meta description and og tags. Paths are unprefixed; /lv and /ru pages use the same keys in their own file. Project pages use the project title plus projectTitleSuffix and the project description. Keep the three files key-identical.",
   "siteName": "HA Group",
-  "ogImageAlt": "HA Group: DevOps, mākonis un programmatūras izstrāde no Rīgas, Latvijā",
-  "projectTitleSuffix": "HA Group projekts",
+  "ogImageAlt": "HA Group mākoņa logotips ar uzrakstu DevOps, mākonis un programmatūra, Rīga, Latvija",
+  "projectTitleSuffix": "Projekts | HA Group",
   "breadcrumbs": {
     "home": "HA Group",
     "services": "Pakalpojumi",
@@ -11,88 +11,88 @@
   },
   "pages": {
     "/": {
-      "title": "HA Group | IT uzņēmums: programmatūra, mākonis un DevOps",
-      "description": "Latvijas IT uzņēmums, kas izstrādā pielāgotu programmatūru un vietnes, veido mākoņrisinājumus, automatizē DevOps, integrē MI un sniedz tehnoloģiju konsultācijas."
+      "title": "DevOps, mākoņpakalpojumi un programmatūra Latvijā | HA Group",
+      "description": "HA Group ir IT uzņēmums Rīgā: izstrādājam programmatūru un mājaslapas, ieviešam CI/CD un Kubernetes, veicam migrāciju uz AWS, Azure vai Google Cloud."
     },
     "/services": {
-      "title": "Pilna cikla tehnoloģiju risinājumi | HA Group",
-      "description": "Elastīgi IT pakalpojumi, kas palīdz mazajiem un vidējiem uzņēmumiem optimizēt procesus, uzlabot drošību un nodrošināt ilgtspējīgu izaugsmi."
+      "title": "IT pakalpojumi uzņēmumiem Latvijā | HA Group",
+      "description": "Astoņi IT pakalpojumi mazajiem un vidējiem uzņēmumiem: mājaslapas, programmatūra, migrācija uz mākoni, DevOps, IT infrastruktūra, MI un IT konsultācijas."
     },
     "/services/website-development": {
-      "title": "Mājaslapu izstrāde | HA Group",
-      "description": "Augstas veiktspējas un uz konversiju vērstas mājaslapas, kas optimizētas ātrdarbībai, SEO un mērogojamībai — no mērķlapām līdz uzņēmumu tīmekļa portāliem."
+      "title": "Mājas lapu izstrāde Rīgā | HA Group",
+      "description": "Ātras un pieejamas mājaslapas ar React, Next.js un TypeScript: individuāls UI/UX dizains, tehniskais SEO, WCAG 2.1 AA, CMS integrācija un turpmāks atbalsts."
     },
     "/services/system-development": {
-      "title": "Sistēmu izstrāde | HA Group",
-      "description": "Uzticamas, uzņēmumu līmeņa programmatūras sistēmas, API un platformas, balstītas uz modernām arhitektūrām ilgtermiņa mērogojamībai."
+      "title": "Programmatūras izstrāde pēc pasūtījuma | HA Group",
+      "description": "Uzņēmuma sistēmas, API un iekšējie rīki ar Node.js, Python un PostgreSQL: droša autentifikācija, CRM un maksājumu integrācijas, pilna dokumentācija."
     },
     "/services/cloud-migration": {
-      "title": "Mākonis un migrācija | HA Group",
-      "description": "Stratēģiska daudzmākoņu arhitektūra, migrācija un optimizācija AWS, Azure un Google Cloud vidē, ievērojot nulles uzticēšanās drošības principus."
+      "title": "Migrācija uz mākoni un AWS konsultācijas | HA Group",
+      "description": "Pāreja uz AWS, Azure vai Google Cloud pēc plāna: darba slodžu novērtējums, landing zone, Terraform automatizācija, koordinēta pārslēgšana un FinOps kontrole."
     },
     "/services/devops": {
-      "title": "DevOps un CI/CD | HA Group",
-      "description": "Automatizēti būvēšanas, testēšanas un izvietošanas procesi ar konteineru orķestrēšanu, infrastruktūru kā kodu un GitOps pieeju."
+      "title": "DevOps pakalpojumi un konsultācijas Latvijā | HA Group",
+      "description": "CI/CD ieviešana, infrastruktūra kā kods ar Terraform, Docker un Kubernetes, GitOps un Prometheus uzraudzība, ar dokumentāciju un komandas apmācību."
     },
     "/services/it-infrastructure": {
-      "title": "IT infrastruktūra | HA Group",
-      "description": "Proaktīva 24/7 uzraudzība, drošības pārvaldība, serveru administrēšana un infrastruktūras optimizācija."
+      "title": "IT infrastruktūras uzturēšana Rīgā | HA Group",
+      "description": "IT infrastruktūras uzraudzība 24/7, drošības ielāpi, Linux un Windows Server administrēšana, palīdzības dienests un ikmēneša pārskati par sistēmu stāvokli."
     },
     "/services/full-cycle": {
-      "title": "Pilna cikla izstrāde | HA Group",
-      "description": "Produkta izstrāde no idejas līdz ieviešanai — stratēģija, dizains, izstrāde, izvietošana un nepārtraukta pilnveide."
+      "title": "Pilna cikla programmatūras izstrāde | HA Group",
+      "description": "Viena komanda no izpētes un UX/UI dizaina līdz React un Node.js izstrādei, CI/CD, palaišanai un uzturēšanai, ar demonstrāciju ik pēc divām nedēļām."
     },
     "/services/ai-integration": {
-      "title": "MI integrācija | HA Group",
-      "description": "Ieviešanai gatavi mašīnmācīšanās un MI vadītas automatizācijas risinājumi ar izmērāmu ietekmi uz uzņēmējdarbību."
+      "title": "Mākslīgā intelekta integrācija uzņēmumiem | HA Group",
+      "description": "Mašīnmācīšanās, tērzēšanas roboti, dokumentu apstrāde un datorredze jūsu esošajās sistēmās ar Python, PyTorch un OpenAI vai Anthropic modeļiem."
     },
     "/services/consulting": {
-      "title": "IT konsultācijas | HA Group",
-      "description": "Stratēģiskas tehnoloģiju konsultācijas — arhitektūras audits, digitālās transformācijas ceļveži un inženierijas procesu optimizācija."
+      "title": "IT konsultācijas Rīgā: tehnoloģiju audits | HA Group",
+      "description": "Tehnoloģiju audits, arhitektūras izvērtējums, digitālās transformācijas ceļvedis, IT budžeta plānošana un VDAR vadlīnijas, ar atbalstu ieviešanas laikā."
     },
     "/projects": {
-      "title": "Mūsu projekti | HA Group",
-      "description": "Risinājumi, kas veicina izaugsmi, efektivitāti un ilgtermiņa panākumus."
+      "title": "IT projektu piemēri | HA Group",
+      "description": "Mūsu projekti: daudzvalodu mājaslapas AWS mākonī, Terraform un Azure DevOps modernizācija, MI pasākumu datu platforma un BalticGP sacensību lietotne."
     },
     "/balticgp": {
-      "title": "BalticGP motošosejas sacensību kalendārs | HA Group",
-      "description": "Ātra un uzticama kalendāra lietotne, kas palīdz braucējiem un līdzjutējiem atrast oficiālus motociklu šosejas sacensību pasākumus Baltijā un Eiropā."
+      "title": "BalticGP: motošosejas sacensību kalendārs | HA Group",
+      "description": "BalticGP ir kalendāra lietotne braucējiem un līdzjutējiem, kurā atrast oficiālas motošosejas sacensības, treniņus un trases dienas Baltijā un Eiropā."
     },
     "/careers": {
-      "title": "Veidojiet nākotni kopā ar mums | Karjera HA Group",
-      "description": "Pievienojieties ambiciozu inženieru, arhitektu un inovatoru komandai, kas izstrādā drošas un mērogojamas tehnoloģijas augošiem uzņēmumiem."
+      "title": "Karjera: attālināts darbs IT jomā | HA Group",
+      "description": "Pievienojieties HA Group, IT uzņēmumam no Rīgas ar attālinātā darba kultūru. Vakances izstrādē un dizainā, elastīgs darba laiks un mācību budžets."
     },
     "/reviews": {
       "title": "Klientu atsauksmes | HA Group",
-      "description": "Klientu atsauksmes par HA Group programmatūras izstrādes, mākoņa, DevOps un IT konsultāciju projektiem."
+      "description": "Klientu atsauksmes par HA Group, IT uzņēmumu Rīgā, kas mazajiem un vidējiem uzņēmumiem izstrādā programmatūru, mājaslapas, mākoņa un DevOps risinājumus."
     },
     "/contact": {
-      "title": "Sazinieties ar HA Group | IT projekta konsultācija",
-      "description": "Sazinieties ar HA Group par programmatūras vai vietnes izstrādi, mākoņarhitektūru, DevOps, MI integrāciju un IT konsultācijām."
+      "title": "Sazinieties ar mums par IT projektu | HA Group",
+      "description": "Pastāstiet par savu mājaslapas, programmatūras, mākoņa vai DevOps projektu un budžetu. Aizpildiet formu vai rakstiet WhatsApp, lai sazinātos ar mums."
     },
     "/about": {
-      "title": "Par HA Group | Tehnoloģiju partneris Latvijā",
-      "description": "HA Group ir Latvijas tehnoloģiju partneris praktiskiem, drošiem un mērogojamiem programmatūras, mākoņa un infrastruktūras risinājumiem."
+      "title": "Par mums: IT uzņēmums Rīgā, Latvijā | HA Group",
+      "description": "HA Group (SIA HA Group) ir IT uzņēmums Rīgā, kas mazajiem un vidējiem uzņēmumiem palīdz ar programmatūru, mājaslapām, mākoni, DevOps un IT infrastruktūru."
     },
     "/company-details": {
-      "title": "SIA HA Group rekvizīti",
-      "description": "SIA HA Group oficiālie reģistrācijas, PVN un saziņas rekvizīti."
+      "title": "Rekvizīti: reģistrācijas un PVN numurs | HA Group",
+      "description": "SIA HA Group reģistrācijas numurs 40203724866, PVN numurs LV40203724866, juridiskā adrese Valdeķu iela 1, Rīga, LV-1058, e-pasts info@hagroup.lv."
     },
     "/legal/terms": {
       "title": "Lietošanas noteikumi | HA Group",
-      "description": "HA Group tīmekļvietnes lietošanas un saziņas noteikumi."
+      "description": "HA Group tīmekļvietnes lietošanas un saziņas ar SIA HA Group noteikumi: kā tiek izskatīti pieprasījumi un kuras valsts tiesības ir piemērojamas."
     },
     "/legal/privacy": {
       "title": "Privātuma politika | HA Group",
-      "description": "Kā SIA HA Group apstrādā tīmekļvietnē un saziņas formās iesniegtos personas datus."
+      "description": "Kā SIA HA Group apstrādā personas datus, ko nosūtāt tīmekļvietnē un saziņas formās, cik ilgi tos glabā un kā izmantot savas VDAR tiesības."
     },
     "/legal/cookies": {
       "title": "Sīkdatņu politika | HA Group",
-      "description": "Informācija par nepieciešamo pārlūka krātuvi, ko izmanto HA Group tīmekļvietne."
+      "description": "HA Group tīmekļvietne izmanto tikai nepieciešamo pārlūka krātuvi valodai, tēmai un formu aizsardzībai, bez analītikas, reklāmas vai izsekošanas sīkdatnēm."
     },
     "/404": {
       "title": "Lapa nav atrasta | HA Group",
-      "description": "Meklētā lapa neeksistē vai ir pārvietota. Apskatiet HA Group pakalpojumus, projektus un kontaktinformāciju."
+      "description": "Meklētā lapa neeksistē vai ir pārvietota. Apskatiet HA Group pakalpojumus, projektus un kontaktinformāciju, lai atrastu vajadzīgo."
     }
   }
 }

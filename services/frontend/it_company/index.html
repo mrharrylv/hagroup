@@ -39,13 +39,21 @@
           root.classList.add('light');
         }
 
-        var match = /^\/(lv|ru)(?=\/|$)/.exec(location.pathname);
+        // One URL per page: /services/devops/ becomes /services/devops, the
+        // form every canonical, sitemap entry and link uses.
+        var path = location.pathname;
+        if (path.length > 1 && path.charAt(path.length - 1) === '/') {
+          path = path.replace(/\/+$/, '') || '/';
+          history.replaceState(history.state, '', path + location.search + location.hash);
+        }
+
+        var match = /^\/(lv|ru)(?=\/|$)/.exec(path);
         var lang = match ? match[1] : 'en';
         if (!match) {
           try {
             var saved = localStorage.getItem('cloudie-lang');
             if (saved === 'lv' || saved === 'ru') {
-              var rest = location.pathname === '/' ? '' : location.pathname;
+              var rest = path === '/' ? '' : path;
               history.replaceState(history.state, '', '/' + saved + rest + location.search + location.hash);
               lang = saved;
               root.classList.add('reroute-hide');
@@ -81,6 +89,24 @@
     <!--seo-head-->
     <title data-seo="title">HA Group</title>
     <!--/seo-head-->
+    <!--
+      This file is also what CloudFront answers for a URL that has no page of
+      its own (an unknown path, or a trailing-slash URL): the English home.
+      main.tsx throws that markup away and renders the right page, and this
+      keeps it from being seen meanwhile. The canonical says which URL the
+      markup was rendered for; the dev server's index.html has none.
+    -->
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var canonical = document.querySelector('link[data-seo="canonical"]');
+        if (!canonical || root.classList.contains('reroute-hide')) return;
+        if (new URL(canonical.href).pathname !== location.pathname) {
+          root.classList.add('reroute-hide');
+          setTimeout(function () { root.classList.remove('reroute-hide'); }, 3000);
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />

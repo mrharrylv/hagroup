@@ -17,8 +17,16 @@ const COMPANY_PATHS = ['/about', '/contact', '/company-details', '/careers'] as 
 const LEGAL_PATHS = ['/legal/terms', '/legal/privacy', '/legal/cookies'] as const;
 const LINE_SUMMARY_MAX = 200;
 
+/**
+ * The blockquote summary. The home description is written as a sentence for
+ * search results; when it already names the company it stands on its own,
+ * otherwise the company is introduced first so the line still says who.
+ */
 function summaryLine(content: SeoContent): string {
-  return `> ${COMPANY.name} (${COMPANY.legalName}) is a ${content.seo.pages['/'].description}`;
+  const description = content.seo.pages['/'].description;
+  return description.includes(COMPANY.name)
+    ? `> ${description}`
+    : `> ${COMPANY.name} (${COMPANY.legalName}): ${description}`;
 }
 
 function factsParagraph(): string {

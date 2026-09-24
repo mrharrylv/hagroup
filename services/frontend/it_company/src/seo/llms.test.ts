@@ -27,6 +27,17 @@ describe('buildLlmsTxt', () => {
     expect(headings).toEqual(['## Services', '## Case studies', '## Company', '## Optional']);
   });
 
+  it('uses the home description as the summary when it already names the company', () => {
+    expect(lines[2]).toBe(`> ${en.seo.pages['/'].description}`);
+    expect(lines[2]).not.toMatch(/HA Group\b.*\bis an? HA Group/);
+  });
+
+  it('introduces the company when the home description does not name it', () => {
+    const description = 'Custom software, cloud migration and DevOps from Latvia.';
+    const unnamed = { ...en, seo: { ...en.seo, pages: { ...en.seo.pages, '/': { ...en.seo.pages['/'], description } } } };
+    expect(buildLlmsTxt(unnamed).split('\n')[2]).toBe(`> HA Group (SIA HA Group): ${description}`);
+  });
+
   it('states the registered facts', () => {
     expect(text).toContain('SIA HA Group');
     expect(text).toContain('40203724866');

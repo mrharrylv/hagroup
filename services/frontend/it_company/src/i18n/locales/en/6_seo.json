@@ -20,7 +20,7 @@
     },
     "/services/website-development": {
       "title": "Website Development | HA Group",
-      "description": "High-performance, conversion-focused websites engineered for speed, SEO, and scalability — from landing pages to enterprise web portals."
+      "description": "High-performance, conversion-focused websites engineered for speed, SEO and scalability, from landing pages to enterprise web portals."
     },
     "/services/system-development": {
       "title": "System Development | HA Group",
@@ -40,7 +40,7 @@
     },
     "/services/full-cycle": {
       "title": "Full-Cycle Development | HA Group",
-      "description": "End-to-end product delivery — from strategy and design to development, deployment, and continuous improvement."
+      "description": "End-to-end product delivery, from strategy and design to development, deployment and continuous improvement."
     },
     "/services/ai-integration": {
       "title": "AI Integration | HA Group",
@@ -52,7 +52,7 @@
     },
     "/projects": {
       "title": "Our Projects | HA Group",
-      "description": "Solutions built to support growth, efficiency, and long-term success."
+      "description": "Selected HA Group projects: websites, mobile apps, cloud infrastructure modernization and custom software, with the technology behind each one."
     },
     "/balticgp": {
       "title": "BalticGP motorcycle racing calendar | HA Group",

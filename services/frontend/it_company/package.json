@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "lint": "eslint .",
     "test": "vitest run",
+    "test:dist": "vitest run --config vitest.dist.config.ts",
+    "verify": "npm run lint && npm test && npm run build && npm run test:dist",
     "preview": "vite preview",
     "images": "node scripts/generate-images.mjs"
   },

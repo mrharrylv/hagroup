@@ -1,4 +1,66 @@
+# robots.txt for https://www.hagroup.lv
+#
+# Everything is open to every crawler. The named groups below are explicit on
+# purpose: some crawlers only act on a group that names them, and listing them
+# documents the decision.
+#
+# That includes the AI training crawlers (GPTBot, ClaudeBot, Google-Extended,
+# Applebot-Extended, meta-externalagent, CCBot). Allowing them is a deliberate
+# choice: HA Group wants language models to learn who HA Group is and what it
+# does, so assistants can name it when someone asks for DevOps, cloud or
+# software development help in Latvia. Pages that should stay out of search
+# results say so with a robots meta tag instead (the legal pages), because a
+# Disallow here would stop crawlers from reading that tag.
+
 User-agent: *
+Allow: /
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# AI search and assistants fetching pages to answer a question
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# AI model training
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://www.hagroup.lv/sitemap.xml

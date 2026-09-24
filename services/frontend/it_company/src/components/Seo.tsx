@@ -6,7 +6,11 @@ import { useCareersData, useProjectsData, useServicesData, type Lang } from '../
 const SITE_URL = 'https://www.hagroup.lv';
 const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
-const DEFAULT_IMAGE = `${SITE_URL}/brand/ha-group-logo-transparent-512w.png`;
+// Opaque, 1200x630, with the whole lockup inside the central square so any crop
+// keeps the name (see scripts/generate-images.mjs). The old default was the
+// white-on-transparent /brand wordmark, which Google cropped to "GROU".
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
+const LOGO_IMAGE = `${SITE_URL}/logo-512.png`;
 
 const homeSeo: Record<Lang, { title: string; description: string }> = {
   en: {
@@ -222,7 +226,8 @@ export default function Seo() {
       name: 'HA Group',
       legalName: 'SIA HA Group',
       url: SITE_URL,
-      logo: { '@type': 'ImageObject', url: DEFAULT_IMAGE },
+      logo: { '@type': 'ImageObject', url: LOGO_IMAGE, width: 512, height: 512 },
+      image: DEFAULT_IMAGE,
       email: 'info@hagroup.lv',
       telephone: '+37126259293',
       vatID: 'LV40203724866',

@@ -137,7 +137,7 @@
       "faq": [
         {
           "question": "Kas ietilpst mājaslapas izstrādē?",
-          "answer": "Individuāls UI/UX dizains, responsīva izstrāde, ātrdarbības optimizācija, tehniskais SEO ar strukturētiem datiem un vietnes karti, WCAG 2.1 AA pieejamība un CMS integrācija. Noslēgumā veicam kvalitātes un veiktspējas pārbaudi, izvietojam vietni un turpinām to uzturēt."
+          "answer": "Individuāls UI/UX dizains, responsīva izstrāde, veiktspējas optimizācija, tehniskais SEO ar strukturētiem datiem un vietnes karti, WCAG 2.1 AA pieejamība un CMS integrācija. Noslēgumā veicam kvalitātes un veiktspējas pārbaudi, izvietojam vietni un turpinām to uzturēt."
         },
         {
           "question": "Ar kādām tehnoloģijām veidojat mājaslapas?",
@@ -145,7 +145,7 @@
         },
         {
           "question": "Vai varēsim paši rediģēt saturu?",
-          "answer": "Jā. Uzstādām headless CMS vai tradicionālu satura pārvaldības platformu, lai jūsu komanda saturu varētu pārvaldīt patstāvīgi."
+          "answer": "Jā. Ieviešam headless CMS vai tradicionālu satura pārvaldības sistēmu, lai jūsu komanda varētu patstāvīgi pārvaldīt saturu."
         },
         {
           "question": "Vai izstrādājat mājaslapas latviešu, angļu un krievu valodā?",
@@ -153,11 +153,11 @@
         },
         {
           "question": "Kā sākas projekts un cik tas maksā?",
-          "answer": "Aizpildiet saziņas formu ar īsu projekta aprakstu un, ja vēlaties, norādiet budžetu no mazāk nekā 10 000 € līdz 100 000 € un vairāk. Apjomu, cenu un termiņus pēc tam vienojamies rakstiskā piedāvājumā pirms darba sākuma."
+          "answer": "Aizpildiet saziņas formu ar īsu projekta aprakstu un, ja vēlaties, norādiet budžeta diapazonu: no mazāk nekā 10 000 € līdz 100 000 € un vairāk. Pēc tam par darba apjomu, cenu un termiņiem vienojamies rakstiskā piedāvājumā, pirms sākam darbu."
         },
         {
           "question": "Kur atrodas HA Group?",
-          "answer": "HA Group (SIA HA Group) ir reģistrēts Rīgā, Latvijā. Ar klientiem strādājam latviešu, angļu un krievu valodā."
+          "answer": "HA Group (SIA HA Group) ir IT uzņēmums, kas reģistrēts Rīgā, Latvijā. Ar klientiem strādājam latviešu, angļu un krievu valodā."
         }
       ]
     },
@@ -248,23 +248,23 @@
         },
         {
           "question": "Kādas tehnoloģijas izmantojat?",
-          "answer": "Parasti Node.js, Python un TypeScript ar PostgreSQL, MongoDB vai Redis, GraphQL vai REST API, bet izvietošanai Docker, Kubernetes un Terraform. Ziņojumu rindām un meklēšanai pēc vajadzības izmantojam RabbitMQ un Elasticsearch."
+          "answer": "Parasti Node.js, Python un TypeScript ar PostgreSQL, MongoDB vai Redis un GraphQL vai REST API; izvietošanai Docker, Kubernetes un Terraform. Ziņojumu rindām un meklēšanai pēc vajadzības izmantojam RabbitMQ un Elasticsearch."
         },
         {
-          "question": "Vai jaunā sistēma var sadarboties ar mūsu esošajiem rīkiem?",
-          "answer": "Jā. Integrējam maksājumu vārtejas, ERP sistēmas, CRM un ārējos API, bet jūsu datus aizsargā OAuth 2.0, SSO un lomās balstīta piekļuves kontrole."
+          "question": "Vai jauno sistēmu var integrēt ar rīkiem, ko jau izmantojam?",
+          "answer": "Jā. Integrējam maksājumu vārtejas, ERP sistēmas, CRM un ārējos API, un jūsu datus aizsargā OAuth 2.0, SSO un uz lomām balstīta piekļuves kontrole."
         },
         {
           "question": "Kā notiek izstrādes projekts?",
-          "answer": "Vispirms prasību analīze un arhitektūras projektēšana, pēc tam Agile sprinti ar nepārtrauktu integrāciju, testēšanu un demonstrācijām. Noslēgumā izvietojam sistēmu produkcijas vidē, sagatavojam dokumentāciju, apmācām lietotājus un atbalstām pāreju."
+          "answer": "Vispirms prasību analīze un arhitektūras projektēšana, pēc tam Agile sprinti ar nepārtrauktu integrāciju, testēšanu un demonstrācijām iesaistītajām pusēm. Noslēgumā izvietojam sistēmu produkcijas vidē, sagatavojam dokumentāciju, apmācām lietotājus un atbalstām pāreju uz jauno sistēmu."
         },
         {
           "question": "Mikropakalpojumi vai monolīts?",
-          "answer": "Tas, kas atbilst jūsu mērogam. Arhitektūru izvēlamies projektēšanas posmā un, ievērojot domēnorientētas projektēšanas principus, veidojam modulāru un testējamu kodu."
+          "answer": "Atkarībā no jūsu sistēmas mēroga. Arhitektūru izvēlamies projektēšanas posmā un, ievērojot domēnorientētas projektēšanas principus, veidojam modulāru un testējamu kodu."
         },
         {
           "question": "Kā tiek noteikta projekta cena?",
-          "answer": "Apjomu, cenu un termiņus vienojamies rakstiskā piedāvājumā pirms darba sākuma. Saziņas formā varat norādīt budžetu no mazāk nekā 10 000 € līdz 100 000 € un vairāk."
+          "answer": "Par darba apjomu, cenu un termiņiem vienojamies rakstiskā piedāvājumā, pirms sākam darbu. Saziņas formā varat norādīt budžeta diapazonu: no mazāk nekā 10 000 € līdz 100 000 € un vairāk."
         }
       ]
     },
@@ -358,19 +358,19 @@
         },
         {
           "question": "Vai jūs vienkārši pārceļat serverus uz mākoni?",
-          "answer": "Tikai tad, ja tas ir pamatoti. Katrai darba slodzei izvēlamies pārvietošanu bez izmaiņām, platformas maiņu vai arhitektūras pārveidi."
+          "answer": "Tikai tad, ja tas ir pamatoti. Katrai darba slodzei izvēlamies piemērotāko pieeju: pārvietošanu bez izmaiņām (lift-and-shift), platformas maiņu vai arhitektūras pārveidi."
         },
         {
           "question": "Kā kontrolējat mākoņa izmaksas?",
-          "answer": "Ar atbilstošu resursu apjomu, rezervētajiem un Spot resursiem, kā arī FinOps praksi: budžetiem, brīdinājumiem, marķēšanu un izmaksu sadales modeļiem."
+          "answer": "Ar atbilstoša resursu apjoma izvēli, rezervētajiem un Spot resursiem, kā arī FinOps praksi: budžetiem, brīdinājumiem, marķēšanu un izmaksu sadales modeļiem."
         },
         {
-          "question": "Kā nodrošināt drošību un atbilstību prasībām?",
-          "answer": "Izmantojam nulles uzticēšanās arhitektūru, IAM politikas un šifrēšanu, un, ja tas jums ir būtiski, pielāgojam risinājumu VDAR, SOC 2 vai HIPAA prasībām."
+          "question": "Kā jūs nodrošināt drošību un atbilstību prasībām?",
+          "answer": "Izmantojam nulles uzticēšanās arhitektūru, IAM politikas un šifrēšanu, un risinājumu pielāgojam VDAR, SOC 2 vai HIPAA prasībām, ja tās uz jums attiecas."
         },
         {
           "question": "Vai jums ir šādu migrāciju pieredze?",
-          "answer": "Jā. Četru mēnešu programmā lielam globālam uzņēmumam (NDA) izveidojām atkārtoti izmantojamus Terraform moduļus un Azure DevOps konveijerus un koordinējām produkcijas vides pārslēgšanu ASV un Eiropā."
+          "answer": "Jā. Četru mēnešu programmā lielam starptautiskam uzņēmumam (ievērojot NDA) izveidojām atkārtoti izmantojamus Terraform moduļus un Azure DevOps konveijerus, kā arī koordinējām produkcijas vides pārslēgšanu ASV un Eiropā."
         }
       ]
     },
@@ -460,23 +460,23 @@
         },
         {
           "question": "Kādus CI/CD un infrastruktūras rīkus izmantojat?",
-          "answer": "Konveijeriem GitHub Actions, GitLab CI, Jenkins un Azure DevOps, infrastruktūrai Terraform, Pulumi vai CloudFormation, izvietošanai Helm un Kubernetes, uzraudzībai Prometheus un Grafana, bet konfigurācijai un slepenajām vērtībām Ansible un Vault."
+          "answer": "Konveijeriem GitHub Actions, GitLab CI, Jenkins un Azure DevOps; infrastruktūrai Terraform, Pulumi vai CloudFormation; izvietošanai Helm un Kubernetes; uzraudzībai Prometheus un Grafana; konfigurācijas un slepeno vērtību pārvaldībai Ansible un Vault."
         },
         {
           "question": "Vai mums būs jāmaina esošie rīki?",
-          "answer": "Nē. Vispirms novērtējam jūsu CI/CD procesu briedumu un vājās vietas, tad projektējam mērķa arhitektūru un izvēlamies rīkus, kas der jūsu tehnoloģijām un komandai."
+          "answer": "Nē. Vispirms novērtējam jūsu CI/CD procesu briedumu un vājās vietas, tad projektējam mērķa arhitektūru un izvēlamies rīkus, kas piemēroti jūsu tehnoloģijām un komandai."
         },
         {
           "question": "Kā norit darbs?",
-          "answer": "Vispirms piegādes procesa novērtējums, arhitektūra un rīku izvēle, tad ieviešana, kurā veidojam konveijerus, konfigurējam infrastruktūru un pakāpeniski pārceļam darba slodzes. Noslēgumā nododam dokumentāciju, apmācām komandu un sagatavojam darbības instrukcijas patstāvīgam darbam."
+          "answer": "Vispirms piegādes procesa novērtējums, arhitektūras un rīku izvēle, tad ieviešana, kurā veidojam konveijerus, konfigurējam infrastruktūru un pakāpeniski pārceļam darba slodzes. Noslēgumā nododam dokumentāciju un darbības instrukcijas un apmācām komandu, lai tā visu varētu pārvaldīt patstāvīgi."
         },
         {
           "question": "Kādus DevOps projektus esat īstenojuši?",
-          "answer": "Lielam globālam uzņēmumam (NDA) četros mēnešos izveidojām atkārtoti izmantojamu Terraform platformu un Azure DevOps konveijerus ar apstiprināšanu un kontrolētu virzību starp vidēm un ieviesām tos ASV un Eiropā."
+          "answer": "Lielam starptautiskam uzņēmumam (ievērojot NDA) četros mēnešos izstrādājām atkārtoti izmantojamu Terraform platformu un Azure DevOps konveijerus ar apstiprināšanas soļiem un kontrolētu virzību starp vidēm. Risinājumu ieviesām ASV un Eiropā."
         },
         {
           "question": "Kur atrodas HA Group un kādās valodās strādājat?",
-          "answer": "HA Group (SIA HA Group) ir reģistrēts Rīgā, Latvijā, un strādā latviešu, angļu un krievu valodā."
+          "answer": "HA Group (SIA HA Group) ir IT uzņēmums, kas reģistrēts Rīgā, Latvijā, un strādā latviešu, angļu un krievu valodā."
         }
       ]
     },
@@ -565,7 +565,7 @@
         },
         {
           "question": "Vai pārvaldāt lokālos serverus vai tikai mākoni?",
-          "answer": "Abus. Pārvaldām lokālos un mākoņa serverus ar Linux vai Windows Server, tostarp VMware vides un AWS."
+          "answer": "Abus. Pārvaldām lokālos serverus un mākoņserverus ar Linux vai Windows Server, tostarp VMware vides un AWS."
         },
         {
           "question": "Kā notiek infrastruktūras pārņemšana?",
@@ -577,11 +577,11 @@
         },
         {
           "question": "Kādus uzraudzības un automatizācijas rīkus izmantojat?",
-          "answer": "Uzraudzībai Prometheus un Grafana, automatizācijai Ansible un Terraform, bet tīmekļa trafikam Nginx un Cloudflare."
+          "answer": "Uzraudzībai Prometheus un Grafana; automatizācijai Ansible un Terraform; tīmekļa datplūsmai Nginx un Cloudflare."
         },
         {
           "question": "Kur atrodas HA Group?",
-          "answer": "HA Group (SIA HA Group) ir reģistrēts Rīgā, Latvijā, un atbalsta klientus latviešu, angļu un krievu valodā."
+          "answer": "HA Group (SIA HA Group) ir IT uzņēmums, kas reģistrēts Rīgā, Latvijā, un atbalsta klientus latviešu, angļu un krievu valodā."
         }
       ]
     },
@@ -672,12 +672,12 @@
           "answer": "Viena komanda atbild par visu projektu: izpētes darbnīcām, UX/UI dizainu, klienta un servera puses izstrādi, kvalitātes pārbaudi, izvietošanu un atbalstu pēc palaišanas. Tas samazina informācijas zudumus starp posmiem un vienkāršo saziņu."
         },
         {
-          "question": "Kā redzēsim projekta progresu?",
+          "question": "Kā varēsim sekot līdzi projekta gaitai?",
           "answer": "Izstrāde notiek Agile iterācijās ar automatizētu testēšanu, koda pārbaudēm un demonstrāciju ik pēc divām nedēļām."
         },
         {
           "question": "Kādas tehnoloģijas izmantojat?",
-          "answer": "Klienta pusē React, Next.js, TypeScript un Tailwind CSS, servera pusē Node.js, Python un PostgreSQL, bet piegādei Docker, Kubernetes, Terraform, GitHub Actions un AWS. Dizainu veidojam Figma."
+          "answer": "Klienta pusē React, Next.js, TypeScript un Tailwind CSS; servera pusē Node.js, Python un PostgreSQL; piegādei Docker, Kubernetes, Terraform, GitHub Actions un AWS. Dizainu veidojam Figmā."
         },
         {
           "question": "Vai dizains tiek pārbaudīts pirms izstrādes?",
@@ -685,11 +685,11 @@
         },
         {
           "question": "Kas notiek pēc palaišanas?",
-          "answer": "Turpinām uzturēt produktu ar kļūdu labojumiem, funkciju atjauninājumiem, veiktspējas uzraudzību un drošības ielāpiem. Produktam augot, to pilnveidojam ar analītiku, A/B testēšanu un mērogošanu."
+          "answer": "Produktu turpinām uzturēt: labojam kļūdas, atjauninām funkcijas, uzraugām veiktspēju un uzstādām drošības ielāpus. Produktam augot, to pilnveidojam, balstoties uz analītiku un A/B testiem, un mērogojam."
         },
         {
           "question": "Kā tiek noteikta projekta cena?",
-          "answer": "Apjomu, cenu un termiņus vienojamies rakstiskā piedāvājumā pirms darba sākuma. Saziņas formā varat norādīt budžetu no mazāk nekā 10 000 € līdz 100 000 € un vairāk."
+          "answer": "Par darba apjomu, cenu un termiņiem vienojamies rakstiskā piedāvājumā, pirms sākam darbu. Saziņas formā varat norādīt budžeta diapazonu: no mazāk nekā 10 000 € līdz 100 000 € un vairāk."
         }
       ]
     },
@@ -771,7 +771,7 @@
       "faq": [
         {
           "question": "Kādus MI risinājumus izstrādājat?",
-          "answer": "Mašīnmācīšanās modeļus prognozēšanai, klasifikācijai, rekomendācijām un anomāliju noteikšanai, dabiskās valodas apstrādi teksta analīzei, tērzēšanas robotiem un dokumentu apstrādei, datorredzi ar OCR, prognozējošo analītiku un MI darbplūsmu automatizāciju."
+          "answer": "Mašīnmācīšanās modeļus prognozēšanai, klasifikācijai, rekomendācijām un anomāliju noteikšanai, dabiskās valodas apstrādi teksta analīzei, tērzēšanas robotiem un dokumentu apstrādei, datorredzi (tostarp OCR), prognozējošo analītiku un darbplūsmu automatizāciju ar MI."
         },
         {
           "question": "Vai MI var pievienot mūsu esošajām sistēmām?",
@@ -783,15 +783,15 @@
         },
         {
           "question": "Kādus modeļus un rīkus izmantojat?",
-          "answer": "Python ar TensorFlow, PyTorch, Hugging Face un Jupyter, kā arī OpenAI un Anthropic lielos valodas modeļus."
+          "answer": "Python ar TensorFlow, PyTorch, Hugging Face un Jupyter, kā arī OpenAI un Anthropic lielos valodu modeļus."
         },
         {
-          "question": "Kas notiek, kad modelis ir ieviests?",
-          "answer": "Izvietojam to ar MLOps un uzraudzību un turpinām modeli uzlabot."
+          "question": "Kas notiek, kad modelis ir izstrādāts?",
+          "answer": "Izvietojam to produkcijas vidē ar MLOps praksi un uzraudzību. Pēc tam modeli pastāvīgi uzlabojam."
         },
         {
           "question": "Vai jums ir MI projektu pieredze?",
-          "answer": "Jā. Konfidenciālai pasākumu platformai izveidojām LLM un Crawl4AI darbplūsmas, kas iegūst, klasificē un pārbauda pasākumus no vairāk nekā 20 publiskiem avotiem."
+          "answer": "Jā. Konfidenciālai pasākumu platformai izveidojām LLM un Crawl4AI darbplūsmas, kas no vairāk nekā 20 publiskiem avotiem iegūst pasākumu datus, tos klasificē un pārbauda."
         }
       ]
     },
@@ -882,23 +882,23 @@
         },
         {
           "question": "Kā notiek sadarbība?",
-          "answer": "Sākotnējais jūsu situācijas un mērķu novērtējums, padziļināta tehniskā analīze ar salīdzinājumu un ieteikumu ceļvedis ar prioritātēm. Pēc tam sniedzam praktisku atbalstu ieviešanas laikā."
+          "answer": "Vispirms novērtējam jūsu pašreizējo situāciju un mērķus. Tad veicam padziļinātu tehnisko analīzi, salīdzinām jūsu risinājumus ar nozares standartiem un sagatavojam ieteikumu ceļvedi ar prioritātēm. Pēc tam sniedzam praktisku atbalstu ieviešanas laikā."
         },
         {
           "question": "Kurās jomās konsultējat?",
-          "answer": "Mākoņarhitektūrā, DevOps, drošībā, datu inženierijā, MI un mašīnmācīšanās jomā, mikropakalpojumos, API stratēģijā, VDAR, Agile, izmaksu optimizācijā, komandu veidošanā un arhitektūras pārskatos."
+          "answer": "Mākoņarhitektūrā, DevOps, drošībā, datu inženierijā, MI un mašīnmācīšanās jomā, mikropakalpojumos, API stratēģijā, VDAR atbilstībā, Agile ieviešanā, izmaksu optimizācijā, komandu veidošanā un arhitektūras auditos."
         },
         {
           "question": "Vai palīdzat arī ieviest, vai tikai konsultējat?",
-          "answer": "Abos veidos. Ieviešanas atbalsts ir daļa no sadarbības, un tā pati komanda īsteno arī programmatūras, mākoņa un DevOps projektus."
+          "answer": "Gan konsultējam, gan palīdzam ieviest. Ieviešanas atbalsts ir daļa no sadarbības, un tā pati komanda īsteno arī programmatūras, mākoņa un DevOps projektus."
         },
         {
-          "question": "Vai palīdzat ar VDAR atbilstību?",
+          "question": "Vai palīdzat nodrošināt atbilstību VDAR?",
           "answer": "Jā. Novērtējam atbilstību VDAR, SOC 2 un HIPAA prasībām un sniedzam ieviešanas vadlīnijas."
         },
         {
           "question": "Kur atrodas HA Group?",
-          "answer": "HA Group (SIA HA Group) ir reģistrēts Rīgā, Latvijā, un konsultē latviešu, angļu un krievu valodā."
+          "answer": "HA Group (SIA HA Group) ir IT uzņēmums, kas reģistrēts Rīgā, Latvijā, un konsultē latviešu, angļu un krievu valodā."
         }
       ]
     }

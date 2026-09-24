@@ -1,7 +1,7 @@
 {
   "_comment": "Search and share copy per route: the <title>, meta description and og tags. Paths are unprefixed; /lv and /ru pages use the same keys in their own file. Project pages use the project title plus projectTitleSuffix and the project description. Keep the three files key-identical.",
   "siteName": "HA Group",
-  "ogImageAlt": "HA Group mākoņa logotips ar uzrakstu DevOps, mākonis un programmatūra, Rīga, Latvija",
+  "ogImageAlt": "HA Group logotips ar mākoni un uzrakstu “DevOps, mākonis un programmatūra”, Rīga, Latvija",
   "projectTitleSuffix": "Projekts | HA Group",
   "breadcrumbs": {
     "home": "HA Group",
@@ -12,55 +12,55 @@
   "pages": {
     "/": {
       "title": "DevOps, mākoņpakalpojumi un programmatūra Latvijā | HA Group",
-      "description": "HA Group ir IT uzņēmums Rīgā: izstrādājam programmatūru un mājaslapas, ieviešam CI/CD un Kubernetes, veicam migrāciju uz AWS, Azure vai Google Cloud."
+      "description": "HA Group ir IT uzņēmums Rīgā, kas izstrādā programmatūru un mājaslapas, ievieš CI/CD un Kubernetes, kā arī veic migrāciju uz AWS, Azure vai Google Cloud."
     },
     "/services": {
       "title": "IT pakalpojumi uzņēmumiem Latvijā | HA Group",
-      "description": "Astoņi IT pakalpojumi mazajiem un vidējiem uzņēmumiem: mājaslapas, programmatūra, migrācija uz mākoni, DevOps, IT infrastruktūra, MI un IT konsultācijas."
+      "description": "IT pakalpojumi mazajiem un vidējiem uzņēmumiem: mājaslapas, programmatūra, migrācija uz mākoni, DevOps, IT infrastruktūra, MI integrācija un IT konsultācijas."
     },
     "/services/website-development": {
-      "title": "Mājas lapu izstrāde Rīgā | HA Group",
+      "title": "Mājaslapu izstrāde Rīgā | HA Group",
       "description": "Ātras un pieejamas mājaslapas ar React, Next.js un TypeScript: individuāls UI/UX dizains, tehniskais SEO, WCAG 2.1 AA, CMS integrācija un turpmāks atbalsts."
     },
     "/services/system-development": {
       "title": "Programmatūras izstrāde pēc pasūtījuma | HA Group",
-      "description": "Uzņēmuma sistēmas, API un iekšējie rīki ar Node.js, Python un PostgreSQL: droša autentifikācija, CRM un maksājumu integrācijas, pilna dokumentācija."
+      "description": "Pielāgotas uzņēmumu sistēmas, API un iekšējie rīki ar Node.js, Python un PostgreSQL: droša autentifikācija, CRM un maksājumu integrācijas, pilna dokumentācija."
     },
     "/services/cloud-migration": {
       "title": "Migrācija uz mākoni un AWS konsultācijas | HA Group",
-      "description": "Pāreja uz AWS, Azure vai Google Cloud pēc plāna: darba slodžu novērtējums, landing zone, Terraform automatizācija, koordinēta pārslēgšana un FinOps kontrole."
+      "description": "Plānota pāreja uz AWS, Azure vai Google Cloud: darba slodžu novērtējums, landing zone, Terraform automatizācija, koordinēta pārslēgšana un FinOps."
     },
     "/services/devops": {
       "title": "DevOps pakalpojumi un konsultācijas Latvijā | HA Group",
-      "description": "CI/CD ieviešana, infrastruktūra kā kods ar Terraform, Docker un Kubernetes, GitOps un Prometheus uzraudzība, ar dokumentāciju un komandas apmācību."
+      "description": "CI/CD ieviešana, Docker un Kubernetes, infrastruktūra kā kods ar Terraform, GitOps un Prometheus uzraudzība, kā arī dokumentācija un komandas apmācība."
     },
     "/services/it-infrastructure": {
-      "title": "IT infrastruktūras uzturēšana Rīgā | HA Group",
+      "title": "IT infrastruktūras uzturēšana un atbalsts Rīgā | HA Group",
       "description": "IT infrastruktūras uzraudzība 24/7, drošības ielāpi, Linux un Windows Server administrēšana, palīdzības dienests un ikmēneša pārskati par sistēmu stāvokli."
     },
     "/services/full-cycle": {
       "title": "Pilna cikla programmatūras izstrāde | HA Group",
-      "description": "Viena komanda no izpētes un UX/UI dizaina līdz React un Node.js izstrādei, CI/CD, palaišanai un uzturēšanai, ar demonstrāciju ik pēc divām nedēļām."
+      "description": "Viena komanda no izpētes un UX/UI dizaina līdz React un Node.js izstrādei, CI/CD, palaišanai un uzturēšanai. Strādājošu versiju rādām ik pēc divām nedēļām."
     },
     "/services/ai-integration": {
       "title": "Mākslīgā intelekta integrācija uzņēmumiem | HA Group",
-      "description": "Mašīnmācīšanās, tērzēšanas roboti, dokumentu apstrāde un datorredze jūsu esošajās sistēmās ar Python, PyTorch un OpenAI vai Anthropic modeļiem."
+      "description": "Mašīnmācīšanās, tērzēšanas roboti, dokumentu apstrāde un datorredze, integrēti jūsu esošajās sistēmās ar Python, PyTorch un OpenAI vai Anthropic modeļiem."
     },
     "/services/consulting": {
       "title": "IT konsultācijas Rīgā: tehnoloģiju audits | HA Group",
-      "description": "Tehnoloģiju audits, arhitektūras izvērtējums, digitālās transformācijas ceļvedis, IT budžeta plānošana un VDAR vadlīnijas, ar atbalstu ieviešanas laikā."
+      "description": "Tehnoloģiju audits, arhitektūras izvērtējums, digitālās transformācijas ceļvedis, IT budžeta plānošana un VDAR vadlīnijas, kā arī atbalsts ieviešanas laikā."
     },
     "/projects": {
       "title": "IT projektu piemēri | HA Group",
-      "description": "Mūsu projekti: daudzvalodu mājaslapas AWS mākonī, Terraform un Azure DevOps modernizācija, MI pasākumu datu platforma un BalticGP sacensību lietotne."
+      "description": "Mūsu projekti: daudzvalodu mājaslapas AWS mākonī, infrastruktūras modernizācija ar Terraform un Azure DevOps, lietotne BalticGP un pasākumu platforma ar MI."
     },
     "/balticgp": {
       "title": "BalticGP: motošosejas sacensību kalendārs | HA Group",
-      "description": "BalticGP ir kalendāra lietotne braucējiem un līdzjutējiem, kurā atrast oficiālas motošosejas sacensības, treniņus un trases dienas Baltijā un Eiropā."
+      "description": "BalticGP ir kalendāra lietotne braucējiem un līdzjutējiem, kurā var atrast oficiālas motošosejas sacensības, treniņus un trases dienas Baltijā un Eiropā."
     },
     "/careers": {
       "title": "Karjera: attālināts darbs IT jomā | HA Group",
-      "description": "Pievienojieties HA Group, IT uzņēmumam no Rīgas ar attālinātā darba kultūru. Vakances izstrādē un dizainā, elastīgs darba laiks un mācību budžets."
+      "description": "Pievienojieties HA Group, IT uzņēmumam no Rīgas ar attālinātā darba kultūru. Vakances izstrādē un dizainā, elastīgs darba laiks, mentorings un mācību budžets."
     },
     "/reviews": {
       "title": "Klientu atsauksmes | HA Group",
@@ -72,7 +72,7 @@
     },
     "/about": {
       "title": "Par mums: IT uzņēmums Rīgā, Latvijā | HA Group",
-      "description": "HA Group (SIA HA Group) ir IT uzņēmums Rīgā, kas mazajiem un vidējiem uzņēmumiem palīdz ar programmatūru, mājaslapām, mākoni, DevOps un IT infrastruktūru."
+      "description": "HA Group (SIA HA Group) ir IT uzņēmums Rīgā: programmatūra, mājaslapas, mākoņrisinājumi, DevOps un IT infrastruktūra mazajiem un vidējiem uzņēmumiem."
     },
     "/company-details": {
       "title": "Rekvizīti: reģistrācijas un PVN numurs | HA Group",
@@ -88,7 +88,7 @@
     },
     "/legal/cookies": {
       "title": "Sīkdatņu politika | HA Group",
-      "description": "HA Group tīmekļvietne izmanto tikai nepieciešamo pārlūka krātuvi valodai, tēmai un formu aizsardzībai, bez analītikas, reklāmas vai izsekošanas sīkdatnēm."
+      "description": "HA Group tīmekļvietne izmanto tikai nepieciešamo krātuvi valodai, krāsu režīmam un formu aizsardzībai, bez analītikas, reklāmas vai izsekošanas sīkdatnēm."
     },
     "/404": {
       "title": "Lapa nav atrasta | HA Group",

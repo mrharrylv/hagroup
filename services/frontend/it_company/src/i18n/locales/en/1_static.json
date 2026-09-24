@@ -116,7 +116,8 @@
   },
   "servicePages": {
     "backToServices": "Back to Services",
-    "getStarted": "Get Started"
+    "getStarted": "Get Started",
+    "faqTitle": "Frequently asked questions"
   },
   "careers": {
     "backHome": "Back to Home",
@@ -306,5 +307,12 @@
       "Organizer administrators can manage their own events",
       "Moderation decisions are logged for transparency"
     ]
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or has moved. These links will take you somewhere useful.",
+    "homeLink": "Go to the home page",
+    "servicesLink": "Browse our services",
+    "contactLink": "Contact us"
   }
 }

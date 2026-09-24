@@ -1,13 +1,9 @@
 import { useId } from 'react';
-
-export interface FaqItem {
-  question: string;
-  answer: string;
-}
+import type { FaqEntry } from '../../lib/contentTypes';
 
 interface ServiceFaqProps {
   title?: string;
-  items?: readonly FaqItem[];
+  items?: readonly FaqEntry[];
 }
 
 /**

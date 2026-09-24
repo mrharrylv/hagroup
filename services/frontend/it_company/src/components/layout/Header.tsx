@@ -1,18 +1,26 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback, type MouseEvent as ReactMouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../../context/useTheme';
+import { localizePath, type Lang } from '../../i18n/locales';
+import { useLocale } from '../../i18n/useLocale';
 import { useServicesData } from '../../lib/content';
 import Logo from '../ui/Logo';
 
-const LANGUAGES = [
+const LANGUAGES: readonly { code: Lang; label: string }[] = [
   { code: 'en', label: 'EN' },
   { code: 'lv', label: 'LV' },
   { code: 'ru', label: 'RU' },
-] as const;
+];
+
+/** A plain click; modified clicks (new tab, new window) go to the link's href. */
+function isPlainClick(event: ReactMouseEvent<HTMLAnchorElement>): boolean {
+  return event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
+}
 
 export default function Header() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+  const { lang: activeLang, switchLanguage } = useLocale();
   const servicesData = useServicesData();
   const { theme, toggleTheme } = useTheme();
   const [langOpen, setLangOpen] = useState(false);
@@ -23,27 +31,25 @@ export default function Header() {
   const servicesRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
-  const handleLogoClick = useCallback((e: React.MouseEvent) => {
+  const handleLogoClick = useCallback((e: ReactMouseEvent) => {
     if (location.pathname === '/') {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [location.pathname]);
 
-  const currentLang = LANGUAGES.find((l) => l.code === i18n.language) ?? LANGUAGES[0];
+  const currentLang = LANGUAGES.find((l) => l.code === activeLang) ?? LANGUAGES[0];
 
-  const switchLanguage = (code: string) => {
-    i18n.changeLanguage(code);
-    try {
-      localStorage.setItem('cloudie-lang', code);
-    } catch {
-      // Storage blocked (private mode) — the choice just is not remembered.
-    }
-    // Without this the document stays `lang="en"` whatever the visitor picked,
-    // so a screen reader announces Latvian and Russian through an English
-    // speech synthesiser. WCAG 3.1.1 / 3.1.2.
-    document.documentElement.lang = code;
+  // Each language is its own URL (/lv/..., /ru/...), so the switcher is a set
+  // of real links to this page in the other languages. A plain click switches
+  // in place, keeping ?query and #hash; a modified click opens the link.
+  const languageHref = (code: Lang) => `${localizePath(location.pathname, code)}${location.search}${location.hash}`;
+
+  const handleLanguageClick = (event: ReactMouseEvent<HTMLAnchorElement>, code: Lang) => {
+    if (!isPlainClick(event)) return;
+    event.preventDefault();
     setLangOpen(false);
+    if (code !== activeLang) switchLanguage(code);
   };
 
   // Close menus on route change
@@ -176,17 +182,21 @@ export default function Header() {
             {langOpen && (
               <div className="absolute right-0 mt-2 w-24 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-lg overflow-hidden z-50">
                 {LANGUAGES.map((lang) => (
-                  <button
+                  <a
                     key={lang.code}
-                    onClick={() => switchLanguage(lang.code)}
+                    href={languageHref(lang.code)}
+                    hrefLang={lang.code}
+                    lang={lang.code}
+                    aria-current={lang.code === activeLang ? 'true' : undefined}
+                    onClick={(event) => handleLanguageClick(event, lang.code)}
                     className={`block w-full text-left px-4 py-2 text-sm transition-colors ${
-                      lang.code === i18n.language
+                      lang.code === activeLang
                         ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium'
                         : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800'
                     }`}
                   >
                     {lang.label}
-                  </button>
+                  </a>
                 ))}
               </div>
             )}
@@ -280,17 +290,21 @@ export default function Header() {
                 Lang
               </span>
               {LANGUAGES.map((lang) => (
-                <button
+                <a
                   key={lang.code}
-                  onClick={() => switchLanguage(lang.code)}
+                  href={languageHref(lang.code)}
+                  hrefLang={lang.code}
+                  lang={lang.code}
+                  aria-current={lang.code === activeLang ? 'true' : undefined}
+                  onClick={(event) => handleLanguageClick(event, lang.code)}
                   className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
-                    lang.code === i18n.language
+                    lang.code === activeLang
                       ? 'bg-indigo-600 text-white dark:bg-indigo-500'
                       : 'text-zinc-500 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800'
                   }`}
                 >
                   {lang.label}
-                </button>
+                </a>
               ))}
             </div>
 

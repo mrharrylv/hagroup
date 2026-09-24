@@ -2,43 +2,30 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useServicesData } from '../../lib/content';
+import type { ServicePageCopy } from '../../lib/contentTypes';
+import { faqEntries } from '../../lib/faq';
 import ProjectCTA from './ProjectCTA';
-import ServiceFaq, { type FaqItem } from './ServiceFaq';
+import ServiceFaq from './ServiceFaq';
 
 interface ServicePageProps {
   serviceKey: string;
   ctaSection?: boolean;
 }
 
-interface ServicePageData {
-  icon: string;
-  title: string;
-  subtitle: string;
-  overviewTitle: string;
-  overviewText: string;
-  featuresTitle: string;
-  features: { icon: string; title: string; description: string }[];
-  processTitle: string;
-  process: { step: string; title: string; description: string }[];
-  techTitle: string;
-  technologies: { name: string; icon: string }[];
-  ctaTitle: string;
-  ctaText: string;
-  faqTitle?: string;
-  faq?: FaqItem[];
-}
-
 export default function ServicePage({ serviceKey, ctaSection = true }: ServicePageProps) {
   const { t } = useTranslation();
   const servicesData = useServicesData();
 
-  const page = (servicesData.pages as Record<string, ServicePageData>)[serviceKey];
+  const page = (servicesData.pages as Record<string, ServicePageCopy>)[serviceKey];
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   if (!page) return null;
+
+  // The same entries the FAQPage markup is built from (src/seo/jsonLd.ts).
+  const faq = faqEntries(page);
 
   return (
     <>
@@ -145,8 +132,9 @@ export default function ServicePage({ serviceKey, ctaSection = true }: ServicePa
         </div>
       </section>
 
-      {/* FAQ: always expanded, before the call to action */}
-      <ServiceFaq title={page.faqTitle} items={page.faq} />
+      {/* FAQ: always expanded, before the call to action. The same entries
+          become the page's FAQPage markup (src/seo/jsonLd.ts). */}
+      <ServiceFaq title={page.faqTitle ?? t('servicePages.faqTitle')} items={faq} />
 
       {/* CTA */}
       {ctaSection && <ProjectCTA showContactButton={false} />}

@@ -1,7 +1,7 @@
 FRONTEND_DIR := services/frontend/it_company
 KOPA_DIR := kopa/service/frontend
 
-.PHONY: install run dev build lint preview clean \
+.PHONY: install run dev build lint test verify preview clean \
         kopa-install kopa-dev kopa-build kopa-lint kopa-test kopa-verify kopa-clean
 
 ## Install dependencies
@@ -24,13 +24,21 @@ build:
 lint:
 	cd $(FRONTEND_DIR) && npm run lint
 
+## Run unit tests
+test:
+	cd $(FRONTEND_DIR) && npm test
+
+## Full gate: lint, unit tests, build with prerender, checks on the built site
+verify:
+	cd $(FRONTEND_DIR) && npm run verify
+
 ## Preview production build
 preview:
 	cd $(FRONTEND_DIR) && npm run preview
 
 ## Remove node_modules and build artifacts
 clean:
-	rm -rf $(FRONTEND_DIR)/node_modules $(FRONTEND_DIR)/dist
+	rm -rf $(FRONTEND_DIR)/node_modules $(FRONTEND_DIR)/dist $(FRONTEND_DIR)/dist-ssr
 
 ## --- Kopā (group-buying demo) -------------------------------------------
 

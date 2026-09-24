@@ -4,5 +4,7 @@
     "url": "https://wa.me/37126259293"
   },
   "email": "info@hagroup.lv",
-  "phone": "+37126259293"
+  "phone": "+37126259293",
+  "_profilesNote": "Owner: add the official profile URLs of SIA HA Group here (LinkedIn company page, GitHub organisation, Crunchbase, Clutch and the like), full https URLs, one per entry. They become Organization.sameAs in the structured data and help search engines and assistants connect the profiles to hagroup.lv. Leave the list empty rather than add a profile that is not the company's own.",
+  "profiles": []
 }

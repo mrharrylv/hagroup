@@ -1,5 +1,6 @@
 import { useState, useRef, useCallback, useEffect, type FormEvent } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 import { getRateLimitSecondsRemaining, recordSubmission } from '../../lib/rateLimit';
@@ -650,7 +651,7 @@ export default function DifficultContact({
               i18nKey="contact.form.privacyConsent"
               components={{
                 privacy: (
-                  <a href="/legal/privacy" className="text-indigo-600 dark:text-indigo-400 hover:underline" />
+                  <Link to="/legal/privacy" className="text-indigo-600 dark:text-indigo-400 hover:underline" />
                 ),
               }}
             />

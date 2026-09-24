@@ -1,5 +1,6 @@
 import { useState, useEffect, type FormEvent } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 import { getRateLimitSecondsRemaining, recordSubmission } from '../../lib/rateLimit';
@@ -32,7 +33,12 @@ export default function CareerContact() {
   const careersData = useCareersData();
   const [form, setForm] = useState<CareerForm>(INITIAL_FORM);
   const [status, setStatus] = useState<FormStatus>('idle');
-  const [cooldown, setCooldown] = useState(() => getRateLimitSecondsRemaining('career'));
+  // Starts at 0 like the prerendered page; storage is read after mount.
+  const [cooldown, setCooldown] = useState(0);
+
+  useEffect(() => {
+    setCooldown(getRateLimitSecondsRemaining('career'));
+  }, []);
 
   // Tick down the cooldown timer
   useEffect(() => {
@@ -257,7 +263,7 @@ export default function CareerContact() {
                 i18nKey="careers.form.fields.privacyConsent"
                 components={{
                   privacy: (
-                    <a href="/legal/privacy" className="text-indigo-600 dark:text-indigo-400 hover:underline" />
+                    <Link to="/legal/privacy" className="text-indigo-600 dark:text-indigo-400 hover:underline" />
                   ),
                 }}
               />

@@ -1,0 +1,98 @@
+{
+  "_comment": "Search and share copy per route: the <title>, meta description and og tags. Paths are unprefixed; /lv and /ru pages use the same keys in their own file. Project pages use the project title plus projectTitleSuffix and the project description. Keep the three files key-identical.",
+  "siteName": "HA Group",
+  "ogImageAlt": "HA Group: DevOps, cloud and custom software from Rīga, Latvia",
+  "projectTitleSuffix": "HA Group project",
+  "breadcrumbs": {
+    "home": "HA Group",
+    "services": "Services",
+    "projects": "Projects",
+    "legal": "Legal"
+  },
+  "pages": {
+    "/": {
+      "title": "HA Group | Custom Software, Cloud & DevOps",
+      "description": "Latvian IT company delivering custom software, websites, cloud architecture, DevOps automation, AI integration and practical technology consulting."
+    },
+    "/services": {
+      "title": "Complete Technology Solutions | HA Group",
+      "description": "Flexible IT services tailored to help small and medium-sized businesses streamline operations, improve security, and grow sustainably."
+    },
+    "/services/website-development": {
+      "title": "Website Development | HA Group",
+      "description": "High-performance, conversion-focused websites engineered for speed, SEO, and scalability — from landing pages to enterprise web portals."
+    },
+    "/services/system-development": {
+      "title": "System Development | HA Group",
+      "description": "Robust, enterprise-grade software systems, APIs, and platforms built with modern architectures for reliability and long-term scalability."
+    },
+    "/services/cloud-migration": {
+      "title": "Cloud & Migration | HA Group",
+      "description": "Strategic multi-cloud architecture, migration, and optimization across AWS, Azure, and Google Cloud with zero-trust security principles."
+    },
+    "/services/devops": {
+      "title": "DevOps & CI/CD | HA Group",
+      "description": "Automated build, test, and deployment pipelines powered by container orchestration, Infrastructure as Code, and GitOps workflows."
+    },
+    "/services/it-infrastructure": {
+      "title": "IT Infrastructure | HA Group",
+      "description": "Proactive 24/7 monitoring, security management, server administration, and infrastructure optimization."
+    },
+    "/services/full-cycle": {
+      "title": "Full-Cycle Development | HA Group",
+      "description": "End-to-end product delivery — from strategy and design to development, deployment, and continuous improvement."
+    },
+    "/services/ai-integration": {
+      "title": "AI Integration | HA Group",
+      "description": "Production-ready machine learning and AI-driven automation designed to create measurable business impact."
+    },
+    "/services/consulting": {
+      "title": "IT Consulting | HA Group",
+      "description": "Strategic technology advisory covering architecture reviews, digital transformation roadmaps, and engineering optimization."
+    },
+    "/projects": {
+      "title": "Our Projects | HA Group",
+      "description": "Solutions built to support growth, efficiency, and long-term success."
+    },
+    "/balticgp": {
+      "title": "BalticGP motorcycle racing calendar | HA Group",
+      "description": "A fast, reliable calendar app that helps riders and fans find official motorcycle road racing events across the Baltics and Europe."
+    },
+    "/careers": {
+      "title": "Build the Future With Us | Careers at HA Group",
+      "description": "Join a team of ambitious engineers, architects, and innovators building secure, scalable technology for growing businesses."
+    },
+    "/reviews": {
+      "title": "Client Reviews | HA Group",
+      "description": "Client feedback about HA Group software engineering, cloud, DevOps and technology consulting engagements."
+    },
+    "/contact": {
+      "title": "Contact HA Group | Discuss Your IT Project",
+      "description": "Contact HA Group to discuss custom software, website development, cloud architecture, DevOps, AI integration or IT consulting."
+    },
+    "/about": {
+      "title": "About HA Group | Technology Partner from Latvia",
+      "description": "Meet HA Group, a Latvian technology partner focused on practical, secure and scalable software, cloud and infrastructure solutions."
+    },
+    "/company-details": {
+      "title": "SIA HA Group Company Details",
+      "description": "Official registration, VAT and contact information for SIA HA Group in Latvia."
+    },
+    "/legal/terms": {
+      "title": "Terms and Conditions | HA Group",
+      "description": "Terms and conditions for using the HA Group website and contacting SIA HA Group."
+    },
+    "/legal/privacy": {
+      "title": "Privacy Policy | HA Group",
+      "description": "How SIA HA Group processes personal data submitted through its website and contact forms."
+    },
+    "/legal/cookies": {
+      "title": "Cookie Policy | HA Group",
+      "description": "Information about the necessary browser storage used by the HA Group website."
+    },
+    "/404": {
+      "title": "Page not found | HA Group",
+      "description": "The page you were looking for does not exist or has moved. Browse HA Group services, projects and contact details instead."
+    }
+  }
+}

@@ -1,4 +1,6 @@
 const ELLIPSIS = '…';
+/** Stripped before the ellipsis: spaces, list punctuation, the em dash, the en dash and the hyphen. */
+const TRAILING_PUNCTUATION = /[\s,;:.—–-]+$/;
 
 function collapseWhitespace(text: string): string {
   return text.replace(/\s+/g, ' ').trim();
@@ -19,7 +21,7 @@ function cutAtWord(text: string, max: number): string {
   const room = text.slice(0, max);
   const lastSpace = room.lastIndexOf(' ');
   const cut = lastSpace > 0 ? room.slice(0, lastSpace) : room.slice(0, max - ELLIPSIS.length);
-  return `${cut.replace(/[\s,;:.–-]+$/, '')}${ELLIPSIS}`;
+  return `${cut.replace(TRAILING_PUNCTUATION, '')}${ELLIPSIS}`;
 }
 
 /**

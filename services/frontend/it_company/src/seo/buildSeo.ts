@@ -31,7 +31,7 @@ function pageCopy(route: ResolvedRoute, content: SeoContent): { title: string; d
   if (route.kind === 'project' && route.project) {
     return {
       title: `${route.project.title} | ${content.seo.projectTitleSuffix}`,
-      description: summarize(route.project.description, DESCRIPTION_MAX, DESCRIPTION_MIN),
+      description: route.project.seoDescription ?? summarize(route.project.description, DESCRIPTION_MAX, DESCRIPTION_MIN),
     };
   }
   const key = route.kind === 'notFound' ? NOT_FOUND_PATH : route.canonicalPath;
@@ -50,6 +50,17 @@ function pageImage(route: ResolvedRoute, content: SeoContent): SeoImage {
     return { url: absoluteUrl(own), alt: route.project.title };
   }
   return { url: absoluteUrl(OG_IMAGE_PATH[content.lang]), ...OG_IMAGE_SIZE, alt: content.seo.ogImageAlt };
+}
+
+/**
+ * A page's name as the page itself shows it (6_seo.json names), for its
+ * breadcrumb and its llms.txt link. The <title> is written for search
+ * results and appears nowhere on the page, so it does not name a crumb.
+ */
+export function pageName(content: SeoContent, path: string): string {
+  const name = content.seo.names[path];
+  if (!name) throw new Error(`6_seo.json (${content.lang}) has no name for "${path}"`);
+  return name;
 }
 
 function crumbsFor(route: ResolvedRoute, content: SeoContent, title: string): Crumb[] {
@@ -73,7 +84,7 @@ function crumbsFor(route: ResolvedRoute, content: SeoContent, title: string): Cr
     case 'project':
       return [home, at('/projects', seo.breadcrumbs.projects), self(route.project?.title ?? crumbName(title))];
     default:
-      return [home, self(crumbName(title))];
+      return [home, self(pageName(content, route.canonicalPath))];
   }
 }
 

@@ -1,6 +1,7 @@
-import { localizePath } from '../i18n/locales';
+import { localizePath, type Lang } from '../i18n/locales';
 import type { Project, ServicePageCopy } from '../lib/contentTypes';
 import { faqEntries } from '../lib/faq';
+import { pageName } from './buildSeo';
 import { seoContentFor, type SeoContent } from './content';
 import { SERVICE_ROUTES, sitemapPaths } from './routes';
 import { COMPANY, SITE_URL, absoluteUrl } from './site';
@@ -16,6 +17,8 @@ import { summarize } from './text';
 const COMPANY_PATHS = ['/about', '/contact', '/company-details', '/careers'] as const;
 const LEGAL_PATHS = ['/legal/terms', '/legal/privacy', '/legal/cookies'] as const;
 const LINE_SUMMARY_MAX = 200;
+/** llms.txt is in English, so the other language versions are named in English. */
+const LANGUAGE_NAMES: Record<Lang, string> = { en: 'English', lv: 'Latvian', ru: 'Russian' };
 
 /**
  * The blockquote summary. The home description is written as a sentence for
@@ -43,9 +46,16 @@ function linkLine(title: string, url: string, description: string): string {
   return `- [${title}](${url}): ${description}`;
 }
 
+/** A page under the name it shows (its nav or footer label), not its <title>. */
 function pageLink(content: SeoContent, path: string): string {
-  const copy = content.seo.pages[path];
-  return linkLine(copy.title, absoluteUrl(localizePath(path, content.lang)), copy.description);
+  const { description } = content.seo.pages[path];
+  return linkLine(pageName(content, path), absoluteUrl(localizePath(path, content.lang)), description);
+}
+
+/** The home page of another language version, named after that language. */
+function homeLink(translation: SeoContent): string {
+  const label = `${COMPANY.name} in ${LANGUAGE_NAMES[translation.lang]}`;
+  return linkLine(label, absoluteUrl(localizePath('/', translation.lang)), translation.seo.pages['/'].description);
 }
 
 function projectCasePath(project: Project): string | undefined {
@@ -71,7 +81,8 @@ function caseStudyLines(content: SeoContent): string[] {
   const lines = content.projects.flatMap((project) => {
     const path = projectCasePath(project);
     if (!path || !indexable.has(path)) return [];
-    return [linkLine(project.title, absoluteUrl(path), summarize(project.description, LINE_SUMMARY_MAX, 70))];
+    const summary = project.seoDescription ?? summarize(project.description, LINE_SUMMARY_MAX, 70);
+    return [linkLine(project.title, absoluteUrl(path), summary)];
   });
   return ['## Case studies', '', ...lines];
 }
@@ -81,7 +92,7 @@ function optionalLines(content: SeoContent, translations: readonly SeoContent[])
     '## Optional',
     '',
     ...LEGAL_PATHS.map((path) => pageLink(content, path)),
-    ...translations.map((translation) => pageLink(translation, '/')),
+    ...translations.map(homeLink),
   ];
 }
 

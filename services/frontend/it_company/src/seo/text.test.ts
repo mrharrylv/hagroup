@@ -38,6 +38,19 @@ describe('summarize', () => {
     const result = summarize(text, 156);
     expect(result).not.toMatch(/[,;:]…$/);
   });
+
+  it.each([
+    ['an em dash', '—'],
+    ['an en dash', '–'],
+    ['a hyphen', '-'],
+  ])('does not end on %s before the ellipsis', (_name, dash) => {
+    // 'alpha ' x 20 is 120 characters, so a 124-character budget ends the
+    // last whole word on the dash that follows it, as in the Russian
+    // case-study description ("из более чем 20 источников —…").
+    const lead = 'alpha '.repeat(20);
+    const text = `${lead}${dash} ${'beta '.repeat(40)}`;
+    expect(summarize(text, 124)).toBe(`${lead.trim()}…`);
+  });
 });
 
 describe('crumbName', () => {

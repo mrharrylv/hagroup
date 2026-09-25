@@ -3,6 +3,7 @@
     "id": "confidential-event-intelligence-platform",
     "title": "Pasākumu informācijas platforma (NDA)",
     "description": "Konfidenciāla pasākumu meklēšanas un kopīgas plānošanas platforma, kas sadrumstalotu publisko informāciju no vairāk nekā 20 biļešu tirgotāju, norises vietu, kultūras iestāžu un pašvaldību avotiem apvieno strukturētā un viegli pārmeklējamā pasākumu datu kopā. Python datu ieguves rīki un ar MI atbalstīta informācijas izgūšana apstrādā atšķirīgi veidotas vietnes, savukārt LLM procesi saturu kategorizē, papildina un pārbauda, pirms tas nonāk tīmekļa un mobilajās lietotnēs.",
+    "seoDescription": "Pasākumu meklēšanas un kopīgas plānošanas platforma, kas ar Python un MI apvieno datus no vairāk nekā 20 biļešu tirgotāju, norises vietu un pašvaldību avotiem.",
     "image": "",
     "website": "",
     "caseStudyPath": "/projects/confidential-event-intelligence-platform",

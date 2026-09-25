@@ -370,7 +370,7 @@
         },
         {
           "question": "What migration work have you delivered?",
-          "answer": "In a four-month infrastructure modernization program for a large global enterprise, under NDA, we built reusable Terraform modules and Azure DevOps pipelines and coordinated data migration and production switchovers in the United States and Europe."
+          "answer": "In a four-month infrastructure modernization program for a large global enterprise, under NDA, we built reusable Terraform modules and Azure DevOps pipelines, and coordinated data migration and production switchovers in the United States and Europe."
         }
       ]
     },

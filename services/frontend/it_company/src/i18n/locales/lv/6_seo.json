@@ -16,7 +16,7 @@
     },
     "/services": {
       "title": "IT pakalpojumi uzņēmumiem Latvijā | HA Group",
-      "description": "IT pakalpojumi mazajiem un vidējiem uzņēmumiem, tostarp mājaslapas, programmatūra, pāreja uz mākoni, DevOps, MI integrācija, IT infrastruktūra un konsultācijas."
+      "description": "IT pakalpojumi mazajiem un vidējiem uzņēmumiem, tostarp mājaslapas, programmatūra, pāreja uz mākoni, DevOps, IT infrastruktūra, MI integrācija un konsultācijas."
     },
     "/services/website-development": {
       "title": "Mājaslapu izstrāde Rīgā | HA Group",
@@ -24,7 +24,7 @@
     },
     "/services/system-development": {
       "title": "Programmatūras izstrāde pēc pasūtījuma | HA Group",
-      "description": "Pielāgotas uzņēmumu sistēmas, API un iekšējie rīki ar Node.js, Python un PostgreSQL: droša autentifikācija, CRM un maksājumu integrācijas, dokumentācija."
+      "description": "Pielāgotas uzņēmumu sistēmas, API un iekšējie rīki ar Node.js, Python un PostgreSQL: droša autentifikācija, CRM un maksājumu integrācijas, kā arī dokumentācija."
     },
     "/services/cloud-migration": {
       "title": "Migrācija uz mākoni un AWS konsultācijas | HA Group",
@@ -40,7 +40,7 @@
     },
     "/services/full-cycle": {
       "title": "Pilna cikla programmatūras izstrāde | HA Group",
-      "description": "Viena komanda no izpētes un UX/UI dizaina līdz React un Node.js izstrādei, CI/CD, palaišanai un uzturēšanai. Rezultātu demonstrējam ik pēc divām nedēļām."
+      "description": "Viena komanda no izpētes un UX/UI dizaina līdz React un Node.js izstrādei, CI/CD, palaišanai un uzturēšanai. Paveikto demonstrējam ik pēc divām nedēļām."
     },
     "/services/ai-integration": {
       "title": "Mākslīgā intelekta integrācija uzņēmumiem | HA Group",
@@ -60,7 +60,7 @@
     },
     "/careers": {
       "title": "Karjera: attālināts darbs IT jomā | HA Group",
-      "description": "Pievienojieties HA Group, IT uzņēmumam no Rīgas: attālināts darbs, elastīgs darba laiks, mentorings un mācību budžets. Piesakieties vakancei vai nosūtiet CV."
+      "description": "Pievienojieties HA Group, IT uzņēmumam no Rīgas ar attālinātā darba kultūru, elastīgu darba laiku, mentoringu un mācību budžetu. Piesakieties vai nosūtiet CV."
     },
     "/reviews": {
       "title": "Klientu atsauksmes | HA Group",
@@ -88,7 +88,7 @@
     },
     "/legal/cookies": {
       "title": "Sīkdatņu politika | HA Group",
-      "description": "Tikai nepieciešamā pārlūka krātuve valodai, krāsu režīmam, paziņojuma apliecinājumam un formu aizsardzībai. Bez analītikas, reklāmas vai izsekošanas sīkdatnēm."
+      "description": "HA Group izmanto tikai nepieciešamo krātuvi valodai, krāsu režīmam, paziņojuma apliecinājumam un formu aizsardzībai, bez analītikas, reklāmas vai izsekošanas."
     },
     "/404": {
       "title": "Lapa nav atrasta | HA Group",

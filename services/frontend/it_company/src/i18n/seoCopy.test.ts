@@ -89,9 +89,19 @@ describe('the /careers description', () => {
     ru: /разработ|дизайн/i,
   };
   const SEND_A_CV: Record<Lang, RegExp> = { en: /\bCV\b/, lv: /\bCV\b/, ru: /резюме/ };
+  // The benefits call the culture "Remote-First" / "Attālinātā darba kultūra".
+  const REMOTE_FIRST: Record<Lang, RegExp> = {
+    en: /\bremote-first\b/i,
+    lv: /attālinātā darba kultūr/i,
+    ru: /удалённ/i,
+  };
 
   it.each(LOCALES)('names no department and no count of roles (%s)', (lang) => {
     expect(description(lang, '/careers')).not.toMatch(DEPARTMENTS[lang]);
+  });
+
+  it.each(LOCALES)('keeps the remote-first culture the page states (%s)', (lang) => {
+    expect(description(lang, '/careers')).toMatch(REMOTE_FIRST[lang]);
   });
 
   it.each(LOCALES)('offers the general application the page offers (%s)', (lang) => {
@@ -140,6 +150,10 @@ describe('the /legal/cookies description', () => {
   it.each(LOCALES)('still rules out analytics, advertising and tracking cookies (%s)', (lang) => {
     for (const kind of NOT_USED[lang]) expect(description(lang, '/legal/cookies')).toMatch(kind);
   });
+
+  it.each(LOCALES)('opens with HA Group as the subject of a verb (%s)', (lang) => {
+    expect(description(lang, '/legal/cookies')).toMatch(/^HA Group \p{Ll}+ /u);
+  });
 });
 
 describe('service descriptions', () => {
@@ -150,10 +164,17 @@ describe('service descriptions', () => {
     ru: /полн\S* документац|рабоч\S* верси/i,
   };
 
+  // "biweekly demos" show work in progress; they are not the final result.
+  const RESULT: Record<Lang, RegExp> = { en: /\bresult/i, lv: /rezultāt/i, ru: /результат/i };
+
   it.each(LOCALES)('add no qualifier the service pages never used (%s)', (lang) => {
     for (const path of ['/services/system-development', '/services/full-cycle']) {
       expect(description(lang, path), path).not.toMatch(QUALIFIERS[lang]);
     }
+  });
+
+  it.each(LOCALES)('present the full-cycle demos as progress, not as the result (%s)', (lang) => {
+    expect(description(lang, '/services/full-cycle')).not.toMatch(RESULT[lang]);
   });
 });
 

@@ -8,12 +8,24 @@ vi.mock('./lib/firebase', () => import('./lib/firebase.ssr'));
 
 /** Runs right after main.tsx calls hydrateRoot, before React has done any work. */
 const afterHydrateRoot = vi.hoisted(() => ({ run: null as (() => void) | null }));
+/**
+ * Every root a test's main.tsx made. Each test boots a fresh module, and a
+ * root left mounted keeps its router listening to popstate, so a later test's
+ * history event would re-render it and write its head tags.
+ */
+const roots = vi.hoisted(() => [] as { unmount: () => void }[]);
 vi.mock('react-dom/client', async (importOriginal) => {
   const actual = await importOriginal<typeof import('react-dom/client')>();
   return {
     ...actual,
+    createRoot: (...args: Parameters<typeof actual.createRoot>) => {
+      const root = actual.createRoot(...args);
+      roots.push(root);
+      return root;
+    },
     hydrateRoot: (...args: Parameters<typeof actual.hydrateRoot>) => {
       const root = actual.hydrateRoot(...args);
+      roots.push(root);
       afterHydrateRoot.run?.();
       return root;
     },
@@ -120,6 +132,7 @@ describe('main.tsx on a prerendered lazy route', () => {
   afterEach(() => {
     vi.restoreAllMocks();
     afterHydrateRoot.run = null;
+    roots.splice(0).forEach((root) => root.unmount());
     document.body.innerHTML = '';
   });
 
@@ -243,14 +256,75 @@ describe('main.tsx on a prerendered lazy route', () => {
     });
     try {
       const { original } = await bootPrerendered('/careers', 'light');
+      // lang is written by Seo's effect, which runs just after the commit.
       await vi.waitFor(() => {
         expect(document.querySelector('h1')?.textContent).toBe(firstH1(prerendered.get('/ru/about') ?? ''));
+        expect(document.documentElement.lang).toBe('ru');
       }, { timeout: 5000, interval: 20 });
 
       expect(original.isConnected).toBe(false);
-      expect(document.documentElement.lang).toBe('ru');
       const logged = vi.mocked(console.error).mock.calls.map((args) => args.map(String).join(' '));
       expect(logged.filter((line) => /hydrat|didn't match/i.test(line))).toEqual([]);
+    } finally {
+      vi.doUnmock('./pageRoutes');
+    }
+  });
+
+  it('starts for the new page at once when Back leaves while the old page code is still loading', async () => {
+    // Waiting for a chunk the visitor no longer needs would keep the stale
+    // careers markup under the /ru/about address until it arrived.
+    vi.doMock('./pageRoutes', async (importOriginal) => ({
+      ...(await importOriginal<typeof import('./pageRoutes')>()),
+      preloadPage: () => {
+        setTimeout(() => {
+          window.history.pushState(null, '', '/ru/about');
+          void dispatchAsBrowser(window, new PopStateEvent('popstate'));
+        }, 0);
+        return new Promise<void>(() => undefined);
+      },
+    }));
+    try {
+      const { original } = await bootPrerendered('/careers', 'light');
+      // lang is written by Seo's effect, which runs just after the commit.
+      await vi.waitFor(() => {
+        expect(document.querySelector('h1')?.textContent).toBe(firstH1(prerendered.get('/ru/about') ?? ''));
+        expect(document.documentElement.lang).toBe('ru');
+      }, { timeout: 5000, interval: 20 });
+
+      expect(original.isConnected).toBe(false);
+    } finally {
+      vi.doUnmock('./pageRoutes');
+    }
+  });
+
+  it('keeps waiting for the page when a #hash link only changes the fragment', async () => {
+    // A fragment popstate is not a new page: starting early would hydrate
+    // before the chunk and bring back the dropped-markup problem.
+    let release: () => void = () => undefined;
+    vi.doMock('./pageRoutes', async (importOriginal) => {
+      const actual = await importOriginal<typeof import('./pageRoutes')>();
+      return {
+        ...actual,
+        preloadPage: (pathname: string) => {
+          setTimeout(() => {
+            window.history.pushState(null, '', `${pathname}#career-form`);
+            void dispatchAsBrowser(window, new PopStateEvent('popstate'));
+          }, 0);
+          return new Promise<void>((resolve) => {
+            release = () => void actual.preloadPage(pathname).then(resolve);
+          });
+        },
+      };
+    });
+    try {
+      const booting = bootPrerendered('/careers', 'light');
+      await new Promise((resolve) => setTimeout(resolve, 100));
+      expect(document.head.querySelector('[data-seo="title"]')).toBeNull();
+      release();
+      const { original, mutations } = await booting;
+
+      expect(mutations).toEqual([]);
+      expect(isHydrated(original)).toBe(true);
     } finally {
       vi.doUnmock('./pageRoutes');
     }

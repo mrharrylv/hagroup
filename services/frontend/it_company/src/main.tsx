@@ -43,12 +43,22 @@ if (shouldHydrate(container.dataset.prerendered, window.location.pathname)) {
   // its way, the boundary would wait dehydrated, and a router update in that
   // gap (a #hash link, Back) makes React drop the markup for the fallback.
   // Failing to load it only costs that: hydrate anyway. start() looks at the
-  // URL again, since Back may have changed it meanwhile.
-  preloadPage(window.location.pathname)
-    .catch((error: unknown) => {
-      console.error('[hydrate] Could not load the page ahead of hydration; hydrating anyway:', error);
-    })
-    .then(() => start(container));
+  // URL again, since Back may have changed it meanwhile; and once Back or
+  // Forward has left this page, its code no longer matters, so start at once
+  // rather than wait for it. A #hash popstate stays on the page and waits.
+  const pathname = window.location.pathname;
+  const leftThePage = new Promise<void>((resolve) => {
+    const onPopState = () => {
+      if (window.location.pathname === pathname) return;
+      window.removeEventListener('popstate', onPopState);
+      resolve();
+    };
+    window.addEventListener('popstate', onPopState);
+  });
+  const loaded = preloadPage(pathname).catch((error: unknown) => {
+    console.error('[hydrate] Could not load the page ahead of hydration; hydrating anyway:', error);
+  });
+  Promise.race([loaded, leftThePage]).then(() => start(container));
 } else {
   start(container);
 }

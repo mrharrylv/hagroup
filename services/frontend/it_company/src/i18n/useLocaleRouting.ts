@@ -43,14 +43,16 @@ export function useLocaleRouting(i18n: I18n, initialLang: Lang): LocaleContextVa
 
   const switchLanguage = useCallback(
     (code: Lang) => {
+      rememberLanguage(code);
+      // The language already shown: the pick is saved, and nothing moves.
+      if (code === lang) return;
       const { pathname, search, hash } = window.location;
       const current = `${pathname}${search}${hash}`;
       const target = `${localizePath(stripLocale(pathname), code)}${search}${hash}`;
       if (target !== current) window.history.pushState(null, '', target);
-      rememberLanguage(code);
       showLanguage(code);
     },
-    [showLanguage],
+    [lang, showLanguage],
   );
 
   // Back and Forward across a language boundary: follow the URL, and keep

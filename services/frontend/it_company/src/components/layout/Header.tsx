@@ -49,7 +49,9 @@ export default function Header() {
     if (!isPlainClick(event)) return;
     event.preventDefault();
     setLangOpen(false);
-    if (code !== activeLang) switchLanguage(code);
+    // Also for the language already shown: a visitor who saved Latvian and
+    // reads an English page saves English by picking EN.
+    switchLanguage(code);
   };
 
   // Close menus on route change

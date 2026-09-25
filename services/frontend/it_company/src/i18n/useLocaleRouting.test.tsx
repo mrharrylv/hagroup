@@ -17,11 +17,13 @@ function Probe({ i18n, initialLang }: { i18n: I18n; initialLang: Lang }) {
   return null;
 }
 
-function mount(path: string, initialLang: Lang): void {
+function mount(path: string, initialLang: Lang): { changeLanguage: ReturnType<typeof vi.fn> } {
   window.history.replaceState(null, '', path);
-  const i18n = { changeLanguage: vi.fn(() => Promise.resolve()) } as unknown as I18n;
+  const changeLanguage = vi.fn(() => Promise.resolve());
+  const i18n = { changeLanguage } as unknown as I18n;
   root = createRoot(document.createElement('div'));
   act(() => root?.render(<Probe i18n={i18n} initialLang={initialLang} />));
+  return { changeLanguage };
 }
 
 function current(): LocaleContextValue {
@@ -47,6 +49,21 @@ describe('useLocaleRouting', () => {
     expect(localStorage.getItem(LANG_STORAGE_KEY)).toBe('lv');
     expect(current().lang).toBe('lv');
     expect(document.documentElement.lang).toBe('lv');
+  });
+
+  it('saves the language already shown without moving or reloading the copy', () => {
+    // Latvian was saved earlier; the visitor reads an English page and picks EN.
+    localStorage.setItem(LANG_STORAGE_KEY, 'lv');
+    const { changeLanguage } = mount('/services/devops?x=1#faq', 'en');
+    const historyLength = window.history.length;
+
+    act(() => current().switchLanguage('en'));
+
+    expect(localStorage.getItem(LANG_STORAGE_KEY)).toBe('en');
+    expect(window.location.pathname + window.location.search + window.location.hash).toBe('/services/devops?x=1#faq');
+    expect(window.history.length).toBe(historyLength);
+    expect(changeLanguage).not.toHaveBeenCalled();
+    expect(current().lang).toBe('en');
   });
 
   it('follows Back into another language without changing the remembered choice', () => {

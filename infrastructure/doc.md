@@ -189,32 +189,45 @@ Never use `aws s3 sync --delete` against the bucket: `dist/` has no files named 
 
 Do not run a manual deploy while the Build & Deploy Website workflow is deploying to the same bucket. Its concurrency group orders workflow runs only, and Phase 4 of either deploy deletes every key missing from its own `keys.txt`, including the other's new assets.
 
-```bash
-# Build the site
-make build
-cd services/frontend/it_company
+Do not look the bucket or the distribution ID up with `terraform output`: it answers for whichever state key `terraform init` used last (dev or prod), so a deploy meant for dev can invalidate the prod distribution. The block below sets the environment once and derives both from it, finding the distribution by the comment Terraform gives it (`<env> - hagroup website`) the way `.github/workflows/deploy.yaml` does. It stops before any upload when no distribution matches.
 
-# Review the plan: file, key, content type, cache control, phase
-node scripts/deploy/plan.mjs dist
-node scripts/deploy/plan.mjs dist --keys > /tmp/hagroup-keys.txt
-
-# Phases 1 and 2: assets first, HTML pages last
-bash scripts/deploy/upload.sh <BUCKET_NAME> dist
-
-# Phase 3: invalidate and wait
-INV_ID=$(aws cloudfront create-invalidation --distribution-id <CF_DIST_ID> --paths "/*" --query 'Invalidation.Id' --output text)
-aws cloudfront wait invalidation-completed --distribution-id <CF_DIST_ID> --id $INV_ID
-
-# Phase 4: delete keys that are not in this build
-bash scripts/deploy/cleanup.sh <BUCKET_NAME> /tmp/hagroup-keys.txt
-```
-
-Get the bucket name and distribution ID from Terraform outputs:
+Run it in bash from the repository root. The parentheses make a subshell, so the first failing command stops the whole procedure without closing your terminal.
 
 ```bash
-cd infrastructure/terraform
-terraform output s3_bucket_name
-terraform output cloudfront_distribution_id
+(
+  set -euo pipefail
+  DEPLOY_ENV=dev   # dev or prod
+  BUCKET="$DEPLOY_ENV-hagroup-website"
+
+  # The CloudFront distribution of this environment, or stop
+  DIST_ID=$(aws cloudfront list-distributions \
+    --query "DistributionList.Items[?Comment=='$DEPLOY_ENV - hagroup website'].Id | [0]" \
+    --output text)
+  if [ -z "$DIST_ID" ] || [ "$DIST_ID" = "None" ] || [ "$DIST_ID" = "null" ]; then
+    echo "No CloudFront distribution for $DEPLOY_ENV; stopping, nothing was uploaded." >&2
+    exit 1
+  fi
+  echo "Deploying to s3://$BUCKET, CloudFront $DIST_ID"
+
+  # Build the site
+  make build
+  cd services/frontend/it_company
+
+  # Review the plan: file, key, content type, cache control, phase
+  node scripts/deploy/plan.mjs dist
+  KEYS_FILE=$(mktemp)
+  node scripts/deploy/plan.mjs dist --keys > "$KEYS_FILE"
+
+  # Phases 1 and 2: assets first, HTML pages last
+  bash scripts/deploy/upload.sh "$BUCKET" dist
+
+  # Phase 3: invalidate and wait
+  INV_ID=$(aws cloudfront create-invalidation --distribution-id "$DIST_ID" --paths "/*" --query 'Invalidation.Id' --output text)
+  aws cloudfront wait invalidation-completed --distribution-id "$DIST_ID" --id "$INV_ID"
+
+  # Phase 4: delete keys that are not in this build
+  bash scripts/deploy/cleanup.sh "$BUCKET" "$KEYS_FILE"
+)
 ```
 
 ---

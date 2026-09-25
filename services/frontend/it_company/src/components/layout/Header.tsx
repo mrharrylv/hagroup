@@ -22,7 +22,7 @@ export default function Header() {
   const { t } = useTranslation();
   const { lang: activeLang, switchLanguage } = useLocale();
   const servicesData = useServicesData();
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
   const [langOpen, setLangOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -208,11 +208,9 @@ export default function Header() {
             className="flex items-center justify-center h-9 w-9 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors rounded-lg hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50"
             aria-label={t('nav.toggleTheme')}
           >
-            {theme === 'dark' ? (
-              <iconify-icon icon="solar:sun-linear" width="20" />
-            ) : (
-              <iconify-icon icon="solar:moon-linear" width="20" />
-            )}
+            {/* Both are rendered and CSS shows one: the server cannot know the theme. */}
+            <iconify-icon icon="solar:sun-linear" width="20" className="hidden dark:inline-block" />
+            <iconify-icon icon="solar:moon-linear" width="20" className="dark:hidden" />
           </button>
 
           <Link

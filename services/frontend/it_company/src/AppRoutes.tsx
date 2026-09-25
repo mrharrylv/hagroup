@@ -32,7 +32,7 @@ const BalticGPPage = lazy(() => import('./pages/projects/BalticGPPage'));
  */
 export default function AppRoutes() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-zinc-950" aria-live="polite" />}>
+    <Suspense fallback={<div className="min-h-screen bg-zinc-50 dark:bg-zinc-950" aria-live="polite" />}>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />

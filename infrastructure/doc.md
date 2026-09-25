@@ -213,8 +213,11 @@ Run it in bash from the repository root. The parentheses make a subshell, so the
   make build
   cd services/frontend/it_company
 
-  # Review the plan: file, key, content type, cache control, phase
+  # Review the plan: file, key, content type, cache control, phase.
+  # Nothing has been uploaded yet; anything but "y" stops here.
   node scripts/deploy/plan.mjs dist
+  read -r -p "Upload this plan to s3://$BUCKET? [y/N] " answer
+  [ "$answer" = y ]
   KEYS_FILE=$(mktemp)
   node scripts/deploy/plan.mjs dist --keys > "$KEYS_FILE"
 

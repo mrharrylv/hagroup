@@ -216,7 +216,7 @@ Run it in bash from the repository root. The parentheses make a subshell, so the
 Push to `main` → GitHub Actions auto-deploys to **prod**.
 Manual dispatch → Select **dev** (or prod) to deploy on demand.
 
-Workflow: `.github/workflows/deploy.yaml`. Runs that target one environment run one at a time, in the order they were triggered (a workflow-level concurrency group per environment), so the newest commit deploys last.
+Workflow: `.github/workflows/deploy.yaml`. Runs that target one environment run one at a time, in the order they were triggered (a workflow-level concurrency group per environment). A run still waiting when a newer one is triggered is cancelled, so some pushes show as cancelled in Actions and the newest commit deploys last.
 
 ### Zero-Downtime Deployment
 

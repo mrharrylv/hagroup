@@ -187,6 +187,8 @@ The bucket size stays constant (~1MB) after each deploy. No accumulated old vers
 
 Never use `aws s3 sync --delete` against the bucket: `dist/` has no files named like the extensionless page keys, so it would delete every page.
 
+Do not run a manual deploy while the Build & Deploy Website workflow is deploying to the same bucket. Its concurrency group orders workflow runs only, and Phase 4 of either deploy deletes every key missing from its own `keys.txt`, including the other's new assets.
+
 ```bash
 # Build the site
 make build

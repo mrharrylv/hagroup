@@ -168,16 +168,26 @@ These environments are referenced by the deploy workflow for OIDC role assumptio
 
 ### First deploy (manual)
 
+Never use `aws s3 sync --delete` against the bucket: prerendered pages live under extensionless keys (`services/devops`, `lv`) that `dist/` has no files for, so it would delete every page, and a plain sync uploads them under keys CloudFront never requests. Use the deploy scripts, which set every object's key, Content-Type and Cache-Control. The same sequence, with its reasons, is in [infrastructure/doc.md, "Manual Deploy (if needed)"](../doc.md#manual-deploy-if-needed); the keys are explained in ["Key mapping"](../doc.md#key-mapping).
+
 ```bash
 # Build locally
 cd services/frontend/it_company
 npm ci && npm run build
 
-# Upload to dev
-aws s3 sync dist/ s3://dev-hagroup-website --delete
-aws cloudfront create-invalidation \
-  --distribution-id $(cd ../../infrastructure/terraform && terraform output -raw cloudfront_distribution_id) \
-  --paths "/*"
+# The S3 keys this build owns, for Phase 4
+node scripts/deploy/plan.mjs dist --keys > /tmp/hagroup-keys.txt
+
+# Phases 1 and 2: assets first, HTML pages last
+bash scripts/deploy/upload.sh dev-hagroup-website dist
+
+# Phase 3: invalidate and wait
+DIST_ID=$(cd ../../../infrastructure/terraform && terraform output -raw cloudfront_distribution_id)
+INV_ID=$(aws cloudfront create-invalidation --distribution-id "$DIST_ID" --paths "/*" --query 'Invalidation.Id' --output text)
+aws cloudfront wait invalidation-completed --distribution-id "$DIST_ID" --id "$INV_ID"
+
+# Phase 4: delete keys that are not in this build
+bash scripts/deploy/cleanup.sh dev-hagroup-website /tmp/hagroup-keys.txt
 ```
 
 ### Ongoing deploys (automated)
@@ -185,7 +195,7 @@ aws cloudfront create-invalidation \
 Push to `main` → GitHub Actions auto-deploys to **prod**.
 Manual dispatch → Select **dev** (or prod) to deploy on demand.
 
-Workflow: `.github/workflows/deploy.yaml`
+Workflow: `.github/workflows/deploy.yaml`. Deploys to one bucket run one at a time (a concurrency group per environment).
 
 ### Zero-Downtime Deployment
 
@@ -193,10 +203,10 @@ The deploy workflow uses a **4-phase additive strategy**:
 
 | Phase | Action                               | Effect                                     |
 | ----- | ------------------------------------ | ------------------------------------------ |
-| 1     | Upload hashed assets (JS, CSS, etc.) | Old + new coexist, no user impact          |
-| 2     | Upload `index.html` last             | Atomic swap to new asset references        |
+| 1     | Upload every non-HTML file (hashed assets, icons, robots, sitemap, llms) | Old + new coexist, no user impact |
+| 2     | Upload the HTML pages last (`index.html` and the prerendered pages) | Swap to new asset references |
 | 3     | Invalidate CloudFront + wait         | All edge caches serve new content          |
-| 4     | Delete orphaned files                | Old hashed assets removed, bucket stays clean |
+| 4     | Delete keys missing from the build's `keys.txt` | Old hashed assets removed, bucket stays clean |
 
 **Safety net:** S3 lifecycle rules auto-expire noncurrent object versions after 7 days and abort incomplete multipart uploads after 1 day — even if Phase 4 is skipped, the bucket won't grow indefinitely.
 

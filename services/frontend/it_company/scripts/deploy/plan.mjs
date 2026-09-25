@@ -13,9 +13,9 @@
  *   --keys   the S3 keys only, sorted, one per line
  */
 
-import { readdirSync, statSync } from 'node:fs';
+import { readdirSync, realpathSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { fileURLToPath } from 'node:url';
 
 export const CACHE_CONTROL = Object.freeze({
   html: 'public, max-age=60, s-maxage=300',
@@ -154,7 +154,23 @@ function main(args) {
   process.stdout.write(`${lines.join('\n')}\n`);
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+/**
+ * True when node runs this file as its entry point. Compares real paths:
+ * node gives the entry module its real path as import.meta.url but keeps a
+ * symlinked argv[1] as typed, so a plain comparison skips main() and prints
+ * nothing when the checkout is reached through a symlink.
+ */
+function isEntryPoint() {
+  if (!process.argv[1]) return false;
+  try {
+    return realpathSync(process.argv[1]) === realpathSync(fileURLToPath(import.meta.url));
+  } catch {
+    // An argv[1] that does not resolve on disk cannot be this module.
+    return false;
+  }
+}
+
+if (isEntryPoint()) {
   try {
     main(process.argv.slice(2));
   } catch (error) {

@@ -23,13 +23,23 @@ export function isLang(value: unknown): value is Lang {
   return typeof value === 'string' && (LOCALES as readonly string[]).includes(value);
 }
 
+/**
+ * Exactly one leading slash. A path that starts with '//' (the URL
+ * /lv//evil.example gives the Latvian router //evil.example) would be read as
+ * another host by any link built from it.
+ */
 function withLeadingSlash(path: string): string {
-  return path.startsWith('/') ? path : `/${path}`;
+  return `/${path.replace(/^\/+/, '')}`;
 }
 
-/** The language a pathname is in: its /lv or /ru prefix, English otherwise. */
+/**
+ * The language a pathname is in: its /lv or /ru prefix, English otherwise.
+ * Extra leading slashes are not dropped here: the router's basename is
+ * matched against the pathname as it is, and a /lv basename matches nothing
+ * in //lv/services.
+ */
 export function localeFromPath(pathname: string): Lang {
-  const match = PREFIX_PATTERN.exec(withLeadingSlash(pathname));
+  const match = PREFIX_PATTERN.exec(pathname.startsWith('/') ? pathname : `/${pathname}`);
   return match && isLang(match[1]) ? match[1] : DEFAULT_LOCALE;
 }
 

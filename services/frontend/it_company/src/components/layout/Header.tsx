@@ -5,6 +5,9 @@ import { useTheme } from '../../context/useTheme';
 import { localizePath, type Lang } from '../../i18n/locales';
 import { useLocale } from '../../i18n/useLocale';
 import { useServicesData } from '../../lib/content';
+import { useHydrated } from '../../lib/useHydrated';
+import { seoContentFor } from '../../seo/content';
+import { resolveRoute } from '../../seo/routes';
 import Logo from '../ui/Logo';
 
 const LANGUAGES: readonly { code: Lang; label: string }[] = [
@@ -12,6 +15,8 @@ const LANGUAGES: readonly { code: Lang; label: string }[] = [
   { code: 'lv', label: 'LV' },
   { code: 'ru', label: 'RU' },
 ];
+
+const HOME_PATH = '/';
 
 /** A plain click; modified clicks (new tab, new window) go to the link's href. */
 function isPlainClick(event: ReactMouseEvent<HTMLAnchorElement>): boolean {
@@ -22,7 +27,7 @@ export default function Header() {
   const { t } = useTranslation();
   const { lang: activeLang, switchLanguage } = useLocale();
   const servicesData = useServicesData();
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
   const [langOpen, setLangOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -30,6 +35,7 @@ export default function Header() {
   const langRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const hydrated = useHydrated();
 
   const handleLogoClick = useCallback((e: ReactMouseEvent) => {
     if (location.pathname === '/') {
@@ -40,16 +46,30 @@ export default function Header() {
 
   const currentLang = LANGUAGES.find((l) => l.code === activeLang) ?? LANGUAGES[0];
 
+  // A missing page has no version in another language (/lv/nope and /404
+  // have no page; the fallback answers them with the English home), so the
+  // not-found view links to each language's home page. resolveRoute is what
+  // the head uses, and it matches the router.
+  const notFound = resolveRoute(location.pathname, seoContentFor(activeLang)).kind === 'notFound';
+  const languagePage = notFound ? HOME_PATH : undefined;
+
   // Each language is its own URL (/lv/..., /ru/...), so the switcher is a set
   // of real links to this page in the other languages. A plain click switches
-  // in place, keeping ?query and #hash; a modified click opens the link.
-  const languageHref = (code: Lang) => `${localizePath(location.pathname, code)}${location.search}${location.hash}`;
+  // in place, keeping ?query and #hash; a modified click opens the link. The
+  // prerender has no ?query or #hash, so they join the links once hydrated.
+  const languageHref = (code: Lang) => {
+    if (languagePage !== undefined) return localizePath(languagePage, code);
+    const page = localizePath(location.pathname, code);
+    return hydrated ? `${page}${location.search}${location.hash}` : page;
+  };
 
   const handleLanguageClick = (event: ReactMouseEvent<HTMLAnchorElement>, code: Lang) => {
     if (!isPlainClick(event)) return;
     event.preventDefault();
     setLangOpen(false);
-    if (code !== activeLang) switchLanguage(code);
+    // Also for the language already shown: a visitor who saved Latvian and
+    // reads an English page saves English by picking EN.
+    switchLanguage(code, languagePage);
   };
 
   // Close menus on route change
@@ -179,27 +199,27 @@ export default function Header() {
               {currentLang.label}
               <iconify-icon icon="solar:alt-arrow-down-linear" width="16" />
             </button>
-            {langOpen && (
-              <div className="absolute right-0 mt-2 w-24 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-lg overflow-hidden z-50">
-                {LANGUAGES.map((lang) => (
-                  <a
-                    key={lang.code}
-                    href={languageHref(lang.code)}
-                    hrefLang={lang.code}
-                    lang={lang.code}
-                    aria-current={lang.code === activeLang ? 'true' : undefined}
-                    onClick={(event) => handleLanguageClick(event, lang.code)}
-                    className={`block w-full text-left px-4 py-2 text-sm transition-colors ${
-                      lang.code === activeLang
-                        ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium'
-                        : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800'
-                    }`}
-                  >
-                    {lang.label}
-                  </a>
-                ))}
-              </div>
-            )}
+            {/* Always in the markup, so every page links to its other
+                languages for crawlers; CSS hides it while the menu is closed. */}
+            <div className={`absolute right-0 mt-2 w-24 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-lg overflow-hidden z-50 ${langOpen ? '' : 'hidden'}`}>
+              {LANGUAGES.map((lang) => (
+                <a
+                  key={lang.code}
+                  href={languageHref(lang.code)}
+                  hrefLang={lang.code}
+                  lang={lang.code}
+                  aria-current={lang.code === activeLang ? 'true' : undefined}
+                  onClick={(event) => handleLanguageClick(event, lang.code)}
+                  className={`block w-full text-left px-4 py-2 text-sm transition-colors ${
+                    lang.code === activeLang
+                      ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium'
+                      : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800'
+                  }`}
+                >
+                  {lang.label}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Dark/Light Toggle */}
@@ -208,11 +228,9 @@ export default function Header() {
             className="flex items-center justify-center h-9 w-9 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors rounded-lg hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50"
             aria-label={t('nav.toggleTheme')}
           >
-            {theme === 'dark' ? (
-              <iconify-icon icon="solar:sun-linear" width="20" />
-            ) : (
-              <iconify-icon icon="solar:moon-linear" width="20" />
-            )}
+            {/* Both are rendered and CSS shows one: the server cannot know the theme. */}
+            <iconify-icon icon="solar:sun-linear" width="20" className="hidden dark:inline-block" />
+            <iconify-icon icon="solar:moon-linear" width="20" className="dark:hidden" />
           </button>
 
           <Link

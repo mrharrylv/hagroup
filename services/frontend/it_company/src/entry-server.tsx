@@ -55,7 +55,14 @@ export async function render(url: string): Promise<string> {
         </I18nextProvider>
       </ThemeProvider>
     </StrictMode>,
-    { onError: (error) => { errors.push(error); } },
+    {
+      onError: (error) => { errors.push(error); },
+      // React moves a finished boundary past this many bytes out of place: a
+      // placeholder where it belongs, the content hidden at the end of the
+      // body and a script to swap them. Static HTML is read in one go, so
+      // keep every boundary inline; validatePage fails the build otherwise.
+      progressiveChunkSize: Number.POSITIVE_INFINITY,
+    },
   );
 
   const html = await readStream(prelude);

@@ -1,4 +1,3 @@
-import { normalizePath } from '../i18n/locales';
 import type { Project } from '../lib/contentTypes';
 
 /**
@@ -110,9 +109,39 @@ function resolveCanonical(path: string, data: RouteData): ResolvedRoute {
   return { path, canonicalPath: path, kind: 'notFound', indexable: false };
 }
 
-/** What a URL shows: which kind of page, which canonical URL, whether indexable. */
+/** Each segment percent-decoded as react-router decodes it: an encoded '/' stays encoded. */
+function decodeSegments(path: string): string {
+  try {
+    return path
+      .split('/')
+      .map((segment) => decodeURIComponent(segment).replace(/\//g, '%2F'))
+      .join('/');
+  } catch {
+    // A malformed escape: the router matches the path as it is.
+    return path;
+  }
+}
+
+/**
+ * The path as the router matches it against AppRoutes: decoded, with
+ * trailing slashes ignored, and nothing else tidied. A URL the router cannot
+ * match (//services, which is what the /lv router gets for /lv//services, or
+ * /services//devops) is not found here either, so the head never describes a
+ * page the view does not show.
+ */
+function routerPath(pathname: string): string {
+  const path = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  const trimmed = decodeSegments(path).replace(/\/+$/, '');
+  return trimmed === '' ? '/' : trimmed;
+}
+
+/**
+ * What a URL shows: which kind of page, which canonical URL, whether
+ * indexable. Takes the unprefixed path the router has (its pathname under
+ * the language basename).
+ */
 export function resolveRoute(pathname: string, data: RouteData): ResolvedRoute {
-  const path = normalizePath(pathname);
+  const path = routerPath(pathname);
   if (path === NOT_FOUND_PATH) return { path, canonicalPath: path, kind: 'notFound', indexable: false };
   const alias = CANONICAL_ALIASES[path];
   if (alias) return { ...resolveCanonical(alias, data), path };

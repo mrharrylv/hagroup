@@ -98,6 +98,21 @@ describe('resolveRoute', () => {
     expect(resolveRoute('/services/devops/', en).path).toBe('/services/devops');
   });
 
+  it('reads the path exactly as the router matches it', () => {
+    // The router matches no route for a doubled slash, so neither does this:
+    // under /lv, the URL /lv//services gives the router //services.
+    expect(resolveRoute('//services', en).kind).toBe('notFound');
+    expect(resolveRoute('//services/devops', en).kind).toBe('notFound');
+    expect(resolveRoute('/services//devops', en).kind).toBe('notFound');
+    // It decodes each segment, but not an encoded slash, and ignores trailing slashes.
+    expect(resolveRoute('/%73ervices', en)).toMatchObject({ kind: 'services', canonicalPath: '/services' });
+    expect(resolveRoute('/projects/rok%62er', en)).toMatchObject({ kind: 'project', canonicalPath: '/projects/rokber' });
+    expect(resolveRoute('/services%2Fdevops', en).kind).toBe('notFound');
+    expect(resolveRoute('/%E0%A4%A', en).kind).toBe('notFound');
+    expect(resolveRoute('/services//', en).kind).toBe('services');
+    expect(resolveRoute('//', en).kind).toBe('home');
+  });
+
   it('treats unknown URLs and unknown projects as not found', () => {
     expect(resolveRoute('/nope', en).kind).toBe('notFound');
     expect(resolveRoute('/projects/nope', en).kind).toBe('notFound');

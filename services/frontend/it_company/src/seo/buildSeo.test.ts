@@ -118,6 +118,30 @@ describe('URLs', () => {
     expect(seo.canonical).toBe(`${SITE_URL}/lv/balticgp`);
   });
 
+  it('takes the path as the router gives it and does not strip a language prefix again', () => {
+    // /lv/lv/services: the /lv router sees /lv/services, matches no route and
+    // renders the not-found page, so the head must say not found as well.
+    const doubled: [string, Lang][] = [['/lv/services', 'lv'], ['/ru/services', 'lv'], ['/lv/services', 'ru'], ['/ru', 'ru']];
+    for (const [path, lang] of doubled) {
+      const seo = seoFor(path, lang);
+      expect(seo.canonical, `${path} (${lang})`).toBeNull();
+      expect(seo.robots, `${path} (${lang})`).toBe(NOINDEX_ROBOTS);
+      expect(seo.title, `${path} (${lang})`).toBe(seoContentFor(lang).seo.pages[NOT_FOUND_PATH].title);
+    }
+    expect(seoFor('/services', 'lv').canonical).toBe(`${SITE_URL}/lv/services`);
+    expect(seoFor('/', 'ru').canonical).toBe(`${SITE_URL}/ru`);
+  });
+
+  it('describes a doubled slash as the not-found page the router shows for it', () => {
+    // /lv//services: the /lv router sees //services and renders not found.
+    for (const [path, lang] of [['//services', 'lv'], ['//about', 'ru'], ['//services/devops', 'lv'], ['//services', 'en']] as [string, Lang][]) {
+      const seo = seoFor(path, lang);
+      expect(seo.canonical, `${path} (${lang})`).toBeNull();
+      expect(seo.robots, `${path} (${lang})`).toBe(NOINDEX_ROBOTS);
+      expect(seo.title, `${path} (${lang})`).toBe(seoContentFor(lang).seo.pages[NOT_FOUND_PATH].title);
+    }
+  });
+
   it('gives the 404 page no canonical and no alternates', () => {
     const seo = seoFor('/definitely-missing', 'en');
     expect(seo.canonical).toBeNull();

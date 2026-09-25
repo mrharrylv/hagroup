@@ -20,8 +20,9 @@ describe('shouldHydrate', () => {
 
   it('renders fresh when the markup belongs to another page', () => {
     // The SPA fallback serves the English home for an unknown URL, and the
-    // returning-visitor redirect moves /services to /lv/services before boot.
+    // returning-visitor redirect moves / to /lv before boot.
     expect(shouldHydrate('/', '/services/devops')).toBe(false);
+    expect(shouldHydrate('/', '/lv')).toBe(false);
     expect(shouldHydrate('/services', '/lv/services')).toBe(false);
     expect(shouldHydrate('/404', '/no-such-page')).toBe(false);
   });

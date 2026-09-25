@@ -58,6 +58,36 @@ function jsonLdBlocks(html: string): string[] {
   return [...html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map((m) => m[1]);
 }
 
+interface Anchor {
+  href: string | null;
+  hreflang: string | null;
+  lang: string | null;
+}
+
+function anchors(html: string): Anchor[] {
+  return [...html.matchAll(/<a\b[^>]*>/g)].map(([tag]) => ({
+    href: attr(tag, /\shref="([^"]*)"/),
+    hreflang: attr(tag, /\shreflang="([^"]*)"/i),
+    lang: attr(tag, /\slang="([^"]*)"/),
+  }));
+}
+
+/** Every place the heading level jumps by more than one, starting from the page itself (level 0). */
+function skippedHeadingLevels(html: string): string[] {
+  const levels = [...html.matchAll(/<h([1-6])[\s>]/g)].map((match) => Number(match[1]));
+  return levels.flatMap((level, index) => {
+    const previous = index === 0 ? 0 : levels[index - 1];
+    return level > previous + 1 ? [`h${previous || '-'} -> h${level} (heading ${index + 1})`] : [];
+  });
+}
+
+/** The same page in each language: '/lv/services' -> en '/services', lv '/lv/services', ru '/ru/services'. */
+function languageVersions(url: string): Record<string, string> {
+  const path = url.replace(/^\/(lv|ru)(?=\/|$)/, '') || '/';
+  const prefixed = (prefix: string) => (path === '/' ? prefix : `${prefix}${path}`);
+  return { en: path, lv: prefixed('/lv'), ru: prefixed('/ru') };
+}
+
 function distPathOf(absoluteUrl: string): string {
   return join(DIST, decodeURIComponent(new URL(absoluteUrl).pathname));
 }
@@ -126,6 +156,30 @@ describe.each(FILES)('%s', (file) => {
     expect(root).not.toContain('data-not-found');
   });
 
+  it('carries every Suspense boundary inline, where it belongs', () => {
+    // React outlines a boundary it could not fit in the first chunk: a
+    // placeholder in place, the content hidden at the end of the body, and a
+    // script to swap them. A crawler without JavaScript gets it out of order.
+    const root = rootContent(html);
+    expect(root).not.toContain('<template id="B:');
+    expect(root).not.toContain('hidden id="S:');
+    expect(root).not.toContain('$RC(');
+  });
+
+  it('has an outline without skipped heading levels', () => {
+    const root = rootContent(html);
+    expect(count(root, /<h1[\s>]/g)).toBe(1);
+    expect(skippedHeadingLevels(root)).toEqual([]);
+  });
+
+  it('links to itself in every language with real anchors', () => {
+    // Crawlers that ignore <link rel="alternate"> still find the other languages.
+    const links = anchors(rootContent(html));
+    for (const [lang, href] of Object.entries(languageVersions(url))) {
+      expect(links, `${lang} ${href}`).toContainEqual({ href, hreflang: lang, lang });
+    }
+  });
+
   it('has one JSON-LD block that parses', () => {
     const blocks = jsonLdBlocks(html);
     expect(blocks).toHaveLength(1);
@@ -140,6 +194,15 @@ describe.each(FILES)('%s', (file) => {
   });
 });
 
+describe.each(['index.html', 'lv/index.html', 'ru/index.html'])('%s (home)', (file) => {
+  it('has the contact section in the page, before the footer', () => {
+    const root = rootContent(existsSync(join(DIST, file)) ? read(file) : '');
+    const contact = root.indexOf('<section id="contact"');
+    expect(contact).toBeGreaterThan(0);
+    expect(contact).toBeLessThan(root.indexOf('<footer'));
+  });
+});
+
 describe('404.html', () => {
   const html = existsSync(join(DIST, '404.html')) ? read('404.html') : '';
 
@@ -148,6 +211,18 @@ describe('404.html', () => {
     expect(html).not.toContain('rel="canonical"');
     expect(rootContent(html)).toContain('data-not-found');
     expect(count(rootContent(html), /<h1[\s>]/g)).toBe(1);
+    expect(skippedHeadingLevels(rootContent(html))).toEqual([]);
+  });
+
+  it("links to each language's home page, not to a /404 page that does not exist", () => {
+    // /404, /lv/404 and /ru/404 have no page: the CloudFront fallback answers
+    // them with the English home and status 200.
+    const links = anchors(rootContent(html)).filter((link) => link.hreflang !== null);
+    expect(links).toEqual([
+      { href: '/', hreflang: 'en', lang: 'en' },
+      { href: '/lv', hreflang: 'lv', lang: 'lv' },
+      { href: '/ru', hreflang: 'ru', lang: 'ru' },
+    ]);
   });
 });
 

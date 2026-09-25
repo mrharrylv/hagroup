@@ -7,8 +7,8 @@ export const REROUTE_HIDE_CLASS = 'reroute-hide';
  * Whether #root holds server markup for the page being shown.
  *
  * The prerender stamps each page's URL on #root. Markup for another URL (the
- * SPA fallback serving the English home for an unknown path, or the page a
- * returning visitor was just redirected away from) must be thrown away and
+ * SPA fallback serving the English home for an unknown path, or the English
+ * home a returning visitor was just moved away from) must be thrown away and
  * rendered fresh: hydrating it would be one long mismatch.
  */
 export function shouldHydrate(prerenderedUrl: string | undefined, pathname: string): boolean {

@@ -3,7 +3,12 @@ import type { i18n as I18n } from 'i18next';
 import type { LocaleContextValue } from './LocaleContext';
 import { localeFromPath, localizePath, stripLocale, type Lang } from './locales';
 
-/** Read by the inline script in index.html to send returning visitors to their language. */
+/**
+ * The language the visitor last picked in the switcher. The inline script in
+ * index.html reads it to send a returning visitor from the bare home URL to
+ * theirs. Only an explicit pick writes it: landing on /lv or going Back to it
+ * does not.
+ */
 export const LANG_STORAGE_KEY = 'cloudie-lang';
 
 function rememberLanguage(lang: Lang): void {
@@ -31,24 +36,29 @@ export function useLocaleRouting(i18n: I18n, initialLang: Lang): LocaleContextVa
       });
       // Screen readers pick their voice from this. WCAG 3.1.1.
       document.documentElement.lang = next;
-      rememberLanguage(next);
       setLang(next);
     },
     [i18n],
   );
 
   const switchLanguage = useCallback(
-    (code: Lang) => {
+    (code: Lang, page?: string) => {
+      rememberLanguage(code);
+      // The language already shown: the pick is saved, and nothing moves.
+      if (code === lang) return;
       const { pathname, search, hash } = window.location;
       const current = `${pathname}${search}${hash}`;
-      const target = `${localizePath(stripLocale(pathname), code)}${search}${hash}`;
+      const target = page === undefined
+        ? `${localizePath(stripLocale(pathname), code)}${search}${hash}`
+        : localizePath(page, code);
       if (target !== current) window.history.pushState(null, '', target);
       showLanguage(code);
     },
-    [showLanguage],
+    [lang, showLanguage],
   );
 
-  // Back and Forward across a language boundary: follow the URL.
+  // Back and Forward across a language boundary: follow the URL, and keep
+  // the remembered choice, which only the switcher sets.
   useEffect(() => {
     const onPopState = () => {
       const next = localeFromPath(window.location.pathname);

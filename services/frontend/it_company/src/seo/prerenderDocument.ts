@@ -53,6 +53,9 @@ export interface PageCheckInput {
   notFound: boolean;
 }
 
+/** What React leaves when it streams a Suspense boundary out of place. */
+const OUTLINED_BOUNDARY_MARKERS = ['<template id="B:', 'hidden id="S:', '$RC('];
+
 function visibleText(html: string): string {
   return html
     .replace(/<!--[\s\S]*?-->/g, '')
@@ -73,6 +76,10 @@ export function validatePage(input: PageCheckInput): string[] {
   const expected = expectedCanonical === null ? null : escapeAttribute(expectedCanonical);
   if (canonical !== expected) {
     errors.push(`${url}: canonical is ${canonical ?? 'missing'}, expected ${expected ?? 'none'}`);
+  }
+
+  if (OUTLINED_BOUNDARY_MARKERS.some((marker) => appHtml.includes(marker))) {
+    errors.push(`${url}: a Suspense boundary was streamed out of place, hidden after the rest of the page; keep progressiveChunkSize unlimited in entry-server.tsx`);
   }
 
   if (!notFound && appHtml.includes('data-not-found')) {

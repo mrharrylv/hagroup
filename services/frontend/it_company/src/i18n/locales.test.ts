@@ -48,6 +48,12 @@ describe('localeFromPath', () => {
   ])('%s -> %s', (path, lang) => {
     expect(localeFromPath(path)).toBe(lang);
   });
+
+  it('finds the prefix only where the router basename looks for it', () => {
+    // A /lv basename matches nothing in //lv/services, and the page would be blank.
+    expect(localeFromPath('//lv/services')).toBe('en');
+    expect(localeFromPath('//ru')).toBe('en');
+  });
 });
 
 describe('stripLocale', () => {
@@ -64,6 +70,8 @@ describe('stripLocale', () => {
     ['/services/devops', '/services/devops'],
     ['/services/lv', '/services/lv'],
     ['services', '/services'],
+    ['//evil.example', '/evil.example'],
+    ['/lv//evil.example', '/evil.example'],
   ])('%s -> %s', (path, stripped) => {
     expect(stripLocale(path)).toBe(stripped);
   });
@@ -90,6 +98,21 @@ describe('localizePath', () => {
     ['contact', 'lv', '/lv/contact'],
   ] as const)('%s in %s -> %s', (path, lang, expected) => {
     expect(localizePath(path, lang)).toBe(expected);
+  });
+
+  it('never returns a protocol-relative URL, which a link would read as another host', () => {
+    expect(localizePath('//evil.example', 'en')).toBe('/evil.example');
+    expect(localizePath('//evil.example', 'lv')).toBe('/lv/evil.example');
+    expect(localizePath('//evil.example', 'ru')).toBe('/ru/evil.example');
+    expect(localizePath('///evil.example/x', 'en')).toBe('/evil.example/x');
+    // /lv//evil.example: the Latvian router sees //evil.example.
+    expect(localizePath('/lv//evil.example', 'en')).toBe('/evil.example');
+    expect(localizePath('/ru//evil.example', 'lv')).toBe('/lv/evil.example');
+    for (const lang of LOCALES) {
+      for (const path of ['//evil.example', '/lv//evil.example', '////x', '//', '/ru//']) {
+        expect(localizePath(path, lang).startsWith('//'), `${path} in ${lang}`).toBe(false);
+      }
+    }
   });
 
   it('round-trips with stripLocale and localeFromPath', () => {
@@ -119,6 +142,8 @@ describe('normalizePath', () => {
     ['/services', '/services'],
     ['services', '/services'],
     ['/lv/', '/lv'],
+    ['//evil.example', '/evil.example'],
+    ['///evil.example/', '/evil.example'],
   ])('%s -> %s', (path, normalized) => {
     expect(normalizePath(path)).toBe(normalized);
   });

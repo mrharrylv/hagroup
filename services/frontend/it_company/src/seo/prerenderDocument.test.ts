@@ -85,6 +85,14 @@ describe('validatePage', () => {
     expect(errors[0]).toMatch(/not-found/);
   });
 
+  it.each(['<template id="B:0"></template>', '<div hidden id="S:0"><p>Later</p></div>', '<script>$RC("B:0","S:0")</script>'])(
+    'rejects a page with a Suspense boundary streamed out of place: %s',
+    (marker) => {
+      const errors = validatePage({ ...good, appHtml: `${APP}${marker}` });
+      expect(errors).toEqual([expect.stringMatching(/^\/lv\/services\/devops: .*Suspense boundary/)]);
+    },
+  );
+
   it('accepts the not-found page without a canonical', () => {
     const errors = validatePage({
       url: '/404',

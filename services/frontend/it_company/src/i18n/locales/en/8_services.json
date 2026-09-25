@@ -786,7 +786,7 @@
           "answer": "Python with TensorFlow, PyTorch, Hugging Face and Jupyter, and large language models from OpenAI and Anthropic."
         },
         {
-          "question": "What happens once a model is live?",
+          "question": "What happens once a model is built?",
           "answer": "We deploy it with MLOps and monitoring and keep improving the model over time."
         },
         {
@@ -890,7 +890,7 @@
         },
         {
           "question": "Do you help with implementation or only advise?",
-          "answer": "Both. Implementation support is part of the engagement, and the same team also delivers software, cloud and DevOps projects."
+          "answer": "Both. Implementation support is part of the engagement, and we also deliver software, cloud and DevOps projects."
         },
         {
           "question": "Can you help with GDPR compliance?",

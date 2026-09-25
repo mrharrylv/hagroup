@@ -188,3 +188,24 @@ describe('the cloud-migration FAQ', () => {
     }
   });
 });
+
+describe('the consulting FAQ', () => {
+  // The site offers software, cloud and DevOps projects; it never says the consultants deliver them.
+  const SAME_TEAM: Record<Lang, RegExp> = { en: /same team/i, lv: /tā pati komanda/i, ru: /та же команда/i };
+
+  it.each(LOCALES)('claims no team structure the site never described (%s)', (lang) => {
+    for (const entry of COPY[lang].services.pages.consulting.faq) expect(entry.answer).not.toMatch(SAME_TEAM[lang]);
+  });
+});
+
+describe('the AI integration FAQ', () => {
+  // The answer deploys the model, so the question cannot say it is already live.
+  const DEPLOY_ANSWER = /^We deploy it/;
+  const index = enServices.pages.aiIntegration.faq.findIndex((entry) => DEPLOY_ANSWER.test(entry.answer));
+  const ALREADY_LIVE: Record<Lang, RegExp> = { en: /\blive\b/i, lv: /palaist|darbojas/i, ru: /запуск/i };
+
+  it.each(LOCALES)('asks about a built model, not a live one (%s)', (lang) => {
+    expect(index).toBeGreaterThanOrEqual(0);
+    expect(COPY[lang].services.pages.aiIntegration.faq[index].question).not.toMatch(ALREADY_LIVE[lang]);
+  });
+});

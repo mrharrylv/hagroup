@@ -5,6 +5,7 @@ import { useTheme } from '../../context/useTheme';
 import { localizePath, type Lang } from '../../i18n/locales';
 import { useLocale } from '../../i18n/useLocale';
 import { useServicesData } from '../../lib/content';
+import { useHydrated } from '../../lib/useHydrated';
 import Logo from '../ui/Logo';
 
 const LANGUAGES: readonly { code: Lang; label: string }[] = [
@@ -30,6 +31,7 @@ export default function Header() {
   const langRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const hydrated = useHydrated();
 
   const handleLogoClick = useCallback((e: ReactMouseEvent) => {
     if (location.pathname === '/') {
@@ -42,8 +44,12 @@ export default function Header() {
 
   // Each language is its own URL (/lv/..., /ru/...), so the switcher is a set
   // of real links to this page in the other languages. A plain click switches
-  // in place, keeping ?query and #hash; a modified click opens the link.
-  const languageHref = (code: Lang) => `${localizePath(location.pathname, code)}${location.search}${location.hash}`;
+  // in place, keeping ?query and #hash; a modified click opens the link. The
+  // prerender has no ?query or #hash, so they join the links once hydrated.
+  const languageHref = (code: Lang) => {
+    const page = localizePath(location.pathname, code);
+    return hydrated ? `${page}${location.search}${location.hash}` : page;
+  };
 
   const handleLanguageClick = (event: ReactMouseEvent<HTMLAnchorElement>, code: Lang) => {
     if (!isPlainClick(event)) return;

@@ -49,13 +49,14 @@ async function prerenderAll(urls: readonly string[]): Promise<Map<string, string
 
 let prerendered = new Map<string, string>();
 
-async function bootPrerendered(url: string, theme: 'light' | 'dark'): Promise<BootResult> {
+/** Opens a prerendered page; `searchAndHash` is what the visitor's URL adds to it ('?q=1#h'). */
+async function bootPrerendered(url: string, theme: 'light' | 'dark', searchAndHash = ''): Promise<BootResult> {
   const appHtml = prerendered.get(url);
   if (appHtml === undefined) throw new Error(`${url} was not prerendered`);
 
   // The browser has none of the prerender's modules, and none of its resolved lazy pages.
   vi.resetModules();
-  window.history.replaceState(null, '', url);
+  window.history.replaceState(null, '', `${url}${searchAndHash}`);
   document.documentElement.className = theme;
   document.head.innerHTML = '';
   document.body.innerHTML = `<div id="root" data-prerendered="${url}">${appHtml}</div>`;
@@ -126,5 +127,21 @@ describe('main.tsx on a prerendered lazy route', () => {
     expect(toggle?.querySelector('[icon="solar:moon-linear"]')?.getAttribute('class')).toBe('dark:hidden');
     expect(mutations).toEqual([]);
     expect(original.isConnected).toBe(true);
+  });
+
+  it('adds ?query and #hash to the language links once hydrated, without a mismatch', async () => {
+    // The prerender renders every page without them. React 19 keeps the
+    // server's value when a hydrated attribute differs, so links rendered
+    // with them from the start stayed without them.
+    const { original, mutations } = await bootPrerendered('/services/devops', 'dark', '?q=1#h');
+    const hrefs = () => [...document.querySelectorAll('header a[hreflang]')].map((link) => link.getAttribute('href'));
+
+    await vi.waitFor(() => {
+      expect(hrefs()).toEqual(['/services/devops?q=1#h', '/lv/services/devops?q=1#h', '/ru/services/devops?q=1#h']);
+    }, { timeout: 2000, interval: 20 });
+    expect(mutations).toEqual([]);
+    expect(isHydrated(original)).toBe(true);
+    const logged = vi.mocked(console.error).mock.calls.map((args) => args.map(String).join(' '));
+    expect(logged.filter((line) => line.includes("didn't match"))).toEqual([]);
   });
 });

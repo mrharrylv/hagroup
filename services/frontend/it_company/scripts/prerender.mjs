@@ -12,8 +12,9 @@
  *
  * All the logic lives in src/ (src/seo/*, tested with vitest) and reaches
  * this script through the SSR bundle in dist-ssr/, which is removed at the end.
- * Any page that throws, renders an empty #root, lacks exactly one <h1> or has
- * the wrong canonical fails the build with its URL in the message.
+ * Any page that throws, renders an empty #root, lacks exactly one <h1>, has
+ * the wrong canonical or has a Suspense boundary streamed out of place fails
+ * the build with its URL in the message.
  */
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';

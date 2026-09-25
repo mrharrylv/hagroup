@@ -126,6 +126,16 @@ describe.each(FILES)('%s', (file) => {
     expect(root).not.toContain('data-not-found');
   });
 
+  it('carries every Suspense boundary inline, where it belongs', () => {
+    // React outlines a boundary it could not fit in the first chunk: a
+    // placeholder in place, the content hidden at the end of the body, and a
+    // script to swap them. A crawler without JavaScript gets it out of order.
+    const root = rootContent(html);
+    expect(root).not.toContain('<template id="B:');
+    expect(root).not.toContain('hidden id="S:');
+    expect(root).not.toContain('$RC(');
+  });
+
   it('has one JSON-LD block that parses', () => {
     const blocks = jsonLdBlocks(html);
     expect(blocks).toHaveLength(1);
@@ -137,6 +147,15 @@ describe.each(FILES)('%s', (file) => {
     const image = attr(html, /<meta property="og:image" content="([^"]+)"/) ?? '';
     expect(image.startsWith(`${SITE}/`)).toBe(true);
     expect(existsSync(distPathOf(image)), image).toBe(true);
+  });
+});
+
+describe.each(['index.html', 'lv/index.html', 'ru/index.html'])('%s (home)', (file) => {
+  it('has the contact section in the page, before the footer', () => {
+    const root = rootContent(existsSync(join(DIST, file)) ? read(file) : '');
+    const contact = root.indexOf('<section id="contact"');
+    expect(contact).toBeGreaterThan(0);
+    expect(contact).toBeLessThan(root.indexOf('<footer'));
   });
 });
 

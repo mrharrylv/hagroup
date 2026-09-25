@@ -46,9 +46,12 @@
         // One URL per page: /services/devops/ becomes /services/devops, the
         // form every canonical, sitemap entry and link uses. A path that
         // starts with // loses the extra slashes: links built from it would
-        // name another host, and replaceState to it throws.
+        // name another host, and replaceState to it throws. So does one with
+        // extra slashes right after /lv or /ru: /lv//services becomes
+        // /lv/services, as //services becomes /services (the Latvian router
+        // would get //services and match nothing).
         var path = location.pathname;
-        var normal = path.replace(/^\/{2,}/, '/');
+        var normal = path.replace(/^\/{2,}/, '/').replace(/^\/(lv|ru)\/{2,}/, '/$1/');
         if (normal.length > 1) normal = normal.replace(/\/+$/, '') || '/';
         if (normal !== path) {
           path = normal;

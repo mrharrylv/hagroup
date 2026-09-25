@@ -159,8 +159,25 @@ describe('index.html boot script: theme and URL', () => {
     // rest of the script (language, <html lang>) never ran.
     expect(boot({ url: '//evil.example/' })).toMatchObject({ url: '/evil.example', lang: 'en', replaced: ['/evil.example'] });
     expect(boot({ url: '//evil.example?a=1#b' })).toMatchObject({ url: '/evil.example?a=1#b', replaced: ['/evil.example?a=1#b'] });
-    expect(boot({ url: '///lv//services' })).toMatchObject({ url: '/lv//services', lang: 'lv' });
     expect(boot({ url: '//' })).toMatchObject({ url: '/', lang: 'en' });
     expect(boot({ url: '//', storage: { 'cloudie-lang': 'ru' } })).toMatchObject({ url: '/ru', lang: 'ru' });
+  });
+
+  it('collapses slashes right after /lv or /ru, as it does at the root', () => {
+    // Before, /lv//services reached the Latvian router as //services, which
+    // matches no route, while the head described /lv/services.
+    expect(boot({ url: '/lv//services' })).toMatchObject({ url: '/lv/services', lang: 'lv', replaced: ['/lv/services'] });
+    expect(boot({ url: '/ru//about?a=1#b' })).toMatchObject({ url: '/ru/about?a=1#b', lang: 'ru', replaced: ['/ru/about?a=1#b'] });
+    expect(boot({ url: '/lv//services/devops' })).toMatchObject({ url: '/lv/services/devops', lang: 'lv' });
+    expect(boot({ url: '/lv////services/' })).toMatchObject({ url: '/lv/services', lang: 'lv', replaced: ['/lv/services'] });
+    expect(boot({ url: '///lv//services' })).toMatchObject({ url: '/lv/services', lang: 'lv', replaced: ['/lv/services'] });
+    expect(boot({ url: '/ru//' })).toMatchObject({ url: '/ru', lang: 'ru' });
+  });
+
+  it('leaves slashes deeper in the path, and after a look-alike prefix, as they are', () => {
+    // Not a page to the router or to the head: both show not found.
+    expect(boot({ url: '/services//devops' })).toMatchObject({ url: '/services//devops', replaced: [] });
+    expect(boot({ url: '/lv/services//devops' })).toMatchObject({ url: '/lv/services//devops', lang: 'lv', replaced: [] });
+    expect(boot({ url: '/lvx//services' })).toMatchObject({ url: '/lvx//services', lang: 'en', replaced: [] });
   });
 });

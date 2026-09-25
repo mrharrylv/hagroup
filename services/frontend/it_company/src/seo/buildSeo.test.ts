@@ -132,6 +132,16 @@ describe('URLs', () => {
     expect(seoFor('/', 'ru').canonical).toBe(`${SITE_URL}/ru`);
   });
 
+  it('describes a doubled slash as the not-found page the router shows for it', () => {
+    // /lv//services: the /lv router sees //services and renders not found.
+    for (const [path, lang] of [['//services', 'lv'], ['//about', 'ru'], ['//services/devops', 'lv'], ['//services', 'en']] as [string, Lang][]) {
+      const seo = seoFor(path, lang);
+      expect(seo.canonical, `${path} (${lang})`).toBeNull();
+      expect(seo.robots, `${path} (${lang})`).toBe(NOINDEX_ROBOTS);
+      expect(seo.title, `${path} (${lang})`).toBe(seoContentFor(lang).seo.pages[NOT_FOUND_PATH].title);
+    }
+  });
+
   it('gives the 404 page no canonical and no alternates', () => {
     const seo = seoFor('/definitely-missing', 'en');
     expect(seo.canonical).toBeNull();

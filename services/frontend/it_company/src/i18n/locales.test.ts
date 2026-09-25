@@ -48,6 +48,12 @@ describe('localeFromPath', () => {
   ])('%s -> %s', (path, lang) => {
     expect(localeFromPath(path)).toBe(lang);
   });
+
+  it('finds the prefix only where the router basename looks for it', () => {
+    // A /lv basename matches nothing in //lv/services, and the page would be blank.
+    expect(localeFromPath('//lv/services')).toBe('en');
+    expect(localeFromPath('//ru')).toBe('en');
+  });
 });
 
 describe('stripLocale', () => {

@@ -16,7 +16,7 @@
     },
     "/services": {
       "title": "IT Services in Latvia: DevOps, Cloud, Software | HA Group",
-      "description": "Eight IT services for small and medium businesses: websites, custom software, cloud migration, DevOps, IT infrastructure, AI integration and IT consulting."
+      "description": "IT services for small and medium businesses, including websites, custom software, cloud migration, DevOps, IT infrastructure, AI integration and IT consulting."
     },
     "/services/website-development": {
       "title": "Website Development in Riga, Latvia | HA Group",
@@ -24,7 +24,7 @@
     },
     "/services/system-development": {
       "title": "Custom Software Development in Latvia | HA Group",
-      "description": "Custom business systems, APIs and internal tools on Node.js, Python and PostgreSQL, with secure sign-in, CRM and payment integrations and full documentation."
+      "description": "Custom business systems, APIs and internal tools on Node.js, Python and PostgreSQL, with secure sign-in, CRM and payment integrations, plus documentation."
     },
     "/services/cloud-migration": {
       "title": "Cloud Migration & AWS Consulting in Latvia | HA Group",
@@ -40,7 +40,7 @@
     },
     "/services/full-cycle": {
       "title": "Full-Cycle Software Development, Idea to Launch | HA Group",
-      "description": "One team from discovery workshops and UX/UI design to React and Node.js development, CI/CD, launch and maintenance, with a working demo every two weeks."
+      "description": "One team from discovery workshops and UX/UI design to React and Node.js development, CI/CD, launch and maintenance, with a demo every two weeks."
     },
     "/services/ai-integration": {
       "title": "AI Integration Services for Business in Latvia | HA Group",
@@ -60,7 +60,7 @@
     },
     "/careers": {
       "title": "Careers: Remote IT Jobs in Europe | HA Group",
-      "description": "Join HA Group, a remote-first IT company from Riga. See open roles in software and design, with flexible hours, mentorship and learning budgets."
+      "description": "Join HA Group, a remote-first IT company from Riga, with flexible hours, mentorship and learning budgets. Apply for an open position or send us your CV."
     },
     "/reviews": {
       "title": "Client Reviews & Testimonials | HA Group",
@@ -68,7 +68,7 @@
     },
     "/contact": {
       "title": "Contact Us: Discuss Your IT Project | HA Group",
-      "description": "Tell us about your website, software, cloud or DevOps project and budget. Send the form or message us on WhatsApp to reach the HA Group team in Riga."
+      "description": "Tell us about your website, software, cloud or DevOps project and budget. Send the form or message us on WhatsApp to reach the HA Group team."
     },
     "/about": {
       "title": "About Us: IT Company in Riga, Latvia | HA Group",
@@ -88,7 +88,7 @@
     },
     "/legal/cookies": {
       "title": "Cookie Policy | HA Group",
-      "description": "The HA Group website uses only necessary browser storage for language, theme and form protection, with no analytics, advertising or tracking cookies."
+      "description": "HA Group uses only necessary browser storage for language, theme, notice acknowledgement and form protection. No analytics, advertising or tracking cookies."
     },
     "/404": {
       "title": "Page Not Found | HA Group",

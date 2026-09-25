@@ -179,27 +179,27 @@ export default function Header() {
               {currentLang.label}
               <iconify-icon icon="solar:alt-arrow-down-linear" width="16" />
             </button>
-            {langOpen && (
-              <div className="absolute right-0 mt-2 w-24 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-lg overflow-hidden z-50">
-                {LANGUAGES.map((lang) => (
-                  <a
-                    key={lang.code}
-                    href={languageHref(lang.code)}
-                    hrefLang={lang.code}
-                    lang={lang.code}
-                    aria-current={lang.code === activeLang ? 'true' : undefined}
-                    onClick={(event) => handleLanguageClick(event, lang.code)}
-                    className={`block w-full text-left px-4 py-2 text-sm transition-colors ${
-                      lang.code === activeLang
-                        ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium'
-                        : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800'
-                    }`}
-                  >
-                    {lang.label}
-                  </a>
-                ))}
-              </div>
-            )}
+            {/* Always in the markup, so every page links to its other
+                languages for crawlers; CSS hides it while the menu is closed. */}
+            <div className={`absolute right-0 mt-2 w-24 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-lg overflow-hidden z-50 ${langOpen ? '' : 'hidden'}`}>
+              {LANGUAGES.map((lang) => (
+                <a
+                  key={lang.code}
+                  href={languageHref(lang.code)}
+                  hrefLang={lang.code}
+                  lang={lang.code}
+                  aria-current={lang.code === activeLang ? 'true' : undefined}
+                  onClick={(event) => handleLanguageClick(event, lang.code)}
+                  className={`block w-full text-left px-4 py-2 text-sm transition-colors ${
+                    lang.code === activeLang
+                      ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium'
+                      : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800'
+                  }`}
+                >
+                  {lang.label}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Dark/Light Toggle */}

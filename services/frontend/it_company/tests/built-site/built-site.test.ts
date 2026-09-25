@@ -58,6 +58,27 @@ function jsonLdBlocks(html: string): string[] {
   return [...html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map((m) => m[1]);
 }
 
+interface Anchor {
+  href: string | null;
+  hreflang: string | null;
+  lang: string | null;
+}
+
+function anchors(html: string): Anchor[] {
+  return [...html.matchAll(/<a\b[^>]*>/g)].map(([tag]) => ({
+    href: attr(tag, /\shref="([^"]*)"/),
+    hreflang: attr(tag, /\shreflang="([^"]*)"/i),
+    lang: attr(tag, /\slang="([^"]*)"/),
+  }));
+}
+
+/** The same page in each language: '/lv/services' -> en '/services', lv '/lv/services', ru '/ru/services'. */
+function languageVersions(url: string): Record<string, string> {
+  const path = url.replace(/^\/(lv|ru)(?=\/|$)/, '') || '/';
+  const prefixed = (prefix: string) => (path === '/' ? prefix : `${prefix}${path}`);
+  return { en: path, lv: prefixed('/lv'), ru: prefixed('/ru') };
+}
+
 function distPathOf(absoluteUrl: string): string {
   return join(DIST, decodeURIComponent(new URL(absoluteUrl).pathname));
 }
@@ -134,6 +155,14 @@ describe.each(FILES)('%s', (file) => {
     expect(root).not.toContain('<template id="B:');
     expect(root).not.toContain('hidden id="S:');
     expect(root).not.toContain('$RC(');
+  });
+
+  it('links to itself in every language with real anchors', () => {
+    // Crawlers that ignore <link rel="alternate"> still find the other languages.
+    const links = anchors(rootContent(html));
+    for (const [lang, href] of Object.entries(languageVersions(url))) {
+      expect(links, `${lang} ${href}`).toContainEqual({ href, hreflang: lang, lang });
+    }
   });
 
   it('has one JSON-LD block that parses', () => {

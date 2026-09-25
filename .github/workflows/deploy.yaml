@@ -116,6 +116,13 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'dev'
     environment: dev
+    # One deploy per bucket at a time: Phase 4 deletes every key missing from
+    # its own run's keys.txt, so an overlapping run would delete the other's
+    # assets and pages. A running deploy always finishes; a newer one waits
+    # (GitHub keeps only the newest waiting run).
+    concurrency:
+      group: hagroup-website-dev
+      cancel-in-progress: false
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v4
@@ -219,6 +226,10 @@ jobs:
       (github.event_name == 'push') ||
       (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'prod')
     environment: prod
+    # One deploy per bucket at a time; see deploy-dev.
+    concurrency:
+      group: hagroup-website-prod
+      cancel-in-progress: false
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v4

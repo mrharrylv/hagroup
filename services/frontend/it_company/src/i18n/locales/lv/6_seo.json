@@ -24,7 +24,7 @@
     },
     "/services/system-development": {
       "title": "Programmatūras izstrāde pēc pasūtījuma | HA Group",
-      "description": "Pielāgotas uzņēmumu sistēmas, API un iekšējie rīki ar Node.js, Python un PostgreSQL: droša autentifikācija, CRM un maksājumu integrācijas, pilna dokumentācija."
+      "description": "Pielāgotas uzņēmumu sistēmas, API un iekšējie rīki ar Node.js, Python un PostgreSQL: droša autentifikācija, CRM un maksājumu integrācijas, dokumentācija."
     },
     "/services/cloud-migration": {
       "title": "Migrācija uz mākoni un AWS konsultācijas | HA Group",
@@ -40,7 +40,7 @@
     },
     "/services/full-cycle": {
       "title": "Pilna cikla programmatūras izstrāde | HA Group",
-      "description": "Viena komanda no izpētes un UX/UI dizaina līdz React un Node.js izstrādei, CI/CD, palaišanai un uzturēšanai. Strādājošu versiju rādām ik pēc divām nedēļām."
+      "description": "Viena komanda no izpētes un UX/UI dizaina līdz React un Node.js izstrādei, CI/CD, palaišanai un uzturēšanai. Rezultātu demonstrējam ik pēc divām nedēļām."
     },
     "/services/ai-integration": {
       "title": "Mākslīgā intelekta integrācija uzņēmumiem | HA Group",

@@ -141,3 +141,18 @@ describe('the /legal/cookies description', () => {
     for (const kind of NOT_USED[lang]) expect(description(lang, '/legal/cookies')).toMatch(kind);
   });
 });
+
+describe('service descriptions', () => {
+  // The pages promise "documentation" and "biweekly demos"; neither says full or working.
+  const QUALIFIERS: Record<Lang, RegExp> = {
+    en: /full documentation|working demo/i,
+    lv: /pilna dokumentācija|strādājoš/i,
+    ru: /полн\S* документац|рабоч\S* верси/i,
+  };
+
+  it.each(LOCALES)('add no qualifier the service pages never used (%s)', (lang) => {
+    for (const path of ['/services/system-development', '/services/full-cycle']) {
+      expect(description(lang, path), path).not.toMatch(QUALIFIERS[lang]);
+    }
+  });
+});

@@ -24,7 +24,7 @@
     },
     "/services/system-development": {
       "title": "Custom Software Development in Latvia | HA Group",
-      "description": "Custom business systems, APIs and internal tools on Node.js, Python and PostgreSQL, with secure sign-in, CRM and payment integrations and full documentation."
+      "description": "Custom business systems, APIs and internal tools on Node.js, Python and PostgreSQL, with secure sign-in, CRM and payment integrations, plus documentation."
     },
     "/services/cloud-migration": {
       "title": "Cloud Migration & AWS Consulting in Latvia | HA Group",
@@ -40,7 +40,7 @@
     },
     "/services/full-cycle": {
       "title": "Full-Cycle Software Development, Idea to Launch | HA Group",
-      "description": "One team from discovery workshops and UX/UI design to React and Node.js development, CI/CD, launch and maintenance, with a working demo every two weeks."
+      "description": "One team from discovery workshops and UX/UI design to React and Node.js development, CI/CD, launch and maintenance, with a demo every two weeks."
     },
     "/services/ai-integration": {
       "title": "AI Integration Services for Business in Latvia | HA Group",

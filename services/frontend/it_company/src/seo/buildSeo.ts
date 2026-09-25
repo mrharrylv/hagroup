@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE, LOCALES, localizePath, stripLocale, type Lang } from '../i18n/locales';
+import { DEFAULT_LOCALE, LOCALES, localizePath, type Lang } from '../i18n/locales';
 import type { SeoContent } from './content';
 import { buildGraph } from './jsonLd';
 import { NOT_FOUND_PATH, resolveRoute, type ResolvedRoute } from './routes';
@@ -92,7 +92,9 @@ export function buildSeo({ path, lang, content }: BuildSeoInput): PageSeo {
   if (content.lang !== lang) {
     throw new Error(`buildSeo: content is for "${content.lang}" but the page is "${lang}"`);
   }
-  const route = resolveRoute(stripLocale(path), content);
+  // Already unprefixed: stripping again would turn the router's /lv/services
+  // (the URL /lv/lv/services, a not-found view) into the real /services page.
+  const route = resolveRoute(path, content);
   const notFound = route.kind === 'notFound';
   const { title, description } = pageCopy(route, content);
   const canonical = notFound ? null : absoluteUrl(localizePath(route.canonicalPath, lang));

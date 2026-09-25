@@ -369,8 +369,8 @@
           "answer": "Izmantojam nulles uzticēšanās arhitektūru, IAM politikas un šifrēšanu, un risinājumu pielāgojam VDAR, SOC 2 vai HIPAA prasībām, ja tās uz jums attiecas."
         },
         {
-          "question": "Vai jums ir šādu migrāciju pieredze?",
-          "answer": "Jā. Četru mēnešu programmā lielam starptautiskam uzņēmumam (ievērojot NDA) izveidojām atkārtoti izmantojamus Terraform moduļus un Azure DevOps konveijerus, kā arī koordinējām produkcijas vides pārslēgšanu ASV un Eiropā."
+          "question": "Kādus migrācijas projektus esat īstenojuši?",
+          "answer": "Četru mēnešu infrastruktūras modernizācijas programmā lielam starptautiskam uzņēmumam (ievērojot NDA) izveidojām atkārtoti izmantojamus Terraform moduļus un Azure DevOps konveijerus, kā arī koordinējām datu migrāciju un produkcijas vides pārslēgšanu ASV un Eiropā."
         }
       ]
     },
@@ -464,7 +464,7 @@
         },
         {
           "question": "Vai mums būs jāmaina esošie rīki?",
-          "answer": "Nē. Vispirms novērtējam jūsu CI/CD procesu briedumu un vājās vietas, tad projektējam mērķa arhitektūru un izvēlamies rīkus, kas piemēroti jūsu tehnoloģijām un komandai."
+          "answer": "Ne obligāti. Vispirms novērtējam jūsu CI/CD procesu briedumu un vājās vietas, tad projektējam mērķa arhitektūru un izvēlamies rīkus, kas piemēroti jūsu tehnoloģijām un komandai."
         },
         {
           "question": "Kā norit darbs?",

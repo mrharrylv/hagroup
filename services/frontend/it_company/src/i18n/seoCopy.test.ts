@@ -156,3 +156,35 @@ describe('service descriptions', () => {
     }
   });
 });
+
+describe('the DevOps FAQ', () => {
+  // The page promises only to "select the right tools for your stack and team".
+  const TOOLS_QUESTION = 'Do we have to replace the tools we use today?';
+  const index = enServices.pages.devops.faq.findIndex((entry) => entry.question === TOOLS_QUESTION);
+
+  it.each(LOCALES)('does not promise that the current tools stay (%s)', (lang) => {
+    expect(index).toBeGreaterThanOrEqual(0);
+    expect(COPY[lang].services.pages.devops.faq[index].answer).not.toMatch(/^(No|Nē|Нет)\./);
+  });
+});
+
+describe('the cloud-migration FAQ', () => {
+  // The NDA case study is an infrastructure modernization with data migration and
+  // switchovers; it never says it was a cloud migration.
+  const NDA = /NDA/;
+  const YES = /^(Yes|Jā|Да)[.,!]/;
+  const MODERNIZATION: Record<Lang, RegExp> = {
+    en: /infrastructure modernization/,
+    lv: /infrastruktūras modernizācij/,
+    ru: /модернизаци\S* инфраструктуры/,
+  };
+
+  it.each(LOCALES)('cites the NDA case study as what it was, not as a yes (%s)', (lang) => {
+    const cited = COPY[lang].services.pages.cloudMigration.faq.filter((entry) => NDA.test(entry.answer));
+    expect(cited).not.toHaveLength(0);
+    for (const entry of cited) {
+      expect(entry.answer).not.toMatch(YES);
+      expect(entry.answer).toMatch(MODERNIZATION[lang]);
+    }
+  });
+});

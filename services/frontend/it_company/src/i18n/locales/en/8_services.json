@@ -369,8 +369,8 @@
           "answer": "We apply zero-trust architecture, IAM policies and encryption, and align the setup with GDPR, SOC 2 or HIPAA requirements when they apply to you."
         },
         {
-          "question": "Have you run migrations like this before?",
-          "answer": "Yes. In a four-month program for a large global enterprise, under NDA, we built reusable Terraform modules and Azure DevOps pipelines and coordinated production switchovers in the United States and Europe."
+          "question": "What migration work have you delivered?",
+          "answer": "In a four-month infrastructure modernization program for a large global enterprise, under NDA, we built reusable Terraform modules and Azure DevOps pipelines and coordinated data migration and production switchovers in the United States and Europe."
         }
       ]
     },
@@ -464,7 +464,7 @@
         },
         {
           "question": "Do we have to replace the tools we use today?",
-          "answer": "No. We first assess your CI/CD maturity and bottlenecks, then design the target state and choose tools that fit your stack and your team."
+          "answer": "Not necessarily. We first assess your CI/CD maturity and bottlenecks, then design the target state and choose tools that fit your stack and your team."
         },
         {
           "question": "How does the work run?",

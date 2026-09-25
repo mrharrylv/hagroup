@@ -190,8 +190,13 @@ describe('the cloud-migration FAQ', () => {
 });
 
 describe('the consulting FAQ', () => {
-  // The site offers software, cloud and DevOps projects; it never says the consultants deliver them.
-  const SAME_TEAM: Record<Lang, RegExp> = { en: /same team/i, lv: /tā pati komanda/i, ru: /та же команда/i };
+  // The site offers software, cloud and DevOps projects; it never says the consultants deliver them,
+  // nor that they are delivered in-house ("мы сами").
+  const SAME_TEAM: Record<Lang, RegExp> = {
+    en: /same team/i,
+    lv: /tā pati komanda/i,
+    ru: /та же команда|мы сами/i,
+  };
 
   it.each(LOCALES)('claims no team structure the site never described (%s)', (lang) => {
     for (const entry of COPY[lang].services.pages.consulting.faq) expect(entry.answer).not.toMatch(SAME_TEAM[lang]);

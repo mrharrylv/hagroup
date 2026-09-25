@@ -66,6 +66,15 @@ describe('useLocaleRouting', () => {
     expect(current().lang).toBe('en');
   });
 
+  it('moves to the page it is given instead, without ?query or #hash', () => {
+    // The not-found view sends the switcher to each language's home page.
+    mount('/lv/nope?x=1#faq', 'lv');
+    act(() => current().switchLanguage('ru', '/'));
+    expect(window.location.pathname + window.location.search + window.location.hash).toBe('/ru');
+    expect(localStorage.getItem(LANG_STORAGE_KEY)).toBe('ru');
+    expect(current().lang).toBe('ru');
+  });
+
   it('follows Back into another language without changing the remembered choice', () => {
     mount('/lv/services/devops', 'lv');
     act(() => current().switchLanguage('en'));

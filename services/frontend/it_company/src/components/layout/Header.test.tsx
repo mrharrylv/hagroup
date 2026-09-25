@@ -103,5 +103,29 @@ describe('Header language switcher', () => {
       expect(currentUrl()).toBe('/lv/services');
       expect(window.history.length).toBe(historyLength);
     });
+
+    // A missing page has no version in another language: /lv/nope and
+    // /ru/404 have no page, and the CloudFront fallback answers them with
+    // the English home and status 200.
+    it.each(['/lv/nope?x=1#faq', '/404', '/projects/nope', '/ru/services//devops'])(
+      'on the not-found view at %s, links to each language home page',
+      async (url) => {
+        await openApp(url);
+        expect(document.querySelector('[data-not-found]')).not.toBeNull();
+        const hrefs = (await switcherLinks(menu)).map((link) => link.getAttribute('href'));
+        expect(hrefs).toEqual(['/', '/lv', '/ru']);
+      },
+    );
+
+    it('on the not-found view, a plain click on another language opens its home page', async () => {
+      await openApp('/lv/nope?x=1#faq');
+
+      (await languageLink('ru', menu)).click();
+
+      await vi.waitFor(() => expect(currentUrl()).toBe('/ru'));
+      await vi.waitFor(() => expect(document.querySelector('[data-not-found]')).toBeNull());
+      expect(localStorage.getItem(LANG_STORAGE_KEY)).toBe('ru');
+      expect(document.documentElement.lang).toBe('ru');
+    });
   });
 });

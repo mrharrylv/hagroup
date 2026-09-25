@@ -213,6 +213,17 @@ describe('404.html', () => {
     expect(count(rootContent(html), /<h1[\s>]/g)).toBe(1);
     expect(skippedHeadingLevels(rootContent(html))).toEqual([]);
   });
+
+  it("links to each language's home page, not to a /404 page that does not exist", () => {
+    // /404, /lv/404 and /ru/404 have no page: the CloudFront fallback answers
+    // them with the English home and status 200.
+    const links = anchors(rootContent(html)).filter((link) => link.hreflang !== null);
+    expect(links).toEqual([
+      { href: '/', hreflang: 'en', lang: 'en' },
+      { href: '/lv', hreflang: 'lv', lang: 'lv' },
+      { href: '/ru', hreflang: 'ru', lang: 'ru' },
+    ]);
+  });
 });
 
 describe('sitemap.xml', () => {

@@ -42,13 +42,15 @@ export function useLocaleRouting(i18n: I18n, initialLang: Lang): LocaleContextVa
   );
 
   const switchLanguage = useCallback(
-    (code: Lang) => {
+    (code: Lang, page?: string) => {
       rememberLanguage(code);
       // The language already shown: the pick is saved, and nothing moves.
       if (code === lang) return;
       const { pathname, search, hash } = window.location;
       const current = `${pathname}${search}${hash}`;
-      const target = `${localizePath(stripLocale(pathname), code)}${search}${hash}`;
+      const target = page === undefined
+        ? `${localizePath(stripLocale(pathname), code)}${search}${hash}`
+        : localizePath(page, code);
       if (target !== current) window.history.pushState(null, '', target);
       showLanguage(code);
     },

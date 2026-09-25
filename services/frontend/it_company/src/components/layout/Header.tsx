@@ -6,6 +6,8 @@ import { localizePath, type Lang } from '../../i18n/locales';
 import { useLocale } from '../../i18n/useLocale';
 import { useServicesData } from '../../lib/content';
 import { useHydrated } from '../../lib/useHydrated';
+import { seoContentFor } from '../../seo/content';
+import { resolveRoute } from '../../seo/routes';
 import Logo from '../ui/Logo';
 
 const LANGUAGES: readonly { code: Lang; label: string }[] = [
@@ -13,6 +15,8 @@ const LANGUAGES: readonly { code: Lang; label: string }[] = [
   { code: 'lv', label: 'LV' },
   { code: 'ru', label: 'RU' },
 ];
+
+const HOME_PATH = '/';
 
 /** A plain click; modified clicks (new tab, new window) go to the link's href. */
 function isPlainClick(event: ReactMouseEvent<HTMLAnchorElement>): boolean {
@@ -42,11 +46,19 @@ export default function Header() {
 
   const currentLang = LANGUAGES.find((l) => l.code === activeLang) ?? LANGUAGES[0];
 
+  // A missing page has no version in another language (/lv/nope and /404
+  // have no page; the fallback answers them with the English home), so the
+  // not-found view links to each language's home page. resolveRoute is what
+  // the head uses, and it matches the router.
+  const notFound = resolveRoute(location.pathname, seoContentFor(activeLang)).kind === 'notFound';
+  const languagePage = notFound ? HOME_PATH : undefined;
+
   // Each language is its own URL (/lv/..., /ru/...), so the switcher is a set
   // of real links to this page in the other languages. A plain click switches
   // in place, keeping ?query and #hash; a modified click opens the link. The
   // prerender has no ?query or #hash, so they join the links once hydrated.
   const languageHref = (code: Lang) => {
+    if (languagePage !== undefined) return localizePath(languagePage, code);
     const page = localizePath(location.pathname, code);
     return hydrated ? `${page}${location.search}${location.hash}` : page;
   };
@@ -57,7 +69,7 @@ export default function Header() {
     setLangOpen(false);
     // Also for the language already shown: a visitor who saved Latvian and
     // reads an English page saves English by picking EN.
-    switchLanguage(code);
+    switchLanguage(code, languagePage);
   };
 
   // Close menus on route change

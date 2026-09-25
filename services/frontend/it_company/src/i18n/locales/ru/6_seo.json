@@ -1,13 +1,24 @@
 {
-  "_comment": "Search and share copy per route: the <title>, meta description and og tags. Paths are unprefixed; /lv and /ru pages use the same keys in their own file. Project pages use the project title plus projectTitleSuffix and the project description. Keep the three files key-identical.",
+  "_comment": "Search and share copy per route: the <title>, meta description and og tags. Paths are unprefixed; /lv and /ru pages use the same keys in their own file. Project pages use the project title plus projectTitleSuffix and the project seoDescription, or a summary of its description. breadcrumbs and names are what the page itself shows (a nav or footer label, or its h1): the BreadcrumbList names and the llms.txt link labels. Keep the three files key-identical.",
   "siteName": "HA Group",
   "ogImageAlt": "Логотип HA Group в виде облака и надпись «DevOps, облака и разработка ПО», Рига, Латвия",
   "projectTitleSuffix": "Кейс | HA Group",
   "breadcrumbs": {
     "home": "HA Group",
     "services": "Услуги",
-    "projects": "Проекты",
+    "projects": "Наши проекты",
     "legal": "Юридическая информация"
+  },
+  "names": {
+    "/about": "О нас",
+    "/contact": "Контакты",
+    "/careers": "Карьера",
+    "/company-details": "Реквизиты компании",
+    "/reviews": "Отзывы клиентов",
+    "/balticgp": "BalticGP",
+    "/legal/terms": "Условия использования",
+    "/legal/privacy": "Политика конфиденциальности",
+    "/legal/cookies": "Политика использования файлов cookie"
   },
   "pages": {
     "/": {

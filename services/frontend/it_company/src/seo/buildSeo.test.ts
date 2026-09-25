@@ -328,6 +328,19 @@ describe('JSON-LD graph', () => {
     expect(items.map((item) => item.position)).toEqual([1, 2, 3]);
   });
 
+  it.each([
+    ['/about', 'en', ['HA Group', 'About Us']],
+    ['/legal/terms', 'en', ['HA Group', 'Terms & Conditions']],
+    ['/reviews', 'en', ['HA Group', 'Client Testimonials']],
+    ['/company-details', 'lv', ['HA Group', 'Uzņēmuma rekvizīti']],
+    ['/careers', 'ru', ['HA Group', 'Карьера']],
+    ['/projects/rokber', 'en', ['HA Group', 'Our Work', 'Rokber.lv']],
+    ['/projects', 'ru', ['HA Group', 'Наши проекты']],
+  ] as [string, Lang, string[]][])('names the breadcrumbs of %s (%s) as the page shows them', (path, lang, names) => {
+    const crumbs = nodeOfType(seoFor(path, lang), 'BreadcrumbList') as GraphNode;
+    expect((crumbs.itemListElement as GraphNode[]).map((item) => item.name)).toEqual(names);
+  });
+
   it('has no breadcrumb on the home page', () => {
     expect(nodeOfType(seoFor('/', 'en'), 'BreadcrumbList')).toBeUndefined();
   });

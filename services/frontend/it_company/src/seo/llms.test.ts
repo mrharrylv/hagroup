@@ -64,6 +64,23 @@ describe('buildLlmsTxt', () => {
     expect(text).toContain('(https://www.hagroup.lv/ru)');
   });
 
+  it('labels the company and optional links with the page names the site shows, not title tags', () => {
+    for (const link of [
+      '- [About Us](https://www.hagroup.lv/about): ',
+      '- [Contact](https://www.hagroup.lv/contact): ',
+      '- [Company Details](https://www.hagroup.lv/company-details): ',
+      '- [Careers](https://www.hagroup.lv/careers): ',
+      '- [Terms & Conditions](https://www.hagroup.lv/legal/terms): ',
+      '- [Privacy Policy](https://www.hagroup.lv/legal/privacy): ',
+      '- [Cookie Policy](https://www.hagroup.lv/legal/cookies): ',
+      '- [HA Group in Latvian](https://www.hagroup.lv/lv): ',
+      '- [HA Group in Russian](https://www.hagroup.lv/ru): ',
+    ]) {
+      expect(text).toContain(link);
+    }
+    expect(text).not.toMatch(/\[[^\]]*\|[^\]]*\]\(/);
+  });
+
   it('uses no em dashes and no relative links', () => {
     expect(text).not.toContain('—');
     expect(text).not.toMatch(/\]\(\//);

@@ -102,5 +102,10 @@ export interface SeoCopy {
     projects: string;
     legal: string;
   };
+  /**
+   * A page's name as the page shows it (its nav or footer label, or its h1),
+   * by unprefixed path: the last breadcrumb and its llms.txt link label.
+   */
+  names: Record<string, string>;
   pages: Record<string, SeoPageCopy>;
 }

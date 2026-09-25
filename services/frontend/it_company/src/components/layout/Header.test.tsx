@@ -39,7 +39,13 @@ async function openApp(url: string): Promise<void> {
     </ThemeProvider>,
   );
   // The desktop dropdown is always in the markup; the page may be a lazy chunk.
-  await vi.waitFor(() => expect(languageLinks()).toHaveLength(3), { timeout: 5000, interval: 20 });
+  // Then wait for the commit's effects too: Seo writes <html lang>, and the
+  // Header's own mount effect closes the mobile menu. A click that lands before
+  // they have run (a slow CI runner) is undone by them.
+  await vi.waitFor(() => {
+    expect(languageLinks()).toHaveLength(3);
+    expect(document.documentElement.lang).toBe(lang);
+  }, { timeout: 5000, interval: 20 });
 }
 
 /** The switcher's links, in LANGUAGES order: the desktop dropdown's, or the mobile menu's, opened here. */
@@ -62,6 +68,8 @@ async function languageLink(code: Lang, menu: Menu): Promise<HTMLAnchorElement> 
 describe('Header language switcher', () => {
   beforeEach(() => {
     localStorage.clear();
+    // The previous test's page set it; only this test's page may.
+    document.documentElement.lang = '';
   });
 
   afterEach(() => {

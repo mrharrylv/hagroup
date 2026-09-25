@@ -23,8 +23,13 @@ export function isLang(value: unknown): value is Lang {
   return typeof value === 'string' && (LOCALES as readonly string[]).includes(value);
 }
 
+/**
+ * Exactly one leading slash. A path that starts with '//' (the URL
+ * /lv//evil.example gives the Latvian router //evil.example) would be read as
+ * another host by any link built from it.
+ */
 function withLeadingSlash(path: string): string {
-  return path.startsWith('/') ? path : `/${path}`;
+  return `/${path.replace(/^\/+/, '')}`;
 }
 
 /** The language a pathname is in: its /lv or /ru prefix, English otherwise. */

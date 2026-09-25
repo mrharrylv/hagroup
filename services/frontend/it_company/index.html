@@ -44,10 +44,14 @@
         }
 
         // One URL per page: /services/devops/ becomes /services/devops, the
-        // form every canonical, sitemap entry and link uses.
+        // form every canonical, sitemap entry and link uses. A path that
+        // starts with // loses the extra slashes: links built from it would
+        // name another host, and replaceState to it throws.
         var path = location.pathname;
-        if (path.length > 1 && path.charAt(path.length - 1) === '/') {
-          path = path.replace(/\/+$/, '') || '/';
+        var normal = path.replace(/^\/{2,}/, '/');
+        if (normal.length > 1) normal = normal.replace(/\/+$/, '') || '/';
+        if (normal !== path) {
+          path = normal;
           history.replaceState(history.state, '', path + location.search + location.hash);
         }
 

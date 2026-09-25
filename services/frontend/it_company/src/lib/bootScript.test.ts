@@ -38,7 +38,8 @@ interface BootOutput {
 }
 
 function boot(input: BootInput): BootOutput {
-  let current = new URL(input.url, ORIGIN);
+  // Joined, not resolved: '//x' opened on this site is the path //x, not host x.
+  let current = new URL(`${ORIGIN}${input.url}`);
   const classes = new Set<string>();
   const replaced: string[] = [];
   const documentElement = {
@@ -150,5 +151,16 @@ describe('index.html boot script: theme and URL', () => {
   it('drops a trailing slash', () => {
     expect(boot({ url: '/services/devops/?a=1#b' })).toMatchObject({ url: '/services/devops?a=1#b', replaced: ['/services/devops?a=1#b'] });
     expect(boot({ url: '/lv/' })).toMatchObject({ url: '/lv', lang: 'lv' });
+    expect(boot({ url: '/services/devops' }).replaced).toEqual([]);
+  });
+
+  it('collapses leading slashes, so the URL never names another host', () => {
+    // Before, replaceState('//evil.example') threw a SecurityError and the
+    // rest of the script (language, <html lang>) never ran.
+    expect(boot({ url: '//evil.example/' })).toMatchObject({ url: '/evil.example', lang: 'en', replaced: ['/evil.example'] });
+    expect(boot({ url: '//evil.example?a=1#b' })).toMatchObject({ url: '/evil.example?a=1#b', replaced: ['/evil.example?a=1#b'] });
+    expect(boot({ url: '///lv//services' })).toMatchObject({ url: '/lv//services', lang: 'lv' });
+    expect(boot({ url: '//' })).toMatchObject({ url: '/', lang: 'en' });
+    expect(boot({ url: '//', storage: { 'cloudie-lang': 'ru' } })).toMatchObject({ url: '/ru', lang: 'ru' });
   });
 });

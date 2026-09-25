@@ -24,9 +24,9 @@ export default function Methodology() {
               <div className="text-indigo-400 text-xs font-semibold tracking-wider uppercase mb-3 transition-colors duration-300 group-hover:text-indigo-300">
                 {step.phase}
               </div>
-              <h4 className="text-lg font-medium tracking-tight mb-2 transition-colors duration-300 group-hover:text-white">
+              <h3 className="text-lg font-medium tracking-tight mb-2 transition-colors duration-300 group-hover:text-white">
                 {step.title}
-              </h4>
+              </h3>
               <p className="text-sm text-zinc-400 transition-colors duration-300 group-hover:text-zinc-300">
                 {step.description}
               </p>

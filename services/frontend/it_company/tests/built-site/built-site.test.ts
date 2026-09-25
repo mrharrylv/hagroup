@@ -72,6 +72,15 @@ function anchors(html: string): Anchor[] {
   }));
 }
 
+/** Every place the heading level jumps by more than one, starting from the page itself (level 0). */
+function skippedHeadingLevels(html: string): string[] {
+  const levels = [...html.matchAll(/<h([1-6])[\s>]/g)].map((match) => Number(match[1]));
+  return levels.flatMap((level, index) => {
+    const previous = index === 0 ? 0 : levels[index - 1];
+    return level > previous + 1 ? [`h${previous || '-'} -> h${level} (heading ${index + 1})`] : [];
+  });
+}
+
 /** The same page in each language: '/lv/services' -> en '/services', lv '/lv/services', ru '/ru/services'. */
 function languageVersions(url: string): Record<string, string> {
   const path = url.replace(/^\/(lv|ru)(?=\/|$)/, '') || '/';
@@ -157,6 +166,12 @@ describe.each(FILES)('%s', (file) => {
     expect(root).not.toContain('$RC(');
   });
 
+  it('has an outline without skipped heading levels', () => {
+    const root = rootContent(html);
+    expect(count(root, /<h1[\s>]/g)).toBe(1);
+    expect(skippedHeadingLevels(root)).toEqual([]);
+  });
+
   it('links to itself in every language with real anchors', () => {
     // Crawlers that ignore <link rel="alternate"> still find the other languages.
     const links = anchors(rootContent(html));
@@ -196,6 +211,7 @@ describe('404.html', () => {
     expect(html).not.toContain('rel="canonical"');
     expect(rootContent(html)).toContain('data-not-found');
     expect(count(rootContent(html), /<h1[\s>]/g)).toBe(1);
+    expect(skippedHeadingLevels(rootContent(html))).toEqual([]);
   });
 });
 

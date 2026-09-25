@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useInsertionEffect, useMemo, useState } from 'react';
+import { flushSync } from 'react-dom';
 import type { i18n as I18n } from 'i18next';
 import type { LocaleContextValue } from './LocaleContext';
 import { localeFromPath, localizePath, stripLocale, type Lang } from './locales';
@@ -58,11 +59,20 @@ export function useLocaleRouting(i18n: I18n, initialLang: Lang): LocaleContextVa
   );
 
   // Back and Forward across a language boundary: follow the URL, and keep
-  // the remembered choice, which only the switcher sets.
-  useEffect(() => {
+  // the remembered choice, which only the switcher sets. The router for the
+  // new language has to be in place before any router sees the new URL: the
+  // old one cannot match it (its basename is the old prefix) and would render
+  // nothing, or the not-found page. popstate listeners on window run in the
+  // order they were added (Chromium runs a capture listener at window no
+  // earlier), and BrowserRouter adds its own in a layout effect. An insertion
+  // effect runs before every layout effect of the same commit, so this
+  // listener comes first on mount and after each switch alike; flushSync then
+  // swaps the router in before it returns, and the old router's listener is
+  // removed before its turn.
+  useInsertionEffect(() => {
     const onPopState = () => {
       const next = localeFromPath(window.location.pathname);
-      if (next !== lang) showLanguage(next);
+      if (next !== lang) flushSync(() => showLanguage(next));
     };
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);

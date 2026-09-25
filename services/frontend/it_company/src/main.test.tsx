@@ -1,6 +1,7 @@
 // @vitest-environment happy-dom
 import { prerenderToNodeStream } from 'react-dom/static';
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
+import { dispatchAsBrowser } from './test-utils/browserEvents';
 
 // The prerender renders with the Firebase stand-in (vite.config.ts); so does this.
 vi.mock('./lib/firebase', () => import('./lib/firebase.ssr'));
@@ -72,23 +73,6 @@ async function prerenderAll(urls: readonly string[]): Promise<Map<string, string
 }
 
 let prerendered = new Map<string, string>();
-
-/**
- * Dispatches an event the way a browser does: window.event is set while the
- * listeners and the microtasks they queue run. React reads it to rank updates
- * made outside its own handlers (a popstate transition is rendered at once),
- * and happy-dom does not set it.
- */
-async function dispatchAsBrowser(target: EventTarget, event: Event): Promise<void> {
-  Object.defineProperty(window, 'event', { value: event, configurable: true });
-  try {
-    target.dispatchEvent(event);
-    await Promise.resolve();
-    await Promise.resolve();
-  } finally {
-    Reflect.deleteProperty(window, 'event');
-  }
-}
 
 /** Opens a prerendered page; `searchAndHash` is what the visitor's URL adds to it ('?q=1#h'). */
 async function bootPrerendered(url: string, theme: 'light' | 'dark', searchAndHash = ''): Promise<BootResult> {

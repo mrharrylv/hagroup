@@ -16,7 +16,7 @@
     },
     "/services": {
       "title": "IT pakalpojumi uzņēmumiem Latvijā | HA Group",
-      "description": "IT pakalpojumi mazajiem un vidējiem uzņēmumiem: mājaslapas, programmatūra, migrācija uz mākoni, DevOps, IT infrastruktūra, MI integrācija un IT konsultācijas."
+      "description": "IT pakalpojumi mazajiem un vidējiem uzņēmumiem, tostarp mājaslapas, programmatūra, pāreja uz mākoni, DevOps, MI integrācija, IT infrastruktūra un konsultācijas."
     },
     "/services/website-development": {
       "title": "Mājaslapu izstrāde Rīgā | HA Group",
@@ -88,7 +88,7 @@
     },
     "/legal/cookies": {
       "title": "Sīkdatņu politika | HA Group",
-      "description": "HA Group tīmekļvietne izmanto tikai nepieciešamo krātuvi valodai, krāsu režīmam un formu aizsardzībai, bez analītikas, reklāmas vai izsekošanas sīkdatnēm."
+      "description": "Tikai nepieciešamā pārlūka krātuve valodai, krāsu režīmam, paziņojuma apliecinājumam un formu aizsardzībai. Bez analītikas, reklāmas vai izsekošanas sīkdatnēm."
     },
     "/404": {
       "title": "Lapa nav atrasta | HA Group",

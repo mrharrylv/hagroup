@@ -16,7 +16,7 @@
     },
     "/services": {
       "title": "IT Services in Latvia: DevOps, Cloud, Software | HA Group",
-      "description": "Eight IT services for small and medium businesses: websites, custom software, cloud migration, DevOps, IT infrastructure, AI integration and IT consulting."
+      "description": "IT services for small and medium businesses, including websites, custom software, cloud migration, DevOps, IT infrastructure, AI integration and IT consulting."
     },
     "/services/website-development": {
       "title": "Website Development in Riga, Latvia | HA Group",
@@ -88,7 +88,7 @@
     },
     "/legal/cookies": {
       "title": "Cookie Policy | HA Group",
-      "description": "The HA Group website uses only necessary browser storage for language, theme and form protection, with no analytics, advertising or tracking cookies."
+      "description": "HA Group uses only necessary browser storage for language, theme, notice acknowledgement and form protection. No analytics, advertising or tracking cookies."
     },
     "/404": {
       "title": "Page Not Found | HA Group",

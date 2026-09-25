@@ -98,3 +98,46 @@ describe('the /careers description', () => {
     expect(description(lang, '/careers')).toMatch(SEND_A_CV[lang]);
   });
 });
+
+describe('the /services description', () => {
+  // It names seven of the eight services in 8_services.json, so the list must read as partial.
+  const INCLUDING: Record<Lang, RegExp> = { en: /\bincluding\b/, lv: /\btostarp\b/, ru: /включая/ };
+  const COUNTS: Record<Lang, Record<string, number>> = {
+    en: { seven: 7, eight: 8, nine: 9 },
+    lv: { septiņi: 7, astoņi: 8, deviņi: 9 },
+    ru: { семь: 7, восемь: 8, девять: 9 },
+  };
+
+  it.each(LOCALES)('introduces its list of services as partial (%s)', (lang) => {
+    expect(description(lang, '/services')).toMatch(INCLUDING[lang]);
+  });
+
+  it.each(LOCALES)('states no count other than the number of services (%s)', (lang) => {
+    const words = new Set(description(lang, '/services').toLowerCase().split(/[^\p{L}]+/u));
+    for (const [word, count] of Object.entries(COUNTS[lang])) {
+      if (words.has(word)) expect(count, word).toBe(COPY[lang].services.items.length);
+    }
+  });
+});
+
+describe('the /legal/cookies description', () => {
+  // 3_legal.json cookies section 2: language, theme, the notice acknowledgement, form protection.
+  const STORED: Record<Lang, RegExp[]> = {
+    en: [/language/, /theme/, /notice/, /form/],
+    lv: [/valod/, /krāsu režīm/, /paziņojum/, /form/],
+    ru: [/язык/, /тем[аыу]/, /уведомлени/, /форм/],
+  };
+  const NOT_USED: Record<Lang, RegExp[]> = {
+    en: [/analytics/, /advertising/, /tracking/],
+    lv: [/analītikas/, /reklāmas/, /izsekošanas/],
+    ru: [/аналитическ/, /рекламн/, /отслеживающ/],
+  };
+
+  it.each(LOCALES)('names every purpose the policy stores a value for (%s)', (lang) => {
+    for (const purpose of STORED[lang]) expect(description(lang, '/legal/cookies')).toMatch(purpose);
+  });
+
+  it.each(LOCALES)('still rules out analytics, advertising and tracking cookies (%s)', (lang) => {
+    for (const kind of NOT_USED[lang]) expect(description(lang, '/legal/cookies')).toMatch(kind);
+  });
+});

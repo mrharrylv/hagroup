@@ -1,5 +1,35 @@
 # NEEDS THE OWNER:
 
+## hagroup.lv search presentation — built, waiting to be deployed
+
+`todo/seo-search-presentation` is finished and verified locally (`npm run
+verify` green). A push to `main` deploys production (`.github/workflows/deploy.yaml`),
+so merging it is the owner's call. After it is live:
+
+- **Google Search Console:** add `hagroup.lv` as a domain property (a TXT record
+  at the registrar, where the zone lives), submit
+  `https://www.hagroup.lv/sitemap.xml`, and request indexing for `/`, `/lv`,
+  `/ru` and the service pages. The new favicon and share image replace the old
+  ones in results only after Google recrawls: days to weeks.
+- **Bing Webmaster Tools:** import the site from Search Console and submit the
+  same sitemap. Some AI search tools draw on Bing's index.
+- **Be listed where assistants look:** answers to "best DevOps / cloud provider
+  in Latvia" come mostly from third-party listings and reviews, not from the
+  site. Create or claim a LinkedIn company page, Clutch, GoodFirms and
+  TechBehemoths profiles, and a Google Business Profile if the business is
+  eligible, then put their URLs in `services/frontend/it_company/src/data/social.json`
+  (`profiles`), which feeds `Organization.sameAs`.
+- **Real client reviews:** `7_reviews.json` is empty, so `/reviews` is noindex
+  and left out of the sitemap. Adding genuine reviews makes it indexable with no
+  code change.
+- **Facts the FAQs could not state** because the site never says them: how
+  projects are priced (fixed, time and materials, retainer), typical project
+  length, support response times or SLA, whether support contracts are monthly
+  and their minimum term, whether the first consultation is free (the consulting
+  page's "Schedule a free consultation" text is never rendered), and whether
+  work is on site in Rīga or remote only, and for which countries. Supply them
+  and they can be added to the FAQs and descriptions.
+
 ## Kopā (`kopa/`) — live on CloudFront, waiting on DNS
 
 The demo is deployed and reachable. What is left is the custom domain, and that
@@ -48,6 +78,13 @@ their `todo.md` done lists are byte-for-byte duplicates of another repo's, so
 converting them wholesale would record capabilities that may not exist here.
 
 # Later:
+
+- hagroup.lv: real 404 status and 301s at the edge. CloudFront maps 403/404 to
+  `/index.html` with 200, so unknown URLs, trailing slashes and old unprefixed
+  links are soft 404s or client-side redirects. WEBSITE_TEMPLATE now has a
+  tested viewer-request CloudFront Function (`infrastructure/terraform/functions/
+  viewer-request.js`) that 301s every non-canonical spelling; port it, with
+  `404.html` as the 404 response.
 
 
 # TODO:

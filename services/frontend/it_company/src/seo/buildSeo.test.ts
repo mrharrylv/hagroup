@@ -294,6 +294,22 @@ describe('JSON-LD graph', () => {
     expect(seo.title).toBe(`${work.name} | ${seoContentFor('en').seo.projectTitleSuffix}`);
   });
 
+  it('describes a case study with its hand-written seoDescription when it has one', () => {
+    const content = seoContentFor('lv');
+    const seoDescription = 'A hand-written summary of the Rokber case study, short enough for a search result and a share card, in whole words.';
+    const projects = content.projects.map((project) => (project.slug === 'rokber' ? { ...project, seoDescription } : project));
+    const seo = buildSeo({ path: '/projects/rokber', lang: 'lv', content: { ...content, projects } });
+    const page = graph(seo).find((node) => node['@id'] === `${seo.canonical}#webpage`) as GraphNode;
+    expect(seo.description).toBe(seoDescription);
+    expect(page.description).toBe(seoDescription);
+  });
+
+  it('summarises the description of a case study without a seoDescription', () => {
+    const project = seoContentFor('en').projects.find((p) => p.slug === 'rokber');
+    expect(project?.seoDescription).toBeUndefined();
+    expect(project?.description.startsWith(seoFor('/projects/rokber', 'en').description)).toBe(true);
+  });
+
   it('builds localized breadcrumbs with locale-prefixed URLs', () => {
     const seo = seoFor('/services/devops', 'lv');
     const crumbs = nodeOfType(seo, 'BreadcrumbList') as GraphNode;

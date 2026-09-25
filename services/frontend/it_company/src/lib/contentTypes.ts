@@ -23,6 +23,11 @@ export interface Project {
   id: string;
   title: string;
   description: string;
+  /**
+   * Hand-written search and share copy (120 to 160 characters) for a case
+   * study whose description is too long to summarise in whole sentences.
+   */
+  seoDescription?: string;
   image: string;
   website: string;
   appStoreUrl?: string;

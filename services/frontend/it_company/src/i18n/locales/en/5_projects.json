@@ -3,6 +3,7 @@
     "id": "confidential-event-intelligence-platform",
     "title": "Event Intelligence Platform (NDA)",
     "description": "A confidential event discovery and collaborative planning platform that transforms fragmented public information from 20+ ticketing, venue, cultural, and municipal sources into structured, searchable events. Python ingestion and AI-assisted extraction handle inconsistent websites, while LLM workflows categorize, enrich, and validate content before it reaches web and mobile experiences.",
+    "seoDescription": "Event discovery and collaborative planning platform where Python and AI turn 20+ ticketing, venue, cultural and municipal sources into searchable events.",
     "image": "",
     "website": "",
     "caseStudyPath": "/projects/confidential-event-intelligence-platform",

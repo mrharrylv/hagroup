@@ -71,7 +71,8 @@ function caseStudyLines(content: SeoContent): string[] {
   const lines = content.projects.flatMap((project) => {
     const path = projectCasePath(project);
     if (!path || !indexable.has(path)) return [];
-    return [linkLine(project.title, absoluteUrl(path), summarize(project.description, LINE_SUMMARY_MAX, 70))];
+    const summary = project.seoDescription ?? summarize(project.description, LINE_SUMMARY_MAX, 70);
+    return [linkLine(project.title, absoluteUrl(path), summary)];
   });
   return ['## Case studies', '', ...lines];
 }

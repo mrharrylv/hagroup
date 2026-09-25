@@ -31,7 +31,7 @@ function pageCopy(route: ResolvedRoute, content: SeoContent): { title: string; d
   if (route.kind === 'project' && route.project) {
     return {
       title: `${route.project.title} | ${content.seo.projectTitleSuffix}`,
-      description: summarize(route.project.description, DESCRIPTION_MAX, DESCRIPTION_MIN),
+      description: route.project.seoDescription ?? summarize(route.project.description, DESCRIPTION_MAX, DESCRIPTION_MIN),
     };
   }
   const key = route.kind === 'notFound' ? NOT_FOUND_PATH : route.canonicalPath;

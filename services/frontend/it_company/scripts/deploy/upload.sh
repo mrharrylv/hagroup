@@ -10,6 +10,10 @@
 # at a time. Any failed upload fails the script, and a phase 1 failure means
 # no HTML is uploaded at all.
 #
+# Safety: a plan with no rows, or with no row for the root index.html, is
+# refused before anything is uploaded (it is not a real build), mirroring
+# cleanup.sh, which would otherwise delete the live assets afterwards.
+#
 # Usage: upload.sh <bucket> <distDir>
 
 set -euo pipefail
@@ -25,6 +29,7 @@ usage() {
 BUCKET="$1"
 DIST_DIR="${2%/}"
 PARALLELISM="${UPLOAD_PARALLELISM:-8}"
+ROOT_KEY="index.html"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 if [ ! -d "$DIST_DIR" ]; then
@@ -40,6 +45,14 @@ trap 'rm -f "$PLAN_FILE"' EXIT
 
 if ! node "$SCRIPT_DIR/plan.mjs" "$DIST_DIR" > "$PLAN_FILE"; then
   echo "upload: could not plan the upload; nothing was uploaded" >&2
+  exit 1
+fi
+if ! awk 'NF { found = 1 } END { exit !found }' "$PLAN_FILE"; then
+  echo "upload: the plan for $DIST_DIR is empty, so it is not a real build; nothing was uploaded" >&2
+  exit 1
+fi
+if ! awk -F '\t' -v root="$ROOT_KEY" '$2 == root && $5 == "html" { found = 1 } END { exit !found }' "$PLAN_FILE"; then
+  echo "upload: the plan for $DIST_DIR has no row for the root $ROOT_KEY, so it is not a real build; nothing was uploaded" >&2
   exit 1
 fi
 

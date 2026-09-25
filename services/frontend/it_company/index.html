@@ -11,12 +11,16 @@
       so there is nothing to flash, and ThemeProvider only reads the class.
 
       Language: it is part of the URL (/lv/..., /ru/..., English at the root).
-      A visitor who picked Latvian or Russian before, and now opens an
-      unprefixed URL, is moved to the same page in their language with
-      history.replaceState before the app boots. Crawlers have no storage and
-      get the URL's own content, the same as every first-time visitor. #root
-      is hidden while the app replaces the English markup, at most 3 s.
-      <html lang> follows the final URL (WCAG 3.1.1).
+      A visitor who picked Latvian or Russian before, and now comes to the
+      bare home URL from outside the site (typed, a bookmark, another site),
+      is moved to /lv or /ru with history.replaceState before the app boots.
+      Any other URL is shown in the language it is in: a deep link, a link
+      opened from this site (the switcher's EN link in a new tab carries this
+      site as its referrer, under the default Referrer-Policy), a reload and
+      Back. Crawlers have no storage and get the URL's own content, the same
+      as every first-time visitor. #root is hidden while the app replaces the
+      English markup, at most 3 s. <html lang> follows the final URL
+      (WCAG 3.1.1).
 
       Inline on purpose: an external file would be a second round-trip, and
       the flash is exactly as long as that trip.
@@ -49,18 +53,20 @@
 
         var match = /^\/(lv|ru)(?=\/|$)/.exec(path);
         var lang = match ? match[1] : 'en';
-        if (!match) {
+        if (path === '/') {
           try {
+            var fromThisSite = document.referrer.indexOf(location.origin + '/') === 0;
+            var entry = performance.getEntriesByType('navigation')[0];
+            var reopened = entry && (entry.type === 'reload' || entry.type === 'back_forward');
             var saved = localStorage.getItem('cloudie-lang');
-            if (saved === 'lv' || saved === 'ru') {
-              var rest = path === '/' ? '' : path;
-              history.replaceState(history.state, '', '/' + saved + rest + location.search + location.hash);
+            if (!fromThisSite && !reopened && (saved === 'lv' || saved === 'ru')) {
+              history.replaceState(history.state, '', '/' + saved + location.search + location.hash);
               lang = saved;
               root.classList.add('reroute-hide');
               setTimeout(function () { root.classList.remove('reroute-hide'); }, 3000);
             }
           } catch (e) {
-            // Storage blocked: stay on the URL as opened.
+            // Storage blocked, or no Navigation Timing: stay on the URL as opened.
           }
         }
         root.lang = lang;

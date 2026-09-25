@@ -15,6 +15,8 @@ vi.mock('./lib/firebase', () => import('./lib/firebase.ssr'));
  */
 
 const LAZY_ROUTES = ['/services/devops', '/lv/contact', '/ru/about', '/legal/terms'];
+/** Pages with a form: the contact page, the home page's contact section and the careers page. */
+const FORM_ROUTES = ['/contact', '/lv/contact', '/', '/careers', '/ru/careers'];
 
 interface BootResult {
   /** The first element the prerender put inside the Suspense boundary. */
@@ -85,7 +87,7 @@ async function bootPrerendered(url: string, theme: 'light' | 'dark', searchAndHa
 
 describe('main.tsx on a prerendered lazy route', () => {
   beforeAll(async () => {
-    prerendered = await prerenderAll(LAZY_ROUTES);
+    prerendered = await prerenderAll([...new Set([...LAZY_ROUTES, ...FORM_ROUTES])]);
   });
 
   beforeEach(() => {
@@ -143,5 +145,46 @@ describe('main.tsx on a prerendered lazy route', () => {
     expect(isHydrated(original)).toBe(true);
     const logged = vi.mocked(console.error).mock.calls.map((args) => args.map(String).join(' '));
     expect(logged.filter((line) => line.includes("didn't match"))).toEqual([]);
+  });
+
+  describe('with a form', () => {
+    /** Every control a visitor can type into, pick or press. */
+    const CONTROLS = 'input, select, textarea, button';
+
+    it.each(FORM_ROUTES)('%s: the prerendered form takes no input and cannot send it by GET', (url) => {
+      // Text typed before hydration stays on screen but never reaches React's
+      // state, so the form looked filled in and could not be sent.
+      const template = document.createElement('template');
+      template.innerHTML = prerendered.get(url) ?? '';
+      const forms = [...template.content.querySelectorAll('form')];
+
+      expect(forms).toHaveLength(1);
+      const [form] = forms;
+      expect(form.getAttribute('method')).toBe('post');
+      const controls = [...form.querySelectorAll(CONTROLS)];
+      expect(controls.length).toBeGreaterThan(3);
+      for (const control of controls) {
+        expect(control.closest('fieldset')?.hasAttribute('disabled'), control.outerHTML.slice(0, 80)).toBe(true);
+      }
+    });
+
+    it.each(FORM_ROUTES)('%s: enables the form in place once hydrated', async (url) => {
+      const { original, mutations } = await bootPrerendered(url, 'light');
+
+      await vi.waitFor(() => {
+        const form = document.querySelector('form');
+        expect(form?.querySelector('fieldset')?.hasAttribute('disabled')).toBe(false);
+      }, { timeout: 5000, interval: 20 });
+      const form = document.querySelector('form');
+      expect(form?.getAttribute('method')).toBe('post');
+      // The server's fieldset and inputs, adopted by React rather than replaced.
+      const fieldset = form?.querySelector('fieldset');
+      expect(fieldset && isHydrated(fieldset)).toBe(true);
+      expect([...(fieldset?.querySelectorAll('input, textarea') ?? [])].every(isHydrated)).toBe(true);
+      expect(mutations).toEqual([]);
+      expect(isHydrated(original)).toBe(true);
+      const logged = vi.mocked(console.error).mock.calls.map((args) => args.map(String).join(' '));
+      expect(logged.filter((line) => /hydrat|didn't match/i.test(line))).toEqual([]);
+    });
   });
 });

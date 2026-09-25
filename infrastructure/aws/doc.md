@@ -168,16 +168,47 @@ These environments are referenced by the deploy workflow for OIDC role assumptio
 
 ### First deploy (manual)
 
-```bash
-# Build locally
-cd services/frontend/it_company
-npm ci && npm run build
+Never use `aws s3 sync --delete` against the bucket: prerendered pages live under extensionless keys (`services/devops`, `lv`) that `dist/` has no files for, so it would delete every page, and a plain sync uploads them under keys CloudFront never requests. Use the deploy scripts, which set every object's key, Content-Type and Cache-Control. The same sequence, with its reasons, is in [infrastructure/doc.md, "Manual Deploy (if needed)"](../doc.md#manual-deploy-if-needed); the keys are explained in ["Key mapping"](../doc.md#key-mapping).
 
-# Upload to dev
-aws s3 sync dist/ s3://dev-hagroup-website --delete
-aws cloudfront create-invalidation \
-  --distribution-id $(cd ../../infrastructure/terraform && terraform output -raw cloudfront_distribution_id) \
-  --paths "/*"
+Do not take the distribution ID from `terraform output`: it answers for whichever state key `terraform init` used last, and Step 3 leaves that on prod, so a dev deploy would invalidate the prod distribution. The block below sets the environment once and derives both the bucket and the distribution from it; it finds the distribution by the comment Terraform gives it (`<env> - hagroup website`), as `.github/workflows/deploy.yaml` does, and stops before any upload when there is none.
+
+Run it in bash from the repository root. The parentheses make a subshell, so the first failing command stops the whole procedure without closing your terminal.
+
+```bash
+(
+  set -euo pipefail
+  DEPLOY_ENV=dev   # dev or prod
+  BUCKET="$DEPLOY_ENV-hagroup-website"
+
+  # The CloudFront distribution of this environment, or stop
+  DIST_ID=$(aws cloudfront list-distributions \
+    --query "DistributionList.Items[?Comment=='$DEPLOY_ENV - hagroup website'].Id | [0]" \
+    --output text)
+  if [ -z "$DIST_ID" ] || [ "$DIST_ID" = "None" ] || [ "$DIST_ID" = "null" ]; then
+    echo "No CloudFront distribution for $DEPLOY_ENV; stopping, nothing was uploaded." >&2
+    exit 1
+  fi
+  echo "Deploying to s3://$BUCKET, CloudFront $DIST_ID"
+
+  # Build locally
+  cd services/frontend/it_company
+  npm ci
+  npm run build
+
+  # The S3 keys this build owns, for Phase 4
+  KEYS_FILE=$(mktemp)
+  node scripts/deploy/plan.mjs dist --keys > "$KEYS_FILE"
+
+  # Phases 1 and 2: assets first, HTML pages last
+  bash scripts/deploy/upload.sh "$BUCKET" dist
+
+  # Phase 3: invalidate and wait
+  INV_ID=$(aws cloudfront create-invalidation --distribution-id "$DIST_ID" --paths "/*" --query 'Invalidation.Id' --output text)
+  aws cloudfront wait invalidation-completed --distribution-id "$DIST_ID" --id "$INV_ID"
+
+  # Phase 4: delete keys that are not in this build
+  bash scripts/deploy/cleanup.sh "$BUCKET" "$KEYS_FILE"
+)
 ```
 
 ### Ongoing deploys (automated)
@@ -185,7 +216,7 @@ aws cloudfront create-invalidation \
 Push to `main` → GitHub Actions auto-deploys to **prod**.
 Manual dispatch → Select **dev** (or prod) to deploy on demand.
 
-Workflow: `.github/workflows/deploy.yaml`
+Workflow: `.github/workflows/deploy.yaml`. Runs that target one environment run one at a time, in the order they were triggered (a workflow-level concurrency group per environment). A run still waiting when a newer one is triggered is cancelled, so some pushes show as cancelled in Actions and the newest commit deploys last.
 
 ### Zero-Downtime Deployment
 
@@ -193,10 +224,10 @@ The deploy workflow uses a **4-phase additive strategy**:
 
 | Phase | Action                               | Effect                                     |
 | ----- | ------------------------------------ | ------------------------------------------ |
-| 1     | Upload hashed assets (JS, CSS, etc.) | Old + new coexist, no user impact          |
-| 2     | Upload `index.html` last             | Atomic swap to new asset references        |
+| 1     | Upload every non-HTML file (hashed assets, icons, robots, sitemap, llms) | Old + new coexist, no user impact |
+| 2     | Upload the HTML pages last (`index.html` and the prerendered pages) | Swap to new asset references |
 | 3     | Invalidate CloudFront + wait         | All edge caches serve new content          |
-| 4     | Delete orphaned files                | Old hashed assets removed, bucket stays clean |
+| 4     | Delete keys missing from the build's `keys.txt` | Old hashed assets removed, bucket stays clean |
 
 **Safety net:** S3 lifecycle rules auto-expire noncurrent object versions after 7 days and abort incomplete multipart uploads after 1 day — even if Phase 4 is skipped, the bucket won't grow indefinitely.
 

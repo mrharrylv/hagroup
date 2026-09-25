@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import { Link, useParams, Navigate } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { projectImageClass, useProjectsData, type Project } from '../../lib/content';
 import ProjectCTA from '../../components/sections/ProjectCTA';
 import RokberPreview from '../../components/projects/RokberPreview';
+import NotFoundPage from '../NotFoundPage';
 
 /* ── Gradient initials helper ── */
 function getInitials(title: string): string {
@@ -307,7 +308,9 @@ export default function ProjectPage() {
     window.scrollTo(0, 0);
   }, []);
 
-  if (!project) return <Navigate to="/projects" replace />;
+  // An unknown slug is a missing page, not a redirect: a redirect to the
+  // listing reads to search engines as a soft 404.
+  if (!project) return <NotFoundPage />;
 
   const externalWebsite = project.website.startsWith('http') ? project.website : null;
   const domain = externalWebsite

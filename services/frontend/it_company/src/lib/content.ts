@@ -29,42 +29,11 @@ import enBudgets from '../i18n/locales/en/9_budgets.json';
 import lvBudgets from '../i18n/locales/lv/9_budgets.json';
 import ruBudgets from '../i18n/locales/ru/9_budgets.json';
 
-export type Lang = 'en' | 'lv' | 'ru';
+import { isLang, DEFAULT_LOCALE, type Lang } from '../i18n/locales';
+import type { Project, Review } from './contentTypes';
 
-/** Shape of a review entry (language already resolved) */
-export interface Review {
-  id: string;
-  name: string;
-  title: string;
-  company: string;
-  description: string;
-  rating: number;
-  date: string;
-  image: string;
-  projectId: string | null;
-  featured: boolean;
-}
-
-/** Shape of a project entry (language already resolved) */
-export interface Project {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  website: string;
-  appStoreUrl?: string;
-  playStoreUrl?: string;
-  caseStudyPath?: string;
-  slug: string;
-  tags: string[];
-  year?: number;
-  featured: boolean;
-  client: string;
-  role: string;
-  duration: string;
-  technologies: string[];
-  highlights: string[];
-}
+export type { Lang } from '../i18n/locales';
+export type { Project, Review } from './contentTypes';
 
 /**
  * Projects whose `image` is a wordmark rather than a screenshot.
@@ -86,7 +55,7 @@ export function projectImageClass(slug: string, padding: string): string {
 /* ── helpers ── */
 function useLang(): Lang {
   const { i18n } = useTranslation();
-  return (i18n.language || 'en') as Lang;
+  return isLang(i18n.language) ? i18n.language : DEFAULT_LOCALE;
 }
 
 function pick<T>(map: Record<Lang, T>, lang: Lang): T {

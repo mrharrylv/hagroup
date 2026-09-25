@@ -34,14 +34,14 @@ export default function AboutPage() {
           <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-5 transition-transform duration-300 group-hover:scale-110">
             <iconify-icon icon="solar:target-linear" width="24" />
           </div>
-          <h3 className="text-lg font-semibold text-zinc-900 dark:text-white mb-3">{t('about.mission.title')}</h3>
+          <h2 className="text-lg font-semibold text-zinc-900 dark:text-white mb-3">{t('about.mission.title')}</h2>
           <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{t('about.mission.text')}</p>
         </div>
         <div className="group p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/30 transition-all duration-300 hover:border-indigo-500/50 dark:hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/5 hover:scale-[1.02]">
           <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-5 transition-transform duration-300 group-hover:scale-110">
             <iconify-icon icon="solar:eye-linear" width="24" />
           </div>
-          <h3 className="text-lg font-semibold text-zinc-900 dark:text-white mb-3">{t('about.vision.title')}</h3>
+          <h2 className="text-lg font-semibold text-zinc-900 dark:text-white mb-3">{t('about.vision.title')}</h2>
           <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{t('about.vision.text')}</p>
         </div>
       </div>

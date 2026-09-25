@@ -1,0 +1,109 @@
+{
+  "_comment": "Search and share copy per route: the <title>, meta description and og tags. Paths are unprefixed; /lv and /ru pages use the same keys in their own file. Project pages use the project title plus projectTitleSuffix and the project seoDescription, or a summary of its description. breadcrumbs and names are what the page itself shows (a nav or footer label, or its h1): the BreadcrumbList names and the llms.txt link labels. Keep the three files key-identical.",
+  "siteName": "HA Group",
+  "ogImageAlt": "HA Group cloud logo with the tagline DevOps, cloud & custom software, Rīga, Latvia",
+  "projectTitleSuffix": "Case Study | HA Group",
+  "breadcrumbs": {
+    "home": "HA Group",
+    "services": "Services",
+    "projects": "Our Work",
+    "legal": "Legal"
+  },
+  "names": {
+    "/about": "About Us",
+    "/contact": "Contact",
+    "/careers": "Careers",
+    "/company-details": "Company Details",
+    "/reviews": "Client Testimonials",
+    "/balticgp": "BalticGP",
+    "/legal/terms": "Terms & Conditions",
+    "/legal/privacy": "Privacy Policy",
+    "/legal/cookies": "Cookie Policy"
+  },
+  "pages": {
+    "/": {
+      "title": "DevOps, Cloud & Software Development in Latvia | HA Group",
+      "description": "HA Group is an IT company in Riga building custom software and websites, CI/CD and Kubernetes platforms, and cloud migrations to AWS, Azure or Google Cloud."
+    },
+    "/services": {
+      "title": "IT Services in Latvia: DevOps, Cloud, Software | HA Group",
+      "description": "IT services for small and medium businesses, including websites, custom software, cloud migration, DevOps, IT infrastructure, AI integration and IT consulting."
+    },
+    "/services/website-development": {
+      "title": "Website Development in Riga, Latvia | HA Group",
+      "description": "Fast, accessible websites built with React, Next.js and TypeScript: custom UI/UX design, technical SEO, WCAG 2.1 AA, CMS integration and ongoing support."
+    },
+    "/services/system-development": {
+      "title": "Custom Software Development in Latvia | HA Group",
+      "description": "Custom business systems, APIs and internal tools on Node.js, Python and PostgreSQL, with secure sign-in, CRM and payment integrations, plus documentation."
+    },
+    "/services/cloud-migration": {
+      "title": "Cloud Migration & AWS Consulting in Latvia | HA Group",
+      "description": "Move to AWS, Azure or Google Cloud with a plan: workload assessment, landing zone design, Terraform automation, a coordinated cutover and FinOps cost control."
+    },
+    "/services/devops": {
+      "title": "DevOps Consulting & CI/CD Services in Latvia | HA Group",
+      "description": "CI/CD pipelines, Terraform infrastructure as code, Docker and Kubernetes, GitOps and Prometheus monitoring, handed over with runbooks and team training."
+    },
+    "/services/it-infrastructure": {
+      "title": "IT Infrastructure Maintenance & Support in Riga | HA Group",
+      "description": "24/7 monitoring and alerting, security patching, Linux and Windows Server administration, help desk support and monthly health reports for your systems."
+    },
+    "/services/full-cycle": {
+      "title": "Full-Cycle Software Development, Idea to Launch | HA Group",
+      "description": "One team from discovery workshops and UX/UI design to React and Node.js development, CI/CD, launch and maintenance, with a demo every two weeks."
+    },
+    "/services/ai-integration": {
+      "title": "AI Integration Services for Business in Latvia | HA Group",
+      "description": "Machine learning, NLP chatbots, document processing and computer vision added to your existing systems with Python, PyTorch, OpenAI and Anthropic models."
+    },
+    "/services/consulting": {
+      "title": "IT Consulting in Riga: Tech Audits & Roadmaps | HA Group",
+      "description": "Technology audits, architecture reviews, digital transformation roadmaps, IT budget and vendor planning and GDPR guidance, with support while you implement."
+    },
+    "/projects": {
+      "title": "IT Projects & Case Studies | HA Group",
+      "description": "Case studies: multilingual websites on AWS, a Terraform and Azure DevOps modernization, an AI event data platform and the BalticGP motorcycle racing app."
+    },
+    "/balticgp": {
+      "title": "BalticGP: Motorcycle Road Racing Calendar | HA Group",
+      "description": "BalticGP is a calendar app for riders and fans to find official motorcycle road races, training sessions and track days across the Baltics and Europe."
+    },
+    "/careers": {
+      "title": "Careers: Remote IT Jobs in Europe | HA Group",
+      "description": "Join HA Group, a remote-first IT company from Riga, with flexible hours, mentorship and learning budgets. Apply for an open position or send us your CV."
+    },
+    "/reviews": {
+      "title": "Client Reviews & Testimonials | HA Group",
+      "description": "Client reviews and testimonials for HA Group, a Riga IT company building software, websites, cloud and DevOps solutions for small and medium businesses."
+    },
+    "/contact": {
+      "title": "Contact Us: Discuss Your IT Project | HA Group",
+      "description": "Tell us about your website, software, cloud or DevOps project and budget. Send the form or message us on WhatsApp to reach the HA Group team."
+    },
+    "/about": {
+      "title": "About Us: IT Company in Riga, Latvia | HA Group",
+      "description": "HA Group (SIA HA Group) is an IT company in Riga helping small and medium businesses with custom software, websites, cloud, DevOps and IT infrastructure."
+    },
+    "/company-details": {
+      "title": "Company Details: Registration and VAT | HA Group",
+      "description": "SIA HA Group: registration number 40203724866, VAT number LV40203724866, registered office Valdeķu iela 1, Rīga, LV-1058, email info@hagroup.lv."
+    },
+    "/legal/terms": {
+      "title": "Terms and Conditions | HA Group",
+      "description": "Terms and conditions for using the HA Group website and contacting SIA HA Group, including how enquiries are handled and which law applies."
+    },
+    "/legal/privacy": {
+      "title": "Privacy Policy | HA Group",
+      "description": "How SIA HA Group processes the personal data you send through its website and contact forms, how long it is kept and how to use your GDPR rights."
+    },
+    "/legal/cookies": {
+      "title": "Cookie Policy | HA Group",
+      "description": "HA Group uses only necessary browser storage for language, theme, notice acknowledgement and form protection. No analytics, advertising or tracking cookies."
+    },
+    "/404": {
+      "title": "Page Not Found | HA Group",
+      "description": "The page you were looking for does not exist or has moved. Browse HA Group services, projects and contact details to find what you need."
+    }
+  }
+}

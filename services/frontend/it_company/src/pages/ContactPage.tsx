@@ -6,5 +6,5 @@ export default function ContactPage() {
     window.scrollTo(0, 0);
   }, []);
 
-  return <Contact />;
+  return <Contact headingLevel="h1" />;
 }

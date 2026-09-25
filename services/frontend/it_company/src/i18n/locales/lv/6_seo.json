@@ -1,0 +1,109 @@
+{
+  "_comment": "Search and share copy per route: the <title>, meta description and og tags. Paths are unprefixed; /lv and /ru pages use the same keys in their own file. Project pages use the project title plus projectTitleSuffix and the project seoDescription, or a summary of its description. breadcrumbs and names are what the page itself shows (a nav or footer label, or its h1): the BreadcrumbList names and the llms.txt link labels. Keep the three files key-identical.",
+  "siteName": "HA Group",
+  "ogImageAlt": "HA Group logotips ar mākoni un uzrakstu “DevOps, mākonis un programmatūra”, Rīga, Latvija",
+  "projectTitleSuffix": "Projekts | HA Group",
+  "breadcrumbs": {
+    "home": "HA Group",
+    "services": "Pakalpojumi",
+    "projects": "Mūsu projekti",
+    "legal": "Juridiskā informācija"
+  },
+  "names": {
+    "/about": "Par mums",
+    "/contact": "Kontakti",
+    "/careers": "Karjera",
+    "/company-details": "Uzņēmuma rekvizīti",
+    "/reviews": "Klientu atsauksmes",
+    "/balticgp": "BalticGP",
+    "/legal/terms": "Noteikumi un nosacījumi",
+    "/legal/privacy": "Privātuma politika",
+    "/legal/cookies": "Sīkdatņu politika"
+  },
+  "pages": {
+    "/": {
+      "title": "DevOps, mākoņpakalpojumi un programmatūra Latvijā | HA Group",
+      "description": "HA Group ir IT uzņēmums Rīgā, kas izstrādā programmatūru un mājaslapas, ievieš CI/CD un Kubernetes, kā arī veic migrāciju uz AWS, Azure vai Google Cloud."
+    },
+    "/services": {
+      "title": "IT pakalpojumi uzņēmumiem Latvijā | HA Group",
+      "description": "IT pakalpojumi mazajiem un vidējiem uzņēmumiem, tostarp mājaslapas, programmatūra, pāreja uz mākoni, DevOps, IT infrastruktūra, MI integrācija un konsultācijas."
+    },
+    "/services/website-development": {
+      "title": "Mājaslapu izstrāde Rīgā | HA Group",
+      "description": "Ātras un pieejamas mājaslapas ar React, Next.js un TypeScript: individuāls UI/UX dizains, tehniskais SEO, WCAG 2.1 AA, CMS integrācija un turpmāks atbalsts."
+    },
+    "/services/system-development": {
+      "title": "Programmatūras izstrāde pēc pasūtījuma | HA Group",
+      "description": "Pielāgotas uzņēmumu sistēmas, API un iekšējie rīki ar Node.js, Python un PostgreSQL: droša autentifikācija, CRM un maksājumu integrācijas, kā arī dokumentācija."
+    },
+    "/services/cloud-migration": {
+      "title": "Migrācija uz mākoni un AWS konsultācijas | HA Group",
+      "description": "Plānota pāreja uz AWS, Azure vai Google Cloud: darba slodžu novērtējums, landing zone, Terraform automatizācija, koordinēta pārslēgšana un FinOps."
+    },
+    "/services/devops": {
+      "title": "DevOps pakalpojumi un konsultācijas Latvijā | HA Group",
+      "description": "CI/CD ieviešana, Docker un Kubernetes, infrastruktūra kā kods ar Terraform, GitOps un Prometheus uzraudzība, kā arī dokumentācija un komandas apmācība."
+    },
+    "/services/it-infrastructure": {
+      "title": "IT infrastruktūras uzturēšana un atbalsts Rīgā | HA Group",
+      "description": "IT infrastruktūras uzraudzība 24/7, drošības ielāpi, Linux un Windows Server administrēšana, palīdzības dienests un ikmēneša pārskati par sistēmu stāvokli."
+    },
+    "/services/full-cycle": {
+      "title": "Pilna cikla programmatūras izstrāde | HA Group",
+      "description": "Viena komanda no izpētes un UX/UI dizaina līdz React un Node.js izstrādei, CI/CD, palaišanai un uzturēšanai. Paveikto demonstrējam ik pēc divām nedēļām."
+    },
+    "/services/ai-integration": {
+      "title": "Mākslīgā intelekta integrācija uzņēmumiem | HA Group",
+      "description": "Mašīnmācīšanās, tērzēšanas roboti, dokumentu apstrāde un datorredze, integrēti jūsu esošajās sistēmās ar Python, PyTorch un OpenAI vai Anthropic modeļiem."
+    },
+    "/services/consulting": {
+      "title": "IT konsultācijas Rīgā: tehnoloģiju audits | HA Group",
+      "description": "Tehnoloģiju audits, arhitektūras izvērtējums, digitālās transformācijas ceļvedis, IT budžeta plānošana un VDAR vadlīnijas, kā arī atbalsts ieviešanas laikā."
+    },
+    "/projects": {
+      "title": "IT projektu piemēri | HA Group",
+      "description": "Mūsu projekti: daudzvalodu mājaslapas AWS mākonī, infrastruktūras modernizācija ar Terraform un Azure DevOps, lietotne BalticGP un pasākumu platforma ar MI."
+    },
+    "/balticgp": {
+      "title": "BalticGP: motošosejas sacensību kalendārs | HA Group",
+      "description": "BalticGP ir kalendāra lietotne braucējiem un līdzjutējiem, kurā var atrast oficiālas motošosejas sacensības, treniņus un trases dienas Baltijā un Eiropā."
+    },
+    "/careers": {
+      "title": "Karjera: attālināts darbs IT jomā | HA Group",
+      "description": "Pievienojieties HA Group, IT uzņēmumam no Rīgas ar attālinātā darba kultūru, elastīgu darba laiku, mentoringu un mācību budžetu. Piesakieties vai nosūtiet CV."
+    },
+    "/reviews": {
+      "title": "Klientu atsauksmes | HA Group",
+      "description": "Klientu atsauksmes par HA Group, IT uzņēmumu Rīgā, kas mazajiem un vidējiem uzņēmumiem izstrādā programmatūru, mājaslapas, mākoņa un DevOps risinājumus."
+    },
+    "/contact": {
+      "title": "Sazinieties ar mums par IT projektu | HA Group",
+      "description": "Pastāstiet par savu mājaslapas, programmatūras, mākoņa vai DevOps projektu un budžetu. Aizpildiet formu vai rakstiet WhatsApp, lai sazinātos ar mums."
+    },
+    "/about": {
+      "title": "Par mums: IT uzņēmums Rīgā, Latvijā | HA Group",
+      "description": "HA Group (SIA HA Group) ir IT uzņēmums Rīgā: programmatūra, mājaslapas, mākoņrisinājumi, DevOps un IT infrastruktūra mazajiem un vidējiem uzņēmumiem."
+    },
+    "/company-details": {
+      "title": "Rekvizīti: reģistrācijas un PVN numurs | HA Group",
+      "description": "SIA HA Group reģistrācijas numurs 40203724866, PVN numurs LV40203724866, juridiskā adrese Valdeķu iela 1, Rīga, LV-1058, e-pasts info@hagroup.lv."
+    },
+    "/legal/terms": {
+      "title": "Lietošanas noteikumi | HA Group",
+      "description": "HA Group tīmekļvietnes lietošanas un saziņas ar SIA HA Group noteikumi: kā tiek izskatīti pieprasījumi un kuras valsts tiesības ir piemērojamas."
+    },
+    "/legal/privacy": {
+      "title": "Privātuma politika | HA Group",
+      "description": "Kā SIA HA Group apstrādā personas datus, ko nosūtāt tīmekļvietnē un saziņas formās, cik ilgi tos glabā un kā izmantot savas VDAR tiesības."
+    },
+    "/legal/cookies": {
+      "title": "Sīkdatņu politika | HA Group",
+      "description": "HA Group pārlūkā glabā tikai nepieciešamo: valodu, krāsu režīmu, paziņojuma apliecinājumu un formu aizsardzības datus, bez analītikas, reklāmas vai izsekošanas."
+    },
+    "/404": {
+      "title": "Lapa nav atrasta | HA Group",
+      "description": "Meklētā lapa neeksistē vai ir pārvietota. Apskatiet HA Group pakalpojumus, projektus un kontaktinformāciju, lai atrastu vajadzīgo."
+    }
+  }
+}

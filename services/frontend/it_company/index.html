@@ -5,85 +5,120 @@
     <!--
       Resolve the theme and the language before the first paint.
 
-      `class="dark"` used to be hardcoded here while ThemeProvider applied the
-      real theme in a useEffect — i.e. after React mounted, after first paint.
-      Every light-mode visitor got a full-screen black flash on every cold load.
-      Likewise `lang="en"` was never updated when the visitor switched language,
-      so Latvian and Russian content was announced by an English speech
-      synthesiser (WCAG 3.1.1).
+      Theme: `class="dark"` used to be hardcoded here while ThemeProvider
+      applied the real theme after React mounted, so every light-mode visitor
+      got a black flash on every cold load. This runs before the body exists,
+      so there is nothing to flash, and ThemeProvider only reads the class.
 
-      This runs before the body exists, so there is nothing to flash. It is
-      inline on purpose: an external file would be a second round-trip, and the
-      flash is exactly as long as that trip.
+      Language: it is part of the URL (/lv/..., /ru/..., English at the root).
+      A visitor who picked Latvian or Russian before, and now comes to the
+      bare home URL from outside the site (typed, a bookmark, another site),
+      is moved to /lv or /ru with history.replaceState before the app boots.
+      Any other URL is shown in the language it is in: a deep link, a link
+      opened from this site (the switcher's EN link in a new tab carries this
+      site as its referrer, under the default Referrer-Policy), a reload and
+      Back. Crawlers have no storage and get the URL's own content, the same
+      as every first-time visitor. #root is hidden while the app replaces the
+      English markup, at most 3 s. <html lang> follows the final URL
+      (WCAG 3.1.1).
+
+      Inline on purpose: an external file would be a second round-trip, and
+      the flash is exactly as long as that trip.
     -->
+    <style>
+      html.reroute-hide #root { visibility: hidden; }
+    </style>
     <script>
       (function () {
+        var root = document.documentElement;
         try {
           var t = localStorage.getItem('cloudie-theme');
           if (t !== 'light' && t !== 'dark') {
             t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
           }
-          document.documentElement.classList.add(t);
-
-          var l = localStorage.getItem('cloudie-lang');
-          if (l === 'en' || l === 'lv' || l === 'ru') document.documentElement.lang = l;
+          root.classList.add(t);
         } catch (e) {
           // Storage blocked (private mode, or site data disabled). The default
           // stylesheet is the light one, which is the safer thing to flash.
-          document.documentElement.classList.add('light');
+          root.classList.add('light');
         }
+
+        // One URL per page: /services/devops/ becomes /services/devops, the
+        // form every canonical, sitemap entry and link uses. A path that
+        // starts with // loses the extra slashes: links built from it would
+        // name another host, and replaceState to it throws. So does one with
+        // extra slashes right after /lv or /ru: /lv//services becomes
+        // /lv/services, as //services becomes /services (the Latvian router
+        // would get //services and match nothing).
+        var path = location.pathname;
+        var normal = path.replace(/^\/{2,}/, '/').replace(/^\/(lv|ru)\/{2,}/, '/$1/');
+        if (normal.length > 1) normal = normal.replace(/\/+$/, '') || '/';
+        if (normal !== path) {
+          path = normal;
+          history.replaceState(history.state, '', path + location.search + location.hash);
+        }
+
+        var match = /^\/(lv|ru)(?=\/|$)/.exec(path);
+        var lang = match ? match[1] : 'en';
+        if (path === '/') {
+          try {
+            var fromThisSite = document.referrer.indexOf(location.origin + '/') === 0;
+            var entry = performance.getEntriesByType('navigation')[0];
+            var reopened = entry && (entry.type === 'reload' || entry.type === 'back_forward');
+            var saved = localStorage.getItem('cloudie-lang');
+            if (!fromThisSite && !reopened && (saved === 'lv' || saved === 'ru')) {
+              history.replaceState(history.state, '', '/' + saved + location.search + location.hash);
+              lang = saved;
+              root.classList.add('reroute-hide');
+              setTimeout(function () { root.classList.remove('reroute-hide'); }, 3000);
+            }
+          } catch (e) {
+            // Storage blocked, or no Navigation Timing: stay on the URL as opened.
+          }
+        }
+        root.lang = lang;
       })();
     </script>
-    <link rel="icon" href="/brand/favicon.ico" sizes="48x48" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/brand/favicon-96x96.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon-180x180.png" />
-    <link rel="manifest" href="/brand/site.webmanifest" />
+    <!--
+      Search and share images live at the site root, generated by
+      `npm run images` from brand-source/. They are opaque on purpose: the
+      /brand/* artwork is white on transparent and vanishes on Google's white
+      result page. Keep these URLs stable; Google refetches a favicon URL, it
+      does not go looking for a new one.
+    -->
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#09090b" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="description" content="Latvian IT company delivering custom software, websites, cloud architecture, DevOps automation, AI integration and practical technology consulting." />
-    <link rel="canonical" href="https://www.hagroup.lv/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="HA Group" />
-    <meta property="og:locale" content="en_GB" />
-    <meta property="og:title" content="HA Group | Custom Software, Cloud & DevOps" />
-    <meta property="og:description" content="Latvian IT company delivering custom software, websites, cloud architecture, DevOps automation, AI integration and practical technology consulting." />
-    <meta property="og:url" content="https://www.hagroup.lv/" />
-    <meta property="og:image" content="https://www.hagroup.lv/brand/ha-group-logo-transparent-512w.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="HA Group | Custom Software, Cloud & DevOps" />
-    <meta name="twitter:description" content="Custom software, cloud architecture, DevOps, AI integration and IT consulting from Latvia." />
-    <meta name="twitter:image" content="https://www.hagroup.lv/brand/ha-group-logo-transparent-512w.png" />
-    <title>HA Group | Custom Software, Cloud &amp; DevOps</title>
-    <script type="application/ld+json" data-seo="structured-data">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "@id": "https://www.hagroup.lv/#organization",
-            "name": "HA Group",
-            "legalName": "SIA HA Group",
-            "url": "https://www.hagroup.lv",
-            "logo": "https://www.hagroup.lv/brand/ha-group-logo-transparent-512w.png",
-            "email": "info@hagroup.lv",
-            "telephone": "+37126259293",
-            "vatID": "LV40203724866",
-            "taxID": "40203724866"
-          },
-          {
-            "@type": "WebSite",
-            "@id": "https://www.hagroup.lv/#website",
-            "url": "https://www.hagroup.lv/",
-            "name": "HA Group",
-            "publisher": { "@id": "https://www.hagroup.lv/#organization" },
-            "inLanguage": ["en", "lv", "ru"]
-          }
-        ]
-      }
+    <!--
+      Everything between the seo-head markers is replaced per page at build
+      time by scripts/prerender.mjs (title, description, robots, canonical,
+      hreflang, Open Graph, Twitter and JSON-LD; see src/seo/). In the browser
+      the Seo component updates the same data-seo tags in place.
+    -->
+    <!--seo-head-->
+    <title data-seo="title">HA Group</title>
+    <!--/seo-head-->
+    <!--
+      This file is also what CloudFront answers for a URL that has no page of
+      its own (an unknown path, or a trailing-slash URL): the English home.
+      main.tsx throws that markup away and renders the right page, and this
+      keeps it from being seen meanwhile. The canonical says which URL the
+      markup was rendered for; the dev server's index.html has none.
+    -->
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var canonical = document.querySelector('link[data-seo="canonical"]');
+        if (!canonical || root.classList.contains('reroute-hide')) return;
+        if (new URL(canonical.href).pathname !== location.pathname) {
+          root.classList.add('reroute-hide');
+          setTimeout(function () { root.classList.remove('reroute-hide'); }, 3000);
+        }
+      })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

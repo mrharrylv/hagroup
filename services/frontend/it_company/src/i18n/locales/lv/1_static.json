@@ -117,7 +117,8 @@
   },
   "servicePages": {
     "backToServices": "Atpakaļ uz pakalpojumiem",
-    "getStarted": "Sākt"
+    "getStarted": "Sākt",
+    "faqTitle": "Biežāk uzdotie jautājumi"
   },
   "careers": {
     "backHome": "Atpakaļ uz sākumu",
@@ -308,5 +309,12 @@
       "Organizatoru administratori var pārvaldīt savus pasākumus",
       "Moderācijas lēmumi tiek reģistrēti pārredzamības nodrošināšanai"
     ]
+  },
+  "notFound": {
+    "title": "Lapa nav atrasta",
+    "text": "Meklētā lapa neeksistē vai ir pārvietota. Šīs saites palīdzēs atrast vajadzīgo.",
+    "homeLink": "Uz sākumlapu",
+    "servicesLink": "Apskatīt pakalpojumus",
+    "contactLink": "Sazināties ar mums"
   }
 }

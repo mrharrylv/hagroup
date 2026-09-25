@@ -19,9 +19,10 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Services */}
+          {/* Services. Column titles are labels, not headings: the footer
+              repeats on every page and is not part of the page's outline. */}
           <div>
-            <h4 className="text-sm font-semibold text-zinc-900 dark:text-white mb-4">{t('footer.services.title')}</h4>
+            <p className="text-sm font-semibold text-zinc-900 dark:text-white mb-4">{t('footer.services.title')}</p>
             <ul className="space-y-3">
               <li><Link to="/services/website-development" className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">{t('footer.services.websiteDevelopment')}</Link></li>
               <li><Link to="/services/system-development" className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">{t('footer.services.systemDevelopment')}</Link></li>
@@ -36,7 +37,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-sm font-semibold text-zinc-900 dark:text-white mb-4">{t('footer.company.title')}</h4>
+            <p className="text-sm font-semibold text-zinc-900 dark:text-white mb-4">{t('footer.company.title')}</p>
             <ul className="space-y-3">
               <li><Link to="/about" className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">{t('footer.company.aboutUs')}</Link></li>
               <li><Link to="/careers" className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">{t('footer.company.careers')}</Link></li>
@@ -47,7 +48,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-sm font-semibold text-zinc-900 dark:text-white mb-4">{t('footer.legal.title')}</h4>
+            <p className="text-sm font-semibold text-zinc-900 dark:text-white mb-4">{t('footer.legal.title')}</p>
             <ul className="space-y-3">
               <li><Link to="/legal/terms" className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">{t('footer.legal.terms')}</Link></li>
               <li><Link to="/legal/privacy" className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">{t('footer.legal.privacy')}</Link></li>

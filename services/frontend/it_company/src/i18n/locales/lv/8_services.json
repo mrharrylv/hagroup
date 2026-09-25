@@ -11,14 +11,14 @@
       "key": "systemDev",
       "icon": "solar:code-square-linear",
       "path": "/services/system-development",
-      "title": "Sistēmu izstrāde",
+      "title": "Programmatūras izstrāde",
       "description": "Uzticamas, uzņēmumu līmeņa programmatūras sistēmas, API un platformas, balstītas uz modernām arhitektūrām ilgtermiņa mērogojamībai."
     },
     {
       "key": "cloud",
       "icon": "solar:cloud-linear",
       "path": "/services/cloud-migration",
-      "title": "Mākonis un migrācija",
+      "title": "Migrācija uz mākoni",
       "description": "Stratēģiska daudzmākoņu arhitektūra, migrācija un optimizācija AWS, Azure un Google Cloud vidē, ievērojot nulles uzticēšanās drošības principus."
     },
     {
@@ -132,11 +132,38 @@
         { "name": "GraphQL", "icon": "logos:graphql" }
       ],
       "ctaTitle": "Gatavi izveidot savu mājaslapu?",
-      "ctaText": "Izveidosim mājaslapu, kas darbojas tikpat labi, cik izskatās. Sazinieties ar mūsu komandu, lai sāktu projektu."
+      "ctaText": "Izveidosim mājaslapu, kas darbojas tikpat labi, cik izskatās. Sazinieties ar mūsu komandu, lai sāktu projektu.",
+      "faqTitle": "Biežāk uzdotie jautājumi par mājaslapu izstrādi",
+      "faq": [
+        {
+          "question": "Kas ietilpst mājaslapas izstrādē?",
+          "answer": "Individuāls UI/UX dizains, responsīva izstrāde, veiktspējas optimizācija, tehniskais SEO ar strukturētiem datiem un vietnes karti, WCAG 2.1 AA pieejamība un CMS integrācija. Noslēgumā veicam kvalitātes un veiktspējas pārbaudi, izvietojam vietni un turpinām to uzturēt."
+        },
+        {
+          "question": "Ar kādām tehnoloģijām veidojat mājaslapas?",
+          "answer": "Parasti ar React, Next.js, TypeScript, Tailwind CSS un Vite, bet, ja vietnei vajadzīga servera puse, arī ar Node.js vai GraphQL. Varam strādāt arī ar jūsu izvēlēto tehnoloģiju kopumu."
+        },
+        {
+          "question": "Vai varēsim paši rediģēt saturu?",
+          "answer": "Jā. Ieviešam headless CMS vai tradicionālu satura pārvaldības sistēmu, lai jūsu komanda varētu patstāvīgi pārvaldīt saturu."
+        },
+        {
+          "question": "Vai izstrādājat mājaslapas latviešu, angļu un krievu valodā?",
+          "answer": "Jā. Piemēram, IEPAKO un HARent mājaslapas izveidojām latviešu, angļu un krievu valodā, un tās darbojas ar Amazon S3 un CloudFront."
+        },
+        {
+          "question": "Kā sākas projekts un cik tas maksā?",
+          "answer": "Aizpildiet saziņas formu ar īsu projekta aprakstu un, ja vēlaties, norādiet budžeta diapazonu: no mazāk nekā 10 000 € līdz 100 000 € un vairāk. Pēc tam par darba apjomu, cenu un termiņiem vienojamies rakstiskā piedāvājumā, pirms sākam darbu."
+        },
+        {
+          "question": "Kur atrodas HA Group?",
+          "answer": "HA Group (SIA HA Group) ir IT uzņēmums, kas reģistrēts Rīgā, Latvijā. Ar klientiem strādājam latviešu, angļu un krievu valodā."
+        }
+      ]
     },
     "systemDevelopment": {
       "icon": "solar:code-square-linear",
-      "title": "Sistēmu izstrāde",
+      "title": "Programmatūras izstrāde pēc pasūtījuma",
       "subtitle": "Uzņēmumu līmeņa programmatūras sistēmas, API un platformas, kas izstrādātas uzticamai darbībai, mērogojamībai un netraucētai integrācijai visā jūsu organizācijā.",
       "overviewTitle": "Uzticamas un mērogojamas sistēmas",
       "overviewText": "No CRM platformām un ERP sistēmām līdz pielāgotiem SaaS produktiem un iekšējiem rīkiem — mēs projektējam un izstrādājam programmatūru sarežģītu uzņēmējdarbības problēmu risināšanai. Sistēmas tiek veidotas augstai pieejamībai, datu integritātei un netraucētai integrācijai ar trešo pušu pakalpojumiem. Mēs izmantojam domēnorientētas projektēšanas principus un veidojam modulāru, testējamu kodu, kas attīstās kopā ar jūsu uzņēmumu.",
@@ -212,11 +239,38 @@
         { "name": "Elasticsearch", "icon": "logos:elasticsearch" }
       ],
       "ctaTitle": "Nepieciešama pielāgota sistēma?",
-      "ctaText": "Pastāstiet par sava uzņēmuma izaicinājumiem, un mēs izstrādāsim piemērotu risinājuma arhitektūru — no koncepcijas līdz ieviešanai gatavai sistēmai."
+      "ctaText": "Pastāstiet par sava uzņēmuma izaicinājumiem, un mēs izstrādāsim piemērotu risinājuma arhitektūru — no koncepcijas līdz ieviešanai gatavai sistēmai.",
+      "faqTitle": "Biežāk uzdotie jautājumi par programmatūras izstrādi",
+      "faq": [
+        {
+          "question": "Kādu programmatūru jūs izstrādājat?",
+          "answer": "CRM platformas, ERP sistēmas, pielāgotus SaaS produktus, iekšējos rīkus un API, kas veidoti augstai pieejamībai, datu integritātei un integrācijai ar trešo pušu pakalpojumiem."
+        },
+        {
+          "question": "Kādas tehnoloģijas izmantojat?",
+          "answer": "Parasti Node.js, Python un TypeScript ar PostgreSQL, MongoDB vai Redis un GraphQL vai REST API; izvietošanai Docker, Kubernetes un Terraform. Ziņojumu rindām un meklēšanai pēc vajadzības izmantojam RabbitMQ un Elasticsearch."
+        },
+        {
+          "question": "Vai jauno sistēmu var integrēt ar rīkiem, ko jau izmantojam?",
+          "answer": "Jā. Integrējam maksājumu vārtejas, ERP sistēmas, CRM un ārējos API, un jūsu datus aizsargā OAuth 2.0, SSO un uz lomām balstīta piekļuves kontrole."
+        },
+        {
+          "question": "Kā notiek izstrādes projekts?",
+          "answer": "Vispirms prasību analīze un arhitektūras projektēšana, pēc tam Agile sprinti ar nepārtrauktu integrāciju, testēšanu un demonstrācijām iesaistītajām pusēm. Noslēgumā izvietojam sistēmu produkcijas vidē, sagatavojam dokumentāciju, apmācām lietotājus un atbalstām pāreju uz jauno sistēmu."
+        },
+        {
+          "question": "Mikropakalpojumi vai monolīts?",
+          "answer": "Atkarībā no jūsu sistēmas mēroga. Arhitektūru izvēlamies projektēšanas posmā un, ievērojot domēnorientētas projektēšanas principus, veidojam modulāru un testējamu kodu."
+        },
+        {
+          "question": "Kā tiek noteikta projekta cena?",
+          "answer": "Par darba apjomu, cenu un termiņiem vienojamies rakstiskā piedāvājumā, pirms sākam darbu. Saziņas formā varat norādīt budžeta diapazonu: no mazāk nekā 10 000 € līdz 100 000 € un vairāk."
+        }
+      ]
     },
     "cloudMigration": {
       "icon": "solar:cloud-linear",
-      "title": "Mākonis un migrācija",
+      "title": "Migrācija uz mākoni un mākoņarhitektūra",
       "subtitle": "Pārdomāta mākoņrisinājumu ieviešana un migrācija uz AWS, Azure vai Google Cloud, optimizējot veiktspēju, drošību un izmaksas.",
       "overviewTitle": "Pareizi izstrādāta mākoņarhitektūra",
       "overviewText": "Pāreja uz mākoni ir kas vairāk par vienkāršu sistēmu pārvietošanu. Mēs izstrādājam mākoņvidēm paredzētu arhitektūru un migrācijas stratēģijas, kas ļauj pilnvērtīgi izmantot AWS, Azure vai GCP. No sākotnējā novērtējuma un darba slodžu analīzes līdz migrācijai un optimizācijai rūpējamies, lai pāreja būtu droša, vienmērīga un izmaksu ziņā efektīva. Mūsu komanda projektē mākoņa pamatvidi (landing zone), tīkla arhitektūru un drošības risinājumus, kā arī pastāvīgi optimizē mākoņa izmaksas.",
@@ -291,11 +345,38 @@
         { "name": "Vault", "icon": "logos:vault-icon" }
       ],
       "ctaTitle": "Plānojiet savu mākoņa migrāciju",
-      "ctaText": "Neatkarīgi no tā, vai mākonis jau ir jūsu stratēģijas pamatā vai tikai sākat pāreju, mūsu arhitekti izstrādās jūsu uzņēmumam piemērotu pieeju."
+      "ctaText": "Neatkarīgi no tā, vai mākonis jau ir jūsu stratēģijas pamatā vai tikai sākat pāreju, mūsu arhitekti izstrādās jūsu uzņēmumam piemērotu pieeju.",
+      "faqTitle": "Biežāk uzdotie jautājumi par migrāciju uz mākoni",
+      "faq": [
+        {
+          "question": "Ar kuriem mākoņpakalpojumu sniedzējiem strādājat?",
+          "answer": "Ar AWS, Microsoft Azure un Google Cloud, arī daudzmākoņu un hibrīdrisinājumos. Infrastruktūru automatizējam ar Terraform, CloudFormation vai Pulumi."
+        },
+        {
+          "question": "Kā notiek migrācija uz mākoni?",
+          "answer": "Četros posmos: darba slodžu, atkarību un atbilstības prasību novērtējums; mērķa arhitektūras, migrācijas viļņu un atcelšanas plāna izstrāde; migrācija ar automatizētiem rīkiem, validāciju un koordinētu pārslēgšanu; optimizācija pēc migrācijas."
+        },
+        {
+          "question": "Vai jūs vienkārši pārceļat serverus uz mākoni?",
+          "answer": "Tikai tad, ja tas ir pamatoti. Katrai darba slodzei izvēlamies piemērotāko pieeju: pārvietošanu bez izmaiņām (lift-and-shift), platformas maiņu vai arhitektūras pārveidi."
+        },
+        {
+          "question": "Kā kontrolējat mākoņa izmaksas?",
+          "answer": "Ar atbilstoša resursu apjoma izvēli, rezervētajiem un Spot resursiem, kā arī FinOps praksi: budžetiem, brīdinājumiem, marķēšanu un izmaksu sadales modeļiem."
+        },
+        {
+          "question": "Kā jūs nodrošināt drošību un atbilstību prasībām?",
+          "answer": "Izmantojam nulles uzticēšanās arhitektūru, IAM politikas un šifrēšanu, un risinājumu pielāgojam VDAR, SOC 2 vai HIPAA prasībām, ja tās uz jums attiecas."
+        },
+        {
+          "question": "Kādus migrācijas darbus esat veikuši?",
+          "answer": "Četru mēnešu infrastruktūras modernizācijas programmā lielam starptautiskam uzņēmumam (ievērojot NDA) izveidojām atkārtoti izmantojamus Terraform moduļus un Azure DevOps konveijerus, kā arī koordinējām datu migrāciju un produkcijas vides pārslēgšanu ASV un Eiropā."
+        }
+      ]
     },
     "devops": {
       "icon": "solar:server-path-linear",
-      "title": "DevOps un automatizācija",
+      "title": "DevOps konsultācijas un automatizācija",
       "subtitle": "Paātriniet programmatūras piegādi ar CI/CD automatizāciju, infrastruktūru kā kodu, konteineru orķestrēšanu un GitOps labāko praksi.",
       "overviewTitle": "Ieviesiet izmaiņas ātrāk un drošāk",
       "overviewText": "Mūsdienīgai programmatūrai nepieciešami ātri un uzticami laidieni. Mūsu DevOps pakalpojumi uzlabo programmatūras piegādi ar automatizētu CI/CD, konteinerizāciju un infrastruktūru kā kodu. Mēs ieviešam GitOps darbplūsmas, izveidojam visaptverošu uzraudzību un veidojam pašatjaunojošu infrastruktūru, kas automātiski mērogojas. Tādējādi risinājumi ātrāk nonāk tirgū, samazinās incidentu skaits un izstrādes komanda var strādāt efektīvāk.",
@@ -370,7 +451,34 @@
         { "name": "Vault", "icon": "logos:vault-icon" }
       ],
       "ctaTitle": "Modernizējiet programmatūras piegādi",
-      "ctaText": "Uzticiet mums savas infrastruktūras un programmatūras piegādes automatizāciju. Piesakiet konsultāciju, lai novērtētu DevOps procesu briedumu."
+      "ctaText": "Uzticiet mums savas infrastruktūras un programmatūras piegādes automatizāciju. Piesakiet konsultāciju, lai novērtētu DevOps procesu briedumu.",
+      "faqTitle": "Biežāk uzdotie jautājumi par DevOps",
+      "faq": [
+        {
+          "question": "Kas ietilpst DevOps pakalpojumos?",
+          "answer": "CI/CD konveijeri ar automatizētu būvēšanu, testēšanu, drošības pārbaudēm un izvietošanu, infrastruktūra kā kods, Docker un Kubernetes, novērojamība, DevSecOps un GitOps darbplūsmas."
+        },
+        {
+          "question": "Kādus CI/CD un infrastruktūras rīkus izmantojat?",
+          "answer": "Konveijeriem GitHub Actions, GitLab CI, Jenkins un Azure DevOps; infrastruktūrai Terraform, Pulumi vai CloudFormation; izvietošanai Helm un Kubernetes; uzraudzībai Prometheus un Grafana; konfigurācijas un slepeno vērtību pārvaldībai Ansible un Vault."
+        },
+        {
+          "question": "Vai mums būs jāmaina esošie rīki?",
+          "answer": "Ne obligāti. Vispirms novērtējam jūsu CI/CD procesu briedumu un vājās vietas, tad projektējam mērķa arhitektūru un izvēlamies rīkus, kas piemēroti jūsu tehnoloģijām un komandai."
+        },
+        {
+          "question": "Kā norit darbs?",
+          "answer": "Vispirms piegādes procesa novērtējums, arhitektūras un rīku izvēle, tad ieviešana, kurā veidojam konveijerus, konfigurējam infrastruktūru un pakāpeniski pārceļam darba slodzes. Noslēgumā nododam dokumentāciju un darbības instrukcijas un apmācām komandu, lai tā visu varētu pārvaldīt patstāvīgi."
+        },
+        {
+          "question": "Kādus DevOps projektus esat īstenojuši?",
+          "answer": "Lielam starptautiskam uzņēmumam (ievērojot NDA) četros mēnešos izstrādājām atkārtoti izmantojamu Terraform platformu un Azure DevOps konveijerus ar apstiprināšanas soļiem un kontrolētu virzību starp vidēm. Risinājumu ieviesām ASV un Eiropā."
+        },
+        {
+          "question": "Kur atrodas HA Group un kādās valodās strādājat?",
+          "answer": "HA Group (SIA HA Group) ir IT uzņēmums, kas reģistrēts Rīgā, Latvijā, un strādā latviešu, angļu un krievu valodā."
+        }
+      ]
     },
     "itInfrastructure": {
       "icon": "solar:server-path-linear",
@@ -448,11 +556,38 @@
         { "name": "Cloudflare", "icon": "logos:cloudflare-icon" }
       ],
       "ctaTitle": "Nepieciešams uzticams IT atbalsts?",
-      "ctaText": "Uzticiet mums savu infrastruktūru, lai varētu koncentrēties uz uzņēmuma attīstību. Sazinieties ar mūsu komandu par pārvaldītiem IT pakalpojumiem."
+      "ctaText": "Uzticiet mums savu infrastruktūru, lai varētu koncentrēties uz uzņēmuma attīstību. Sazinieties ar mūsu komandu par pārvaldītiem IT pakalpojumiem.",
+      "faqTitle": "Biežāk uzdotie jautājumi par IT infrastruktūras uzturēšanu",
+      "faq": [
+        {
+          "question": "Ko ietver infrastruktūras uzturēšana?",
+          "answer": "Uzraudzību un brīdinājumus 24/7, drošības ielāpus, plānotus operētājsistēmu un lietotņu atjauninājumus, serveru un tīkla pārvaldību, palīdzības dienestu un dokumentāciju ar ikmēneša stāvokļa pārskatiem."
+        },
+        {
+          "question": "Vai pārvaldāt lokālos serverus vai tikai mākoni?",
+          "answer": "Abus. Pārvaldām lokālos serverus un mākoņserverus ar Linux vai Windows Server, tostarp VMware vides un AWS."
+        },
+        {
+          "question": "Kā notiek infrastruktūras pārņemšana?",
+          "answer": "Sākam ar jūsu vides auditu, lai atrastu riskus un uzlabojumu iespējas. Pēc tam izvietojam uzraudzības aģentus, konfigurējam brīdinājumus un sagatavojam darbības instrukcijas, un tikai tad pārejam uz proaktīvu pārvaldību."
+        },
+        {
+          "question": "Kādas atskaites saņemsim?",
+          "answer": "Ikmēneša pārskatus par sistēmu stāvokli ar jaudas prognozēm, izmaksu optimizācijas ieteikumiem un attīstības ceļveža atjauninājumiem."
+        },
+        {
+          "question": "Kādus uzraudzības un automatizācijas rīkus izmantojat?",
+          "answer": "Uzraudzībai Prometheus un Grafana; automatizācijai Ansible un Terraform; tīmekļa datplūsmai Nginx un Cloudflare."
+        },
+        {
+          "question": "Kur atrodas HA Group?",
+          "answer": "HA Group (SIA HA Group) ir IT uzņēmums, kas reģistrēts Rīgā, Latvijā, un atbalsta klientus latviešu, angļu un krievu valodā."
+        }
+      ]
     },
     "fullCycle": {
       "icon": "solar:restart-circle-linear",
-      "title": "Pilna cikla izstrāde",
+      "title": "Pilna cikla programmatūras izstrāde",
       "subtitle": "Projekta īstenošana no sākuma līdz beigām, aptverot visus posmus — no koncepcijas un dizaina līdz izstrādei, izvietošanai un pastāvīgai pilnveidei.",
       "overviewTitle": "Viena komanda, pilns dzīves cikls",
       "overviewText": "Pilna cikla izstrāde nozīmē, ka viena komanda uzņemas atbildību par visu projektu no sākuma līdz beigām. Mēs nodrošinām prasību izpēti, UX/UI dizainu, klienta un servera puses izstrādi, kvalitātes pārbaudi, izvietošanu un atbalstu pēc palaišanas. Šāda pieeja samazina informācijas zudumu starp posmiem, vienkāršo saziņu un nodrošina vienmērīgu kvalitāti visa projekta gaitā.",
@@ -529,11 +664,38 @@
         { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" }
       ],
       "ctaTitle": "Sāciet savu projektu",
-      "ctaText": "No idejas līdz ražošanas videi ar vienu atbildīgu komandu. Apspriedīsim jūsu projekta apjomu un termiņus."
+      "ctaText": "No idejas līdz ražošanas videi ar vienu atbildīgu komandu. Apspriedīsim jūsu projekta apjomu un termiņus.",
+      "faqTitle": "Biežāk uzdotie jautājumi par pilna cikla izstrādi",
+      "faq": [
+        {
+          "question": "Ko nozīmē pilna cikla izstrāde?",
+          "answer": "Viena komanda atbild par visu projektu: izpētes darbnīcām, UX/UI dizainu, klienta un servera puses izstrādi, kvalitātes pārbaudi, izvietošanu un atbalstu pēc palaišanas. Tas samazina informācijas zudumus starp posmiem un vienkāršo saziņu."
+        },
+        {
+          "question": "Kā varēsim sekot līdzi projekta gaitai?",
+          "answer": "Izstrāde notiek Agile iterācijās ar automatizētu testēšanu, koda pārbaudēm un demonstrāciju ik pēc divām nedēļām."
+        },
+        {
+          "question": "Kādas tehnoloģijas izmantojat?",
+          "answer": "Klienta pusē React, Next.js, TypeScript un Tailwind CSS; servera pusē Node.js, Python un PostgreSQL; piegādei Docker, Kubernetes, Terraform, GitHub Actions un AWS. Dizainu veidojam Figmā."
+        },
+        {
+          "question": "Vai dizains tiek pārbaudīts pirms izstrādes?",
+          "answer": "Jā. Interaktīvos prototipus testējam ar reāliem lietotājiem, pirms sākas izstrāde."
+        },
+        {
+          "question": "Kas notiek pēc palaišanas?",
+          "answer": "Produktu turpinām uzturēt: labojam kļūdas, atjauninām funkcijas, uzraugām veiktspēju un uzstādām drošības ielāpus. Produktam augot, to pilnveidojam, balstoties uz analītiku un A/B testiem, un mērogojam."
+        },
+        {
+          "question": "Kā tiek noteikta projekta cena?",
+          "answer": "Par darba apjomu, cenu un termiņiem vienojamies rakstiskā piedāvājumā, pirms sākam darbu. Saziņas formā varat norādīt budžeta diapazonu: no mazāk nekā 10 000 € līdz 100 000 € un vairāk."
+        }
+      ]
     },
     "aiIntegration": {
       "icon": "solar:magic-stick-3-linear",
-      "title": "MI integrācija",
+      "title": "Mākslīgā intelekta integrācija",
       "subtitle": "Izmantojiet mašīnmācīšanos, dabiskās valodas apstrādi un viedo automatizāciju, lai pārveidotu sava uzņēmuma procesus un lēmumu pieņemšanu.",
       "overviewTitle": "MI, kas rada vērtību uzņēmumam",
       "overviewText": "Mēs palīdzam organizācijām integrēt MI un mašīnmācīšanos esošajās sistēmās un darbplūsmās. No prognozējošās analītikas un dabiskās valodas apstrādes līdz datorredzei un viedai automatizācijai — mūsu komanda veido ieviešanai gatavus MI risinājumus reālām uzņēmējdarbības problēmām. Mēs koncentrējamies uz praktiskiem un izmērāmiem rezultātiem, lai katra MI iniciatīva sniegtu taustāmu ieguldījumu atdevi.",
@@ -604,7 +766,34 @@
         { "name": "Jupyter", "icon": "logos:jupyter" }
       ],
       "ctaTitle": "Izpētiet MI iespējas savam uzņēmumam",
-      "ctaText": "Nezināt, ar ko sākt MI ieviešanu? Mūsu komanda palīdzēs noteikt iespējas, kas jūsu organizācijai var sniegt vislielāko ieguvumu."
+      "ctaText": "Nezināt, ar ko sākt MI ieviešanu? Mūsu komanda palīdzēs noteikt iespējas, kas jūsu organizācijai var sniegt vislielāko ieguvumu.",
+      "faqTitle": "Biežāk uzdotie jautājumi par mākslīgā intelekta integrāciju",
+      "faq": [
+        {
+          "question": "Kādus MI risinājumus izstrādājat?",
+          "answer": "Mašīnmācīšanās modeļus prognozēšanai, klasifikācijai, rekomendācijām un anomāliju noteikšanai, dabiskās valodas apstrādi teksta analīzei, tērzēšanas robotiem un dokumentu apstrādei, datorredzi (tostarp OCR), prognozējošo analītiku un darbplūsmu automatizāciju ar MI."
+        },
+        {
+          "question": "Vai MI var pievienot mūsu esošajām sistēmām?",
+          "answer": "Jā. Mākslīgo intelektu un mašīnmācīšanos integrējam jūsu esošajās sistēmās un darbplūsmās."
+        },
+        {
+          "question": "Ar ko sākt?",
+          "answer": "Ar lietojuma scenāriju izpēti, lai atrastu iespējas ar lielāko ietekmi jūsu procesos. Pēc tam novērtējam datu kvalitāti, pieejamību un apstrādes prasības."
+        },
+        {
+          "question": "Kādus modeļus un rīkus izmantojat?",
+          "answer": "Python ar TensorFlow, PyTorch, Hugging Face un Jupyter, kā arī OpenAI un Anthropic lielos valodu modeļus."
+        },
+        {
+          "question": "Kas notiek, kad modelis ir izstrādāts?",
+          "answer": "Izvietojam to produkcijas vidē ar MLOps praksi un uzraudzību. Pēc tam modeli pastāvīgi uzlabojam."
+        },
+        {
+          "question": "Vai jums ir MI projektu pieredze?",
+          "answer": "Jā. Konfidenciālai pasākumu platformai izveidojām LLM un Crawl4AI darbplūsmas, kas no vairāk nekā 20 publiskiem avotiem iegūst pasākumu datus, tos klasificē un pārbauda."
+        }
+      ]
     },
     "consulting": {
       "icon": "solar:users-group-two-rounded-linear",
@@ -684,7 +873,34 @@
         { "name": "Arhitektūras audits", "icon": "solar:code-square-bold" }
       ],
       "ctaTitle": "Piesakiet konsultāciju",
-      "ctaText": "Saņemiet ekspertu konsultāciju par savu tehnoloģiju stratēģiju. Piesakieties bezmaksas sarunai ar mūsu vadošajiem arhitektiem."
+      "ctaText": "Saņemiet ekspertu konsultāciju par savu tehnoloģiju stratēģiju. Piesakieties bezmaksas sarunai ar mūsu vadošajiem arhitektiem.",
+      "faqTitle": "Biežāk uzdotie jautājumi par IT konsultācijām",
+      "faq": [
+        {
+          "question": "Ko ietver IT konsultācijas?",
+          "answer": "Tehnoloģiju auditu, digitālās transformācijas ceļvedi, komandas un procesu konsultācijas, IT budžeta plānošanu un piegādātāju izvērtēšanu, atbilstības un pārvaldības vadlīnijas, kā arī salīdzinājumu ar nozari."
+        },
+        {
+          "question": "Kā notiek sadarbība?",
+          "answer": "Vispirms novērtējam jūsu pašreizējo situāciju un mērķus. Tad veicam padziļinātu tehnisko analīzi, salīdzinām jūsu risinājumus ar nozares standartiem un sagatavojam ieteikumu ceļvedi ar prioritātēm. Pēc tam sniedzam praktisku atbalstu ieviešanas laikā."
+        },
+        {
+          "question": "Kurās jomās konsultējat?",
+          "answer": "Mākoņarhitektūrā, DevOps, drošībā, datu inženierijā, MI un mašīnmācīšanās jomā, mikropakalpojumos, API stratēģijā, VDAR atbilstībā, Agile ieviešanā, izmaksu optimizācijā, komandu veidošanā un arhitektūras auditos."
+        },
+        {
+          "question": "Vai palīdzat arī ieviest, vai tikai konsultējat?",
+          "answer": "Gan konsultējam, gan palīdzam ieviest. Ieviešanas atbalsts ir sadarbības daļa, un mēs īstenojam arī programmatūras, mākoņa un DevOps projektus."
+        },
+        {
+          "question": "Vai palīdzat nodrošināt atbilstību VDAR?",
+          "answer": "Jā. Novērtējam atbilstību VDAR, SOC 2 un HIPAA prasībām un sniedzam ieviešanas vadlīnijas."
+        },
+        {
+          "question": "Kur atrodas HA Group?",
+          "answer": "HA Group (SIA HA Group) ir IT uzņēmums, kas reģistrēts Rīgā, Latvijā, un konsultē latviešu, angļu un krievu valodā."
+        }
+      ]
     }
   }
 }

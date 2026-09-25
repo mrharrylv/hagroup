@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { addDoc, collection, serverTimestamp, Timestamp } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 
@@ -45,8 +46,15 @@ function hasAcknowledgedNotice(): boolean {
 
 export default function CookieBanner() {
   const { t, i18n } = useTranslation();
-  const [visible, setVisible] = useState(() => !hasAcknowledgedNotice());
+  // Hidden until an effect has read storage: the prerendered page cannot know
+  // whether this visitor already acknowledged the notice, and reading storage
+  // during render would make the first client render differ from the HTML.
+  const [visible, setVisible] = useState(false);
   const [recordStatus, setRecordStatus] = useState<RecordStatus>('idle');
+
+  useEffect(() => {
+    setVisible(!hasAcknowledgedNotice());
+  }, []);
 
   const reopen = useCallback(() => {
     try {
@@ -123,7 +131,7 @@ export default function CookieBanner() {
               i18nKey="cookie.description"
               components={{
                 cookie: (
-                  <a href="/legal/cookies" className="text-indigo-600 dark:text-indigo-400 hover:underline" />
+                  <Link to="/legal/cookies" className="text-indigo-600 dark:text-indigo-400 hover:underline" />
                 ),
               }}
             />

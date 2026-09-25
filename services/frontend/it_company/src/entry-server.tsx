@@ -8,6 +8,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import { createI18n } from './i18n';
 import { LocaleContext } from './i18n/LocaleContext';
 import { basenameFor, localeFromPath } from './i18n/locales';
+import { pageRouteFor } from './pageRoutes';
 import { seoContentFor } from './seo/content';
 import { buildLlmsFullTxt, buildLlmsTxt } from './seo/llms';
 import { buildSitemapXml, sitemapEntries } from './seo/sitemap';
@@ -20,6 +21,15 @@ import { buildSitemapXml, sitemapEntries } from './seo/sitemap';
 
 export { listPages, NOT_FOUND_FILE, type PrerenderPage } from './seo/pages';
 export { injectPage, validatePage } from './seo/prerenderDocument';
+export { chunkFilesFor, withModulePreloads } from './lib/modulePreloads';
+
+/**
+ * The module a URL's page code starts in ('src/pages/CareersPage.tsx'), or
+ * null when the page is in the entry bundle (home, not found).
+ */
+export function pageSourceFor(url: string): string | null {
+  return pageRouteFor(url)?.source ?? null;
+}
 
 function noLanguageSwitch(): void {
   // Static HTML has no language switch to perform; the browser app does it.

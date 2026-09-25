@@ -92,6 +92,51 @@ function distPathOf(absoluteUrl: string): string {
   return join(DIST, decodeURIComponent(new URL(absoluteUrl).pathname));
 }
 
+/**
+ * The chunk each lazy page's code starts in (Vite names it after the module),
+ * by unprefixed path. The home and not-found pages are in the entry bundle.
+ */
+const PAGE_CHUNKS: Record<string, string> = {
+  '/services': 'ServicesPage',
+  '/services/website-development': 'WebsiteDevelopment',
+  '/services/system-development': 'SystemDevelopment',
+  '/services/it-infrastructure': 'ITInfrastructure',
+  '/services/full-cycle': 'FullCycle',
+  '/services/devops': 'DevOps',
+  '/services/cloud-migration': 'CloudMigration',
+  '/services/ai-integration': 'AIIntegration',
+  '/services/consulting': 'Consulting',
+  '/reviews': 'ReviewsPage',
+  '/projects': 'ProjectsPage',
+  '/balticgp': 'BalticGPPage',
+  '/careers': 'CareersPage',
+  '/contact': 'ContactPage',
+  '/about': 'AboutPage',
+  '/company-details': 'CompanyDetailsPage',
+  '/legal/terms': 'TermsPage',
+  '/legal/privacy': 'PrivacyPage',
+  '/legal/cookies': 'CookiePolicyPage',
+};
+
+function pageChunkOf(url: string): string | null {
+  const path = languageVersions(url).en;
+  if (path.startsWith('/projects/')) return 'ProjectPage';
+  return PAGE_CHUNKS[path] ?? null;
+}
+
+const PAGE_CHUNK_NAMES = new Set([...Object.values(PAGE_CHUNKS), 'ProjectPage']);
+
+function isPageChunk(href: string): boolean {
+  const name = /^\/assets\/(.+)-[\w-]{8}\.js$/.exec(href)?.[1];
+  return name !== undefined && PAGE_CHUNK_NAMES.has(name);
+}
+
+/** The modulepreload hrefs in the page's <head>. */
+function modulePreloads(html: string): string[] {
+  const head = html.slice(0, html.indexOf('</head>'));
+  return [...head.matchAll(/<link rel="modulepreload" crossorigin href="([^"]+)">/g)].map((m) => m[1]);
+}
+
 const FILES = existsSync(DIST) ? pageFiles() : [];
 
 describe('dist/', () => {
@@ -118,6 +163,10 @@ describe('dist/', () => {
 
   it('does not ship the SSR bundle', () => {
     expect(existsSync(resolve(DIST, '../dist-ssr'))).toBe(false);
+  });
+
+  it('does not ship the build manifest the prerender reads', () => {
+    expect(existsSync(join(DIST, '.vite'))).toBe(false);
   });
 });
 
@@ -180,6 +229,21 @@ describe.each(FILES)('%s', (file) => {
     }
   });
 
+  it("modulepreloads its own page's chunk, so it downloads alongside the entry", () => {
+    // main.tsx waits for that chunk before it hydrates.
+    const preloads = modulePreloads(html);
+    const chunk = pageChunkOf(url);
+    const pageChunks = preloads.filter(isPageChunk);
+    if (chunk === null) {
+      expect(pageChunks).toEqual([]);
+    } else {
+      expect(pageChunks).toHaveLength(1);
+      expect(pageChunks[0]).toMatch(new RegExp(`^/assets/${chunk}-[\\w-]{8}\\.js$`));
+    }
+    expect(new Set(preloads).size).toBe(preloads.length);
+    for (const href of preloads) expect(existsSync(join(DIST, href)), href).toBe(true);
+  });
+
   it('has one JSON-LD block that parses', () => {
     const blocks = jsonLdBlocks(html);
     expect(blocks).toHaveLength(1);
@@ -200,6 +264,14 @@ describe.each(['index.html', 'lv/index.html', 'ru/index.html'])('%s (home)', (fi
     const contact = root.indexOf('<section id="contact"');
     expect(contact).toBeGreaterThan(0);
     expect(contact).toBeLessThan(root.indexOf('<footer'));
+  });
+});
+
+describe.each(['contact/index.html', 'lv/contact/index.html', 'careers/index.html'])('%s (form page)', (file) => {
+  it('modulepreloads the chunks its page imports: the form and Firebase', () => {
+    const preloads = existsSync(join(DIST, file)) ? modulePreloads(read(file)) : [];
+    if (file.includes('contact')) expect(preloads.some((href) => /^\/assets\/Contact-[\w-]{8}\.js$/.test(href))).toBe(true);
+    expect(preloads.some((href) => /^\/assets\/firebase-[\w-]{8}\.js$/.test(href))).toBe(true);
   });
 });
 

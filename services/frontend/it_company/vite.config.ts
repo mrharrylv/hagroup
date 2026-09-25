@@ -40,6 +40,9 @@ export default defineConfig(({ isSsrBuild }) => ({
   build: isSsrBuild
     ? {}
     : {
+        // dist/.vite/manifest.json: scripts/prerender.mjs reads which chunks
+        // each page needs, to modulepreload them, and removes it.
+        manifest: true,
         rollupOptions: {
           output: {
             manualChunks: {

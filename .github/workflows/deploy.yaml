@@ -15,6 +15,26 @@ on:
           - dev
           - prod
 
+# One run per bucket at a time, in trigger order. Phase 4 (cleanup.sh)
+# deletes every bucket key missing from its own run's keys.txt, so two
+# overlapping deploys to one bucket would delete each other's assets and
+# pages.
+#
+# The group is on the whole run, not on the deploy jobs. A job joins a
+# job-level group only when it becomes ready, that is when its run's build
+# finishes, and GitHub keeps only the newest pending member of a group: if
+# two pushes' builds finished out of order, the older commit would deploy
+# last. A run joins this group when it is triggered, so runs queue in push
+# order. A running run always finishes (cancel-in-progress: false), a newer
+# run replaces an older one still pending, and the newest commit always
+# deploys last. The cost is that a build waits for the run ahead of it.
+#
+# Key: a push to main deploys prod; workflow_dispatch deploys its
+# `environment` input. Dev and prod runs do not wait for each other.
+concurrency:
+  group: hagroup-website-${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || 'prod' }}
+  cancel-in-progress: false
+
 permissions:
   id-token: write
   contents: read

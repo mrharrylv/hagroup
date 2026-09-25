@@ -125,13 +125,16 @@ website/
 
 ### CI/CD Pipeline (`.github/workflows/deploy.yaml`)
 ```
-push to main → npm ci → lint → tsc → vite build → s3 sync (prod) → CF invalidation
-manual dispatch → same build → s3 sync (dev or prod) → CF invalidation
+push to main → npm ci → lint → tsc → tests → build + prerender → test:dist → upload.sh (prod) → CF invalidation → cleanup.sh
+manual dispatch → same build → upload.sh (dev or prod) → CF invalidation → cleanup.sh
 ```
 
+Uploads follow `services/frontend/it_company/scripts/deploy/plan.mjs`: prerendered pages go to extensionless keys. Never `aws s3 sync --delete` this bucket; it deletes every page. Manual deploys: `infrastructure/doc.md`, "Manual Deploy (if needed)".
+
 ### Cache strategy
-- `index.html` → `no-cache, no-store, must-revalidate`
-- `assets/*` (hash in filename) → `max-age=31536000, immutable`
+Set per object by `plan.mjs`; see `infrastructure/doc.md`, "Cache policy".
+- HTML pages (`index.html` and the extensionless page keys) → `public, max-age=60, s-maxage=300`
+- `assets/*` (hash in filename) → `public, max-age=31536000, immutable`
 
 ### Terraform commands
 ```bash

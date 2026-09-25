@@ -1,8 +1,9 @@
 import { describe, test, after } from 'node:test';
 import assert from 'node:assert/strict';
+import { copyFileSync, mkdirSync, symlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { makeSandbox, runScript, flagValue } from './harness.mjs';
+import { DEPLOY_DIR, makeSandbox, runScript, flagValue } from './harness.mjs';
 import { planUpload, CACHE_CONTROL } from './plan.mjs';
 
 const BUCKET = 'test-hagroup-website';
@@ -95,6 +96,36 @@ describe('upload.sh: a successful deploy', () => {
   });
 });
 
+describe('upload.sh: run through a symlinked path', () => {
+  // A checkout reached through a symlink: SCRIPT_DIR keeps the symlinked path,
+  // so plan.mjs runs with a symlinked argv[1].
+  const sandbox = makeSandbox(DIST_FILES);
+  after(() => sandbox.remove());
+  const link = join(sandbox.root, 'deploy-link');
+  symlinkSync(DEPLOY_DIR, link);
+  const result = runScript('upload.sh', [BUCKET, sandbox.dist], sandbox.env(), link);
+  const calls = sandbox.calls();
+
+  test('exits 0', () => {
+    assert.equal(result.status, 0, result.stderr);
+  });
+
+  test('uploads every file, not an empty plan', () => {
+    assert.equal(calls.length, DIST_FILES.length);
+    assert.match(result.stdout, /Phase 1: 11 non-HTML file\(s\) uploaded/);
+    assert.match(result.stdout, /Phase 2: 6 HTML page\(s\) uploaded/);
+  });
+});
+
+/** upload.sh copied next to a stand-in plan.mjs that prints planOutput; returns the copy's directory. */
+const withStubPlan = (sandbox, planOutput) => {
+  const dir = join(sandbox.root, 'deploy');
+  mkdirSync(dir);
+  copyFileSync(join(DEPLOY_DIR, 'upload.sh'), join(dir, 'upload.sh'));
+  writeFileSync(join(dir, 'plan.mjs'), `process.stdout.write(${JSON.stringify(planOutput)});\n`);
+  return dir;
+};
+
 describe('upload.sh: failures', () => {
   test('a failing asset upload exits non-zero and no html is uploaded', () => {
     const sandbox = makeSandbox(DIST_FILES);
@@ -125,6 +156,38 @@ describe('upload.sh: failures', () => {
       const result = runScript('upload.sh', [BUCKET, sandbox.dist], sandbox.env());
       assert.notEqual(result.status, 0);
       assert.match(result.stderr, /brochure\.docx/);
+      assert.deepEqual(sandbox.calls(), []);
+    } finally {
+      sandbox.remove();
+    }
+  });
+
+  for (const [label, planOutput] of [
+    ['an empty plan', ''],
+    ['a plan of blank lines', '\n\n'],
+  ]) {
+    test(`${label} fails before any upload`, () => {
+      const sandbox = makeSandbox(DIST_FILES);
+      try {
+        const result = runScript('upload.sh', [BUCKET, sandbox.dist], sandbox.env(), withStubPlan(sandbox, planOutput));
+        assert.notEqual(result.status, 0);
+        assert.match(result.stderr, /plan .*is empty/);
+        assert.deepEqual(sandbox.calls(), []);
+      } finally {
+        sandbox.remove();
+      }
+    });
+  }
+
+  test('a plan with no row for the root index.html fails before any upload', () => {
+    const rows = planUpload([...DIST_FILES])
+      .filter(({ key }) => key !== 'index.html')
+      .map(({ file, key, contentType, cacheControl, phase }) => [file, key, contentType, cacheControl, phase].join('\t'));
+    const sandbox = makeSandbox(DIST_FILES);
+    try {
+      const result = runScript('upload.sh', [BUCKET, sandbox.dist], sandbox.env(), withStubPlan(sandbox, `${rows.join('\n')}\n`));
+      assert.notEqual(result.status, 0);
+      assert.match(result.stderr, /no row for the root index\.html/);
       assert.deepEqual(sandbox.calls(), []);
     } finally {
       sandbox.remove();

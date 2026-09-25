@@ -1,6 +1,6 @@
 import { describe, test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync, symlinkSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
@@ -306,6 +306,29 @@ describe('plan.mjs CLI', () => {
       rmSync(dist, { recursive: true, force: true });
     }
   });
+
+  // Node gives the main module its real path as import.meta.url but keeps a
+  // symlinked path in argv[1]; the CLI must still run, or upload.sh gets an
+  // empty plan and uploads nothing.
+  for (const [label, linkTarget, cliName] of [
+    ['a symlinked directory', dirname(PLAN_CLI), 'plan.mjs'],
+    ['a symlink to the file', PLAN_CLI, ''],
+  ]) {
+    test(`run through ${label}, it still prints the plan`, () => {
+      const dist = makeDist(['index.html', 'services/devops/index.html', 'assets/index-Bx1.js']);
+      const links = mkdtempSync(join(tmpdir(), 'plan-cli-link-'));
+      try {
+        const link = join(links, 'deploy-link');
+        symlinkSync(linkTarget, link);
+        const result = spawnSync(process.execPath, [join(link, cliName), dist, '--keys'], { encoding: 'utf8' });
+        assert.equal(result.status, 0, result.stderr);
+        assert.equal(result.stdout, 'assets/index-Bx1.js\nindex.html\nservices/devops\n');
+      } finally {
+        rmSync(dist, { recursive: true, force: true });
+        rmSync(links, { recursive: true, force: true });
+      }
+    });
+  }
 
   test('a missing dist directory fails', () => {
     const result = run(join(tmpdir(), 'plan-cli-does-not-exist'));

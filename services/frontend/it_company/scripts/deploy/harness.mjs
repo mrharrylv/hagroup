@@ -70,8 +70,9 @@ export function makeSandbox(distFiles = []) {
   });
 }
 
-export function runScript(script, args, env) {
-  return spawnSync('bash', [join(DEPLOY_DIR, script), ...args], { encoding: 'utf8', env, timeout: 60_000 });
+/** Runs a deploy script with bash; dir lets a test run a copy, or the scripts through a symlink. */
+export function runScript(script, args, env, dir = DEPLOY_DIR) {
+  return spawnSync('bash', [join(dir, script), ...args], { encoding: 'utf8', env, timeout: 60_000 });
 }
 
 /** The value that follows a flag in an argv array, or undefined. */

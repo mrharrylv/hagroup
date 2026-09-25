@@ -5,6 +5,20 @@ import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vite
 // The prerender renders with the Firebase stand-in (vite.config.ts); so does this.
 vi.mock('./lib/firebase', () => import('./lib/firebase.ssr'));
 
+/** Runs right after main.tsx calls hydrateRoot, before React has done any work. */
+const afterHydrateRoot = vi.hoisted(() => ({ run: null as (() => void) | null }));
+vi.mock('react-dom/client', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('react-dom/client')>();
+  return {
+    ...actual,
+    hydrateRoot: (...args: Parameters<typeof actual.hydrateRoot>) => {
+      const root = actual.hydrateRoot(...args);
+      afterHydrateRoot.run?.();
+      return root;
+    },
+  };
+});
+
 /**
  * Boots main.tsx the way a browser opens a prerendered page: #root holds the
  * build's markup for the URL, <html> carries the class the inline script in
@@ -17,12 +31,20 @@ vi.mock('./lib/firebase', () => import('./lib/firebase.ssr'));
 const LAZY_ROUTES = ['/services/devops', '/lv/contact', '/ru/about', '/legal/terms'];
 /** Pages with a form: the contact page, the home page's contact section and the careers page. */
 const FORM_ROUTES = ['/contact', '/lv/contact', '/', '/careers', '/ru/careers'];
+/** Pages with an in-page #hash link. */
+const HASH_LINK_ROUTES = ['/careers', '/lv/careers'];
 
 interface BootResult {
   /** The first element the prerender put inside the Suspense boundary. */
   original: Element;
   /** Every node removed from or added to #root, in order. */
   mutations: string[];
+}
+
+function firstH1(html: string): string | null {
+  const template = document.createElement('template');
+  template.innerHTML = html;
+  return template.content.querySelector('h1')?.textContent ?? null;
 }
 
 function isHydrated(node: Element): boolean {
@@ -50,6 +72,23 @@ async function prerenderAll(urls: readonly string[]): Promise<Map<string, string
 }
 
 let prerendered = new Map<string, string>();
+
+/**
+ * Dispatches an event the way a browser does: window.event is set while the
+ * listeners and the microtasks they queue run. React reads it to rank updates
+ * made outside its own handlers (a popstate transition is rendered at once),
+ * and happy-dom does not set it.
+ */
+async function dispatchAsBrowser(target: EventTarget, event: Event): Promise<void> {
+  Object.defineProperty(window, 'event', { value: event, configurable: true });
+  try {
+    target.dispatchEvent(event);
+    await Promise.resolve();
+    await Promise.resolve();
+  } finally {
+    Reflect.deleteProperty(window, 'event');
+  }
+}
 
 /** Opens a prerendered page; `searchAndHash` is what the visitor's URL adds to it ('?q=1#h'). */
 async function bootPrerendered(url: string, theme: 'light' | 'dark', searchAndHash = ''): Promise<BootResult> {
@@ -87,7 +126,7 @@ async function bootPrerendered(url: string, theme: 'light' | 'dark', searchAndHa
 
 describe('main.tsx on a prerendered lazy route', () => {
   beforeAll(async () => {
-    prerendered = await prerenderAll([...new Set([...LAZY_ROUTES, ...FORM_ROUTES])]);
+    prerendered = await prerenderAll([...new Set([...LAZY_ROUTES, ...FORM_ROUTES, ...HASH_LINK_ROUTES])]);
   });
 
   beforeEach(() => {
@@ -96,6 +135,7 @@ describe('main.tsx on a prerendered lazy route', () => {
 
   afterEach(() => {
     vi.restoreAllMocks();
+    afterHydrateRoot.run = null;
     document.body.innerHTML = '';
   });
 
@@ -185,6 +225,101 @@ describe('main.tsx on a prerendered lazy route', () => {
       expect(isHydrated(original)).toBe(true);
       const logged = vi.mocked(console.error).mock.calls.map((args) => args.map(String).join(' '));
       expect(logged.filter((line) => /hydrat|didn't match/i.test(line))).toEqual([]);
+    });
+  });
+
+  it('hydrates the page anyway when its code could not be loaded ahead of time', async () => {
+    vi.doMock('./pageRoutes', async (importOriginal) => ({
+      ...(await importOriginal<typeof import('./pageRoutes')>()),
+      preloadPage: () => Promise.reject(new Error('offline')),
+    }));
+    try {
+      const { original, mutations } = await bootPrerendered('/services/devops', 'light');
+
+      expect(mutations).toEqual([]);
+      expect(isHydrated(original)).toBe(true);
+      expect(console.error).toHaveBeenCalledWith(expect.stringContaining('hydrating anyway'), expect.any(Error));
+    } finally {
+      vi.doUnmock('./pageRoutes');
+    }
+  });
+
+  it('renders afresh when Back moved to another page while the code was loading', async () => {
+    // Hydrating the careers markup under /ru/about would be one long mismatch.
+    vi.doMock('./pageRoutes', async (importOriginal) => {
+      const actual = await importOriginal<typeof import('./pageRoutes')>();
+      return {
+        ...actual,
+        preloadPage: async (pathname: string) => {
+          await actual.preloadPage(pathname);
+          window.history.pushState(null, '', '/ru/about');
+          await dispatchAsBrowser(window, new PopStateEvent('popstate'));
+        },
+      };
+    });
+    try {
+      const { original } = await bootPrerendered('/careers', 'light');
+      await vi.waitFor(() => {
+        expect(document.querySelector('h1')?.textContent).toBe(firstH1(prerendered.get('/ru/about') ?? ''));
+      }, { timeout: 5000, interval: 20 });
+
+      expect(original.isConnected).toBe(false);
+      expect(document.documentElement.lang).toBe('ru');
+      const logged = vi.mocked(console.error).mock.calls.map((args) => args.map(String).join(' '));
+      expect(logged.filter((line) => /hydrat|didn't match/i.test(line))).toEqual([]);
+    } finally {
+      vi.doUnmock('./pageRoutes');
+    }
+  });
+
+  describe('when the visitor navigates as soon as hydration starts', () => {
+    /**
+     * The careers page's chunk arrives this long after it is requested, as on
+     * a slow connection: long enough for a visitor to act while it downloads.
+     */
+    const CHUNK_DELAY_MS = 300;
+    let tap: ReturnType<typeof setTimeout> | undefined;
+
+    beforeEach(() => {
+      // doMock, not mock: the stand-in is made again after each resetModules.
+      vi.doMock('./pages/CareersPage', async (importOriginal) => {
+        await new Promise((resolve) => setTimeout(resolve, CHUNK_DELAY_MS));
+        return importOriginal();
+      });
+    });
+
+    afterEach(() => {
+      clearTimeout(tap);
+      vi.doUnmock('./pages/CareersPage');
+    });
+
+    it.each(HASH_LINK_ROUTES)('%s: following the #career-form link keeps the prerendered page', async (url) => {
+      // A router update while the page's Suspense boundary is still waiting
+      // for its lazy chunk makes React drop the markup and show the fallback.
+      // The visitor taps 'Apply now' once React has started, while the
+      // page's chunk is still on its way.
+      let tapped = false;
+      afterHydrateRoot.run = () => {
+        tap = setTimeout(async () => {
+          const link = document.querySelector('a[href="#career-form"]');
+          if (!link) return;
+          await dispatchAsBrowser(link, new MouseEvent('click', { bubbles: true, cancelable: true }));
+          // A fragment navigation fires popstate, which BrowserRouter follows.
+          await dispatchAsBrowser(window, new PopStateEvent('popstate'));
+          tapped = true;
+        }, CHUNK_DELAY_MS / 6);
+      };
+      const { original, mutations } = await bootPrerendered(url, 'light');
+      // Settled: tapped, and React has either adopted the markup or thrown it away.
+      await vi.waitFor(() => {
+        expect(tapped && (isHydrated(original) || !original.isConnected)).toBe(true);
+      }, { timeout: 5000, interval: 20 });
+
+      expect(window.location.hash).toBe('#career-form');
+      expect(mutations).toEqual([]);
+      expect(original.isConnected).toBe(true);
+      expect(isHydrated(original)).toBe(true);
+      expect(isHydrated(document.querySelector('#career-form') ?? original)).toBe(true);
     });
   });
 });
